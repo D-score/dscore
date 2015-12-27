@@ -1,0 +1,24 @@
+.DS_Store
+_ignore/
+
+# History files
+.Rhistory
+.Rapp.history
+# Example code in package build process
+*-Ex.R
+# RStudio files
+*.Rproj
+.Rproj.user/
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+inst/doc
+sftp-config.json
+docs/assets
+docs/index.html
+docs/rd.Rmd
+docs/rd.html
+.Rproj.user
+
+# user file
+notes/

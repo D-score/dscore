@@ -1,0 +1,85 @@
+ID.VWO1996	ID.VWO2005	ID.VWO1983	ID.smock	occ	labelNL	labelEN	tau	m	LR	hot
+v1	v1	v1	v1430	1	Ogen fixeren	Fixates eyes	5,4	1	0	1
+v28	v29	v2	v1431	1	Reageert op toespreken (M)	Reacts to speech	1,7	1	0	1
+v51	v52	v3	v1432	1	Beweegt armen evenveel - rl	Moves both arms equally as much	-2,2	1	1	0
+v52	v53	v4	v1434	1	Beweegt benen evenveel - rl	Moves both legs equally as much	-1,9	1	1	0
+v55	v56	v5	v1436	1	Heft kin even van onderlaag	Lifts chin	5,2	1	0	1
+v29	v30	v6	v1437	2	Lacht terug (M)	Smiles back	11,3	1	0	1
+v2	v2	v7	v1438	2	Volgt met ogen en hoofd	Follows with eyes and head	14,5	1	1	1
+v3	v3	v8	v1440	3	Handen af en toe open	Hands open now and then	16,5	1	1	1
+v4	v4	v9	v1442	3	Kijkt naar eigen handen	Looks at own hands	20,7	1	0	1
+v30	v31	v10	v1443	3	Maakt geluiden terug (M)	Vocalizes responsively	14,5	1	0	1
+v53	v54	v11	v1444	3	Blijft hangen bij optillen onder de oksels	Remains positioned when lifted under the armpits	15,8	1	0	0
+v56	v57	v12	v1445	3	Heft in buikligging hoofd tot 45	Holds head up 45 degrees in prone position	20	1	0	1
+v5	v5	v13	v1446	4	Speelt met handen middenvoor	Hands playing in midline	28,2	1	0	1
+v6	v6	v14	v1447	4	Pakt in rugligging voorwerp	Grasps toy within reach	29,9	1	1	1
+v31	v32	NA	NA	4	Maakt gevarieerde geluiden (M)	               	NA	1	0	0
+v32	NA	NA	NA	4	Reageert op roepen bij naam (M)	              	NA	1	0	0
+v54	v55	v15	v1449	4	Reacties bij optrekken tot zit (alleen occasion 4!)	No head lag when pulled to sitting position	26	1	0	1
+na1	NA	v16	v1450	4	  	Turns head to sound	31,1	1	0	1
+v58	v59	v17	v1452	4	Benen gebogen of trappelen bij verticaal zwaaien -rl	When lifted vertically, legs bended or trampling	25,7	1	1	1
+v57	v58	v18	v1454	4	Kijkt rond met 90 graden geheven hoofd	Holds head up 90 degrees in prone position	27,8	1	0	1
+v7	v7	v19	v1455	5	Pakt blokje over	Transfers toy easily, hand to hand	36	1	0	1
+v8	v8	v20	v1456	5	Houdt blokje vast, pakt er nog een in andere hand	Picks up one small toy, then second	36,5	1	0	1
+v9	v9	v21	v1457	5	Speelt met beide voeten	Plays with both feet	33,2	1	1	1
+v59	v60	v22	v1459	5	Rolt zich om van rug naar buik en omgekeerd (M)	 Rolls from prone to supine and back	34,7	1	0	1
+v60	v61	v23	v1460	5	Kan hoofd goed ophouden in zit	Holds head up in sitting position	32,5	1	0	1
+v61	v62	v24	v1461	5	Zit op billen met gestrekte benen	Sits with stretched legs	34,9	1	0	1
+v33	v33	v25	v1462	5	Zegt dada-baba of gaga (M)	Says dada, baba or gaga	36	1	0	1
+v62	v63	v26	v1463	6	Zit stabiel los	Sits without support	40	1	0	1
+v10	v10	v27	v1464	6	Pakt propje met duim en wijsvinger	Picks up crumb between thumb and index finger	43,1	1	1	1
+v63	v64	v28	v1466	6	Kruipt vooruit, buik op de grond (M)	 Crawls	43,1	1	0	1
+v64	v65	v29	v1467	6	Trekt zich op tot staan	Pulls himself to standing position	44,3	1	0	1
+v36	v36	v30	v1468	6	Zwaait dag, dag (M)	Waves bye bye	43,1	1	0	1
+v34	v34	v31	v1469	6	Brabbelt bij zijn spel (M)	Jabbering	40,9	1	0	1
+v35	v35	NA	NA	6	Reageert op mondeling verzoek (M)               		NA	1	0	0
+v11	v11	v32	v1470	7	Doet blokje in/uit doos	Gets cube into and out of box	46	1	1	1
+v12	v12	v33	v1472	7	Speelt geven en nemen(M)	Plays give and take	46,5	1	0	1
+v65	v66	v34	v1473	7	Kruipt, buik vrij van de grond (M)	Crawls, with belly lifted off the ground	46,1	1	0	1
+v66	v67	v35	v1474	7	Loopt langs (M)	Walks while holding furniture	46,1	1	0	1
+na2	NA	v36	v1475	7	  	Understands some simple words	45,7	1	0	1
+v37	v37	v37	v1476	7	Zegt 2 geluidswoorden met begrip (M)	Uses two words	50,1	1	0	1
+v38	v38	NA	NA	7	Begrijpt enkele dagelijks gebruikte zinnen	      	NA	1	0	0
+v13	v13	v38	v1512	8	Stapelt twee blokjes -rl	Makes tower of two cubes	56,4	1	1	1
+v14	v14	v39	v1514	8	Gaat op onderzoek uit (M)	Explores room	46,9	1	0	1
+v39	v39	v40	v1515	8	Zegt 3 woorden (M)	Uses three words	53,2	1	0	1
+v40	v40	NA	NA	8	Begrijpt spelopdrachtjes (M)	                      	NA	1	0	0
+na4	NA	v41	v1516	8	  	Identifies two named objects	55,4	1	0	1
+v67	v68	v42	v1517	8	Loopt los	Walks on its own	51,9	1	0	1
+v68	v69	v43	v1518	8	Gooit bal zonder om te vallen	Throws ball without falling	56	1	0	1
+v15	v15	v44	v1520	9	Stapelt 3 blokjes -rl	Makes tower of three cubes	59,2	1	1	1
+v16	v16	v45	v1522	9	Doet anderen na (M)	Imitates everyday activities	52,3	1	0	1
+na4	NA	v46	v1523	9	  	Drinks from cup	58,5	1	0	1
+v41	v41	v47	v1524	9	Zegt zinnen van 2 woorden (M)	Makes 2-word sentences	60,2	1	0	1
+v42	v42	NA	NA	9	Wijst 6 lichaamsdelen aan bij pop (M)	              	NA	1	0	0
+na5	NA	v48	v1525	9	  	Puts ball in box when asked	57,8	1	0	1
+v69	v70	v49	v1526	9	Raapt vanuit hurkzit iets op	Squats	55,3	1	0	1
+v70	v68b	v50	v1527	9	Loopt goed los	Walks well	55,5	1	0	1
+v17	v17	v51	v1528	10	Stapelt 6 blokjes	Makes tower of six cubes	62,6	1	0	1
+v18	v18	v52	v1529	10	Plaatst ronde vorm in stoof	Puts round figure into place	60,3	1	0	1
+v19	v19	v53	v1530	10	Trekt kledingstuk uit (M)	Takes off a cloth (shoe, sock, trousers)	60,6	1	0	1
+na6	NA	v54	v1531	10	Eet zelf met lepel (M)	Eats with spoon without help	58,5	1	0	1
+v43	v43	v55	v1532	10	Noemt zichzelf mij of ik  (M)	Calls itself by name or I	61,7	1	0	1
+v44	v44	v56	v1533	10	Wijst 5 plaatjes aan in boek	Identifies pictures in book	62,2	0	0	1
+v71	v71	v57	v1534	10	Schopt bal weg (RL)	Kicks ball away	64,2	1	1	1
+v72	v72	NA	NA	10	Kan in zit soepel roteren	    	NA	1	0	0
+v20	v20	NA	NA	11	Bouwt vrachtauto na	 	NA	1	0	0
+v21	v21	NA	NA	11	Plaatst 3 vormen in stoof	    	NA	1	0	0
+v22	v22	NA	NA	11	Tekent verticale lijn na	    	NA	1	0	0
+v45	v45	NA	NA	11	Zegt zinnen van 3 of meer woorden (M)	      	NA	1	0	0
+v46	v46	NA	NA	11	Is verstaanbaar voor bekenden (M)	                    	NA	1	0	0
+v73	v68c	NA	NA	11	Loopt soepel	    	NA	1	0	0
+v74	v73	NA	NA	11	Fietst (op driewieler) (M)	   	NA	1	0	0
+v23	v23	NA	NA	12	Bouwt brug na	   	NA	1	0	0
+v24	v24	NA	NA	12	Plaatst 4 vormen in stoof	   	NA	1	0	0
+v25	v25	NA	NA	12	Trekt eigen kledingstuk aan (M)	    	NA	1	0	0
+v47	v47	NA	NA	12	Praat spontaan over gebeurtenissen thuis (M)	             	NA	1	0	0
+v48	v48	NA	NA	12	Stelt vragen naar wie, wat, waar, hoe (M)	   	NA	1	0	0
+v75	v74	NA	NA	12	Springt met beide voeten tegelijk	     	NA	1	0	0
+v26	v27	NA	NA	13	Houdt potlood met vingers vast	      	NA	1	0	0
+v27	v26	NA	NA	13	Tekent cirkel na	   	NA	1	0	0
+v49	v49	NA	NA	13	Is goed verstaanbaar voor onderzoeker	                    	NA	1	0	0
+v50	v50	NA	NA	13	Stelt vragen naar hoeveel, wanneer, waarom (M)	   	NA	1	0	0
+na7	v28	NA	NA	14	Tekent kruis na	 	NA	1	0	0
+na8	v51	NA	NA	14	Begrijpt analogien en tegenstellingen (M)	 	NA	1	0	0
+na9	v75	NA	NA	14	Kan minstens 5 seconden op een been staan (RL)	 	NA	1	1	0

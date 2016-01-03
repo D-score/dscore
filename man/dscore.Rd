@@ -2,10 +2,10 @@
 % Please edit documentation in R/subfuncDscorev7.R
 \name{dscore}
 \alias{dscore}
-\title{D-score calculation}
+\title{D-score estimation}
 \usage{
-dscore(scores, names = names(scores), lexicon = "ID.smock", age = NULL,
-  EAP = TRUE, ...)
+dscore(scores, age, items = names(scores), theta = seq(-10, 80, 1),
+  mem.between = 0, mem.within = 1, full = FALSE, ...)
 }
 \arguments{
 \item{scores}{A vector containing PASS/FAIL observations 
@@ -13,33 +13,51 @@ of a child on one or more developmental milestones. Scores are coded
 as numerically as \code{pass = 1} and \code{fail = 0}. 
 Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
 
-\item{names}{A character vector with item names in the chosen \code{lexicon}. 
-The default is \code{names(responses)}.}
+\item{age}{Numeric vector with \code{length(scores)} elements, 
+specifying decimal age in years. This information 
+is used 1) to break up calculations into separate D-scores per age, 
+and 2) to specify age-dependent priors.}
 
-\item{lexicon}{A character string indicating the set of variable names against 
-which \code{items} are matched. It may be either \code{ID.VWO1996}, 
-\code{ID.VWO2005}, \code{ID.VWO1983} or \code{ID.smock} (the default).}
+\item{items}{A character vector with item names in the chosen \code{lexicon}. 
+The default is \code{names(scores)}.}
 
-\item{age}{Numeric, decimal age of the child in years. This information 
-is used to specify the age-dependent prior of about twice the normal 
-variation.}
+\item{theta}{A number vector of equally spaced quadrature points.
+This vector should span the range of all D-score values, and 
+have at least 80 elements.
+The default \code{theta = seq(-10, 80, 1)} is suitable for children 
+aged 0-2 years.}
 
-\item{EAP}{A logical indicating to return the mean of the posterior (\code{EAP = TRUE}, the default) or the full posterior (\code{EAP = FALSE}).}
+\item{mem.between}{Fraction of posterior from previous occasion 
+relative to age-dependent prior. The 
+value \code{mem.between = 0} (the default) means that 
+no smoothing over age is performed, while a \code{mem.between = 1} 
+corresponds to maximal smoothing over age. See details.}
 
-\item{\dots}{Parameters passed down to \code{posterior()}, for example, 
-to set quadrature points, the prior, or the calculation method.}
+\item{mem.within}{Fraction of posterior from previous item within
+the same age  relative to age-dependent prior. The 
+value \code{mem.within = 1} (the default) means that all items 
+count equally in the posterior, while a \code{mem.within = 0} 
+corresponds to counting only the last item. See details.}
+
+\item{full}{A logical indicating to return the mean of the posterior (\code{full = FALSE}, the default) or the full posterior 
+(\code{full = TRUE}).}
+
+\item{\dots}{Additional parameters passed down to \code{gettau()}, e.g., 
+\code{lexicon} or \code{itembank}.}
 }
 \value{
-Either a single value (if \code{EAP == TRUE}), or a vector 
-with the density estimate at each quadature point (if \code{EAP == FALSE}).
+If \code{full} is \code{FALSE}): 
+A vector of EAP estimates per age 
+with \code{length(unique(age))} elements. If \code{full} is \code{TRUE}: 
+A \code{list} of \code{length(unique(age))} elements with the density estimate at each quadature point.
 }
 \description{
 This function estimates the D-score, a numerical score that measures
 generic development in children, from PASS/FAIL observations 
-on developental
-milestones. Variable names are matched by name against the built-in item 
+on developental milestones (items). 
+Item names are matched by name against the built-in item 
 bank in \code{itembank}. 
-Variables that do not match, or for which the score is 
+Items that do not match, or for which the score is 
 \code{NA}, are ignored.
 }
 \details{
@@ -49,6 +67,47 @@ difficulty as obtained from the item bank, and -
 if age is given - an age-dependent
 prior of about twice the normal variation at the given age.
 The method uses Bayes rule. The function can also return the 
-full posterior instead of the EAP.
+full posterior instead of the EAP. See Bock and Mislevy (1982).
+
+The mixing coefficients \code{mem.between} and \code{mem.within} are 
+0-1 numbers (fractions) that regulate the influence 
+of the prior distribution on the posterior. 
+There are three cases, depending on age and whether its the 
+first age and first item:
+\describe{
+\item{First age, first item:}{For the first item at the first age
+\code{t}, the prior is set to \eqn{N(\mu(t), \sigmaˆ2)}, 
+where \eqn{\mu(t)} is the 
+median D-score at age \code{t} as calculated from \code{Dreference[,"mu"]} and 
+where \eqn{\sigmaˆ2 = 25} equals about twice the normal variation in 
+\code{Dreference}.}
+\item{Later age, first item:}{For the first item at the second or later age \code{t}, the 
+prior is set to \code{mem.between * post + (1 - mem.between) * adp(t)}, 
+where \code{post} is the D-score posterior as calculated from the 
+previous age, and where \code{adp(t)} is the age-dependent prior at
+age \code{t}. The mixing coefficient \code{mem.between = 0} by default, which
+implies that D-scores of the same child at different ages are calculated 
+independently.}
+\item{Any age, later item:}{For the second or further items at any 
+given age \code{t}, the prior
+is set to \code{mem.within * post + (1 - mem.within) * adp(t)}, where 
+\code{post} is the D-score posterior as calculated from the 
+previous item within age \code{t}, and 
+where \code{adp(t)} is the age-dependent prior at age \code{t}. 
+By default the mixing coefficient \code{mem.within = 1}, which
+mimmicks repeated application of Bayesian theorem to the current data 
+using 'old' data as prior.}
+}
+}
+\author{
+Stef van Buuren 2016
+}
+\references{
+Bock DD, Mislevy RJ (1982).  
+Adaptive EAP Estimation of Ability in a Microcomputer Environment.
+Applied Psychological Measurement, 6(4), 431-444.
+
+Van Buuren S (2014). Growth charts of human development.
+Stat Methods Med Res, 23(4), 346-368.
 }
 

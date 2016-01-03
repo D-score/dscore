@@ -11,5 +11,9 @@ itembank <- read.delim2(file = datafile)
 levels(itembank$ID.VWO1996) <- c(levels(itembank$ID.VWO1996), "na10")
 itembank[51, "ID.VWO1996"] <- "na10"
 
+# change names to lex.xxx convention
+names(itembank)[1:4] <- c("lex.dutch1996", "lex.dutch2005", 
+                          "lex.dutch1983", "lex.smocc")
+
 # save to /data
 devtools::use_data(itembank, overwrite = TRUE)

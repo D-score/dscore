@@ -45,7 +45,9 @@
 #' \item{hot}{Item used to estimate D-score? (1=y, 0=no)}
 #' }
 #' 
-#' @source \url{http://www.stefvanbuuren.nl/publications/2014%20Growth%20charts%20for%20development%20-%20SMMR.pdf}
+#' @references
+#' Van Buuren S (2014). Growth charts of human development.
+#' Stat Methods Med Res, 23(4), 346-368.
 #' 
 "itembank"
 

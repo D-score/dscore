@@ -10,7 +10,7 @@ The \code{dscore} package provides two important functions:
 }
 \note{
 Development of this package was kindly suported by the HBGDki
-program of the Bill & Melinda Gates Foundation
+program of the Bill & Melinda Gates Foundation.
 }
 \section{\code{dscore} functions}{
 
@@ -43,7 +43,7 @@ small demo dataset from the POPS study in \code{dscore::pops}.}
 item, as estimated under the unidimensional Rasch 1-PL model. By 
 default, calculations use the built-in \code{dscore::itembank}.}
 \item{reference}{A table with LMS reference values used to transform to D-score to DAZ, or DAZ to D-score. By default, calculations
-use the built-in references \code{dscore::Dreference}}
+use the built-in references \code{dscore::Dreference}.}
 }
 }
 \references{

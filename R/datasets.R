@@ -19,6 +19,14 @@
 #' \item{Fixateseyes}{Fixates eyes: 0 = yes, 1 = no}
 #' \item{\dots}{and so on..}
 #' }
+#' 
+#' @note 
+#' Note that the PASS/FAIL items in the \code{pops} data are coded
+#' in the `wrong` way: 0 = PASS, 1 = FAIL.
+#' 
+#' @examples 
+#' head(pops)
+#' 
 #' @source \url{https://www.tno.nl/nl/aandachtsgebieden/gezond-leven/prevention-work-health/voor-tijdens-en-na-de-zwangerschap/pops-langlopend-onderzoek-onder-prematuren-en-baby-s-met-laag-geboortegewicht/}
 #' \code{\link{dscore}}
 "pops"
@@ -44,6 +52,9 @@
 #' \item{LR}{Left-right item scores}
 #' \item{hot}{Item used to estimate D-score? (1=y, 0=no)}
 #' }
+#' 
+#' @examples 
+#' head(itembank)
 #' 
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
@@ -72,6 +83,8 @@
 #' \item{P3}{Calculated third percentile}
 #' \item{\dots}{And so on..}
 #' }
+#' @examples 
+#' head(Dreference)
 #' 
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 

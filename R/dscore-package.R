@@ -45,7 +45,7 @@ NULL
 #' 
 #' @note 
 #' Development of this package was kindly suported by the HBGDki
-#' program of the Bill & Melinda Gates Foundation
+#' program of the Bill & Melinda Gates Foundation.
 #' 
 #' @seealso \code{\link{dscore}}, \code{\link{itembank}}, 
 #' \code{\link{Dreference}}, \code{\link{daz}}

@@ -30,5 +30,13 @@ pops
 A dataset with developmental scores at the item level from a subset
 of 25 children from the POPS cohort.
 }
+\note{
+Note that the PASS/FAIL items in the \code{pops} data are coded
+in the `wrong` way: 0 = PASS, 1 = FAIL.
+}
+\examples{
+head(pops)
+
+}
 \keyword{datasets}
 

@@ -1,6 +1,8 @@
 #' D-score standard deviation score: DAZ
 #' 
-#' DAZ stands for "Development - Age adjusted Z-score".
+#' DAZ stands for "Development - Age adjusted Z-score". 
+#' The DAZ represents a child's D-score after adjusting 
+#' for age by an external age-conditional reference.
 #' @aliases daz
 #' @param d Vector of D-scores, typically calculated by \code{dscore()}
 #' @param x Vector of ages

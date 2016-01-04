@@ -8,6 +8,7 @@
 # ------------- export to external file
 
 # ------------- preliminaries
+library("dscore")
 library("haven")
 library("dplyr")
 
@@ -65,6 +66,7 @@ source(file = file.path(pkg, "subfuncDDIv7.R"))
 source(file = file.path(pkg, "Dscorelistv7.R"))
 source(file = file.path(pkg, "subfuncDscorev7.R"))
 
+reference <- read.table(file = file.path(pkg, "Dreference.txt"), header = TRUE)
 #result <- Dscore(VWOdata = long, year = "1996", 
 #                 itembankVWO = itembank, ref = reference)
 

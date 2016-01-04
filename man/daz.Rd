@@ -26,7 +26,9 @@ published in Van Buuren (2014). The table should contain the columns
 Vector with Z-scores with \code{length(d)} elements
 }
 \description{
-DAZ stands for "Development - Age adjusted Z-score".
+DAZ stands for "Development - Age adjusted Z-score". 
+The DAZ represents a child's D-score after adjusting 
+for age by an external age-conditional reference.
 }
 \references{
 Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 

@@ -43,4 +43,8 @@ Sage Publications; 1988.
 RUMM Laboratories. RUMM 2030. 
 Rasch Unidimensional Measurement Models. Perth: 2015.
 }
+\seealso{
+\code{\link{dscore}}, \code{\link{adp}}, 
+\code{\link[sirt]{rasch.pairwise}}
+}
 

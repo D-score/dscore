@@ -47,4 +47,7 @@ gettau(items = c("v55", "v29"), lexicon = "lex.dutch1996")
 \author{
 Stef van Buuren 2016
 }
+\seealso{
+\code{\link{itembank}}, \code{\link{dscore}}
+}
 

@@ -87,6 +87,9 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #' 
 #' @author Stef van Buuren 2016
+#' @seealso \code{\link{adp}}, \code{\link{gettau}}, 
+#' \code{\link{itembank}}, \code{\link{posterior}},
+#' \code{\link{Dreference}}
 #' @export
 # @param prior A function that produces a numerical vector with
 # \code{length(theta)} elements that sum to unity. The default function
@@ -198,6 +201,8 @@ dscore <- function(scores,
 #' 
 #' RUMM Laboratories. RUMM 2030. 
 #' Rasch Unidimensional Measurement Models. Perth: 2015.
+#' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
+#' \code{\link[sirt]{rasch.pairwise}}
 #' @export
 posterior <- function(score, tau, prior, theta)
 {
@@ -246,6 +251,7 @@ posterior <- function(score, tau, prior, theta)
 #' @return A named vector with the difficulty estimate per item with
 #' \code{length(items)} elements.
 #' @author Stef van Buuren 2016
+#' @seealso \code{\link{itembank}}, \code{\link{dscore}}
 #' @examples 
 #' # difficulty levels in default lex.smocc lexicon
 #' gettau(items = c("v1436", "v1437"))
@@ -290,6 +296,7 @@ gettau <- function(items,
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
+#' @seealso \code{\link{dscore}}
 #' @examples 
 #' # define quadrature points for D-score
 #' theta <- -10:80

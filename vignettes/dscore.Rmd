@@ -18,6 +18,7 @@ vignette: >
 # ------------- export to external file
 
 # ------------- preliminaries
+library("dscore")
 library("haven")
 library("dplyr")
 

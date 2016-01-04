@@ -20,7 +20,7 @@
 #' \item{\dots}{and so on..}
 #' }
 #' @source \url{https://www.tno.nl/nl/aandachtsgebieden/gezond-leven/prevention-work-health/voor-tijdens-en-na-de-zwangerschap/pops-langlopend-onderzoek-onder-prematuren-en-baby-s-met-laag-geboortegewicht/}
-#' 
+#' \code{\link{dscore}}
 "pops"
 
 
@@ -48,7 +48,7 @@
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
-#' 
+#' @seealso \code{\link{dscore}}, \code{\link{gettau}}
 "itembank"
 
 #' Age-conditional reference distribution of D-score
@@ -80,7 +80,7 @@
 #' 
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
-#' 
+#' @seealso \code{\link{dscore}}, \code{\link{adp}}
 "Dreference"
 
 

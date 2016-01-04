@@ -34,5 +34,8 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
 }
+\seealso{
+\code{\link{dscore}}, \code{\link{adp}}
+}
 \keyword{datasets}
 

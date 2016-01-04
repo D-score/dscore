@@ -108,4 +108,9 @@ Applied Psychological Measurement, 6(4), 431-444.
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
 }
+\seealso{
+\code{\link{adp}}, \code{\link{gettau}}, 
+\code{\link{itembank}}, \code{\link{posterior}},
+\code{\link{Dreference}}
+}
 

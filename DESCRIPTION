@@ -18,6 +18,4 @@ Suggests:
 License: file LICENSE
 LazyData: TRUE
 VignetteBuilder: knitr
-Acknowledgement: Development of this package was kindly suported by the HBGDki
-    program of the Bill & Melinda Gates Foundation
 RoxygenNote: 5.0.1

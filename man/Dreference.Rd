@@ -26,6 +26,10 @@ both boys and girls. The LMS values can be used to graph
 reference charts and to calculate age-conditonal Z-scores, also 
 known as DAZ.
 }
+\examples{
+head(Dreference)
+
+}
 \references{
 Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
 method and penalized likelihood. Statistics in Medicine, 11(10), 

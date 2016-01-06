@@ -4,8 +4,8 @@
 \alias{gettau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-gettau(items, itembank = dscore::itembank, lexicon = "lex.GHAP",
-  check = TRUE, ...)
+gettau(items, itembank = dscore::itembank, lexicon = "GHAP", check = TRUE,
+  ...)
 }
 \arguments{
 \item{items}{A character vector with item names in the 
@@ -19,9 +19,9 @@ difficulty levels as published in Van Buuren (2014).}
 
 \item{lexicon}{A character string indicating the column in 
 \code{itembank} used to match item names. It must be one of 
-the lexicon columns, e.g., \code{lex.dutch1983}, 
-\code{lex.dutch1996}, \code{lex.dutch2005}, \code{lex.smocc} 
-or \code{lex.GHAP}. The default is \code{lex.GHAP}.}
+the lexicon columns, e.g., \code{dutch1983}, 
+\code{dutch1996}, \code{dutch2005}, \code{SMOCC} 
+or \code{GHAP}. The default is \code{lexicon = "GHAP"}.}
 
 \item{check}{Logical that indicates whether the lexicon name
 should be checked. The default is \code{TRUE}.}
@@ -30,7 +30,8 @@ should be checked. The default is \code{TRUE}.}
 }
 \value{
 A named vector with the difficulty estimate per item with
-\code{length(items)} elements.
+\code{length(items)} elements, or \code{NULL} if items are 
+not found.
 }
 \description{
 Searches the item bank for matching items, and returns the 
@@ -42,10 +43,8 @@ are done in lower case.
 gettau(items = c("GSFIXEYE", "GSMARMR"))
 
 # difficulty levels of same items in the SMOCC lexicon
-gettau(items = c("v1430", "v1432"), lexicon = "lex.SMOCC")
+gettau(items = c("v1430", "v1432"), lexicon = "SMOCC")
 
-# difficulty levels of same items in lex.dutch1996 lexicon
-gettau(items = c("v1", "v51"), lexicon = "lex.dutch1996")
 }
 \author{
 Stef van Buuren 2016

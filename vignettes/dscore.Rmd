@@ -1,5 +1,5 @@
 ---
-title: "Calculate D-score on POPS data"
+title: "Calculate D-score and DAZ on POPS data excerpt"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -7,6 +7,8 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+
 
 ```{r}
 # Actions taken in this script

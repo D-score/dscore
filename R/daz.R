@@ -96,6 +96,7 @@ zad <- function(z, x,
   sigma <- approx(ref[, x.unit], ref[, "sigma"], xout = x)$y
   nu <- approx(ref[, x.unit], ref[, "nu"], xout = x)$y
   
+  # centile formula
   d <- ifelse(nu > 0.01 | nu < (-0.01), 
               mu * ((nu * sigma * z + 1)^(1/nu)), 
               mu * exp(sigma * z))

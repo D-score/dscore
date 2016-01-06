@@ -243,8 +243,8 @@ posterior <- function(score, tau, prior, theta)
 #' @param lexicon A character string indicating the column in 
 #' \code{itembank} used to match item names. It must be one of 
 #' the lexicon columns, e.g., \code{lex.dutch1983}, 
-#' \code{lex.dutch1996}, \code{lex.dutch2005} or \code{lex.smocc}.
-#' The default is \code{lex.smocc}. 
+#' \code{lex.dutch1996}, \code{lex.dutch2005}, \code{lex.smocc} 
+#' or \code{lex.GHAP}. The default is \code{lex.GHAP}. 
 #' @param check Logical that indicates whether the lexicon name
 #' should be checked. The default is \code{TRUE}.
 #' @param \dots Additional arguments (ignored).
@@ -253,20 +253,23 @@ posterior <- function(score, tau, prior, theta)
 #' @author Stef van Buuren 2016
 #' @seealso \code{\link{itembank}}, \code{\link{dscore}}
 #' @examples 
-#' # difficulty levels in default lex.smocc lexicon
-#' gettau(items = c("v1436", "v1437"))
+#' # difficulty levels in default GHAP lexicon
+#' gettau(items = c("GSFIXEYE", "GSMARMR"))
+#' 
+#' # difficulty levels of same items in the SMOCC lexicon
+#' gettau(items = c("v1430", "v1432"), lexicon = "lex.SMOCC")
 #' 
 #' # difficulty levels of same items in lex.dutch1996 lexicon
-#' gettau(items = c("v55", "v29"), lexicon = "lex.dutch1996")
+#' gettau(items = c("v1", "v51"), lexicon = "lex.dutch1996")
 #' @export
 gettau <- function(items, 
                    itembank = dscore::itembank, 
-                   lexicon = "lex.smocc", 
+                   lexicon = "lex.GHAP", 
                    check = TRUE, 
                    ...) {
   # check whether lexicon is a column in item bank
   if (check) {
-    q <- pmatch(tolower(lexicon), names(itembank))
+    q <- pmatch(tolower(lexicon), tolower(names(itembank)))
     if (is.na(q)) stop ("Lexicon name `", lexicon, "` not found in item bank.")
   }
   

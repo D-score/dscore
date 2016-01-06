@@ -4,7 +4,7 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(scores, age, items = names(scores), theta = -10:80,
+dscore(scores, items = names(scores), age, theta = -10:80,
   mem.between = 0, mem.within = 1, full = FALSE, ...)
 }
 \arguments{
@@ -13,13 +13,13 @@ of a child on one or more developmental milestones. Scores are coded
 as numerically as \code{pass = 1} and \code{fail = 0}. 
 Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
 
+\item{items}{A character vector with item names in the chosen \code{lexicon}. 
+The default is \code{names(scores)}.}
+
 \item{age}{Numeric vector with \code{length(scores)} elements, 
 specifying decimal age in years. This information 
 is used 1) to break up calculations into separate D-scores per age, 
 and 2) to specify age-dependent priors.}
-
-\item{items}{A character vector with item names in the chosen \code{lexicon}. 
-The default is \code{names(scores)}.}
 
 \item{theta}{A number vector of equally spaced quadrature points.
 This vector should span the range of all D-score values, and 
@@ -50,7 +50,8 @@ corresponds to counting only the last item. See details.}
 If \code{full} is \code{FALSE}: 
 A vector of EAP estimates per age 
 with \code{length(unique(age))} elements. If \code{full} is \code{TRUE}: 
-A \code{list} of \code{length(unique(age))} elements with the density estimate at each quadature point.
+A \code{list} of \code{length(unique(age))} elements with the
+starting prior, posterior, quadrature grid and eap.
 }
 \description{
 This function estimates the D-score, a numerical score that measures
@@ -96,6 +97,40 @@ By default the mixing coefficient \code{mem.within = 1}, which
 mimmicks repeated application of Bayesian theorem to the current data 
 using 'old' data as prior.}
 }
+}
+\examples{
+# GSFIXEYE: Fixate eyes
+# GSRSPCH:  Reacts to speech (M; can ask parents)
+# GSMLEGR:  Same amount of movement in both legs - r
+items <- c("GSFIXEYE", "GSRSPCH", "GSMLEGR")
+gettau(items)
+age <- round(rep(21/365.25, 3), 4)  # age 21 days
+dscore(c(1, 0, 0), items, age)
+
+# two time points, one additional (overlapping) item
+items <- c(items, items[3])
+age <- round(c(age, 42/365.25), 4)  # add age 42 days
+dscore(c(1, 1, 0, 1), items, age)
+
+# save full posterior
+fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
+plot(fp[[1]]$theta, fp[[1]]$posterior, type = "l",
+xlab = "D-score", ylab = "Density", 
+main = "Age 21 days: PASS GSFIXEYE GSRSPCH, FAIL GSMLEGR")
+lines(fp[[1]]$theta, fp[[1]]$start, lty = 2)
+
+# hardly any difference between prior and posterior 
+# because PASS score is uninformative at age 42 days
+plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEGR")
+lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+
+# However a FAIL score signals substantial delay at age 42 days
+fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
+plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEGR")
+lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+
 }
 \author{
 Stef van Buuren 2016

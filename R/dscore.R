@@ -48,12 +48,12 @@
 #' of a child on one or more developmental milestones. Scores are coded 
 #' as numerically as \code{pass = 1} and \code{fail = 0}. 
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.
+#' @param items A character vector with item names in the chosen \code{lexicon}. 
+#' The default is \code{names(scores)}.
 #' @param age Numeric vector with \code{length(scores)} elements, 
 #' specifying decimal age in years. This information 
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
-#' @param items A character vector with item names in the chosen \code{lexicon}. 
-#' The default is \code{names(scores)}.
 #' @param theta A number vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values, and 
 #' have at least 80 elements.
@@ -77,7 +77,8 @@
 #' @return If \code{full} is \code{FALSE}: 
 #' A vector of EAP estimates per age 
 #' with \code{length(unique(age))} elements. If \code{full} is \code{TRUE}: 
-#' A \code{list} of \code{length(unique(age))} elements with the density estimate at each quadature point.
+#' A \code{list} of \code{length(unique(age))} elements with the
+#' starting prior, posterior, quadrature grid and eap.
 #' @references
 #' Bock DD, Mislevy RJ (1982).  
 #' Adaptive EAP Estimation of Ability in a Microcomputer Environment.
@@ -90,43 +91,66 @@
 #' @seealso \code{\link{adp}}, \code{\link{gettau}}, 
 #' \code{\link{itembank}}, \code{\link{posterior}},
 #' \code{\link{Dreference}}
+#' @examples 
+#' # GSFIXEYE: Fixate eyes
+#' # GSRSPCH:  Reacts to speech (M; can ask parents)
+#' # GSMLEGR:  Same amount of movement in both legs - r
+#' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEGR")
+#' gettau(items)
+#' age <- round(rep(21/365.25, 3), 4)  # age 21 days
+#' dscore(c(1, 0, 0), items, age)
+#' 
+#' # two time points, one additional (overlapping) item
+#' items <- c(items, items[3])
+#' age <- round(c(age, 42/365.25), 4)  # add age 42 days
+#' dscore(c(1, 1, 0, 1), items, age)
+#' 
+#' # save full posterior
+#' fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
+#' plot(fp[[1]]$theta, fp[[1]]$posterior, type = "l",
+#' xlab = "D-score", ylab = "Density", 
+#' main = "Age 21 days: PASS GSFIXEYE GSRSPCH, FAIL GSMLEGR")
+#' lines(fp[[1]]$theta, fp[[1]]$start, lty = 2)
+#' 
+#' # hardly any difference between prior and posterior 
+#' # because PASS score is uninformative at age 42 days
+#' plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+#' xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEGR")
+#' lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+#' 
+#' # However a FAIL score signals substantial delay at age 42 days
+#' fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
+#' plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+#' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEGR")
+#' lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+#' 
 #' @export
-# @param prior A function that produces a numerical vector with
-# \code{length(theta)} elements that sum to unity. The default function
-# \code{adp(age, theta)} produces a an age-dependent normal prior
-# centered around the median D-score and a standard deviation equal
-# to 5.
 dscore <- function(scores, 
-                   age,
                    items = names(scores), 
+                   age,
                    theta = -10:80,
                    mem.between = 0,
                    mem.within = 1,
-                   full = FALSE, 
+                   full = FALSE,
                    ...) {
-  # check inputs
-  # split into age groups
-  # create output arrays
-  # iterate
-  # unsplit groups
   
   # check input lengths
   if (length(scores) != length(age)) stop("Arguments `scores` and `age` of different length")
   if (length(scores) != length(items)) stop("Arguments `scores` and `items` of different length")
-  if (length(theta) != length(prior)) stop("Arguments `theta` and `prior` of different length")
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
-  if (all(is.na(tau))) warning("No difficulty parameters found for ", 
-                               head(items), 
-                               ". Consider changing the `lexicon` argument.")
+  if (is.null(tau)) warning("No difficulty parameters found for ", 
+                            head(items), ".")
   
   # split the data by age
   dg <- split(data.frame(scores, age, items, tau), f = age)
   
   # create output array
   eap <- rep(NA, length = length(dg))
-  names(eap) <- names(dg)
+  post <- list(eap = NA, start = NULL, theta = NULL, posterior = NULL)
+  fullpost <- rep(list(post), length = length(dg))
+  names(fullpost) <- names(eap) <- names(dg)
   
   # iterate
   k <- 0                            # valid scores counter
@@ -134,6 +158,7 @@ dscore <- function(scores,
     d <- dg[[i]]
     cage <- d[1, "age"]             # current age
     nextocc <- TRUE                 # flag for next occasion
+    fullpost[[i]]$theta <- theta
     for (j in 1:nrow(d)) {          # loop over items
       score <- d[j, "scores"]       # observed score
       tau   <- d[j, "tau"]
@@ -143,6 +168,7 @@ dscore <- function(scores,
       # CASE A: k == 1: start with age-dependent prior for first valid score
       if (k == 1) {
         prior <- adp(age = cage, theta = theta, ...)
+        fullpost[[i]]$start <- prior
         nextocc <- FALSE
       }
       
@@ -152,25 +178,28 @@ dscore <- function(scores,
       else if (nextocc) {
         prior <- mem.between * post + 
           (1 - mem.between) * adp(age = cage, theta = theta, ...)
+        prior <- normalize(prior, theta)
+        fullpost[[i]]$start <- prior
         nextocc <- FALSE
       }
       
       # CASE C: weight 'previous score posterior' by mem.within
-      else prior <- mem.within * post + 
-        (1 - mem.within) * adp(age = cage, theta = theta, ...)
-      
-      # rescale priors to proper density
-      prior <- normalize(prior, theta)
+      else {
+        prior <- mem.within * post + 
+          (1 - mem.within) * adp(age = cage, theta = theta, ...)
+        prior <- normalize(prior, theta)
+      }
       
       # calculate posterior
       post <- posterior(score, tau, prior, theta)
+      fullpost[[i]]$posterior <- post
       
       # overwrite old eap estimate by new one
-      eap[i] <- weighted.mean(theta, w = post)
+      fullpost[[i]]$eap <- eap[i] <- weighted.mean(theta, w = post)
     }
-    
-    return(eap)
   }
+  if (!full) return(eap)
+  return(fullpost)
 }
 
 
@@ -242,14 +271,15 @@ posterior <- function(score, tau, prior, theta)
 #' difficulty levels as published in Van Buuren (2014).
 #' @param lexicon A character string indicating the column in 
 #' \code{itembank} used to match item names. It must be one of 
-#' the lexicon columns, e.g., \code{lex.dutch1983}, 
-#' \code{lex.dutch1996}, \code{lex.dutch2005}, \code{lex.smocc} 
-#' or \code{lex.GHAP}. The default is \code{lex.GHAP}. 
+#' the lexicon columns, e.g., \code{dutch1983}, 
+#' \code{dutch1996}, \code{dutch2005}, \code{SMOCC} 
+#' or \code{GHAP}. The default is \code{lexicon = "GHAP"}. 
 #' @param check Logical that indicates whether the lexicon name
 #' should be checked. The default is \code{TRUE}.
 #' @param \dots Additional arguments (ignored).
 #' @return A named vector with the difficulty estimate per item with
-#' \code{length(items)} elements.
+#' \code{length(items)} elements, or \code{NULL} if items are 
+#' not found.
 #' @author Stef van Buuren 2016
 #' @seealso \code{\link{itembank}}, \code{\link{dscore}}
 #' @examples 
@@ -257,25 +287,24 @@ posterior <- function(score, tau, prior, theta)
 #' gettau(items = c("GSFIXEYE", "GSMARMR"))
 #' 
 #' # difficulty levels of same items in the SMOCC lexicon
-#' gettau(items = c("v1430", "v1432"), lexicon = "lex.SMOCC")
+#' gettau(items = c("v1430", "v1432"), lexicon = "SMOCC")
 #' 
-#' # difficulty levels of same items in lex.dutch1996 lexicon
-#' gettau(items = c("v1", "v51"), lexicon = "lex.dutch1996")
 #' @export
 gettau <- function(items, 
                    itembank = dscore::itembank, 
-                   lexicon = "lex.GHAP", 
+                   lexicon = "GHAP", 
                    check = TRUE, 
                    ...) {
   # check whether lexicon is a column in item bank
+  lex <- paste("lex", lexicon, sep = ".")
   if (check) {
-    q <- pmatch(tolower(lexicon), tolower(names(itembank)))
-    if (is.na(q)) stop ("Lexicon name `", lexicon, "` not found in item bank.")
+    q <- pmatch(tolower(lex), tolower(names(itembank)))
+    if (is.na(q)) stop ("Lexicon `", lexicon, "` not found in item bank.")
   }
   
   # find exact matching items rows
-  p <- match(tolower(items), itembank[, lexicon])
-  if (all(is.na(p))) return(rep(NA, length = length(items)))
+  p <- match(items, itembank[, lex])
+  if (all(is.na(p))) return(NULL)
   r <- itembank[p, "tau"]
   names(r) <- items
   return(r)

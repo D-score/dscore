@@ -4,12 +4,14 @@
 \alias{daz}
 \title{D-score standard deviation score: DAZ}
 \usage{
-daz(d, x, x.unit = "year", ref = dscore::Dreference, dec = 3)
+daz(d, x = as.numeric(names(d)), x.unit = "year",
+  ref = dscore::Dreference, dec = 3)
 }
 \arguments{
 \item{d}{Vector of D-scores, typically calculated by \code{dscore()}}
 
-\item{x}{Vector of ages}
+\item{x}{Vector of ages. The default is to take age from 
+\code{names(d)}.}
 
 \item{x.unit}{Units given in \code{x} specified by 
 \code{"year"}, \code{"month"} or \code{"day"}. The default is 
@@ -24,7 +26,7 @@ published in Van Buuren (2014). The table should contain the columns
 \item{dec}{The number of decimals (default \code{dec = 3}).}
 }
 \value{
-Vector with Z-scores with \code{length(d)} elements
+Named vector with Z-scores with \code{length(d)} elements
 }
 \description{
 DAZ stands for "Development - Age adjusted Z-score". 

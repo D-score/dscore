@@ -1,7 +1,6 @@
 # dscore.R
 
 #' @importFrom dplyr select mutate slice bind_rows
-#' @importFrom haven read_sav
 NULL
 
 #' dscore: A package for calculating D-scores

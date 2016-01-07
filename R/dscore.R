@@ -71,6 +71,7 @@
 #' corresponds to counting only the last item. See details.
 #' @param full A logical indicating to return the mean of the posterior (\code{full = FALSE}, the default) or the full posterior 
 #' (\code{full = TRUE}).
+#' @param dec Number of decimal of the EAP estimates. Default is 2.
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
 #' \code{sd} or \code{reference}).
@@ -94,8 +95,8 @@
 #' @examples 
 #' # GSFIXEYE: Fixate eyes
 #' # GSRSPCH:  Reacts to speech (M; can ask parents)
-#' # GSMLEGR:  Same amount of movement in both legs - r
-#' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEGR")
+#' # GSMLEG :  Same amount of movement in both legs
+#' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 #' gettau(items)
 #' age <- round(rep(21/365.25, 3), 4)  # age 21 days
 #' dscore(c(1, 0, 0), items, age)
@@ -103,25 +104,25 @@
 #' # two time points, one additional (overlapping) item
 #' items <- c(items, items[3])
 #' age <- round(c(age, 42/365.25), 4)  # add age 42 days
-#' dscore(c(1, 1, 0, 1), items, age)
+#' dscore(c(1, 0, 0, 1), items, age)
 #' 
 #' # save full posterior
 #' fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
 #' plot(fp[[1]]$theta, fp[[1]]$posterior, type = "l",
 #' xlab = "D-score", ylab = "Density", 
-#' main = "Age 21 days: PASS GSFIXEYE GSRSPCH, FAIL GSMLEGR")
+#' main = "Age 21 days: 2 PASS, FAIL at GSMLEG")
 #' lines(fp[[1]]$theta, fp[[1]]$start, lty = 2)
 #' 
 #' # hardly any difference between prior and posterior 
 #' # because PASS score is uninformative at age 42 days
 #' plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEGR")
+#' xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEG")
 #' lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
 #' 
 #' # However a FAIL score signals substantial delay at age 42 days
 #' fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
 #' plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEGR")
+#' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
 #' lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
 #' 
 #' @export
@@ -132,6 +133,7 @@ dscore <- function(scores,
                    mem.between = 0,
                    mem.within = 1,
                    full = FALSE,
+                   dec = 2,
                    ...) {
   
   # check input lengths
@@ -198,7 +200,7 @@ dscore <- function(scores,
       fullpost[[i]]$eap <- eap[i] <- weighted.mean(theta, w = post)
     }
   }
-  if (!full) return(eap)
+  if (!full) return(round(eap, dec))
   return(fullpost)
 }
 

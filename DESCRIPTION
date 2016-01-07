@@ -1,7 +1,7 @@
 Package: dscore
 Type: Package
 Title: D-score for child development 
-Version: 0.09
+Version: 0.11
 Date: 2016-01-06
 Authors@R: person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("aut","cre"))
 Description: The dscore package provides a set of tools for calculating 
@@ -9,8 +9,7 @@ Description: The dscore package provides a set of tools for calculating
 Depends: 
     R (>= 2.10)
 Imports:
-    dplyr,
-    haven
+    dplyr
 Suggests: 
     rmarkdown,
     knitr

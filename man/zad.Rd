@@ -4,12 +4,14 @@
 \alias{zad}
 \title{Inverse D-score standard deviation score}
 \usage{
-zad(z, x, x.unit = "year", ref = dscore::Dreference, dec = 3)
+zad(z, x = as.numeric(names(z)), x.unit = "year",
+  ref = dscore::Dreference, dec = 3)
 }
 \arguments{
 \item{z}{Vector of standard deviation scores (DAZ)}
 
-\item{x}{Vector of ages}
+\item{x}{Vector of ages. The default is to take age from 
+\code{names(z)}.}
 
 \item{x.unit}{Units given in \code{x} specified by 
 \code{"year"}, \code{"month"} or \code{"day"}. The default is 
@@ -24,7 +26,7 @@ published in Van Buuren (2014). The table should contain the columns
 \item{dec}{The number of decimals (default \code{dec = 3}).}
 }
 \value{
-Vector with D-scores with \code{length(z)} elements
+Names vector with D-scores with \code{length(z)} elements
 }
 \description{
 This function is the inverse of \code{daz()}: Given age and 

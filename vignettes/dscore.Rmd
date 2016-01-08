@@ -1,5 +1,5 @@
 ---
-title: "Calculate D-score and DAZ on POPS data excerpt"
+title: "Calculate D-score and DAZ"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -8,91 +8,148 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+## Overview
+
+This vignettes shows how to estimate the D-score and the D-score SDS, a.k.a. DAZ in an excerpt from the POPS data. This vignettes covers some typical actions needed when estimating D-scores:
+
+1. Rename item names in source data to item names used in itembank
+2. Reorganize the source data into a long matrix
+3. Calculate D-score and DAZ
+4. Combine D-score and DAZ with source data
+
+## Rename item names
+
+The `dscore` package has built-in example data from the POPS study. The data set is of class `tbl_df` from the `dplyr` package. 
+
+```{r rename}
+library("dscore")
+
+pops
+class(pops)
+nrow(pops)
+```
+
+The are 25 children and 4 time points. 
+
+```{r children}
+# 25 children, 4 time points per child
+length(unique(pops$patid))
+```
+
+The item scores are located in columns 11-67, and their names are:
+```{r}
+names(pops)[11:67]
+```
+
+These names need to be matched against one of the lexicons in the item bank. The built-in lexicons are:
+
+```{r}
+names(itembank)[1:5]
+```
+
+In the sequel, we will use the GHAP lexicon. The items for which we have difficulty estimates `tau` in this 
+lexicon is
+
+```{r}
+ib <- itembank[!is.na(itembank$tau),c("lex.GHAP", "labelEN", "tau")]
+head(ib, 3)
+```
+
+In this case, we tend to be lucky that the item names from the source data and the item bank match up exactly.
+
+```{r}
+head(data.frame(source = names(pops)[11:67], ghap = ib$lex.GHAP))
+```
+
+Renaming the source data is now easy:
+
+```{r}
+names(pops)[11:67] <- as.character(ib$lex.GHAP)
+names(pops)
+```
+
+The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `gettau()` function:
+
+```{r}
+gettau(names(pops)[11:67])
+```
+
+## Reorganize the data into a long matrix
+
+The `dscore()` function takes vectors of item scores, item names and ages. Rearringing the data makes it easy to extract the relevant vectors. We need to create a data set with the following variables: `patid`, `moment`, `age`, `daycor`, `item` and `score`, and select only the rows where we have an observed score.
+
+```{r}
+library("tidyr")
+library("dplyr")
+data <- pops %>% 
+  select(patid, moment, age, daycor, GSFIXEYE:GSKIK) %>%
+  gather(items, scores, GSFIXEYE:GSKIK, na.rm = TRUE) %>%
+  mutate(scores = 1 - scores) %>% 
+  arrange(patid, moment)
+data
+```
+
+There are `nrow(data)` records with a nonmissing item score. Note also that the item scores have been reversed, as POPS uses a zero for a PASS, and a one for a FAIL.
+
+## Calculate D-score and DAZ
+
+For illustration, let us first calculate the D-score of the first child. There are 75 scores for this child, spread over four time points. This is a preterm child, so we correct calener age for gestational age as in `daycor`:
+
+```{r}
+child1 <- filter(data, patid == 1)
+
+scores <- child1$scores
+items <- as.character(child1$items)
+ages <- round(child1$daycor/365.25, 4)
+
+# calculate dscore and daz for each time point for given child
+(d <- dscore(scores, items, ages))
+(DAZ <- daz(d))
+```
+
+If desired, one may also back-calculate the D-score from the standard deviation score by 
+```{r}
+zad(DAZ)
+```
+
+If we specify the child identifier \code{patid} as a by-group variable, 
+we may calculate the D-score and DAZ for all children by
+
+```{r eval = FALSE}
+## still a bit messy, but works for now, looking for dplyr solution
+data <- data.frame(data)
+data$ages <- round(data$daycor/365.25, 4)
+ds <- split(data[, c("patid", "items", "scores", "ages")], f = data$patid)
+dl <- lapply(ds, FUN = dscore)  # repeat estimation per person
+dazl <- lapply(dl, FUN = daz)
+d <- as.numeric(unlist(dl))
+DAZ <- as.numeric(unlist(dazl))
+```
+
+## Combine D-score and DAZ with source data
 
 
 ```{r}
-# Actions taken in this script
-# ------------- read data
-# ------------- rename to itembank names
-# ------------- reorganize to long matrix
-# ------------- calculate D-score
-# ------------- calculate D-score SDS
-# ------------- export to external file
+# still needs some work
 
-# ------------- preliminaries
-library("dscore")
-library("haven")
-library("dplyr")
+# prepare for join
+summ <- as.tbl(data) %>%
+  group_by(patid, moment) %>%
+  summarise(nd = n()) %>%
+  ungroup()
+summ <- data.frame(summ, d = d, DAZ = DAZ, 
+          idc = as.character(summ$patid), moc = as.character(summ$moment))
 
-pkg <- path.expand("~/SV/SV-036487/DscorePackage en webtool/DscorepackageV7")
-project <- path.expand("~/SV/SV-036487/POPS")
-datafile <- file.path(project, "data/pops4Dscore.sav")  # Created by PvD 13oct2015
+```
 
-# ------------- read data
-pops <- read_sav(datafile)
-itembank <- read.delim2(file = file.path(pkg, "itembankVWOv4.txt"))
-# repair one duplicate variable name in the itembank
-levels(itembank$ID.VWO1996) <- c(levels(itembank$ID.VWO1996), "na10")
-itembank[51, "ID.VWO1996"] <- "na10"
+```{r}
+pops <- mutate(pops, idc = as.character(patid), moc = as.character(moment))
+```
 
-# ------------- rename to match itembank variable names ID.VWO1996
-pops1 <- pops[, c(1:4, 5:8, 9:26)]
-names(pops1) <- c("id", "db", "mb", "yb",
-                  "dm", "mm", "ym", "age", 
-                  "v1", "v28", "v51", "v52", "v55", "v29", "v2",
-                  "v3", "v4", "v30", "v53", "v56", "v5", "v6", 
-                  "v54", "na1", "v58", "v57")
-pops2 <- pops[, c(1:4, 27:30, 31:48)]
-names(pops2) <- c("id", "db", "mb", "yb",
-                  "dm", "mm", "ym", "age", 
-                  "v3", "v4", "v30", "v53", "v56", "v5", "v6",
-                  "v54", "na1", "v58", "v57",
-                  "v7", "v8", "v9", "v59", "v60", "v61", "v33")
-pops3 <- pops[, c(1:4, 49:51, 52:71)]
-names(pops3) <- c("id", "db", "mb", "yb",
-                  "dm", "mm", "ym", "age", 
-                  "v7", "V8", "V9", "v59", "v60", "v61", "v33",
-                  "v62", "v10", "v63", "v64", "v36", "v34", 
-                  "v11", "v12", "v65", "v66", "na2", "v37")
-pops4 <- pops[, c(1:4, 72:75, 76:95)]
-names(pops4) <- c("id", "db", "mb", "yb", 
-                  "dm", "mm", "ym", "age", 
-                  "v13", "v14", "v39", "na4", 
-                  "v67", "v68", "v15", "v16", "na10", "v41", "na5",
-                  "v69", "v70", "v17", "v18", "v19", "na6",
-                  "v43", "v44", "v71")
-
-# ------------- reorganize to long matrix
-long <- bind_rows(pops1, pops2, pops3, pops4)
-rm(pops1, pops2, pops3, pops4)
-long <- arrange(long, id, age) %>% 
-  mutate(dag = age * 365.25)
+```{r join}
+# and join
+pops2 <- left_join(pops, summ, by = c("idc", "moc"))
+print(select(pops2, idc, moc, nd, d, DAZ), n = 15)
+```
 
 
-# ---- save first 97 records 
-pops97 <- dplyr::slice(pops, 1:97)
-  
-
-# ------------- calculate D-score
-source(file = file.path(pkg, "subfuncDDIv7.R"))
-source(file = file.path(pkg, "Dscorelistv7.R"))
-source(file = file.path(pkg, "subfuncDscorev7.R"))
-
-reference <- read.table(file = file.path(pkg, "Dreference.txt"), header = TRUE)
-#result <- Dscore(VWOdata = long, year = "1996", 
-#                 itembankVWO = itembank, ref = reference)
-
-# algorithm fails on high values of 'dag'. 
-#result <- Dscore(VWOdata = long[long$dag<1016,], year = "1996", 
-#                 itembankVWO = itembank, ref = reference)
-
-# ------------- calculate D-score SDS
-             
-             
-             
-# ------------- export to external file
-             
-           
-``` 
-
-             

@@ -70,7 +70,7 @@ daz <- function(d, x = as.numeric(names(d)),
 #' published in Van Buuren (2014). The table should contain the columns
 #' \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
 #' \code{year}, \code{month} or \code{day}.
-#' @param dec The number of decimals (default \code{dec = 3}).
+#' @param dec The number of decimals (default \code{dec = 2}).
 #' @return Names vector with D-scores with \code{length(z)} elements
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
@@ -90,7 +90,7 @@ daz <- function(d, x = as.numeric(names(d)),
 zad <- function(z, x = as.numeric(names(z)),
                 x.unit = "year", 
                 ref = dscore::Dreference, 
-                dec = 3) {
+                dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
   x.unit <- match.arg(x.unit, c("year", "month", "day"))
   

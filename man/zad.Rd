@@ -5,7 +5,7 @@
 \title{Inverse D-score standard deviation score}
 \usage{
 zad(z, x = as.numeric(names(z)), x.unit = "year",
-  ref = dscore::Dreference, dec = 3)
+  ref = dscore::Dreference, dec = 2)
 }
 \arguments{
 \item{z}{Vector of standard deviation scores (DAZ)}
@@ -23,7 +23,7 @@ published in Van Buuren (2014). The table should contain the columns
 \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
 \code{year}, \code{month} or \code{day}.}
 
-\item{dec}{The number of decimals (default \code{dec = 3}).}
+\item{dec}{The number of decimals (default \code{dec = 2}).}
 }
 \value{
 Names vector with D-scores with \code{length(z)} elements

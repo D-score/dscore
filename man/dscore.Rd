@@ -4,7 +4,7 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(scores, items = names(scores), age, theta = -10:80,
+dscore(scores, items = names(scores), ages, theta = -10:80,
   mem.between = 0, mem.within = 1, full = FALSE, dec = 2, ...)
 }
 \arguments{
@@ -16,7 +16,7 @@ Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
 \item{items}{A character vector with item names in the chosen \code{lexicon}. 
 The default is \code{names(scores)}.}
 
-\item{age}{Numeric vector with \code{length(scores)} elements, 
+\item{ages}{Numeric vector with \code{length(scores)} elements, 
 specifying decimal age in years. This information 
 is used 1) to break up calculations into separate D-scores per age, 
 and 2) to specify age-dependent priors.}

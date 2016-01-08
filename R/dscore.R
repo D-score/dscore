@@ -50,7 +50,7 @@
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.
 #' @param items A character vector with item names in the chosen \code{lexicon}. 
 #' The default is \code{names(scores)}.
-#' @param age Numeric vector with \code{length(scores)} elements, 
+#' @param ages Numeric vector with \code{length(scores)} elements, 
 #' specifying decimal age in years. This information 
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
@@ -128,7 +128,7 @@
 #' @export
 dscore <- function(scores, 
                    items = names(scores), 
-                   age,
+                   ages,
                    theta = -10:80,
                    mem.between = 0,
                    mem.within = 1,
@@ -136,9 +136,17 @@ dscore <- function(scores,
                    dec = 2,
                    ...) {
   
-  # check input lengths
-  if (length(scores) != length(age)) stop("Arguments `scores` and `age` of different length")
+  # call dscore as vector
+  if (is.data.frame(scores)) 
+    return(dscore(scores = scores$scores, 
+                  items = scores$items,
+                  ages = scores$ages, 
+                  ...))
+  
+  # check input length
+  if (length(scores) != length(ages)) stop("Arguments `scores` and `ages` of different length")
   if (length(scores) != length(items)) stop("Arguments `scores` and `items` of different length")
+  txxx <- theta
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
@@ -146,7 +154,7 @@ dscore <- function(scores,
                             head(items), ".")
   
   # split the data by age
-  dg <- split(data.frame(scores, age, items, tau), f = age)
+  dg <- split(data.frame(scores, ages, items, tau), f = ages)
   
   # create output array
   eap <- rep(NA, length = length(dg))
@@ -157,13 +165,13 @@ dscore <- function(scores,
   # iterate
   k <- 0                            # valid scores counter
   for (i in 1:length(dg)) {         # loop over unique ages
-    d <- dg[[i]]
-    cage <- d[1, "age"]             # current age
+    dgi <- dg[[i]]
+    cage <- dgi[1, "ages"]            # current age
     nextocc <- TRUE                 # flag for next occasion
     fullpost[[i]]$theta <- theta
-    for (j in 1:nrow(d)) {          # loop over items
-      score <- d[j, "scores"]       # observed score
-      tau   <- d[j, "tau"]
+    for (j in 1:nrow(dgi)) {          # loop over items
+      score <- dgi[j, "scores"]       # observed score
+      tau   <- dgi[j, "tau"]
       if (is.na(score) | is.na(cage) | is.na(tau)) next
       k <- k + 1                    # yes, we have a valid response
       

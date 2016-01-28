@@ -71,15 +71,15 @@ summ <- as.tbl(data) %>%
   group_by(patid, moment) %>%
   summarise(nd = n()) %>%
   ungroup()
-summ <- data.frame(summ, d = d, DAZ = DAZ, 
-          idc = as.character(summ$patid), moc = as.character(summ$moment))
+#summ <- data.frame(summ, d = d, DAZ = DAZ, 
+#          idc = as.character(summ$patid), moc = as.character(summ$moment))
 
 
 ## ------------------------------------------------------------------------
-pops <- mutate(pops, idc = as.character(patid), moc = as.character(moment))
+#pops <- mutate(pops, idc = as.character(patid), moc = as.character(moment))
 
-## ----join----------------------------------------------------------------
-# and join
-pops2 <- left_join(pops, summ, by = c("idc", "moc"))
-print(select(pops2, idc, moc, nd, d, DAZ), n = 15)
+## ----join, eval = FALSE--------------------------------------------------
+#  # and join
+#  pops2 <- left_join(pops, summ, by = c("idc", "moc"))
+#  print(select(pops2, idc, moc, nd, d, DAZ), n = 15)
 

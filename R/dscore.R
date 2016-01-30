@@ -47,7 +47,8 @@
 #' @param scores A vector containing PASS/FAIL observations 
 #' of a child on one or more developmental milestones. Scores are coded 
 #' as numerically as \code{pass = 1} and \code{fail = 0}. 
-#' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.
+#' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. Alternatively, \code{scores} can be a \code{data.frame} 
+#' containing columns named \code{items}, \code{scores} and \code{ages}.
 #' @param items A character vector with item names in the chosen \code{lexicon}. 
 #' The default is \code{names(scores)}.
 #' @param ages Numeric vector with \code{length(scores)} elements, 
@@ -154,7 +155,11 @@ dscore <- function(scores,
                             head(items), ".")
   
   # split the data by age
-  dg <- split(data.frame(scores, ages, items, tau), f = ages)
+  # if (all(is.na(ages))) stop("All ages are missing.")
+  dg <- split(data.frame(scores = scores, 
+                         ages = ages, 
+                         items = items, 
+                         tau = tau), f = ages)
   
   # create output array
   eap <- rep(NA, length = length(dg))

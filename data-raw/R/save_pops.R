@@ -7,7 +7,7 @@ library("dplyr")
 
 # define project
 project <- path.expand("~/Package/dscore/dscore")
-datafile <- file.path(project, "data-raw/data/POPS19groeiSDS2whoTranslatedExtra.sav")  # Created 16 Dec 2015
+datafile <- file.path(project, "data-raw/data/POPS19groeiSDS2whoTranslatedExtra.sav")  # Created 29 Jan 2016
 
 # ------------- read data
 pops <- haven::read_sav(datafile)

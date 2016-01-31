@@ -4,14 +4,15 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(scores, items = names(scores), ages, theta = -10:80,
-  mem.between = 0, mem.within = 1, full = FALSE, dec = 2, ...)
+dscore(scores, items = names(scores), ages, qp = -10:80, mem.between = 0,
+  mem.within = 1, full = FALSE, dec = 2, ...)
 }
 \arguments{
 \item{scores}{A vector containing PASS/FAIL observations 
 of a child on one or more developmental milestones. Scores are coded 
-as numerically as \code{pass = 1} and \code{fail = 0}. 
-Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
+numerically as \code{pass = 1} and \code{fail = 0}. 
+Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. Alternatively, \code{scores} can be a \code{data.frame} 
+containing columns named \code{items}, \code{scores} and \code{ages}.}
 
 \item{items}{A character vector with item names in the chosen \code{lexicon}. 
 The default is \code{names(scores)}.}
@@ -21,10 +22,10 @@ specifying decimal age in years. This information
 is used 1) to break up calculations into separate D-scores per age, 
 and 2) to specify age-dependent priors.}
 
-\item{theta}{A number vector of equally spaced quadrature points.
+\item{qp}{A number vector of equally spaced quadrature points.
 This vector should span the range of all D-score values, and 
 have at least 80 elements.
-The default \code{theta = -10:80} is suitable for children 
+The default \code{qp = -10:80} is suitable for children 
 aged 0-2 years.}
 
 \item{mem.between}{Fraction of posterior from previous occasion 
@@ -42,7 +43,7 @@ corresponds to counting only the last item. See details.}
 \item{full}{A logical indicating to return the mean of the posterior (\code{full = FALSE}, the default) or the full posterior 
 (\code{full = TRUE}).}
 
-\item{dec}{Number of decimal of the EAP estimates. Default is 2.}
+\item{dec}{Number of decimals of the EAP estimates. Default is 2.}
 
 \item{\dots}{Additional parameters passed down to \code{gettau()} (e.g., 
 \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
@@ -69,8 +70,11 @@ By default, the algorithm produces the expected a
 posteriori (EAP) estimate from \code{scores} using item 
 difficulty as obtained from the item bank, and an age-dependent
 prior of about twice the normal variation at the given age.
-The method uses Bayes rule. The function can also return the 
-full posterior instead of the EAP. See Bock and Mislevy (1982).
+The method uses Bayes rule. See Bock and Mislevy (1982) for more 
+details on the EAP and its variance. 
+Optionally, the \code{dscore()} function returns the 
+full posterior (instead of the EAP) if the argument 
+\code{full = TRUE} is specified.
 
 The mixing coefficients \code{mem.between} and \code{mem.within} are 
 0-1 numbers (fractions) that regulate the influence 
@@ -96,7 +100,7 @@ is set to \code{mem.within * post + (1 - mem.within) * adp()}, where
 previous item within age \code{t}, and 
 where \code{adp()} is the age-dependent prior at age \code{t}. 
 By default the mixing coefficient \code{mem.within = 1}, which
-mimmicks repeated application of Bayesian theorem to the current data 
+mimmicks repeated application of Bayesian rule to the current data 
 using 'old' data as prior.}
 }
 }
@@ -116,22 +120,22 @@ dscore(c(1, 0, 0, 1), items, age)
 
 # save full posterior
 fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
-plot(fp[[1]]$theta, fp[[1]]$posterior, type = "l",
+plot(fp[[1]]$qp, fp[[1]]$posterior, type = "l",
 xlab = "D-score", ylab = "Density", 
 main = "Age 21 days: 2 PASS, FAIL at GSMLEG")
-lines(fp[[1]]$theta, fp[[1]]$start, lty = 2)
+lines(fp[[1]]$qp, fp[[1]]$start, lty = 2)
 
 # hardly any difference between prior and posterior 
 # because PASS score is uninformative at age 42 days
-plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
 xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEG")
-lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 
 # However a FAIL score signals substantial delay at age 42 days
 fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
-plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
 xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
-lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 
 }
 \author{

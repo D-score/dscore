@@ -4,16 +4,16 @@
 \alias{posterior}
 \title{Calculate posterior for one item given score, difficulty and prior}
 \usage{
-posterior(score, tau, prior, theta)
+posterior(score, tau, prior, qp)
 }
 \arguments{
 \item{score}{A scalar value between 0 and m}
 
 \item{tau}{A vector of length \code{m} with uncentralized thresholds from the Rasch model}
 
-\item{prior}{vector of prior values on quadrature points \code{theta}}
+\item{prior}{vector of prior values on quadrature points \code{qp}}
 
-\item{theta}{vector of equally spaced quadrature points}
+\item{qp}{vector of equally spaced quadrature points}
 }
 \value{
 A vector of length \code{length(prior)}
@@ -23,8 +23,10 @@ Calculate posterior for one item given score, difficulty and prior
 }
 \details{
 This function assumes that the difficulties have been estimated by 
-a polytomous Rasch model, e.g. by \code{RUMM2030} or 
-\code{sirt::rasch.pairwise()}, and transformed onto the 
+a binary Rasch model (e.g. by 
+\code{sirt::rasch.pairwise.itemcluster()}) or - more generally - by 
+a polytomous Rasch model (e.g. by \code{RUMM2030}), and 
+transformed onto the 
 appropriate scale. The response vector takes on values
 \code{0:m}. The binary Rasch model assumes \code{m = 1}. The D-score
 calculation assumes binary scores. 
@@ -45,6 +47,6 @@ Rasch Unidimensional Measurement Models. Perth: 2015.
 }
 \seealso{
 \code{\link{dscore}}, \code{\link{adp}}, 
-\code{\link[sirt]{rasch.pairwise}}
+\code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
 

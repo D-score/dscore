@@ -4,12 +4,12 @@
 \alias{adp}
 \title{Age-dependent prior}
 \usage{
-adp(age, theta, mu = NULL, sd = 5, reference = dscore::Dreference, ...)
+adp(age, qp, mu = NULL, sd = 5, reference = dscore::Dreference, ...)
 }
 \arguments{
 \item{age}{Numeric, single value}
 
-\item{theta}{A number vector of equally spaced quadrature points}
+\item{qp}{A number vector of equally spaced quadrature points}
 
 \item{mu}{The mean of the prior. If \code{is.null(mu)} (the default) the prior is taken from the age-dependent reference.}
 
@@ -22,8 +22,8 @@ published in Van Buuren (2014).}
 \item{\dots}{Additional parameters (ignored)}
 }
 \value{
-A \code{vector} of \code{length(theta)} elements with 
-the prior density estimate at each quadature point \code{theta}.
+A \code{vector} of \code{length(qp)} elements with 
+the prior density estimate at each quadature point \code{qp}.
 }
 \description{
 Returns the age-dependent prior N(mu, 5) at the 
@@ -31,14 +31,14 @@ specified quadrature points.
 }
 \examples{
 # define quadrature points for D-score
-theta <- -10:80
+qp <- -10:80
 
 # calculate and plot three priors
-plot(x = theta, y= adp(1/12, theta), type = "l", 
+plot(x = qp, y= adp(1/12, qp), type = "l", 
   main = "Priors at ages of 1, 12 and 24 months", 
   ylab = "Density", xlab = "D-score")
-lines(x = theta, adp(1, theta), lty = 2)
-lines(x = theta, adp(2, theta), lty = 3)
+lines(x = qp, adp(1, qp), lty = 2)
+lines(x = qp, adp(2, qp), lty = 3)
 }
 \references{
 Van Buuren S (2014). Growth charts of human development.

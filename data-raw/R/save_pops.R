@@ -15,8 +15,8 @@ pops <- haven::read_sav(datafile)
 # ------------- select developmental data, children <= 2 years
 pops <- dplyr::filter(pops, occ <= 4) %>%
   dplyr::select(patid, gender, gestationalage, moment,
-                age, occ, daycor, Dscore, popsdscoresds, dead,
-                44:100)
+                age, occ, daycor, dead,
+                42:98, dscore, daz)
 
 # ---- save first 25 children
 pops <- dplyr::slice(pops, 1:100)

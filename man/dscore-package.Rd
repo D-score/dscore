@@ -9,7 +9,8 @@ The \code{dscore} package provides two important functions:
 \code{dscore} and \code{daz}.
 }
 \note{
-Development of this package was kindly suported by the HBGDki
+Development of this package was kindly supported under the Healthy
+Birth, Growth and Development knowledge integration (HBGDki)
 program of the Bill & Melinda Gates Foundation.
 }
 \section{\code{dscore} functions}{
@@ -33,16 +34,17 @@ the inverse operation, from DAZ to D-score.
 
 \section{External data}{
 
-The calculations requires three sets of external data:
+The calculations require three sets of external data:
 \describe{
-\item{data}{The PASS/FAIL responses on a appropriate set
+\item{data}{The PASS/FAIL responses on an appropriate set
 of developmental items. These data are typically supplied by 
-the user. For illustration, the package contain a built-in 
+the user. For illustration, the package contains a built-in 
 small demo dataset from the POPS study in \code{dscore::pops}.}
 \item{itembank}{A table that contains the difficulty of each 
 item, as estimated under the unidimensional Rasch 1-PL model. By 
 default, calculations use the built-in \code{dscore::itembank}.}
-\item{reference}{A table with LMS reference values used to transform to D-score to DAZ, or DAZ to D-score. By default, calculations
+\item{reference}{A table with LMS reference values used to transform from D-score to DAZ, or DAZ to D-score. 
+By default, calculations
 use the built-in references \code{dscore::Dreference}.}
 }
 }

@@ -4,13 +4,13 @@
 \alias{normalize}
 \title{Normalize distribution}
 \usage{
-normalize(d, theta)
+normalize(d, qp)
 }
 \arguments{
-\item{d}{A vector with \code{length(theta)} elements representing
+\item{d}{A vector with \code{length(qp)} elements representing
 the unscaled density at each quadrature point.}
 
-\item{theta}{Vector of equally spaced quadrature points.}
+\item{qp}{Vector of equally spaced quadrature points.}
 }
 \value{
 A \code{vector} of \code{length(d)} elements with 
@@ -21,10 +21,10 @@ Normalizes the distribution so that the total mass equals 1.
 }
 \examples{
 # simple normalization examples
-normalize(c(5, 10, 5), theta = c(0, 1, 2))
-normalize(c(1, 5, 8, 5, 1), theta = 1:5)
+normalize(c(5, 10, 5), qp = c(0, 1, 2))
+normalize(c(1, 5, 8, 5, 1), qp = 1:5)
 
 # the sum is always equal to 1
-sum(normalize(rnorm(5), theta = 1:5))
+sum(normalize(rnorm(5), qp = 1:5))
 }
 

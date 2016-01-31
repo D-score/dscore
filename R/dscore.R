@@ -12,8 +12,11 @@
 #' posteriori (EAP) estimate from \code{scores} using item 
 #' difficulty as obtained from the item bank, and an age-dependent
 #' prior of about twice the normal variation at the given age.
-#' The method uses Bayes rule. The function can also return the 
-#' full posterior instead of the EAP. See Bock and Mislevy (1982).
+#' The method uses Bayes rule. See Bock and Mislevy (1982) for more 
+#' details on the EAP and its variance. 
+#' Optionally, the \code{dscore()} function returns the 
+#' full posterior (instead of the EAP) if the argument 
+#' \code{full = TRUE} is specified.
 #' 
 #' The mixing coefficients \code{mem.between} and \code{mem.within} are 
 #' 0-1 numbers (fractions) that regulate the influence 
@@ -39,14 +42,14 @@
 #' previous item within age \code{t}, and 
 #' where \code{adp()} is the age-dependent prior at age \code{t}. 
 #' By default the mixing coefficient \code{mem.within = 1}, which
-#' mimmicks repeated application of Bayesian theorem to the current data 
+#' mimmicks repeated application of Bayesian rule to the current data 
 #' using 'old' data as prior.}
 #' }
 #' 
 #' @aliases dscore 
 #' @param scores A vector containing PASS/FAIL observations 
 #' of a child on one or more developmental milestones. Scores are coded 
-#' as numerically as \code{pass = 1} and \code{fail = 0}. 
+#' numerically as \code{pass = 1} and \code{fail = 0}. 
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. Alternatively, \code{scores} can be a \code{data.frame} 
 #' containing columns named \code{items}, \code{scores} and \code{ages}.
 #' @param items A character vector with item names in the chosen \code{lexicon}. 
@@ -55,10 +58,10 @@
 #' specifying decimal age in years. This information 
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
-#' @param theta A number vector of equally spaced quadrature points.
+#' @param qp A number vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values, and 
 #' have at least 80 elements.
-#' The default \code{theta = -10:80} is suitable for children 
+#' The default \code{qp = -10:80} is suitable for children 
 #' aged 0-2 years.
 #' @param mem.between Fraction of posterior from previous occasion 
 #' relative to age-dependent prior. The 
@@ -72,7 +75,7 @@
 #' corresponds to counting only the last item. See details.
 #' @param full A logical indicating to return the mean of the posterior (\code{full = FALSE}, the default) or the full posterior 
 #' (\code{full = TRUE}).
-#' @param dec Number of decimal of the EAP estimates. Default is 2.
+#' @param dec Number of decimals of the EAP estimates. Default is 2.
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
 #' \code{sd} or \code{reference}).
@@ -109,28 +112,28 @@
 #' 
 #' # save full posterior
 #' fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
-#' plot(fp[[1]]$theta, fp[[1]]$posterior, type = "l",
+#' plot(fp[[1]]$qp, fp[[1]]$posterior, type = "l",
 #' xlab = "D-score", ylab = "Density", 
 #' main = "Age 21 days: 2 PASS, FAIL at GSMLEG")
-#' lines(fp[[1]]$theta, fp[[1]]$start, lty = 2)
+#' lines(fp[[1]]$qp, fp[[1]]$start, lty = 2)
 #' 
 #' # hardly any difference between prior and posterior 
 #' # because PASS score is uninformative at age 42 days
-#' plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+#' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
 #' xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEG")
-#' lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+#' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 #' 
 #' # However a FAIL score signals substantial delay at age 42 days
 #' fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
-#' plot(fp[[2]]$theta, fp[[2]]$posterior, type = "l",
+#' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
 #' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
-#' lines(fp[[2]]$theta, fp[[2]]$start, lty = 2)
+#' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 #' 
 #' @export
 dscore <- function(scores, 
                    items = names(scores), 
                    ages,
-                   theta = -10:80,
+                   qp = -10:80,
                    mem.between = 0,
                    mem.within = 1,
                    full = FALSE,
@@ -147,7 +150,7 @@ dscore <- function(scores,
   # check input length
   if (length(scores) != length(ages)) stop("Arguments `scores` and `ages` of different length")
   if (length(scores) != length(items)) stop("Arguments `scores` and `items` of different length")
-  txxx <- theta
+  txxx <- qp
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
@@ -163,7 +166,7 @@ dscore <- function(scores,
   
   # create output array
   eap <- rep(NA, length = length(dg))
-  post <- list(eap = NA, start = NULL, theta = NULL, posterior = NULL)
+  post <- list(eap = NA, start = NULL, qp = NULL, posterior = NULL)
   fullpost <- rep(list(post), length = length(dg))
   names(fullpost) <- names(eap) <- names(dg)
   
@@ -173,7 +176,7 @@ dscore <- function(scores,
     dgi <- dg[[i]]
     cage <- dgi[1, "ages"]            # current age
     nextocc <- TRUE                 # flag for next occasion
-    fullpost[[i]]$theta <- theta
+    fullpost[[i]]$qp <- qp
     for (j in 1:nrow(dgi)) {          # loop over items
       score <- dgi[j, "scores"]       # observed score
       tau   <- dgi[j, "tau"]
@@ -182,7 +185,7 @@ dscore <- function(scores,
       
       # CASE A: k == 1: start with age-dependent prior for first valid score
       if (k == 1) {
-        prior <- adp(age = cage, theta = theta, ...)
+        prior <- adp(age = cage, qp = qp, ...)
         fullpost[[i]]$start <- prior
         nextocc <- FALSE
       }
@@ -192,8 +195,8 @@ dscore <- function(scores,
       # 'previous occasion posterior' by mem.between
       else if (nextocc) {
         prior <- mem.between * post + 
-          (1 - mem.between) * adp(age = cage, theta = theta, ...)
-        prior <- normalize(prior, theta)
+          (1 - mem.between) * adp(age = cage, qp = qp, ...)
+        prior <- normalize(prior, qp)
         fullpost[[i]]$start <- prior
         nextocc <- FALSE
       }
@@ -201,16 +204,16 @@ dscore <- function(scores,
       # CASE C: weight 'previous score posterior' by mem.within
       else {
         prior <- mem.within * post + 
-          (1 - mem.within) * adp(age = cage, theta = theta, ...)
-        prior <- normalize(prior, theta)
+          (1 - mem.within) * adp(age = cage, qp = qp, ...)
+        prior <- normalize(prior, qp)
       }
       
       # calculate posterior
-      post <- posterior(score, tau, prior, theta)
+      post <- posterior(score, tau, prior, qp)
       fullpost[[i]]$posterior <- post
       
       # overwrite old eap estimate by new one
-      fullpost[[i]]$eap <- eap[i] <- weighted.mean(theta, w = post)
+      fullpost[[i]]$eap <- eap[i] <- weighted.mean(qp, w = post)
     }
   }
   if (!full) return(round(eap, dec))
@@ -222,8 +225,10 @@ dscore <- function(scores,
 #'
 #' @details
 #' This function assumes that the difficulties have been estimated by 
-#' a polytomous Rasch model, e.g. by \code{RUMM2030} or 
-#' \code{sirt::rasch.pairwise()}, and transformed onto the 
+#' a binary Rasch model (e.g. by 
+#' \code{sirt::rasch.pairwise.itemcluster()}) or - more generally - by 
+#' a polytomous Rasch model (e.g. by \code{RUMM2030}), and 
+#' transformed onto the 
 #' appropriate scale. The response vector takes on values
 #' \code{0:m}. The binary Rasch model assumes \code{m = 1}. The D-score
 #' calculation assumes binary scores. 
@@ -235,8 +240,8 @@ dscore <- function(scores,
 #' @aliases posterior
 #' @param score A scalar value between 0 and m
 #' @param tau A vector of length \code{m} with uncentralized thresholds from the Rasch model
-#' @param prior vector of prior values on quadrature points \code{theta}
-#' @param theta vector of equally spaced quadrature points
+#' @param prior vector of prior values on quadrature points \code{qp}
+#' @param qp vector of equally spaced quadrature points
 #' @return A vector of length \code{length(prior)}
 #' @author Stef van Buuren 2016
 #' @references
@@ -246,9 +251,9 @@ dscore <- function(scores,
 #' RUMM Laboratories. RUMM 2030. 
 #' Rasch Unidimensional Measurement Models. Perth: 2015.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
-#' \code{\link[sirt]{rasch.pairwise}}
+#' \code{\link[sirt]{rasch.pairwise.itemcluster}}
 #' @export
-posterior <- function(score, tau, prior, theta)
+posterior <- function(score, tau, prior, qp)
 {
   m <- length(tau)
   score <- floor(score)
@@ -256,7 +261,7 @@ posterior <- function(score, tau, prior, theta)
   
   # compute category response probability under the 1PL (Rasch) model
   # for a vector of uncentralized threshold parameters tau
-  cpc <- t(exp(outer(0:m, theta) + c(0, -cumsum(tau))))
+  cpc <- t(exp(outer(0:m, qp) + c(0, -cumsum(tau))))
   cpc <- cpc[,score + 1] / rowSums(cpc)
   cpc <- cpc / sum(cpc)
   
@@ -265,7 +270,7 @@ posterior <- function(score, tau, prior, theta)
   
   # calculate the posterior per category
   postcat <- cpc * prior
-  postcat <- normalize(postcat, theta)
+  postcat <- normalize(postcat, qp)
   
   # 
   return(postcat)
@@ -331,58 +336,58 @@ gettau <- function(items,
 #' specified quadrature points.
 #' @aliases adp
 #' @param age Numeric, single value
-#' @param theta A number vector of equally spaced quadrature points
+#' @param qp A number vector of equally spaced quadrature points
 #' @param mu The mean of the prior. If \code{is.null(mu)} (the default) the prior is taken from the age-dependent reference. 
 #' @param sd Standard deviation of the prior. The default is 5.
 #' @param reference the LMS reference values. The default uses the 
 #' built-in reference \code{dscore::Dreference} for Dutch children
 #' published in Van Buuren (2014).
 #' @param \dots Additional parameters (ignored)
-#' @return  A \code{vector} of \code{length(theta)} elements with 
-#' the prior density estimate at each quadature point \code{theta}.
+#' @return  A \code{vector} of \code{length(qp)} elements with 
+#' the prior density estimate at each quadature point \code{qp}.
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}
 #' @examples 
 #' # define quadrature points for D-score
-#' theta <- -10:80
+#' qp <- -10:80
 #' 
 #' # calculate and plot three priors
-#' plot(x = theta, y= adp(1/12, theta), type = "l", 
+#' plot(x = qp, y= adp(1/12, qp), type = "l", 
 #'   main = "Priors at ages of 1, 12 and 24 months", 
 #'   ylab = "Density", xlab = "D-score")
-#' lines(x = theta, adp(1, theta), lty = 2)
-#' lines(x = theta, adp(2, theta), lty = 3)
+#' lines(x = qp, adp(1, qp), lty = 2)
+#' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, theta, mu = NULL, sd = 5, 
+adp <- function(age, qp, mu = NULL, sd = 5, 
                 reference = dscore::Dreference, ...) {
   if (is.null(mu)) mu <- approx(y = reference$mu, x = reference$year,
                                 xout = round(age, 4), yleft = reference$mu[1])$y
-  p <- dnorm(theta, mean = mu, sd = sd)
-  return(normalize(p, theta))
+  p <- dnorm(qp, mean = mu, sd = sd)
+  return(normalize(p, qp))
 }
 
 #' Normalize distribution
 #'
 #' Normalizes the distribution so that the total mass equals 1.
 #' @aliases normalize
-#' @param d A vector with \code{length(theta)} elements representing
+#' @param d A vector with \code{length(qp)} elements representing
 #' the unscaled density at each quadrature point.
-#' @param theta Vector of equally spaced quadrature points.
+#' @param qp Vector of equally spaced quadrature points.
 #' @return A \code{vector} of \code{length(d)} elements with 
 #' the prior density estimate at each quadature point.
 #' @examples 
 #' # simple normalization examples
-#' normalize(c(5, 10, 5), theta = c(0, 1, 2))
-#' normalize(c(1, 5, 8, 5, 1), theta = 1:5)
+#' normalize(c(5, 10, 5), qp = c(0, 1, 2))
+#' normalize(c(1, 5, 8, 5, 1), qp = 1:5)
 #' 
 #' # the sum is always equal to 1
-#' sum(normalize(rnorm(5), theta = 1:5))
+#' sum(normalize(rnorm(5), qp = 1:5))
 #' @export
-normalize <- function(d, theta) {
-  if (length(d) != length(theta)) stop("Arguments `d` and  `theta` of different length")
+normalize <- function(d, qp) {
+  if (length(d) != length(qp)) stop("Arguments `d` and  `qp` of different length")
   d <- d / sum(d)
-  return(d / (theta[2] - theta[1]))
+  return(d / (qp[2] - qp[1]))
 }
 

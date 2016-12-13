@@ -1,6 +1,8 @@
 # dscore.R
 
 #' @importFrom dplyr select mutate slice bind_rows
+#' @importFrom stats approx dnorm weighted.mean
+#' @importFrom utils head
 NULL
 
 #' dscore: A package for calculating D-scores

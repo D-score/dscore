@@ -38,12 +38,14 @@
 #' item name (in various systems), item labels and difficulty. 
 #' 
 #' @docType data
-#' @format A \code{data.frame} with 84 rows and 11 variables:
+#' @format A \code{data.frame} with 112 rows and 13 variables:
 #' \describe{
-#' \item{ID.VWO1996}{Item name, VWO1996 version}
-#' \item{ID.VWO2005}{Item name, VWO2005 version}
-#' \item{ID.VWO1983}{Item name, VWO1983 version}
-#' \item{ID.smock}{Item name, SMOCC data}
+#' \item{lex.dutch1996}{Item naming, VWO1996 version}
+#' \item{lex.dutch2005}{Item naming, VWO2005 version}
+#' \item{lex.dutch1983}{Item naming, VWO1983 version}
+#' \item{lex.SMOCC}{Item naming, original SMOCC variable names}
+#' \item{lex.GHAP}{Item naming used by GHAP platform of BMGF}
+#' \item{lex.jam}{Item naming for Jamaica project}
 #' \item{occ}{Occasion number}
 #' \item{labelNL}{Label (Dutch)}
 #' \item{labelEN}{Label (English)}

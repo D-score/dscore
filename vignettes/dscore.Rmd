@@ -45,7 +45,7 @@ names(pops)[test]
 These names need to be matched against one of the lexicons in the item bank. The built-in lexicons are:
 
 ```{r}
-names(itembank)[1:5]
+names(itembank)[1:6]
 ```
 
 In the sequel, we will use the GHAP lexicon. The items for which we have difficulty estimates `tau` in this 
@@ -143,5 +143,4 @@ pops$ages <- round(pops$daycor/365.25, 4)
 pops <- merge(pops, df, all.x = TRUE)
 head(select(pops, patid, moment, ages, dscore, daz))
 ```
-
 

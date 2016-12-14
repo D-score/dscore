@@ -11,21 +11,20 @@ length(unique(pops$patid))
 
 ## ------------------------------------------------------------------------
 test <- 9:65
-names(pops)[test]
 
 ## ------------------------------------------------------------------------
 names(itembank)[1:6]
 
 ## ------------------------------------------------------------------------
-ib <- itembank[!is.na(itembank$tau),c("lex.GHAP", "labelEN", "tau")]
+itemset <- !is.na(itembank$lex.dutch1983)
+cbind(names(pops)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
+
+## ------------------------------------------------------------------------
+ib <- itembank[itemset,c("lex.dutch1983", "lex.GHAP", "labelEN", "tau")]
 head(ib, 3)
 
 ## ------------------------------------------------------------------------
-head(data.frame(source = names(pops)[test], ghap = ib$lex.GHAP))
-
-## ------------------------------------------------------------------------
 names(pops)[test] <- as.character(ib$lex.GHAP)
-names(pops)
 
 ## ------------------------------------------------------------------------
 gettau(names(pops)[test])

@@ -36,37 +36,38 @@ The are 25 children and 4 time points.
 length(unique(pops$patid))
 ```
 
-The item scores that form the test are located in columns 9-65. Their names are:
+The item scores that form the test are located in columns 9-65.
 ```{r}
 test <- 9:65
-names(pops)[test]
 ```
 
-These names need to be matched against one of the lexicons in the item bank. The built-in lexicons are:
+These names of the columns need to be matched against one of the lexicons in the item bank. The built-in lexicons are:
 
 ```{r}
 names(itembank)[1:6]
 ```
 
-In the sequel, we will use the GHAP lexicon. The items for which we have difficulty estimates `tau` in this 
-lexicon is
+We first need to find out a proper lexicon for the data. For the POPS data, the closest lexicon is 
+\code{lex.dutch1983}. Let us check the variable names in POPS with the item labels in the item bank.
 
 ```{r}
-ib <- itembank[!is.na(itembank$tau),c("lex.GHAP", "labelEN", "tau")]
+itemset <- !is.na(itembank$lex.dutch1983)
+cbind(names(pops)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
+```
+
+In this case, we are lucky that all item names from the source data and the item bank match up exactly. 
+In general, we will need to map carefully the names in the dataset to the names in the item bank. For POPS, 
+we may take out the relevant parts of the item bank as
+
+```{r}
+ib <- itembank[itemset,c("lex.dutch1983", "lex.GHAP", "labelEN", "tau")]
 head(ib, 3)
 ```
 
-In this case, we tend to be lucky that the item names from the source data and the item bank match up exactly.
-
-```{r}
-head(data.frame(source = names(pops)[test], ghap = ib$lex.GHAP))
-```
-
-Renaming the source data is now easy:
+From here on, we will work in the GHAP lexicon. Renaming the source data is now done by
 
 ```{r}
 names(pops)[test] <- as.character(ib$lex.GHAP)
-names(pops)
 ```
 
 The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `gettau()` function:

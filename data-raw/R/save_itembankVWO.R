@@ -2,7 +2,7 @@
 
 # define project
 project <- path.expand("~/Package/dscore/dscore")
-datafile <- file.path(project, "data-raw/data/itembankVWO.txt")  # Dated Dec 12, 2016
+datafile <- file.path(project, "data-raw/data/itembankVWO.txt")  # Dec 14, 2016
 
 # ------------- read data
 itembank <- read.delim2(file = datafile)

@@ -1,8 +1,7 @@
 Package: dscore
 Type: Package
 Title: D-score for child development 
-Version: 0.19.0
-Date: 2016-12-14
+Version: 0.20.0
 Authors@R: person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("aut","cre"))
 Description: The dscore package provides a set of tools for calculating 
     the D-score, a quantitative measure of child development. 

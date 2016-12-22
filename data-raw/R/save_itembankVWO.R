@@ -5,7 +5,7 @@ project <- path.expand("~/Package/dscore/dscore")
 datafile <- file.path(project, "data-raw/data/itembankVWO.txt")  # Dec 14, 2016
 
 # ------------- read data
-itembank <- read.delim2(file = datafile)
+itembank <- read.delim(file = datafile)
 
 # change names to lex.xxx convention
 names(itembank)[1:6] <- c("lex.dutch1996", "lex.dutch2005", 

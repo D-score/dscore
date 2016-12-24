@@ -60,9 +60,8 @@
 #' and 2) to specify age-dependent priors. 
 #' @param qp A number vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values, and 
-#' have at least 80 elements.
-#' The default \code{qp = -10:80} is suitable for children 
-#' aged 0-2 years.
+#' have at least 80 elements. The default is 
+#' \code{qp = -10:100}, which is suitable for age range 0-4 years.
 #' @param mem.between Fraction of posterior from previous occasion 
 #' relative to age-dependent prior. The 
 #' value \code{mem.between = 0} (the default) means that 
@@ -133,7 +132,7 @@
 dscore <- function(scores, 
                    items = names(scores), 
                    ages,
-                   qp = -10:80,
+                   qp = -10:100,
                    mem.between = 0,
                    mem.within = 1,
                    full = FALSE,
@@ -141,7 +140,7 @@ dscore <- function(scores,
                    ...) {
   
   # call dscore as vector
-  if (is.data.frame(scores)) 
+  if (is.data.frame(scores))
     return(dscore(scores = scores$scores, 
                   items = scores$items,
                   ages = scores$ages, 
@@ -335,9 +334,13 @@ gettau <- function(items,
 #' Returns the age-dependent prior N(mu, 5) at the 
 #' specified quadrature points.
 #' @aliases adp
-#' @param age Numeric, single value
-#' @param qp A number vector of equally spaced quadrature points
-#' @param mu The mean of the prior. If \code{is.null(mu)} (the default) the prior is taken from the age-dependent reference. 
+#' @param age Age in years. Numeric, single value
+#' @param qp A number vector of equally spaced quadrature points.
+#' This vector should span the range of all D-score values, and 
+#' have at least 80 elements. The default is 
+#' \code{qp = -10:100}, which is suitable for age range 0-4 years.
+#' @param mu The mean of the prior. If \code{is.null(mu)} (the default) 
+#' the prior is taken from the age-dependent reference. 
 #' @param sd Standard deviation of the prior. The default is 5.
 #' @param reference the LMS reference values. The default uses the 
 #' built-in reference \code{dscore::Dreference} for Dutch children
@@ -345,12 +348,14 @@ gettau <- function(items,
 #' @param \dots Additional parameters (ignored)
 #' @return  A \code{vector} of \code{length(qp)} elements with 
 #' the prior density estimate at each quadature point \code{qp}.
+#' @note Use \code{qp = -10:80} to reproduce 0-2 year estimates in 
+#' Van Buuren (2014).
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}
 #' @examples 
-#' # define quadrature points for D-score
+#' # define quadrature points for D-score, as used in Van Buuren 2014
 #' qp <- -10:80
 #' 
 #' # calculate and plot three priors
@@ -360,7 +365,7 @@ gettau <- function(items,
 #' lines(x = qp, adp(1, qp), lty = 2)
 #' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, qp, mu = NULL, sd = 5, 
+adp <- function(age, qp = -10:100, mu = NULL, sd = 5, 
                 reference = dscore::Dreference, ...) {
   if (is.null(mu)) mu <- approx(y = reference$mu, x = reference$year,
                                 xout = round(age, 4), yleft = reference$mu[1])$y

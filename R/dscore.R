@@ -168,6 +168,12 @@ dscore <- function(scores,
   fullpost <- rep(list(post), length = length(dg))
   names(fullpost) <- names(eap) <- names(dg)
   
+  # abort if there is no valid age
+  if (length(dg) == 0) {
+    if (!full) return(NA)
+    return(fullpost)
+  }
+  
   # iterate
   k <- 0                            # valid scores counter
   for (i in 1:length(dg)) {         # loop over unique ages
@@ -214,6 +220,7 @@ dscore <- function(scores,
       fullpost[[i]]$eap <- eap[i] <- weighted.mean(qp, w = post)
     }
   }
+  
   if (!full) return(round(eap, dec))
   return(fullpost)
 }
@@ -333,13 +340,16 @@ gettau <- function(items,
 #' Returns the age-dependent prior N(mu, 5) at the 
 #' specified quadrature points.
 #' @aliases adp
-#' @param age Age in years. Numeric, single value
+#' @param age Age in years. Numeric, single value. If a vector, only the 
+#' first value will be used.
 #' @param qp A number vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values, and 
 #' have at least 80 elements. The default is 
 #' \code{qp = -10:100}, which is suitable for age range 0-4 years.
-#' @param mu The mean of the prior. If \code{is.null(mu)} (the default) 
-#' the prior is taken from the age-dependent reference. 
+#' @param mu The mean of the prior. If \code{mu = "model"} (the default)
+#' then \code{mu} is calculated from the Count model coded in 
+#' \code{dscore:::count_mu()}. Specify \code{mu = "reference"} in order
+#' to take it from the age-dependent reference (default < 0.22).
 #' @param sd Standard deviation of the prior. The default is 5.
 #' @param reference the LMS reference values. The default uses the 
 #' built-in reference \code{dscore::Dreference} for Dutch children
@@ -364,16 +374,20 @@ gettau <- function(items,
 #' lines(x = qp, adp(1, qp), lty = 2)
 #' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, qp = -10:100, mu = NULL, sd = 5, 
+adp <- function(age, qp = -10:100, mu = "model", sd = 5, 
                 reference = dscore::Dreference, ...) {
-  if (is.null(mu)) 
+  age <- age[1]
+  if (mu == "model") mu <- ifelse(is.na(age), NA, count_mu(age))
+  if (mu == "reference")
     mu <- ifelse(is.na(age),
-                  NA, 
-                  approx(y = reference$mu, x = reference$year,
-                         xout = round(age, 4), yleft = reference$mu[1])$y)
+                 NA, 
+                 approx(y = reference$mu, x = reference$year,
+                        xout = round(age, 4), yleft = reference$mu[1])$y)
   p <- dnorm(qp, mean = mu, sd = sd)
   return(normalize(p, qp))
 }
+
+count_mu <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
 
 #' Normalize distribution
 #'

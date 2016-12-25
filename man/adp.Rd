@@ -4,19 +4,22 @@
 \alias{adp}
 \title{Age-dependent prior}
 \usage{
-adp(age, qp = -10:100, mu = NULL, sd = 5,
+adp(age, qp = -10:100, mu = "model", sd = 5,
   reference = dscore::Dreference, ...)
 }
 \arguments{
-\item{age}{Age in years. Numeric, single value}
+\item{age}{Age in years. Numeric, single value. If a vector, only the 
+first value will be used.}
 
 \item{qp}{A number vector of equally spaced quadrature points.
 This vector should span the range of all D-score values, and 
 have at least 80 elements. The default is 
 \code{qp = -10:100}, which is suitable for age range 0-4 years.}
 
-\item{mu}{The mean of the prior. If \code{is.null(mu)} (the default) 
-the prior is taken from the age-dependent reference.}
+\item{mu}{The mean of the prior. If \code{mu = "model"} (the default)
+then \code{mu} is calculated from the Count model coded in 
+\code{dscore:::count_mu()}. Specify \code{mu = "reference"} in order
+to take it from the age-dependent reference (default < 0.22).}
 
 \item{sd}{Standard deviation of the prior. The default is 5.}
 

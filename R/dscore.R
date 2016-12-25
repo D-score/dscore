@@ -149,7 +149,6 @@ dscore <- function(scores,
   # check input length
   if (length(scores) != length(ages)) stop("Arguments `scores` and `ages` of different length")
   if (length(scores) != length(items)) stop("Arguments `scores` and `items` of different length")
-  txxx <- qp
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
@@ -367,8 +366,11 @@ gettau <- function(items,
 #' @export
 adp <- function(age, qp = -10:100, mu = NULL, sd = 5, 
                 reference = dscore::Dreference, ...) {
-  if (is.null(mu)) mu <- approx(y = reference$mu, x = reference$year,
-                                xout = round(age, 4), yleft = reference$mu[1])$y
+  if (is.null(mu)) 
+    mu <- ifelse(is.na(age),
+                  NA, 
+                  approx(y = reference$mu, x = reference$year,
+                         xout = round(age, 4), yleft = reference$mu[1])$y)
   p <- dnorm(qp, mean = mu, sd = sd)
   return(normalize(p, qp))
 }

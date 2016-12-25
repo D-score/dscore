@@ -257,7 +257,6 @@ dscore <- function(scores,
 #' Rasch Unidimensional Measurement Models. Perth: 2015.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
 #' \code{\link[sirt]{rasch.pairwise.itemcluster}}
-#' @export
 posterior <- function(score, tau, prior, qp)
 {
   m <- length(tau)
@@ -400,12 +399,11 @@ count_mu <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
 #' the prior density estimate at each quadature point.
 #' @examples 
 #' # simple normalization examples
-#' normalize(c(5, 10, 5), qp = c(0, 1, 2))
-#' normalize(c(1, 5, 8, 5, 1), qp = 1:5)
+#' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
+#' dscore:::normalize(c(1, 5, 8, 5, 1), qp = 1:5)
 #' 
 #' # the sum is always equal to 1
-#' sum(normalize(rnorm(5), qp = 1:5))
-#' @export
+#' sum(dscore:::normalize(rnorm(5), qp = 1:5))
 normalize <- function(d, qp) {
   if (length(d) != length(qp)) stop("Arguments `d` and  `qp` of different length")
   d <- d / sum(d)

@@ -21,10 +21,10 @@ Normalizes the distribution so that the total mass equals 1.
 }
 \examples{
 # simple normalization examples
-normalize(c(5, 10, 5), qp = c(0, 1, 2))
-normalize(c(1, 5, 8, 5, 1), qp = 1:5)
+dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
+dscore:::normalize(c(1, 5, 8, 5, 1), qp = 1:5)
 
 # the sum is always equal to 1
-sum(normalize(rnorm(5), qp = 1:5))
+sum(dscore:::normalize(rnorm(5), qp = 1:5))
 }
 

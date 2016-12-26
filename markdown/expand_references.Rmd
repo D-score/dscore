@@ -1,6 +1,6 @@
 ---
-title: "D-scores and references, ages 2-4 years"
-author: "Stef van Buuren"
+title: "D-scores and references for ages 2-4 years"
+author: "Stef van Buuren, Elise Dusseldorp, Bernice Doove"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 7)
 
 ## Objective
 
-The vignette `dmetric::D-score_expand.html` describes how the Rasch model 
+The document `expand_tau.html` describes how the Rasch model 
 was used to estimate difficulty levels of 19 items for ages 2-4 years 
 of the \emph{Dutch Developmental Instrument} (DDI). That was done such 
 that the published difficulties for items 0-2 years did not change.

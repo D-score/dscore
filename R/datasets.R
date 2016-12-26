@@ -25,11 +25,11 @@
 #' in the `wrong` way: 0 = PASS, 1 = FAIL.
 #' 
 #' @examples 
-#' head(pops)
+#' head(popsdemo)
 #' 
 #' @source \url{https://www.tno.nl/nl/aandachtsgebieden/gezond-leven/prevention-work-health/voor-tijdens-en-na-de-zwangerschap/pops-langlopend-onderzoek-onder-prematuren-en-baby-s-met-laag-geboortegewicht/}
 #' \code{\link{dscore}}
-"pops"
+"popsdemo"
 
 
 #' Itembank containing difficulties per item
@@ -97,5 +97,3 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}
 "Dreference"
-
-

@@ -19,21 +19,21 @@ This vignettes shows how to estimate the D-score and the D-score SDS, a.k.a. DAZ
 
 ## Rename item names
 
-The `dscore` package has built-in example data from the POPS study. The data set is of class `tbl_df` from the `dplyr` package. 
+The `dscore` package has built-in example data from the POPS study, called `popsdemo`. The data set is of class `tbl_df` from the `dplyr` package. 
 
 ```{r rename}
 library("dscore")
 
-pops
-class(pops)
-nrow(pops)
+popsdemo
+class(popsdemo)
+nrow(popsdemo)
 ```
 
 The are 25 children and 4 time points. 
 
 ```{r children}
 # 25 children, 4 time points per child
-length(unique(pops$patid))
+length(unique(popsdemo$patid))
 ```
 
 The item scores that form the test are located in columns 9-65.
@@ -52,7 +52,7 @@ We first need to find out a proper lexicon for the data. For the POPS data, the 
 
 ```{r}
 itemset <- !is.na(itembank$lex.dutch1983)
-cbind(names(pops)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
+cbind(names(popsdemo)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
 ```
 
 In this case, we are lucky that all item names from the source data and the item bank match up exactly. 
@@ -67,13 +67,13 @@ head(ib, 3)
 From here on, we will work in the GHAP lexicon. Renaming the source data is now done by
 
 ```{r}
-names(pops)[test] <- as.character(ib$lex.GHAP)
+names(popsdemo)[test] <- as.character(ib$lex.GHAP)
 ```
 
 The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `gettau()` function:
 
 ```{r}
-gettau(names(pops)[test])
+gettau(names(popsdemo)[test])
 ```
 
 ## Reorganize the data into a long matrix
@@ -83,7 +83,7 @@ The `dscore()` function takes vectors of item scores, item names and ages. Rearr
 ```{r}
 library("tidyr")
 library("dplyr")
-data <- pops %>% 
+data <- popsdemo %>% 
   select(patid, moment, age, daycor, GSFIXEYE:GSKIK) %>%
   gather(items, scores, GSFIXEYE:GSKIK, na.rm = TRUE) %>%
   mutate(scores = 1 - scores) %>% 
@@ -139,9 +139,9 @@ head(df)
 Finally, in order to do further analyses, we need to put the estimated D-score and DAZ back into the source data.
 
 ```{r}
-# merge dscore and daz into pops data
-pops$ages <- round(pops$daycor/365.25, 4)
-pops <- merge(pops, df, all.x = TRUE)
-head(select(pops, patid, moment, ages, dscore, daz))
+# merge dscore and daz into popsdemo data
+popsdemo$ages <- round(popsdemo$daycor/365.25, 4)
+popsdemo <- merge(popsdemo, df, all.x = TRUE)
+head(select(popsdemo, patid, moment, ages, dscore, daz))
 ```
 

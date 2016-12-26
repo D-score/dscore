@@ -19,7 +19,7 @@ pops <- dplyr::filter(pops, occ <= 4) %>%
                 42:98, dscore, daz)
 
 # ---- save first 25 children
-pops <- dplyr::slice(pops, 1:100)
+popsdemo <- dplyr::slice(pops, 1:100)
 
 # save to /data
-devtools::use_data(pops, overwrite = TRUE)
+devtools::use_data(popsdemo, overwrite = TRUE)

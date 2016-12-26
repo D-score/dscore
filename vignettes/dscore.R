@@ -1,13 +1,13 @@
 ## ----rename--------------------------------------------------------------
 library("dscore")
 
-pops
-class(pops)
-nrow(pops)
+popsdemo
+class(popsdemo)
+nrow(popsdemo)
 
 ## ----children------------------------------------------------------------
 # 25 children, 4 time points per child
-length(unique(pops$patid))
+length(unique(popsdemo$patid))
 
 ## ------------------------------------------------------------------------
 test <- 9:65
@@ -17,22 +17,22 @@ names(itembank)[1:6]
 
 ## ------------------------------------------------------------------------
 itemset <- !is.na(itembank$lex.dutch1983)
-cbind(names(pops)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
+cbind(names(popsdemo)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
 
 ## ------------------------------------------------------------------------
 ib <- itembank[itemset,c("lex.dutch1983", "lex.GHAP", "labelEN", "tau")]
 head(ib, 3)
 
 ## ------------------------------------------------------------------------
-names(pops)[test] <- as.character(ib$lex.GHAP)
+names(popsdemo)[test] <- as.character(ib$lex.GHAP)
 
 ## ------------------------------------------------------------------------
-gettau(names(pops)[test])
+gettau(names(popsdemo)[test])
 
 ## ------------------------------------------------------------------------
 library("tidyr")
 library("dplyr")
-data <- pops %>% 
+data <- popsdemo %>% 
   select(patid, moment, age, daycor, GSFIXEYE:GSKIK) %>%
   gather(items, scores, GSFIXEYE:GSKIK, na.rm = TRUE) %>%
   mutate(scores = 1 - scores) %>% 
@@ -70,8 +70,8 @@ df <- data.frame(
 head(df)
 
 ## ------------------------------------------------------------------------
-# merge dscore and daz into pops data
-pops$ages <- round(pops$daycor/365.25, 4)
-pops <- merge(pops, df, all.x = TRUE)
-head(select(pops, patid, moment, ages, dscore, daz))
+# merge dscore and daz into popsdemo data
+popsdemo$ages <- round(popsdemo$daycor/365.25, 4)
+popsdemo <- merge(popsdemo, df, all.x = TRUE)
+head(select(popsdemo, patid, moment, ages, dscore, daz))
 

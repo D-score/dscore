@@ -16,3 +16,6 @@ sftp-config.json
 ^\.Rproj\.user$
 ^notes$
 ^markdown$
+^README\.Rmd$
+^scripts$
+^results$

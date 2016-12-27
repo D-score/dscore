@@ -4,11 +4,11 @@
 #' to a scale with fixed left and right anchors, and return the
 #' transformed difficulty estimas.
 #' @param beta Named numerical vector with difficulty estimates.
-#' @param anchor_items Character vector of length two with the labels of left
+#' @param items Character vector of length two with the labels of left
 #' and right anchor item. The default is \code{c("v1445", "v1463")}.
 #' Item \code{"v1445"} is `Holds head up 45 degrees in prone position` and
 #' item \code{"v1463"} is `Sits without support`.
-#' @param anchor_values Character vector of length two with the labels of left
+#' @param values Character vector of length two with the labels of left
 #' and right anchor item. The default is \code{(20, 40)}.
 #' @return A vector with \code{length(beta)} elements with transformed
 #' difficulty estimate
@@ -24,15 +24,15 @@
 #' @examples
 #' beta <- c(-1.5, 0, -0.4, 1, 1.2)
 #' names(beta) <- paste0("item", 1:5)
-#' anchor_dscore(beta, anchor_items = c("item2", "item4"))
+#' anchor(beta, items = c("item2", "item4"))
 #' @export
-anchor_dscore <- function(beta, anchor_items = c("v1445", "v1463"),
-                          anchor_values = c(20, 40)) {
-  if (!all(anchor_items %in% names(beta))) stop("Anchor items not found")
+anchor <- function(beta, items = c("v1445", "v1463"),
+                          values = c(20, 40)) {
+  if (!all(items %in% names(beta))) stop("Anchor items not found")
   d <- data.frame(y = NA,
                   x = beta)
-  d[anchor_items[1], "y"] <- anchor_values[1]
-  d[anchor_items[2], "y"] <- anchor_values[2]
+  d[items[1], "y"] <- values[1]
+  d[items[2], "y"] <- values[2]
   fit <- lm(y ~ x, data = na.omit(d))
   return(predict(fit, newdata = d))
 }

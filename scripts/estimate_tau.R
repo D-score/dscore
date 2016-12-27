@@ -7,7 +7,7 @@ library(dscore)
 # recalculate published tau
 smocc <- NL[, paste0("n",1:57)]
 fit <- rasch(smocc)
-tau <- anchor_dscore(fit$b, anchor_items = c("n12", "n26"))
+tau <- anchor(fit$b, items = c("n12", "n26"))
 round(tau, 1)
 
 # compare with published data (Van Buuren 2014, Table 2)

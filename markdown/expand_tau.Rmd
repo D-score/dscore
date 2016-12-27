@@ -86,11 +86,11 @@ wd <- dplyr::bind_rows(smocc, doove)
 
 One may recreate the published estimates (Van Buuren 2014, Table 2) 
 for items `n1` to `n57` using the SMOCC data. After estimation, the difficulties 
-need to be anchored by means of the `anchor_dscore()` function.
+need to be anchored by means of the `anchor()` function.
 
 ```{r fit1}
 fit1 <- rasch(select(smocc, -(1:5)))
-tau1 <- anchor_dscore(get_diff(fit1), anchor_items = c("n12", "n26"))
+tau1 <- anchor(get_diff(fit1), items = c("n12", "n26"))
 round(tau1, 1)
 ```
 
@@ -112,7 +112,7 @@ able to obtain difficulty estimates on the new items, as follows:
 
 ```{r fit2}
 fit2 <- rasch(select(wd, -(1:5)))
-tau2 <- anchor_dscore(get_diff(fit2), anchor_items = c("n12", "n26"))
+tau2 <- anchor(get_diff(fit2), items = c("n12", "n26"))
 round(tau2)
 ```
 
@@ -144,7 +144,7 @@ only for the new items.
 
 ```{r fit3}
 fit3 <- rasch(select(wd, -(1:5)), b_fixed = get_diff(fit1))
-tau3 <- anchor_dscore(get_diff(fit3), anchor_items = c("n12", "n26"))
+tau3 <- anchor(get_diff(fit3), items = c("n12", "n26"))
 round(tau3, 1)
 ```
 
@@ -170,10 +170,10 @@ linked <- names(doove)[names(doove) %in% paste0("n", 1:57)]
 new    <- names(doove)[names(doove) %in% paste0("v", 1:100)]
 fixed_beta <- get_diff(fit1)[names(get_diff(fit1)) %in% linked]
 fit4 <- rasch(select(doove, -(1:5)), b_fixed = fixed_beta)
-# tau4 <- anchor_dscore(get_diff(fit4), anchor_items = c("n12", "n26"))
+# tau4 <- anchor(get_diff(fit4), items = c("n12", "n26"))
 ```
 
-Because the anchor items were not observed in the `doove` data, `anchor_scale()`
+Because the anchor items were not observed in the `doove` data, `anchor()`
 fails to calculate the difficulties in the D-score scale. This requires us to resort to 
 special calibration techniques that we not needed in scenario 3.
 

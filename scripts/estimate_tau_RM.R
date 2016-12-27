@@ -14,7 +14,7 @@ data <- smocc[items_observed > 1, ]
 
 # by custom function
 fit.pair <- rasch(data)
-tau <- anchor_dscore(fit.pair$b, anchor_items = c("n12", "n26"))
+tau <- anchor(fit.pair$b, items = c("n12", "n26"))
 
 # erm::RM
 fit.RM <- eRM::RM(data)

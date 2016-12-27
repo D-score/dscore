@@ -28,10 +28,10 @@ Main functions
 
 The main functions in the `dscore` package are:
 
-| Function name     | Description                                    |
-|-------------------|------------------------------------------------|
-| `rasch()`         | Estimate difficulty of items                   |
-| `anchor_dscore()` | Transform difficulties to fixed anchors        |
-| `dscore()`        | Estimate D-scores of children                  |
-| `daz()`           | Transform to age-adjusted standardized D-score |
-| `zad()`           | Inverse of `daz()`                             |
+| Function name | Description                                    |
+|---------------|------------------------------------------------|
+| `rasch()`     | Estimate difficulty of items                   |
+| `anchor()`    | Transform difficulties to fixed anchors        |
+| `dscore()`    | Estimate D-scores of children                  |
+| `daz()`       | Transform to age-adjusted standardized D-score |
+| `zad()`       | Inverse of `daz()`                             |

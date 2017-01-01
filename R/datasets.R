@@ -97,3 +97,11 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}
 "Dreference"
+
+#' Color palettes for the Jamaica data
+#' 
+#' A list containing five color palettes for the Jamaica data.
+#' 
+#' @docType data
+#' @format A named \code{list} with 5 elements.
+"jamaica_palettes"

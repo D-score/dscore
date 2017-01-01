@@ -1,6 +1,8 @@
 #' @importFrom dplyr select mutate slice bind_rows
 #' @importFrom stats approx dnorm weighted.mean lm na.omit predict
 #' @importFrom utils head flush.console
+#' @importFrom grDevices col2rgb rgb
+#' @importFrom lazyeval interp
 NULL
 
 #' dscore: Measuring child development by the D-score

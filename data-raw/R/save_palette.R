@@ -78,10 +78,16 @@ names(color_domain) <-
   c("Cognitive", "Expressive", "Fine Motor", "Gross Motor", "Receptive", "")
 
 
-# color_item (1855 color)
-item <- itemtable$item
-color_item <- rep(brewer.pal(8, "Set2"), length.out = length(item))
-names(color_item) <- item
+# color_item (2332 color)
+# Obtain list of all items in gcdg
+all_items <- unique(unlist(sapply(gcdg_meta, "[", "item")))
+all_items <- gtools::mixedsort(all_items)
+
+colorblind <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", 
+                "#0072B2", "#D55E00", "#CC79A7")
+brewpal <- brewer.pal(7, "Set2")
+color_item <- rep(brewpal, length.out = length(all_items))
+names(color_item) <- all_items
 
 jamaica_palettes <- list(study = color_study,
                          country = color_country,

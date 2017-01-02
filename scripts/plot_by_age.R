@@ -2,38 +2,32 @@ library("ddata")
 library("dplyr", warn.conflicts = FALSE)
 library("tidyr")
 library("ggplot2")
+library("dscore")
 
-# source("define_colors.R")
+# Obtain list of all items in gcdg
+all_items <- unique(unlist(sapply(ddata::gcdg_meta, "[", "item")))
+all_items <- gtools::mixedsort(all_items)
 
-# min and max category number (should either 0 or 1)
-mm <- tbl_df(master) %>%
-  select(age, one_of(itemtable$item)) %>%
-  gather(key = item, value = value, -age) %>%
-  drop_na(value, age) %>%
-  group_by(item) %>%
-  summarise(max = max(value), min = min(value))
-table(mm$min, mm$max)
-inrange <- mm$item[mm$max <= 1]
-
-
-data <- tbl_df(master) %>%
-  select(study, age, one_of(inrange))
+# select all items that are in range 0-1
+out_of_range <- check_items(ddata::gcdg, all_items)
+inrange_items <- dplyr::setdiff(all_items, out_of_range$item)
 
 # proportion pass per month (p), age per month (a)
 # observations per months (n) by study and item
-pass <- tbl_df(master) %>%
-  select(study, age, one_of(inrange)) %>%
+pass <- ddata::gcdg %>%
+  select(study, age, one_of(inrange_items)) %>%
   gather(key = item, value = value, -age, -study) %>%
   drop_na(value, age) %>%
   mutate(agegp = cut(age, breaks = seq(0, 60, 1))) %>%
   group_by(study, item, agegp) %>%
-  summarise(p = round(100 * mean(value)), 
+  summarise(p = round(100 * mean(value)),
             a = mean(age),
             n = n()) %>%
   ungroup() %>%
-  mutate(item =  factor(item, levels = unique(itemtable$item))) %>%
+  mutate(item =  factor(item, levels = all_items)) %>%
   arrange(item) %>%
-  mutate(item = as.character(item))
+  mutate(item = as.character(item)) %>% 
+  full_join(ddata::itemtable, by = "item") 
 
 # The following transformation will flatten the curves at low ages
 # so that the slopes become more uniform
@@ -46,27 +40,10 @@ pass <- tbl_df(master) %>%
 #             domain = c(0.5, 60))
 
 
-library("lazyeval")
 
-
-
-plot_age_study <- function(data, by_name = "study", ...) {
-  
-  pass <- tbl_df(data) %>%
-    gather(key = item, value = value, -age, -study) %>%
-    drop_na(value, age) %>%
-    mutate(agegp = cut(age, breaks = seq(0, 60, 1))) %>%
-    group_by(study, item, agegp) %>%
-    summarise(p = round(100 * mean(value)), 
-              a = mean(age),
-              n = n()) %>%
-    ungroup() %>%
-    mutate(item =  factor(item, levels = unique(itemtable$item))) %>%
-    arrange(item) %>%
-    mutate(item = as.character(item))
-  
+plot_age_study <- function(pass, by_name = "study", ...) {
   # pre-allocate list of ggplots
-  studies <- sort(unique(data$study))
+  studies <- sort(unique(pass$study))
   plot_list <- vector("list", length(studies))
   names(plot_list) <- studies
   
@@ -81,36 +58,37 @@ plot_age_study <- function(data, by_name = "study", ...) {
   return(plot_list)
 }
 
-plot_age_one_study <- function(data, 
+plot_age_one_study <- function(pass, 
                                by_name = "study",
                                by_value = "Bangladesh",
                                min_n = 10, ...) {
-  filter_criteria <- interp(~ which_column == by_value, 
+  filter_criteria <- lazyeval::interp(~ which_column == by_value, 
                             which_column = as.name(by_name))
-  data_plot <- data %>%
+  data_plot <- pass %>%
     filter_(filter_criteria) %>%
     filter(n >= min_n) %>%
-    left_join(itemtable, by = "item") %>%
-    mutate(item =  factor(item, levels = unique(itemtable$item))) %>%
+    mutate(item =  factor(item, levels = all_items)) %>%
     arrange(item)
   
   plot <- ggplot(data_plot, aes(a, p, group = item, colour = item)) + 
-    scale_x_continuous("Age (in months)", limits = c(0, 48),
-                       breaks = seq(0, 48, 6)) +
+    scale_x_continuous("Age (in months)", limits = c(0, 60),
+                       breaks = seq(0, 60, 6)) +
     scale_y_continuous("% pass", breaks = seq(0, 100, 20), 
                        limits = c(0, 100)) +
     scale_colour_manual(values = get_palette("item"), na.value = "grey") +
     geom_line() + geom_point() +
-    facet_grid(study ~ .) + 
-    theme(legend.position = "bottom") +
-    guides(col = guide_legend(nrow = 3, byrow = FALSE))
+    facet_grid(study ~ .) +
+    theme(legend.position = "none")
+    # guides(col = guide_legend(nrow = 3, byrow = FALSE))
   return(plot)
 }
 
-plots <- plot_age_study(data)
-
 theme_set(theme_light())
-p <- plot_age_study(pass, by_name = "study", by_value = "Netherlands 1")
-p
+plots <- plot_age_study(pass, min_n = 10)
 
-
+pdf_file <- file.path(getwd(), "results", "item_by_age.pdf")
+pdf(pdf_file, onefile = TRUE, width = 10, height = 5)
+for (i in seq(length(plots))) {
+  print(plots[[i]])
+}
+dev.off()

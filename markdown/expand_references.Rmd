@@ -181,12 +181,17 @@ nl1_dscore <- NL %>%
   ungroup()
 ```
 
-Data on 18 common items and 20 new items were collected by Bernice Doove, and
-can be found in the `NL2` object of the `ddata` package. The new variables are 
+Data on 18 common items and 20 new items were collected by Bernice Doove. The new variables are 
 
 ```{r items}
-itemnames <- names(NL2)[names(NL2) %in% itemtable$item]
-itemnames
+items <- c("n38", "n39", "n44", "n45", "n51", "n52", "n53", "v20", 
+                 "v21", "v22", "v23", "v24", "v25", "v26", "v27", "n2", 
+                 "n47", "v42", "n55", "n56", "v45", "v46", "v47",
+                 "v48", "v49", "v50", "n35", "n42", "n43", "n49", "n50",
+                 "n57", "v72", "v73", "v74", "v75")
+vars <- c(c("country", "study", "id", "wave", "agedays"), items)
+doove <- select_(gcdg, .dots = vars) %>%
+  filter(study == "Netherlands 2")
 ```
 
 Item `v40` ("Understand play orders") is not present in the item bank because
@@ -195,11 +200,11 @@ there was insufficient information in calibration data.
 The D-score, based on 18 "old" and 19 "new" items, can be calculated by
 
 ```{r estimate2, cache = TRUE}
-varnames <- c("id", "wave", "age", itemnames)
-nl2_dscore <- NL2 %>%
+varnames <- c("id", "wave", "age", items)
+nl2_dscore <- doove %>%
   mutate(age = agedays / 365.25) %>%
   select_(.dots = varnames) %>%
-  gather_("item", "score", itemnames, na.rm = TRUE) %>%
+  gather_("item", "score", items, na.rm = TRUE) %>%
   arrange(id, age) %>%
   group_by(id, age) %>%
   summarise(d = dscore(score, item, age, mu = "model", lexicon = "jam")) %>%

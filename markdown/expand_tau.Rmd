@@ -52,8 +52,10 @@ doove_vars <- c("country", "study", "id", "wave", "agedays",
                  "n47", "v42", "n55", "n56", "v45", "v46", "v47",
                  "v48", "v49", "v50", "n35", "n42", "n43", "n49", "n50",
                  "n57", "v72", "v73", "v74", "v75")
-smocc <- select_(NL, .dots = smocc_vars)
-doove <- select_(NL2, .dots = doove_vars)       
+smocc <- select_(gcdg, .dots = smocc_vars) %>%
+  filter(study == "Netherlands 1")
+doove <- select_(gcdg, .dots = doove_vars) %>%
+  filter(study == "Netherlands 2")
 ```
 
 The naming scheme follows the `lex.jam` lexicon, where the original 57 items in the 
@@ -113,7 +115,7 @@ able to obtain difficulty estimates on the new items, as follows:
 ```{r fit2}
 fit2 <- rasch(select(wd, -(1:5)))
 tau2 <- anchor(get_diff(fit2), items = c("n12", "n26"))
-round(tau2)
+round(tau2, 1)
 ```
 
 As expected, the new items are among the most difficult ones. Note that we cannot 

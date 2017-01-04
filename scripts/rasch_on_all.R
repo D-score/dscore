@@ -1,13 +1,21 @@
 # rasch_on_all.R
 
-# stretch the dmetric::rasch() function on the ddata::master data
-
 library("ddata")
 library("dscore")
 library("dplyr", warn.conflicts = FALSE)
 library("tidyr")
 
-dim(master)
+# Obtain list of all items in gcdg
+all_items <- item_names()
+
+# select all items that are in range 0-1
+out_of_range <- check_items(ddata::gcdg, all_items)
+inrange_items <- dplyr::setdiff(all_items, out_of_range$item)
+
+dim(gcdg)
+
+# length(table(x)) == 2
+# min(table(x)) >= 2
 
 instruments <- unique(itemtable$instrument)
 for (i in 1:length(instruments)) {

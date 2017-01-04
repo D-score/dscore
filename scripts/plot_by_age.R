@@ -5,12 +5,14 @@ library("ggplot2")
 library("dscore")
 
 # Obtain list of all items in gcdg
-all_items <- unique(unlist(sapply(ddata::gcdg_meta, "[", "item")))
-all_items <- gtools::mixedsort(all_items)
+# all_items <- unique(unlist(sapply(ddata::gcdg_meta, "[", "item")))
+# all_items <- gtools::mixedsort(all_items)
+all_items <- item_names()
 
 # select all items that are in range 0-1
-out_of_range <- check_items(ddata::gcdg, all_items)
-inrange_items <- dplyr::setdiff(all_items, out_of_range$item)
+# out_of_range <- check_items(ddata::gcdg, all_items)
+# inrange_items <- dplyr::setdiff(all_items, out_of_range$item)
+inrange_items <- all_items
 
 # proportion pass per month (p), age per month (a)
 # observations per months (n) by study and item

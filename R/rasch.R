@@ -118,6 +118,13 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
   data[is.na(data)] <- 9
   Aij <- t(data == 0) %*% (data == 1)
   Aji <- t(data == 1) %*% (data == 0)
+  
+  # emergency stop - remove variables with zero counts
+  delete <- rowSums(Aij) == 0
+  if (any(delete)) {
+    cat("delete: ", dimnames(Aij)[[1]][delete])
+    stop()
+  }
 
   # set some entries to zero for itemclusters
   clusters <- unique(itemcluster[itemcluster != 0])
@@ -137,6 +144,11 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
     eps0 <- eps
     m1 <- matrix(eps0, I, I, byrow = TRUE) + matrix(eps0, I, I)
     g1 <- rowSums(nij / m1)
+    cat("iter: ", iter, 
+        "  sum(is.na(g1)): ", sum(is.na(g1)), 
+        "  sum(g1 < 1)", sum(g1 < 1), "\n")
+#    g1[is.na(g1)] <- 1000
+#    g1[g1 < 1000] <- 1000
     eps <- rowSums(Aij) / g1
     b <-  log(eps)
 

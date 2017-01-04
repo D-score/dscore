@@ -5,18 +5,25 @@ library("dscore")
 library("dplyr", warn.conflicts = FALSE)
 library("tidyr")
 
-# Obtain list of all items in gcdg
-
-
-# length(table(x)) == 2
-# min(table(x)) >= 2
 
 # Dutch items
 items <- item_names("NL")
-data <- select_(gcdg, .dots = all_items)
-fit <- rasch(data)
+data <- ddata::gcdg %>% select_(.dots = items)
+fit <- rasch(data, maxiter = 20)
 get_diff(fit)
 # 
+
+# All items with k responses in rare category
+idata <- ddata::gcdg %>%
+  select_(.dots = item_names()) %>%
+  select_if(category_size_exceeds, 1000)
+# colSums(idata, na.rm = TRUE)
+dim(idata)
+
+idata <- select(idata, -dg2, -n7)
+fit <- rasch(idata)
+get_diff(fit)
+
 # instruments <- unique(itemtable$instrument)
 # for (i in 1:length(instruments)) {
 #   ins <- instruments[i]

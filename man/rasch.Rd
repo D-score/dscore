@@ -58,6 +58,10 @@ adds several additional elements (most for compatibility with \code{sirt}):
 \item{b}{Vector of item difficulties}
 \item{item}{Data frame of item parameters (\eqn{N}, \eqn{p} and item
 difficulty)}
+\item{count}{The count table that is used by the algorithm. May differ 
+from the count argument.}
+\item{dropped}{Items that were dropped because they were not present in the 
+count table (if specified)}
 }
 }
 \description{

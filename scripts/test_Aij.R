@@ -17,6 +17,9 @@ system.time(fit1 <- rasch(data))
 count <- fit1$count
 system.time(fit2 <- rasch(data, count = count))
 
+load(file = file.path(getwd(), "store", "z25_Aij.rda"))
+system.time(fit3 <- rasch(data, count = z25_Aij))
+
 
 
 Aij1 <- function(data) {

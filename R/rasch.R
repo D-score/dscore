@@ -54,6 +54,10 @@
 #' \item{b}{Vector of item difficulties}
 #' \item{item}{Data frame of item parameters (\eqn{N}, \eqn{p} and item
 #' difficulty)}
+#' \item{count}{The count table that is used by the algorithm. May differ 
+#' from the count argument.}
+#' \item{dropped}{Items that were dropped because they were not present in the 
+#' count table (if specified)}
 #' }
 #' @references van der Linden, W. J., & Eggen, T. J. H. M. (1986).
 #' \emph{An empirical Bayes approach to item banking}. Research Report 86-6,
@@ -106,7 +110,19 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
                   count = NULL,
                   conv = .00001, maxiter = 3000, progress = FALSE) {
   call <- match.call()
+
+  # discard items from data that are not present in count
+  # and set Aij
+  count_items <- colnames(count)
+  data_items <- colnames(data)
+  itemset <- count_items[count_items %in% data_items]
+  Aij <- count[itemset, itemset]
+  
   X01 <- data
+  # silently drop items not present in count (if specified)
+  if (!is.null(itemset)) data <- data[, itemset]
+  dropped <- setdiff(names(X01), names(data))
+  
   data <- as.matrix(data)
   p <- colMeans(data, na.rm = TRUE)
   N <- colSums(1 - is.na(data))
@@ -126,7 +142,6 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
     data[is.na(data)] <- 9
     Aij <- t(data == 0) %*% (data == 1)
   }
-  else Aij <- count
   
   # emergency stop - remove variables with zero counts
   delete <- rowSums(Aij) == 0
@@ -190,6 +205,7 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
   
   # return fitted object that can be understood by eRm package
   res <- list(X = X01, X01 = X01, count = Aij,
+              dropped = dropped,
               model = "RM", equate = equate, itemcluster = itemcluster,
               b_fixed = b_fixed, zerosum = zerosum,
               loglik = 0, npar = I,

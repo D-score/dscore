@@ -19,3 +19,4 @@ sftp-config.json
 ^README\.Rmd$
 ^scripts$
 ^results$
+^store$

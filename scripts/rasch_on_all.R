@@ -9,7 +9,7 @@ library("tidyr")
 # Dutch items
 items <- item_names("NL")
 data <- ddata::gcdg %>% select_(.dots = items)
-fit <- rasch(data, maxiter = 20)
+fit <- rasch(data)
 get_diff(fit)
 # 
 
@@ -34,3 +34,26 @@ get_diff(fit)
 #   # summarise only items with n > 100
 #   scores <- select(scores, which(nscores > 100))
 # }
+
+Aij <- function(data) {
+  # create count tables
+  data[is.na(data)] <- 9
+  Aij <- t(data == 0) %*% (data == 1)
+  Aij
+}
+
+Aji <- function(data) {
+  # create count tables
+  data[is.na(data)] <- 9
+  Aji <- t(data == 1) %*% (data == 0)
+  Aji
+}
+
+# All items with k responses in rare category
+idata <- ddata::gcdg %>%
+  select_(.dots = item_names()) %>%
+  select_if(category_size_exceeds, 25)
+# colSums(idata, na.rm = TRUE)
+dim(idata)
+
+z25_Aij <- Aij(idata)

@@ -5,8 +5,8 @@
 \title{Pairwise Estimation of the Rasch Model under Item Equating}
 \usage{
 rasch(data, equate = NULL, itemcluster = NULL, b_fixed = NULL,
-  b_init = NULL, zerosum = FALSE, conv = 1e-05, maxiter = 3000,
-  progress = FALSE)
+  b_init = NULL, zerosum = FALSE, count = NULL, conv = 1e-05,
+  maxiter = 3000, progress = FALSE)
 }
 \arguments{
 \item{data}{A matrix or a data frame. Item responses should be coded
@@ -26,11 +26,18 @@ whose value are the parameters to be fixed. \code{names(b_fixed)} indicates
 the column in the data to which the fixed value applies.}
 
 \item{b_init}{Numeric, named vector of initial item difficulty estimates.
-Default is \code{NULL}.}
+Under the default (\code{NULL}) values initial values are calculated internally.}
 
 \item{zerosum}{Optional logical indicating whether item difficulties
 should be centered in each iteration. The default is that no centering
 is conducted.}
+
+\item{count}{A table of counts \code{t(data == 0)} times \code{data == 1}. 
+Items 
+not present in \code{count} are silently discarded from the estimation 
+process. The default (\code{NULL}) calculates the count table from the 
+data. This will increase execution time substantially if \code{ncol(data)} 
+is large, e.g. several hundreds of items.}
 
 \item{conv}{Convergence criterion in maximal absolute parameter change}
 

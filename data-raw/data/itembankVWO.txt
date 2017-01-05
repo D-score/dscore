@@ -41,7 +41,7 @@ NA	NA	NA	v1458	GSPLFTL	NA	5	Speelt met beide voeten -l	"Plays with both feet - l
 v59	v60	v22	v1459	GSROLLS	n22	5	Rolt zich om van rug naar buik en omgekeerd (M)	Rolls over, back and forth	34.7	1	0	1
 v60	v61	v23	v1460	GSHHSIT	n23	5	Kan hoofd goed ophouden in zit	Balances head well while sitting	32.5	1	0	1
 v61	v62	v24	v1461	GSSITST	n24	5	Zit op billen met gestrekte benen	Sits on buttocks while legs stretched	34.9	1	0	1
-v33	v33	v25	v1462	GSSAYS	n25	5	Zegt dada-baba of gaga (M)	"Says ""dada"", ""baba"", or ""gaga"""	36	1	0	1
+v33	v33	v25	v1462	GSSAYS	n25	5	Zegt dada-baba of gaga (M)	Says 'dada', 'baba', or 'gaga'	36	1	0	1
 v35	v35	NA	NA	NA	v35	6	Reageert op mondeling verzoek (M)               	Reacts to verbal request	NA	1	0	0
 v62	v63	v26	v1463	GSSITWS	n26	6	Zit stabiel los	Sits in stable position, without support	40	1	0	1
 v10	v10	v27	v1464	GSPICK	n27	6	Pakt propje met duim en wijsvinger	Picks up pellet between thumb and index finger	43.1	1	1	1
@@ -49,25 +49,25 @@ NA	NA	NA	NA	GSPICKR	NA	6	Pakt propje met duim en wijsvinger -r	Picks up crumb be
 NA	NA	NA	v1465	GSPICKL	NA	6	Pakt propje met duim en wijsvinger -l	Picks up crumb between thumb and index finger -l	NA	1	1	1
 v63	v64	v28	v1466	GSCRAWL	n28	6	Kruipt vooruit, buik op de grond (M)	Crawls forward, abdomen on the floor	43.1	1	0	1
 v64	v65	v29	v1467	GSPULLST	n29	6	Trekt zich op tot staan	Pulls up to standing position	44.3	1	0	1
-v36	v36	v30	v1468	GSWAVES	n30	6	Zwaait dag, dag (M)	"Waves ""bye bye"" "	43.1	1	0	1
-v34	v34	v31	v1469	GSJABBER	n31	6	Brabbelt bij zijn spel (M)	"Jabbering while playing (M; can ask parents)"	40.9	1	0	1
+v36	v36	v30	v1468	GSWAVES	n30	6	Zwaait dag, dag (M)	Waves 'bye bye' 	43.1	1	0	1
+v34	v34	v31	v1469	GSJABBER	n31	6	Brabbelt bij zijn spel (M)	Babbles while playing	40.9	1	0	1
 v38	v38	NA	NA	NA	v38	7	Begrijpt enkele dagelijks gebruikte zinnen	Understands a few daily-used sentences	NA	1	0	0
 v11	v11	v32	v1470	GSGETC	n32	7	Doet blokje in/uit doos	Puts cube in and out of a box	46	1	1	1
 NA	NA	NA	NA	GSGETCR	NA	7	Doet blokje in/uit doos -r	Puts cube in and out of a box -r	NA	1	1	1
 NA	NA	NA	v1471	GSGETCL	NA	7	Doet blokje in/uit doos -l	Puts cube in and out of a box -l	NA	1	1	1
-v12	v12	v33	v1472	GSPLAYGT	n33	7	Speelt geven en nemen(M)	"Plays ""give and take"""	46.5	1	0	1
-v65	v66	v34	v1473	GSCRBLY	n34	7	Kruipt, buik vrij van de grond (M)	"Crawls, with belly lifted off the ground (M; can ask parents)"	46.1	1	0	1
+v12	v12	v33	v1472	GSPLAYGT	n33	7	Speelt geven en nemen(M)	Plays 'give and take'	46.5	1	0	1
+v65	v66	v34	v1473	GSCRBLY	n34	7	Kruipt, buik vrij van de grond (M)	Crawls, abdomen off the floor	46.1	1	0	1
 v66	v67	v35	v1474	GSWALKS	n35	7	Loopt langs (M)	Walks along	46.1	1	0	1
-na2	NA	v36	v1475	GSSIMPLE	n36	7	Begrijpt enkele woorden	"Understands some simple words (M; can ask parents)"	45.7	1	0	1
-v37	v37	v37	v1476	GSTWOWRD	n37	7	Zegt 2 geluidswoorden met begrip (M)	"Says 2 ""sound-words"" with comprehension"	50.1	1	0	1
+na2	NA	v36	v1475	GSSIMPLE	n36	7	Begrijpt enkele woorden	Understands a few words	45.7	1	0	1
+v37	v37	v37	v1476	GSTWOWRD	n37	7	Zegt 2 geluidswoorden met begrip (M)	Says 2 'sound-words' with comprehension	50.1	1	0	1
 v40	v40	NA	NA	NA	v40	8	Begrijpt spelopdrachtjes (M)	Understand play orders	NA	1	0	0
 v13	v13	v38	v1512	GSMK2CB	n38	8	Stapelt twee blokjes	Builds tower of two cubes	56.4	1	1	1
 NA	NA	NA	NA	GSMK2CBR	NA	8	Stapelt twee blokjes -r	Builds tower of two cubes-r	NA	1	1	1
 NA	NA	NA	v1513	GSMK2CBL	NA	8	Stapelt twee blokjes -l	Builds tower of two cubes-l	NA	1	1	1
 v14	v14	v39	v1514	GSEXPLR	n39	8	Gaat op onderzoek uit (M)	Explores environment	46.9	1	0	1
-v39	v39	v40	v1515	GSTHRWRD	n40	8	Zegt 3 woorden (M)	"Says 3 ""words"""	53.2	1	0	1
-na4	NA	v41	v1516	GSIDOBJ	n41	8	Wijzen/pakken twee voorwerpen	Identfies (point / graps) two mentioned objects	55.4	1	0	1
-v67	v68	v42	v1517	GSWLKOWN	n42	8	Loopt los	Walks on his/her own	51.9	1	0	1
+v39	v39	v40	v1515	GSTHRWRD	n40	8	Zegt 3 woorden (M)	Says 3 'words'	53.2	1	0	1
+na4	NA	v41	v1516	GSIDOBJ	n41	8	Wijzen/pakken twee voorwerpen	Identfies (point or graps) two mentioned objects	55.4	1	0	1
+v67	v68	v42	v1517	GSWLKOWN	n42	8	Loopt los	Walks alone	51.9	1	0	1
 v68	v69	v43	v1518	GSTBALL	n43	8	Gooit bal zonder om te vallen	Throws ball without falling down	56	1	0	1
 NA	NA	NA	NA	GSTBALLR	NA	8	Gooit bal zonder om te vallen -r	Throws ball without falling down-r	NA	1	0	1
 NA	NA	NA	v1519	GSTBALLL	NA	8	Gooit bal zonder om te vallen -l	Throws ball without falling down-l	NA	1	0	1
@@ -77,8 +77,8 @@ NA	NA	NA	NA	GSMK3CBR	NA	9	Stapelt 3 blokjes -r	Builds tower of three cubes -r	NA
 NA	NA	NA	v1521	GSMK3CBL	NA	9	Stapelt 3 blokjes -l	Builds tower of three cubes-l	NA	1	1	1
 v16	v16	v45	v1522	GSIMITAT	n45	9	Doet anderen na (M)	Imitates others 	52.3	1	0	1
 na10	NA	v46	v1523	GSDRNKCP	n46	9	Drinkt zelf uit beker	"Drink from cup by him/herself (M; can ask parents)"	58.5	1	0	1
-v41	v41	v47	v1524	GSTWOSEN	n47	9	Zegt zinnen van 2 woorden (M)	"Says ""sentences""of 2 words"	60.2	1	0	1
-na5	NA	v48	v1525	GSPUTBAL	n48	9	Doet op verzoek bal in doos	Puts ball in box when asked	57.8	1	0	1
+v41	v41	v47	v1524	GSTWOSEN	n47	9	Zegt zinnen van 2 woorden (M)	Says 'sentences'of 2 words	60.2	1	0	1
+na5	NA	v48	v1525	GSPUTBAL	n48	9	Doet op verzoek bal in doos	Places ball in box	57.8	1	0	1
 v69	v70	v49	v1526	GSPKSQ	n49	9	Raapt vanuit hurkzit iets op	Squats or bends to pick up things	55.3	1	0	1
 v70	v68b	v50	v1527	GSWLKWH	n50	9	Loopt goed los	Walks well without help	55.5	1	0	1
 v72	v72	NA	NA	NA	v72	10	Kan in zit soepel roteren	Can rotate fluently in sitting postion	60	1	0	0
@@ -86,7 +86,7 @@ v17	v17	v51	v1528	GSMKTW6	n51	10	Stapelt 6 blokjes	Builds tower of 6 cubes	62.6	
 v18	v18	v52	v1529	GSPUTFIG	n52	10	Plaatst ronde vorm in stoof	Places round form in form-box	60.3	1	0	1
 v19	v19	v53	v1530	GSTKCLO	n53	10	Trekt kledingstuk uit (M)	Undresses himself	60.6	1	0	1
 na6	NA	v54	v1531	GSEATSPN	n54	10	Eet zelf met lepel (M)	"Eats with spoon without help (M; can ask parents)"	58.5	1	0	1
-v43	v43	v55	v1532	GSREFER	n55	10	Noemt zichzelf mij of ik  (M)	"Refers to self using ""me"" or ""I"""	61.7	1	0	1
+v43	v43	v55	v1532	GSREFER	n55	10	Noemt zichzelf mij of ik  (M)	Refers to self using 'me' or 'I'	61.7	1	0	1
 v44	v44	v56	v1533	GSID5OBJ	n56	10	Wijst 5 plaatjes aan in boek	Points at 5 pictures in the book	62.2	0	0	1
 v71	v71	v57	v1534	GSKIK	n57	10	Schopt bal weg	Kicks ball	64.2	1	1	1
 NA	NA	NA	NA	GSKIKR	NA	10	Schopt bal weg -r	Kicks ball -r	NA	1	1	1
@@ -94,20 +94,20 @@ NA	NA	NA	v1535	GSKIKL	NA	10	Schopt bal weg -l	Kicks ball-l	NA	1	1	1
 v20	v20	NA	NA	NA	v20	11	Bouwt vrachtauto na	Imitates building a truck	67.6	1	0	0
 v21	v21	NA	NA	NA	v21	11	Plaatst 3 vormen in stoof	Places 3 forms in form-box	65	1	0	0
 v22	v22	NA	NA	NA	v22	11	Tekent verticale lijn na	Imitates drawing a vertical line	66.4	1	0	0
-v45	v45	NA	NA	NA	v45	11	Zegt zinnen van 3 of meer woorden (M)	"Says ""sentences"" of 3 or more words"	63.3	1	0	0
+v45	v45	NA	NA	NA	v45	11	Zegt zinnen van 3 of meer woorden (M)	Says 'sentences' of 3 or more words	63.3	1	0	0
 v46	v46	NA	NA	NA	v46	11	Is verstaanbaar voor bekenden (M)	Speech is understood by acquaintances	61.8	1	0	0
 v73	v68c	NA	NA	NA	v73	11	Loopt soepel	Walks alone, Walks smoothly	61.8	1	0	0
 v74	v73	NA	NA	NA	v74	11	Fietst (op driewieler) (M)	Rides (tri)cycle	67.1	1	0	0
 v23	v23	NA	NA	NA	v23	12	Bouwt brug na	Imitates building a bridge	68.9	1	0	0
 v24	v24	NA	NA	NA	v24	12	Plaatst 4 vormen in stoof	Places 4 forms in form-box	68.9	1	0	0
 v25	v25	NA	NA	NA	v25	12	Trekt eigen kledingstuk aan (M)	Puts on own farment	67.6	1	0	0
-v47	v47	NA	NA	NA	v47	12	Praat spontaan over gebeurtenissen thuis (M)	Talks spontaneously about events at home/playgroup	66.9	1	0	0
-v48	v48	NA	NA	NA	v48	12	Stelt vragen naar wie, wat, waar, hoe (M)	"Asks questions about ""who"", ""what"", ""where"" and ""how"""	66.2	1	0	0
+v47	v47	NA	NA	NA	v47	12	Praat spontaan over gebeurtenissen thuis (M)	Talks spontaneously about events at home or playgroup	66.9	1	0	0
+v48	v48	NA	NA	NA	v48	12	Stelt vragen naar wie, wat, waar, hoe (M)	Asks questions about 'who', 'what', 'where' and 'how'	66.2	1	0	0
 v75	v74	NA	NA	NA	v75	12	Springt met beide voeten tegelijk	Jumps with both feet simultaneously	66.6	1	0	0
 v26	v27	NA	NA	NA	v26	13	Houdt potlood met vingers vast	Holds pencil with fingers	69	1	0	0
 v27	v26	NA	NA	NA	v27	13	Tekent cirkel na	Copies a circle	69.9	1	0	0
 v49	v49	NA	NA	NA	v49	13	Is goed verstaanbaar voor onderzoeker	Speech is easily understood by examiner	66.7	1	0	0
-v50	v50	NA	NA	NA	v50	13	Stelt vragen naar hoeveel, wanneer, waarom (M)	"Asks questions about ""how much"", ""when"", ""why"""	69.5	1	0	0
+v50	v50	NA	NA	NA	v50	13	Stelt vragen naar hoeveel, wanneer, waarom (M)	Asks questions about 'how much', 'when', 'why'	69.5	1	0	0
 na7	v28	NA	NA	NA	na7	14	Tekent kruis na	Copies a cross	NA	1	0	0
 na8	v51	NA	NA	NA	na8	14	Begrijpt analogien en tegenstellingen (M)	Understands analogies and oppositions	NA	1	0	0
 na9	v75	NA	NA	NA	na9	14	Kan minstens 5 seconden op een been staan (RL)	Can stand on one foot at least 5 seconds	NA	1	1	0

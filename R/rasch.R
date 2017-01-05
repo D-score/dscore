@@ -16,7 +16,13 @@
 #' whose value are the parameters to be fixed. \code{names(b_fixed)} indicates
 #' the column in the data to which the fixed value applies.
 #' @param b_init Numeric, named vector of initial item difficulty estimates.
-#' Default is \code{NULL}.
+#' Under the default (\code{NULL}) values initial values are calculated internally.
+#' @param count A table of counts \code{t(data == 0)} times \code{data == 1}. 
+#' Items 
+#' not present in \code{count} are silently discarded from the estimation 
+#' process. The default (\code{NULL}) calculates the count table from the 
+#' data. This will increase execution time substantially if \code{ncol(data)} 
+#' is large, e.g. several hundreds of items.
 #' @param conv Convergence criterion in maximal absolute parameter change
 #' @param maxiter Maximal number of iterations
 #' @param progress A logical which displays the iterative process.
@@ -48,6 +54,10 @@
 #' \item{b}{Vector of item difficulties}
 #' \item{item}{Data frame of item parameters (\eqn{N}, \eqn{p} and item
 #' difficulty)}
+#' \item{count}{The count table that is used by the algorithm. May differ 
+#' from the count argument.}
+#' \item{dropped}{Items that were dropped because they were not present in the 
+#' count table (if specified)}
 #' }
 #' @references van der Linden, W. J., & Eggen, T. J. H. M. (1986).
 #' \emph{An empirical Bayes approach to item banking}. Research Report 86-6,
@@ -97,15 +107,28 @@
 #' @export
 rasch <- function(data, equate = NULL, itemcluster = NULL,
                   b_fixed = NULL, b_init = NULL, zerosum = FALSE,
+                  count = NULL,
                   conv = .00001, maxiter = 3000, progress = FALSE) {
   call <- match.call()
+  
+  # discard items from data that are not present in count
+  # and set Aij
+  count_items <- colnames(count)
+  data_items <- colnames(data)
+  itemset <- count_items[count_items %in% data_items]
+  Aij <- count[itemset, itemset]
+  
   X01 <- data
+  # silently drop items not present in count (if specified)
+  if (!is.null(itemset)) data <- data[, itemset]
+  dropped <- setdiff(names(X01), names(data))
+  
   data <- as.matrix(data)
   p <- colMeans(data, na.rm = TRUE)
   N <- colSums(1 - is.na(data))
   I <- ncol(data)
   if (is.null(b_init)) b_init <- -stats::qlogis(p)
-
+  
   # initialize b
   b <- b_init
   if (!is.null(b_fixed)) {
@@ -113,79 +136,79 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
     exp_b_fixed <- exp(b_fixed)
     zerosum <- FALSE
   }
-
-  # create count tables
-  data[is.na(data)] <- 9
-  Aij <- t(data == 0) %*% (data == 1)
-  Aji <- t(data == 1) %*% (data == 0)
   
-  # emergency stop - remove variables with zero counts
-  delete <- rowSums(Aij) == 0
-  if (any(delete)) {
-    cat("delete: ", dimnames(Aij)[[1]][delete])
-    stop()
+  # create count tables
+  if (is.null(count)) {
+    data[is.na(data)] <- 9
+    Aij <- t(data == 0) %*% (data == 1)
   }
-
+  
+  # identify orphans (zero counts) and stop
+  orphans <- NULL
+  flags <- rowSums(Aij) == 0
+  if (any(flags)) {
+    orphans <- dimnames(Aij)[[1]][flags]
+    cat("Orphans found: ", orphans, "\n")
+  }
+  
   # set some entries to zero for itemclusters
   clusters <- unique(itemcluster[itemcluster != 0])
   for (cc in clusters) {
     icc <- which(itemcluster == cc)
-    Aji[icc, icc] <- Aij[icc, icc] <- 0
+    Aij[icc, icc] <- 0
   }
-
+  
   # prepare for loop
-  nij <- Aij + Aji
+  nij <- Aij + t(Aij)
   eps0 <- eps <- exp(b)
   max.change <- 10
   iter <- 1
-
-  while (max.change > conv & iter <= maxiter) {
-    b0 <- b
-    eps0 <- eps
-    m1 <- matrix(eps0, I, I, byrow = TRUE) + matrix(eps0, I, I)
-    g1 <- rowSums(nij / m1)
-    cat("iter: ", iter, 
-        "  sum(is.na(g1)): ", sum(is.na(g1)), 
-        "  sum(g1 < 1)", sum(g1 < 1), "\n")
-#    g1[is.na(g1)] <- 1000
-#    g1[g1 < 1000] <- 1000
-    eps <- rowSums(Aij) / g1
-    b <-  log(eps)
-
-    # put item parameter constraints
-    if (!is.null(b_fixed)) {
-      eps[names(exp_b_fixed)] <- exp_b_fixed
-    }
-
-    # equate estimates
-    if (!is.null(equate)) {
-      for (i in 1:length(equate)) {
-        pos <- match(equate[[i]], names(eps))
-        eps[pos] <- weighted.mean(x = eps[pos], w = N[pos])
+  
+  if (is.null(orphans)) {
+    while (max.change > conv & iter <= maxiter) {
+      b0 <- b
+      eps0 <- eps
+      m1 <- matrix(eps0, I, I, byrow = TRUE) + matrix(eps0, I, I)
+      g1 <- rowSums(nij / m1)
+      eps <- rowSums(Aij) / g1
+      b <-  log(eps)
+      
+      # put item parameter constraints
+      if (!is.null(b_fixed)) {
+        eps[names(exp_b_fixed)] <- exp_b_fixed
       }
+      
+      # equate estimates
+      if (!is.null(equate)) {
+        for (i in 1:length(equate)) {
+          pos <- match(equate[[i]], names(eps))
+          eps[pos] <- weighted.mean(x = eps[pos], w = N[pos])
+        }
+      }
+      
+      if (zerosum) {
+        b1 <- -log(eps)
+        b2 <- b1 - mean(b1)
+        eps <- exp(-b2)
+      }
+      max.change <- max(abs(b - b0))
+      if (progress) {
+        cat("PL Iter.", iter, ": max. parm. change = ",
+            round( max.change , 6 ), "\n")
+        flush.console()
+      }
+      iter <- iter + 1
     }
-
-    if (zerosum) {
-      b1 <- -log(eps)
-      b2 <- b1 - mean(b1)
-      eps <- exp(-b2)
-    }
-    max.change <- max(abs(b - b0))
-    if (progress) {
-      cat("PL Iter.", iter, ": max. parm. change = ",
-           round( max.change , 6 ), "\n")
-      flush.console()
-    }
-    iter <- iter + 1
   }
   item <- data.frame("N" = N,
                      "p" = p ,
                      "b" =  log(eps))
   if (is.null(itemcluster)) { itemcluster <- rep(0, I) }
   item$itemcluster <- itemcluster
-
+  
   # return fitted object that can be understood by eRm package
-  res <- list(X = X01, X01 = X01,
+  res <- list(X = X01, X01 = X01, count = Aij,
+              dropped = dropped, orphans = orphans,
               model = "RM", equate = equate, itemcluster = itemcluster,
               b_fixed = b_fixed, zerosum = zerosum,
               loglik = 0, npar = I,

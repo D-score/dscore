@@ -110,7 +110,7 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
                   count = NULL,
                   conv = .00001, maxiter = 3000, progress = FALSE) {
   call <- match.call()
-
+  
   # discard items from data that are not present in count
   # and set Aij
   count_items <- colnames(count)
@@ -143,11 +143,12 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
     Aij <- t(data == 0) %*% (data == 1)
   }
   
-  # emergency stop - remove variables with zero counts
-  delete <- rowSums(Aij) == 0
-  if (any(delete)) {
-    cat("delete: ", dimnames(Aij)[[1]][delete])
-    stop()
+  # identify orphans (zero counts) and stop
+  orphans <- NULL
+  flags <- rowSums(Aij) == 0
+  if (any(flags)) {
+    orphans <- dimnames(Aij)[[1]][flags]
+    cat("Orphans found: ", orphans, "\n")
   }
   
   # set some entries to zero for itemclusters
@@ -163,39 +164,41 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
   max.change <- 10
   iter <- 1
   
-  while (max.change > conv & iter <= maxiter) {
-    b0 <- b
-    eps0 <- eps
-    m1 <- matrix(eps0, I, I, byrow = TRUE) + matrix(eps0, I, I)
-    g1 <- rowSums(nij / m1)
-    eps <- rowSums(Aij) / g1
-    b <-  log(eps)
-    
-    # put item parameter constraints
-    if (!is.null(b_fixed)) {
-      eps[names(exp_b_fixed)] <- exp_b_fixed
-    }
-    
-    # equate estimates
-    if (!is.null(equate)) {
-      for (i in 1:length(equate)) {
-        pos <- match(equate[[i]], names(eps))
-        eps[pos] <- weighted.mean(x = eps[pos], w = N[pos])
+  if (is.null(orphans)) {
+    while (max.change > conv & iter <= maxiter) {
+      b0 <- b
+      eps0 <- eps
+      m1 <- matrix(eps0, I, I, byrow = TRUE) + matrix(eps0, I, I)
+      g1 <- rowSums(nij / m1)
+      eps <- rowSums(Aij) / g1
+      b <-  log(eps)
+      
+      # put item parameter constraints
+      if (!is.null(b_fixed)) {
+        eps[names(exp_b_fixed)] <- exp_b_fixed
       }
+      
+      # equate estimates
+      if (!is.null(equate)) {
+        for (i in 1:length(equate)) {
+          pos <- match(equate[[i]], names(eps))
+          eps[pos] <- weighted.mean(x = eps[pos], w = N[pos])
+        }
+      }
+      
+      if (zerosum) {
+        b1 <- -log(eps)
+        b2 <- b1 - mean(b1)
+        eps <- exp(-b2)
+      }
+      max.change <- max(abs(b - b0))
+      if (progress) {
+        cat("PL Iter.", iter, ": max. parm. change = ",
+            round( max.change , 6 ), "\n")
+        flush.console()
+      }
+      iter <- iter + 1
     }
-    
-    if (zerosum) {
-      b1 <- -log(eps)
-      b2 <- b1 - mean(b1)
-      eps <- exp(-b2)
-    }
-    max.change <- max(abs(b - b0))
-    if (progress) {
-      cat("PL Iter.", iter, ": max. parm. change = ",
-          round( max.change , 6 ), "\n")
-      flush.console()
-    }
-    iter <- iter + 1
   }
   item <- data.frame("N" = N,
                      "p" = p ,
@@ -205,7 +208,7 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
   
   # return fitted object that can be understood by eRm package
   res <- list(X = X01, X01 = X01, count = Aij,
-              dropped = dropped,
+              dropped = dropped, orphans = orphans,
               model = "RM", equate = equate, itemcluster = itemcluster,
               b_fixed = b_fixed, zerosum = zerosum,
               loglik = 0, npar = I,

@@ -94,3 +94,9 @@ for (i in seq(length(plots))) {
   print(plots[[i]])
 }
 dev.off()
+
+pdf_file <- file.path(getwd(), "results", "item_by_age_Netherlands.pdf")
+pdf(pdf_file, onefile = TRUE, width = 10, height = 5)
+  print(plots[[14]])
+  print(plots[[15]])
+dev.off()

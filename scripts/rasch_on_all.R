@@ -65,3 +65,22 @@ abline(0, 0, lty = 2)
 # The overlap needs to be created with explicit equivalence assumptions
 # We'll be making assumptions about the equivalence of items (rather than 
 # equivalence of populations), so the populations can freely differ.
+
+
+# 
+itemtable_select <- itemtable[which(itemtable$item %in%names(data)),]
+
+equate <- tapply(itemtable_select$item, itemtable_select$equate, list)
+
+fit7 <- rasch(data, equate = equate, count = gcdg_count, progress = TRUE)
+
+length(get_diff(fit7)[paste("v",1:57)])
+pub_tau <- filter(itembank, !is.na(lex.dutch1983)) %>% .$tau
+names(pub_tau) <- filter(itembank, !is.na(lex.dutch1983)) %>% .$lex.jam
+tau7 <- anchor(get_diff(fit7), items = c("n12", "n26"))
+cor(pub_tau, tau7[paste0("n", 1:57)])
+plot(x = pub_tau, y = pub_tau - tau7[paste0("n", 1:57)],
+     xlab = "Published", ylab = "Published - estimated",
+     main = "Difficulties items n1:n57")
+abline(0, 0, lty = 2)
+

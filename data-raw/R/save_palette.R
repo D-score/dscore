@@ -5,17 +5,19 @@ require("ddata")
 
 # color_study
 color_study <- c(
-  brewer.pal(9, "Greens")[8],         # Bangladesh
-  brewer.pal(12, "Paired")[c(3, 4)], # Brazil 1/2
-  brewer.pal(12, "Paired")[c(5, 6)], # Chile 1/2
-  brewer.pal(12, "Paired")[12],      # China
-  brewer.pal(12, "Paired")[c(1, 2)], # Columbia 1/2
-  brewer.pal(8, "Set2")[6],          # Ecuador
-  brewer.pal(8, "GnBu")[6],          # Ethiopia
-  brewer.pal(8, "Greys")[c(6, 8)],   # Jamaica 1/2
-  brewer.pal(8, "Reds")[6],          # Madagascar
-  brewer.pal(12, "Paired")[c(7, 8)], # Netherlands 1/2
-  brewer.pal(9, "BuPu")[9]           # South Africa
+  brewer.pal(9, "Greens")[8],        # Bangladesh
+  brewer.pal(12, "Paired")[c(5, 4)], # Brazil 1/2
+  brewer.pal(12, "Paired")[c(3, 7)], # Chile 1/2
+  brewer.pal(12, "Paired")[6],       # China
+  brewer.pal(8,  "Dark2")[4],        # Columbia 1/2
+  brewer.pal(12, "Paired")[2],       # Columbia 2
+  brewer.pal(8, "Set2")[1],          # Ecuador
+  brewer.pal(8, "YlOrRd")[3],        # Ethiopia
+  brewer.pal(8, "Set2")[c(6, 4)],    # Jamaica 1/2
+  brewer.pal(12, "Paired")[12],      # Madagascar
+  brewer.pal(12, "Paired")[c(8)],    # Netherlands 1
+  brewer.pal(12, "Paired")[c(1)],    # Netherlands 2
+  brewer.pal(9, "BuPu")[7]           # South Africa
 )
 names(color_study) <-   c("Bangladesh", "Brazil 1", "Brazil 2", 
                         "Chile 1", "Chile 2", "China", 

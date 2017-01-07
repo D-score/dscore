@@ -65,3 +65,8 @@ plot(x = pub_tau, y = pub_tau - tau1[paste0("n", 1:57)],
 abline(0, 0, lty = 2)
 
 summary(tau2)
+
+tau_out <- data.frame(item=names(tau1),tau=tau1)
+
+itembank <- join(itemtable, tau_out, by="item", type="left")
+

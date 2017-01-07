@@ -207,15 +207,16 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
   item$itemcluster <- itemcluster
   
   # return fitted object that can be understood by eRm package
-  res <- list(X = X01, X01 = X01, count = Aij,
-              dropped = dropped, orphans = orphans,
+  res <- list(X = as.data.frame(X01), X01 = as.data.frame(X01), 
+              count = Aij, dropped = dropped, orphans = orphans,
               model = "RM", equate = equate, itemcluster = itemcluster,
               b_fixed = b_fixed, zerosum = zerosum,
               loglik = 0, npar = I,
               iter = iter, convergence = conv,
               item = item, b = log(eps),
-              etapar = -log(eps), se.eta = NULL, hessian = NULL,
-              betapar = -log(eps), se.beta = NULL,
+              etapar = -log(eps), se.eta = rep(NA, length(eps)), 
+              hessian = NULL,
+              betapar = -log(eps), se.beta = rep(NA, length(eps)),
               W = diag(I), call = call)
   class(res) <- c("dRm", "Rm", "eRm")
   return(res)

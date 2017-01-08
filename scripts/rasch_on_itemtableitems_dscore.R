@@ -1,64 +1,60 @@
-library(dscore)
-library(ddata)
-library(dplyr)
-library(plyr)
-library(tidyr)
-#items in data that are in itemtable as well
-gcdg_items <- gcdg[,which(names(gcdg)%in%itemtable[,"item"])]
+library("dscore")
+library("ddata")
+library("dplyr", warn.conflicts = FALSE)
+library("tidyr")
 
-#alle items die in de data zitten
-#gcdg_items <- gcdg[,which(names(gcdg)%in%item_names())]
+# take items
+# 1) from a registered instrument
+# 2) for which we have at least 25 observations in each category
+items <- names(gcdg)[names(gcdg) %in% itemtable$item]
+data <- ddata::gcdg %>%
+  select_(.dots = items) %>%
+  select_if(category_size_exceeds, 25)
+items <- names(data)
 
-#function to diagnose if items are eligible
-diag_items <- function(x){
-  min=min(x,na.rm=TRUE) 
-  max=max(x,na.rm=TRUE)
-  table=table(x)
-  diagout <- (min<0 | max >1 | min==max|min(table)<2|min==Inf|min==(-Inf))
-  if(diagout){c(item=names(x),min=min,max=max,table)}
-}
-out_diagitems <- do.call("rbind",lapply(gcdg_items, diag_items))
-
-#exclude items that are not eligible
-gcdg_items_c <- gcdg_items[,which(!names(gcdg_items) %in% rownames(out_diagitems))]
-
-#select equategroups for items that are in the data
-itemtable_select <- itemtable[which(itemtable$item %in%names(gcdg_items_c)),]
-
+# select equategroups among selected items
+itemtable_select <- itemtable[which(itemtable$item %in% items), ]
 equatelist <- tapply(itemtable_select$item, itemtable_select$equate, list)
 
-#only dutch items to set the difficulty parameters
-items <- item_names("NL")
-data <- ddata::gcdg %>% select_(.dots = items)
-fit2 <- rasch(data, count = gcdg_count)
-nlb <- get_diff(fit2)
+# fit model on dutch items to set difficulty parameters
+items_nl <- unique(c(item_names("NL"), item_names("NL2")))
+items_nl <- items_nl[items_nl %in% names(data)]
+data_nl <- ddata::gcdg %>% select_(.dots = items_nl)
+fit_nl <- rasch(data_nl, count = gcdg_count)
+b_fixed <- get_diff(fit_nl)
 
-fit1 <- rasch(gcdg_items_c, equate = equatelist, b_fixed=nlb)
+# fit the "big model"
+system.time(fit <- rasch(data, equate = equatelist,
+                          b_fixed = b_fixed, count = gcdg_count))
 
-#schatten van tau obv model fit
-tau1 <- anchor(get_diff(fit1), items = c("n12", "n26"))
+# # create itembank
+tau <- anchor(get_diff(fit), items = c("n12", "n26"))
+tau_df <- data.frame(item = names(tau), tau = tau, stringsAsFactors = FALSE)
+itembank <- left_join(itemtable, tau_df, by = "item")
+itembank <- itembank[!is.na(itembank$tau), ]
+names(itembank)[4] <- "lex.gcdg"
 
-#maak de tau koppelbaar aan itemtable
-tau_out <- data.frame(item=names(tau1),tau=tau1)
+# calculate d-score
+adm <- c("country", "study", "id", "wave", "age")
+system.time(alldscore <- gcdg %>%
+  select_(.dots = c(adm, items)) %>%
+  gather(item, score,  -one_of(adm), na.rm = TRUE) %>%
+  arrange(country, study, id, age) %>%
+  group_by(study, id, age) %>%
+  summarise(d = dscore(scores = score, items = item,
+                       ages = age / 12, mu = "model",
+                       itembank = itembank, lexicon = "gcdg")) %>%
+  ungroup())
 
-#koppel de tau aan de itemtable om een itembank te maken
-itembank1 <- join(itemtable, tau_out, by="item", type="left")
-
-alldscore <- gcdg %>%
-  select(id, wave, age, acom1:apbs5 ) %>%  ##hier moeten juiste items geselecteerd worden
-  gather(item, score,  acom1:apbs5, na.rm = TRUE) %>%
-  arrange(id, age) %>%
-  group_by(id, age) %>%
-  summarise(d = dscore(score, item, age, mu = "model", itembank=itembank1 ,lexicon = "item")) %>%
-  ungroup()
-
+# joint plot of d-score against age
 plot(x = NULL, y = NULL, xlim = c(0, 48), ylim = c(0, 80),
      xaxp = c(0, 48, 8),
      xlab = "Age (in months)", ylab = "D-score")
 abline(h = seq(0, 80, 10), v = seq(0, 48, 6), col = "grey90", lty = 3)
 xgrid <- seq(1/12, 4, 1/12)
 prov_mu <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
-lines(x = xgrid *12, y = prov_mu(xgrid), lty = 1, lwd = 3,
+lines(x = xgrid * 12, y = prov_mu(xgrid), lty = 1, lwd = 3,
       col = "olivedrab")
-with(alldscore, points(x = age * 12, y = d, cex = 0.4, col = "navy"))
-
+with(alldscore, points(x = age, y = d, cex = 0.4, col = "navy"))
+mtext(paste(Sys.Date(), length(items), length(b_fixed), length(equatelist)),
+      side = 1, line = 3, at = 0)

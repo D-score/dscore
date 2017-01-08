@@ -5,16 +5,22 @@ library("tidyr")
 
 # take items
 # 1) from a registered instrument
-# 2) for which we have at least 25 observations in each category
+# 2) for which we have at least one observation in each category
 items <- names(gcdg)[names(gcdg) %in% itemtable$item]
 data <- ddata::gcdg %>%
   select_(.dots = items) %>%
-  select_if(category_size_exceeds, 25)
+  select_if(category_size_exceeds, 1)
 items <- names(data)
 
 # select equategroups among selected items
 itemtable_select <- itemtable[which(itemtable$item %in% items), ]
 equatelist <- tapply(itemtable_select$item, itemtable_select$equate, list)
+
+# remove troublesome equates 
+equatelist$GM1 <- NULL  # ag2 - n4
+equatelist$GM2 <- NULL  # ag1 - n3
+equatelist$FM2 <- NULL  # af3 - n8
+equatelist$EXP5 <- NULL  # b3e5 - dl4 - n10
 
 # fit model on dutch items to set difficulty parameters
 items_nl <- unique(c(item_names("NL"), item_names("NL2")))
@@ -27,8 +33,18 @@ b_fixed <- get_diff(fit_nl)
 system.time(fit <- rasch(data, equate = equatelist,
                           b_fixed = b_fixed, count = gcdg_count))
 
-# # create itembank
+# investigate item difficulties fixed vs estimated
 tau <- anchor(get_diff(fit), items = c("n12", "n26"))
+tau_est <- tau[names(b_fixed)]
+tau_fixed  <- anchor(b_fixed, items = c("n12", "n26"))
+plot(x = NULL, y = NULL, ylab = "New tau", xlab = "Fixed tau", 
+     xlim = c(0, 80), ylim = c(0, 80))
+text(names(b_fixed), x = tau_fixed, y = tau_est)
+tau_df <- data.frame(item = names(b_fixed), fixed = tau_fixed, 
+                  est = tau_est)
+cor(tau_df[,2:3])
+
+# # create itembank
 tau_df <- data.frame(item = names(tau), tau = tau, stringsAsFactors = FALSE)
 itembank <- left_join(itemtable, tau_df, by = "item")
 itembank <- itembank[!is.na(itembank$tau), ]

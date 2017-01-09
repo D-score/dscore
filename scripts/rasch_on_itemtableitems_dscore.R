@@ -74,3 +74,7 @@ lines(x = xgrid * 12, y = prov_mu(xgrid), lty = 1, lwd = 3,
 with(alldscore, points(x = age, y = d, cex = 0.4, col = "navy"))
 mtext(paste(Sys.Date(), length(items), length(b_fixed), length(equatelist)),
       side = 1, line = 3, at = 0)
+
+# store dscore
+fn <- file.path(getwd(), "store", "alldscore.RData")
+save(alldscore, file = fn)

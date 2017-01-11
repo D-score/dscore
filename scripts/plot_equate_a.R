@@ -1,3 +1,4 @@
+# Creates equate_a.pdf
 # Create item-by-age plots per equate group
 
 library("ddata")
@@ -18,6 +19,7 @@ items <- names(data)
 # select only items that are part of an equate group
 items_eq <- unique(itemtable$item[!is.na(itemtable$equate)])
 items <- intersect(items, items_eq)
+
 
 # proportion pass per month (p), age per month (a)
 # observations per months (n) by study and item
@@ -43,50 +45,71 @@ plot_age_by_grp <- function(pass, by_name = "equate", ...) {
   for (i in 1:length(plot_list)) {
     cat("Group: ", as.character(i), by_grp[i], "\n")
     plot_list[[i]] <- plot_age_one_grp(pass, by_name = by_name, 
-                                         by_value = by_grp[i],
-                                         i = i,
-                                         ...)
+                                       by_value = by_grp[i],
+                                       i = i,
+                                       ...)
   }
   
   return(plot_list)
 }
 
 plot_age_one_grp <- function(pass, 
-                               by_name,
-                               by_value,
-                               i = 0,
-                               min_n = 10, ...) {
+                             by_name,
+                             by_value,
+                             i = 0,
+                             min_n = 10, ...) {
   filter_criteria <- lazyeval::interp(~ which_column == by_value, 
-                            which_column = as.name(by_name))
+                                      which_column = as.name(by_name))
   data_plot <- pass %>%
-    filter_(filter_criteria) %>%
+    filter_(filter_criteria)
+  
+  # items with data within equate group
+  items <- unique(data_plot$item)
+  labels <- data_plot$label[match(items, data_plot$item)]
+  
+  # continue filtering
+  data_plot <- data_plot %>%
     filter(n >= min_n)
-#  %>%
-#    mutate(item =  factor(item, levels = all_items)) %>%
-#    arrange(item)
   
   plot <- ggplot(data_plot, aes(a, p, group = study, colour = study)) + 
     scale_x_continuous("Age (in months)", limits = c(0, 60),
                        breaks = seq(0, 60, 6)) +
     scale_y_continuous("% pass", breaks = seq(0, 100, 20), 
                        limits = c(0, 100)) +
-    scale_colour_manual(values = get_palette("study"), na.value = "grey") +
-    geom_line() + geom_point() +
-    theme(legend.position = c(0.95,0.05), legend.justification = c(1, 0)) + 
+    scale_colour_manual(values = get_palette("study"), na.value = "grey")
+  
+  # add proportions
+  if (nrow(data_plot) >= 1)
+    plot <- plot +
+    geom_line() + geom_point()
+  
+  # annotations
+  plot <- plot + 
+    theme(legend.position = c(0.95, 0.05), legend.justification = c(1, 0)) + 
     guides(fill = guide_legend(title = NULL)) + 
-    annotate("text", x = 1, y = 7, hjust = 0, 
-             label = as.character(data_plot$equate[1])) +
     annotate("text", x = 1, y = 2, hjust = 0,
-               label = paste(unique(data_plot$item), collapse = " - "))
+             label = as.character(i)) + 
+    annotate("text", x = 7, y = 2, hjust = 0,
+             label = by_value) 
+  
+  
+  # item nams
+  for (l in length(labels):1) {
+      plot <- plot + annotate("text", x = 1, y = 7 + (l - 1) * 5, hjust = 0,
+                              label = items[l])
+      if (!is.na(labels[l]))
+        plot <- plot + annotate("text", x = 7, y = 7 + (l - 1) * 5, hjust = 0,
+                              label = labels[l])
+  }
   return(plot)
 }
 
 theme_set(theme_light())
 plots <- plot_age_by_grp(pass, by_name = "equate")
 
-pdf_file <- file.path(getwd(), "results", "equate_age.pdf")
+pdf_file <- file.path(getwd(), "results", "equate_a.pdf")
 pdf(pdf_file, onefile = TRUE, width = 10, height = 5)
 for (i in seq(length(plots))) {
-    print(plots[[i]])
+  print(plots[[i]])
 }
 dev.off()

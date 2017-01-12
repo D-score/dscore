@@ -1,3 +1,5 @@
+# fit to Rasch model to selected items
+
 library("dscore")
 library("ddata")
 library("dplyr", warn.conflicts = FALSE)
@@ -21,6 +23,7 @@ equatelist$GM1 <- NULL  # ag2 - n4
 equatelist$GM2 <- NULL  # ag1 - n3
 equatelist$FM2 <- NULL  # af3 - n8
 equatelist$EXP5 <- NULL  # b3e5 - dl4 - n10
+equatelist$COG18 <- NULL  # b1m45 - b2m34 - b3c18 - n9
 
 # fit model on dutch items to set difficulty parameters
 items_nl <- unique(c(item_names("NL"), item_names("NL2")))
@@ -75,6 +78,10 @@ with(alldscore, points(x = age, y = d, cex = 0.4, col = "navy"))
 mtext(paste(Sys.Date(), length(items), length(b_fixed), length(equatelist)),
       side = 1, line = 3, at = 0)
 
-# store dscore
-fn <- file.path(getwd(), "store", "alldscore.RData")
-save(alldscore, file = fn)
+# store model
+model_name <- "fx_1336"
+model <- list(name = model_name, items = items, equatelist = equatelist,
+              fit = fit, itembank = itembank, 
+              dscore = alldscore)
+fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
+save(model, file = fn)

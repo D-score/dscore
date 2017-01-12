@@ -43,6 +43,7 @@ plot_by_grp <- function(pass, by_name = "equate",
                         xvar = "d", ...) {
   # pre-allocate list of ggplots
   by_grp <- gtools::mixedsort(unique(pass$equate))
+  if (any(is.na(by_grp))) by_grp <- by_grp[-which(is.na(by_grp))]  # remove misisng 
   plot_list <- vector("list", length(by_grp))
   names(plot_list) <- by_grp
   
@@ -58,6 +59,7 @@ plot_by_grp <- function(pass, by_name = "equate",
   return(plot_list)
 }
 
+
 plot_d_one_grp <- function(pass, 
                                by_name,
                                by_value,
@@ -69,23 +71,40 @@ plot_d_one_grp <- function(pass,
   data_plot <- pass %>%
     filter_(filter_criteria) %>%
     filter(n >= min_n)
-#  %>%
-#    mutate(item =  factor(item, levels = all_items)) %>%
-#    arrange(item)
   
+  # items with data within equate group
+  items <- unique(data_plot$item)
+  labels <- data_plot$label[match(items, data_plot$item)]
+
   plot <- ggplot(data_plot, aes(d, p, group = study, colour = study)) + 
     scale_x_continuous("D-score", limits = c(0, 80),
                        breaks = seq(0, 80, 10)) +
     scale_y_continuous("% pass", breaks = seq(0, 100, 20), 
                        limits = c(0, 100)) +
-    scale_colour_manual(values = get_palette("study"), na.value = "grey") +
-    geom_line() + geom_point() +
-    theme(legend.position = c(0.95,0.05), legend.justification = c(1, 0)) + 
+    scale_colour_manual(values = get_palette("study"), na.value = "grey")
+  
+  # add proportions
+  if (nrow(data_plot) >= 1)
+    plot <- plot +
+    geom_line() + geom_point()
+ 
+  # annotations
+  plot <- plot + 
+    theme(legend.position = c(0.95, 0.05), legend.justification = c(1, 0)) + 
     guides(fill = guide_legend(title = NULL)) + 
-    annotate("text", x = 1, y = 7, hjust = 0, 
-             label = as.character(data_plot$equate[1])) +
     annotate("text", x = 1, y = 2, hjust = 0,
-               label = paste(unique(data_plot$item), collapse = " - "))
+             label = as.character(i)) + 
+    annotate("text", x = 7, y = 2, hjust = 0,
+             label = by_value) 
+  
+  # item nams
+  for (l in length(labels):1) {
+    plot <- plot + annotate("text", x = 1, y = 7 + (l - 1) * 5, hjust = 0,
+                            label = items[l])
+    if (!is.na(labels[l]))
+      plot <- plot + annotate("text", x = 7, y = 7 + (l - 1) * 5, hjust = 0,
+                              label = labels[l])
+  }
   return(plot)
 }
 

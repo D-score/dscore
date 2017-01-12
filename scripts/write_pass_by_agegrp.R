@@ -1,11 +1,14 @@
+# write "pass_by_agegrp.txt"
+
 library("ddata")
 library("dplyr", warn.conflicts = FALSE)
 library("tidyr")
 library("ggplot2")
 
-tab_p <- tbl_df(master) %>%
-  select(age, one_of(itemtable$item)) %>%
-  # select(1:100) %>%
+# calculate pass probability per item for all months 
+# with 50 or more observations
+tab_p <- gcdg %>%
+  select_(.dots = c("age", itemtable$item)) %>%
   gather(key = item, value = value, -age) %>%
   drop_na(value, age) %>%
   mutate(agegp = cut(age, breaks = seq(0, 60, 6))) %>%

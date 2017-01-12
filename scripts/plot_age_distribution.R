@@ -1,3 +1,5 @@
+# Creates "Age distribution - range.pdf", "Age distribution - relative.pdf",
+# and "Age distribution - absolute.pdf"
 library("ddata")
 library("dplyr", warn.conflicts = FALSE)
 library("ggplot2")
@@ -5,7 +7,7 @@ library("ggplot2")
 vars_adm <- c("country", "study", "id",
               "wave", "male",
               "age", "agedays")
-adm <- select(tbl_df(master), one_of(vars_adm))
+adm <- select(tbl_df(gcdg), one_of(vars_adm))
 
 rd <- file.path(getwd(), "results")
 

@@ -34,7 +34,8 @@ b_fixed <- get_diff(fit_nl)
 
 # fit the "big model"
 system.time(fit <- rasch(data, equate = equatelist,
-                          b_fixed = b_fixed, count = gcdg_count))
+                         count = gcdg_count))
+#            b_fixed = b_fixed, count = gcdg_count))
 
 # investigate item difficulties fixed vs estimated
 tau <- anchor(get_diff(fit), items = c("n12", "n26"))
@@ -79,7 +80,7 @@ mtext(paste(Sys.Date(), length(items), length(b_fixed), length(equatelist)),
       side = 1, line = 3, at = 0)
 
 # store model
-model_name <- "fx_1336"
+model_name <- "fr_1336"
 model <- list(name = model_name, items = items, equatelist = equatelist,
               fit = fit, itembank = itembank, 
               dscore = alldscore)

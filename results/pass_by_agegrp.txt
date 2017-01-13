@@ -1,0 +1,1218 @@
+equate	instrument	domain	item	label	(0,6]	(6,12]	(12,18]	(18,24]	(24,30]	(30,36]	(36,42]	(42,48]	(48,54]	(54,60]	<NA>
+EXP4	ASQ	Expressive	acom1	Does your baby sometimes make throaty or gurgling sounds? 											
+	ASQ		acom2	After you have been out of sight, does your baby smile or get excited when she sees you?											
+EXP6	ASQ	Expressive	acom3	Does your baby make cooing sounds such as "ooo", "gah," and  "ah"? 											
+	ASQ		acom4	Does your baby make high-pitched squeals?											
+	ASQ		acom5	Does your baby smile when you talk to him?											
+	ASQ		acom6	When you speak to your baby, does she make sounds back to you?											
+	ASQ	Fine Motor	af1	Does your baby touch her face with her hands? 											
+	ASQ	Fine Motor	af2	Does your baby grasp your finger if you touch the palm of her hand?											
+FM2	ASQ	Fine Motor	af3	Does your baby hold his hands open or partly open when he is awake (rather than in fists, as they were when he was a newborn)? 											
+FM1	ASQ	Fine Motor	af4	Is your baby's hand usually tightly closed when he is awake?(If your baby used to do this but no longer does, mark "yes.")  											
+	ASQ	Fine Motor	af5	Does your baby grab or scratch at her clothes?											
+FM56	ASQ	Fine Motor	af6	When you put a toy in his hand, does your baby hold it in his hand briefly?  											
+GM2	ASQ	Gross Motor	ag1	While your baby is on his back, does he wave his arms and legs, wiggle and squirm?											
+GM1	ASQ	Gross Motor	ag2	When your baby is on his back, does he kick his legs?											
+	ASQ	Gross Motor	ag3	After holding her head up while on her tummy, does your baby lay her head back down on the floor, rather than let it drop or fall forward?											
+GM3	ASQ	Gross Motor	ag4	When your baby is on his tummy, does he hold his head up for a few seconds?											
+GM5	ASQ	Gross Motor	ag5	While your baby is on his back, does he move his head from side to side?											
+GM5	ASQ	Gross Motor	ag6	When your baby is on her tummy, does she turn her head to the side?											
+FM34	ASQ	Fine Motor	apbs2	When you move a small toy up and down slowly in front of her face (about 10 inches away), does your baby follow the toy with her eyes?											
+FM23	ASQ	Fine Motor	apbs3	When you move a toy slowly from side to side in front of your baby's face (about 10 inches away), does your baby follow the toy with his eyes, sometimes turning his head?											
+FM12	ASQ	Fine Motor	apbs4	When you move around, does your baby follow you with her eyes ?											
+	Bayley1		b1m100	puts 3 or more cubes in cup											
+EXP12	Bayley1	Expressive	b1m101	jabbers expressively											
+	Bayley1		b1m102	uncovers blue box											
+FM20	Bayley1	Fine Motor	b1m103	turns pages of books											
+COG44	Bayley1	Cognitive	b1m104	*pats toy (whistle doll) in imitation											
+COG41	Bayley1	Cognitive	b1m105	dangles ring by string											
+EXP16	Bayley1	Expressive	b1m106	imitates words											
+	Bayley1		b1m107	puts beads in box (6 of 8)											
+COG47	Bayley1	Cognitive	b1m108	places 1 peg repeateadly											
+COG42	Bayley1	Cognitive	b1m109	removes pellet from bottle											
+COG51	Bayley1	Cognitive	b1m110	blue board: places 1 round block											
+FM25	Bayley1	Fine Motor	b1m111	builds tower of 2 cubes											
+FM24	Bayley1	Fine Motor	b1m112	scribbles sponstaneously											
+EXP18	Bayley1	Expressive	b1m113	says 2 words											
+COG54	Bayley1	Cognitive	b1m114	puts 9 cubes in cup											
+	Bayley1		b1m115	closes round box											
+EXP9	Bayley1	Expressive	b1m116	uses gestures to  make wants known											
+REC8	Bayley1	Receptive	b1m117	shows shoes or other clothing, or own toy											
+COG55	Bayley1	Cognitive	b1m118	pegs placed in 70 seconds											
+	Bayley1		b1m119	builds tower of 3 cubes											
+COG49	Bayley1	Cognitive	b1m120	pink board: places round block											
+	Bayley1		b1m121	blue board: places 2 round blocks											
+COG57	Bayley1	Cognitive	b1m122	attains toy with stick											
+COG62	Bayley1	Cognitive	b1m123	pegs placed in 42 seconds											
+EXP20	Bayley1	Expressive	b1m124	names 1 object											
+FM26	Bayley1	Fine Motor	b1m125	imitates crayon stroke											
+REC13	Bayley1	Receptive	b1m126	follows directions doll (check parts passed)											
+EXP19	Bayley1	Expressive	b1m127	uses words to  make wants known											
+REC17	Bayley1	Receptive	b1m128	points to parts of doll (check parts recognised, check manual number of parts)											
+COG58	Bayley1	Cognitive	b1m129	blue board: places 2 round and 2 square blocks											
+EXP22	Bayley1	Expressive	b1m130	names 1 picture											
+	Bayley1		b1m131	finds 2 objects											
+REC14	Bayley1	Receptive	b1m132	points to 3 pictures											
+	Bayley1		b1m133												
+	Bayley1		b1m134	pegs placed in 30 seconds											
+	Bayley1		b1m135												
+EXP26	Bayley1	Expressive	b1m136	sentence of 2 words											
+COG56	Bayley1	Cognitive	b1m137	pink board: completes											
+	Bayley1		b1m138												
+	Bayley1		b1m139												
+	Bayley1		b1m140	broken doll: mends approximately											
+	Bayley1		b1m141	names 3 pictures											
+	Bayley1		b1m142	blue board: places 6 blocks											
+FM32	Bayley1	Fine Motor	b1m143	builds tower of 6 cubes											
+	Bayley1		b1m144	discriminates 2: cup, plate, box											
+EXP50	Bayley1	Expressive	b1m145	names watch, 4th picture											
+EXP27	Bayley1	Expressive	b1m146	names 3 objects											
+EXP52	Bayley1	Expressive	b1m147	names watch, 4th picture											
+FM35	Bayley1	Fine Motor	b1m147	imitates strokes: vertical and horizontal* (see next)											
+FM36	Bayley1	Fine Motor	b1m147	imitates strokes: vertical and horizontal* (see previous)											
+	Bayley1		b1m148	points to 7 pictures											
+EXP28	Bayley1	Expressive	b1m149	names 5 pictures											
+EXP51	Bayley1	Expressive	b1m150	names watch, 2nd picture											
+COG60	Bayley1	Cognitive	b1m151	pink board: reverse											
+	Bayley1		b1m152	discriminates 3: cup, plate, box											
+	Bayley1		b1m153	broken doll: mends exactly											
+	Bayley1		b1m16												
+	Bayley1		b1m17												
+	Bayley1		b1m18												
+	Bayley1		b1m19												
+	Bayley1		b1m20												
+	Bayley1		b1m21												
+COG7	Bayley1	Cognitive	b1m22	anticipatory excitement											
+	Bayley1		b1m23												
+	Bayley1		b1m24												
+COG6	Bayley1	Cognitive	b1m25	visually recognises mother											
+	Bayley1		b1m26												
+	Bayley1		b1m27												
+	Bayley1		b1m28												
+	Bayley1		b1m29												
+	Bayley1		b1m30												
+COG9	Bayley1	Cognitive	b1m31	reacts to disappearence of face											
+	Bayley1		b1m32												
+	Bayley1		b1m33												
+	Bayley1		b1m34												
+	Bayley1		b1m35												
+COG16	Bayley1	Cognitive	b1m36	Simple play with rattle											
+	Bayley1		b1m37												
+	Bayley1		b1m38												
+	Bayley1		b1m39												
+	Bayley1		b1m40												
+	Bayley1		b1m41												
+	Bayley1		b1m42												
+	Bayley1		b1m43												
+COG17	Bayley1	Cognitive	b1m44	brings ring to mouth											
+COG18	Bayley1	Cognitive	b1m45	inspects own hand											
+	Bayley1		b1m46												
+REC46	Bayley1	Receptive	b1m47	turns head to sound of bell											
+	Bayley1		b1m48	turns head to sound of rattle											
+COG21	Bayley1	Cognitive	b1m49	reaches for cube											
+	Bayley1		b1m50												
+	Bayley1		b1m51												
+	Bayley1		b1m52												
+COG19	Bayley1	Cognitive	b1m53	mirror image approach											
+	Bayley1		b1m54												
+	Bayley1		b1m55												
+COG30	Bayley1	Cognitive	b1m56	retains 2 cubes											
+	Bayley1		b1m57												
+	Bayley1		b1m58												
+	Bayley1		b1m59												
+	Bayley1		b1m60												
+	Bayley1		b1m61												
+	Bayley1		b1m62												
+	Bayley1		b1m63												
+COG27	Bayley1	Cognitive	b1m64	reaches for second cube											
+	Bayley1		b1m65												
+COG24	Bayley1	Cognitive	b1m66	bangs in play											
+	Bayley1		b1m67	sustained inspection of ring											
+COG23	Bayley1	Cognitive	b1m68	exploitive string play											
+FM14	Bayley1	Fine Motor	b1m69	transfers objects hand to hand											
+	Bayley1		b1m70	picks up cube deftly and directly											
+	Bayley1		b1m71	pulls string: secures ring											
+	Bayley1		b1m72	interest in sound production											
+FM18	Bayley1	Fine Motor	b1m73	lifts cup with handle											
+	Bayley1		b1m74	attends to scribbling											
+COG25	Bayley1	Cognitive	b1m75	looks for fallen spoon											
+COG22	Bayley1	Cognitive	b1m76	playful response to mirror											
+COG33	Bayley1	Cognitive	b1m77	retains 2 of 3 cubes offered											
+COG26	Bayley1	Cognitive	b1m78	manipulates bell: insterest in details											
+EXP49	Bayley1	Expressive	b1m79	vocalizes 4 different syllables											
+COG29	Bayley1	Cognitive	b1m80	pulls string adaptively: secures ring											
+	Bayley1		b1m81												
+COG37	Bayley1	Cognitive	b1m82	attempts to secure 3 cubes											
+COG31	Bayley1	Cognitive	b1m83	rings bell purposely											
+REC3	Bayley1	Receptive	b1m84	listens selectively with familiar words											
+EXP10	Bayley1	Expressive	b1m85	says "da-da" or equivalent											
+COG28	Bayley1	Cognitive	b1m86	*uncovers toy (check manual if by pulling cloth											
+COG38	Bayley1	Cognitive	b1m87	fingers holes in pegboard											
+	Bayley1		b1m88	picks up cup, secures cube											
+REC6	Bayley1	Receptive	b1m89	responds to verbal request											
+COG36	Bayley1	Cognitive	b1m90	puts cube in cup on command											
+	Bayley1		b1m91	looks for content of box											
+	Bayley1		b1m92												
+COG32	Bayley1	Cognitive	b1m93	looks at pictures in book											
+REC4	Bayley1	Receptive	b1m94	inhibits on command											
+	Bayley1		b1m95	attempting to imitate scribble											
+	Bayley1		b1m96	unwraps cube											
+	Bayley1		b1m97												
+FM21	Bayley1	Fine Motor	b1m98	holds crayon adaptively											
+COG39	Bayley1	Cognitive	b1m99	pushes car along											
+EXP18	Bayley2	Expressive	b2m100	Uses Words Appropriately Series: 2 words											
+REC8	Bayley2	Receptive	b2m101	Shows shoes other clothing or object											
+COG50	Bayley2	Cognitive	b2m102	Retrieves toy - visible displacement											
+FM26	Bayley2	Fine Motor	b2m103	Imitates Stroke Series: Random											
+COG57	Bayley2	Cognitive	b2m104	Uses rod to attain toy											
+	Bayley2		b2m105												
+EXP19	Bayley2	Expressive	b2m106	Uses word to make wants known											
+REC13	Bayley2	Receptive	b2m107	Follows direction doll											
+REC17	Bayley2	Receptive	b2m108	Points to 3 body parts											
+EXP22	Bayley2	Expressive	b2m109	Names Picture Series: 1 Picture											
+EXP20	Bayley2	Expressive	b2m110	Names Object Series: 1 Object											
+EXP21	Bayley2	Expressive	b2m111	Combines word and gesture											
+COG58	Bayley2	Cognitive	b2m112	Places 4 pieces in 150 sec											
+EXP23	Bayley2	Expressive	b2m113	Says 8 words											
+EXP26	Bayley2	Expressive	b2m114	Uses a two-word utterance											
+COG56	Bayley2	Cognitive	b2m115	Completes pink											
+FM38	Bayley2	Fine Motor	b2m116	Differentiates scribble from stroke											
+EXP25	Bayley2	Expressive	b2m117	Imitates a two-word utterance											
+	Bayley2		b2m118												
+COG62	Bayley2	Cognitive	b2m119	Completes pegboard 25 sec											
+COG60	Bayley2	Cognitive	b2m120	Completes reversed pink											
+EXP30	Bayley2	Expressive	b2m121	Uses pronouns											
+	Bayley2		b2m122												
+FM32	Bayley2	Fine Motor	b2m123	Tower of 6 cubes											
+	Bayley2		b2m124												
+COG64	Bayley2	Cognitive	b2m125	Marches pictures											
+EXP27	Bayley2	Expressive	b2m126	Names Object Series: 3 Object											
+EXP29	Bayley2	Expressive	b2m127	Uses 3 word sentence											
+COG68	Bayley2	Cognitive	b2m128	Matches 3 colors											
+EXP33	Bayley2	Expressive	b2m129	Makes a contingent utterance											
+COG66	Bayley2	Cognitive	b2m130	Blue board - 75 sec											
+COG59	Bayley2	Cognitive	b2m131	Attends to story											
+	Bayley2		b2m132												
+EXP28	Bayley2	Expressive	b2m133	Names Picture Series: 5 Pictures											
+EXP35	Bayley2	Expressive	b2m134	Displays verbal comprehension											
+	Bayley2		b2m135												
+EXP10	Bayley2	Expressive	b2m71	Consonant vowel combination 1 combination											
+COG34	Bayley2	Cognitive	b2m72	Looks for contents of box											
+FM20	Bayley2	Fine Motor	b2m73	Turns pages of books											
+COG36	Bayley2	Cognitive	b2m74	Puts 1 cube in cup											
+COG37	Bayley2	Cognitive	b2m75	Attempts to secure 3 cubes											
+EXP12	Bayley2	Expressive	b2m76	Jabbers expressively											
+COG39	Bayley2	Cognitive	b2m77	Pushes car											
+EXP13	Bayley2	Expressive	b2m78	Consonant-Vowel Combination Series: 4 Combination											
+COG38	Bayley2	Cognitive	b2m79	Fingers holes in pegboard											
+COG46	Bayley2	Cognitive	b2m80	Removes lid from box											
+REC6	Bayley2	Receptive	b2m81	Responds to spoken request											
+COG41	Bayley2	Cognitive	b2m82	Suspects ring by spring											
+COG44	Bayley2	Cognitive	b2m83	Pats toy in imitation											
+COG40	Bayley2	Cognitive	b2m84	Finds one object											
+COG42	Bayley2	Cognitive	b2m85	Removes pellet											
+	Bayley2		b2m86												
+COG47	Bayley2	Cognitive	b2m87	Places 1 peg repeatedly											
+COG43	Bayley2	Cognitive	b2m88	Retrieves toy - clear box 1											
+	Bayley2		b2m89												
+COG51	Bayley2	Cognitive	b2m90	Places 1 piece - blue											
+FM24	Bayley2	Fine Motor	b2m91	Scribbles spontaneously											
+	Bayley2		b2m92												
+COG49	Bayley2	Cognitive	b2m93	Places circle pink											
+	Bayley2		b2m94												
+COG54	Bayley2	Cognitive	b2m95	9 cubes in cup											
+COG45	Bayley2	Cognitive	b2m96	Finds toy under reversed cups											
+FM25	Bayley2	Fine Motor	b2m97	Tower of 2 cubes											
+COG55	Bayley2	Cognitive	b2m98	Places pegs in 70 sec											
+	Bayley2		b2m99												
+GM38	Bayley2	Gross Motor	b2p54	Walks sideways while holding on to furniture											
+GM39	Bayley2	Gross Motor	b2p55	Sits down											
+FM19	Bayley2	Fine Motor	b2p56	Food Pellet Series: Thumb-fingertip grasp											
+	Bayley2		b2p57												
+	Bayley2		b2p58												
+	Bayley2		b2p59												
+	Bayley2		b2p60												
+GM40	Bayley2	Gross Motor	b2p61	Stands alone											
+GM42	Bayley2	Gross Motor	b2p62	Walks alone											
+GM43	Bayley2	Gross Motor	b2p63	Walks alone with good coordination											
+GM44	Bayley2	Gross Motor	b2p64	Throws ball											
+GM45	Bayley2	Gross Motor	b2p65	Squats briefly											
+GM47	Bayley2	Gross Motor	b2p66	Walks up stairs with help											
+GM48	Bayley2	Gross Motor	b2p67	Walks backwards											
+GM46	Bayley2	Gross Motor	b2p68	Stands up II											
+GM49	Bayley2	Gross Motor	b2p69	Walks down stairs with help											
+	Bayley2		b2p70												
+GM53	Bayley2	Gross Motor	b2p71	Walks sideways  											
+GM51	Bayley2	Gross Motor	b2p72	Stands on right foot with help											
+GM51	Bayley2	Gross Motor	b2p73	Stands on left foot with help											
+FM31	Bayley2	Fine Motor	b2p74	Uses pads of fingertips to grasp pencil											
+FM33	Bayley2	Fine Motor	b2p75	Uses hand to hold paper in place											
+FM27	Bayley2	Fine Motor	b2p76	Places 10 pellets in bottle (60 seconds)											
+GM50	Bayley2	Gross Motor	b2p77	Runs with coordination											
+	Bayley2		b2p78												
+GM57	Bayley2	Gross Motor	b2p79	Walks up stairs alone, placing both feet on each step											
+GM58	Bayley2	Gross Motor	b2p80	Walks down stairs alone, placing both feet on each step											
+GM54	Bayley2	Gross Motor	b2p81	Jumps from bottom step											
+GM60	Bayley2	Gross Motor	b2p82	Stands alone on right foot											
+GM61	Bayley2	Gross Motor	b2p83	Stands alone on left foot											
+GM56	Bayley2	Gross Motor	b2p84	Walks forward on line											
+GM63	Bayley2	Gross Motor	b2p85	Walks backwards close to line											
+GM55	Bayley2	Gross Motor	b2p86	Swings leg to kick ball											
+COG22	Bayley3	Cognitive	b3c22	Mirror Image Series: Responds positively											
+COG23	Bayley3	Cognitive	b3c23	Plays with string											
+COG24	Bayley3	Cognitive	b3c24	Bangs in play											
+COG25	Bayley3	Cognitive	b3c25	Searches for fallen object											
+COG26	Bayley3	Cognitive	b3c26	Bell Series: Manipulates											
+COG27	Bayley3	Cognitive	b3c27	Picks Up Block Series: Reaches for second block											
+COG28	Bayley3	Cognitive	b3c28	Pulls cloth to obtain object											
+COG29	Bayley3	Cognitive	b3c29	Pulls string adaptively											
+COG30	Bayley3	Cognitive	b3c30	Retains both blocks											
+COG31	Bayley3	Cognitive	b3c31	Bell Series: Rings purposely											
+COG32	Bayley3	Cognitive	b3c32	Looks at pictures											
+COG33	Bayley3	Cognitive	b3c33	Picks Up Block Series: Retains 2 of 3 blocks											
+COG34	Bayley3	Cognitive	b3c34	Searches for missing objects											
+COG35	Bayley3	Cognitive	b3c35	Takes blocks out of cup											
+COG36	Bayley3	Cognitive	b3c36	Block Series: 1 Block											
+COG37	Bayley3	Cognitive	b3c37	Picks up Block Series: 3 blocks											
+COG38	Bayley3	Cognitive	b3c38	Explores holes in pegboard											
+COG39	Bayley3	Cognitive	b3c39	Pushes car											
+COG40	Bayley3	Cognitive	b3c40	Finds hidden object											
+COG41	Bayley3	Cognitive	b3c41	Suspends ring											
+COG42	Bayley3	Cognitive	b3c42	Removes pellet											
+COG43	Bayley3	Cognitive	b3c43	Clear Box: Front											
+COG44	Bayley3	Cognitive	b3c44	Squeezes object											
+COG45	Bayley3	Cognitive	b3c45	Finds hidden object (Reversed)											
+COG46	Bayley3	Cognitive	b3c46	Removes lid from bottle											
+COG47	Bayley3	Cognitive	b3c47	Pegboard Series: 2 holes											
+COG48	Bayley3	Cognitive	b3c48	Relational Play Series: Self											
+COG49	Bayley3	Cognitive	b3c49	Pink Board Series: 1 piece											
+COG50	Bayley3	Cognitive	b3c50	Finds hidden object (Visible Displacement)											
+COG51	Bayley3	Cognitive	b3c51	Blue Board Series: 1 piece											
+COG52	Bayley3	Cognitive	b3c52	Clear Box: Sides											
+COG53	Bayley3	Cognitive	b3c53	Relational Play Series: Others											
+COG54	Bayley3	Cognitive	b3c54	Block Series: 9 Blocks											
+COG55	Bayley3	Cognitive	b3c55	Pegboard Series: 6 Pegs											
+COG56	Bayley3	Cognitive	b3c56	Pink Board Series: Completes											
+COG57	Bayley3	Cognitive	b3c57	Uses pencil to obtain object											
+COG58	Bayley3	Cognitive	b3c58	Blue Board Series: 4 Pieces											
+COG59	Bayley3	Cognitive	b3c59	Attends to story											
+COG60	Bayley3	Cognitive	b3c60	Rotated pink board											
+COG61	Bayley3	Cognitive	b3c61	Object assembly (Ball)											
+COG62	Bayley3	Cognitive	b3c62	Completes Pegboard: 25 Seconds											
+COG63	Bayley3	Cognitive	b3c63	Object assembly (Ice Cream Cone)											
+COG64	Bayley3	Cognitive	b3c64	Matches pictures											
+COG65	Bayley3	Cognitive	b3c65	Representational play											
+COG66	Bayley3	Cognitive	b3c66	Blue Board Series: Completes (75 seconds)											
+COG67	Bayley3	Cognitive	b3c67	Imitates a two-step action.											
+COG68	Bayley3	Cognitive	b3c68	Matches 3 colors											
+COG69	Bayley3	Cognitive	b3c69	Imaginary play											
+COG70	Bayley3	Cognitive	b3c70	Understands concept of one											
+COG71	Bayley3	Cognitive	b3c71	Multischeme combination play											
+COG72	Bayley3	Cognitive	b3c72	Concept Grouping: colour											
+COG73	Bayley3	Cognitive	b3c73	Concept Grouping: Size											
+COG74	Bayley3	Cognitive	b3c74	Compares masses											
+COG75	Bayley3	Cognitive	b3c75	Matches size											
+COG76	Bayley3	Cognitive	b3c76	Discriminates pictures											
+COG77	Bayley3	Cognitive	b3c77	Simple pattern											
+COG78	Bayley3	Cognitive	b3c78	Sorts pegs by colour											
+COG79	Bayley3	Cognitive	b3c79	Counts (One-to-one correspondence)											
+COG80	Bayley3	Cognitive	b3c80	Discriminates size											
+COG81	Bayley3	Cognitive	b3c81	Identifies 3 incomplete pictures											
+COG82	Bayley3	Cognitive	b3c82	Object assembly (Dog)											
+COG83	Bayley3	Cognitive	b3c83	Discriminates patterns											
+COG84	Bayley3	Cognitive	b3c84	Spatial memory											
+COG85	Bayley3	Cognitive	b3c85	Counts (Cardinally)											
+COG86	Bayley3	Cognitive	b3c86	Number constancy											
+COG87	Bayley3	Cognitive	b3c87	Laces card											
+COG88	Bayley3	Cognitive	b3c88	Classifies objects											
+COG89	Bayley3	Cognitive	b3c89	Understands concept of more											
+EXP10	Bayley3	Expressive	b3e10	Consonant-Vowel Combination Series: 1 Combination											
+EXP11	Bayley3	Expressive	b3e11	Participates in play routine											
+EXP12	Bayley3	Expressive	b3e12	Jabbers expressively											
+EXP13	Bayley3	Expressive	b3e13	Consonant-Vowel Combination Series: 4 Combination											
+EXP14	Bayley3	Expressive	b3e14	Uses one-word approximations											
+EXP15	Bayley3	Expressive	b3e15	Directs attention of other											
+EXP16	Bayley3	Expressive	b3e16	Imitates word											
+EXP17	Bayley3	Expressive	b3e17	Initiates play interaction											
+EXP18	Bayley3	Expressive	b3e18	Uses Words Appropriately Series: 2 words											
+EXP19	Bayley3	Expressive	b3e19	Uses word to make wants known											
+EXP20	Bayley3	Expressive	b3e20	Names Object Series: 1 Object											
+EXP21	Bayley3	Expressive	b3e21	Combines word and gesture											
+EXP22	Bayley3	Expressive	b3e22	Names Picture Series: 1 Picture											
+EXP23	Bayley3	Expressive	b3e23	Uses Words Appropriately Series: 8 words											
+EXP24	Bayley3	Expressive	b3e24	Answers yes or no verbally in response to questions											
+EXP25	Bayley3	Expressive	b3e25	Imitates a two-word utterance											
+EXP26	Bayley3	Expressive	b3e26	Uses a two-word utterance											
+EXP27	Bayley3	Expressive	b3e27	Names Object Series: 3 Object											
+EXP28	Bayley3	Expressive	b3e28	Names Picture Series: 5 Pictures											
+EXP29	Bayley3	Expressive	b3e29	Uses multiple-word utterances											
+EXP3	Bayley3	Expressive	b3e3	Vocalizes mood											
+EXP30	Bayley3	Expressive	b3e30	Uses pronouns											
+EXP31	Bayley3	Expressive	b3e31	Names Action Picture Series: 1 Picture											
+EXP32	Bayley3	Expressive	b3e32	Poses multiple-word questions											
+EXP33	Bayley3	Expressive	b3e33	Makes a contingent utterance											
+EXP34	Bayley3	Expressive	b3e34	Uses verb +ing											
+EXP35	Bayley3	Expressive	b3e35	Names Action Picture Series: 3 Pictures											
+EXP36	Bayley3	Expressive	b3e36	Uses different word combinations											
+EXP37	Bayley3	Expressive	b3e37	Names Action Picture Series: 5 Pictures											
+EXP38	Bayley3	Expressive	b3e38	Uses plurals											
+EXP39	Bayley3	Expressive	b3e39	Answers what or where questions											
+EXP4	Bayley3	Expressive	b3e4	Undifferentiated nasal sounds											
+EXP40	Bayley3	Expressive	b3e40	Uses possessives											
+EXP41	Bayley3	Expressive	b3e41	Names 4 colours											
+EXP42	Bayley3	Expressive	b3e42	Answers questions logically (Related to functions)											
+EXP43	Bayley3	Expressive	b3e43	Tells how an object is used											
+EXP44	Bayley3	Expressive	b3e44	Uses prepositions											
+EXP45	Bayley3	Expressive	b3e45	Uses present progressive form											
+EXP46	Bayley3	Expressive	b3e46	Describes Pictures Series: Uses 4-5 word sentences											
+EXP47	Bayley3	Expressive	b3e47	Describes Pictures Series: Uses past tense											
+EXP48	Bayley3	Expressive	b3e48	Describes Pictures Series: Uses future tense											
+EXP5	Bayley3	Expressive	b3e5	Social vocalization or laughing											
+EXP6	Bayley3	Expressive	b3e6	2 Vowel sounds											
+EXP7	Bayley3	Expressive	b3e7	Gets attention											
+EXP8	Bayley3	Expressive	b3e8	2 Consonant sounds											
+EXP9	Bayley3	Expressive	b3e9	Uses gestures											
+FM7	Bayley3	Fine Motor	b3f15	Block Series: Whole hand grasp											
+FM8	Bayley3	Fine Motor	b3f16	Reaches unilaterally											
+FM9	Bayley3	Fine Motor	b3f17	Food Pellet Series: Raking grasp											
+FM10	Bayley3	Fine Motor	b3f18	Block Series: Partial thumb opposition											
+FM11	Bayley3	Fine Motor	b3f19	Transfers ring											
+FM13	Bayley3	Fine Motor	b3f20	Food Pellet Series: Whole hand grasp											
+FM14	Bayley3	Fine Motor	b3f21	Transfers block											
+FM15	Bayley3	Fine Motor	b3f22	Block Series: Thumb-fingertip grasp											
+FM16	Bayley3	Fine Motor	b3f23	Brings spoons or blocks to midline											
+FM17	Bayley3	Fine Motor	b3f24	Food Pellet Series: Partial thumb opposition											
+FM18	Bayley3	Fine Motor	b3f25	Lifts cup by the handle											
+FM19	Bayley3	Fine Motor	b3f26	Food Pellet Series: Thumb-fingertip grasp											
+FM20	Bayley3	Fine Motor	b3f27	Turns pages of books											
+FM21	Bayley3	Fine Motor	b3f28	Grasp series: Palmar grasp											
+FM22	Bayley3	Fine Motor	b3f29	Isolates extended ring finger											
+FM24	Bayley3	Fine Motor	b3f30	Scribbles spontaneously											
+FM25	Bayley3	Fine Motor	b3f31	Block Stacking Series: 2 blocks											
+FM26	Bayley3	Fine Motor	b3f32	Imitates Stroke Series: Random											
+FM27	Bayley3	Fine Motor	b3f33	Places 10 pellets in bottle (60 seconds)											
+FM28	Bayley3	Fine Motor	b3f34	Grasp series: Transitional grasp											
+FM29	Bayley3	Fine Motor	b3f35	Coins in slot											
+FM30	Bayley3	Fine Motor	b3f36	Connecting Blocks: Apart 											
+FM31	Bayley3	Fine Motor	b3f37	Grasp Series: Intermediate (Tripod) grasp											
+FM32	Bayley3	Fine Motor	b3f38	Block stacking Series: 6 blocks											
+FM33	Bayley3	Fine Motor	b3f39	Uses hand to hold paper in place											
+FM35	Bayley3	Fine Motor	b3f40	Imitates Strokes Series: Horizontal											
+FM36	Bayley3	Fine Motor	b3f41	Imitates Strokes Series: Vertical											
+FM37	Bayley3	Fine Motor	b3f42	Connecting Blocks: Together											
+FM38	Bayley3	Fine Motor	b3f43	Imitates Strokes Series: Circular											
+FM39	Bayley3	Fine Motor	b3f44	Builds train of blocks											
+FM40	Bayley3	Fine Motor	b3f45	Strings 3 blocks											
+FM41	Bayley3	Fine Motor	b3f46	Imitates hand movements											
+FM42	Bayley3	Fine Motor	b3f47	Snips paper											
+FM43	Bayley3	Fine Motor	b3f48	Grasp Series: Dynamic grasp											
+FM44	Bayley3	Fine Motor	b3f49	Tactilely discriminates shapes											
+FM46	Bayley3	Fine Motor	b3f50	Builds wall											
+FM47	Bayley3	Fine Motor	b3f51	Cuts paper											
+FM48	Bayley3	Fine Motor	b3f52	Builds bridge											
+FM49	Bayley3	Fine Motor	b3f53	Imitates plus sign											
+FM50	Bayley3	Fine Motor	b3f54	Block stacking Series: 8 blocks											
+FM51	Bayley3	Fine Motor	b3f55	Cuts on line											
+FM52	Bayley3	Fine Motor	b3f56	Builds T 											
+FM53	Bayley3	Fine Motor	b3f57	Buttons 1 button											
+FM54	Bayley3	Fine Motor	b3f58	Builds steps											
+FM55	Bayley3	Fine Motor	b3f59	Traces designs											
+FM57	Bayley3	Fine Motor	b3f60	Imitates square											
+FM58	Bayley3	Fine Motor	b3f61	Copies plus sign											
+FM59	Bayley3	Fine Motor	b3f62	Tapbs fingers											
+FM60	Bayley3	Fine Motor	b3f63	Places 20 pellets in bottle											
+FM61	Bayley3	Fine Motor	b3f64	Cuts circle											
+FM62	Bayley3	Fine Motor	b3f65	Cuts square											
+FM63	Bayley3	Fine Motor	b3f66	Copies square											
+GM19	Bayley3	Gross Motor	b3g19	Sits with Support Series: 30 seconds											
+GM20	Bayley3	Gross Motor	b3g20	Rolls from back to sides											
+GM21	Bayley3	Gross Motor	b3g21	Elevates Trunk while Prone Series: Extended arms											
+GM22	Bayley3	Gross Motor	b3g22	Sits with Support Series: 5 seconds											
+GM23	Bayley3	Gross Motor	b3g23	Pulls up to sit											
+GM24	Bayley3	Gross Motor	b3g24	Grasps foot with hands											
+GM25	Bayley3	Gross Motor	b3g25	Rolls from back to stomach											
+GM26	Bayley3	Gross Motor	b3g26	Sits without Support Series: 30 seconds											
+GM27	Bayley3	Gross Motor	b3g27	Sits without support and holds objects											
+GM28	Bayley3	Gross Motor	b3g28	Rotates trunk while seated											
+GM29	Bayley3	Gross Motor	b3g29	Makes stepping movements											
+GM30	Bayley3	Gross Motor	b3g30	Crawls Series: On stomach											
+GM31	Bayley3	Gross Motor	b3g31	Crawls Series: Crawl position											
+GM32	Bayley3	Gross Motor	b3g32	Moves from sitting to hands and knees											
+GM33	Bayley3	Gross Motor	b3g33	Supports weight											
+GM34	Bayley3	Gross Motor	b3g34	Crawls Series: Crawl movement											
+GM35	Bayley3	Gross Motor	b3g35	Raises self to standing position											
+GM36	Bayley3	Gross Motor	b3g36	Bounces while standing											
+GM37	Bayley3	Gross Motor	b3g37	Walks Series: With support											
+GM38	Bayley3	Gross Motor	b3g38	Walks sideways with support											
+GM39	Bayley3	Gross Motor	b3g39	Sits down with control											
+GM40	Bayley3	Gross Motor	b3g40	Stands alone											
+GM41	Bayley3	Gross Motor	b3g41	Stands up Series: Alone											
+GM42	Bayley3	Gross Motor	b3g42	Walks Series: Alone											
+GM43	Bayley3	Gross Motor	b3g43	Walks Series: Alone with coordination											
+GM44	Bayley3	Gross Motor	b3g44	Throws ball											
+GM45	Bayley3	Gross Motor	b3g45	Squats without support											
+GM46	Bayley3	Gross Motor	b3g46	Stands up Series: Mature											
+GM47	Bayley3	Gross Motor	b3g47	Walks Up Stairs Series: Both feet on each step, with support.											
+GM48	Bayley3	Gross Motor	b3g48	Walks backward 2 steps											
+GM49	Bayley3	Gross Motor	b3g49	Walks Down Stairs Series: Both feet on each step, with support											
+GM50	Bayley3	Gross Motor	b3g50	Runs with coordination											
+GM51	Bayley3	Gross Motor	b3g51	Balances on Right Foot Series: With support											
+GM51	Bayley3	Gross Motor	b3g52	Balances on Left Foot Series: With support											
+GM53	Bayley3	Gross Motor	b3g53	Walks sideways without support											
+GM54	Bayley3	Gross Motor	b3g54	Jumps from bottom step											
+GM55	Bayley3	Gross Motor	b3g55	Kicks ball											
+GM56	Bayley3	Gross Motor	b3g56	Walks forward on path											
+GM57	Bayley3	Gross Motor	b3g57	Walks Up Stairs Series: Both feet on each step, alone.											
+GM58	Bayley3	Gross Motor	b3g58	Walks Down Stairs Series: Both feet on each step, alone											
+GM59	Bayley3	Gross Motor	b3g59	Jumps Forward Series: 4 inches											
+GM60	Bayley3	Gross Motor	b3g60	Balances on right Foot Series: 2 seconds, alone											
+GM61	Bayley3	Gross Motor	b3g61	Balances on Left Foot Series: 2 seconds, alone											
+GM62	Bayley3	Gross Motor	b3g62	Walks on tiptoes 4 steps											
+GM63	Bayley3	Gross Motor	b3g63	Walks backward close to path											
+GM64	Bayley3	Gross Motor	b3g64	Walks Up Stairs Series: Alternating feet, alone											
+GM65	Bayley3	Gross Motor	b3g65	Imitates postures											
+GM66	Bayley3	Gross Motor	b3g66	Stops from a full run											
+GM67	Bayley3	Gross Motor	b3g67	Walks Down Stairs Series: Alternating feet, alone											
+GM68	Bayley3	Gross Motor	b3g68	Hops 5 feet											
+GM69	Bayley3	Gross Motor	b3g69	Balances on Right Foot Series: 8 seconds, alone											
+GM69	Bayley3	Gross Motor	b3g70	Balances on Left Foot Series: 8 seconds, alone											
+GM71	Bayley3	Gross Motor	b3g71	Walks heel to toe											
+GM72	Bayley3	Gross Motor	b3g72	Jumps Forward Series: 24 inches											
+REC2	Bayley3	Receptive	b3r10	Interrupts activity											
+REC3	Bayley3	Receptive	b3r11	Recognizes 2 familiar words											
+REC4	Bayley3	Receptive	b3r12	Responds to no-no											
+REC5	Bayley3	Receptive	b3r13	Attends to other's play routine											
+REC6	Bayley3	Receptive	b3r14	Responds to request for social routines											
+REC7	Bayley3	Receptive	b3r15	Identifies Object Series: 1 correct											
+REC8	Bayley3	Receptive	b3r16	Identifies object in the environment											
+REC9	Bayley3	Receptive	b3r17	Identifies Picture Series: 1 correct											
+REC10	Bayley3	Receptive	b3r18	Understands inhibitory words											
+REC11	Bayley3	Receptive	b3r19	Identifies Object Series: 3 correct											
+REC13	Bayley3	Receptive	b3r20	Follows one-part directions											
+REC14	Bayley3	Receptive	b3r21	Identifies Picture Series: 3 Correct											
+REC15	Bayley3	Receptive	b3r22	Identifies 3 clothing items											
+REC16	Bayley3	Receptive	b3r23	Identifies Action Picture Series: 1 correct											
+REC17	Bayley3	Receptive	b3r24	Identifies 5 parts of the body											
+REC18	Bayley3	Receptive	b3r25	Follows two-part directions											
+REC19	Bayley3	Receptive	b3r26	Identifies Action Picture Series: 3 correct											
+REC20	Bayley3	Receptive	b3r27	Understands use of objects											
+REC21	Bayley3	Receptive	b3r28	Understands part/whole relationships											
+REC22	Bayley3	Receptive	b3r29	Identifies Action Picture Series: 5 correct											
+REC24	Bayley3	Receptive	b3r30	Understands pronouns (him, me, my, you, your)											
+REC25	Bayley3	Receptive	b3r31	Understands labels for sizes											
+REC26	Bayley3	Receptive	b3r32	Understands Preposition Series: 2 correct											
+REC27	Bayley3	Receptive	b3r33	Understands possessives											
+REC28	Bayley3	Receptive	b3r34	Understands verb +ing											
+REC29	Bayley3	Receptive	b3r35	Identifies colours											
+REC30	Bayley3	Receptive	b3r36	Understands label of one											
+REC31	Bayley3	Receptive	b3r37	Understands pronouns (they, he, she)											
+REC32	Bayley3	Receptive	b3r38	Understands pronouns (his, her)											
+REC33	Bayley3	Receptive	b3r39	Understands plurals											
+REC35	Bayley3	Receptive	b3r40	Understands more											
+REC36	Bayley3	Receptive	b3r41	Understands most											
+REC37	Bayley3	Receptive	b3r42	Understands Preposition Series: 4 correct											
+REC38	Bayley3	Receptive	b3r43	Understands negatives in sentences											
+REC39	Bayley3	Receptive	b3r44	Understands past tense											
+REC40	Bayley3	Receptive	b3r45	Understands labels for mass											
+REC41	Bayley3	Receptive	b3r46	Understands least											
+REC42	Bayley3	Receptive	b3r47	Understands less											
+REC43	Bayley3	Receptive	b3r48	Understands descriptive labels											
+REC46	Bayley3	Receptive	b3r6	Searches with head turn											
+REC47	Bayley3	Receptive	b3r7	Discriminates sounds											
+REC48	Bayley3	Receptive	b3r8	Sustained play with objects											
+REC49	Bayley3	Receptive	b3r9	Responds to name											
+	Battelle		batapd1												
+	Battelle		batapd10												
+	Battelle		batapd2												
+	Battelle		batapd3												
+	Battelle		batapd4												
+	Battelle		batapd5												
+	Battelle		batapd6												
+	Battelle		batapd7												
+	Battelle		batapd8												
+	Battelle		batapd9												
+	Battelle	Cognitive	batc1												
+	Battelle	Cognitive	batc10												
+	Battelle	Cognitive	batc11												
+	Battelle	Cognitive	batc12												
+	Battelle	Cognitive	batc13												
+	Battelle	Cognitive	batc14												
+	Battelle	Cognitive	batc15												
+	Battelle	Cognitive	batc16												
+	Battelle	Cognitive	batc17												
+	Battelle	Cognitive	batc18												
+	Battelle	Cognitive	batc19												
+	Battelle	Cognitive	batc2												
+	Battelle	Cognitive	batc20												
+	Battelle	Cognitive	batc3	Uncovers hidden toy (TS 81)											
+	Battelle	Cognitive	batc4												
+	Battelle	Cognitive	batc5												
+	Battelle	Cognitive	batc6												
+	Battelle	Cognitive	batc7												
+	Battelle	Cognitive	batc8												
+	Battelle	Cognitive	batc9												
+	Battelle		batl1												
+	Battelle		batl10												
+	Battelle		batl11												
+	Battelle		batl12												
+	Battelle		batl13												
+	Battelle		batl14												
+	Battelle		batl15												
+	Battelle		batl16												
+	Battelle		batl17												
+	Battelle		batl18												
+	Battelle		batl19												
+	Battelle		batl2												
+	Battelle		batl20												
+	Battelle		batl3												
+	Battelle		batl4												
+	Battelle		batl5												
+	Battelle		batl6												
+	Battelle		batl7												
+	Battelle		batl8												
+	Battelle		batl9												
+	Battelle		batm1												
+	Battelle		batm10												
+	Battelle		batm11												
+	Battelle		batm12												
+	Battelle		batm13												
+	Battelle		batm14												
+	Battelle		batm15												
+	Battelle		batm16												
+	Battelle		batm17												
+	Battelle		batm18												
+	Battelle		batm19												
+	Battelle		batm2												
+	Battelle		batm20												
+	Battelle		batm3												
+	Battelle		batm4												
+	Battelle		batm5												
+	Battelle		batm6												
+	Battelle		batm7	Walks up and down stairs without assistance, placing both feet on each step (mar											
+	Battelle		batm8												
+	Battelle		batm9												
+	Battelle		batsp1												
+	Battelle		batsp10												
+	Battelle		batsp11												
+	Battelle		batsp12												
+	Battelle		batsp13												
+	Battelle		batsp14												
+	Battelle		batsp15												
+	Battelle		batsp16												
+	Battelle		batsp17												
+	Battelle		batsp18												
+	Battelle		batsp19												
+	Battelle		batsp2												
+	Battelle		batsp20												
+	Battelle		batsp3												
+	Battelle		batsp4												
+	Battelle		batsp5												
+	Battelle		batsp6												
+	Battelle		batsp7												
+	Battelle		batsp8												
+	Battelle		batsp9												
+	Barrera		bm10a	Walks with support, holding on to a railing, furniture or adult (direct obs)											
+	Barrera		bm10b	Walks with support, holding on to a railing, furniture or adult (mom report)											
+	Barrera		bm11a	Stands for "some moments" (direct obs)											
+	Barrera		bm11b	Stands for "some moments" (mom report)											
+	Barrera		bm12a	Walks alone with "some steps" (direct obs)											
+	Barrera		bm12b	Walks alone with "some steps" (mom report)											
+	Barrera		bm13a	Drinks well from a cup or glass (direct obs)											
+	Barrera		bm13b	Drinks well from a cup or glass (mom report)											
+	Barrera		bm14a	Says more than 5 words (direct obs)											
+	Barrera		bm14b	Says more than 5 words (mom report)											
+	Barrera		bm15a	Jumps in place (direct obs)											
+	Barrera		bm15b	Jumps in place (mom report)											
+	Barrera		bm16a	Washes and dries hands (direct obs)											
+	Barrera		bm16b	Washes and dries hands (mom report)											
+	Barrera		bm17a	Says his full name (direct obs)											
+	Barrera		bm17b	Says his full name (mom report)											
+	Barrera		bm18a	Copies a circle (direct obs)											
+	Barrera		bm18b	Copies a circle (mom report)											
+	Barrera		bm19a	Balances on one foot for more than 5 seconds (direct obs)											
+	Barrera		bm19b	Balances on one foot for more than 5 seconds (mom report)											
+	Barrera		bm1b	Smiles in response to an adult or his/her voice (mom report)											
+	Barrera		bm20a	Bowel and bladder control (direct obs)											
+	Barrera		bm20b	Bowel and bladder control (mom report)											
+	Barrera		bm21a	Copies a square well (direct obs)											
+	Barrera		bm21b	Copies a square well (mom report)											
+	Barrera		bm22a	Recognizes 4 colors (direct obs)											
+	Barrera		bm22b	Recognizes 4 colors (mom report)											
+	Barrera		bm2a	Makes sounds spontaneously or in response to a stimulus (direct obs)											
+	Barrera		bm2b	Makes sounds spontaneously or in response to a stimulus (mom report)											
+	Barrera		bm3a	Has head control while being pulled to sit upright (direct obs)											
+	Barrera		bm3b	Has head control while being pulled to sit upright (mom report)											
+	Barrera		bm4a	Holds a toy with one or both hands when it is presented  (direct obs)											
+	Barrera		bm4b	Holds a toy with one or both hands when it is presented  (mom report)											
+	Barrera		bm7b	Starting to crawl (mom report)											
+	Barrera		bm8a	Grasps with fingertip to to take small objects (direct obs)											
+	Barrera		bm8b	Grasps with fingertip to to take small objects (mom report)											
+	Barrera		bm9a	Stands up when being pulled (direct obs)											
+	Barrera		bm9b	Stands up when being pulled (mom report)											
+	Denver	Fine Motor	df1	Follows To Midline											
+FM14	Denver	Fine Motor	df10	Pass Block											
+COG27	Denver	Cognitive	df11	Take 2 Blocks											
+FM17	Denver	Fine Motor	df12	Thumb-Finger Grip											
+COG24	Denver	Cognitive	df13	Bang 2 Blocks 											
+COG36	Denver	Cognitive	df14	Put Block in Cup											
+FM24	Denver	Fine Motor	df15	Scribbles											
+COG42	Denver	Cognitive	df16	Drop Raisin											
+FM25	Denver	Fine Motor	df17	2 Blocks											
+FM32	Denver	Fine Motor	df18	4 Blocks											
+FM32	Denver	Fine Motor	df19	6 Blocks											
+	Denver	Fine Motor	df2	Follow Past Midline											
+FM36	Denver	Fine Motor	df20	Imitate Vertical Line											
+FM50	Denver	Fine Motor	df21	8 Blocks											
+	Denver	Fine Motor	df22	Wiggle Thumb											
+FM38	Denver	Fine Motor	df23	Copy a Circle											
+	Denver	Fine Motor	df24	Draws 3 or more body parts											
+FM58	Denver	Fine Motor	df25	Copy +											
+	Denver	Fine Motor	df26	Pick Longer Line											
+FM57	Denver	Fine Motor	df27	Copy Square, Demonstrated											
+	Denver	Fine Motor	df28	Draws 6 or more body parts											
+FM63	Denver	Fine Motor	df29	Copy Square											
+	Denver	Fine Motor	df3	Hold Rattle											
+COG25	Denver	Cognitive	df8	Look for Yarn											
+FM9	Denver	Fine Motor	df9	Rake Raisin											
+GM73	Denver	Gross Motor	dg1	1. Equal movements											
+GM26	Denver	Gross Motor	dg10	Sit No Support											
+GM79	Denver	Gross Motor	dg11	11. Stand, Holding On											
+GM35	Denver	Gross Motor	dg12	Pull to Stand											
+GM80	Denver	Gross Motor	dg12	12. Pull to Stand											
+GM81	Denver	Gross Motor	dg13	13. Get To Sitting 											
+GM33	Denver	Gross Motor	dg14	Stand 2 Seconds											
+GM40	Denver	Gross Motor	dg14	Stand 2 seconds											
+GM40	Denver	Gross Motor	dg15	Stand 10 seconds											
+GM82	Denver	Gross Motor	dg16	16. Stoop and Recover											
+GM43	Denver	Gross Motor	dg17	Walk Well											
+GM48	Denver	Gross Motor	dg18	Walk Backwards 											
+GM63	Denver	Gross Motor	dg18	Walk Backwards 											
+GM50	Denver	Gross Motor	dg19	Runs											
+GM74	Denver	Gross Motor	dg2	2. Lift Head											
+GM47	Denver	Gross Motor	dg20	Walk Up Stairs 											
+GM55	Denver	Gross Motor	dg21	21. Kick Ball Forward											
+GM59	Denver	Gross Motor	dg22	Jump Up											
+GM44	Denver	Gross Motor	dg23	Throw Ball Overhand											
+GM72	Denver	Gross Motor	dg24	Long Jump											
+GM51	Denver	Gross Motor	dg25	Balance each foot 1 second											
+GM51	Denver	Gross Motor	dg26	Balance each foot 2 seconds											
+GM60	Denver	Gross Motor	dg26	Balance each foot  2 second 											
+GM61	Denver	Gross Motor	dg26	Balance each foot  2 second 											
+GM68	Denver	Gross Motor	dg27	Hop											
+GM51	Denver	Gross Motor	dg28	Balance each foot 3 seconds											
+GM69	Denver	Gross Motor	dg28	Balance each foot 3 seconds											
+GM51	Denver	Gross Motor	dg29	Balance each foot 4 seconds											
+GM69	Denver	Gross Motor	dg29	Balance each foot 4 seconds											
+	Denver	Gross Motor	dg3	Lift head 45o											
+GM76	Denver	Gross Motor	dg4	4. Lift Head 90o											
+GM19	Denver	Gross Motor	dg5	Sit, Head Steady											
+GM77	Denver	Gross Motor	dg6	6. Bear Weight on Legs											
+GM23	Denver	Gross Motor	dg9	Pull to Sit, No Head Lag											
+	Denver		dl1	Respond to Bell											
+EXP10	Denver	Expressive	dl10	Abba / Mama Nonspecific 											
+EXP13	Denver	Expressive	dl11	Combine Syllables 											
+EXP55	Denver	Expressive	dl11	11. Combine Syllables 											
+EXP56	Denver	Expressive	dl12	Babbles 											
+	Denver		dl13												
+EXP14	Denver	Expressive	dl14	Say 1 Word 											
+EXP18	Denver	Expressive	dl15	Say 2 Words 											
+	Denver		dl16												
+EXP23	Denver	Expressive	dl17	Say 6 Words 											
+REC9	Denver	Receptive	dl18	Point to Pictures (2) 											
+EXP26	Denver	Expressive	dl19	Combine Words 											
+EXP36	Denver	Expressive	dl19	Combine Words 											
+EXP4	Denver	Expressive	dl2	Vocalizes 											
+EXP22	Denver	Expressive	dl20	Name Pictures (1)											
+REC17	Denver	Receptive	dl21	Body Parts											
+REC14	Denver	Receptive	dl22	Point to Pictures (4) 											
+EXP57	Denver	Expressive	dl23	Speech Half Understandable											
+	Denver		dl24												
+REC16	Denver	Receptive	dl25	Know Actions (2)											
+EXP58	Denver	Expressive	dl26	Know Adjectives (2)											
+COG68	Denver	Cognitive	dl27	Name Color (1 or 4)											
+REC20	Denver	Receptive	dl28	Use 2 objects											
+COG70	Denver	Cognitive	dl29	Count 1 Block											
+EXP6	Denver	Expressive	dl3	"Ooo" / "Aah" 											
+REC20	Denver	Receptive	dl30	Use 4 objects											
+REC19	Denver	Receptive	dl31	Know Actions (2) (4)											
+EXP33	Denver	Expressive	dl32	Speech All-Understandable											
+EXP59	Denver	Expressive	dl32	Speech All-Understandable											
+REC37	Denver	Receptive	dl33	Understand 4 Prepositions											
+EXP41	Denver	Expressive	dl34	Name Color (4)											
+EXP60	Denver	Expressive	dl35	Define 5 words											
+EXP5	Denver	Expressive	dl4	Laughs 											
+EXP53	Denver	Expressive	dl5	Squeals 											
+REC49	Denver	Receptive	dl7	Turn to Voice											
+EXP8	Denver	Expressive	dl8	Single Syllables 											
+EXP16	Denver	Expressive	dl9	Imitate Speech Sounds 											
+EXP54	Denver	Expressive	dl9	Imitate Speech Sounds 											
+	Denver		dp1												
+COG53	Denver	Cognitive	dp10	Play Ball with You 											
+COG65	Denver	Cognitive	dp11	Imitate Activities 											
+	Denver		dp12												
+	Denver		dp13												
+	Denver		dp14												
+	Denver		dp15												
+	Denver		dp16												
+	Denver		dp17												
+	Denver		dp18												
+	Denver		dp19												
+	Denver		dp2												
+	Denver		dp20												
+	Denver		dp21												
+	Denver		dp22												
+COG71	Denver	Cognitive	dp23	Play Games 											
+	Denver		dp24												
+	Denver		dp25												
+	Denver		dp3												
+	Denver		dp4												
+	Denver		dp5												
+	Denver		dp6												
+EXP11	Denver	Expressive	dp7	7. Clapping game "pat a cake"											
+EXP9	Denver	Expressive	dp8	Indicate Wants 											
+	Denver		dp9												
+	Griffiths	Cognitive	gc10	Shows interest in box											
+COG30	Griffiths	Cognitive	gc11	(Performance) Holds 2 cubes.											
+FM7	Griffiths	Fine Motor	gc12	 (Performance) Takes cube or toy from table											
+FM14	Griffiths	Fine Motor	gc13	(Performance) Passes toy from hand to hand											
+	Griffiths	Cognitive	gc14	Drops one cube for third											
+	Griffiths	Cognitive	gc15	Manipulates 2 objects at once											
+	Griffiths	Cognitive	gc16	Reacts to Paper IV - Plays with, crumbles, etc.											
+	Griffiths	Cognitive	gc17	Lifts inverted cup in search of toy											
+	Griffiths	Cognitive	gc18	Rattles box											
+	Griffiths	Cognitive	gc19	Lifts lid off box											
+	Griffiths	Cognitive	gc2_1	Remove both cubes from box (shown)											
+	Griffiths	Cognitive	gc2_10	Can put lid back on box											
+COG49	Griffiths	Cognitive	gc2_11	(Performance) Three hole board - one in.											
+	Griffiths	Cognitive	gc2_12	Puts 2 cubes into box lid on - all complete											
+	Griffiths	Cognitive	gc2_13	Circle and square board together											
+	Griffiths	Cognitive	gc2_14	Three-hole board - two in											
+COG56	Griffiths	Cognitive	gc2_15	(Performance) Three-hole board - three in. 											
+	Griffiths	Cognitive	gc2_16	Two circle board, rotated											
+	Griffiths	Cognitive	gc2_17	Circle and square board rotated 											
+	Griffiths	Cognitive	gc2_18	(credit as 2 items)											
+	Griffiths	Cognitive	gc2_19	Assembles three boxes 											
+	Griffiths	Cognitive	gc2_2	Unwraps and finds toy											
+	Griffiths	Cognitive	gc2_20	(credit as 2 items)											
+	Griffiths	Cognitive	gc2_21	Can open screw toy 											
+COG46	Griffiths	Cognitive	gc2_22	(Performance) Can open screw toy (credit as two items)											
+	Griffiths	Cognitive	gc2_23	Three-hole board, rotated 											
+COG60	Griffiths	Cognitive	gc2_24	(Performance) Three-hole board, rotated (credit as two items)											
+	Griffiths	Cognitive	gc2_3	One circle board - 2 trials											
+	Griffiths	Cognitive	gc2_4	Opens 2 boxes											
+	Griffiths	Cognitive	gc2_5	Puts cubes in and out of boxes in play											
+	Griffiths	Cognitive	gc2_6	Puts 2 cubes back into one box when encouraged to do so											
+	Griffiths	Cognitive	gc2_7	Two circle board - one in											
+	Griffiths	Cognitive	gc2_8	Square board - 2 trials											
+	Griffiths	Cognitive	gc2_9	Two circle board - two in											
+FM16	Griffiths	Fine Motor	gc20	(Performance) Clicks 2 bricks together											
+	Griffiths	Cognitive	gc21	Tries to take cubes out of box											
+	Griffiths	Cognitive	gc22	Finds toy under cup											
+COG37	Griffiths	Cognitive	gc23	(Performance) Accepts 3rd cube without dropping											
+	Griffiths	Cognitive	gc24	Manipulates box, lid and cubes											
+	Griffiths	Cognitive	gc3_1	Reassembles screw toy											
+	Griffiths	Cognitive	gc3_2	Returns 9 bricks to box and replaces lid within one minute											
+	Griffiths	Cognitive	gc3_3	Four-squares board completed within one minute - 2 trials											
+	Griffiths	Cognitive	gc3_4	Six-hole board completed within one minute - 2 trials											
+	Griffiths	Cognitive	gc3_5												
+	Griffiths	Cognitive	gc3_6												
+	Griffiths	Cognitive	gc4	Holds rod put in hand (see E7)											
+	Griffiths	Cognitive	gc4_1												
+FM48	Griffiths	Fine Motor	gc4_2	(Performance) Builds bridge with 3 boxes - inferior model but still stands.											
+	Griffiths	Cognitive	gc4_3												
+	Griffiths	Cognitive	gc4_4												
+	Griffiths	Cognitive	gc4_5												
+	Griffiths	Cognitive	gc4_6												
+	Griffiths	Cognitive	gc5_1												
+	Griffiths	Cognitive	gc5_2												
+	Griffiths	Cognitive	gc5_3												
+	Griffiths	Cognitive	gc5_4												
+	Griffiths	Cognitive	gc6												
+	Griffiths	Cognitive	gc7	Resists withdrawal of rod											
+	Griffiths	Cognitive	gc8	Claps cube put in hand											
+	Griffiths	Cognitive	gc9	Reaches to Paper III - Pulls it away											
+	Griffiths		ge10	Secures dangling ring											
+	Griffiths		ge11	Hands explore table surface											
+	Griffiths		ge12	Plays with ring - shaking bells, banging, etc.											
+COG25	Griffiths	Cognitive	ge13	(Eye and Hand Co-ordination) Looks for falling object											
+	Griffiths		ge14												
+FM10	Griffiths	Fine Motor	ge15	(Eye and Hand Co-ordination) Forefinger and thumb partly specialized											
+COG29	Griffiths	Cognitive	ge16	(Eye and Hand Co-ordination)  Secures ring by means of string on table surface											
+FM17	Griffiths	Fine Motor	ge17	(Eye and Hand Co-ordination) Fine prehension.											
+COG41	Griffiths	Cognitive	ge18	(Eye and Hand Co-ordination) Dangles ring by the string											
+	Griffiths		ge19												
+	Griffiths		ge2_1	Uses pencil on paper a little 											
+	Griffiths		ge2_10	Constructive play with boxes or other materials 											
+COG53	Griffiths	Cognitive	ge2_11	(Eye and Hand Coordination) Constructive play with boxes or other materials (credit as 2 items)											
+	Griffiths		ge2_12	Builds tower of 3 bricks											
+	Griffiths		ge2_13	Can throw a ball 											
+GM44	Griffiths	Gross Motor	ge2_14	(Eye and hand) Can throw a ball											
+	Griffiths		ge2_15	Tower of 4+ bricks											
+	Griffiths		ge2_16	Enjoys vigourous scribble											
+	Griffiths		ge2_17	Can pour water from one cup to another 											
+	Griffiths		ge2_18	Tower of 5+ bricks 											
+FM38	Griffiths	Fine Motor	ge2_19	(Eye and Hand Co-ordination) Circular scribble in imitation											
+	Griffiths		ge2_2												
+	Griffiths		ge2_20	Makes train of 3+ bricks 											
+	Griffiths		ge2_21	(Credit as 2 items)											
+	Griffiths		ge2_22	Makes a brick or toy walk											
+FM32	Griffiths	Fine Motor	ge2_23	(Eye and Hand Co-ordination) Tower of 6 or 7 bricks.											
+FM36	Griffiths	Fine Motor	ge2_24	(Eye and Hand Co-ordination) Draws a perpendicular stroke or line (in imitation)  											
+	Griffiths		ge2_3												
+	Griffiths		ge2_4	Can hold 4 cubes in hands at once											
+COG39	Griffiths	Cognitive	ge2_5	(Eye and Hand Co-ordination) Plays pushing little cars along											
+	Griffiths		ge2_6	Places one box, lid or brick upon another											
+FM25	Griffiths	Fine Motor	ge2_7	(Eye and Hand Co-ordination)  Tower of 2 bricks - imitation..											
+COG28	Griffiths	Cognitive	ge2_8	(Eye and Hand Co-ordination) Pulls paper or cloth to get toy											
+FM24	Griffiths	Fine Motor	ge2_9	(Eye and Hand Co-ordination) Scribbles more freely, and deliberately.											
+FM15	Griffiths	Fine Motor	ge20	(Eye and Hand Co-ordination) Thumb opposition complete.											
+FM22	Griffiths	Fine Motor	ge21	(Eye and Hand Co-ordination) Can point with index finger.											
+	Griffiths		ge22	Interest in motor car											
+FM21	Griffiths	Fine Motor	ge23	(Eye and Hand Co-ordination) Can hold pencil as if to mark on paper.											
+	Griffiths		ge24												
+FM35	Griffiths	Fine Motor	ge3_1	(Eye and Hand Co-ordination) Draws a horizontal stroke in imitation											
+	Griffiths		ge3_2	Threads 6 beads											
+FM50	Griffiths	Fine Motor	ge3_3	(Eye and Hand Co-ordination) Builds a tower of 8+ bricks.											
+	Griffiths		ge3_4	Handles scissors - tries to cut paper (4 inch square)											
+	Griffiths		ge3_5	Copies a circle - primitive model. Stage I.											
+FM58	Griffiths	Fine Motor	ge3_6	(Eye and Hand Co-ordination) Copies a cross -recognisable. Stage I											
+	Griffiths		ge4_1	Folds a four-inch square of paper once (i.e. in half)											
+	Griffiths		ge4_2	Threads 12+ beads (not by pattern)											
+FM47	Griffiths	Fine Motor	ge4_3	(Eye and Hand Co-ordination) Can cut square into two fairly equal pieces.											
+	Griffiths		ge4_4												
+	Griffiths		ge4_5												
+	Griffiths		ge4_6												
+	Griffiths		ge5	Follows a bell-ring - vomed in a complete circle											
+	Griffiths		ge5_1												
+	Griffiths		ge5_2												
+FM63	Griffiths	Fine Motor	ge5_3	(Eye and Hand Co-ordination) Draws a square - recognizable. Stage 1 											
+	Griffiths		ge6	Glances from one object to another											
+	Griffiths		ge7												
+	Griffiths		ge8												
+	Griffiths		ge9												
+	Griffiths	Gross Motor	gg10												
+	Griffiths	Gross Motor	gg11												
+GM19	Griffiths	Gross Motor	gg12	(Locomotor) Sits with slight support.											
+GM25	Griffiths	Gross Motor	gg13	(Locomotor) Can roll from back to stomach, etc.											
+	Griffiths	Gross Motor	gg14												
+GM22	Griffiths	Gross Motor	gg15	(Locomotor) Sits alone for a short time											
+GM29	Griffiths	Gross Motor	gg16	(Locomotor) Stepping reaction - one foot in front of the other											
+GM27	Griffiths	Gross Motor	gg17	(Locomotor) Can be left sitting on the floor.											
+	Griffiths	Gross Motor	gg18												
+	Griffiths	Gross Motor	gg19												
+	Griffiths	Gross Motor	gg2_1												
+	Griffiths	Gross Motor	gg2_10												
+GM48	Griffiths	Gross Motor	gg2_11	(Locomotor) Can walk backwards a few steps											
+	Griffiths	Gross Motor	gg2_12	Walks pulling toy on a string											
+	Griffiths	Gross Motor	gg2_13	Climbs stairs (up and down)											
+GM50	Griffiths	Gross Motor	gg2_14	(Locomotor) Runs											
+	Griffiths	Gross Motor	gg2_15	Jumps (on the level floor)											
+	Griffiths	Gross Motor	gg2_16	Climbs to stand on a chair											
+GM47	Griffiths	Gross Motor	gg2_17	(Locomotor) Walks upstairs- holding adult's hand											
+	Griffiths	Gross Motor	gg2_18	Can seat self at table											
+GM49	Griffiths	Gross Motor	gg2_19	(Locomotor) Walks up and down stairs.											
+GM40	Griffiths	Gross Motor	gg2_2	(Locomotor) Stands alone 											
+GM55	Griffiths	Gross Motor	gg2_20	(Locomotor) Can kick a ball.											
+GM54	Griffiths	Gross Motor	gg2_21	(Locomotor) Can jump off a step											
+GM58	Griffiths	Gross Motor	gg2_22	(Locomotor) Goes alone on the stairs (any method)											
+	Griffiths	Gross Motor	gg2_23	Throws ball into basket 											
+	Griffiths	Gross Motor	gg2_24	Can bring chair and seat self at table											
+GM42	Griffiths	Gross Motor	gg2_3	(Locomotor) Takes a few steps alone											
+	Griffiths	Gross Motor	gg2_4												
+	Griffiths	Gross Motor	gg2_5												
+	Griffiths	Gross Motor	gg2_6												
+GM43	Griffiths	Gross Motor	gg2_7	(Locomotor) Walks alone well											
+GM45	Griffiths	Gross Motor	gg2_8	(Locomotor) Stoops.											
+	Griffiths	Gross Motor	gg2_9	Develops a quick trot											
+	Griffiths	Gross Motor	gg20	Sits well in a chair											
+GM35	Griffiths	Gross Motor	gg21	(Locomotor) Pulls self up and stands holding on to furniture.											
+GM34	Griffiths	Gross Motor	gg22	(Locomotor) Crawling Reaction IV: Creeps on hands and knees											
+GM38	Griffiths	Gross Motor	gg23	(Locomotor) Side-steps around inside cot or play-pen holding rails.											
+GM37	Griffiths	Gross Motor	gg24	(Locomotor) Can walk when led.											
+	Griffiths	Gross Motor	gg3_1	Jumps off one step- both feet together											
+GM69	Griffiths	Gross Motor	gg3_2	(Locomotor) Can stand on one foot - for 6+ seconds											
+	Griffiths	Gross Motor	gg3_3	Rises from kneeling without using hands											
+	Griffiths	Gross Motor	gg3_4	Can cross both feet and knees when seated											
+GM62	Griffiths	Gross Motor	gg3_5	(Locomotor) Can stand and walk tip-toe (6+ steps)											
+GM64	Griffiths	Gross Motor	gg3_6	(Locomotor) Walks upstairs: one foot on each step, adult manner.											
+	Griffiths	Gross Motor	gg4_1	Can run fast (indoors)											
+	Griffiths	Gross Motor	gg4_2												
+	Griffiths	Gross Motor	gg4_3												
+	Griffiths	Gross Motor	gg4_4	Walks a chalkline - 4 ft											
+GM68	Griffiths	Gross Motor	gg4_5	(Locomotor) Can hop on one foot - 3+ steps											
+	Griffiths	Gross Motor	gg4_6												
+	Griffiths	Gross Motor	gg5												
+	Griffiths	Gross Motor	gg5_1												
+GM67	Griffiths	Gross Motor	gg5_2	(Locomotor) Walks downstairs: one foot on each step, adult manner.											
+	Griffiths	Gross Motor	gg5_3												
+	Griffiths	Gross Motor	gg5_4												
+	Griffiths	Gross Motor	gg5_5												
+	Griffiths	Gross Motor	gg5_6												
+	Griffiths	Gross Motor	gg6												
+	Griffiths	Gross Motor	gg6_1												
+	Griffiths	Gross Motor	gg6_2												
+	Griffiths	Gross Motor	gg6_3												
+	Griffiths	Gross Motor	gg6_4												
+	Griffiths	Gross Motor	gg6_5												
+	Griffiths	Gross Motor	gg6_6												
+	Griffiths	Gross Motor	gg7												
+	Griffiths	Gross Motor	gg7_1												
+	Griffiths	Gross Motor	gg7_2												
+	Griffiths	Gross Motor	gg8												
+	Griffiths	Gross Motor	gg9												
+	Griffiths		gh10												
+EXP12	Griffiths	Expressive	gh11	Talks (babbles) to person											
+	Griffiths		gh12												
+	Griffiths		gh13												
+EXP10	Griffiths	Expressive	gh14	2 syllable babble											
+	Griffiths		gh15												
+EXP13	Griffiths	Expressive	gh16	(Hearing and Speech) Babbled phrases: 4 + syllables											
+EXP14	Griffiths	Expressive	gh17	(Hearing and Speech) Says Mama or Dada, etc. (one word clear)											
+	Griffiths		gh18												
+COG31	Griffiths	Cognitive	gh19	(Hearing and Speech) Rings the bell											
+	Griffiths		gh2_1	Looks at pictures for a sew seconds											
+	Griffiths		gh2_10	Enjoys pictre book											
+	Griffiths		gh2_11	Uses 6 or 7 clear words											
+	Griffiths		gh2_12	Two objects in box identified											
+EXP23	Griffiths	Expressive	gh2_13	9+  clear words											
+REC11	Griffiths	Receptive	gh2_14	(Hearing and Speech)  Four objects in box identified											
+EXP22	Griffiths	Expressive	gh2_15	(Hearing and Speech) Picture vocabulary (1)											
+	Griffiths		gh2_16	Uses 12+ clear words											
+EXP26	Griffiths	Expressive	gh2_17	Uses word combinations											
+	Griffiths		gh2_18	Picture vocabulary (2)											
+	Griffiths		gh2_19	Uses 20+ clear words											
+	Griffiths		gh2_2												
+	Griffiths		gh2_20	Eight objects in box identified											
+	Griffiths		gh2_21	Listens to stories											
+EXP27	Griffiths	Expressive	gh2_22	(Hearing and Speech) Names 4 objects in box											
+EXP28	Griffiths	Expressive	gh2_23	(Hearing and Speech) Picture vocabulary (4)											
+EXP29	Griffiths	Expressive	gh2_24	(Hearing and Speech) Uses sentences of 4+ syllables											
+REC49	Griffiths	Receptive	gh2_3	(Hearing and Speech)Knows own name.											
+	Griffiths		gh2_4												
+COG32	Griffiths	Cognitive	gh2_5	(Hearing and Speech) Looks at pictures with interest											
+	Griffiths		gh2_6												
+REC7	Griffiths	Receptive	gh2_7	(Hearing and Speech) One object in box identified											
+	Griffiths		gh2_8	Uses 5 clear words											
+	Griffiths		gh2_9												
+	Griffiths		gh20												
+EXP18	Griffiths	Expressive	gh21	says 2 clear words											
+	Griffiths		gh22												
+	Griffiths		gh23												
+	Griffiths		gh24												
+	Griffiths		gh3_1	Names 12 of 18 objects in box											
+	Griffiths		gh3_2	Picture vocabulary (12)											
+	Griffiths		gh3_3	Defines by use (2+) - cup, knife, chair, coat, car, house, pencil, watch, key											
+	Griffiths		gh3_4	Repeats one six-syllable sentence											
+	Griffiths		gh3_5	Uses 2 descriptive words											
+	Griffiths		gh3_6	Talks well in sentences of 6+ syllables (record).											
+	Griffiths		gh4	Searches for sound with eyes											
+	Griffiths		gh4_1												
+	Griffiths		gh4_2												
+	Griffiths		gh4_3												
+EXP42	Griffiths	Expressive	gh4_4	(Hearing and Speech) Comprehension 2+ items											
+	Griffiths		gh4_5												
+EXP41	Griffiths	Expressive	gh4_6	(Hearing and Speech) Knows 6+ colours											
+EXP8	Griffiths	Expressive	gh5	(Hearing and Speech) Makes 2 + different speech sounds											
+EXP43	Griffiths	Expressive	gh5_1	(Hearing and Speech) Defines by use: 6+.											
+	Griffiths		gh5_2												
+	Griffiths		gh5_3												
+	Griffiths		gh5_4												
+EXP46	Griffiths	Expressive	gh5_5	(Hearing and Speech)  Picture description: 1+ sentences. 											
+	Griffiths		gh5_6												
+	Griffiths		gh6												
+	Griffiths		gh6_1												
+	Griffiths		gh6_2												
+	Griffiths		gh6_3												
+	Griffiths		gh6_4												
+	Griffiths		gh6_5												
+	Griffiths		gh6_6												
+	Griffiths		gh7												
+	Griffiths		gh8	Listens to tuning fork											
+REC46	Griffiths	Receptive	gh9	(Hearing and Speech)Turns head deliberately to bell											
+	Griffiths		gp3_1												
+	Griffiths		gp3_2												
+	Griffiths		gp3_3												
+	Griffiths		gp3_4												
+	Griffiths		gp3_5												
+COG73	Griffiths	Cognitive	gp3_6	practical reasoning (PR) knows big and little											
+REC25	Griffiths	Receptive	gp3_6	PR Knows big and little											
+	Griffiths		gp4_1												
+	Griffiths		gp4_2												
+	Griffiths		gp4_3												
+COG79	Griffiths	Cognitive	gp4_4	PR counts 4 bricks correctly											
+	Griffiths		gp4_5												
+COG74	Griffiths	Cognitive	gp4_6	PR compares 2 weights: which is heavier											
+	Griffiths		gp5_1												
+	Griffiths		gp5_2												
+	Griffiths		gp5_3												
+	Griffiths		gp5_4												
+	Griffiths		gp5_5												
+	Griffiths		gp5_6												
+	McCarthy		m1												
+	McCarthy		m10												
+	McCarthy		m100												
+	McCarthy		m101												
+	McCarthy		m11												
+	McCarthy		m12												
+	McCarthy		m13												
+	McCarthy		m14												
+	McCarthy		m15												
+	McCarthy		m16												
+	McCarthy		m17												
+	McCarthy		m18												
+	McCarthy		m19												
+	McCarthy		m2												
+	McCarthy		m20												
+	McCarthy		m21												
+	McCarthy		m22												
+	McCarthy		m23												
+	McCarthy		m24												
+	McCarthy		m25												
+	McCarthy		m26												
+	McCarthy		m27												
+	McCarthy		m28												
+	McCarthy		m29												
+	McCarthy		m3												
+	McCarthy		m30												
+	McCarthy		m31												
+	McCarthy		m32												
+	McCarthy		m33												
+	McCarthy		m34												
+	McCarthy		m35												
+	McCarthy		m36												
+	McCarthy		m37												
+	McCarthy		m38												
+	McCarthy		m39												
+	McCarthy		m4												
+	McCarthy		m40												
+	McCarthy		m41												
+	McCarthy		m42												
+	McCarthy		m43												
+	McCarthy		m44												
+	McCarthy		m45												
+	McCarthy		m46												
+	McCarthy		m47												
+	McCarthy		m48												
+	McCarthy		m49												
+	McCarthy		m5												
+	McCarthy		m50												
+	McCarthy		m51												
+	McCarthy		m52												
+	McCarthy		m53												
+	McCarthy		m54												
+	McCarthy		m55												
+	McCarthy		m56												
+	McCarthy		m57												
+	McCarthy		m58												
+	McCarthy		m59												
+	McCarthy		m6												
+	McCarthy		m60												
+	McCarthy		m61												
+	McCarthy		m62												
+	McCarthy		m63												
+	McCarthy		m64												
+	McCarthy		m65												
+	McCarthy		m66												
+	McCarthy		m67												
+	McCarthy		m68												
+	McCarthy		m69												
+	McCarthy		m7												
+	McCarthy		m70												
+	McCarthy		m71												
+	McCarthy		m72												
+	McCarthy		m73												
+	McCarthy		m74												
+	McCarthy		m75												
+	McCarthy		m76												
+	McCarthy		m77												
+	McCarthy		m78												
+	McCarthy		m79												
+	McCarthy		m8												
+	McCarthy		m80												
+	McCarthy		m81												
+	McCarthy		m82												
+	McCarthy		m83												
+	McCarthy		m84												
+	McCarthy		m85												
+	McCarthy		m86												
+	McCarthy		m87												
+	McCarthy		m88												
+	McCarthy		m89												
+	McCarthy		m9												
+	McCarthy		m90												
+	McCarthy		m91												
+	McCarthy		m92												
+	McCarthy		m93												
+	McCarthy		m94												
+	McCarthy		m95												
+	McCarthy		m96												
+	McCarthy		m97												
+	McCarthy		m98												
+	McCarthy		m99												
+GM56	McCarthy	Gross Motor	mg1	Child walks in a straight line											
+GM63	McCarthy	Gross Motor	mg2	Walks backwards for 5 steps											
+GM62	McCarthy	Gross Motor	mg3	Walks on tiptoes for 5 steps or more											
+GM60	McCarthy	Gross Motor	mg4a	Balances on either foot for 3-9 secs											
+GM61	McCarthy	Gross Motor	mg4a	Balances on either foot for 3-9 secs											
+GM69	McCarthy	Gross Motor	mg4b	Balances on either foot for 10 secs 											
+GM59	McCarthy	Gross Motor	mg5	Jumps with feet together;  2-5 jumps											
+COG3	Dutch	Cognitive	n1	Eyes Fixate											
+EXP5	Dutch	Expressive	n10	Vocalizes in response											
+	Dutch	Gross Motor	n11	Stays suspended when lifted under armpits											
+GM12	Dutch	Gross Motor	n12	Lifts head to 45 degrees in prone position											
+	Dutch	Fine Motor	n13	Plays with hands in midline											
+FM4	Dutch	Fine Motor	n14	Supine position: grasps object within reach											
+GM23	Dutch	Gross Motor	n15	Reactions if pulled to sitting											
+	Dutch	Receptive	n16	Turns head to sound											
+	Dutch	Gross Motor	n17	Flexes or stomps legs while being swung											
+	Dutch	Gross Motor	n18	Looks around to side with angle face-table 90 degrees											
+FM11	Dutch	Fine Motor	n19	Passes cube from hand to hand											
+	Dutch	Receptive	n2	Reacts when spoken to											
+COG30	Dutch	Cognitive	n20	Holds cube, grasps another one with other hand											
+GM24	Dutch	Gross Motor	n21	Plays with both feet											
+GM25	Dutch	Gross Motor	n22	Rolls over, back and forth											
+	Dutch	Gross Motor	n23	Balances head well while sitting											
+	Dutch	Gross Motor	n24	Sits on buttocks while legs stretched											
+EXP10	Dutch	Expressive	n25	Says "dada", "baba", or "gaga"											
+GM26	Dutch	Gross Motor	n26	Sits in stable position, without support											
+FM19	Dutch	Fine Motor	n27	Picks up pellet between thumb and index finger											
+GM30	Dutch	Gross Motor	n28	Crawls forward, abdomen on the floor											
+GM35	Dutch	Gross Motor	n29	Pulls up to standing position											
+GM2	Dutch	Gross Motor	n3	Moves arms equally well											
+	Dutch	Expressive	n30	Waves "bye bye" 											
+EXP12	Dutch	Expressive	n31	Jabbering while playing (M; can ask parents)											
+	Dutch	Fine Motor	n32	Puts cube in and out of a box											
+	Dutch	Cognitive	n33	Plays "give and take"											
+	Dutch	Gross Motor	n34	Crawls, with belly lifted off the ground (M; can ask parents)											
+GM42	Dutch	Gross Motor	n35	Walks along											
+	Dutch	Cognitive	n36	Understands some simple words (M; can ask parents)											
+EXP18	Dutch	Expressive	n37	Says 2 "sound-words" with comprehension											
+FM25	Dutch	Fine Motor	n38	Builds tower of two cubes											
+	Dutch	Cognitive	n39	Explores environment											
+GM1	Dutch	Gross Motor	n4	Moves legs equally well											
+	Dutch	Cognitive	n40	Says 3 "words"											
+	Dutch	Cognitive	n41	Identfies (point / graps) two mentioned objects											
+GM43	Dutch	Gross Motor	n42	Walks on his/her own											
+GM44	Dutch	Gross Motor	n43	Throws ball without falling down											
+	Dutch	Fine Motor	n44	Builds tower of three cubes											
+	Dutch	Cognitive	n45	Imitates others 											
+	Dutch	Fine Motor	n46	Drink from cup by him/herself (M; can ask parents)											
+EXP26	Dutch	Expressive	n47	Says "sentences"of 2 words											
+	Dutch	Cognitive	n48	Puts ball in box when asked											
+GM45	Dutch	Gross Motor	n49	Squats or bends to pick up things											
+	Dutch	Gross Motor	n5	Lifts chin off table for a moment											
+	Dutch	Gross Motor	n50	Walks well without help											
+FM32	Dutch	Fine Motor	n51	Builds tower of 6 cubes											
+	Dutch	Fine Motor	n52	Places round form in form-box											
+	Dutch	Fine Motor	n53	Undresses himself											
+	Dutch	Fine Motor	n54	Eats with spoon without help (M; can ask parents)											
+	Dutch	Cognitive	n55	Refers to self using "me" or "I"											
+	Dutch	Cognitive	n56	Points at 5 pictures in the book											
+GM55	Dutch	Gross Motor	n57	Kicks ball											
+	Dutch	Cognitive	n6	Smiles in response											
+	Dutch	Fine Motor	n7	Follows with eyes and head											
+FM2	Dutch	Fine Motor	n8	Hands occasionally open											
+COG18	Dutch	Cognitive	n9	Watches own hands											
+COG47	Pegboard	Cognitive	peg1	Places 2 or more pegs in 30 sec with either hand											
+COG62	Pegboard	Cognitive	peg2	Places  6 or more pegs in 30 sec with either hand											
+GM14	SAGriffiths	Gross Motor	sagl8	Rolls from side to back.											

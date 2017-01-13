@@ -22,8 +22,6 @@ docs/rd.html
 
 # user file
 notes/
-results/
-store/
 
 # knitr and R markdown default cache directories
 markdown/*_cache/

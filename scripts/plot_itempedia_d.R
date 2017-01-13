@@ -16,7 +16,8 @@ data <- ddata::gcdg %>%
   select_if(category_size_exceeds, 1)
 items <- names(data)
 
-# fetch dscore
+# fetch model
+model
 fn <- file.path(getwd(), "store", "alldscore.RData")
 load(file = fn)
 
@@ -62,10 +63,22 @@ plot_age_item <- function(pass, by_name = "item", ...) {
     plot_list[[i]] <- plot_age_one_item(pass, by_name = by_name, 
                                         by_value = items[i],
                                         i = i,
+                                        location = 60,
                                         ...)
   }
   
   return(plot_list)
+}
+
+draw_logistic <- function(plot, location = 20, scale = 2.1044, ...) {
+  # function assumes that location is scalar and plot is ggplot
+  if (!is.ggplot(plot)) stop("Argument plot not a ggplot.")
+  x <- seq(location - 7 * scale, location + 7 * scale, by = 0.1 * scale)
+  y <- 100 * plogis(x, location = location, scale = scale)
+  plot <- plot + 
+    geom_line(aes(x = x, y = y, group = NULL, colour = NULL), 
+              data = data.frame(x, y), colour = "grey70", size = 0.5, ...)
+  plot
 }
 
 plot_age_one_item <- function(pass, 
@@ -104,6 +117,9 @@ plot_age_one_item <- function(pass,
   if (nrow(data_plot) >= 1)
     plot <- plot +
       geom_line() + geom_point()
+  
+  # add logistic curve
+  # plot <- draw_logistic(plot, ...)
 
   # annotations
   plot <- plot + 
@@ -118,6 +134,17 @@ plot_age_one_item <- function(pass,
   return(plot)
 }
 
+
+
+show_logistic_curve <- function(plot, location, ...) {
+  if (is.ggplot(plot)) return(draw_logistic(plot, location = location, ...))
+  if (is.list(plot)) {
+    if (length(location) > 1 & length(location) != length(plot))
+      stop("tau and plot are of incompatible length")
+    return(lapply(plot, draw_logistic, location = location, ...))
+  }
+}
+
 theme_set(theme_light())
 plots <- plot_age_item(pass)
 
@@ -127,3 +154,7 @@ for (i in seq(length(plots))) {
   print(plots[[i]])
 }
 dev.off()
+
+
+# est <- get_diff(model$fit)
+# z <- show_logistic_curve(plots, loc = est)

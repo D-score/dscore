@@ -80,7 +80,7 @@ mtext(paste(Sys.Date(), length(items), length(b_fixed), length(equatelist)),
       side = 1, line = 3, at = 0)
 
 # store model
-model_name <- "fr_1336"
+model_name <- "fr_1310"
 model <- list(name = model_name, items = items, equatelist = equatelist,
               fit = fit, itembank = itembank, 
               dscore = alldscore)

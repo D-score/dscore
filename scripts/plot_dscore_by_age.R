@@ -5,8 +5,8 @@ library("dplyr", warn.conflicts = FALSE)
 library("tidyr")
 library("ggplot2")
 
-# model_name <- "fx_1336"
-model_name <- "fr_1336"
+model_name <- "fx_1310"
+# model_name <- "fr_1310"
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 load(file = fn)
 

@@ -1,3 +1,5 @@
+# Creates /results/items_per_study.pdf
+
 library("ddata")
 library("dplyr", warn.conflicts = FALSE)
 library("tidyr")
@@ -88,15 +90,9 @@ plot_age_one_study <- function(pass,
 theme_set(theme_light())
 plots <- plot_age_study(pass, min_n = 10)
 
-pdf_file <- file.path(getwd(), "results", "item_by_age.pdf")
+pdf_file <- file.path(getwd(), "results", "items_per_study.pdf")
 pdf(pdf_file, onefile = TRUE, width = 10, height = 5)
 for (i in seq(length(plots))) {
   print(plots[[i]])
 }
-dev.off()
-
-pdf_file <- file.path(getwd(), "results", "item_by_age_Netherlands.pdf")
-pdf(pdf_file, onefile = TRUE, width = 10, height = 5)
-  print(plots[[14]])
-  print(plots[[15]])
 dev.off()

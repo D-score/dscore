@@ -64,24 +64,11 @@ plot_age_item <- function(pass, by_name = "item",
     plot_list[[i]] <- plot_age_one_item(pass, by_name = by_name, 
                                         by_value = items[i],
                                         i = i,
-                                        location = 60,
                                         model_name = model_name,
                                         ...)
   }
   
   return(plot_list)
-}
-
-draw_logistic <- function(plot, location = 20, scale = 2.1044, ...) {
-  # function assumes that location is scalar and plot is ggplot
-  if (!is.ggplot(plot)) stop("Argument plot not a ggplot.")
-  if (is.na(location)) return(plot)
-  x <- seq(location - 7 * scale, location + 7 * scale, by = 0.1 * scale)
-  y <- 100 * plogis(x, location = location, scale = scale)
-  plot <- plot + 
-    geom_line(aes(x = x, y = y, group = NULL, colour = NULL), 
-              data = data.frame(x, y), ...)
-  plot
 }
 
 plot_age_one_item <- function(pass, 
@@ -93,7 +80,6 @@ plot_age_one_item <- function(pass,
                               ...) {
   filter_criteria <- lazyeval::interp(~ which_column == by_value & rug == FALSE, 
                                       which_column = as.name(by_name))
-  
   data_plot <- pass %>%
     filter_(filter_criteria)
   the_label <- data_plot$label[1]
@@ -124,9 +110,6 @@ plot_age_one_item <- function(pass,
     plot <- plot +
       geom_line() + geom_point()
   
-  # add logistic curve
-  # plot <- draw_logistic(plot, ...)
-
   # annotations
   plot <- plot + 
     theme(legend.position = c(0.95, 0.05), legend.justification = c(1, 0)) + 
@@ -140,7 +123,17 @@ plot_age_one_item <- function(pass,
   return(plot)
 }
 
-
+draw_logistic <- function(plot, location = 20, scale = 2.1044, ...) {
+  # function assumes that location is scalar and plot is ggplot
+  if (!is.ggplot(plot)) stop("Argument plot not a ggplot.")
+  if (is.na(location)) return(plot)
+  x <- seq(location - 7 * scale, location + 7 * scale, by = 0.1 * scale)
+  y <- 100 * plogis(x, location = location, scale = scale)
+  plot <- plot + 
+    geom_line(aes(x = x, y = y, group = NULL, colour = NULL), 
+              data = data.frame(x, y), ...)
+  plot
+}
 
 show_logistic_curve <- function(plot, location, 
                                 colour = "grey50", 
@@ -160,6 +153,8 @@ show_logistic_curve <- function(plot, location,
   }
   return(plot)
 }
+
+
 
 theme_set(theme_light())
 plots <- plot_age_item(pass, model_name = model_name)

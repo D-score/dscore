@@ -48,9 +48,15 @@ Default is \code{FALSE}.}
 }
 \value{
 Fitted object that extends class \code{c("dRm","Rm","eRm")}
-that is defined and understood by the \code{eRm} package.
-See \code{\link[eRm]{RM}} for a description. The \code{rasch()} function
-adds several additional elements (most for compatibility with \code{sirt}):
+that is defined and understood by the \code{eRm} package. 
+See \code{\link[eRm]{RM}} for a description. Note that the 
+component \code{X01} is equivalent to \code{X} (the input data), 
+and is not returned in order to save space. 
+If you need any function from the 
+\code{eRm} package that needs \code{X01}, first create it, e.g. by 
+\code{fit$X01 <- fit$X}.
+The \code{rasch()} function
+adds several additional elements, most for compatibility with \code{sirt}.
 \describe{
 \item{equate}{The \code{equate} argument}
 \item{b_fixed}{The \code{b_fixed} argument}

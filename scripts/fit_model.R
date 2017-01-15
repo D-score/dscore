@@ -34,8 +34,8 @@ b_fixed <- get_diff(fit_nl)
 
 # fit the "big model"
 fit <- rasch(data, equate = equatelist,
-#                         count = gcdg_count)
-            b_fixed = b_fixed, count = gcdg_count)
+                         count = gcdg_count)
+#            b_fixed = b_fixed, count = gcdg_count)
 
 # investigate item difficulties fixed vs estimated
 tau <- anchor(get_diff(fit), items = c("n12", "n26"))
@@ -107,10 +107,10 @@ item_fit <- residuals %>%
   summarize(
     n = n(),
     outfit = mean(z2),
-    qo = sqrt(sum(cdivw2) / n ^ 2 - (1 / n)),
+    qo = sqrt(pmin(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
     outfit_z = (outfit^(1/3) - 1) * (3 / qo) + qo / 3,
     infit = sum(y2) / sum(w),
-    qi = sqrt(pmax(sum(cminw2) / sum(w) ^ 2, 2)),
+    qi = sqrt(pmin(sum(cminw2) / sum(w) ^ 2, 2)),
     infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
 
 # fit statistics per person-age
@@ -119,10 +119,10 @@ person_fit <- residuals %>%
   summarize(
     n = n(),
     outfit = mean(z2),
-    qo = sqrt(pmax(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
+    qo = sqrt(pmin(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
     outfit_z = (outfit^(1/3) - 1) * (3 / qo) + qo / 3,
     infit = sum(y2) / sum(w),
-    qi = sqrt(pmax(sum(cminw2) / sum(w) ^ 2, 2)),
+    qi = sqrt(pmin(sum(cminw2) / sum(w) ^ 2, 2)),
     infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
 
 # fit statistics per equate
@@ -131,15 +131,15 @@ equate_fit <- residuals %>%
   summarize(
     n = n(),
     outfit = mean(z2),
-    qo = sqrt(pmax(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
+    qo = sqrt(pmin(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
     outfit_z = (outfit^(1/3) - 1) * (3 / qo) + qo / 3,
     infit = sum(y2) / sum(w),
-    qi = sqrt(pmax(sum(cminw2) / sum(w) ^ 2, 2)),
+    qi = sqrt(pmin(sum(cminw2) / sum(w) ^ 2, 2)),
     infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
 
 # store model
-# model_name <- "fr_1310"
-model_name <- "fx_1310"
+model_name <- "fr_1310"
+# model_name <- "fx_1310"
 model <- list(name = model_name, items = items, equatelist = equatelist,
               fit = fit, itembank = itembank, 
               dscore = dscore, 

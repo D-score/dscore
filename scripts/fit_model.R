@@ -33,9 +33,9 @@ fit_nl <- rasch(data_nl, count = gcdg_count)
 b_fixed <- get_diff(fit_nl)
 
 # fit the "big model"
-system.time(fit <- rasch(data, equate = equatelist,
-                         count = gcdg_count))
-#            b_fixed = b_fixed, count = gcdg_count))
+fit <- rasch(data, equate = equatelist,
+#                         count = gcdg_count)
+            b_fixed = b_fixed, count = gcdg_count)
 
 # investigate item difficulties fixed vs estimated
 tau <- anchor(get_diff(fit), items = c("n12", "n26"))
@@ -56,7 +56,7 @@ names(itembank)[4] <- "lex.gcdg"
 
 # calculate d-score
 adm <- c("country", "study", "id", "wave", "age")
-system.time(alldscore <- gcdg %>%
+dscore <- ddata::gcdg %>%
   select_(.dots = c(adm, items)) %>%
   gather(item, score,  -one_of(adm), na.rm = TRUE) %>%
   arrange(country, study, id, age) %>%
@@ -64,7 +64,7 @@ system.time(alldscore <- gcdg %>%
   summarise(d = dscore(scores = score, items = item,
                        ages = age / 12, mu = "model",
                        itembank = itembank, lexicon = "gcdg")) %>%
-  ungroup())
+  ungroup()
 
 # joint plot of d-score against age
 plot(x = NULL, y = NULL, xlim = c(0, 48), ylim = c(0, 80),
@@ -75,14 +75,75 @@ xgrid <- seq(1/12, 4, 1/12)
 prov_mu <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
 lines(x = xgrid * 12, y = prov_mu(xgrid), lty = 1, lwd = 3,
       col = "olivedrab")
-with(alldscore, points(x = age, y = d, cex = 0.4, col = "navy"))
+with(dscore, points(x = age, y = d, cex = 0.4, col = "navy"))
 mtext(paste(Sys.Date(), length(items), length(b_fixed), length(equatelist)),
       side = 1, line = 3, at = 0)
 
+# calculate residuals
+residuals <- ddata::gcdg %>%
+  select_(.dots = c("study", "id", "age", items)) %>%
+  left_join(dscore, by = c("study", "id", "age")) %>%
+  gather(key = item, value = value, -study, -id, -age, -d) %>%
+  drop_na(value) %>%
+  left_join(itembank, by = c("item" = "lex.gcdg")) %>%
+  select(study, id, age, equate, item, value, tau, d) %>%
+  drop_na(d) %>%
+  mutate(p = plogis(d, location = tau, scale = 2.1044),
+         psi = exp((d - tau)/2.1044),
+         pi = psi / (1 + psi), 
+         w = pmax(p^2 * (1 - p) + (1 - p)^2 * p, 0.01),
+         c = pmax(p^4 * (1 - p) + (1 - p)^4 * p, 0.01),
+         y = value - p,
+         z = y / w ^ 0.5,
+         z2 = z ^ 2,
+         y2 = w * z2,
+         w2 = w ^ 2,
+         cdivw2 = c / w2,
+         cminw2 = c - w2)
+
+# fit statistics per item
+item_fit <- residuals %>%
+  group_by(item) %>%
+  summarize(
+    n = n(),
+    outfit = mean(z2),
+    qo = sqrt(sum(cdivw2) / n ^ 2 - (1 / n)),
+    outfit_z = (outfit^(1/3) - 1) * (3 / qo) + qo / 3,
+    infit = sum(y2) / sum(w),
+    qi = sqrt(pmax(sum(cminw2) / sum(w) ^ 2, 2)),
+    infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
+
+# fit statistics per person-age
+person_fit <- residuals %>%
+  group_by(study, id, age) %>%
+  summarize(
+    n = n(),
+    outfit = mean(z2),
+    qo = sqrt(pmax(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
+    outfit_z = (outfit^(1/3) - 1) * (3 / qo) + qo / 3,
+    infit = sum(y2) / sum(w),
+    qi = sqrt(pmax(sum(cminw2) / sum(w) ^ 2, 2)),
+    infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
+
+# fit statistics per equate
+equate_fit <- residuals %>%
+  group_by(equate) %>%
+  summarize(
+    n = n(),
+    outfit = mean(z2),
+    qo = sqrt(pmax(sum(cdivw2) / n ^ 2 - (1 / n), 2)),
+    outfit_z = (outfit^(1/3) - 1) * (3 / qo) + qo / 3,
+    infit = sum(y2) / sum(w),
+    qi = sqrt(pmax(sum(cminw2) / sum(w) ^ 2, 2)),
+    infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
+
 # store model
-model_name <- "fr_1310"
+# model_name <- "fr_1310"
+model_name <- "fx_1310"
 model <- list(name = model_name, items = items, equatelist = equatelist,
               fit = fit, itembank = itembank, 
-              dscore = alldscore)
+              dscore = dscore, 
+              item_fit = item_fit, person_fit = person_fit, 
+              equate_fit = equate_fit)
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
-save(model, file = fn)
+save(model, file = fn, compress = "xz")

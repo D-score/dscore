@@ -44,9 +44,15 @@
 #' \code{\link[eRm]{RM}}
 #' @author Alexander Robitzch (\code{sirt} author), Stef van Buuren
 #' @return Fitted object that extends class \code{c("dRm","Rm","eRm")}
-#' that is defined and understood by the \code{eRm} package.
-#' See \code{\link[eRm]{RM}} for a description. The \code{rasch()} function
-#' adds several additional elements (most for compatibility with \code{sirt}):
+#' that is defined and understood by the \code{eRm} package. 
+#' See \code{\link[eRm]{RM}} for a description. Note that the 
+#' component \code{X01} is equivalent to \code{X} (the input data), 
+#' and is not returned in order to save space. 
+#' If you need any function from the 
+#' \code{eRm} package that needs \code{X01}, first create it, e.g. by 
+#' \code{fit$X01 <- fit$X}.
+#' The \code{rasch()} function
+#' adds several additional elements, most for compatibility with \code{sirt}.
 #' \describe{
 #' \item{equate}{The \code{equate} argument}
 #' \item{b_fixed}{The \code{b_fixed} argument}
@@ -207,7 +213,8 @@ rasch <- function(data, equate = NULL, itemcluster = NULL,
   item$itemcluster <- itemcluster
   
   # return fitted object that can be understood by eRm package
-  res <- list(X = as.data.frame(X01), X01 = as.data.frame(X01), 
+  # Note: The X01 component is removed
+  res <- list(X = as.data.frame(X01), 
               count = Aij, dropped = dropped, orphans = orphans,
               model = "RM", equate = equate, itemcluster = itemcluster,
               b_fixed = b_fixed, zerosum = zerosum,

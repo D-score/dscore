@@ -6,6 +6,12 @@ library("tidyr")
 library("ggplot2")
 library("dscore")
 
+# source functions
+file.sources = list.files(file.path(getwd(), "scripts", "functions"), 
+                          pattern = "*.R$", full.names = TRUE, 
+                          ignore.case = TRUE)
+sapply(file.sources, source, .GlobalEnv)
+
 # take items
 # 1) from a registered instrument
 # 2) for which we have at least one observation in each category
@@ -17,7 +23,7 @@ data <- ddata::gcdg %>%
 items <- names(data)
 
 model_name <- "fx_1310"
-# model_name <- "fr_1310"
+model_name <- "fr_1310"
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 load(file = fn)
 
@@ -51,117 +57,15 @@ data_rug <- data %>%
 
 pass <- bind_rows(pass, data_rug)
 
-plot_age_item <- function(pass, by_name = "item", 
-                          model_name = "unspecified", ...) {
-  # pre-allocate list of ggplots
-  items <- gtools::mixedsort(unique(pass$item))
-  plot_list <- vector("list", length(items))
-  names(plot_list) <- items
-  
-  # loop over plots
-  for (i in 1:length(plot_list)) {
-    cat("Item: ", as.character(i), items[i], "\n")
-    plot_list[[i]] <- plot_age_one_item(pass, by_name = by_name, 
-                                        by_value = items[i],
-                                        i = i,
-                                        model_name = model_name,
-                                        ...)
-  }
-  
-  return(plot_list)
-}
-
-plot_age_one_item <- function(pass, 
-                              by_name,
-                              by_value,
-                              i = 0,
-                              min_n = 10, 
-                              model_name = "", 
-                              ...) {
-  filter_criteria <- lazyeval::interp(~ which_column == by_value & rug == FALSE, 
-                                      which_column = as.name(by_name))
-  data_plot <- pass %>%
-    filter_(filter_criteria)
-  the_label <- data_plot$label[1]
-  data_plot <- data_plot %>%
-    filter(n >= min_n)
-  
-  studies <- unique(data_plot$study)
-  rug <- pass %>%
-    filter(rug & study %in% studies)
-  
-  plot <- ggplot(data_plot, aes(d, p, group = study, colour = study)) + 
-    scale_x_continuous(paste0("D-score (", model_name,")"), 
-                       limits = c(0, 80),
-                       breaks = seq(0, 80, 10)) +
-    scale_y_continuous("% pass", breaks = seq(0, 100, 20), 
-                       limits = c(0, 100)) +
-    scale_colour_manual(values = get_palette("study"), na.value = "grey")
-    
-  # add rugs 
-  if (nrow(rug) >= 1)
-    plot <- plot + 
-    geom_rug(aes(x = d, y = 0, group = study, colour = study),
-             data = rug,
-             position = "jitter", sides = "b", size = 0.2)
-
-  # add proportions
-  if (nrow(data_plot) >= 1)
-    plot <- plot +
-      geom_line() + geom_point()
-  
-  # annotations
-  plot <- plot + 
-    theme(legend.position = c(0.95, 0.05), legend.justification = c(1, 0)) + 
-    guides(fill = guide_legend(title = NULL)) + 
-    annotate("text", x = 1, y = 7, hjust = 0,
-             label = paste(as.character(i), by_value, sep = "  ")) 
-  if (!is.na(the_label)) 
-    plot <- plot + 
-    annotate("text", x = 1, y = 2, hjust = 0, label = the_label)
-  
-  return(plot)
-}
-
-draw_logistic <- function(plot, location = 20, scale = 2.1044, ...) {
-  # function assumes that location is scalar and plot is ggplot
-  if (!is.ggplot(plot)) stop("Argument plot not a ggplot.")
-  if (is.na(location)) return(plot)
-  x <- seq(location - 7 * scale, location + 7 * scale, by = 0.1 * scale)
-  y <- 100 * plogis(x, location = location, scale = scale)
-  plot <- plot + 
-    geom_line(aes(x = x, y = y, group = NULL, colour = NULL), 
-              data = data.frame(x, y), ...)
-  plot
-}
-
-show_logistic_curve <- function(plot, location, 
-                                colour = "grey50", 
-                                size = 0.5, linetype = "dashed", ...) {
-  if (is.ggplot(plot)) return(draw_logistic(plot, location = location[1], ...))
-  if (is.list(plot)) {
-    if (length(location) > 1 & length(location) != length(plot))
-      stop("tau and plot are of incompatible length")
-    for (i in 1:length(plot)) {
-      plot[[i]] <- draw_logistic(plot[[i]], 
-                                 location = location[i], 
-                                 colour = colour, 
-                                 size = size, 
-                                 linetype = linetype, 
-                                 ...)
-    }
-  }
-  return(plot)
-}
-
-
-
 theme_set(theme_light())
 plots <- plot_age_item(pass, model_name = model_name)
 
 # add logistic curves
 tau <- gettau(names(plots), model$itembank, lexicon = "gcdg")
 plots <- show_logistic_curve(plots, tau)
+
+# add fit statistics
+plots <- show_item_fit(plots, model$item_fit)
 
 pdf_file <- file.path(getwd(), "results", paste0("itempedia_d_", model_name,".pdf"))
 pdf(pdf_file, onefile = TRUE, width = 10, height = 5)

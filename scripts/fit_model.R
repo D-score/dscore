@@ -8,11 +8,12 @@ library("tidyr")
 # take items
 # 1) from a registered instrument
 # 2) for which we have at least one observation in each category
-items <- names(gcdg)[names(gcdg) %in% itemtable$item]
+items <- names(ddata::gcdg)[names(ddata::gcdg) %in% ddata::itemtable$item]
 data <- ddata::gcdg %>%
-  select_(.dots = items) %>%
-  select_if(category_size_exceeds, 1)
-items <- names(data)
+  select_(.dots = items)
+# %>%
+#   select_if(category_size_exceeds, 1)
+# items <- names(data)
 
 # select equategroups among selected items
 itemtable_select <- itemtable[which(itemtable$item %in% items), ]

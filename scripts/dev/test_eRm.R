@@ -36,6 +36,7 @@ fit2 <- sirt::rasch.pairwise.itemcluster(data, progress = FALSE)
 #   Subjects with only 1 valid response must be removed!
 
 # obtain person parameters (assuming normality)
+fit1$X01 <- fit1$X
 pp <- person.parameter(fit1)
 
 # theoretical person-item probabilities (for subset of 12433 rows)

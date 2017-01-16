@@ -2,6 +2,7 @@
 
 export(adp)
 export(anchor)
+export(category_size_exceeds)
 export(daz)
 export(dscore)
 export(get_diff)

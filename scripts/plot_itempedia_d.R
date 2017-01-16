@@ -17,7 +17,7 @@ data <- ddata::gcdg %>%
 items <- names(data)
 
 model_name <- "fx_1310"
-# model_name <- "fr_1310"
+model_name <- "fr_1310"
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 load(file = fn)
 
@@ -97,18 +97,18 @@ plot_age_one_item <- function(pass,
     scale_y_continuous("% pass", breaks = seq(0, 100, 20), 
                        limits = c(0, 100)) +
     scale_colour_manual(values = get_palette("study"), na.value = "grey")
-    
+  
   # add rugs 
   if (nrow(rug) >= 1)
     plot <- plot + 
     geom_rug(aes(x = d, y = 0, group = study, colour = study),
              data = rug,
              position = "jitter", sides = "b", size = 0.2)
-
+  
   # add proportions
   if (nrow(data_plot) >= 1)
     plot <- plot +
-      geom_line() + geom_point()
+    geom_line() + geom_point()
   
   # annotations
   plot <- plot + 
@@ -154,6 +154,38 @@ show_logistic_curve <- function(plot, location,
   return(plot)
 }
 
+annotate_item_fit <- function(plot, itemfit) {
+  # function assumes that location is scalar and plot is ggplot
+  if (!is.ggplot(plot)) stop("Argument plot not a ggplot.")
+  if (is.na(itemfit[1])) return(plot)
+  plot <- plot + 
+    annotate("text", x = 1, y = 97, hjust = 0,
+             label = paste0("Outfit ", 
+                           round(itemfit$outfit, 2),
+                           "(", 
+                           round(itemfit$outfit_z, 2),
+                           ")"))
+  plot <- plot + 
+    annotate("text", x = 1, y = 92, hjust = 0,
+             label = paste0("Infit  ", 
+                            round(itemfit$infit, 2),
+                            "(", 
+                            round(itemfit$infit_z, 2),
+                            ")"))
+  plot
+}
+
+show_item_fit <- function(plot, item_fit) {
+  if (is.ggplot(plot)) return(annotate_item_fit(plot, itemfit = item_fit))
+  if (is.list(plot)) {
+    for (i in 1:length(plot)) {
+      the_name <- names(plot)[i]
+      itemfit <- item_fit[item_fit$item == the_name, drop = FALSE]
+      if (nrow(itemfit) == 1) plot[[i]] <- annotate_item_fit(plot[[i]], itemfit = itemfit)
+    }
+  }
+  return(plot)
+}
 
 
 theme_set(theme_light())
@@ -162,6 +194,9 @@ plots <- plot_age_item(pass, model_name = model_name)
 # add logistic curves
 tau <- gettau(names(plots), model$itembank, lexicon = "gcdg")
 plots <- show_logistic_curve(plots, tau)
+
+# add fit statistics
+plots <- show_item_fit(plots, model$item_fit)
 
 pdf_file <- file.path(getwd(), "results", paste0("itempedia_d_", model_name,".pdf"))
 pdf(pdf_file, onefile = TRUE, width = 10, height = 5)

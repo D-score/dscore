@@ -40,6 +40,8 @@ model <- fit_dmodel(model_name = model_name, items = items, data = data)
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 save(model, file = fn, compress = "xz")
 
+# calculate figures --- 
+
 # test with items with outfit MSQ >= 10 and not in multi-equate group
 
 # item definition

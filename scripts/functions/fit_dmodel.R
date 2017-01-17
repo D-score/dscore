@@ -22,10 +22,11 @@ fit_dmodel <- function(model_name = "unspecified", items = names(data),
 
   # # create itembank
   tau_df <- data.frame(item = names(tau), tau = tau, stringsAsFactors = FALSE)
+  itemtable$item <- as.character(itemtable$item)
   itembank <- left_join(itemtable, tau_df, by = "item")
   itembank <- itembank[!is.na(itembank$tau), ]
-  names(itembank)[4] <- "lex.gcdg"
-  
+  names(itembank)[match("item", names(itembank))] <- "lex.gcdg"
+
   # calculate d-score
   adm <- c("country", "study", "id", "wave", "age")
   dscore <- data %>%
@@ -97,9 +98,11 @@ fit_dmodel <- function(model_name = "unspecified", items = names(data),
       infit_z = (infit^(1/3) - 1) * (3 / qi) + qi / 3)
   
   # store model
-  model <- list(name = model_name, items = items, equatelist = equatelist,
+  model <- list(name = model_name, 
+                data = data, 
+                items = items, equatelist = equatelist,
                 fit = fit, itembank = itembank, 
-                dscore = dscore, residuals = residuals,
+                dscore = dscore, 
                 item_fit = item_fit, person_fit = person_fit, 
                 equate_fit = equate_fit)
   class(model) <- "dmodel"

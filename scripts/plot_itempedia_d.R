@@ -15,17 +15,21 @@ sapply(file.sources, source, .GlobalEnv)
 # take items
 # 1) from a registered instrument
 # 2) for which we have at least one observation in each category
-items <- names(gcdg)[names(gcdg) %in% itemtable$item]
-adm <- c("study", "id", "age")
-data <- ddata::gcdg %>%
-  select_(.dots = c(adm, items)) %>%
-  select_if(category_size_exceeds, 1)
-items <- names(data)
+# items <- names(gcdg)[names(gcdg) %in% itemtable$item]
+# adm <- c("study", "id", "age")
+# data <- ddata::gcdg %>%
+#   select_(.dots = c(adm, items)) %>%
+#   select_if(category_size_exceeds, 1)
+# items <- names(data)
 
 model_name <- "fx_1310"
 model_name <- "fr_1310"
+model_name <- "d_1221"
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 load(file = fn)
+
+# get data
+data <- model$data
 
 # merge data to obtain d
 data <- left_join(data, model$dscore, by = c("study", "id", "age"))
@@ -33,13 +37,13 @@ data <- left_join(data, model$dscore, by = c("study", "id", "age"))
 # proportion pass per dscore group
 # observations per months (n) by study and item
 pass <- data %>%
-  gather(key = item, value = value, -d, -age, -id, -study) %>%
+  gather(key = item, value = value, -d, -age, -id, -study, -wave, -country) %>%
   drop_na(item, value, d) %>%
   mutate(dgp = cut(d, breaks = seq(0, 80, 2))) %>%
   group_by(item, study, dgp) %>%
-  summarise(p = round(100 * mean(value)),
-            a = mean(age),
-            d = mean(d),
+  summarise(p = round(100 * mean(value, na.rm = TRUE)),
+            a = mean(age, na.rm = TRUE),
+            d = mean(d, na.rm = TRUE),
             n = n()) %>%
   ungroup %>%
   mutate(rug = FALSE) %>%

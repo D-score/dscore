@@ -8,7 +8,13 @@ library("tidyr")
 # take items
 # 1) from a registered instrument
 # 2) for which we have at least one observation in each category
-items <- names(ddata::gcdg)[names(ddata::gcdg) %in% ddata::itemtable$item]
+itemtable <- ddata::itemtable
+itemtable$item <- as.character(itemtable$item)
+itemtable$equate <- as.character(itemtable$equate)
+itemtable$instrument <- as.character(itemtable$instrument)
+itemtable$domain <- as.character(itemtable$domain)
+
+items <- names(gcdg)[names(gcdg) %in% ddata::itemtable$item]
 data <- ddata::gcdg %>%
   select_(.dots = items)
 # %>%

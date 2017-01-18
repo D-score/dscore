@@ -50,12 +50,14 @@ plot_d_one_grp <- function(pass,
              label = by_value) 
   
   # item nams
-  for (l in length(labels):1) {
-    plot <- plot + annotate("text", x = 1, y = 7 + (l - 1) * 5, hjust = 0,
-                            label = items[l])
-    if (!is.na(labels[l]))
-      plot <- plot + annotate("text", x = 7, y = 7 + (l - 1) * 5, hjust = 0,
-                              label = labels[l])
+  if (length(labels) > 0) {
+    for (l in length(labels):1) {
+      plot <- plot + annotate("text", x = 1, y = 7 + (l - 1) * 5, hjust = 0,
+                              label = items[l])
+      if (!is.na(labels[l]))
+        plot <- plot + annotate("text", x = 7, y = 7 + (l - 1) * 5, hjust = 0,
+                                label = labels[l])
+    }
   }
   return(plot)
 }

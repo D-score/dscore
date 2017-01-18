@@ -29,7 +29,7 @@ plot <- ggplot(reference, aes(x = month, y = d, group = centile)) +
   facet_wrap(~study) + 
   theme(legend.position = "none")
 
-pdf_file <- file.path(getwd(), "results", paste0("d_a_study_", model_name,".pdf"))
+pdf_file <- file.path(getwd(), "results", paste0("d_a_study_overconstrained", model_name,".pdf"))
 pdf(pdf_file, onefile = TRUE, width = 7, height = 7)
 print(plot)
 dev.off()

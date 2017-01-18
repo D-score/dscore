@@ -8,7 +8,7 @@ fit_dmodel <- function(model_name = "unspecified", items = names(data),
     data_nl <- ddata::gcdg %>% select_(.dots = items_nl)
     fit_nl <- rasch(data_nl, count = gcdg_count)
     b_fixed <- get_diff(fit_nl)
-  } 
+  }
   else b_fixed <- NULL
   
   item_data <- select_(data, .dots = items)

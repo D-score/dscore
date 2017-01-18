@@ -8,6 +8,7 @@ library("ggplot2")
 # model_name <- "fx_1310"
 # model_name <- "fr_1310"
 model_name <- "d_1221"
+model_name <- "d_530_eq8_fx"
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 load(file = fn)
 
@@ -29,7 +30,7 @@ plot <- ggplot(reference, aes(x = month, y = d, group = centile)) +
   facet_wrap(~study) + 
   theme(legend.position = "none")
 
-pdf_file <- file.path(getwd(), "results", paste0("d_a_study_overconstrained", model_name,".pdf"))
+pdf_file <- file.path(getwd(), "results", paste0("d_a_study_", model_name,".pdf"))
 pdf(pdf_file, onefile = TRUE, width = 7, height = 7)
 print(plot)
 dev.off()

@@ -16,8 +16,8 @@ itemtable$domain <- as.character(itemtable$domain)
 # take items
 # 1) from a registered instrument
 # 2) for which we have at least one observation in each category
-items <- names(ddata::gcdg)[names(ddata::gcdg) %in% ddata::itemtable$item]
-data <- ddata::gcdg %>%
+items <- names(gcdg)[names(gcdg) %in% itemtable$item]
+data <- gcdg %>%
   select_(.dots = items) %>%
   select_if(category_size_exceeds, 1)
 items <- names(data)
@@ -45,7 +45,7 @@ adm <- c("country", "study", "id", "wave", "age")
 data <- ddata::gcdg %>%
   select_(.dots = c(adm, items))
 model <- fit_dmodel(model_name = model_name, items = items, 
-                    equatelist = equatelist, 
+                    # equatelist = equatelist, 
                     data = data, 
                     free = FALSE)
 
@@ -98,14 +98,14 @@ save(model, file = fn, compress = "xz")
 eq_COG <- paste0("COG", c(49))
 eq_EXP <- paste0("EXP", c(10, 18, 26))
 eq_FM <- paste0("FM", c(25))
-eq_GM <- paste0("GM", c(43, 50))
+eq_GM <- paste0("GM", c(50))
 eq_REC <- paste0("REC", c(8, 13))
 
 equatelist <- equatelist[c(eq_COG, eq_EXP, eq_FM, eq_GM, eq_REC)]
 
 # 
 # test with all eligible items
-model_name <- "d_1221_eq9_fx"
+model_name <- "d_1221_eq8_fx"
 adm <- c("country", "study", "id", "wave", "age")
 data <- ddata::gcdg %>%
   select_(.dots = c(adm, items))
@@ -117,7 +117,7 @@ save(model, file = fn, compress = "xz")
 
 # 
 # test with all eligible items
-model_name <- "d_1221_eq9_fr"
+model_name <- "d_1221_eq8_fr"
 adm <- c("country", "study", "id", "wave", "age")
 data <- ddata::gcdg %>%
   select_(.dots = c(adm, items))
@@ -127,3 +127,52 @@ model <- fit_dmodel(model_name = model_name, items = items,
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 save(model, file = fn, compress = "xz")
 
+
+# -------------------------------------
+
+# rough item elimination
+old_model_name <- "d_1221_eq8_fx"
+fn <- file.path(getwd(), "store", paste(old_model_name, "RData", sep = "."))
+load(file = fn)
+
+# rough item eliminiation
+keep <- with(model$item_fit, 
+             infit < 1.3 & infit > 0.7 & outfit < 1.7 & outfit > 0.7)
+table(keep)
+items <- model$item_fit$item[keep]
+data <- gcdg %>%
+  select_(.dots = items) %>%
+  select_if(category_size_exceeds, 20)
+items <- names(data)
+length(items) # 529
+
+# add anchors, remove orphans 
+orphans <- c("bm9b")
+items <- items[-match(orphans, items)]
+items <- c(items, "n12", "n26")
+length(items)
+
+# linking items
+itemtable_select <- itemtable[which(itemtable$item %in% items), ]
+equatelist <- tapply(itemtable_select$item, itemtable_select$equate, list)
+
+# based on equate_d_fr_1310.pdf
+eq_COG <- paste0("COG", c(49))
+eq_EXP <- paste0("EXP", c(10, 18, 26))
+eq_FM <- paste0("FM", c(25))
+eq_GM <- paste0("GM", c(50))
+eq_REC <- paste0("REC", c(8, 13))
+equatelist <- equatelist[c(eq_COG, eq_EXP, eq_FM, eq_GM, eq_REC)]
+
+# 
+model_name <- "d_530_eq8_fx"
+adm <- c("country", "study", "id", "wave", "age")
+data <- ddata::gcdg %>%
+  select_(.dots = c(adm, items))
+
+model <- fit_dmodel(model_name = model_name, items = items, 
+                    equatelist = equatelist, 
+                    data = data, free = FALSE)
+
+fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
+save(model, file = fn, compress = "xz")

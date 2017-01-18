@@ -25,6 +25,8 @@ sapply(file.sources, source, .GlobalEnv)
 model_name <- "fx_1310"
 model_name <- "fr_1310"
 model_name <- "d_1221"
+model_name <- "d_530_eq8_fx"
+
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 load(file = fn)
 

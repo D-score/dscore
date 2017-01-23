@@ -176,3 +176,5 @@ model <- fit_dmodel(model_name = model_name, items = items,
 
 fn <- file.path(getwd(), "store", paste(model_name, "RData", sep = "."))
 save(model, file = fn, compress = "xz")
+
+

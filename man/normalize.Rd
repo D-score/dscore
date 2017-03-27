@@ -27,4 +27,3 @@ dscore:::normalize(c(1, 5, 8, 5, 1), qp = 1:5)
 # the sum is always equal to 1
 sum(dscore:::normalize(rnorm(5), qp = 1:5))
 }
-

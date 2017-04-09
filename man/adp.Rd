@@ -59,3 +59,4 @@ Stat Methods Med Res, 23(4), 346-368.
 \seealso{
 \code{\link{dscore}}
 }
+

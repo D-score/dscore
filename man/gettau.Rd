@@ -46,9 +46,10 @@ gettau(items = c("GSFIXEYE", "GSMARMR"))
 gettau(items = c("v1430", "v1432"), lexicon = "SMOCC")
 
 }
-\seealso{
-\code{\link{itembank}}, \code{\link{dscore}}
-}
 \author{
 Stef van Buuren 2016
 }
+\seealso{
+\code{\link{itembank}}, \code{\link{dscore}}
+}
+

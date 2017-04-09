@@ -2,26 +2,26 @@
 dscore: Measuring child development by the D-score
 ==================================================
 
-The D-score is a numerical score that measures generic development in children 0-4 years. The D-score is an attempt to analyze and predict development of children using tools developed for numerical measures, like height and weight.
+The D-score is a numerical score that measures generic development in children 0-4 years. The D-score can be used to analyze and predict development of children using tools developed for numerical measures, like height and weight.
 
 Installation
 ------------
 
-If you have been marked as a collaborator on GitHub, generated a personal access token (PAT) on <https://github.com/settings/tokens>, and stored your PAT by `Sys.setenv(GITHUB_PAT = "51he..")`, then install the `brokenstick` package from GitHub as follows:
+If you have been marked as a collaborator on GitHub, generated a personal access token (PAT) on <https://github.com/settings/tokens>. Store your PAT by `Sys.setenv(GITHUB_PAT = "51he..")`, where `51he..` is the 40-character token. Alternatively, put the line `GITHUB_PAT=51he...` in your `.Renviron` file. The latter method is persistent over sessions. Install the `dscore` package from GitHub as follows:
 
 ``` r
 install.packages("devtools")
-devtools::install_github(repo = "stefvanbuuren/dscore", oath = Sys.getenv("GITHUB_PAT"))
+devtools::install_github(repo = "stefvanbuuren/dscore")
 ```
 
 Overview
 --------
 
-The `dscore` package contains functions for
+The `dscore` package contains functions to
 
--   Fitting and evaluating the Rasch model to data,
--   Calculating individual trajectories of the D-score,
--   Transforming the D-scores into Z-scores, and back.
+-   Calculate D-score from item level responses
+-   Transform the D-scores into standardised Z-scores, and back
+-   Plot individual trajectories of the D-score (not yet implemented).
 
 Main functions
 --------------
@@ -30,8 +30,6 @@ The main functions in the `dscore` package are:
 
 | Function name | Description                                    |
 |---------------|------------------------------------------------|
-| `rasch()`     | Estimate difficulty of items                   |
-| `anchor()`    | Transform difficulties to fixed anchors        |
 | `dscore()`    | Estimate D-scores of children                  |
 | `daz()`       | Transform to age-adjusted standardized D-score |
 | `zad()`       | Inverse of `daz()`                             |

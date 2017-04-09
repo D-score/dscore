@@ -13,7 +13,6 @@ NULL
 #' 
 #' The main functions are:
 #' \tabular{ll}{
-#'   \code{\link{rasch}} \tab Estimate difficulty of items\cr
 #'   \code{\link{dscore}} \tab Estimate D-scores of children\cr
 #'   \code{\link{daz}} \tab Transform to age-adjusted standardized D-score\cr
 #'   \code{\link{zad}} \tab Inverse of \code{\link{daz}}

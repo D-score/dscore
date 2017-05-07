@@ -53,4 +53,3 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 \seealso{
 \code{\link{dscore}}, \code{\link{daz}}
 }
-

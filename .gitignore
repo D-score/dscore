@@ -12,7 +12,7 @@ _ignore/
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-inst/doc
+
 sftp-config.json
 docs/assets
 docs/index.html

@@ -1,104 +1,111 @@
 ---
 title: "Calculate D-score and DAZ"
+author: "Stef van Buuren"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
+bibliography: bibliography.bib
+biblio-style: "apalike"
 vignette: >
   %\VignetteIndexEntry{Calculate D-score and DAZ}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r setup, include=FALSE}
+  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
+  options(width = 80)
+```
+
 ## Overview
 
-This vignettes shows how to estimate the D-score and the D-score SDS, a.k.a. DAZ in an excerpt from the POPS data. This vignettes covers some typical actions needed when estimating D-scores:
+The D-score is a one-number summary measure of early child development. This vignettes shows how to estimate the D-score and the D-score SDS (also known as *D-score Age adjusted Z-score*, or DAZ) from individual pass/fail data. The vignettes covers some typical actions needed when estimating D-scores:
 
-1. Rename item names in source data to item names used in itembank
-2. Reorganize the source data into a long matrix
-3. Calculate D-score and DAZ
-4. Combine D-score and DAZ with source data
+1. Rename item names in source data to item names used in itembank;
+2. Reorganize the source data into a long matrix;
+3. Calculate D-score and DAZ;
+4. Combine D-score and DAZ with source data.
 
-## Rename item names
+## 1. Rename item names
 
-The `dscore` package has built-in example data from the POPS study, called `popsdemo`. The data set is of class `tbl_df` from the `dplyr` package. 
+The `dscore` package has built-in subset of data from the POPS study [@verloove-vanhorick1986]. The dataset is called `popsdemo`.
 
 ```{r rename}
 library("dscore")
 
-popsdemo
-class(popsdemo)
+head(popsdemo[, 1:10], 5)
 nrow(popsdemo)
 ```
 
-The are 25 children and 4 time points. 
-
-```{r children}
-# 25 children, 4 time points per child
-length(unique(popsdemo$patid))
+There are 25 children, with four time points each. The names of the items that form the entire test are obtained from columns 8-64.
+```{r}
+items <- names(popsdemo)[8:64]
 ```
 
-The item scores that form the test are located in columns 9-65.
+The names of the items in the data need to be matched against one of the lexicons in the item bank. The item bank in the `dscore` package is called `itembank`. For each item, the item bank contains: 
+
+1. The name of the item according to some lexicon (i.e. naming system);
+2. The visit number (`occ`) according to the Dutch child health care system; 
+2. The label of the item, both in English and Dutch;
+3. The difficulty level of the item, as estimated by the Rasch model [@vanbuuren2014gc].
+
+The built-in lexicons are:
+
 ```{r}
-test <- 9:65
+names(itembank)[grep("lex_", names(itembank))]
 ```
 
-These names of the columns need to be matched against one of the lexicons in the item bank. The built-in lexicons are:
+We first need to find out a proper lexicon for the data. The POPS data are already coded in the
+`lex_ghap` lexicon. We may verify the item names in the data against the item names in the item bank.
 
 ```{r}
-names(itembank)[1:6]
+itemset <- !is.na(itembank$lex_dutch1983)
+head(cbind(items, itembank[itemset, c("lex_ghap")]))
 ```
 
-We first need to find out a proper lexicon for the data. For the POPS data, the closest lexicon is 
-\code{lex.dutch1983}. Let us check the variable names in POPS with the item labels in the item bank.
+In this case all item names from the source data and the item bank match up exactly, but in general, we will need to map carefully the names in the dataset to the names in one of the lexicons provided by the item bank. 
+
+For POPS, we may take out the relevant parts of the item bank as
 
 ```{r}
-itemset <- !is.na(itembank$lex.dutch1983)
-cbind(names(popsdemo)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
-```
-
-In this case, we are lucky that all item names from the source data and the item bank match up exactly. 
-In general, we will need to map carefully the names in the dataset to the names in the item bank. For POPS, 
-we may take out the relevant parts of the item bank as
-
-```{r}
-ib <- itembank[itemset,c("lex.dutch1983", "lex.GHAP", "labelEN", "tau")]
+ib <- itembank[itemset,c("lex_dutch1983", "lex_ghap", "labelEN", "tau")]
 head(ib, 3)
 ```
 
 From here on, we will work in the GHAP lexicon. Renaming the source data is now done by
 
 ```{r}
-names(popsdemo)[test] <- as.character(ib$lex.GHAP)
+item_locations <- names(popsdemo) %in% items
+names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
 ```
 
 The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `gettau()` function:
 
 ```{r}
-gettau(names(popsdemo)[test])
+gettau(items = names(popsdemo)[item_locations])
 ```
 
-## Reorganize the data into a long matrix
+## 2. Reorganize the data into a long matrix
 
 The `dscore()` function takes vectors of item scores, item names and ages. Rearringing the data makes it easy to extract the relevant vectors. We need to create a data set with the following variables: `patid`, `moment`, `age`, `daycor`, `item` and `score`, and select only the rows where we have an observed score.
 
-```{r}
+```{r warnings=FALSE, message=FALSE}
 library("tidyr")
 library("dplyr")
 data <- popsdemo %>% 
   select(patid, moment, age, daycor, GSFIXEYE:GSKIK) %>%
   gather(items, scores, GSFIXEYE:GSKIK, na.rm = TRUE) %>%
-  mutate(scores = 1 - scores) %>% 
   arrange(patid, moment)
-data
+head(data)
 ```
 
-There are `nrow(data)` records with a nonmissing item score. Note also that the item scores have been reversed, as POPS uses a zero for a PASS, and a one for a FAIL.
+There are `r nrow(data)` records with a nonmissing item score.
 
-## Calculate D-score and DAZ
+## 3. Calculate D-score and DAZ
 
-For illustration, let us first calculate the D-score of the first child. There are 75 scores for this child, spread over four time points. This is a preterm child, so we correct calener age for gestational age as in `daycor`:
+For illustration, let us first calculate the D-score of the first child, with ID 11126. There are 75 scores for this child, spread over four time points. This is a preterm child, so we correct calener age for gestational age as in `daycor`:
 
 ```{r}
-child1 <- filter(data, patid == 1)
+child1 <- filter(data, patid == 11126)
 
 scores <- child1$scores
 items <- as.character(child1$items)
@@ -134,7 +141,7 @@ df <- data.frame(
 head(df)
 ```
 
-## Combine D-score and DAZ with source data
+## 4. Combine D-score and DAZ with source data
 
 Finally, in order to do further analyses, we need to put the estimated D-score and DAZ back into the source data.
 
@@ -144,4 +151,6 @@ popsdemo$ages <- round(popsdemo$daycor/365.25, 4)
 popsdemo <- merge(popsdemo, df, all.x = TRUE)
 head(select(popsdemo, patid, moment, ages, dscore, daz))
 ```
+
+## References
 

@@ -1,46 +1,45 @@
-## ----rename--------------------------------------------------------------
+## ----setup, include=FALSE-----------------------------------------------------
+  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
+  options(width = 80)
+
+## ----rename-------------------------------------------------------------------
 library("dscore")
 
-popsdemo
-class(popsdemo)
+head(popsdemo[, 1:10], 5)
 nrow(popsdemo)
 
-## ----children------------------------------------------------------------
-# 25 children, 4 time points per child
-length(unique(popsdemo$patid))
+## -----------------------------------------------------------------------------
+items <- names(popsdemo)[8:64]
 
-## ------------------------------------------------------------------------
-test <- 9:65
+## -----------------------------------------------------------------------------
+names(itembank)[grep("lex_", names(itembank))]
 
-## ------------------------------------------------------------------------
-names(itembank)[1:6]
+## -----------------------------------------------------------------------------
+itemset <- !is.na(itembank$lex_dutch1983)
+head(cbind(items, itembank[itemset, c("lex_ghap")]))
 
-## ------------------------------------------------------------------------
-itemset <- !is.na(itembank$lex.dutch1983)
-cbind(names(popsdemo)[test], itembank[itemset, c("lex.dutch1983", "labelEN", "tau")])
-
-## ------------------------------------------------------------------------
-ib <- itembank[itemset,c("lex.dutch1983", "lex.GHAP", "labelEN", "tau")]
+## -----------------------------------------------------------------------------
+ib <- itembank[itemset,c("lex_dutch1983", "lex_ghap", "labelEN", "tau")]
 head(ib, 3)
 
-## ------------------------------------------------------------------------
-names(popsdemo)[test] <- as.character(ib$lex.GHAP)
+## -----------------------------------------------------------------------------
+item_locations <- names(popsdemo) %in% items
+names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
 
-## ------------------------------------------------------------------------
-gettau(names(popsdemo)[test])
+## -----------------------------------------------------------------------------
+gettau(items = names(popsdemo)[item_locations])
 
-## ------------------------------------------------------------------------
+## ----warnings=FALSE, message=FALSE--------------------------------------------
 library("tidyr")
 library("dplyr")
 data <- popsdemo %>% 
   select(patid, moment, age, daycor, GSFIXEYE:GSKIK) %>%
   gather(items, scores, GSFIXEYE:GSKIK, na.rm = TRUE) %>%
-  mutate(scores = 1 - scores) %>% 
   arrange(patid, moment)
-data
+head(data)
 
-## ------------------------------------------------------------------------
-child1 <- filter(data, patid == 1)
+## -----------------------------------------------------------------------------
+child1 <- filter(data, patid == 11126)
 
 scores <- child1$scores
 items <- as.character(child1$items)
@@ -50,10 +49,10 @@ ages <- round(child1$daycor/365.25, 4)
 (d <- dscore(scores, items, ages))
 daz(d)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 zad(daz(d))
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # use age corrected for gestational age
 data <- data.frame(data)
 data$ages <- round(data$daycor/365.25, 4)
@@ -69,7 +68,7 @@ df <- data.frame(
   daz = as.numeric(unlist(dazl)))
 head(df)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # merge dscore and daz into popsdemo data
 popsdemo$ages <- round(popsdemo$daycor/365.25, 4)
 popsdemo <- merge(popsdemo, df, all.x = TRUE)

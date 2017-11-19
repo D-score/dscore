@@ -5,12 +5,12 @@ project <- path.expand("~/Package/dscore/dscore")
 datafile <- file.path(project, "data-raw/data/itembankVWO.txt")  # Dec 14, 2016
 
 # ------------- read data
-itembank <- read.delim(file = datafile)
+itembank <- read.delim(file = datafile, stringsAsFactors = FALSE)
 
 # change names to lex.xxx convention
-names(itembank)[1:6] <- c("lex.dutch1996", "lex.dutch2005", 
-                          "lex.dutch1983", "lex.SMOCC", 
-                          "lex.GHAP", "lex.jam")
+names(itembank)[1:6] <- c("lex_dutch1996", "lex_dutch2005", 
+                          "lex_dutch1983", "lex_smocc", 
+                          "lex_ghap", "lex_gcdg")
 
 # save to /data
 devtools::use_data(itembank, overwrite = TRUE)

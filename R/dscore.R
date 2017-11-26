@@ -345,9 +345,9 @@ gettau <- function(items,
 #' This vector should span the range of all D-score values, and 
 #' have at least 80 elements. The default is 
 #' \code{qp = -10:100}, which is suitable for age range 0-4 years.
-#' @param mu The mean of the prior. If \code{mu = "model"} (the default)
+#' @param mu The mean of the prior. If \code{mu = "dutch"} (the default)
 #' then \code{mu} is calculated from the Count model coded in 
-#' \code{dscore:::count_mu()}. Specify \code{mu = "reference"} in order
+#' \code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
 #' to take it from the age-dependent reference (default < 0.22).
 #' @param sd Standard deviation of the prior. The default is 5.
 #' @param reference the LMS reference values. The default uses the 
@@ -373,10 +373,11 @@ gettau <- function(items,
 #' lines(x = qp, adp(1, qp), lty = 2)
 #' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, qp = -10:100, mu = "model", sd = 5, 
+adp <- function(age, qp = -10:100, mu = "dutch", sd = 5, 
                 reference = dscore::Dreference, ...) {
   age <- age[1]
-  if (mu == "model") mu <- ifelse(is.na(age), NA, count_mu(age))
+  if (mu == "dutch") mu <- ifelse(is.na(age), NA, count_mu_dutch(age))
+  if (mu == "gcdg") mu <- ifelse(is.na(age), NA, count_mu_gcdg(age))
   if (mu == "reference")
     mu <- ifelse(is.na(age),
                  NA, 
@@ -386,7 +387,8 @@ adp <- function(age, qp = -10:100, mu = "model", sd = 5,
   return(normalize(p, qp))
 }
 
-count_mu <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
+count_mu_dutch <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
+count_mu_gcdg  <- function(t) {46.90 - 2.36 * t + 26.11 * log(t + 0.19)}
 
 #' Normalize distribution
 #'

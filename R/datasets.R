@@ -91,3 +91,63 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}
 "Dreference"
+
+#' Itembank from model 565_18
+#' 
+#' A data frame with administrative information per item: 
+#' item name (in various systems), item labels and difficulty. 
+#' 
+#' The itembank was calculated from 15 cohorts of the GCDG-study.
+#' 
+#' @docType data
+#' @format A \code{data.frame} with 565 rows and 6 variables:
+#' \describe{
+#' \item{lex_gcdg}{Item naming for GCDG project}
+#' \item{instrument}{Instrument name}
+#' \item{equate}{Equate group}
+#' \item{domain}{Developmental domain}
+#' \item{label}{Item label}
+#' \item{tau}{Difficulty level, model 565_18}
+#' }
+#' 
+#' @examples 
+#' head(gcdg_itembank)
+#' 
+#' @seealso \code{\link{dscore}}, \code{\link{gettau}}
+"gcdg_itembank"
+
+#' Age-conditional reference distribution of D-score
+#' 
+#' A data frame containing the age-dependent distribution of the 
+#' D-score for children aged 0-5 years. The distribution is modelled
+#' by a normal distribution, and is equal for
+#' both boys and girls. The LMS values can be used to graph 
+#' reference charts and to calculate age-conditonal Z-scores, also 
+#' known as \code{DAZ}.
+#' 
+#' The references were calculated from 15 cohorts of the GCDG-study.
+#' 
+#' @docType data
+#' @format A \code{data.frame} with 121 rows and 19 variables:
+#' \describe{
+#' \item{day}{Age in days}
+#' \item{week}{Age in weeks}
+#' \item{year}{Decimal age in years}
+#' \item{mu}{M-curve, median D-score, P50}
+#' \item{sigma}{S-curve, spread expressed as coefficient of variation}
+#' \item{nu}{L-curve, the lambda coefficient of the LMS model for skewness}
+#' \item{P3}{Calculated third percentile}
+#' \item{\dots}{And so on..}
+#' }
+#' @examples 
+#' head(gcdg_reference)
+#' 
+#' @references
+#' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
+#' method and penalized likelihood. Statistics in Medicine, 11(10), 
+#' 1305-1319.
+#' 
+#' Van Buuren S (2014). Growth charts of human development.
+#' Stat Methods Med Res, 23(4), 346-368.
+#' @seealso \code{\link{dscore}}, \code{\link{adp}}
+"gcdg_reference"

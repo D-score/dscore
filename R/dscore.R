@@ -152,8 +152,11 @@ dscore <- function(scores,
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
-  if (is.null(tau)) warning("No difficulty parameters found for ", 
-                            head(items), ".")
+  if (is.null(tau)) {
+    if (!full) return(NA) 
+    else stop("No difficulty parameters found for ", 
+               paste0(items, collapse = ", "), ".")
+  }
   
   # split the data by age
   # if (all(is.na(ages))) stop("All ages are missing.")
@@ -173,7 +176,7 @@ dscore <- function(scores,
     if (!full) return(NA)
     return(fullpost)
   }
-  
+
   # iterate
   k <- 0                            # valid scores counter
   for (i in 1:length(dg)) {         # loop over unique ages

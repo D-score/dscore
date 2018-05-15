@@ -4,7 +4,7 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(scores, items = names(scores), ages, qp = -10:80, mem.between = 0,
+dscore(scores, items = names(scores), ages, qp = -10:100, mem.between = 0,
   mem.within = 1, full = FALSE, dec = 2, ...)
 }
 \arguments{
@@ -24,9 +24,8 @@ and 2) to specify age-dependent priors.}
 
 \item{qp}{A number vector of equally spaced quadrature points.
 This vector should span the range of all D-score values, and 
-have at least 80 elements.
-The default \code{qp = -10:80} is suitable for children 
-aged 0-2 years.}
+have at least 80 elements. The default is 
+\code{qp = -10:100}, which is suitable for age range 0-4 years.}
 
 \item{mem.between}{Fraction of posterior from previous occasion 
 relative to age-dependent prior. The 
@@ -138,9 +137,6 @@ xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
 lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 
 }
-\author{
-Stef van Buuren 2016
-}
 \references{
 Bock DD, Mislevy RJ (1982).  
 Adaptive EAP Estimation of Ability in a Microcomputer Environment.
@@ -154,4 +150,6 @@ Stat Methods Med Res, 23(4), 346-368.
 \code{\link{itembank}}, \code{\link{posterior}},
 \code{\link{Dreference}}
 }
-
+\author{
+Stef van Buuren 2016
+}

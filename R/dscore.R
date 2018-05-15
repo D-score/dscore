@@ -60,9 +60,8 @@
 #' and 2) to specify age-dependent priors. 
 #' @param qp A number vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values, and 
-#' have at least 80 elements.
-#' The default \code{qp = -10:80} is suitable for children 
-#' aged 0-2 years.
+#' have at least 80 elements. The default is 
+#' \code{qp = -10:100}, which is suitable for age range 0-4 years.
 #' @param mem.between Fraction of posterior from previous occasion 
 #' relative to age-dependent prior. The 
 #' value \code{mem.between = 0} (the default) means that 
@@ -133,7 +132,7 @@
 dscore <- function(scores, 
                    items = names(scores), 
                    ages,
-                   qp = -10:80,
+                   qp = -10:100,
                    mem.between = 0,
                    mem.within = 1,
                    full = FALSE,
@@ -141,7 +140,7 @@ dscore <- function(scores,
                    ...) {
   
   # call dscore as vector
-  if (is.data.frame(scores)) 
+  if (is.data.frame(scores))
     return(dscore(scores = scores$scores, 
                   items = scores$items,
                   ages = scores$ages, 
@@ -150,12 +149,14 @@ dscore <- function(scores,
   # check input length
   if (length(scores) != length(ages)) stop("Arguments `scores` and `ages` of different length")
   if (length(scores) != length(items)) stop("Arguments `scores` and `items` of different length")
-  txxx <- qp
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
-  if (is.null(tau)) warning("No difficulty parameters found for ", 
-                            head(items), ".")
+  if (is.null(tau)) {
+    if (!full) return(NA) 
+    else stop("No difficulty parameters found for ", 
+               paste0(items, collapse = ", "), ".")
+  }
   
   # split the data by age
   # if (all(is.na(ages))) stop("All ages are missing.")
@@ -170,6 +171,12 @@ dscore <- function(scores,
   fullpost <- rep(list(post), length = length(dg))
   names(fullpost) <- names(eap) <- names(dg)
   
+  # abort if there is no valid age
+  if (length(dg) == 0) {
+    if (!full) return(NA)
+    return(fullpost)
+  }
+
   # iterate
   k <- 0                            # valid scores counter
   for (i in 1:length(dg)) {         # loop over unique ages
@@ -216,6 +223,7 @@ dscore <- function(scores,
       fullpost[[i]]$eap <- eap[i] <- weighted.mean(qp, w = post)
     }
   }
+  
   if (!full) return(round(eap, dec))
   return(fullpost)
 }
@@ -252,7 +260,6 @@ dscore <- function(scores,
 #' Rasch Unidimensional Measurement Models. Perth: 2015.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
 #' \code{\link[sirt]{rasch.pairwise.itemcluster}}
-#' @export
 posterior <- function(score, tau, prior, qp)
 {
   m <- length(tau)
@@ -292,8 +299,8 @@ posterior <- function(score, tau, prior, qp)
 #' @param lexicon A character string indicating the column in 
 #' \code{itembank} used to match item names. It must be one of 
 #' the lexicon columns, e.g., \code{dutch1983}, 
-#' \code{dutch1996}, \code{dutch2005}, \code{SMOCC} 
-#' or \code{GHAP}. The default is \code{lexicon = "GHAP"}. 
+#' \code{dutch1996}, \code{dutch2005}, \code{smocc} 
+#' \code{ghap} or \code{gcdg}. The default is \code{lexicon = "ghap"}. 
 #' @param check Logical that indicates whether the lexicon name
 #' should be checked. The default is \code{TRUE}.
 #' @param \dots Additional arguments (ignored).
@@ -307,16 +314,16 @@ posterior <- function(score, tau, prior, qp)
 #' gettau(items = c("GSFIXEYE", "GSMARMR"))
 #' 
 #' # difficulty levels of same items in the SMOCC lexicon
-#' gettau(items = c("v1430", "v1432"), lexicon = "SMOCC")
+#' gettau(items = c("v1430", "v1432"), lexicon = "smocc")
 #' 
 #' @export
 gettau <- function(items, 
                    itembank = dscore::itembank, 
-                   lexicon = "GHAP", 
+                   lexicon = "ghap", 
                    check = TRUE, 
                    ...) {
   # check whether lexicon is a column in item bank
-  lex <- paste("lex", lexicon, sep = ".")
+  lex <- paste("lex", lexicon, sep = "_")
   if (check) {
     q <- pmatch(tolower(lex), tolower(names(itembank)))
     if (is.na(q)) stop ("Lexicon `", lexicon, "` not found in item bank.")
@@ -335,9 +342,16 @@ gettau <- function(items,
 #' Returns the age-dependent prior N(mu, 5) at the 
 #' specified quadrature points.
 #' @aliases adp
-#' @param age Numeric, single value
-#' @param qp A number vector of equally spaced quadrature points
-#' @param mu The mean of the prior. If \code{is.null(mu)} (the default) the prior is taken from the age-dependent reference. 
+#' @param age Age in years. Numeric, single value. If a vector, only the 
+#' first value will be used.
+#' @param qp A number vector of equally spaced quadrature points.
+#' This vector should span the range of all D-score values, and 
+#' have at least 80 elements. The default is 
+#' \code{qp = -10:100}, which is suitable for age range 0-4 years.
+#' @param mu The mean of the prior. If \code{mu = "dutch"} (the default)
+#' then \code{mu} is calculated from the Count model coded in 
+#' \code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
+#' to take it from the age-dependent reference (default < 0.22).
 #' @param sd Standard deviation of the prior. The default is 5.
 #' @param reference the LMS reference values. The default uses the 
 #' built-in reference \code{dscore::Dreference} for Dutch children
@@ -345,12 +359,14 @@ gettau <- function(items,
 #' @param \dots Additional parameters (ignored)
 #' @return  A \code{vector} of \code{length(qp)} elements with 
 #' the prior density estimate at each quadature point \code{qp}.
+#' @note Use \code{qp = -10:80} to reproduce 0-2 year estimates in 
+#' Van Buuren (2014).
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}
 #' @examples 
-#' # define quadrature points for D-score
+#' # define quadrature points for D-score, as used in Van Buuren 2014
 #' qp <- -10:80
 #' 
 #' # calculate and plot three priors
@@ -360,13 +376,22 @@ gettau <- function(items,
 #' lines(x = qp, adp(1, qp), lty = 2)
 #' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, qp, mu = NULL, sd = 5, 
+adp <- function(age, qp = -10:100, mu = "dutch", sd = 5, 
                 reference = dscore::Dreference, ...) {
-  if (is.null(mu)) mu <- approx(y = reference$mu, x = reference$year,
-                                xout = round(age, 4), yleft = reference$mu[1])$y
+  age <- age[1]
+  if (mu == "dutch") mu <- ifelse(is.na(age), NA, count_mu_dutch(age))
+  if (mu == "gcdg") mu <- ifelse(is.na(age), NA, count_mu_gcdg(age))
+  if (mu == "reference")
+    mu <- ifelse(is.na(age),
+                 NA, 
+                 approx(y = reference$mu, x = reference$year,
+                        xout = round(age, 4), yleft = reference$mu[1])$y)
   p <- dnorm(qp, mean = mu, sd = sd)
   return(normalize(p, qp))
 }
+
+count_mu_dutch <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
+count_mu_gcdg  <- function(t) {47.65 - 3.05 * t + 26.70 * log(t + 0.19)}
 
 #' Normalize distribution
 #'
@@ -379,12 +404,11 @@ adp <- function(age, qp, mu = NULL, sd = 5,
 #' the prior density estimate at each quadature point.
 #' @examples 
 #' # simple normalization examples
-#' normalize(c(5, 10, 5), qp = c(0, 1, 2))
-#' normalize(c(1, 5, 8, 5, 1), qp = 1:5)
+#' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
+#' dscore:::normalize(c(1, 5, 8, 5, 1), qp = 1:5)
 #' 
 #' # the sum is always equal to 1
-#' sum(normalize(rnorm(5), qp = 1:5))
-#' @export
+#' sum(dscore:::normalize(rnorm(5), qp = 1:5))
 normalize <- function(d, qp) {
   if (length(d) != length(qp)) stop("Arguments `d` and  `qp` of different length")
   d <- d / sum(d)

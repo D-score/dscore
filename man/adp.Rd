@@ -4,14 +4,22 @@
 \alias{adp}
 \title{Age-dependent prior}
 \usage{
-adp(age, qp, mu = NULL, sd = 5, reference = dscore::Dreference, ...)
+adp(age, qp = -10:100, mu = "dutch", sd = 5,
+  reference = dscore::Dreference, ...)
 }
 \arguments{
-\item{age}{Numeric, single value}
+\item{age}{Age in years. Numeric, single value. If a vector, only the 
+first value will be used.}
 
-\item{qp}{A number vector of equally spaced quadrature points}
+\item{qp}{A number vector of equally spaced quadrature points.
+This vector should span the range of all D-score values, and 
+have at least 80 elements. The default is 
+\code{qp = -10:100}, which is suitable for age range 0-4 years.}
 
-\item{mu}{The mean of the prior. If \code{is.null(mu)} (the default) the prior is taken from the age-dependent reference.}
+\item{mu}{The mean of the prior. If \code{mu = "dutch"} (the default)
+then \code{mu} is calculated from the Count model coded in 
+\code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
+to take it from the age-dependent reference (default < 0.22).}
 
 \item{sd}{Standard deviation of the prior. The default is 5.}
 
@@ -29,8 +37,12 @@ the prior density estimate at each quadature point \code{qp}.
 Returns the age-dependent prior N(mu, 5) at the 
 specified quadrature points.
 }
+\note{
+Use \code{qp = -10:80} to reproduce 0-2 year estimates in 
+Van Buuren (2014).
+}
 \examples{
-# define quadrature points for D-score
+# define quadrature points for D-score, as used in Van Buuren 2014
 qp <- -10:80
 
 # calculate and plot three priors
@@ -47,4 +59,3 @@ Stat Methods Med Res, 23(4), 346-368.
 \seealso{
 \code{\link{dscore}}
 }
-

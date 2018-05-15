@@ -1,44 +1,44 @@
-# dscore.R
-
-#' @importFrom dplyr select mutate slice bind_rows
+#' @importFrom dplyr select mutate slice bind_rows arrange %>%
+#'             group_by summarise ungroup left_join
+#' @importFrom tidyr gather
+#' @importFrom stats approx dnorm weighted.mean lm na.omit predict
+#' @importFrom utils head flush.console
+#' @importFrom grDevices col2rgb rgb
+#' @importFrom lazyeval interp
+#' @importFrom rlang UQ sym
 NULL
 
-#' dscore: A package for calculating D-scores
+utils::globalVariables(c("item", "score", "temp_ages", "d"))
+
+
+#' dscore: Measuring child development by the D-score
 #' 
-#' The \code{dscore} package provides two important functions:
-#' \code{dscore} and \code{daz}.
+#' The \code{dscore} package implements several steps needed to 
+#' calculate the D-score, a numerical score that measures
+#' generic development in children 0-4 years.
 #' 
-#' @section \code{dscore} functions:
-#' The \code{dscore()} function estimates the D-score, 
-#' a numerical score that measures
-#' generic development in children, from PASS/FAIL observations 
-#' on developental milestones (items). 
-#' Item names are matched by name against the built-in item 
-#' bank in \code{itembank}. 
-#' 
-#' @section \code{daz} functions:
-#' The \code{daz()} function calculated the age-adjusted standard
-#' deviation score (Z-score, or DAZ) from the estimated D-score.
-#' Analyzing DAZ instead of the D-score simplified modelling 
-#' D-score trajectories over time. The \code{zad()} performs
-#' the inverse operation, from DAZ to D-score.
-#' 
-#' @section External data:
-#' The calculations require three sets of external data:
+#' The main functions are:
+#' \tabular{ll}{
+#'   \code{\link{dscore}} \tab Estimate D-scores of children\cr
+#'   \code{\link{daz}} \tab Transform to age-adjusted standardized D-score\cr
+#'   \code{\link{zad}} \tab Inverse of \code{\link{daz}}
+#'   }
+#'   
+#' @section Built-in data:
+#' The package contains three sets of built-in data:
 #' \describe{
-#' \item{data}{The PASS/FAIL responses on an appropriate set
-#' of developmental items. These data are typically supplied by 
-#' the user. For illustration, the package contains a built-in 
-#' small demo dataset from the POPS study in \code{dscore::pops}.}
-#' \item{itembank}{A table that contains the difficulty of each 
-#' item, as estimated under the unidimensional Rasch 1-PL model. By 
-#' default, calculations use the built-in \code{dscore::itembank}.}
-#' \item{reference}{A table with LMS reference values used to transform from D-score to DAZ, or DAZ to D-score. 
-#' By default, calculations
-#' use the built-in references \code{dscore::Dreference}.}
+#' \item{\code{\link{itembank}}}{A data frame containing item naming schemes 
+#' (lexicons), item descriptions and the the difficulty of the item 
+#' according to the Rasch model.}
+#' \item{\code{\link{Dreference}}}{A data frame with LMS reference values used to 
+#' transform from D-score to DAZ, DAZ to D-score, and to calculate 
+#' reference charts of normal development.}
+#' \item{\code{\link{popsdemo}}}{A small demo dataset from the POPS study, where the PASS/FAIL 
+#' responses at various time points per child are scored on appropriate
+#' of developmental items.}
 #' }
 #' 
-#' @references 
+#' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
 #' 
@@ -46,9 +46,6 @@ NULL
 #' Development of this package was kindly supported under the Healthy
 #' Birth, Growth and Development knowledge integration (HBGDki)
 #' program of the Bill & Melinda Gates Foundation.
-#' 
-#' @seealso \code{\link{dscore}}, \code{\link{itembank}}, 
-#' \code{\link{Dreference}}, \code{\link{daz}}
 #' 
 #' @docType package
 #' @name dscore-package

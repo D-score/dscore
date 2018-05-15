@@ -14,4 +14,4 @@ sftp-config.json
 ^data-raw$
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^notes$
+^README\.Rmd$

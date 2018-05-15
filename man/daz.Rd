@@ -4,7 +4,7 @@
 \alias{daz}
 \title{D-score standard deviation score: DAZ}
 \usage{
-daz(d, x = as.numeric(names(d)), x.unit = "year",
+daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
   ref = dscore::Dreference, dec = 3)
 }
 \arguments{
@@ -35,13 +35,13 @@ for age by an external age-conditional reference.
 }
 \examples{
 # preterms, uncorrected age, all Z-scores are fairly low
-daz1 <- daz(d = pops$dscore, x = pops$age/365.25)
-daz2 <- daz(d = pops$dscore, x = pops$age, x.unit = "day")
+daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
+daz2 <- daz(d = popsdemo$dscore, x = popsdemo$age, x.unit = "day")
 plot(daz1, daz2)
 abline(0, 1, lty = 2)
 
 # preterms, corrected age, most Z-scores are between -2 and +2 SD
-daz3 <- daz(d = pops$dscore, x = pops$daycor, x.unit = "day")
+daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
 plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
 abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
 }
@@ -53,4 +53,3 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 \seealso{
 \code{\link{dscore}}, \code{\link{daz}}
 }
-

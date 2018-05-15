@@ -24,22 +24,22 @@
 #' @seealso \code{\link{dscore}}, \code{\link{daz}}
 #' @examples
 #' # preterms, uncorrected age, all Z-scores are fairly low
-#' daz1 <- daz(d = pops$dscore, x = pops$age/365.25)
-#' daz2 <- daz(d = pops$dscore, x = pops$age, x.unit = "day")
+#' daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
+#' daz2 <- daz(d = popsdemo$dscore, x = popsdemo$age, x.unit = "day")
 #' plot(daz1, daz2)
 #' abline(0, 1, lty = 2)
 #' 
 #' # preterms, corrected age, most Z-scores are between -2 and +2 SD
-#' daz3 <- daz(d = pops$dscore, x = pops$daycor, x.unit = "day")
+#' daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
 #' plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
 #' abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
 #' @export
 daz <- function(d, x = as.numeric(names(d)),
-                x.unit = "year", 
+                x.unit = c("year", "month", "day"), 
                 ref = dscore::Dreference, 
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
-  x.unit <- match.arg(x.unit, c("year", "month", "day"))
+  x.unit <- match.arg(x.unit)
   
   # interpolate to proper ages
   L <- approx(x = ref[, x.unit], y = ref[, "nu"], xout = x)$y
@@ -88,11 +88,11 @@ daz <- function(d, x = as.numeric(names(d)),
 #' lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score")
 #' @export
 zad <- function(z, x = as.numeric(names(z)),
-                x.unit = "year", 
+                x.unit = c("year", "month", "day"),
                 ref = dscore::Dreference, 
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
-  x.unit <- match.arg(x.unit, c("year", "month", "day"))
+  x.unit <- match.arg(x.unit)
   
   # interpolate to proper ages
   mu <- approx(ref[, x.unit], ref[, "mu"], xout = x)$y

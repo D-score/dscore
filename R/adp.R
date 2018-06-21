@@ -49,7 +49,7 @@ adp <- function(age, qp = -10:100, mu = "dutch", sd = 5,
                  NA, 
                  approx(y = reference$mu, x = reference$year,
                         xout = round(age, 4), yleft = reference$mu[1])$y)
-  p <- dnorm(qp, mean = unlist(mu), sd = sd)
+  p <- dnorm(qp, mean = mu, sd = sd)
   return(normalize(p, qp))
 }
 

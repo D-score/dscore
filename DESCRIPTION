@@ -1,18 +1,22 @@
 Package: dscore
 Type: Package
-Title: D-score for child development 
-Version: 0.24.0
+Title: D-score for child development
+Version: 0.31.0
 Authors@R: person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("aut","cre"))
-Description: The dscore package provides a set of tools for calculating 
-    the D-score, a quantitative measure of child development. 
-Depends: 
+Description: The dscore package provides a set of tools for calculating the
+    D-score, a quantitative measure of child development.
+Depends:
     R (>= 2.10)
 Imports:
-    dplyr, lazyeval
-Suggests: 
-    rmarkdown, knitr, tidyr, ddata (>= 0.10.0), sirt, eRm
+    dplyr,
+    lazyeval,
+    rlang,
+    tidyr,
+    magrittr
+Suggests:
+    knitr,
+    testthat
 License: file LICENSE
 LazyData: TRUE
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
-
+RoxygenNote: 6.0.1

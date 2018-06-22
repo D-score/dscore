@@ -1,9 +1,15 @@
-#' @importFrom dplyr select mutate slice bind_rows
+#' @importFrom dplyr select mutate slice bind_rows arrange %>%
+#'             group_by summarise ungroup left_join
+#' @importFrom tidyr gather
 #' @importFrom stats approx dnorm weighted.mean lm na.omit predict
 #' @importFrom utils head flush.console
 #' @importFrom grDevices col2rgb rgb
 #' @importFrom lazyeval interp
+#' @importFrom rlang UQ sym
 NULL
+
+utils::globalVariables(c("item", "score", "temp_ages", "d"))
+
 
 #' dscore: Measuring child development by the D-score
 #' 
@@ -13,7 +19,6 @@ NULL
 #' 
 #' The main functions are:
 #' \tabular{ll}{
-#'   \code{\link{rasch}} \tab Estimate difficulty of items\cr
 #'   \code{\link{dscore}} \tab Estimate D-scores of children\cr
 #'   \code{\link{daz}} \tab Transform to age-adjusted standardized D-score\cr
 #'   \code{\link{zad}} \tab Inverse of \code{\link{daz}}

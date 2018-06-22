@@ -4,20 +4,18 @@
 \name{popsdemo}
 \alias{popsdemo}
 \title{Project On Preterm and Small for gestational age infants (POPS)}
-\format{A \code{tbl_df} with 100 rows (25 children times 4 time points) and 67 variables:
+\format{A \code{data.frame} with 100 rows (25 children times 4 time points) and 65 variables:
 \describe{
-\item{patid}{Patient ID}
+\item{patid}{Patient ID (scrambled)}
 \item{gender}{1=male, 1 = female}
 \item{gestionalage}{Gestational age in fractional weeks}
 \item{moment}{Sequence number}
 \item{age}{Age in days}
 \item{occ}{Measurement occasion (1-4)}
 \item{daycor}{Corrected age in days}
-\item{Dscore}{Calculated D-score}
-\item{popsdscoresds}{Corrected age-conditional standard deviation score of D-score}
-\item{dead}{0 = alive, 1 = dead}
-\item{Fixateseyes}{Fixates eyes: 0 = yes, 1 = no}
+\item{Fixateseyes}{Fixates eyes: 1 = yes, 0 = no}
 \item{\dots}{and so on..}
+\item{dscore}{Calculated D-score (needed for \code{daz} example code)}
 }}
 \source{
 \url{https://www.tno.nl/nl/aandachtsgebieden/gezond-leven/prevention-work-health/voor-tijdens-en-na-de-zwangerschap/pops-langlopend-onderzoek-onder-prematuren-en-baby-s-met-laag-geboortegewicht/}
@@ -30,13 +28,8 @@ popsdemo
 A dataset with developmental scores at the item level from a subset
 of 25 children from the POPS cohort.
 }
-\note{
-Note that the PASS/FAIL items in the \code{pops} data are coded
-in the `wrong` way: 0 = PASS, 1 = FAIL.
-}
 \examples{
 head(popsdemo)
 
 }
 \keyword{datasets}
-

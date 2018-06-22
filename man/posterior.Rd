@@ -35,9 +35,6 @@ Note: This function is intended to be used internally and
 does not check input arguments. Use \code{dscore()} to estimate
 D-score from data.
 }
-\author{
-Stef van Buuren 2016
-}
 \references{
 Andrich D. Rasch Models for Measurement. Newbury Park: 
 Sage Publications; 1988.
@@ -49,4 +46,6 @@ Rasch Unidimensional Measurement Models. Perth: 2015.
 \code{\link{dscore}}, \code{\link{adp}}, 
 \code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
-
+\author{
+Stef van Buuren 2016
+}

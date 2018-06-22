@@ -137,9 +137,6 @@ xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
 lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 
 }
-\author{
-Stef van Buuren 2016
-}
 \references{
 Bock DD, Mislevy RJ (1982).  
 Adaptive EAP Estimation of Ability in a Microcomputer Environment.
@@ -153,4 +150,6 @@ Stat Methods Med Res, 23(4), 346-368.
 \code{\link{itembank}}, \code{\link{posterior}},
 \code{\link{Dreference}}
 }
-
+\author{
+Stef van Buuren 2016
+}

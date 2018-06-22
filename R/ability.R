@@ -133,7 +133,7 @@
 ability <- function(data, 
                    items, 
                    age="age",id="id",
-                   key=data.frame(items=items,delta=getdelta(items=items, lex="gcdg")),
+                   key=data.frame(items=items,delta=gettau(items=items, lex="gcdg")),
                    qp = -10:100,
                    pdist="dutch",
                    mem.between = 0,

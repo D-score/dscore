@@ -14,12 +14,10 @@ data$age <- data$age/12
 # test new ability estimator
 start <- Sys.time()
 d1 <- ability(data=data,items=items, age="age", key=key, pdist="gcdg")
-timed1 <-Sys.time()-start
 
 # test full posterior output for first row of the data
 x <- data[1,]
 d11 <- ability(data=x,items=items, age="age", key=key, pdist="gcdg", full=TRUE)
-
 
 
 # compare with original dscore estimator

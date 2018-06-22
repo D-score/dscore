@@ -6,6 +6,7 @@
 #' @importFrom grDevices col2rgb rgb
 #' @importFrom lazyeval interp
 #' @importFrom rlang UQ sym
+#' @importFrom ddata get_gcdg item_names
 NULL
 
 utils::globalVariables(c("item", "score", "temp_ages", "d"))

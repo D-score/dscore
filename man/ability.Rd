@@ -106,10 +106,12 @@ using 'old' data as prior.}
 # GSFIXEYE: Fixate eyes
 # GSRSPCH:  Reacts to speech (M; can ask parents)
 # GSMLEG :  Same amount of movement in both legs
-data <- ddata::get_gcdg(study="Netherlands 1", adm = TRUE)
-items <- dmetric::prepare_items(study = "Netherlands 1")$items
-key <- data.frame(items=items,delta=dscore::gettau(items=varlist$items,lex="gcdg"))
-ability(data=data,items=items, age="age", key=key, prior="gcdg")
+data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
+items <- ddata::item_names(study = "Netherlands 1")
+delta <- dscore::gettau(items = items, lexicon = "gcdg")
+key <- data.frame(items = items, delta = delta)
+data$age <- data$age/12
+ability(data = data, items = items, age = "age", key = key, prior = "gcdg")
 
 items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 gettau(items)

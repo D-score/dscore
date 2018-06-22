@@ -66,11 +66,10 @@
 #' value \code{mem.within = 1} (the default) means that all items 
 #' count equally in the posterior, while a \code{mem.within = 0} 
 #' corresponds to counting only the last item. See details.
-#' @param prior A character vector indicating the scale used for the prior distribution.
-#' This can be "gcdg" for the global child development group key; "dutch" for the Dutch key;
-#' "identity" for the logit scale with a mean of 0 and sd of 1 for the prior; "reference" for
-#' a prior based on the age dependent reference.
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
+#' @param id DOCUMENTATION NEEDED
+#' @param pdist DOCUMENTATION NEEDED
+#' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
 #' \code{sd} or \code{reference}).
@@ -134,23 +133,26 @@
 #' @export
 ability <- function(data, 
                    items, 
-                   age="age",id="id",
-                   key=data.frame(items=items,delta=gettau(items=items, lexicon="gcdg")),
+                   age = "age", id = "id",
+                   key = NULL, 
                    qp = -10:100,
-                   pdist="dutch",
+                   pdist = "dutch",
                    mem.between = 0,
                    mem.within = 1,
                    full = FALSE,
                    dec = 2,
                    ...) {
   
- 
+  if (is.null(key))
+    key <- data.frame(items = items,
+                      delta = gettau(items = items, lexicon = "gcdg"))
   # check input length
-  if (!age%in%names(data))  stop("Age variable is not present in the data")
-  if (!any(items%in%names(data))) stop("Item names are not present in the data")
-  if (!any(names(data)%in%key[,1])) stop("Items are not present in the key")
+  if (!age %in% names(data))  stop("Age variable is not present in the data")
+  if (!any(items %in% names(data))) stop("Item names are not present in the data")
+  if (!any(names(data) %in% key[,1])) stop("Items are not present in the key")
   if(is.null(id)){data$id <- 1:nrow(data)} 
-  
+
+
   #function to calculate posterior (was loop in original dscore)
   calculate_posterior <- function(scores,delta,age, qp = qp, mu=pdist,...){
     fullpost <- list(eap = NA, start = NULL, qp = NULL, posterior = NULL)

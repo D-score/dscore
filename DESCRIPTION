@@ -12,7 +12,8 @@ Imports:
     lazyeval,
     rlang,
     tidyr,
-    magrittr
+    magrittr,
+    ddata
 Suggests:
     knitr,
     testthat

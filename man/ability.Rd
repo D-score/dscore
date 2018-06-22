@@ -4,8 +4,7 @@
 \alias{ability}
 \title{Ability estimation}
 \usage{
-ability(data, items, age = "age", id = "id", key = data.frame(items =
-  items, delta = gettau(items = items, lexicon = "gcdg")), qp = -10:100,
+ability(data, items, age = "age", id = "id", key = NULL, qp = -10:100,
   pdist = "dutch", mem.between = 0, mem.within = 1, full = FALSE,
   dec = 2, ...)
 }
@@ -23,6 +22,8 @@ specifying decimal age in years. This information
 is used 1) to break up calculations into separate D-scores per age, 
 and 2) to specify age-dependent priors.}
 
+\item{id}{DOCUMENTATION NEEDED}
+
 \item{key}{A data.frame of two columns containing the \code{items} names and a second column 
 named \code{delta} containing the item difficulties estimated from the Rasch model in the 
 prefferred metric/scale.}
@@ -31,6 +32,8 @@ prefferred metric/scale.}
 This vector should span the range of all D-score values, and 
 have at least 80 elements. The default is 
 \code{qp = -10:100}, which is suitable for age range 0-4 years.}
+
+\item{pdist}{DOCUMENTATION NEEDED}
 
 \item{mem.between}{Fraction of posterior from previous occasion 
 relative to age-dependent prior. The 
@@ -44,16 +47,13 @@ value \code{mem.within = 1} (the default) means that all items
 count equally in the posterior, while a \code{mem.within = 0} 
 corresponds to counting only the last item. See details.}
 
+\item{full}{DOCUMENTATIONNEEDED}
+
 \item{dec}{Number of decimals of the EAP estimates. Default is 2.}
 
 \item{\dots}{Additional parameters passed down to \code{gettau()} (e.g., 
 \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
 \code{sd} or \code{reference}).}
-
-\item{prior}{A character vector indicating the scale used for the prior distribution.
-This can be "gcdg" for the global child development group key; "dutch" for the Dutch key;
-"identity" for the logit scale with a mean of 0 and sd of 1 for the prior; "reference" for
-a prior based on the age dependent reference.}
 }
 \value{
 If \code{full} is \code{FALSE}: 

@@ -35,11 +35,11 @@
 #' abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
 #' @export
 daz <- function(d, x = as.numeric(names(d)),
-                x.unit = "year", 
+                x.unit = c("year", "month", "day"), 
                 ref = dscore::Dreference, 
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
-  x.unit <- match.arg(x.unit, c("year", "month", "day"))
+  x.unit <- match.arg(x.unit)
   
   # interpolate to proper ages
   L <- approx(x = ref[, x.unit], y = ref[, "nu"], xout = x)$y
@@ -88,11 +88,11 @@ daz <- function(d, x = as.numeric(names(d)),
 #' lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score")
 #' @export
 zad <- function(z, x = as.numeric(names(z)),
-                x.unit = "year", 
+                x.unit = c("year", "month", "day"),
                 ref = dscore::Dreference, 
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
-  x.unit <- match.arg(x.unit, c("year", "month", "day"))
+  x.unit <- match.arg(x.unit)
   
   # interpolate to proper ages
   mu <- approx(ref[, x.unit], ref[, "mu"], xout = x)$y

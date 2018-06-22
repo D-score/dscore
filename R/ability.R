@@ -52,23 +52,7 @@
 #' specifying decimal age in years. This information 
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
-#' @param qp A number vector of equally spaced quadrature points.
-#' This vector should span the range of all D-score values, and 
-#' have at least 80 elements. The default is 
-#' \code{qp = -10:100}, which is suitable for age range 0-4 years.
-#' @param mem.between Fraction of posterior from previous occasion 
-#' relative to age-dependent prior. The 
-#' value \code{mem.between = 0} (the default) means that 
-#' no smoothing over age is performed, while a \code{mem.between = 1} 
-#' corresponds to maximal smoothing over age. See details.
-#' @param mem.within Fraction of posterior from previous item within
-#' the same age  relative to age-dependent prior. The 
-#' value \code{mem.within = 1} (the default) means that all items 
-#' count equally in the posterior, while a \code{mem.within = 0} 
-#' corresponds to counting only the last item. See details.
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
-#' @param id DOCUMENTATION NEEDED
-#' @param pdist DOCUMENTATION NEEDED
 #' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
@@ -97,9 +81,9 @@
 #' data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
 #' items <- ddata::item_names(study = "Netherlands 1")
 #' delta <- dscore::gettau(items = items, lexicon = "gcdg")
-#' key <- data.frame(items = items, delta = delta)
+#' key <- data.frame(item = items, delta = delta)
 #' data$age <- data$age/12
-#' ability(data = data, items = items, age = "age", key = key, prior = "gcdg")
+#' ability(data = data, item = items, age = "age", key = key, prior = "gcdg")
 #' 
 #' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 #' gettau(items)
@@ -133,97 +117,42 @@
 #' @export
 ability <- function(data, 
                    items, 
-                   age = "age", id = "id",
+                   age = "age", 
                    key = NULL, 
-                   qp = -10:100,
-                   pdist = "dutch",
-                   mem.between = 0,
-                   mem.within = 1,
                    full = FALSE,
                    dec = 2,
                    ...) {
   
   if (is.null(key))
-    key <- data.frame(items = items,
-                      delta = gettau(items = items, lexicon = "gcdg"))
+    key <- data.frame(item = items,
+                      delta = gettau(items = items, ...))
   # check input length
   if (!age %in% names(data))  stop("Age variable is not present in the data")
   if (!any(items %in% names(data))) stop("Item names are not present in the data")
-  if (!any(names(data) %in% key[,1])) stop("Items are not present in the key")
-  if(is.null(id)){data$id <- 1:nrow(data)} 
+  if (!any(names(data) %in% key[, 1])) stop("Items are not present in the key")
 
-
-  #function to calculate posterior (was loop in original dscore)
-  calculate_posterior <- function(scores,delta,age, qp = qp, mu=pdist,...){
-    fullpost <- list(eap = NA, start = NULL, qp = NULL, posterior = NULL)
-    k <- 0       # valid scores counter
-    if(!all.equal( max(age) ,min(age))) stop("age within group not equal")
-    cage <-age[1]           # current age
-    nextocc <- TRUE                 # flag for next occasion
-    fullpost$qp <- qp #IE
-    for (j in seq_along(scores)) {          # loop over item scores
-      score <- scores[j]       # observed score
-      delta <- delta[j]     # difficulty for item of observed score
-      if (is.na(score) | is.na(cage) | is.na(delta)) next
-      k <- k + 1                    # yes, we have a valid response
-      
-      # CASE A: k == 1: start with age-dependent prior for first valid score
-      if (k == 1) {
-        prior <- adp(age = cage, qp = qp,...)
-        fullpost$start <- prior
-        nextocc <- FALSE
-      }
-      
-      # CASE B: nextocc is TRUE if this is the first valid response
-      # at the present age. If so, weight the starting prior with
-      # 'previous occasion posterior' by mem.between
-      else if (nextocc) {
-        prior <- mem.between * post +
-          (1 - mem.between) * adp(age = cage, qp = qp,...)
-        prior <- normalize(prior, qp)
-        fullpost$start <- prior
-        nextocc <- FALSE
-      }
-      
-      # CASE C: weight 'previous score posterior' by mem.within
-      else {
-        prior <- mem.within * post +
-          (1 - mem.within) * adp(age = cage, qp = qp,...)
-        prior <- normalize(prior, qp)
-      }
-      # calculate posterior
-      post <- posterior(score, delta, prior, qp)
-      fullpost$posterior <- post
-      
-      # overwrite old eap estimate by new one
-      fullpost$eap <- weighted.mean(qp, w = post)
-    }
-    fullpost
+  # only return eap in frame
+  data2 <- data %>%
+    mutate(.rownum = 1:n()) %>%
+    select(.rownum, age, items) %>% 
+    gather(key = item, value = score, items, na.rm = TRUE)  %>%
+    arrange(.rownum, age, item) %>%
+    left_join(key, by = "item")
+  
+  if (!full) {
+    eap <- data2 %>%
+      group_by(.rownum, age) %>%
+      summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, ...)$eap) %>%
+      ungroup()
+    return(eap)
   }
   
-  #only return eap in frame
-  if (!full){
-  eap <- data%>% select(id,age,items) %>% #drop extra vars
-    gather(key=items, value=scores,items, na.rm = TRUE) %>%
-    arrange(id,age,items)%>%
-    left_join(key,by="items") %>%
-    group_by(id,age)%>%
-    summarise(ability = calculate_posterior(scores=scores,delta=delta,age=age, qp=qp)$eap) %>%
-    ungroup()
-  
-  return(eap)
-  }
-  
-  #return full output (full posterior eap etc) in list
-  data$row <- 1:nrow(data)
-  data2 <- data%>% select(row,id,age,items) %>% #drop extra vars
-    gather(key=items, value=scores,items, na.rm = TRUE) %>%
-    arrange(row,id,age,items)%>%
-    left_join(key,by="items") 
-  data2s <- split(data2, data2$row)
-  fullpost <- lapply(data2s, function(x){calculate_posterior(scores=x$scores, delta=x$delta, age=x$age, qp=qp)})
-  
-  return(fullpost)
+  # return full posterior and eap as list
+  data2s <- split(data2, data2$.rownum)
+  post <- lapply(data2s, 
+                 function(x) {
+                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, ...)})
+  return(post)
 }
 
 

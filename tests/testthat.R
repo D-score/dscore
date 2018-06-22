@@ -1,4 +1,5 @@
-library(testthat)
-library(dscore)
+library("testthat")
+library("dplyr")
+library("dscore")
 
 test_check("dscore")

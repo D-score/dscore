@@ -5,7 +5,7 @@
 \title{Ability estimation}
 \usage{
 ability(data, items, age = "age", id = "id", key = data.frame(items =
-  items, delta = gettau(items = items, lex = "gcdg")), qp = -10:100,
+  items, delta = gettau(items = items, lexicon = "gcdg")), qp = -10:100,
   pdist = "dutch", mem.between = 0, mem.within = 1, full = FALSE,
   dec = 2, ...)
 }
@@ -46,7 +46,7 @@ corresponds to counting only the last item. See details.}
 
 \item{dec}{Number of decimals of the EAP estimates. Default is 2.}
 
-\item{\dots}{Additional parameters passed down to \code{getdelta()} (e.g., 
+\item{\dots}{Additional parameters passed down to \code{gettau()} (e.g., 
 \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
 \code{sd} or \code{reference}).}
 
@@ -108,11 +108,11 @@ using 'old' data as prior.}
 # GSMLEG :  Same amount of movement in both legs
 data <- ddata::get_gcdg(study="Netherlands 1", adm = TRUE)
 items <- dmetric::prepare_items(study = "Netherlands 1")$items
-key <- data.frame(items=items,delta=dscore::getdelta(items=varlist$items,lex="gcdg"))
+key <- data.frame(items=items,delta=dscore::gettau(items=varlist$items,lex="gcdg"))
 ability(data=data,items=items, age="age", key=key, prior="gcdg")
 
 items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
-getdelta(items)
+gettau(items)
 age <- round(rep(21/365.25, 3), 4)  # age 21 days
 dscore(c(1, 0, 0), items, age)
 
@@ -150,7 +150,7 @@ Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
 }
 \seealso{
-\code{\link{adp}}, \code{\link{getdelta}}, 
+\code{\link{adp}}, \code{\link{gettau}}, 
 \code{\link{itembank}}, \code{\link{posterior}},
 \code{\link{Dreference}}
 }

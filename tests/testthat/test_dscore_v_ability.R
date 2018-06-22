@@ -5,20 +5,18 @@ library("tidyr")
 data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
 adm <- names(data)[1:5]
 items <- ddata::item_names(study = "Netherlands 1")
-key <- data.frame(items = items,
+key <- data.frame(item = items,
                   delta = dscore::gettau(items = items, 
                                          lexicon = "gcdg"))
 data$age <- data$age/12
 
 # test new ability estimator
 start <- Sys.time()
-d1 <- ability(data = data, items = items, age = "age", 
-              key = key, pdist = "gcdg")
+d1 <- ability(data = data, items = items, age = "age", key = key)
 
 # test full posterior output for first row of the data
 x <- data[1L, ]
-d11 <- ability(data = x, items = items, age = "age", 
-               key = key, pdist = "gcdg", full = TRUE)
+d11 <- ability(data = x, item = items, age = "age", key = key, full = TRUE)
 
 # compare with original dscore estimator
 start <- Sys.time()

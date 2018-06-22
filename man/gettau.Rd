@@ -4,7 +4,7 @@
 \alias{gettau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-gettau(items, itembank = dscore::itembank, lexicon = "GHAP", check = TRUE,
+gettau(items, itembank = dscore::itembank, lexicon = "ghap", check = TRUE,
   ...)
 }
 \arguments{
@@ -20,8 +20,8 @@ difficulty levels as published in Van Buuren (2014).}
 \item{lexicon}{A character string indicating the column in 
 \code{itembank} used to match item names. It must be one of 
 the lexicon columns, e.g., \code{dutch1983}, 
-\code{dutch1996}, \code{dutch2005}, \code{SMOCC} 
-or \code{GHAP}. The default is \code{lexicon = "GHAP"}.}
+\code{dutch1996}, \code{dutch2005}, \code{smocc} 
+\code{ghap} or \code{gcdg}. The default is \code{lexicon = "ghap"}.}
 
 \item{check}{Logical that indicates whether the lexicon name
 should be checked. The default is \code{TRUE}.}
@@ -43,13 +43,12 @@ are done in lower case.
 gettau(items = c("GSFIXEYE", "GSMARMR"))
 
 # difficulty levels of same items in the SMOCC lexicon
-gettau(items = c("v1430", "v1432"), lexicon = "SMOCC")
+gettau(items = c("v1430", "v1432"), lexicon = "smocc")
 
-}
-\author{
-Stef van Buuren 2016
 }
 \seealso{
 \code{\link{itembank}}, \code{\link{dscore}}
 }
-
+\author{
+Stef van Buuren 2016
+}

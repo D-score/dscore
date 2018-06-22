@@ -12,7 +12,7 @@ _ignore/
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-inst/doc
+
 sftp-config.json
 docs/assets
 docs/index.html
@@ -22,7 +22,6 @@ docs/rd.html
 
 # user file
 notes/
-results/
 
 # knitr and R markdown default cache directories
 markdown/*_cache/

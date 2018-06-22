@@ -14,9 +14,4 @@ sftp-config.json
 ^data-raw$
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^notes$
-^markdown$
 ^README\.Rmd$
-^scripts$
-^results$
-^store$

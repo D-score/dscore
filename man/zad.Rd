@@ -4,7 +4,7 @@
 \alias{zad}
 \title{Inverse D-score standard deviation score}
 \usage{
-zad(z, x = as.numeric(names(z)), x.unit = "year",
+zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
   ref = dscore::Dreference, dec = 2)
 }
 \arguments{
@@ -50,4 +50,3 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 \seealso{
 \code{\link{dscore}}, \code{\link{daz}}
 }
-

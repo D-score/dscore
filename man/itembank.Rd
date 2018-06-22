@@ -6,12 +6,12 @@
 \title{Itembank containing difficulties per item}
 \format{A \code{data.frame} with 112 rows and 13 variables:
 \describe{
-\item{lex.dutch1996}{Item naming, VWO1996 version}
-\item{lex.dutch2005}{Item naming, VWO2005 version}
-\item{lex.dutch1983}{Item naming, VWO1983 version}
-\item{lex.SMOCC}{Item naming, original SMOCC variable names}
-\item{lex.GHAP}{Item naming used by GHAP platform of BMGF}
-\item{lex.jam}{Item naming for Jamaica project}
+\item{lex_dutch1996}{Item naming, VWO1996 version}
+\item{lex_dutch2005}{Item naming, VWO2005 version}
+\item{lex_dutch1983}{Item naming, VWO1983 version}
+\item{lex_smocc}{Item naming, original SMOCC variable names}
+\item{lex_ghap}{Item naming used by GHAP platform of BMGF}
+\item{lex_gcdg}{Item naming for GCDG project}
 \item{occ}{Occasion number}
 \item{labelNL}{Label (Dutch)}
 \item{labelEN}{Label (English)}
@@ -39,4 +39,3 @@ Stat Methods Med Res, 23(4), 346-368.
 \code{\link{dscore}}, \code{\link{gettau}}
 }
 \keyword{datasets}
-

@@ -4,7 +4,7 @@
 \alias{daz}
 \title{D-score standard deviation score: DAZ}
 \usage{
-daz(d, x = as.numeric(names(d)), x.unit = "year",
+daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
   ref = dscore::Dreference, dec = 3)
 }
 \arguments{
@@ -53,4 +53,3 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 \seealso{
 \code{\link{dscore}}, \code{\link{daz}}
 }
-

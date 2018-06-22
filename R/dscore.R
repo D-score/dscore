@@ -152,8 +152,11 @@ dscore <- function(scores,
   
   # find the difficulty levels  
   tau <- gettau(items = items, ...)
-  if (is.null(tau)) warning("No difficulty parameters found for ", 
-                            head(items), ".")
+  if (is.null(tau)) {
+    if (!full) return(NA) 
+    else stop("No difficulty parameters found for ", 
+               paste0(items, collapse = ", "), ".")
+  }
   
   # split the data by age
   # if (all(is.na(ages))) stop("All ages are missing.")
@@ -173,7 +176,7 @@ dscore <- function(scores,
     if (!full) return(NA)
     return(fullpost)
   }
-  
+
   # iterate
   k <- 0                            # valid scores counter
   for (i in 1:length(dg)) {         # loop over unique ages
@@ -296,8 +299,8 @@ posterior <- function(score, tau, prior, qp)
 #' @param lexicon A character string indicating the column in 
 #' \code{itembank} used to match item names. It must be one of 
 #' the lexicon columns, e.g., \code{dutch1983}, 
-#' \code{dutch1996}, \code{dutch2005}, \code{SMOCC} 
-#' or \code{GHAP}. The default is \code{lexicon = "GHAP"}. 
+#' \code{dutch1996}, \code{dutch2005}, \code{smocc} 
+#' \code{ghap} or \code{gcdg}. The default is \code{lexicon = "ghap"}. 
 #' @param check Logical that indicates whether the lexicon name
 #' should be checked. The default is \code{TRUE}.
 #' @param \dots Additional arguments (ignored).
@@ -311,16 +314,16 @@ posterior <- function(score, tau, prior, qp)
 #' gettau(items = c("GSFIXEYE", "GSMARMR"))
 #' 
 #' # difficulty levels of same items in the SMOCC lexicon
-#' gettau(items = c("v1430", "v1432"), lexicon = "SMOCC")
+#' gettau(items = c("v1430", "v1432"), lexicon = "smocc")
 #' 
 #' @export
 gettau <- function(items, 
                    itembank = dscore::itembank, 
-                   lexicon = "GHAP", 
+                   lexicon = "ghap", 
                    check = TRUE, 
                    ...) {
   # check whether lexicon is a column in item bank
-  lex <- paste("lex", lexicon, sep = ".")
+  lex <- paste("lex", lexicon, sep = "_")
   if (check) {
     q <- pmatch(tolower(lex), tolower(names(itembank)))
     if (is.na(q)) stop ("Lexicon `", lexicon, "` not found in item bank.")
@@ -345,9 +348,9 @@ gettau <- function(items,
 #' This vector should span the range of all D-score values, and 
 #' have at least 80 elements. The default is 
 #' \code{qp = -10:100}, which is suitable for age range 0-4 years.
-#' @param mu The mean of the prior. If \code{mu = "model"} (the default)
+#' @param mu The mean of the prior. If \code{mu = "dutch"} (the default)
 #' then \code{mu} is calculated from the Count model coded in 
-#' \code{dscore:::count_mu()}. Specify \code{mu = "reference"} in order
+#' \code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
 #' to take it from the age-dependent reference (default < 0.22).
 #' @param sd Standard deviation of the prior. The default is 5.
 #' @param reference the LMS reference values. The default uses the 
@@ -373,10 +376,11 @@ gettau <- function(items,
 #' lines(x = qp, adp(1, qp), lty = 2)
 #' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, qp = -10:100, mu = "model", sd = 5, 
+adp <- function(age, qp = -10:100, mu = "dutch", sd = 5, 
                 reference = dscore::Dreference, ...) {
   age <- age[1]
-  if (mu == "model") mu <- ifelse(is.na(age), NA, count_mu(age))
+  if (mu == "dutch") mu <- ifelse(is.na(age), NA, count_mu_dutch(age))
+  if (mu == "gcdg") mu <- ifelse(is.na(age), NA, count_mu_gcdg(age))
   if (mu == "reference")
     mu <- ifelse(is.na(age),
                  NA, 
@@ -386,7 +390,8 @@ adp <- function(age, qp = -10:100, mu = "model", sd = 5,
   return(normalize(p, qp))
 }
 
-count_mu <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
+count_mu_dutch <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}
+count_mu_gcdg  <- function(t) {47.65 - 3.05 * t + 26.70 * log(t + 0.19)}
 
 #' Normalize distribution
 #'

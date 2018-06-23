@@ -7,7 +7,7 @@ dscore(c(1, 0, 0), items, age, dec = 4)
 
 # ability
 data <- data.frame(
-  age = round(21/365.25, 3),
+  age = round(21/365.25, 4),
   GSFIXEYE = 1,
   GSRSPCH = 0,
   GSMLEG = 0)

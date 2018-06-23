@@ -87,7 +87,7 @@ using 'old' data as prior.}
 data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
 items <- ddata::item_names(study = "Netherlands 1")
 delta <- dscore::gettau(items = items, lexicon = "gcdg")
-key <- data.frame(item = items, delta = delta)
+key <- data.frame(item = items, delta = delta, stringsAsFactors = FALSE)
 data$age <- data$age/12
 ability(data = data, item = items, age = "age", key = key, prior = "gcdg")
 

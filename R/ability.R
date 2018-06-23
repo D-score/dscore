@@ -81,7 +81,7 @@
 #' data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
 #' items <- ddata::item_names(study = "Netherlands 1")
 #' delta <- dscore::gettau(items = items, lexicon = "gcdg")
-#' key <- data.frame(item = items, delta = delta)
+#' key <- data.frame(item = items, delta = delta, stringsAsFactors = FALSE)
 #' data$age <- data$age/12
 #' ability(data = data, item = items, age = "age", key = key, prior = "gcdg")
 #' 
@@ -135,18 +135,23 @@ ability <- function(data,
   data2 <- data %>%
     mutate(.rownum = 1:n()) %>%
     select(.rownum, age, items) %>% 
-    gather(key = item, value = score, items, na.rm = TRUE)  %>%
-    arrange(.rownum, age, item) %>%
+    gather(key = item, value = score, items, na.rm = TRUE) %>%
+    arrange(.rownum, item) %>%
     left_join(key, by = "item")
   
   # only return eap in frame
   if (!full) {
     eap <- data2 %>%
       group_by(.rownum, age) %>%
-      summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, ...)$eap) %>%
-      ungroup() %>%
-      pull(ability)
-    return(round(eap, dec))
+      summarise(n = n(),
+                b = round(calculate_posterior(scores = score, delta = delta, age = age, ...)$eap, dec)) %>%
+      ungroup() 
+    
+    data3 <- data.frame(.rownum = 1:nrow(data)) %>%
+      left_join(eap, by = ".rownum") %>%
+      mutate(n = recode(n, .missing = 0L)) %>%
+      select(n, b)
+    return(data3)
   }
   
   # return full posterior and eap as list
@@ -156,7 +161,3 @@ ability <- function(data,
                    calculate_posterior(scores = x$score, delta = x$delta, age = x$age, ...)})
   return(post)
 }
-
-
-
-

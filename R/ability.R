@@ -125,13 +125,13 @@ ability <- function(data,
   
   if (is.null(key))
     key <- data.frame(item = items,
-                      delta = gettau(items = items, ...))
+                      delta = gettau(items = items, ...),
+                      stringsAsFactors = FALSE)
   # check input length
-  if (!age %in% names(data))  stop("Age variable is not present in the data")
+  if (!age %in% names(data))  stop("Age not found in data")
   if (!any(items %in% names(data))) stop("Item names are not present in the data")
   if (!any(names(data) %in% key[, 1])) stop("Items are not present in the key")
 
-  # only return eap in frame
   data2 <- data %>%
     mutate(.rownum = 1:n()) %>%
     select(.rownum, age, items) %>% 
@@ -139,12 +139,14 @@ ability <- function(data,
     arrange(.rownum, age, item) %>%
     left_join(key, by = "item")
   
+  # only return eap in frame
   if (!full) {
     eap <- data2 %>%
       group_by(.rownum, age) %>%
       summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, ...)$eap) %>%
-      ungroup()
-    return(eap)
+      ungroup() %>%
+      pull(ability)
+    return(round(eap, dec))
   }
   
   # return full posterior and eap as list

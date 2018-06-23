@@ -24,14 +24,14 @@ calculate_posterior <- function(scores, delta, age,
                                 ...){
   fullpost <- list(eap = NA, start = NULL, qp = NULL, posterior = NULL)
   k <- 0       # valid scores counter
-  if(!all.equal( max(age) ,min(age))) stop("age within group not equal")
+  if(!all.equal(max(age), min(age))) stop("age within group not equal")
   cage <-age[1]           # current age
   nextocc <- TRUE                 # flag for next occasion
   fullpost$qp <- qp #IE
   for (j in seq_along(scores)) {          # loop over item scores
     score <- scores[j]       # observed score
-    delta <- delta[j]     # difficulty for item of observed score
-    if (is.na(score) | is.na(cage) | is.na(delta)) next
+    deltaj <- delta[j]     # difficulty for item of observed score
+    if (is.na(score) | is.na(cage) | is.na(deltaj)) next
     k <- k + 1                    # yes, we have a valid response
     
     # CASE A: k == 1: start with age-dependent prior for first valid score
@@ -59,7 +59,7 @@ calculate_posterior <- function(scores, delta, age,
       prior <- normalize(prior, qp)
     }
     # calculate posterior
-    post <- posterior(score, delta, prior, qp)
+    post <- posterior(score, deltaj, prior, qp)
     fullpost$posterior <- post
     
     # overwrite old eap estimate by new one

@@ -1,5 +1,5 @@
 #' @importFrom dplyr select mutate slice bind_rows arrange %>%
-#'             group_by summarise ungroup left_join one_of n
+#'             group_by summarise ungroup left_join one_of n pull
 #' @importFrom tidyr gather
 #' @importFrom stats approx dnorm weighted.mean lm na.omit predict
 #' @importFrom utils head flush.console
@@ -9,8 +9,8 @@
 #' @importFrom ddata get_gcdg item_names
 NULL
 
-utils::globalVariables(c("item", "score", "temp_ages", "d"))
-
+utils::globalVariables(c("item", "score", "temp_ages", "d", 
+                         ".rownum", "delta"))
 
 #' dscore: Measuring child development by the D-score
 #' 

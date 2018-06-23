@@ -16,7 +16,6 @@ data$age <- round(data$daycor / 365.25, 3)
 key <- data.frame(item = items, 
                   delta = delta, 
                   stringsAsFactors = FALSE)
-
 abil <- ability(data, items, age = "age", key = key)
 
 # --- using dscore()
@@ -28,15 +27,15 @@ dsco <- data %>%
   group_by(patid, age) %>%
   summarise(d = dscore::dscore(scores = score, items = item,
                                ages = age, 
-                               mu = "gcdg",
                                itembank = dscore::itembank, 
                                lexicon = "ghap")) %>%
-  ungroup()
+  ungroup() %>%
+  pull(d)
 
-test_that("ability() and dscore() produce same number of rows", {
-  expect_identical(nrow(abil), nrow(dsco))
+test_that("ability() and dscore() produce same length", {
+  expect_identical(length(abil), length(dsco))
 })
 
 test_that("ability() and dscore() produce same D-scores", {
-  expect_identical(abil$ability, dsco$d)
+  expect_identical(abil, dsco)
 })

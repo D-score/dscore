@@ -39,7 +39,7 @@
 #' }
 #' 
 #' @aliases ability 
-#' @param data A data.frame containing columns names \code{items} with PASS/FAIL observations 
+#' @param data A data.frame containing columns names \code{items} with PASS/FAIL observations. 
 #' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. Additionally,
 #' a column named \code{age} specifying decimal age in years.
@@ -53,6 +53,10 @@
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
+#' @param prior The mean of the prior. If \code{mu = "gcdg"} (the default)
+#' then \code{mu} is calculated from the Count model coded in 
+#' \code{dscore:::count_mu_gcdg()}. Specify \code{mu = "reference"} in order
+#' to take it from the age-dependent reference (default < 0.22).
 #' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
@@ -78,6 +82,7 @@
 #' # GSFIXEYE: Fixate eyes
 #' # GSRSPCH:  Reacts to speech (M; can ask parents)
 #' # GSMLEG :  Same amount of movement in both legs
+#' 
 #' data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
 #' items <- ddata::item_names(study = "Netherlands 1")
 #' delta <- dscore::gettau(items = items, lexicon = "gcdg")
@@ -119,6 +124,7 @@ ability <- function(data,
                    items, 
                    age = "age", 
                    key = NULL, 
+                   prior="gcdg" ,
                    full = FALSE,
                    dec = 2,
                    ...) {
@@ -143,7 +149,7 @@ ability <- function(data,
   if (!full) {
     eap <- data2 %>%
       group_by(.rownum, age) %>%
-      summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, ...)$eap) %>%
+      summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, mu=prior, ...)$eap) %>%
       ungroup() %>%
       pull(ability)
     return(round(eap, dec))
@@ -153,7 +159,7 @@ ability <- function(data,
   data2s <- split(data2, data2$.rownum)
   post <- lapply(data2s, 
                  function(x) {
-                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, ...)})
+                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, mu=prior, ...)})
   return(post)
 }
 

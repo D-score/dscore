@@ -1,12 +1,16 @@
 #' Calculate posterior of ability
 #' 
-#' @param scores BLABLA
-#' @param delta BLABLA
-#' @param age BLABLA
+#' @param scores A vector with PASS/FAIL observations. 
+#' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
+#' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. 
+#' @param delta A vector containing the item difficulties for the item scores in \code{scores}
+#' estimated from the Rasch model in the prefferred metric/scale.
+#' @param age A vector age in months.
 #' @param qp A number vector of equally spaced quadrature points.
-#' This vector should span the range of all D-score values, and 
+#' This vector should span the range of all posterior values, and 
 #' have at least 80 elements. The default is 
-#' \code{qp = -10:100}, which is suitable for age range 0-4 years.
+#' \code{qp = -10:100}, which is suitable for a d-score for age range 0-4 years.
+#' For the ability score in the logit scale qp should span min(logit)-3 to max(logit)+3.
 #' @param mem.between Fraction of posterior from previous occasion 
 #' relative to age-dependent prior. The 
 #' value \code{mem.between = 0} (the default) means that 
@@ -17,7 +21,7 @@
 #' value \code{mem.within = 1} (the default) means that all items 
 #' count equally in the posterior, while a \code{mem.within = 0} 
 #' corresponds to counting only the last item. See details.
-#' @param \dots Additional parameters passed down to BLABLA
+#' @param \dots Additional parameters passed down to \code{adp}.
 #' @export
 calculate_posterior <- function(scores, delta, age, 
                                 qp = -10:100, mem.between = 0, mem.within = 1,

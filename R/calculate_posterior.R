@@ -21,10 +21,12 @@
 #' value \code{mem.within = 1} (the default) means that all items 
 #' count equally in the posterior, while a \code{mem.within = 0} 
 #' corresponds to counting only the last item. See details.
+#' @param metric The metric of the posterior via the prior. The default is dscore. The other option
+#' is logit, then the age dependent prior mu is transformed to the logit scale by \code{transform}.
 #' @param \dots Additional parameters passed down to \code{adp}.
 #' @export
 calculate_posterior <- function(scores, delta, age, 
-                                qp = -10:100, mem.between = 0, mem.within = 1,
+                                qp = -10:100, mem.between = 0, mem.within = 1, metric=metric,
                                 ...){
   fullpost <- list(eap = NA, start = NULL, qp = NULL, posterior = NULL)
   k <- 0       # valid scores counter
@@ -40,7 +42,7 @@ calculate_posterior <- function(scores, delta, age,
     
     # CASE A: k == 1: start with age-dependent prior for first valid score
     if (k == 1) {
-      prior <- adp(age = cage, qp = qp,...)
+      prior <- adp(age = cage, qp = qp,metric=metric,...)
       fullpost$start <- prior
       nextocc <- FALSE
     }
@@ -50,7 +52,7 @@ calculate_posterior <- function(scores, delta, age,
     # 'previous occasion posterior' by mem.between
     else if (nextocc) {
       prior <- mem.between * post +
-        (1 - mem.between) * adp(age = cage, qp = qp,...)
+        (1 - mem.between) * adp(age = cage, qp = qp,metric=metric,...)
       prior <- normalize(prior, qp)
       fullpost$start <- prior
       nextocc <- FALSE
@@ -59,7 +61,7 @@ calculate_posterior <- function(scores, delta, age,
     # CASE C: weight 'previous score posterior' by mem.within
     else {
       prior <- mem.within * post +
-        (1 - mem.within) * adp(age = cage, qp = qp,...)
+        (1 - mem.within) * adp(age = cage, qp = qp,metric=metric,...)
       prior <- normalize(prior, qp)
     }
     # calculate posterior

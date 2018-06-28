@@ -124,7 +124,7 @@ ability <- function(data,
                    items, 
                    age = "age", 
                    key = NULL, 
-                   prior="gcdg" ,
+                   metric="dscore",
                    full = FALSE,
                    dec = 2,
                    ...) {
@@ -149,7 +149,7 @@ ability <- function(data,
   if (!full) {
     eap <- data2 %>%
       group_by(.rownum, age) %>%
-      summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, mu=prior, ...)$eap) %>%
+      summarise(ability = calculate_posterior(scores = score, delta = delta, age = age, metric=metric, ...)$eap) %>%
       ungroup() %>%
       pull(ability)
     return(round(eap, dec))
@@ -159,7 +159,7 @@ ability <- function(data,
   data2s <- split(data2, data2$.rownum)
   post <- lapply(data2s, 
                  function(x) {
-                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, mu=prior, ...)})
+                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, metric=metric, ...)})
   return(post)
 }
 

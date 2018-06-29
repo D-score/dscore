@@ -150,7 +150,7 @@ ability <- function(data,
     eap <- data2 %>%
       group_by(.rownum, age) %>%
     summarise(n = n(),
-                b = round(calculate_posterior(scores = score, delta = delta, age = age, ...)$eap, dec)) %>%
+                b = round(calculate_posterior(scores = score, delta = delta, age = age, metric=metric, ...)$eap, dec)) %>%
       ungroup() 
     
     data3 <- data.frame(.rownum = 1:nrow(data)) %>%

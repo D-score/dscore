@@ -53,6 +53,7 @@ adp <- function(age, qp = -10:100, mu = "gcdg", sd = 5, metric="dscore", transfo
   if(metric=="logit"){ 
     if(is.null(transform)) stop("transform coefficients are missing")
     mu <- (mu-transform[1])/transform[2]
+    sd <- sd/transform[2]
     }
   p <- dnorm(qp, mean = mu, sd = sd)
 

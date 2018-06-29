@@ -28,8 +28,12 @@ mm$tau <- gcdg_itembank[match(mm$gcdg_item, table=as.character(gcdg_itembank$lex
 mm$instrument <- "Mullen"
 mm$lex_gcdg <- mm$item
 mm$max <- mm$gcdg_item <- mm$item <-  NULL
-gcdg_itembank_mm <- bind_rows(gcdg_itembank,mm)
-tail(gcdg_itembank_mm)
 
+gcdg_itembank_m <- bind_rows(gcdg_itembank,mm)
+tail(gcdg_itembank_m)
+
+
+
+devtools::use_data(gcdg_itembank_m, overwrite = TRUE)
 
 

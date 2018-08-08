@@ -119,6 +119,20 @@
 #' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
 #' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 #' 
+#' scores=c(1,1,0,0)
+#' items=c("n5", "n6", "n7", "n8")
+#' age=rep(0.6,4)
+#' data <- as.data.frame(matrix(scores, nrow=1))
+#' colnames(data) <-items
+#' data$age <- 0.6
+#' 
+#'data <- get_gcdg(study="Netherlands 1", adm=TRUE)  
+#'data$age <- data$age/12    
+#'items <- dmetric::prepare_items(study="Netherlands 1")$items
+#'a <- ability(data=data, items=items,lexicon="gcdg")
+#'#de output is gek, alleen n met b - let wel telkens op age in years!
+#'
+#'
 #' @export
 ability <- function(data, 
                    items, 
@@ -150,7 +164,7 @@ ability <- function(data,
     eap <- data2 %>%
       group_by(.rownum, age) %>%
     summarise(n = n(),
-                b = round(calculate_posterior(scores = score, delta = delta, age = age, metric=metric, ...)$eap, dec)) %>%
+              b = round(calculate_posterior(scores = score, delta = delta, age = age, metric=metric,...)$eap, dec)) %>%
       ungroup() 
     
     data3 <- data.frame(.rownum = 1:nrow(data)) %>%

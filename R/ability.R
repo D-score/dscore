@@ -79,58 +79,10 @@
 #' \code{\link{itembank}}, \code{\link{posterior}},
 #' \code{\link{Dreference}}
 #' @examples 
-#' # GSFIXEYE: Fixate eyes
-#' # GSRSPCH:  Reacts to speech (M; can ask parents)
-#' # GSMLEG :  Same amount of movement in both legs
-#' 
-#' data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
-#' items <- ddata::item_names(study = "Netherlands 1")
-#' delta <- dscore::gettau(items = items, lexicon = "gcdg")
-#' key <- data.frame(item = items, delta = delta, stringsAsFactors = FALSE)
-#' data$age <- data$age/12
-#' ability(data = data, item = items, age = "age", key = key, prior = "gcdg")
-#' 
-#' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
-#' gettau(items)
-#' age <- round(rep(21/365.25, 3), 4)  # age 21 days
-#' dscore(c(1, 0, 0), items, age)
-#' 
-#' # two time points, one additional (overlapping) item
-#' items <- c(items, items[3])
-#' age <- round(c(age, 42/365.25), 4)  # add age 42 days
-#' dscore(c(1, 0, 0, 1), items, age)
-#' 
-#' # save full posterior
-#' fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
-#' plot(fp[[1]]$qp, fp[[1]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", 
-#' main = "Age 21 days: 2 PASS, FAIL at GSMLEG")
-#' lines(fp[[1]]$qp, fp[[1]]$start, lty = 2)
-#' 
-#' # hardly any difference between prior and posterior 
-#' # because PASS score is uninformative at age 42 days
-#' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEG")
-#' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
-#' 
-#' # However a FAIL score signals substantial delay at age 42 days
-#' fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
-#' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
-#' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
-#' 
-#' scores=c(1,1,0,0)
-#' items=c("n5", "n6", "n7", "n8")
-#' age=rep(0.6,4)
-#' data <- as.data.frame(matrix(scores, nrow=1))
-#' colnames(data) <-items
-#' data$age <- 0.6
-#' 
-#'data <- get_gcdg(study="Netherlands 1", adm=TRUE)  
+#'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
 #'data$age <- data$age/12    
 #'items <- dmetric::prepare_items(study="Netherlands 1")$items
-#'a <- ability(data=data, items=items,lexicon="gcdg")
-#'#de output is gek, alleen n met b - let wel telkens op age in years!
+#'ability(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
 #'
 #'
 #' @export

@@ -39,7 +39,7 @@
 #' }
 #' 
 #' @aliases ability 
-#' @param data A data.frame containing columns names \code{items} with PASS/FAIL observations 
+#' @param data A data.frame containing columns names \code{items} with PASS/FAIL observations. 
 #' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. Additionally,
 #' a column named \code{age} specifying decimal age in years.
@@ -53,6 +53,10 @@
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
+#' @param prior The mean of the prior. If \code{mu = "gcdg"} (the default)
+#' then \code{mu} is calculated from the Count model coded in 
+#' \code{dscore:::count_mu_gcdg()}. Specify \code{mu = "reference"} in order
+#' to take it from the age-dependent reference (default < 0.22).
 #' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
@@ -75,50 +79,18 @@
 #' \code{\link{itembank}}, \code{\link{posterior}},
 #' \code{\link{Dreference}}
 #' @examples 
-#' # GSFIXEYE: Fixate eyes
-#' # GSRSPCH:  Reacts to speech (M; can ask parents)
-#' # GSMLEG :  Same amount of movement in both legs
-#' data <- ddata::get_gcdg(study = "Netherlands 1", adm = TRUE)
-#' items <- ddata::item_names(study = "Netherlands 1")
-#' delta <- dscore::gettau(items = items, lexicon = "gcdg")
-#' key <- data.frame(item = items, delta = delta, stringsAsFactors = FALSE)
-#' data$age <- data$age/12
-#' ability(data = data, item = items, age = "age", key = key, prior = "gcdg")
-#' 
-#' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
-#' gettau(items)
-#' age <- round(rep(21/365.25, 3), 4)  # age 21 days
-#' dscore(c(1, 0, 0), items, age)
-#' 
-#' # two time points, one additional (overlapping) item
-#' items <- c(items, items[3])
-#' age <- round(c(age, 42/365.25), 4)  # add age 42 days
-#' dscore(c(1, 0, 0, 1), items, age)
-#' 
-#' # save full posterior
-#' fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
-#' plot(fp[[1]]$qp, fp[[1]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", 
-#' main = "Age 21 days: 2 PASS, FAIL at GSMLEG")
-#' lines(fp[[1]]$qp, fp[[1]]$start, lty = 2)
-#' 
-#' # hardly any difference between prior and posterior 
-#' # because PASS score is uninformative at age 42 days
-#' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", main = "Age 42 days: PASS at GSMLEG")
-#' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
-#' 
-#' # However a FAIL score signals substantial delay at age 42 days
-#' fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
-#' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
-#' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
-#' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
-#' 
+#'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
+#'data$age <- data$age/12    
+#'items <- dmetric::prepare_items(study="Netherlands 1")$items
+#'ability(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
+#'
+#'
 #' @export
 ability <- function(data, 
                    items, 
                    age = "age", 
                    key = NULL, 
+                   metric="dscore",
                    full = FALSE,
                    dec = 2,
                    ...) {
@@ -143,8 +115,8 @@ ability <- function(data,
   if (!full) {
     eap <- data2 %>%
       group_by(.rownum, age) %>%
-      summarise(n = n(),
-                b = round(calculate_posterior(scores = score, delta = delta, age = age, ...)$eap, dec)) %>%
+    summarise(n = n(),
+              b = round(calculate_posterior(scores = score, delta = delta, age = age, metric=metric,...)$eap, dec)) %>%
       ungroup() 
     
     data3 <- data.frame(.rownum = 1:nrow(data)) %>%
@@ -158,6 +130,6 @@ ability <- function(data,
   data2s <- split(data2, data2$.rownum)
   post <- lapply(data2s, 
                  function(x) {
-                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, ...)})
+                   calculate_posterior(scores = x$score, delta = x$delta, age = x$age, metric=metric, ...)})
   return(post)
 }

@@ -14,6 +14,8 @@
 #' \code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
 #' to take it from the age-dependent reference (default < 0.22).
 #' @param sd Standard deviation of the prior. The default is 5.
+#' @param metric The metric of the prior. The default is dscore. The other option
+#' is logit, then the age dependent prior mu is transformed to the logit scale by \code{transform}.
 #' @param reference the LMS reference values. The default uses the 
 #' built-in reference \code{dscore::Dreference} for Dutch children
 #' published in Van Buuren (2014).
@@ -37,20 +39,25 @@
 #' lines(x = qp, adp(1, qp), lty = 2)
 #' lines(x = qp, adp(2, qp), lty = 3)
 #' @export
-adp <- function(age, qp = -10:100, mu = "dutch", sd = 5, 
+adp <- function(age, qp = -10:100, mu = "gcdg", sd = 5, metric="dscore", transform=NULL,
                 reference = dscore::Dreference, ...) {
   age <- age[1]
-  if (mu == "identity"){ mu <- ifelse(is.na(age),NA,0)
-  sd <- 1}
   if (mu == "dutch") mu <- ifelse(is.na(age), NA, count_mu_dutch(age))
-  if (mu == "gcdg") mu <- ifelse(is.na(age), NA,  count_mu_gcdg(age))
+  if (mu == "gcdg") {mu <- ifelse(is.na(age), NA,  count_mu_gcdg(age))
+  if(is.null(transform)) transform <- c(66.174355,2.073871)}
   if (mu == "reference")
     mu <- ifelse(is.na(age),
                  NA, 
                  approx(y = reference$mu, x = reference$year,
                         xout = round(age, 4), yleft = reference$mu[1])$y)
+  if(metric=="logit"){ 
+    if(is.null(transform)) stop("transform coefficients are missing")
+    mu <- (mu-transform[1])/transform[2]
+    sd <- sd/transform[2]
+    }
   p <- dnorm(qp, mean = mu, sd = sd)
-  return(normalize(p, qp))
+
+    return(normalize(p, qp))
 }
 
 count_mu_dutch <- function(t) {44.35 - 1.8 * t + 28.47 * log(t + 0.25)}

@@ -1,15 +1,17 @@
 #' @importFrom dplyr select mutate slice bind_rows arrange %>%
-#'             group_by summarise ungroup left_join
+#'             group_by summarise ungroup left_join one_of n pull
+#'             recode
 #' @importFrom tidyr gather
 #' @importFrom stats approx dnorm weighted.mean lm na.omit predict
 #' @importFrom utils head flush.console
 #' @importFrom grDevices col2rgb rgb
 #' @importFrom lazyeval interp
 #' @importFrom rlang UQ sym
+#' @importFrom ddata get_gcdg item_names
 NULL
 
-utils::globalVariables(c("item", "score", "temp_ages", "d"))
-
+utils::globalVariables(c("item", "score", "temp_ages", "d", 
+                         ".rownum", "delta", "b"))
 
 #' dscore: Measuring child development by the D-score
 #' 

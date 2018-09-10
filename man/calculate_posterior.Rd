@@ -5,19 +5,23 @@
 \title{Calculate posterior of ability}
 \usage{
 calculate_posterior(scores, delta, age, qp = -10:100, mem.between = 0,
-  mem.within = 1, ...)
+  mem.within = 1, metric = metric, ...)
 }
 \arguments{
-\item{scores}{BLABLA}
+\item{scores}{A vector with PASS/FAIL observations. 
+Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
+Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
 
-\item{delta}{BLABLA}
+\item{delta}{A vector containing the item difficulties for the item scores in \code{scores}
+estimated from the Rasch model in the prefferred metric/scale.}
 
-\item{age}{BLABLA}
+\item{age}{A vector age in months.}
 
 \item{qp}{A number vector of equally spaced quadrature points.
-This vector should span the range of all D-score values, and 
+This vector should span the range of all posterior values, and 
 have at least 80 elements. The default is 
-\code{qp = -10:100}, which is suitable for age range 0-4 years.}
+\code{qp = -10:100}, which is suitable for a d-score for age range 0-4 years.
+For the ability score in the logit scale qp should span min(logit)-3 to max(logit)+3.}
 
 \item{mem.between}{Fraction of posterior from previous occasion 
 relative to age-dependent prior. The 
@@ -31,7 +35,10 @@ value \code{mem.within = 1} (the default) means that all items
 count equally in the posterior, while a \code{mem.within = 0} 
 corresponds to counting only the last item. See details.}
 
-\item{\dots}{Additional parameters passed down to BLABLA}
+\item{metric}{The metric of the posterior via the prior. The default is dscore. The other option
+is logit, then the age dependent prior mu is transformed to the logit scale by \code{transform}.}
+
+\item{\dots}{Additional parameters passed down to \code{adp}.}
 }
 \description{
 Calculate posterior of ability

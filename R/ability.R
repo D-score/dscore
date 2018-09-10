@@ -53,10 +53,8 @@
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
-#' @param prior The mean of the prior. If \code{mu = "gcdg"} (the default)
-#' then \code{mu} is calculated from the Count model coded in 
-#' \code{dscore:::count_mu_gcdg()}. Specify \code{mu = "reference"} in order
-#' to take it from the age-dependent reference (default < 0.22).
+#' @param metric A string, either \code{"dscore"} or \code{"logit"}, 
+#' signalling the metric in which the ability are estimated
 #' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
@@ -78,19 +76,19 @@
 #' @seealso \code{\link{adp}}, \code{\link{gettau}}, 
 #' \code{\link{itembank}}, \code{\link{posterior}},
 #' \code{\link{Dreference}}
-#' @examples 
+#' @examples
+#' \dontrun{
 #'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
 #'data$age <- data$age/12    
 #'items <- dmetric::prepare_items(study="Netherlands 1")$items
 #'ability(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
-#'
-#'
+#'}
 #' @export
 ability <- function(data, 
                    items, 
                    age = "age", 
                    key = NULL, 
-                   metric="dscore",
+                   metric = "dscore",
                    full = FALSE,
                    dec = 2,
                    ...) {

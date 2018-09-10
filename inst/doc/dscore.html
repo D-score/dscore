@@ -12,7 +12,7 @@
 
 <meta name="author" content="Stef van Buuren" />
 
-<meta name="date" content="2018-01-14" />
+<meta name="date" content="2018-09-10" />
 
 <title>Calculate D-score and DAZ</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Calculate D-score and DAZ</h1>
 <h4 class="author"><em>Stef van Buuren</em></h4>
-<h4 class="date"><em>2018-01-14</em></h4>
+<h4 class="date"><em>2018-09-10</em></h4>
 
 
 
@@ -91,11 +91,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="kw">head</span>(popsdemo[, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dv">5</span>)</code></pre></div>
 <pre><code>##   patid gender gestationalage moment age occ daycor Fixateseyes Reactstospeech
-## 1 11126      1       31.14286      2 161   1    103           1              1
-## 2 11126      1       31.14286      3 231   2    172          NA             NA
-## 3 11126      1       31.14286      4 378   3    319          NA             NA
-## 4 11126      1       31.14286      5 819   4    762          NA             NA
-## 5 12989      1       34.00000      2 140   1     99           1              1
+## 1 11126      1           31.1      2 161   1    103           1              1
+## 2 11126      1           31.1      3 231   2    172          NA             NA
+## 3 11126      1           31.1      4 378   3    319          NA             NA
+## 4 11126      1           31.1      5 819   4    762          NA             NA
+## 5 12989      1           34.0      2 140   1     99           1              1
 ##   Movesbotharmsequallyasmuch
 ## 1                          1
 ## 2                         NA
@@ -120,13 +120,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We first need to find out a proper lexicon for the data. The POPS data are already coded in the <code>lex_ghap</code> lexicon. We may verify the item names in the data against the item names in the item bank.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">itemset &lt;-<span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(itembank<span class="op">$</span>lex_dutch1983)
 <span class="kw">head</span>(<span class="kw">cbind</span>(items, itembank[itemset, <span class="kw">c</span>(<span class="st">&quot;lex_ghap&quot;</span>)]))</code></pre></div>
-<pre><code>##      items                                  
-## [1,] &quot;Fixateseyes&quot;                &quot;GSFIXEYE&quot;
-## [2,] &quot;Reactstospeech&quot;             &quot;GSRSPCH&quot; 
-## [3,] &quot;Movesbotharmsequallyasmuch&quot; &quot;GSMARM&quot;  
-## [4,] &quot;Movesbothlegsequallyasmuch&quot; &quot;GSMLEG&quot;  
-## [5,] &quot;Liftschin&quot;                  &quot;GSLFCHIN&quot;
-## [6,] &quot;Smilesback&quot;                 &quot;GSSMILE&quot;</code></pre>
+<pre><code>##      items                            
+## [1,] &quot;Fixateseyes&quot;                &quot;9&quot; 
+## [2,] &quot;Reactstospeech&quot;             &quot;64&quot;
+## [3,] &quot;Movesbotharmsequallyasmuch&quot; &quot;35&quot;
+## [4,] &quot;Movesbothlegsequallyasmuch&quot; &quot;45&quot;
+## [5,] &quot;Liftschin&quot;                  &quot;33&quot;
+## [6,] &quot;Smilesback&quot;                 &quot;69&quot;</code></pre>
 <p>In this case all item names from the source data and the item bank match up exactly, but in general, we will need to map carefully the names in the dataset to the names in one of the lexicons provided by the item bank.</p>
 <p>For POPS, we may take out the relevant parts of the item bank as</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ib &lt;-<span class="st"> </span>itembank[itemset,<span class="kw">c</span>(<span class="st">&quot;lex_dutch1983&quot;</span>, <span class="st">&quot;lex_ghap&quot;</span>, <span class="st">&quot;labelEN&quot;</span>, <span class="st">&quot;tau&quot;</span>)]
@@ -188,14 +188,14 @@ ages &lt;-<span class="st"> </span><span class="kw">round</span>(child1<span cla
 <span class="co"># calculate dscore and daz for each time point for given child</span>
 (d &lt;-<span class="st"> </span><span class="kw">dscore</span>(scores, items, ages))</code></pre></div>
 <pre><code>##  0.282 0.4709 0.8734 2.0862 
-##  20.94  35.32  46.72  60.90</code></pre>
+##   21.0   35.4   46.7   60.9</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">daz</span>(d)</code></pre></div>
 <pre><code>##  0.282 0.4709 0.8734 2.0862 
-## -1.521  0.383  0.212 -1.291</code></pre>
+## -1.498  0.394  0.215 -1.304</code></pre>
 <p>If desired, one may also back-calculate the D-score from the standard deviation score by</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">zad</span>(<span class="kw">daz</span>(d))</code></pre></div>
 <pre><code>##  0.282 0.4709 0.8734 2.0862 
-##  20.94  35.32  46.72  60.90</code></pre>
+##   21.0   35.4   46.7   60.9</code></pre>
 <p>If we specify the child identifier  as a by-group variable, we may calculate the D-score and DAZ for all children by</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># use age corrected for gestational age</span>
 data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(data)
@@ -211,13 +211,13 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
   <span class="dt">dscore =</span> <span class="kw">as.numeric</span>(<span class="kw">unlist</span>(dl)),
   <span class="dt">daz =</span> <span class="kw">as.numeric</span>(<span class="kw">unlist</span>(dazl)))
 <span class="kw">head</span>(df)</code></pre></div>
-<pre><code>##   patid   ages dscore    daz
-## 1 11126 0.2820  20.94 -1.521
-## 2 11126 0.4709  35.32  0.383
-## 3 11126 0.8734  46.72  0.212
-## 4 11126 2.0862  60.90 -1.291
-## 5 12989 0.2710  20.90 -1.361
-## 6 12989 0.4873  30.62 -1.369</code></pre>
+<pre><code>##   patid  ages dscore    daz
+## 1 11126 0.282   21.0 -1.498
+## 2 11126 0.471   35.4  0.394
+## 3 11126 0.873   46.7  0.215
+## 4 11126 2.086   60.9 -1.304
+## 5 12989 0.271   21.0 -1.341
+## 6 12989 0.487   30.7 -1.353</code></pre>
 </div>
 <div id="combine-d-score-and-daz-with-source-data" class="section level2">
 <h2>4. Combine D-score and DAZ with source data</h2>
@@ -226,13 +226,13 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
 popsdemo<span class="op">$</span>ages &lt;-<span class="st"> </span><span class="kw">round</span>(popsdemo<span class="op">$</span>daycor<span class="op">/</span><span class="fl">365.25</span>, <span class="dv">4</span>)
 popsdemo &lt;-<span class="st"> </span><span class="kw">merge</span>(popsdemo, df, <span class="dt">all.x =</span> <span class="ot">TRUE</span>)
 <span class="kw">head</span>(<span class="kw">select</span>(popsdemo, patid, moment, ages, dscore, daz))</code></pre></div>
-<pre><code>##   patid moment   ages dscore    daz
-## 1 11126      2 0.2820  20.95     NA
-## 2 11126      3 0.4709  35.32  0.383
-## 3 11126      4 0.8734  46.72  0.212
-## 4 11126      5 2.0862  60.90 -1.291
-## 5 12989      2 0.2710  20.90 -1.361
-## 6 12989      3 0.4873  30.62 -1.369</code></pre>
+<pre><code>##   patid moment  ages dscore daz
+## 1 11126      2 0.282   20.9  NA
+## 2 11126      3 0.471   35.3  NA
+## 3 11126      4 0.873   46.7  NA
+## 4 11126      5 2.086   60.9  NA
+## 5 12989      2 0.271   20.9  NA
+## 6 12989      3 0.487   30.6  NA</code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2>References</h2>

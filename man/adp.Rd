@@ -4,8 +4,8 @@
 \alias{adp}
 \title{Age-dependent prior}
 \usage{
-adp(age, qp = -10:100, mu = "dutch", sd = 5,
-  reference = dscore::Dreference, ...)
+adp(age, qp = -10:100, mu = "gcdg", sd = 5, metric = "dscore",
+  transform = NULL, reference = dscore::Dreference, ...)
 }
 \arguments{
 \item{age}{Age in years. Numeric, single value. If a vector, only the 
@@ -22,6 +22,14 @@ then \code{mu} is calculated from the Count model coded in
 to take it from the age-dependent reference (default < 0.22).}
 
 \item{sd}{Standard deviation of the prior. The default is 5.}
+
+\item{metric}{The metric of the prior. The default is 
+\code{metric = "dscore"}. The other option
+is \code{metric = "logit"}, then the age-dependent 
+prior mu is transformed to the logit scale by \code{transform}.}
+
+\item{transform}{Vector of length 2, signalling the intercept 
+and slope of the linear transform.}
 
 \item{reference}{the LMS reference values. The default uses the 
 built-in reference \code{dscore::Dreference} for Dutch children

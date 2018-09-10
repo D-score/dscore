@@ -4,8 +4,8 @@
 \alias{gettau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-gettau(items, itembank = dscore::itembank, lexicon = "ghap", check = TRUE,
-  ...)
+gettau(items, itembank = dscore::itembank, lexicon = "ghap",
+  check = TRUE, ...)
 }
 \arguments{
 \item{items}{A character vector with item names in the 

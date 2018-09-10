@@ -4,8 +4,8 @@
 \alias{ability}
 \title{Ability estimation}
 \usage{
-ability(data, items, age = "age", key = NULL, full = FALSE, dec = 2,
-  ...)
+ability(data, items, age = "age", key = NULL, full = FALSE,
+  dec = 2, ...)
 }
 \arguments{
 \item{data}{A data.frame containing columns names \code{items} with PASS/FAIL observations 

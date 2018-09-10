@@ -151,3 +151,9 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @seealso \code{\link{dscore}}, \code{\link{adp}}
 "gcdg_reference"
+
+
+#' Expanded version of itembank including Mullen
+#' 
+#' @docType data
+"gcdg_itembank_m"

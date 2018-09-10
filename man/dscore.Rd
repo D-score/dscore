@@ -4,8 +4,8 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(scores, items = names(scores), ages, qp = -10:100, mem.between = 0,
-  mem.within = 1, full = FALSE, dec = 2, ...)
+dscore(scores, items = names(scores), ages, qp = -10:100,
+  mem.between = 0, mem.within = 1, full = FALSE, dec = 2, ...)
 }
 \arguments{
 \item{scores}{A vector containing PASS/FAIL observations 

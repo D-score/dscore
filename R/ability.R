@@ -48,15 +48,12 @@
 #' @param key A data.frame of two columns containing the \code{items} names and a second column 
 #' named \code{delta} containing the item difficulties estimated from the Rasch model in the 
 #' prefferred metric/scale. 
+#' @param metric Either \code{metric = "logit"} or \code{metric = "dscore"}.
 #' @param age A character with the name of the age variable 
 #' specifying decimal age in years. This information 
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
-#' @param prior The mean of the prior. If \code{mu = "gcdg"} (the default)
-#' then \code{mu} is calculated from the Count model coded in 
-#' \code{dscore:::count_mu_gcdg()}. Specify \code{mu = "reference"} in order
-#' to take it from the age-dependent reference (default < 0.22).
 #' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
@@ -75,22 +72,27 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #' 
 #' @author Stef van Buuren 2016
+#' @details 
+#'  param prior: The mean of the prior. If \code{mu = "gcdg"} (the default)
+#' then \code{mu} is calculated from the Count model coded in 
+#' \code{dscore:::count_mu_gcdg()}. Specify \code{mu = "reference"} in order
+#' to take it from the age-dependent reference (default < 0.22).
 #' @seealso \code{\link{adp}}, \code{\link{gettau}}, 
 #' \code{\link{itembank}}, \code{\link{posterior}},
 #' \code{\link{Dreference}}
 #' @examples 
+#' \dontrun{
 #'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
 #'data$age <- data$age/12    
 #'items <- dmetric::prepare_items(study="Netherlands 1")$items
 #'ability(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
-#'
-#'
+#'}
 #' @export
 ability <- function(data, 
                    items, 
                    age = "age", 
                    key = NULL, 
-                   metric="dscore",
+                   metric = "dscore",
                    full = FALSE,
                    dec = 2,
                    ...) {

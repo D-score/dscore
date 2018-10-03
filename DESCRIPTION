@@ -13,11 +13,12 @@ Imports:
     lazyeval,
     rlang,
     tidyr,
-    magrittr,
-    ddata
+    magrittr
 Suggests:
     knitr,
-    testthat
+    testthat,
+    ddata,
+    dmetric
 License: file LICENSE
 LazyData: TRUE
 VignetteBuilder: knitr

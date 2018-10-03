@@ -82,6 +82,11 @@ By default the mixing coefficient \code{mem.within = 1}, which
 mimmicks repeated application of Bayesian rule to the current data 
 using 'old' data as prior.}
 }
+
+param prior: The mean of the prior. If \code{mu = "gcdg"} (the default)
+then \code{mu} is calculated from the Count model coded in 
+\code{dscore:::count_mu_gcdg()}. Specify \code{mu = "reference"} in order
+to take it from the age-dependent reference (default < 0.22).
 }
 \examples{
 \dontrun{

@@ -25,7 +25,8 @@ and 2) to specify age-dependent priors.}
 named \code{delta} containing the item difficulties estimated from the Rasch model in the 
 prefferred metric/scale.}
 
-\item{metric}{Either \code{metric = "logit"} or \code{metric = "dscore"}.}
+\item{metric}{A string, either \code{"dscore"} or \code{"logit"}, 
+signalling the metric in which the ability are estimated}
 
 \item{full}{DOCUMENTATIONNEEDED}
 

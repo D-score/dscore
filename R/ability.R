@@ -45,18 +45,17 @@
 #' a column named \code{age} specifying decimal age in years.
 #' @param items A character vector with item names in the chosen \code{lexicon}. 
 #' The default is \code{names(scores)}.
-#' @param key A data.frame of two columns containing the \code{items} names and a second column 
-#' named \code{delta} containing the item difficulties estimated from the Rasch model in the 
-#' prefferred metric/scale. 
-#' @param metric Either \code{metric = "logit"} or \code{metric = "dscore"}.
 #' @param age A character with the name of the age variable 
 #' specifying decimal age in years. This information 
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
-#' @param dec Number of decimals of the EAP estimates. Default is 2.
+#' @param key A data.frame of two columns containing the \code{items} names and a second column 
+#' named \code{delta} containing the item difficulties estimated from the Rasch model in the 
+#' prefferred metric/scale. 
 #' @param metric A string, either \code{"dscore"} or \code{"logit"}, 
 #' signalling the metric in which the ability are estimated
 #' @param full DOCUMENTATIONNEEDED
+#' @param dec Number of decimals of the EAP estimates. Default is 2.
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 
 #' \code{sd} or \code{reference}).

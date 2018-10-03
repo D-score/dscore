@@ -54,6 +54,8 @@
 #' is used 1) to break up calculations into separate D-scores per age, 
 #' and 2) to specify age-dependent priors. 
 #' @param dec Number of decimals of the EAP estimates. Default is 2.
+#' @param metric A string, either \code{"dscore"} or \code{"logit"}, 
+#' signalling the metric in which the ability are estimated
 #' @param full DOCUMENTATIONNEEDED
 #' @param \dots Additional parameters passed down to \code{gettau()} (e.g., 
 #' \code{lexicon} or \code{itembank}) and \code{adp()} (e.g., \code{mu} 

@@ -14,10 +14,12 @@
 #' \code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
 #' to take it from the age-dependent reference (default < 0.22).
 #' @param sd Standard deviation of the prior. The default is 5.
-#' @param metric The metric of the prior. The default is dscore. The other option
-#' is logit, then the age dependent prior mu is transformed to the 
-#' logit scale by \code{transform}.
-#' @param transform DOCUMENT HERE
+#' @param metric The metric of the prior. The default is 
+#' \code{metric = "dscore"}. The other option
+#' is \code{metric = "logit"}, then the age-dependent 
+#' prior mu is transformed to the logit scale by \code{transform}.
+#' @param transform Vector of length 2, signalling the intercept 
+#' and slope of the linear transform.
 #' @param reference the LMS reference values. The default uses the 
 #' built-in reference \code{dscore::Dreference} for Dutch children
 #' published in Van Buuren (2014).

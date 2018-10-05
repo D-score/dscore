@@ -48,17 +48,19 @@ adp <- function(age, qp = -10:100, mu = "gcdg", sd = 5,
                 reference = dscore::Dreference, ...) {
   age <- age[1]
   if (mu == "dutch") mu <- ifelse(is.na(age), NA, count_mu_dutch(age))
-  if (mu == "gcdg") {mu <- ifelse(is.na(age), NA,  count_mu_gcdg(age))
-  if(is.null(transform)) transform <- c(66.174355,2.073871)}
+  if (mu == "gcdg")  {
+    mu <- ifelse(is.na(age), NA,  count_mu_gcdg(age))
+    if (is.null(transform)) transform <- c(66.174355, 2.073871)
+    }
   if (mu == "reference")
     mu <- ifelse(is.na(age),
                  NA, 
                  approx(y = reference$mu, x = reference$year,
                         xout = round(age, 4), yleft = reference$mu[1])$y)
-  if(metric=="logit"){ 
+  if(metric == "logit") { 
     if(is.null(transform)) stop("transform coefficients are missing")
-    mu <- (mu-transform[1])/transform[2]
-    sd <- sd/transform[2]
+    mu <- (mu - transform[1]) / transform[2]
+    sd <- sd / transform[2]
     }
   p <- dnorm(qp, mean = mu, sd = sd)
 

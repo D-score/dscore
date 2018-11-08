@@ -7,11 +7,11 @@
 posterior(score, delta, prior, qp)
 }
 \arguments{
-\item{score}{A scalar value between 0 and m}
+\item{score}{Integer, either 0 (fail) and 1 (pass)}
 
-\item{delta}{A vector of length \code{m} with uncentralized difficulties from the Rasch model}
+\item{delta}{Numeric, difficulty parameter}
 
-\item{prior}{vector of prior values on quadrature points \code{qp}}
+\item{prior}{Vector of prior values on quadrature points \code{qp}}
 
 \item{qp}{vector of equally spaced quadrature points}
 }
@@ -24,28 +24,12 @@ Calculate posterior for one item given score, difficulty and prior
 \details{
 This function assumes that the difficulties have been estimated by 
 a binary Rasch model (e.g. by 
-\code{sirt::rasch.pairwise.itemcluster()}) or - more generally - by 
-a polytomous Rasch model (e.g. by \code{RUMM2030}), and 
-transformed onto the 
-appropriate scale. The response vector takes on values
-\code{0:m}. The binary Rasch model assumes \code{m = 1}. The D-score
-calculation assumes binary scores. 
-
-Note: This function is intended to be used internally and 
-does not check input arguments. Use \code{dscore()} to estimate
-D-score from data.
-}
-\references{
-Andrich D. Rasch Models for Measurement. Newbury Park: 
-Sage Publications; 1988.
-
-RUMM Laboratories. RUMM 2030. 
-Rasch Unidimensional Measurement Models. Perth: 2015.
+\code{sirt::rasch.pairwise.itemcluster()}).
 }
 \seealso{
 \code{\link{dscore}}, \code{\link{adp}}, 
 \code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
 \author{
-Stef van Buuren 2016
+Stef van Buuren 2018
 }

@@ -3,6 +3,7 @@
 #'             recode
 #' @importFrom tidyr gather
 #' @importFrom stats approx dnorm weighted.mean lm na.omit predict
+#'             plogis
 #' @importFrom utils head flush.console
 #' @importFrom grDevices col2rgb rgb
 #' @importFrom lazyeval interp

@@ -2,6 +2,7 @@
 
 export(ability)
 export(adp)
+export(calculate_dscore)
 export(calculate_posterior)
 export(daz)
 export(dscore)

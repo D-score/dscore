@@ -1,3 +1,5 @@
+Meta
+doc
 .DS_Store
 _ignore/
 
@@ -12,20 +14,16 @@ _ignore/
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-
 sftp-config.json
 docs/assets
 docs/index.html
 docs/rd.Rmd
 docs/rd.html
 .Rproj.user
-
 # user file
 notes/
-
 # knitr and R markdown default cache directories
 markdown/*_cache/
 markdown/*_files/
 markdown/*.html
-
 /cache/

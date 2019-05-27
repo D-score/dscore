@@ -40,6 +40,7 @@
 #' \item{lex_smocc}{Item naming, original SMOCC variable names}
 #' \item{lex_ghap}{Item naming used by GHAP platform of BMGF}
 #' \item{lex_gcdg}{Item naming for GCDG project}
+#' \item{lex_gsed}{Item naming for GSED project}
 #' \item{occ}{Occasion number}
 #' \item{labelNL}{Label (Dutch)}
 #' \item{labelEN}{Label (English)}

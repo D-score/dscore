@@ -40,10 +40,10 @@ calculate_dscore <- function(data, items,
   dscore <- data %>%
     select(one_of(c(adm, items))) %>%
     gather(item, score, -one_of(adm), na.rm = TRUE) %>%
-    arrange(country, study, id, age) %>%
-    group_by(study, id, age) %>%
+    arrange(.data$country, .data$study, .data$id, .data$age) %>%
+    group_by(.data$study, .data$id, .data$age) %>%
     summarise(d = dscore::dscore(scores = score, items = item,
-                                 ages = age / 12, mu = mu_count,
+                                 ages = .data$age / 12, mu = mu_count,
                                  itembank = itembank, lexicon = lexicon)) %>%
     ungroup()
   

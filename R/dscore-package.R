@@ -7,7 +7,7 @@
 #' @importFrom utils head flush.console
 #' @importFrom grDevices col2rgb rgb
 #' @importFrom lazyeval interp
-#' @importFrom rlang UQ sym
+#' @importFrom rlang UQ sym .data
 NULL
 
 utils::globalVariables(c("item", "score", "temp_ages", "d", 

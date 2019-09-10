@@ -38,7 +38,6 @@
 #' using 'old' data as prior.}
 #' }
 #' 
-#' @aliases ability 
 #' @param data A data.frame containing columns names \code{items} with PASS/FAIL observations. 
 #' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. Additionally,
@@ -86,10 +85,10 @@
 #'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
 #'data$age <- data$age/12    
 #'items <- dmetric::prepare_items(study="Netherlands 1")$items
-#'ability(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
+#'dscore(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
 #'}
 #' @export
-ability <- function(data, 
+dscore <- function(data, 
                    items, 
                    age = "age", 
                    key = NULL, 

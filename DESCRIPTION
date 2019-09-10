@@ -17,7 +17,8 @@ Suggests:
     knitr,
     testthat,
     ddata,
-    dmetric
+    dmetric,
+    rmarkdown
 Encoding: UTF-8
 License: file LICENSE
 LazyData: TRUE

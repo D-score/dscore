@@ -19,12 +19,12 @@ posterior(score, delta, prior, qp)
 A vector of length \code{length(prior)}
 }
 \description{
-Calculate posterior for one item given score, difficulty and prior
-}
-\details{
 This function assumes that the difficulties have been estimated by 
 a binary Rasch model (e.g. by 
 \code{sirt::rasch.pairwise.itemcluster()}).
+}
+\details{
+Internal function. Not the be called directly.
 }
 \seealso{
 \code{\link{dscore}}, \code{\link{adp}}, 

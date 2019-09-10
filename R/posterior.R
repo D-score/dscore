@@ -1,11 +1,11 @@
 #' Calculate posterior for one item given score, difficulty and prior
 #'
-#' @details
 #' This function assumes that the difficulties have been estimated by 
 #' a binary Rasch model (e.g. by 
 #' \code{sirt::rasch.pairwise.itemcluster()}). 
 #' 
-#' @aliases posterior
+#' @details
+#' Internal function. Not the be called directly. 
 #' @param score Integer, either 0 (fail) and 1 (pass)
 #' @param delta Numeric, difficulty parameter
 #' @param prior Vector of prior values on quadrature points \code{qp}

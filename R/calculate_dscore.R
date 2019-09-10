@@ -42,9 +42,9 @@ calculate_dscore <- function(data, items,
     gather(item, score, -one_of(adm), na.rm = TRUE) %>%
     arrange(.data$country, .data$study, .data$id, .data$age) %>%
     group_by(.data$study, .data$id, .data$age) %>%
-    summarise(d = dscore::dscore(scores = score, items = item,
-                                 ages = .data$age / 12, mu = mu_count,
-                                 itembank = itembank, lexicon = lexicon)) %>%
+    summarise(d = dscore::dscore_vector(scores = score, items = item,
+                                        ages = .data$age / 12, mu = mu_count,
+                                        itembank = itembank, lexicon = lexicon)) %>%
     ungroup()
   
   return(dscore)

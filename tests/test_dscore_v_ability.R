@@ -25,7 +25,7 @@
 #   gather(item, score, -one_of(adm), na.rm = TRUE) %>%
 #   arrange(country, study, id, age) %>%
 #   group_by(study, id, age) %>%
-#   summarise(d = dscore::dscore(scores = score, items = item,
+#   summarise(d = dscore::dscore_vector(scores = score, items = item,
 #                                ages = age, mu = "gcdg",
 #                                itembank = itembank, lexicon = "gcdg")) %>%
 #   ungroup()

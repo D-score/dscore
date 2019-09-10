@@ -86,7 +86,7 @@ gettau(items = names(popsdemo)[item_locations])
 
 ## 2. Reorganize the data into a long matrix
 
-The `dscore()` function takes vectors of item scores, item names and ages. Rearringing the data makes it easy to extract the relevant vectors. We need to create a data set with the following variables: `patid`, `moment`, `age`, `daycor`, `item` and `score`, and select only the rows where we have an observed score.
+The `dscore_vector()` function takes vectors of item scores, item names and ages. Rearringing the data makes it easy to extract the relevant vectors. We need to create a data set with the following variables: `patid`, `moment`, `age`, `daycor`, `item` and `score`, and select only the rows where we have an observed score.
 
 ```{r warnings=FALSE, message=FALSE}
 library("tidyr")
@@ -112,7 +112,7 @@ items <- as.character(child1$items)
 ages <- round(child1$daycor/365.25, 4)
 
 # calculate dscore and daz for each time point for given child
-(d <- dscore(scores, items, ages))
+(d <- dscore_vector(scores, items, ages))
 daz(d)
 ```
 
@@ -131,7 +131,7 @@ data$ages <- round(data$daycor/365.25, 4)
 
 # calculate D-score and DAZ
 ds <- split(data, data$patid)
-dl <- parallel::mclapply(ds, FUN = dscore)
+dl <- parallel::mclapply(ds, FUN = dscore_vector)
 dazl <- lapply(dl, FUN = daz)
 df <- data.frame(
   patid = rep(as.numeric(names(dl)), times = unlist(lapply(dl, length))),

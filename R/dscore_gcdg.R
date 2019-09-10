@@ -27,7 +27,7 @@
 #' @param reference The age-conditional reference used for 
 #' calculating the age-adjusted Z scores, or \code{daz}
 #' @param \dots Parameters passed down to lower-level functions 
-#' \code{dscore()} and \code{daz}.
+#' \code{dscore_vector()} and \code{daz}.
 #' @details 
 #' For efficiency, many developmental tests tailor the difficulty
 #' of the items to the age of the child.  The calculations 
@@ -90,9 +90,9 @@ dscore_gcdg <- function(data,
     mutate(temp_ages = UQ(rlang::sym(agevar))) %>%
     arrange(!!!rlang::syms(splitage)) %>%
     group_by(!!!rlang::syms(splitage)) %>%
-    summarise(d = dscore(scores = score, items = item,
-                         ages = temp_ages, itembank = itembank,
-                         lexicon = lexicon, ...)) %>%
+    summarise(d = dscore_vector(scores = score, items = item,
+                                ages = temp_ages, itembank = itembank,
+                                lexicon = lexicon, ...)) %>%
     ungroup() %>% 
     mutate(temp_ages = UQ(rlang::sym(agevar)),
            daz = daz(d, temp_ages, ref = reference, ...)) %>%

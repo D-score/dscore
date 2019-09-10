@@ -43,7 +43,7 @@ this lexicon are named: \code{b3c1, b3c2, ...}.}
 calculating the age-adjusted Z scores, or \code{daz}}
 
 \item{\dots}{Parameters passed down to lower-level functions 
-\code{dscore()} and \code{daz}.}
+\code{dscore_vector()} and \code{daz}.}
 }
 \description{
 D-score and DAZ calculation according to GCDG-itembank and reference

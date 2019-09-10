@@ -3,7 +3,7 @@ context("ability-dscore")
 # dscore
 items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 age <- round(rep(21/365.25, 3), 4)  # age 21 days
-dsco <- as.vector(dscore(c(1, 0, 0), items, age, dec = 4))
+dsco <- as.vector(dscore_vector(c(1, 0, 0), items, age, dec = 4))
 
 # ability
 data <- data.frame(
@@ -13,7 +13,7 @@ data <- data.frame(
   GSMLEG = 0)
 abil <- ability(data, items = items, dec = 4)$b
 
-test_that("ability() and dscore() produce same D-scores", {
+test_that("ability() and dscore_vector() produce same D-scores", {
   expect_identical(abil, dsco)
 })
 
@@ -37,17 +37,17 @@ key <- data.frame(item = items,
                   stringsAsFactors = FALSE)
 abil <- ability(data, items, age = "age", key = key)
 
-# --- using dscore()
+# --- using dscore_vector()
 
 dsco <- data %>%
   select(patid, age, one_of(items)) %>%
   gather(item, score, -age, -patid, na.rm = TRUE) %>%
   arrange(patid, age) %>%
   group_by(patid, age) %>%
-  summarise(d = dscore::dscore(scores = score, items = item,
-                               ages = age, 
-                               itembank = dscore::itembank, 
-                               lexicon = "ghap")) %>%
+  summarise(d = dscore::dscore_vector(scores = score, items = item,
+                                      ages = age, 
+                                      itembank = dscore::itembank, 
+                                      lexicon = "ghap")) %>%
   ungroup() %>%
   pull(d)
 
@@ -56,7 +56,7 @@ test_that("ability() produces nrow(data) rows", {
   expect_identical(nrow(abil), nrow(data))
 })
 
-# test_that("ability() and dscore() produce same D-scores", {
+# test_that("ability() and dscore_vector() produce same D-scores", {
 #   expect_identical(abil, dsco)
 # })
 

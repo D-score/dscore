@@ -2,12 +2,21 @@
 dscore: Measuring child development by the D-score
 ==================================================
 
-The D-score is a numerical score that measures generic development in children 0-4 years. The D-score can be used to analyze and predict development of children using tools developed for numerical measures, like height and weight.
+The D-score is a numerical score that measures generic development in
+children 0-4 years. The D-score can be used to analyze and predict
+development of children using tools developed for numerical measures,
+like height and weight.
 
 Installation
 ------------
 
-If you have been marked as a collaborator on GitHub, generated a personal access token (PAT) on <https://github.com/settings/tokens>. Store your PAT by `Sys.setenv(GITHUB_PAT = "51he..")`, where `51he..` is the 40-character token. Alternatively, put the line `GITHUB_PAT=51he...` in your `.Renviron` file. The latter method is persistent over sessions. Install the `dscore` package from GitHub as follows:
+If you have been marked as a collaborator on GitHub, generated a
+personal access token (PAT) on
+<a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a>.
+Store your PAT by `Sys.setenv(GITHUB_PAT = "51he..")`, where `51he..` is
+the 40-character token. Alternatively, put the line `GITHUB_PAT=51he...`
+in your `.Renviron` file. The latter method is persistent over sessions.
+Install the `dscore` package from GitHub as follows:
 
 ``` r
 install.packages("devtools")

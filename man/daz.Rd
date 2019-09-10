@@ -8,7 +8,7 @@ daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
   ref = dscore::Dreference, dec = 3)
 }
 \arguments{
-\item{d}{Vector of D-scores, typically calculated by \code{dscore()}}
+\item{d}{Vector of D-scores, typically calculated by \code{dscore_vector()}}
 
 \item{x}{Vector of ages. The default is to take age from 
 \code{names(d)}.}

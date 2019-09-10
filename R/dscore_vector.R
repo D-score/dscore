@@ -14,7 +14,7 @@
 #' prior of about twice the normal variation at the given age.
 #' The method uses Bayes rule. See Bock and Mislevy (1982) for more 
 #' details on the EAP and its variance. 
-#' Optionally, the \code{dscore()} function returns the 
+#' Optionally, the \code{dscore_vector()} function returns the 
 #' full posterior (instead of the EAP) if the argument 
 #' \code{full = TRUE} is specified.
 #' 
@@ -46,7 +46,6 @@
 #' using 'old' data as prior.}
 #' }
 #' 
-#' @aliases dscore 
 #' @param scores A vector containing PASS/FAIL observations 
 #' of a child on one or more developmental milestones. Scores are coded 
 #' numerically as \code{pass = 1} and \code{fail = 0}. 
@@ -102,15 +101,15 @@
 #' items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 #' gettau(items)
 #' age <- round(rep(21/365.25, 3), 4)  # age 21 days
-#' dscore(c(1, 0, 0), items, age)
+#' dscore_vector(c(1, 0, 0), items, age)
 #' 
 #' # two time points, one additional (overlapping) item
 #' items <- c(items, items[3])
 #' age <- round(c(age, 42/365.25), 4)  # add age 42 days
-#' dscore(c(1, 0, 0, 1), items, age)
+#' dscore_vector(c(1, 0, 0, 1), items, age)
 #' 
 #' # save full posterior
-#' fp <- dscore(c(1, 1, 0, 1), items, age, full = TRUE)
+#' fp <- dscore_vector(c(1, 1, 0, 1), items, age, full = TRUE)
 #' plot(fp[[1]]$qp, fp[[1]]$posterior, type = "l",
 #' xlab = "D-score", ylab = "Density", 
 #' main = "Age 21 days: 2 PASS, FAIL at GSMLEG")
@@ -123,28 +122,28 @@
 #' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 #' 
 #' # However a FAIL score signals substantial delay at age 42 days
-#' fp <- dscore(c(1, 1, 0, 0), items, age, full = TRUE)
+#' fp <- dscore_vector(c(1, 1, 0, 0), items, age, full = TRUE)
 #' plot(fp[[2]]$qp, fp[[2]]$posterior, type = "l",
 #' xlab = "D-score", ylab = "Density", main = "Age 42 days: FAIL at GSMLEG")
 #' lines(fp[[2]]$qp, fp[[2]]$start, lty = 2)
 #' 
 #' @export
-dscore <- function(scores, 
-                   items = names(scores), 
-                   ages,
-                   qp = -10:100,
-                   mem.between = 0,
-                   mem.within = 1,
-                   full = FALSE,
-                   dec = 2,
-                   ...) {
+dscore_vector <- function(scores, 
+                          items = names(scores), 
+                          ages,
+                          qp = -10:100,
+                          mem.between = 0,
+                          mem.within = 1,
+                          full = FALSE,
+                          dec = 2,
+                          ...) {
   
   # call dscore as vector
   if (is.data.frame(scores))
-    return(dscore(scores = scores$scores, 
-                  items = scores$items,
-                  ages = scores$ages, 
-                  ...))
+    return(dscore_vector(scores = scores$scores, 
+                         items = scores$items,
+                         ages = scores$ages, 
+                         ...))
   
   # check input length
   if (length(scores) != length(ages)) stop("Arguments `scores` and `ages` of different length")
@@ -155,7 +154,7 @@ dscore <- function(scores,
   if (is.null(tau)) {
     if (!full) return(NA) 
     else stop("No difficulty parameters found for ", 
-               paste0(items, collapse = ", "), ".")
+              paste0(items, collapse = ", "), ".")
   }
   
   # split the data by age
@@ -176,7 +175,7 @@ dscore <- function(scores,
     if (!full) return(NA)
     return(fullpost)
   }
-
+  
   # iterate
   k <- 0                            # valid scores counter
   for (i in 1:length(dg)) {         # loop over unique ages

@@ -4,7 +4,7 @@
 #' The DAZ represents a child's D-score after adjusting 
 #' for age by an external age-conditional reference.
 #' @aliases daz
-#' @param d Vector of D-scores, typically calculated by \code{dscore()}
+#' @param d Vector of D-scores, typically calculated by \code{dscore_vector()}
 #' @param x Vector of ages. The default is to take age from 
 #' \code{names(d)}.
 #' @param x.unit Units given in \code{x} specified by 

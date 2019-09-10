@@ -1,7 +1,5 @@
 ---
 title: "Calculate D-score and DAZ"
-author: "Stef van Buuren"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 bibliography: bibliography.bib
 biblio-style: "apalike"

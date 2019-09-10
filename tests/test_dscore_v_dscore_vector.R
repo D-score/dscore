@@ -1,4 +1,4 @@
-# context("ability")
+# context("dscore")
 # library("dplyr")
 # library("tidyr")
 # 
@@ -12,11 +12,11 @@
 # 
 # # test new ability estimator
 # start <- Sys.time()
-# d1 <- ability(data = data, items = items, age = "age", key = key)
+# d1 <- dscore(data = data, items = items, age = "age", key = key)
 # 
 # # test full posterior output for first row of the data
 # x <- data[1L, ]
-# d11 <- ability(data = x, item = items, age = "age", key = key, full = TRUE)
+# d11 <- dscore(data = x, item = items, age = "age", key = key, full = TRUE)
 # 
 # # compare with original dscore estimator
 # start <- Sys.time()

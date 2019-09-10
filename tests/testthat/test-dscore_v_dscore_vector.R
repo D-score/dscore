@@ -1,19 +1,19 @@
-context("ability-dscore")
+context("dscore vs dscore_vector")
 
-# dscore
+# dscore_vector
 items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 age <- round(rep(21/365.25, 3), 4)  # age 21 days
 dsco <- as.vector(dscore_vector(c(1, 0, 0), items, age, dec = 4))
 
-# ability
+# dscore
 data <- data.frame(
   age = round(21/365.25, 4),
   GSFIXEYE = 1,
   GSRSPCH = 0,
   GSMLEG = 0)
-abil <- ability(data, items = items, dec = 4)$b
+abil <- dscore(data, items = items, dec = 4)$b
 
-test_that("ability() and dscore_vector() produce same D-scores", {
+test_that("dscore() and dscore_vector() produce same D-scores", {
   expect_identical(abil, dsco)
 })
 
@@ -35,7 +35,7 @@ data$age <- round(data$daycor / 365.25, 3)
 key <- data.frame(item = items, 
                   delta = delta, 
                   stringsAsFactors = FALSE)
-abil <- ability(data, items, age = "age", key = key)
+abil <- dscore(data, items, age = "age", key = key)
 
 # --- using dscore_vector()
 
@@ -51,12 +51,12 @@ dsco <- data %>%
   ungroup() %>%
   pull(d)
 
-test_that("ability() produces nrow(data) rows", {
+test_that("dscore() produces nrow(data) rows", {
   expect_identical(length(abil$b), nrow(data))
   expect_identical(nrow(abil), nrow(data))
 })
 
-# test_that("ability() and dscore_vector() produce same D-scores", {
+# test_that("dscore() and dscore_vector() produce same D-scores", {
 #   expect_identical(abil, dsco)
 # })
 

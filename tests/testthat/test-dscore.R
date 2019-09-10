@@ -1,14 +1,15 @@
 context("dscore")
 
-items <- c("b3c31", "b3c32", "b3c33", "b3c34")
-scores <- c(0, 1, 0, 1)
-age <- rep(1, 4)
+# dscore
+data <- data.frame(
+  age = rep(round(21/365.25, 4), 10),
+  GSFIXEYE = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  GSRSPCH =  c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
+  GSMLEG =   c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
+items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
+z <- dscore(data, items = items, dec = 4)
 
-d <- dscore_vector(scores = scores, items = items, ages = age,
-                   itembank = gcdg_itembank, lexicon = "gcdg")
-rm(d)
+test_that("result has nrow(data) rows", {
+  expect_identical(nrow(z), nrow(data))
+})
 
-# no tau found
-items <- c("b3c1", "b3c2", "b3c3", "b3c4")
-d <- dscore_vector(scores = scores, items = items, ages = age,
-                   itembank = gcdg_itembank, lexicon = "gcdg")

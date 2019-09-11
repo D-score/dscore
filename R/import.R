@@ -10,6 +10,3 @@
 #' @importFrom lazyeval  interp
 #' @importFrom rlang     sym UQ .data
 NULL
-
-#utils::globalVariables(c("item", "score", "temp_ages", "d", 
-#                         ".rownum", "delta", "b"))

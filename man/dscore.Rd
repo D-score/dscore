@@ -4,31 +4,31 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(data, items = names(data), id = NULL, xname = "age",
-  xunit = c("decimal", "days", "months"), lexicon = "gsed",
-  model = "807_17", itembank = dscore::itembank, metric = c("dscore",
-  "logit"), prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
-  qp = -10:100, full = FALSE, dec = c(3L, 3L))
+dscore(data, items = names(data), xname = "age", xunit = c("decimal",
+  "days", "months"), lexicon = "gsed", model = "807_17",
+  itembank = dscore::itembank, metric = c("dscore", "logit"),
+  prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
+  qp = -10:100, full = FALSE, dec = 3L)
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
-A row corresponds to an observation of a child at a given age.}
+A row collects all observations made on a child on a set of 
+milestones administered at a given age. The function calculates 
+a D-score for each row. Different rows correspond to different
+children or different ages.}
 
 \item{items}{A character vector containing names of items to be 
 included into the D-score calculation. Milestone scores are coded 
 numerically as \code{1} (pass) and \code{0} (fail). By default, 
-all items in the data are included that 1) appear in the specified 
+all items found in the data are included that 1) appear in the specified 
 lexicon, and 2) that have a difficulty parameter under the specified 
 \code{model}.}
-
-\item{id}{Name of the variable with a child id. If not specified, 
-all rows in \code{data} are expected to apply to the same child.}
 
 \item{xname}{A string with the name of the age variable in 
 \code{data}. The default is \code{"age"}.}
 
 \item{xunit}{A string specifying the unit in which age is measured 
-(either \code{"decimal"}, \code{"days"} or \code{"months"}). 
+(either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
 
 \item{lexicon}{Item naming scheme. The built-in itembank supports
@@ -41,21 +41,21 @@ The built-in itembank supports models \code{"807_17"} (default),
 \code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.}
 
 \item{itembank}{A \code{data.frame} that contains the item names 
-(in various lexicons), the item label, and the item difficulty 
-parameters \code{tau} (under various models). 
+(in various lexicons), the item label, and item difficulty 
+parameters \code{tau} under various models. 
 Lexicon column names start with \code{"lex_"}. 
-The default uses the built-in \code{dscore::itembank} object.}
+The function uses the built-in \code{dscore::itembank} object by 
+default.}
 
 \item{metric}{A string, either \code{"dscore"} (default) or 
-\code{"logit"}, signalling the metric in which ability is estimated.
-See details.}
+\code{"logit"}, signalling the metric in which ability is estimated.}
 
 \item{prior_mean}{A string specifying a column name in \code{data} 
 with the mean of the prior for the D-score calculation. 
 The default \code{prior_mean = ".gcdg"} calculates an age-dependent 
 prior mean internally according to function 
 \code{dscore:::count_mu_gcdg()}.
-reference. The alternative choice \code{prior_mean = ".dutch"} 
+The choice \code{prior_mean = ".dutch"} 
 calculates \code{prior_mean} from the Count model coded in 
 \code{dscore:::count_mu_dutch()}).}
 
@@ -64,50 +64,42 @@ with the standard deviation of the prior for the D-score calculation.
 If not specified, the standard deviation is taken as 5.}
 
 \item{transform}{Vector of length 2, signalling the intercept 
-and slope of the linear transform from the D-score scale to the 
-logit scale. Only needed if \code{metric == "logit"}.}
+and slope respectively of the linear transform that converts an 
+observation in the logit scale to the the D-score scale. Only 
+needed if \code{metric == "logit"}.}
 
-\item{qp}{A number vector of equally spaced quadrature points.
+\item{qp}{Numeric vector of equally spaced quadrature points.
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
-\item{full}{A logical indicating to return the mean of the 
-posterior (\code{full = FALSE}, the default) or the full posterior 
-(\code{full = TRUE}).}
+\item{full}{A logical indicating whether the function should return 
+full posterior. The defaut is (\code{full = FALSE}).}
 
-\item{dec}{Integer vector of length 2 specifying the number of 
-decimals of the ability and DAZ. Default is \code{dec = c(3L, 3L)}.}
+\item{dec}{Integer specifying the number of decimals for 
+rounding the ability estimates and the DAZ. The default is 
+\code{dec = 3}.}
 }
 \value{
-The return result depends on the \code{full} parameter.
-If \code{full == FALSE}, a \code{data.frame} with \code{nrow(data)}
-rows and the following columns:
+A \code{data.frame} with \code{nrow(data)} rows and the following 
+columns:
 \describe{
-\item{\code{n_found}}{Number of items found in the lexicon}
+\item{\code{n_items}}{Number of items found in the lexicon}
 \item{\code{n_valid}}{Number of items with valid (0/1) data}
 \item{\code{p_pass}}{Percentage of passed milestones}
-\item{\code{d}}{Ability estimate, mean of posterior, in scale that 
-conforms to \code{metric} parameter}
-\item{\code{sd}}{Standard deviation of the posterior, in scale that 
-conforms to \code{metric} parameter}
+\item{\code{d}}{Ability estimate, mean of posterior}
+\item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
 \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 }
-If \code{full == TRUE}, a \code{data.frame} with \code{nrow(data)}
-rows and the following columns:
-\describe{
-\item{\code{n_found}}{Number of items found in the lexicon}
-\item{\code{n_valid}}{Number of items with valid (0/1) data}
-\item{\code{p_pass}}{Percentage of passed milestones}
-\item{\code{d_x}}{A series of columns labeled \code{d_x}, where \code{x}
-corresponds to the quadrature points specific in parameter \code{qp}}
-}
+If \code{full == TRUE}, the returned value includes a series of 
+columns \code{d_x}, where \code{x} corresponds to the quadrature 
+points specific in parameter \code{qp}.
 }
 \description{
 This function estimates the D-score, a numeric score that measures
 child development, from PASS/FAIL observations on milestones.
 }
 \details{
-The algorithm is based on the method Bock and Mislevy (1982). The 
+The algorithm is based on the method by Bock and Mislevy (1982). The 
 method uses Bayes rule to update a prior ability into a posterior
 ability. 
 
@@ -138,7 +130,7 @@ Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
 }
 \seealso{
-\code{\link{adp}}, \code{\link{gettau}}, 
+\code{\link{gettau}}, 
 \code{\link{itembank}}, \code{\link{posterior}},
 \code{\link{Dreference}}
 }

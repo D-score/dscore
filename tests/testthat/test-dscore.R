@@ -15,7 +15,7 @@ data <- data.frame(
   GSRSPCH =  c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
   GSMLEG =   c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
 items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
-z <- dscore(data, items = items, lexicon = "ghap", dec = c(4, 4))
+z <- dscore(data, items = items, lexicon = "ghap")
 
 test_that("result has nrow(data) rows", {
   expect_identical(nrow(z), nrow(data))

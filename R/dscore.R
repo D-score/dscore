@@ -4,19 +4,20 @@
 #' child development, from PASS/FAIL observations on milestones. 
 #' 
 #' @param data  A \code{tbl_df} or \code{data.frame} with the data. 
-#' A row corresponds to an observation of a child at a given age.
+#' A row collects all observations made on a child on a set of 
+#' milestones administered at a given age. The function calculates 
+#' a D-score for each row. Different rows correspond to different
+#' children or different ages.
 #' @param items A character vector containing names of items to be 
 #' included into the D-score calculation. Milestone scores are coded 
 #' numerically as \code{1} (pass) and \code{0} (fail). By default, 
-#' all items in the data are included that 1) appear in the specified 
+#' all items found in the data are included that 1) appear in the specified 
 #' lexicon, and 2) that have a difficulty parameter under the specified 
 #' \code{model}.
-#' @param id Name of the variable with a child id. If not specified, 
-#' all rows in \code{data} are expected to apply to the same child.
 #' @param xname A string with the name of the age variable in 
 #' \code{data}. The default is \code{"age"}.
 #' @param xunit A string specifying the unit in which age is measured 
-#' (either \code{"decimal"}, \code{"days"} or \code{"months"}). 
+#' (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 #' The default (\code{"decimal"}) means decimal age in years.
 #' @param lexicon Item naming scheme. The built-in itembank supports
 #' lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
@@ -26,60 +27,53 @@
 #' The built-in itembank supports models \code{"807_17"} (default), 
 #' \code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.
 #' @param itembank A \code{data.frame} that contains the item names 
-#' (in various lexicons), the item label, and the item difficulty 
-#' parameters \code{tau} (under various models). 
+#' (in various lexicons), the item label, and item difficulty 
+#' parameters \code{tau} under various models. 
 #' Lexicon column names start with \code{"lex_"}. 
-#' The default uses the built-in \code{dscore::itembank} object.
+#' The function uses the built-in \code{dscore::itembank} object by 
+#' default.
 #' @param metric A string, either \code{"dscore"} (default) or 
 #' \code{"logit"}, signalling the metric in which ability is estimated.
-#' See details.
 #' @param prior_mean A string specifying a column name in \code{data} 
 #' with the mean of the prior for the D-score calculation. 
 #' The default \code{prior_mean = ".gcdg"} calculates an age-dependent 
 #' prior mean internally according to function 
 #' \code{dscore:::count_mu_gcdg()}.
-#' reference. The alternative choice \code{prior_mean = ".dutch"} 
+#' The choice \code{prior_mean = ".dutch"} 
 #' calculates \code{prior_mean} from the Count model coded in 
 #' \code{dscore:::count_mu_dutch()}).
 #' @param prior_sd A string specifying a column name in \code{data} 
 #' with the standard deviation of the prior for the D-score calculation. 
 #' If not specified, the standard deviation is taken as 5.
 #' @param transform Vector of length 2, signalling the intercept 
-#' and slope of the linear transform from the D-score scale to the 
-#' logit scale. Only needed if \code{metric == "logit"}.
-#' @param qp A number vector of equally spaced quadrature points.
+#' and slope respectively of the linear transform that converts an 
+#' observation in the logit scale to the the D-score scale. Only 
+#' needed if \code{metric == "logit"}.
+#' @param qp Numeric vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values. The default
 #' (\code{qp = -10:100}) is suitable for age range 0-4 years.
-#' @param full A logical indicating to return the mean of the 
-#' posterior (\code{full = FALSE}, the default) or the full posterior 
-#' (\code{full = TRUE}).
-#' @param dec Integer vector of length 2 specifying the number of 
-#' decimals of the ability and DAZ. Default is \code{dec = c(3L, 3L)}.
-#' @return The return result depends on the \code{full} parameter.
-#' If \code{full == FALSE}, a \code{data.frame} with \code{nrow(data)}
-#' rows and the following columns:
+#' @param full A logical indicating whether the function should return 
+#' full posterior. The defaut is (\code{full = FALSE}).
+#' @param dec Integer specifying the number of decimals for 
+#' rounding the ability estimates and the DAZ. The default is 
+#' \code{dec = 3}.
+#' @return 
+#' A \code{data.frame} with \code{nrow(data)} rows and the following 
+#' columns:
 #' \describe{
-#' \item{\code{n_found}}{Number of items found in the lexicon}
+#' \item{\code{n_items}}{Number of items found in the lexicon}
 #' \item{\code{n_valid}}{Number of items with valid (0/1) data}
 #' \item{\code{p_pass}}{Percentage of passed milestones}
-#' \item{\code{d}}{Ability estimate, mean of posterior, in scale that 
-#' conforms to \code{metric} parameter}
-#' \item{\code{sd}}{Standard deviation of the posterior, in scale that 
-#' conforms to \code{metric} parameter}
+#' \item{\code{d}}{Ability estimate, mean of posterior}
+#' \item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
 #' \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 #' }
-#' If \code{full == TRUE}, a \code{data.frame} with \code{nrow(data)}
-#' rows and the following columns:
-#' \describe{
-#' \item{\code{n_found}}{Number of items found in the lexicon}
-#' \item{\code{n_valid}}{Number of items with valid (0/1) data}
-#' \item{\code{p_pass}}{Percentage of passed milestones}
-#' \item{\code{d_x}}{A series of columns labeled \code{d_x}, where \code{x}
-#' corresponds to the quadrature points specific in parameter \code{qp}}
-#' }
+#' If \code{full == TRUE}, the returned value includes a series of 
+#' columns \code{d_x}, where \code{x} corresponds to the quadrature 
+#' points specific in parameter \code{qp}.
 #' 
 #' @details
-#' The algorithm is based on the method Bock and Mislevy (1982). The 
+#' The algorithm is based on the method by Bock and Mislevy (1982). The 
 #' method uses Bayes rule to update a prior ability into a posterior
 #' ability. 
 #' 
@@ -101,7 +95,7 @@
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
 #' @author Stef van Buuren, Iris Eekhout 2019
-#' @seealso \code{\link{adp}}, \code{\link{gettau}}, 
+#' @seealso \code{\link{gettau}}, 
 #' \code{\link{itembank}}, \code{\link{posterior}},
 #' \code{\link{Dreference}}
 #' @examples 
@@ -114,7 +108,6 @@
 #' @export
 dscore <- function(data, 
                    items = names(data),
-                   id = NULL,
                    xname = "age", 
                    xunit = c("decimal", "days", "months"),
                    lexicon = "gsed",
@@ -126,7 +119,7 @@ dscore <- function(data,
                    transform = NULL,
                    qp = -10:100,
                    full = FALSE,
-                   dec = c(3L, 3L)) {
+                   dec = 3L) {
   
   xunit   <- match.arg(xunit)
   metric  <- match.arg(metric)
@@ -134,20 +127,20 @@ dscore <- function(data,
   # get decimal age
   if (!xname %in% names(data))  stop("Variable", xname, "not found")
   a <- switch(xunit,
-              decimal = round(data[, xname], 3),
-              months  = round(data[, xname] / 12, 3),
-              days    = round(data[, xname] / 365.25, 3),
+              decimal = round(data[[xname]], 3),
+              months  = round(data[[xname]] / 12, 3),
+              days    = round(data[[xname]] / 365.25, 3),
               rep(NA, nrow(data)))
-  
+
   # obtain difficulty estimates
   key <- data.frame(
     item = items,
-    delta = gettau(items = items, lexicon = lexicon, itembank = itembank),
+    tau = gettau(items = items, lexicon = lexicon, itembank = itembank),
     stringsAsFactors = FALSE)
   
   # subset items
   items <- intersect(items, names(data))
-  items <- items[!is.na(key$delta)]
+  items <- items[!is.na(key$tau)]
   
   # determine mu for the prior
   mu <- rep(NA, nrow(data))
@@ -167,7 +160,7 @@ dscore <- function(data,
   
   # setup for logit scale
   if (metric == "logit") {
-    key$delta <- (key$delta - transform[1]) / transform[2]
+    key$tau <- (key$tau - transform[1]) / transform[2]
     qp <- (qp - transform[1]) / transform[2]
     mu <- (mu - transform[1]) / transform[2]
     sd <- sd / transform[2]
@@ -190,11 +183,11 @@ dscore <- function(data,
       group_by(.data$.rownum, .data$a) %>%
       summarise(n = n(),
                 b = round(calculate_posterior(scores = .data$score, 
-                                              delta = .data$delta, 
+                                              tau = .data$tau, 
                                               qp  = qp,
                                               mu  = .data$mu,
                                               sd  = .data$sd)$eap, 
-                          digits = dec[1L])) %>%
+                          digits = dec)) %>%
       ungroup() 
     
     data3 <- data.frame(.rownum = 1:nrow(data)) %>%
@@ -209,7 +202,7 @@ dscore <- function(data,
   post <- lapply(data2s, 
                  function(x) {
                    calculate_posterior(scores = x$score, 
-                                       delta = x$delta, 
+                                       tau = x$tau, 
                                        mu = x$mu,
                                        sd = x$sd)})
   return(post)

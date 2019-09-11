@@ -4,8 +4,7 @@
 \alias{calculate_posterior}
 \title{Calculate posterior of ability}
 \usage{
-calculate_posterior(scores, delta, age, qp = -10:100, mem.between = 0,
-  mem.within = 1, metric = metric, ...)
+calculate_posterior(scores, delta, qp, mu, sd)
 }
 \arguments{
 \item{scores}{A vector with PASS/FAIL observations. 
@@ -15,30 +14,13 @@ Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
 \item{delta}{A vector containing the item difficulties for the item scores in \code{scores}
 estimated from the Rasch model in the prefferred metric/scale.}
 
-\item{age}{A vector age in months.}
-
 \item{qp}{A number vector of equally spaced quadrature points.
-This vector should span the range of all posterior values, and 
-have at least 80 elements. The default is 
-\code{qp = -10:100}, which is suitable for a d-score for age range 0-4 years.
-For the ability score in the logit scale qp should span min(logit)-3 to max(logit)+3.}
+This vector should span the range of all D-score values. The default
+(\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
-\item{mem.between}{Fraction of posterior from previous occasion 
-relative to age-dependent prior. The 
-value \code{mem.between = 0} (the default) means that 
-no smoothing over age is performed, while a \code{mem.between = 1} 
-corresponds to maximal smoothing over age. See details.}
+\item{mu}{Numeric scalar. The mean of the prior.}
 
-\item{mem.within}{Fraction of posterior from previous item within
-the same age  relative to age-dependent prior. The 
-value \code{mem.within = 1} (the default) means that all items 
-count equally in the posterior, while a \code{mem.within = 0} 
-corresponds to counting only the last item. See details.}
-
-\item{metric}{The metric of the posterior via the prior. The default is dscore. The other option
-is logit, then the age dependent prior mu is transformed to the logit scale by \code{transform}.}
-
-\item{\dots}{Additional parameters passed down to \code{adp}.}
+\item{sd}{Numeric scalar. Standard deviation of the prior.}
 }
 \description{
 Calculate posterior of ability

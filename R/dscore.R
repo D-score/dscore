@@ -13,32 +13,33 @@
 #' \code{model}.
 #' @param id Name of the variable with a child id. If not specified, 
 #' all rows in \code{data} are expected to apply to the same child.
-#' @param age A character vector of length 2. The first element is 
-#' the name of the age variable in \code{data}. The second element 
-#' specifies the unit in which age is measured (either \code{"decimal"}, 
-#' \code{"days"} or \code{"months"}). The default is 
-#' \code{c("age", "decimal")}.
-#' @param lexicon Item naming scheme. Can be one of 
-#' \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, \code{dutch1983}, 
-#' \code{dutch1996}, \code{"dutch2005"} or \code{"smocc"}.
+#' @param xname A string with the name of the age variable in 
+#' \code{data}. The default is \code{"age"}.
+#' @param xunit A string specifying the unit in which age is measured 
+#' (either \code{"decimal"}, \code{"days"} or \code{"months"}). 
+#' The default (\code{"decimal"}) means decimal age in years.
+#' @param lexicon Item naming scheme. The built-in itembank supports
+#' lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
+#' \code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
+#' and \code{"smocc"}.
 #' @param model The model from which the difficulty estimates are taken.
-#' Currently available are models \code{"807_17"} (default), \code{"565_18"}, 
-#' and \code{"75_0"} and \code{"57_0"}. See details.
+#' The built-in itembank supports models \code{"807_17"} (default), 
+#' \code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.
 #' @param itembank A \code{data.frame} that contains the item names 
 #' (in various lexicons), the item label, and the item difficulty 
 #' parameters \code{tau} (under various models). 
-#' Lexicon column names start with \code{"lex."}. 
+#' Lexicon column names start with \code{"lex_"}. 
 #' The default uses the built-in \code{dscore::itembank} object.
 #' @param metric A string, either \code{"dscore"} (default) or 
 #' \code{"logit"}, signalling the metric in which ability is estimated.
 #' See details.
 #' @param prior_mean A string specifying a column name in \code{data} 
 #' with the mean of the prior for the D-score calculation. 
-#' The default \code{prior_mean = NULL} calculates an age-dependent 
-#' prior mean internally calculated according to function 
+#' The default \code{prior_mean = ".gcdg"} calculates an age-dependent 
+#' prior mean internally according to function 
 #' \code{dscore:::count_mu_gcdg()}.
-#' reference. The choice \code{prior_mean = ".dutch"} calculates
-#' \code{prior_mean} from the Count model coded in 
+#' reference. The alternative choice \code{prior_mean = ".dutch"} 
+#' calculates \code{prior_mean} from the Count model coded in 
 #' \code{dscore:::count_mu_dutch()}).
 #' @param prior_sd A string specifying a column name in \code{data} 
 #' with the standard deviation of the prior for the D-score calculation. 
@@ -49,16 +50,6 @@
 #' @param qp A number vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values. The default
 #' (\code{qp = -10:100}) is suitable for age range 0-4 years.
-#' @param mem_between Fraction of posterior from previous occasion 
-#' relative to age-dependent prior. The 
-#' value \code{mem_between = 0} (the default) means that 
-#' no smoothing over age is performed, while a \code{mem_between = 1} 
-#' corresponds to maximal smoothing over age. See details.
-#' @param mem_within Fraction of posterior from previous item within
-#' the same age relative to age-dependent prior. The 
-#' value \code{mem_within = 1} (the default) means that all items 
-#' count equally in the posterior, while a \code{mem_within = 0} 
-#' corresponds to counting only the last item. See details.
 #' @param full A logical indicating to return the mean of the 
 #' posterior (\code{full = FALSE}, the default) or the full posterior 
 #' (\code{full = TRUE}).
@@ -102,32 +93,6 @@
 #' starting prior is thus somewhat informative for low numbers of 
 #' valid items, and unformative for large number of items (say >10 items).
 #' 
-#' The mixing coefficients \code{mem_between} and \code{mem_within} are 
-#' 0-1 numbers (fractions) that regulate the influence 
-#' of the previous posterior on the prior. 
-#' There are three cases, depending on whether it's the 
-#' first age and first item:
-#' \describe{
-#' \item{First age, first item:}{For the first item at the first age
-#' \code{t}, the starting prior as defined above is used.}
-#' \item{Later age, first item:}{For the first item at the second or 
-#' later age \code{t}, the prior is set to 
-#' \code{mem_between * post + (1 - mem_between) * adp()}, 
-#' where \code{post} is the D-score posterior as calculated from the 
-#' previous age, and where \code{adp()} is the age-dependent prior at
-#' age \code{t}. The mixing coefficient \code{mem_between = 0} by default, which
-#' implies that D-scores of the same child at different ages are calculated 
-#' independently.}
-#' \item{Any age, later item:}{For the second or further items at any 
-#' given age \code{t}, the prior
-#' is set to \code{mem_within * post + (1 - mem_within) * adp()}, where 
-#' \code{post} is the D-score posterior as calculated from the 
-#' previous item within age \code{t}, and 
-#' where \code{adp()} is the age-dependent prior at age \code{t}. 
-#' By default the mixing coefficient \code{mem_within = 1}, which
-#' mimmicks repeated application of Bayesian rule to the current data 
-#' using 'old' data as prior.}
-#' }
 #' @references
 #' Bock DD, Mislevy RJ (1982).  
 #' Adaptive EAP Estimation of Ability in a Microcomputer Environment.
@@ -150,50 +115,71 @@
 dscore <- function(data, 
                    items = names(data),
                    id = NULL,
-                   age = c("age", "decimal"),
-                   lexicon = c("gsed", "gcdg", "ghap", "dutch1983", 
-                               "dutch1996", "dutch2005", "smocc"),
-                   model = c("807_17", "565_18", "75_0", "57_0"), 
+                   xname = "age", 
+                   xunit = c("decimal", "days", "months"),
+                   lexicon = "gsed",
+                   model = "807_17", 
                    itembank = dscore::itembank,
                    metric = c("dscore", "logit"),
-                   prior_mean = NULL,
+                   prior_mean = ".gcdg",
                    prior_sd = NULL,
                    transform = NULL,
                    qp = -10:100,
-                   mem_between = 0,
-                   mem_within = 1,
                    full = FALSE,
                    dec = c(3L, 3L)) {
   
-  lexicon <- match.arg(lexicon)
-  model   <- match.arg(model)
+  xunit   <- match.arg(xunit)
   metric  <- match.arg(metric)
   
   # get decimal age
-  if (length(age) != 2L) stop("Argument `age` not of length 2.")
-  agename <- age[1L]
-  if (!agename %in% names(data))  stop("Variable", agename, "not found")
-  a <- switch(age[2L],
-              decimal = data[, agename],
-              months  = data[, agename] / 12,
-              days    = data[, agename] / 365.25,
+  if (!xname %in% names(data))  stop("Variable", xname, "not found")
+  a <- switch(xunit,
+              decimal = round(data[, xname], 3),
+              months  = round(data[, xname] / 12, 3),
+              days    = round(data[, xname] / 365.25, 3),
               rep(NA, nrow(data)))
   
   # obtain difficulty estimates
   key <- data.frame(
     item = items,
-    delta = gettau(items = items, itembank = itembank, lexicon = lexicon),
+    delta = gettau(items = items, lexicon = lexicon, itembank = itembank),
     stringsAsFactors = FALSE)
-  if (metric == "logit") key$delta <- (key$delta - transform[1]) / transform[2]
   
   # subset items
   items <- intersect(items, names(data))
   items <- items[!is.na(key$delta)]
   
+  # determine mu for the prior
+  mu <- rep(NA, nrow(data))
+  if (prior_mean == ".gcdg") mu <- count_mu_gcdg(a)
+  else if (prior_mean == ".dutch") mu <- count_mu_dutch(a)
+  else if (prior_mean %in% names(data)) mu <- data[, prior_mean]
+  
+  # determine sd for the prior
+  sd <- rep(5, nrow(data))
+  if (is.character(prior_sd) && prior_sd %in% names(data)) sd <- data[, prior_sd]
+  
+  # determine transform if needed
+  if (is.null(transform) && metric == "logit") {
+    if (prior_mean == ".gcdg")  transform <- c(66.174355, 2.073871)
+    if (prior_mean == ".dutch") transform <- c(38.906, 2.1044)  # van buuren 2014
+  }
+  
+  # setup for logit scale
+  if (metric == "logit") {
+    key$delta <- (key$delta - transform[1]) / transform[2]
+    qp <- (qp - transform[1]) / transform[2]
+    mu <- (mu - transform[1]) / transform[2]
+    sd <- sd / transform[2]
+  }
+  
+  # bind difficulty estimates to data
   data2 <- data %>%
     bind_cols(a = a) %>% 
-    mutate(.rownum = 1:n()) %>%
-    select(.data$.rownum, .data$a, items) %>% 
+    mutate(mu = mu, 
+           sd = sd,
+           .rownum = 1:n()) %>%
+    select(.data$.rownum, .data$a, .data$mu, .data$sd, items) %>% 
     gather(key = "item", value = "score", items, na.rm = TRUE) %>%
     arrange(.data$.rownum, .data$item) %>%
     left_join(key, by = "item")
@@ -205,8 +191,9 @@ dscore <- function(data,
       summarise(n = n(),
                 b = round(calculate_posterior(scores = .data$score, 
                                               delta = .data$delta, 
-                                              age = .data$a, 
-                                              metric = metric)$eap, 
+                                              qp  = qp,
+                                              mu  = .data$mu,
+                                              sd  = .data$sd)$eap, 
                           digits = dec[1L])) %>%
       ungroup() 
     
@@ -221,9 +208,9 @@ dscore <- function(data,
   data2s <- split(data2, data2$.rownum)
   post <- lapply(data2s, 
                  function(x) {
-                    calculate_posterior(scores = x$score, 
-                                             delta = x$delta, 
-                                             age = x$a, 
-                                             metric = metric)})
+                   calculate_posterior(scores = x$score, 
+                                       delta = x$delta, 
+                                       mu = x$mu,
+                                       sd = x$sd)})
   return(post)
 }

@@ -1,9 +1,3 @@
-context("dscore vs dscore_vector")
-
-# dscore_vector
-items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
-age <- round(rep(21/365.25, 3), 4)  # age 21 days
-dsco <- as.vector(dscore_vector(c(1, 0, 0), items, age, dec = 4))
 
 # dscore
 data <- data.frame(
@@ -11,12 +5,7 @@ data <- data.frame(
   GSFIXEYE = 1,
   GSRSPCH = 0,
   GSMLEG = 0)
-abil <- dscore(data, items = items, lexicon = "ghap", dec = 4)$b
-
-test_that("dscore() and dscore_vector() produce same D-scores", {
-  expect_identical(abil, dsco)
-})
-
+abil <- dscore(data, lexicon = "ghap", dec = 4)$b
 
 # pops
 items <- names(popsdemo)[8:64]
@@ -35,28 +24,25 @@ data$age <- round(data$daycor / 365.25, 3)
 key <- data.frame(item = items, 
                   delta = delta, 
                   stringsAsFactors = FALSE)
-abil <- dscore(data, items, lexicon = "ghap")
-# next produces warning: attributes are not identical across measure variables; they will be dropped 
-# results are OK though
-# abil2 <- dscore(data, lexicon = "ghap")
+abil <- dscore(data, lexicon = "ghap")
 
 # --- using dscore_vector()
 
-dsco <- data %>%
-  select(patid, age, one_of(items)) %>%
-  gather(item, score, -age, -patid) %>%
-  arrange(patid, age) %>%
-  group_by(patid, age) %>%
-  summarise(d = dscore::dscore_vector(scores = score, items = item,
-                                      ages = age, 
-                                      lexicon = "ghap")) %>%
-  ungroup() %>%
-  pull(d)
-
-test_that("dscore() produces nrow(data) rows", {
-  expect_identical(length(abil$b), nrow(data))
-  expect_identical(nrow(abil), nrow(data))
-})
+# dsco <- data %>%
+#   select(patid, age, one_of(items)) %>%
+#   gather(item, score, -age, -patid) %>%
+#   arrange(patid, age) %>%
+#   group_by(patid, age) %>%
+#   summarise(d = dscore::dscore_vector(scores = score, items = item,
+#                                       ages = age, 
+#                                       lexicon = "ghap")) %>%
+#   ungroup() %>%
+#   pull(d)
+# 
+# test_that("dscore() produces nrow(data) rows", {
+#   expect_identical(length(abil$b), nrow(data))
+#   expect_identical(nrow(abil), nrow(data))
+# })
 
 # test_that("dscore() and dscore_vector() produce same D-scores", {
 #   expect_identical(abil, dsco)

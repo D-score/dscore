@@ -4,12 +4,12 @@
 \alias{posterior}
 \title{Calculate posterior for one item given score, difficulty and prior}
 \usage{
-posterior(score, delta, prior, qp)
+posterior(score, tau, prior, qp)
 }
 \arguments{
 \item{score}{Integer, either 0 (fail) and 1 (pass)}
 
-\item{delta}{Numeric, difficulty parameter}
+\item{tau}{Numeric, difficulty parameter}
 
 \item{prior}{Vector of prior values on quadrature points \code{qp}}
 

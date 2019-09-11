@@ -30,8 +30,7 @@ should be checked. The default is \code{TRUE}.}
 }
 \value{
 A named vector with the difficulty estimate per item with
-\code{length(items)} elements, or \code{NULL} if items are 
-not found.
+\code{length(items)} elements.
 }
 \description{
 Searches the item bank for matching items, and returns the 
@@ -50,5 +49,5 @@ gettau(items = c("v1430", "v1432"), lexicon = "smocc")
 \code{\link{itembank}}, \code{\link{dscore}}
 }
 \author{
-Stef van Buuren 2016
+Stef van Buuren 2019
 }

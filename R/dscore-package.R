@@ -1,18 +1,3 @@
-#' @importFrom dplyr select mutate slice bind_rows arrange %>%
-#'             group_by summarise ungroup left_join one_of n pull
-#'             recode
-#' @importFrom tidyr gather
-#' @importFrom stats approx dnorm weighted.mean lm na.omit predict
-#'             plogis
-#' @importFrom utils head flush.console
-#' @importFrom grDevices col2rgb rgb
-#' @importFrom lazyeval interp
-#' @importFrom rlang UQ sym .data
-NULL
-
-utils::globalVariables(c("item", "score", "temp_ages", "d", 
-                         ".rownum", "delta", "b"))
-
 #' dscore: Measuring child development by the D-score
 #' 
 #' The \code{dscore} package implements several steps needed to 

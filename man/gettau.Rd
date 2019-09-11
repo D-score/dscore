@@ -10,7 +10,7 @@ gettau(items, lexicon = "gsed", itembank = dscore::itembank)
 \item{items}{A character vector containing names of items to be 
 included into the D-score calculation. Milestone scores are coded 
 numerically as \code{1} (pass) and \code{0} (fail). By default, 
-all items in the data are included that 1) appear in the specified 
+all items found in the data are included that 1) appear in the specified 
 lexicon, and 2) that have a difficulty parameter under the specified 
 \code{model}.}
 
@@ -20,10 +20,11 @@ lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"},
 and \code{"smocc"}.}
 
 \item{itembank}{A \code{data.frame} that contains the item names 
-(in various lexicons), the item label, and the item difficulty 
-parameters \code{tau} (under various models). 
+(in various lexicons), the item label, and item difficulty 
+parameters \code{tau} under various models. 
 Lexicon column names start with \code{"lex_"}. 
-The default uses the built-in \code{dscore::itembank} object.}
+The function uses the built-in \code{dscore::itembank} object by 
+default.}
 }
 \value{
 A named vector with the difficulty estimate per item with

@@ -7,7 +7,7 @@
 adp(qp, mu, sd)
 }
 \arguments{
-\item{qp}{A number vector of equally spaced quadrature points.
+\item{qp}{Numeric vector of equally spaced quadrature points.
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 

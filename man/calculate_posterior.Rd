@@ -4,17 +4,17 @@
 \alias{calculate_posterior}
 \title{Calculate posterior of ability}
 \usage{
-calculate_posterior(scores, delta, qp, mu, sd)
+calculate_posterior(scores, tau, qp, mu, sd)
 }
 \arguments{
 \item{scores}{A vector with PASS/FAIL observations. 
 Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
 Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.}
 
-\item{delta}{A vector containing the item difficulties for the item scores in \code{scores}
+\item{tau}{A vector containing the item difficulties for the item scores in \code{scores}
 estimated from the Rasch model in the prefferred metric/scale.}
 
-\item{qp}{A number vector of equally spaced quadrature points.
+\item{qp}{Numeric vector of equally spaced quadrature points.
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 

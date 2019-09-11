@@ -1,4 +1,5 @@
-#' @importFrom dplyr     arrange bind_cols bind_rows group_by left_join 
+#' @importFrom dplyr     arrange bind_cols bind_rows group_by 
+#'                       intersect left_join 
 #'                       mutate n one_of pull recode select slice 
 #'                       summarise ungroup %>%
 #' @importFrom tidyr     gather

@@ -8,22 +8,13 @@ data <- data.frame(
   GSFIXEYE = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   GSRSPCH =  c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
   GSMLEG =   c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
-items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 
-keyd <- data.frame(item = items,
-                   delta = gettau(items = items),
-                   stringsAsFactors = FALSE)
-
-zd <- dscore(data, items = items, dec = 4, metric = "dscore", 
-              key = keyd)$b
+zd <- dscore(data, metric = "dscore", lexicon = "ghap")$b
 
 qpl <- ((-10:100) - transform[1]) / transform[2]
-keyl <- data.frame(item = items,
-                   delta = gettau(items = items),
-                   stringsAsFactors = FALSE)
-keyl$delta <- (keyl$delta - transform[1]) / transform[2]
-zl <- dscore(data, items = items, dec = 4, transform = transform, 
-              qp = qpl, metric = "logit", key = keyl)$b
+# keyl$delta <- (keyl$delta - transform[1]) / transform[2]
+
+zl <- dscore(data, lexicon = "ghap", transform = transform, metric = "logit")$b
 
 test_that("logit and dscore are identical", {
   # expect_identical(zl, (zd - transform[1])/transform[2])

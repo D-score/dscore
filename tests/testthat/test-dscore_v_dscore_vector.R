@@ -11,7 +11,7 @@ data <- data.frame(
   GSFIXEYE = 1,
   GSRSPCH = 0,
   GSMLEG = 0)
-abil <- dscore(data, items = items, dec = 4)$b
+abil <- dscore(data, items = items, lexicon = "ghap", dec = 4)$b
 
 test_that("dscore() and dscore_vector() produce same D-scores", {
   expect_identical(abil, dsco)
@@ -35,18 +35,20 @@ data$age <- round(data$daycor / 365.25, 3)
 key <- data.frame(item = items, 
                   delta = delta, 
                   stringsAsFactors = FALSE)
-abil <- dscore(data, items, age = "age", key = key)
+abil <- dscore(data, items, lexicon = "ghap")
+# next produces warning: attributes are not identical across measure variables; they will be dropped 
+# results are OK though
+# abil2 <- dscore(data, lexicon = "ghap")
 
 # --- using dscore_vector()
 
 dsco <- data %>%
   select(patid, age, one_of(items)) %>%
-  gather(item, score, -age, -patid, na.rm = TRUE) %>%
+  gather(item, score, -age, -patid) %>%
   arrange(patid, age) %>%
   group_by(patid, age) %>%
   summarise(d = dscore::dscore_vector(scores = score, items = item,
                                       ages = age, 
-                                      itembank = dscore::itembank, 
                                       lexicon = "ghap")) %>%
   ungroup() %>%
   pull(d)

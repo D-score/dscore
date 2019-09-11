@@ -20,9 +20,8 @@
 #' should be checked. The default is \code{TRUE}.
 #' @param \dots Additional arguments (ignored).
 #' @return A named vector with the difficulty estimate per item with
-#' \code{length(items)} elements, or \code{NULL} if items are 
-#' not found.
-#' @author Stef van Buuren 2016
+#' \code{length(items)} elements.
+#' @author Stef van Buuren 2019
 #' @seealso \code{\link{itembank}}, \code{\link{dscore}}
 #' @examples 
 #' # difficulty levels in default GHAP lexicon
@@ -46,7 +45,6 @@ gettau <- function(items,
   
   # find exact matching items rows
   p <- match(items, itembank[, lex])
-  if (all(is.na(p))) return(NULL)
   r <- itembank[p, "tau"]
   names(r) <- items
   return(r)

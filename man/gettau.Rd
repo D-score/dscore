@@ -4,29 +4,26 @@
 \alias{gettau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-gettau(items, itembank = dscore::itembank, lexicon = "ghap",
-  check = TRUE, ...)
+gettau(items, lexicon = "gsed", itembank = dscore::itembank)
 }
 \arguments{
-\item{items}{A character vector with item names in the 
-chosen lexicon.}
+\item{items}{A character vector containing names of items to be 
+included into the D-score calculation. Milestone scores are coded 
+numerically as \code{1} (pass) and \code{0} (fail). By default, 
+all items in the data are included that 1) appear in the specified 
+lexicon, and 2) that have a difficulty parameter under the specified 
+\code{model}.}
+
+\item{lexicon}{Item naming scheme. The built-in itembank supports
+lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
+\code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
+and \code{"smocc"}.}
 
 \item{itembank}{A \code{data.frame} that contains the item names 
-(in various lexicons), the item label, the item difficulty parameter
-\code{tau}. Lexicon column names start with \code{"lex."}. 
-The default \code{dscore::itembank} contains the 
-difficulty levels as published in Van Buuren (2014).}
-
-\item{lexicon}{A character string indicating the column in 
-\code{itembank} used to match item names. It must be one of 
-the lexicon columns, e.g., \code{dutch1983}, 
-\code{dutch1996}, \code{dutch2005}, \code{smocc} 
-\code{ghap} or \code{gcdg}. The default is \code{lexicon = "ghap"}.}
-
-\item{check}{Logical that indicates whether the lexicon name
-should be checked. The default is \code{TRUE}.}
-
-\item{\dots}{Additional arguments (ignored).}
+(in various lexicons), the item label, and the item difficulty 
+parameters \code{tau} (under various models). 
+Lexicon column names start with \code{"lex_"}. 
+The default uses the built-in \code{dscore::itembank} object.}
 }
 \value{
 A named vector with the difficulty estimate per item with
@@ -38,11 +35,14 @@ difficulty estimates. Matching is done by item name. Comparisons
 are done in lower case.
 }
 \examples{
-# difficulty levels in default GHAP lexicon
-gettau(items = c("GSFIXEYE", "GSMARMR"))
+# difficulty levels in the GHAP lexicon
+gettau(items = c("ddifmd001", "DDigmd052", "xyz"))
+
+# difficulty levels in the GHAP lexicon
+gettau(items = c("GSFIXEYE", "gsmarm", "GSMARMR"), lexicon = "ghap")
 
 # difficulty levels of same items in the SMOCC lexicon
-gettau(items = c("v1430", "v1432"), lexicon = "smocc")
+gettau(items = c("v1430", "V1432", "v1432", "IdontExist"), lexicon = "smocc")
 
 }
 \seealso{

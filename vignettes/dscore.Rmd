@@ -102,8 +102,8 @@ There are `r nrow(data)` records with a nonmissing item score.
 
 For illustration, let us first calculate the D-score of the first child, with ID 11126. There are 75 scores for this child, spread over four time points. This is a preterm child, so we correct calener age for gestational age as in `daycor`:
 
-```{r}
-child1 <- filter(data, patid == 11126)
+```{r eval=FALSE}
+child1 <- dplyr::filter(data, patid == 11126)
 
 scores <- child1$scores
 items <- as.character(child1$items)
@@ -115,14 +115,14 @@ daz(d)
 ```
 
 If desired, one may also back-calculate the D-score from the standard deviation score by 
-```{r}
+```{r eval=FALSE}
 zad(daz(d))
 ```
 
 If we specify the child identifier \code{patid} as a by-group variable, 
 we may calculate the D-score and DAZ for all children by
 
-```{r}
+```{r eval=FALSE}
 # use age corrected for gestational age
 data <- data.frame(data)
 data$ages <- round(data$daycor/365.25, 4)
@@ -143,7 +143,7 @@ head(df)
 
 Finally, in order to do further analyses, we need to put the estimated D-score and DAZ back into the source data.
 
-```{r}
+```{r eval=FALSE}
 # merge dscore and daz into popsdemo data
 popsdemo$ages <- round(popsdemo$daycor/365.25, 4)
 popsdemo <- merge(popsdemo, df, all.x = TRUE)

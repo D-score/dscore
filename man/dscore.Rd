@@ -4,13 +4,11 @@
 \alias{dscore}
 \title{D-score estimation}
 \usage{
-dscore(data, items = names(data), id = NULL, age = c("age",
-  "decimal"), lexicon = c("gsed", "gcdg", "ghap", "dutch1983",
-  "dutch1996", "dutch2005", "smocc"), model = c("807_17", "565_18",
-  "75_0", "57_0"), itembank = dscore::itembank, metric = c("dscore",
-  "logit"), prior_mean = NULL, prior_sd = NULL, transform = NULL,
-  qp = -10:100, mem_between = 0, mem_within = 1, full = FALSE,
-  dec = c(3L, 3L))
+dscore(data, items = names(data), id = NULL, xname = "age",
+  xunit = c("decimal", "days", "months"), lexicon = "gsed",
+  model = "807_17", itembank = dscore::itembank, metric = c("dscore",
+  "logit"), prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
+  qp = -10:100, full = FALSE, dec = c(3L, 3L))
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
@@ -26,24 +24,26 @@ lexicon, and 2) that have a difficulty parameter under the specified
 \item{id}{Name of the variable with a child id. If not specified, 
 all rows in \code{data} are expected to apply to the same child.}
 
-\item{age}{A character vector of length 2. The first element is 
-the name of the age variable in \code{data}. The second element 
-specifies the unit in which age is measured (either \code{"decimal"}, 
-\code{"days"} or \code{"months"}). The default is 
-\code{c("age", "decimal")}.}
+\item{xname}{A string with the name of the age variable in 
+\code{data}. The default is \code{"age"}.}
 
-\item{lexicon}{Item naming scheme. Can be one of 
-\code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, \code{dutch1983}, 
-\code{dutch1996}, \code{"dutch2005"} or \code{"smocc"}.}
+\item{xunit}{A string specifying the unit in which age is measured 
+(either \code{"decimal"}, \code{"days"} or \code{"months"}). 
+The default (\code{"decimal"}) means decimal age in years.}
+
+\item{lexicon}{Item naming scheme. The built-in itembank supports
+lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
+\code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
+and \code{"smocc"}.}
 
 \item{model}{The model from which the difficulty estimates are taken.
-Currently available are models \code{"807_17"} (default), \code{"565_18"}, 
-and \code{"75_0"} and \code{"57_0"}. See details.}
+The built-in itembank supports models \code{"807_17"} (default), 
+\code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.}
 
 \item{itembank}{A \code{data.frame} that contains the item names 
 (in various lexicons), the item label, and the item difficulty 
 parameters \code{tau} (under various models). 
-Lexicon column names start with \code{"lex."}. 
+Lexicon column names start with \code{"lex_"}. 
 The default uses the built-in \code{dscore::itembank} object.}
 
 \item{metric}{A string, either \code{"dscore"} (default) or 
@@ -52,11 +52,11 @@ See details.}
 
 \item{prior_mean}{A string specifying a column name in \code{data} 
 with the mean of the prior for the D-score calculation. 
-The default \code{prior_mean = NULL} calculates an age-dependent 
-prior mean internally calculated according to function 
+The default \code{prior_mean = ".gcdg"} calculates an age-dependent 
+prior mean internally according to function 
 \code{dscore:::count_mu_gcdg()}.
-reference. The choice \code{prior_mean = ".dutch"} calculates
-\code{prior_mean} from the Count model coded in 
+reference. The alternative choice \code{prior_mean = ".dutch"} 
+calculates \code{prior_mean} from the Count model coded in 
 \code{dscore:::count_mu_dutch()}).}
 
 \item{prior_sd}{A string specifying a column name in \code{data} 
@@ -70,18 +70,6 @@ logit scale. Only needed if \code{metric == "logit"}.}
 \item{qp}{A number vector of equally spaced quadrature points.
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
-
-\item{mem_between}{Fraction of posterior from previous occasion 
-relative to age-dependent prior. The 
-value \code{mem_between = 0} (the default) means that 
-no smoothing over age is performed, while a \code{mem_between = 1} 
-corresponds to maximal smoothing over age. See details.}
-
-\item{mem_within}{Fraction of posterior from previous item within
-the same age relative to age-dependent prior. The 
-value \code{mem_within = 1} (the default) means that all items 
-count equally in the posterior, while a \code{mem_within = 0} 
-corresponds to counting only the last item. See details.}
 
 \item{full}{A logical indicating to return the mean of the 
 posterior (\code{full = FALSE}, the default) or the full posterior 
@@ -132,33 +120,6 @@ is 5 D-score points around this mean D-score, which corresponds to
 approximately twice the normal spread of child of a given age. The
 starting prior is thus somewhat informative for low numbers of 
 valid items, and unformative for large number of items (say >10 items).
-
-The mixing coefficients \code{mem_between} and \code{mem_within} are 
-0-1 numbers (fractions) that regulate the influence 
-of the previous posterior on the prior. 
-There are three cases, depending on whether it's the 
-first age and first item:
-\describe{
-\item{First age, first item:}{For the first item at the first age
-\code{t}, the starting prior as defined above is used.}
-\item{Later age, first item:}{For the first item at the second or 
-later age \code{t}, the prior is set to 
-\code{mem_between * post + (1 - mem_between) * adp()}, 
-where \code{post} is the D-score posterior as calculated from the 
-previous age, and where \code{adp()} is the age-dependent prior at
-age \code{t}. The mixing coefficient \code{mem_between = 0} by default, which
-implies that D-scores of the same child at different ages are calculated 
-independently.}
-\item{Any age, later item:}{For the second or further items at any 
-given age \code{t}, the prior
-is set to \code{mem_within * post + (1 - mem_within) * adp()}, where 
-\code{post} is the D-score posterior as calculated from the 
-previous item within age \code{t}, and 
-where \code{adp()} is the age-dependent prior at age \code{t}. 
-By default the mixing coefficient \code{mem_within = 1}, which
-mimmicks repeated application of Bayesian rule to the current data 
-using 'old' data as prior.}
-}
 }
 \examples{
 \dontrun{

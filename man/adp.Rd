@@ -4,38 +4,16 @@
 \alias{adp}
 \title{Age-dependent prior}
 \usage{
-adp(age, qp = -10:100, mu = "gcdg", sd = 5, metric = "dscore",
-  transform = NULL, reference = dscore::Dreference, ...)
+adp(qp, mu, sd)
 }
 \arguments{
-\item{age}{Age in years. Numeric, single value. If a vector, only the 
-first value will be used.}
-
 \item{qp}{A number vector of equally spaced quadrature points.
-This vector should span the range of all D-score values, and 
-have at least 80 elements. The default is 
-\code{qp = -10:100}, which is suitable for age range 0-4 years.}
+This vector should span the range of all D-score values. The default
+(\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
-\item{mu}{The mean of the prior. If \code{mu = "dutch"} (the default)
-then \code{mu} is calculated from the Count model coded in 
-\code{dscore:::count_mu_dutch()}. Specify \code{mu = "reference"} in order
-to take it from the age-dependent reference (default < 0.22).}
+\item{mu}{Numeric scalar. The mean of the prior.}
 
-\item{sd}{Standard deviation of the prior. The default is 5.}
-
-\item{metric}{The metric of the prior. The default is 
-\code{metric = "dscore"}. The other option
-is \code{metric = "logit"}, then the age-dependent 
-prior mu is transformed to the logit scale by \code{transform}.}
-
-\item{transform}{Vector of length 2, signalling the intercept 
-and slope of the linear transform.}
-
-\item{reference}{the LMS reference values. The default uses the 
-built-in reference \code{dscore::Dreference} for Dutch children
-published in Van Buuren (2014).}
-
-\item{\dots}{Additional parameters (ignored)}
+\item{sd}{Numeric scalar. Standard deviation of the prior.}
 }
 \value{
 A \code{vector} of \code{length(qp)} elements with 
@@ -54,11 +32,11 @@ Van Buuren (2014).
 qp <- -10:80
 
 # calculate and plot three priors
-plot(x = qp, y= adp(1/12, qp), type = "l", 
+plot(x = qp, y= adp(qp, 20, 5), type = "l", 
   main = "Priors at ages of 1, 12 and 24 months", 
   ylab = "Density", xlab = "D-score")
-lines(x = qp, adp(1, qp), lty = 2)
-lines(x = qp, adp(2, qp), lty = 3)
+lines(x = qp, adp(qp, 40, 3), lty = 2)
+lines(x = qp, adp(qp, 60, 6), lty = 3)
 }
 \references{
 Van Buuren S (2014). Growth charts of human development.

@@ -180,30 +180,32 @@ dscore <- function(data,
               rep(NA, nrow(data)))
   
   # obtain difficulty estimates
-  items_lex <- intersect(x = items, y = names(data))
   key <- data.frame(
     item = items,
-    delta = gettau(items = items_lex, itembank = itembank, lexicon = lexicon),
+    delta = gettau(items = items, itembank = itembank, lexicon = lexicon),
     stringsAsFactors = FALSE)
   if (metric == "logit") key$delta <- (key$delta - transform[1]) / transform[2]
-  items_tau <- items_lex[!is.na(key$delta)]
+  
+  # subset items
+  items <- intersect(items, names(data))
+  items <- items[!is.na(key$delta)]
   
   data2 <- data %>%
     bind_cols(a = a) %>% 
     mutate(.rownum = 1:n()) %>%
-    select(.rownum, a, items) %>% 
-    gather(key = item, value = score, items, na.rm = TRUE) %>%
-    arrange(.rownum, item) %>%
+    select(.data$.rownum, .data$a, items) %>% 
+    gather(key = "item", value = "score", items, na.rm = TRUE) %>%
+    arrange(.data$.rownum, .data$item) %>%
     left_join(key, by = "item")
   
   # only return eap in frame
   if (!full) {
     eap <- data2 %>%
-      group_by(.rownum, a) %>%
+      group_by(.data$.rownum, .data$a) %>%
       summarise(n = n(),
-                b = round(calculate_posterior(scores = score, 
-                                              delta = delta, 
-                                              age = a, 
+                b = round(calculate_posterior(scores = .data$score, 
+                                              delta = .data$delta, 
+                                              age = .data$a, 
                                               metric = metric)$eap, 
                           digits = dec[1L])) %>%
       ungroup() 
@@ -211,7 +213,7 @@ dscore <- function(data,
     data3 <- data.frame(.rownum = 1:nrow(data)) %>%
       left_join(eap, by = ".rownum") %>%
       mutate(n = recode(n, .missing = 0L)) %>%
-      select(n, b)
+      select(.data$n, .data$b)
     return(data3)
   }
   

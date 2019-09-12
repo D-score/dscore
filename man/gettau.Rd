@@ -17,7 +17,7 @@ lexicon, and 2) that have a difficulty parameter under the specified
 \item{lexicon}{Item naming scheme. The built-in itembank supports
 lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
 \code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
-and \code{"smocc"}.}
+and \code{"smocc"}. See details.}
 
 \item{itembank}{A \code{data.frame} that contains the item names 
 (in various lexicons), the item label, and item difficulty 

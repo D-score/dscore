@@ -24,13 +24,11 @@ gettau <- function(items,
                    lexicon = "gsed", 
                    itembank = dscore::itembank) {
   
-  # check whether lexicon is a column in item bank
-  lex <- paste("lex", lexicon, sep = "_")
-  q <- pmatch(tolower(lex), tolower(names(itembank)))
-  if (is.na(q)) stop ("Lexicon `", lexicon, "` not found in item bank.")
-  
+  itembank_items <- lexicon(lexicon = lexicon, itembank = itembank, 
+                            na.omit = FALSE)
+
   # find exact matching items rows
-  p <- match(tolower(items), tolower(itembank[, lex]))
+  p <- match(tolower(items), tolower(itembank_items))
   r <- itembank[p, "tau"]
   names(r) <- items
   return(r)

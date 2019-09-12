@@ -6,7 +6,7 @@
 \usage{
 dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   "days", "months"), lexicon = "gsed", model = "807_17",
-  itembank = dscore::itembank, metric = c("dscore", "logit"),
+  itembank = dscore::builtin_itembank, metric = c("dscore", "logit"),
   prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
   qp = -10:100, full = FALSE, dec = 3L)
 }

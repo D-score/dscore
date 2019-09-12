@@ -23,7 +23,7 @@ and \code{"smocc"}. See details.}
 (in various lexicons), the item label, and item difficulty 
 parameters \code{tau} under various models. 
 Lexicon column names start with \code{"lex_"}. 
-The function uses the built-in \code{dscore::itembank} object by 
+The function uses the \code{dscore::builtin_itembank} object by 
 default.}
 }
 \value{

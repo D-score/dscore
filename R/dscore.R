@@ -22,7 +22,7 @@
 #' @param lexicon Item naming scheme. The built-in itembank supports
 #' lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
 #' \code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
-#' and \code{"smocc"}.
+#' and \code{"smocc"}. See details.
 #' @param model The model from which the difficulty estimates are taken.
 #' The built-in itembank supports models \code{"807_17"} (default), 
 #' \code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.
@@ -76,6 +76,21 @@
 #' The algorithm is based on the method by Bock and Mislevy (1982). The 
 #' method uses Bayes rule to update a prior ability into a posterior
 #' ability. 
+#' 
+#' The following table describes the variable names accepted 
+#' under each lexicon:
+#'  
+#' \tabular{lll}{
+#'   Lexicon \tab Example \tab Dataset \cr
+#'   \cr
+#'   \code{gsed}      \tab \code{ddifmd001} \tab Global Scale of Early Development\cr
+#'   \code{gcdg}      \tab \code{acom22}    \tab Global Child Developement Group\cr
+#'   \code{ghap}      \tab \code{GSFIXEYE}  \tab Global Health Analysis Platform\cr
+#'   \code{dutch1983} \tab \code{v1}        \tab Dutch Development Instrument 1983\cr
+#'   \code{dutch1996} \tab \code{v1}        \tab Dutch Development Instrument 1996\cr
+#'   \code{dutch2005} \tab \code{v1}        \tab Dutch Development Instrument 2005\cr
+#'   \code{smocc}     \tab \code{v1430}     \tab SMOCC data variable names 
+#' }
 #' 
 #' The default starting prior is a mean calculated from a so-called 
 #' "Count model" that describes mean D-score as a function of age. The

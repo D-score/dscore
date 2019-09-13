@@ -8,7 +8,8 @@ dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   "days", "months"), lexicon = "gsed", model = "807_17",
   itembank = dscore::builtin_itembank, metric = c("dscore", "logit"),
   prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
-  qp = -10:100, full = FALSE, dec = 3L)
+  qp = -10:100, reference = dscore::Dreference, full = FALSE,
+  dec = 3L)
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
@@ -72,6 +73,12 @@ needed if \code{metric == "logit"}.}
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
+\item{reference}{The LMS reference values. The default uses the 
+built-in reference \code{dscore::Dreference} for Dutch children
+published in Van Buuren (2014). The table should contain the columns
+\code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
+\code{year}, \code{month} or \code{day}.}
+
 \item{full}{A logical indicating whether the function should return 
 full posterior. The defaut is (\code{full = FALSE}).}
 
@@ -83,9 +90,8 @@ rounding the ability estimates and the DAZ. The default is
 A \code{data.frame} with \code{nrow(data)} rows and the following 
 columns:
 \describe{
-\item{\code{n_items}}{Number of items found in the lexicon}
-\item{\code{n_valid}}{Number of items with valid (0/1) data}
-\item{\code{p_pass}}{Percentage of passed milestones}
+\item{\code{n}}{Number of items with valid (0/1) data}
+\item{\code{p}}{Percentage of passed milestones}
 \item{\code{d}}{Ability estimate, mean of posterior}
 \item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
 \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
@@ -122,6 +128,26 @@ When the names in the input data do not correspond to any of these
 schemes, the advice is to rename variables into the most generic 
 and extendable lexicon, the \code{"gsed"}.
 
+The built-in itembank (object \code{builtin_itembank}) supports 
+models \code{"807_17"} (default), \code{"565_18"}, \code{"75_0"} 
+and \code{"57_0"}. The model holds the estimated item difficulties
+from various the D-score models that have been fitted created 
+over time. 
+
+\tabular{llll}{
+  Model \tab Instruments \tab Direct/Caregiver \tab Reference\cr
+  \cr
+  \code{807_17} \tab 22      \tab mixed \tab GSED Team, 2019\cr
+  \code{565_18} \tab 13      \tab direct \tab Weber, 2019\cr
+  \code{75_0}   \tab 1 (DDI 0-4) \tab direct \tab Van Buuren, 2917\cr
+  \code{57_0}   \tab 1 (DDI 0-2) \tab direct \tab Van Buuren, 2014
+}
+
+As a general rule, one should only compare D-scores 
+that are calculated under the same model and the same
+set of quadrature points. For calculating D-scores on new data, 
+the advice is to use the most general model (\code{807_17}).
+
 The default starting prior is a mean calculated from a so-called 
 "Count model" that describes mean D-score as a function of age. The
 Count models are stored as internal functions 
@@ -145,8 +171,24 @@ Bock DD, Mislevy RJ (1982).
 Adaptive EAP Estimation of Ability in a Microcomputer Environment.
 Applied Psychological Measurement, 6(4), 431-444.
 
-Van Buuren S (2014). Growth charts of human development.
+GSED Team (2019).
+\href{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019}{The Global Scale for Early Development (GSED)}. 
+Early Childhood Matters 2019-14, 80-84.
+
+Van Buuren S (2014).
+\href{https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/}{Growth charts of human development}.
 Stat Methods Med Res, 23(4), 346-368.
+
+Van Buuren S, Dusseldorp E, Doove B (2017).
+D-scores and references for ages 2-4 years. The Netherlands. 
+In preparation, 2017-11-27.
+
+Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I, 
+Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH, 
+Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L, 
+Richter L, Black MM (2019). The D-score: a metric for interpreting 
+the early development of infants and toddlers across global settings. 
+BMJ Global Health, accepted for publication.
 }
 \seealso{
 \code{\link{gettau}}, 

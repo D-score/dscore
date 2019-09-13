@@ -118,6 +118,10 @@ under each lexicon:
   \code{smocc}     \tab \code{v1430}     \tab SMOCC data variable names 
 }
 
+When the names in the input data do not correspond to any of these
+schemes, the advice is to rename variables into the most generic 
+and extendable lexicon, the \code{"gsed"}.
+
 The default starting prior is a mean calculated from a so-called 
 "Count model" that describes mean D-score as a function of age. The
 Count models are stored as internal functions 

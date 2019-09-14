@@ -251,13 +251,12 @@ dscore <- function(data,
       sem = sqrt(sum(.data$w * (.data$x - .data$d)^2))
     )
   
-  data4 <- data.frame(.rownum = 1:nrow(data)) %>%
+  # add daz, shape end result
+  data.frame(.rownum = 1:nrow(data)) %>%
     left_join(data3, by = ".rownum") %>%
     mutate(n = recode(.data$n, .missing = 0L),
            daz = daz(d = .data$d, x = .data$a, ref = reference, dec = dec),
            daz = ifelse(is.nan(.data$daz), NA, .data$daz),
            d = round(.data$d, digits = dec)) %>% 
     select(.data$n, .data$p, .data$d, .data$sem, .data$daz)
-  
-  data4
 }

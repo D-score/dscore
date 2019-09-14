@@ -27,7 +27,7 @@ a binary Rasch model (e.g. by
 Internal function. Not the be called directly.
 }
 \seealso{
-\code{\link{dscore}}, \code{\link{adp}}, 
+\code{\link{dscore}}, 
 \code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
 \author{

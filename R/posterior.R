@@ -12,7 +12,7 @@
 #' @param qp vector of equally spaced quadrature points
 #' @return A vector of length \code{length(prior)}
 #' @author Stef van Buuren 2018
-#' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
+#' @seealso \code{\link{dscore}}, 
 #' \code{\link[sirt]{rasch.pairwise.itemcluster}}
 posterior <- function(score, tau, prior, qp)
 {

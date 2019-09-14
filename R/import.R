@@ -1,12 +1,6 @@
-#' @importFrom dplyr     arrange bind_cols bind_rows group_by 
-#'                       intersect left_join 
-#'                       mutate n one_of pull recode select slice 
-#'                       summarise ungroup %>%
+#' @importFrom dplyr     arrange bind_cols group_by intersect left_join 
+#'                       mutate n recode select summarise ungroup %>%
 #' @importFrom tidyr     gather unnest
-#' @importFrom stats     approx dnorm lm na.omit plogis predict 
-#'                       weighted.mean
-#' @importFrom utils     flush.console head
-#' @importFrom grDevices col2rgb rgb
-#' @importFrom lazyeval  interp
-#' @importFrom rlang     sym UQ .data
+#' @importFrom stats     approx dnorm plogis weighted.mean
+#' @importFrom rlang     .data
 NULL

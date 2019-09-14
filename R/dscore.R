@@ -57,8 +57,6 @@
 #' published in Van Buuren (2014). The table should contain the columns
 #' \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
 #' \code{year}, \code{month} or \code{day}.
-#' @param full A logical indicating whether the function should return 
-#' full posterior. The defaut is (\code{full = FALSE}).
 #' @param dec Integer specifying the number of decimals for 
 #' rounding the ability estimates and the DAZ. The default is 
 #' \code{dec = 3}.
@@ -72,9 +70,6 @@
 #' \item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
 #' \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 #' }
-#' If \code{full == TRUE}, the returned value includes a series of 
-#' columns \code{d_x}, where \code{x} corresponds to the quadrature 
-#' points specific in parameter \code{qp}.
 #' 
 #' @details
 #' The algorithm is based on the method by Bock and Mislevy (1982). The 
@@ -179,7 +174,6 @@ dscore <- function(data,
                    transform = NULL,
                    qp = -10:100,
                    reference = dscore::Dreference,
-                   full = FALSE,
                    dec = 3L) {
   
   xunit   <- match.arg(xunit)
@@ -238,38 +232,32 @@ dscore <- function(data,
     arrange(.data$.rownum, .data$item) %>%
     left_join(key, by = "item")
   
-  # only return eap in frame
-  if (!full) {
-    eap <- data2 %>%
-      group_by(.data$.rownum, .data$a) %>%
-      summarise(n = n(),
-                p = round(mean(.data$score), digits = dec),
-                d = calculate_posterior(scores = .data$score, 
-                                        tau = .data$tau, 
-                                        qp  = qp,
-                                        mu  = .data$mu,
-                                        sd  = .data$sd)$eap,
-                sem = NA) %>%
-      ungroup()
-    
-    data3 <- data.frame(.rownum = 1:nrow(data)) %>%
-      left_join(eap, by = ".rownum") %>%
-      mutate(n = recode(.data$n, .missing = 0L),
-             daz = daz(d = .data$d, x = .data$a, ref = reference, dec = dec),
-             daz = ifelse(is.nan(.data$daz), NA, .data$daz),
-             d = round(.data$d, digits = dec)) %>% 
-    select(.data$n, .data$p, .data$d, .data$sem, .data$daz)
-    
-    return(data3)
-  }
+  # summarise n, p, d and sem
+  data3 <- data2 %>%
+    group_by(.data$.rownum, .data$a) %>%
+    summarise(
+      n = n(),
+      p = round(mean(.data$score), digits = dec),
+      x = list(qp),
+      w = list(calculate_posterior(scores = .data$score, 
+                                   tau = .data$tau, 
+                                   qp  = qp,
+                                   mu  = .data$mu,
+                                   sd  = .data$sd)$posterior)) %>% 
+    unnest() %>%
+    group_by(.data$.rownum, .data$a, .data$n, .data$p) %>% 
+    summarise(
+      d = weighted.mean(x = .data$x, w = .data$w),
+      sem = sqrt(sum(.data$w * (.data$x - .data$d)^2))
+    )
   
-  # return full posterior and eap as list
-  data2s <- split(data2, data2$.rownum)
-  post <- lapply(data2s, 
-                 function(x) {
-                   calculate_posterior(scores = x$score, 
-                                       tau = x$tau, 
-                                       mu = x$mu,
-                                       sd = x$sd)})
-  return(post)
+  data4 <- data.frame(.rownum = 1:nrow(data)) %>%
+    left_join(data3, by = ".rownum") %>%
+    mutate(n = recode(.data$n, .missing = 0L),
+           daz = daz(d = .data$d, x = .data$a, ref = reference, dec = dec),
+           daz = ifelse(is.nan(.data$daz), NA, .data$daz),
+           d = round(.data$d, digits = dec)) %>% 
+    select(.data$n, .data$p, .data$d, .data$sem, .data$daz)
+  
+  data4
 }

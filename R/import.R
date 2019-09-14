@@ -2,7 +2,7 @@
 #'                       intersect left_join 
 #'                       mutate n one_of pull recode select slice 
 #'                       summarise ungroup %>%
-#' @importFrom tidyr     gather
+#' @importFrom tidyr     gather unnest
 #' @importFrom stats     approx dnorm lm na.omit plogis predict 
 #'                       weighted.mean
 #' @importFrom utils     flush.console head

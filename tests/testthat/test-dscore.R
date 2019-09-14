@@ -4,7 +4,7 @@ context("dscore")
 data <- data.frame(
   age = rep(round(21/365.25, 4), 10),
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
-  ddicmm029 = c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
+  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
   ddigmd053 = c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
 z <- dscore(data)
 

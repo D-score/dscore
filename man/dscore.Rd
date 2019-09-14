@@ -8,8 +8,7 @@ dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   "days", "months"), lexicon = "gsed", model = "807_17",
   itembank = dscore::builtin_itembank, metric = c("dscore", "logit"),
   prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
-  qp = -10:100, reference = dscore::Dreference, full = FALSE,
-  dec = 3L)
+  qp = -10:100, reference = dscore::Dreference, dec = 3L)
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
@@ -79,9 +78,6 @@ published in Van Buuren (2014). The table should contain the columns
 \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
 \code{year}, \code{month} or \code{day}.}
 
-\item{full}{A logical indicating whether the function should return 
-full posterior. The defaut is (\code{full = FALSE}).}
-
 \item{dec}{Integer specifying the number of decimals for 
 rounding the ability estimates and the DAZ. The default is 
 \code{dec = 3}.}
@@ -96,9 +92,6 @@ columns:
 \item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
 \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 }
-If \code{full == TRUE}, the returned value includes a series of 
-columns \code{d_x}, where \code{x} corresponds to the quadrature 
-points specific in parameter \code{qp}.
 }
 \description{
 This function estimates the D-score, a numeric score that measures

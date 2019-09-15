@@ -86,6 +86,7 @@ rounding the ability estimates and the DAZ. The default is
 A \code{data.frame} with \code{nrow(data)} rows and the following 
 columns:
 \describe{
+\item{\code{a}}{Decimal age}
 \item{\code{n}}{Number of items with valid (0/1) data}
 \item{\code{p}}{Percentage of passed milestones}
 \item{\code{d}}{Ability estimate, mean of posterior}

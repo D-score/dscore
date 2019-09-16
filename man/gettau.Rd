@@ -4,26 +4,24 @@
 \alias{gettau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-gettau(items, lexicon = "gsed", itembank = dscore::itembank)
+gettau(items, key = "gsed", itembank = dscore::builtin_itembank)
 }
 \arguments{
 \item{items}{A character vector containing names of items to be 
 included into the D-score calculation. Milestone scores are coded 
 numerically as \code{1} (pass) and \code{0} (fail). By default, 
-all items found in the data are included that 1) appear in the specified 
-lexicon, and 2) that have a difficulty parameter under the specified 
-\code{model}.}
+D-score calculation is done on all items found in the data 
+that have a difficulty parameter under the specified \code{key}.}
 
-\item{lexicon}{Item naming scheme. The built-in itembank supports
-lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
-\code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
-and \code{"smocc"}. See details.}
+\item{key}{A string that sets the key, the set of difficulty 
+estimates from a fitted Rasch model.
+The built-in keys are: \code{"gsed"} (default), \code{"gcdg"}, 
+and \code{"dutch"}. See details.}
 
-\item{itembank}{A \code{data.frame} that contains the item names 
-(in various lexicons), the item label, and item difficulty 
-parameters \code{tau} under various models. 
-Lexicon column names start with \code{"lex_"}. 
-The function uses the \code{dscore::builtin_itembank} object by 
+\item{itembank}{A \code{data.frame} with columns
+\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain}, 
+\code{mode}, \code{number} and \code{label}.
+The function uses \code{dscore::builtin_itembank} by 
 default.}
 }
 \value{
@@ -38,12 +36,6 @@ are done in lower case.
 \examples{
 # difficulty levels in the GHAP lexicon
 gettau(items = c("ddifmd001", "DDigmd052", "xyz"))
-
-# difficulty levels in the GHAP lexicon
-gettau(items = c("GSFIXEYE", "gsmarm", "GSMARMR"), lexicon = "ghap")
-
-# difficulty levels of same items in the SMOCC lexicon
-gettau(items = c("v1430", "V1432", "v1432", "IdontExist"), lexicon = "smocc")
 
 }
 \seealso{

@@ -6,7 +6,7 @@ data <- data.frame(
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
   ddigmd053 = c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
-z <- dscore(data)
+z <- dscore(data, key = "dutch")
 
 # dscore
 data <- data.frame(
@@ -15,7 +15,7 @@ data <- data.frame(
   GSRSPCH =  c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
   GSMLEG =   c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
 items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
-z <- dscore(data, items = items, lexicon = "ghap")
+# z <- dscore(data, items = items, lexicon = "ghap")
 
 test_that("result has nrow(data) rows", {
   expect_identical(nrow(z), nrow(data))

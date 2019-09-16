@@ -5,7 +5,7 @@ data <- data.frame(
   GSFIXEYE = 1,
   GSRSPCH = 0,
   GSMLEG = 0)
-abil <- dscore(data, lexicon = "ghap", dec = 4)$b
+# abil <- dscore(data, lexicon = "ghap", dec = 4)$b
 
 # pops
 items <- names(popsdemo)[8:64]
@@ -24,7 +24,7 @@ data$age <- round(data$daycor / 365.25, 3)
 key <- data.frame(item = items, 
                   tau = tau, 
                   stringsAsFactors = FALSE)
-abil <- dscore(data, lexicon = "ghap")
+# abil <- dscore(data, lexicon = "ghap")
 
 # --- using dscore_vector()
 

@@ -10,9 +10,9 @@ data <- data.frame(
   GSRSPCH =  c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
   GSMLEG =   c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
 
-zd <- dscore(data, lexicon = "ghap")$b
-zl <- dscore(data, lexicon = "ghap", transform = transform, metric = "logit")$b
-zl <- dscore(data, lexicon = "ghap", metric = "logit")$b
+#zd <- dscore(data, lexicon = "ghap")$b
+#zl <- dscore(data, lexicon = "ghap", transform = transform, metric = "logit")$b
+#zl <- dscore(data, lexicon = "ghap", metric = "logit")$b
 
 # plot(zd, zl, type = "b")
 

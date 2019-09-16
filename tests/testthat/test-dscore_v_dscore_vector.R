@@ -9,21 +9,21 @@ data <- data.frame(
 
 # pops
 items <- names(popsdemo)[8:64]
-itemset <- !is.na(itembank$lex_dutch1983)
-ib <- itembank[itemset,c("lex_dutch1983", "lex_ghap", "labelEN", "tau")]
+# itemset <- !is.na(itembank$lex_dutch1983)
+#ib <- itembank[itemset,c("lex_dutch1983", "lex_ghap", "labelEN", "tau")]
 
-item_locations <- names(popsdemo) %in% items
-names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
-
-tau <- gettau(items = names(popsdemo)[item_locations])
-items <- names(tau)
-
-data <- popsdemo
-data$age <- round(data$daycor / 365.25, 3)
-
-key <- data.frame(item = items, 
-                  tau = tau, 
-                  stringsAsFactors = FALSE)
+# item_locations <- names(popsdemo) %in% items
+# names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
+# 
+# tau <- gettau(items = names(popsdemo)[item_locations])
+# items <- names(tau)
+# 
+# data <- popsdemo
+# data$age <- round(data$daycor / 365.25, 3)
+# 
+# key <- data.frame(item = items, 
+#                   tau = tau, 
+#                   stringsAsFactors = FALSE)
 # abil <- dscore(data, lexicon = "ghap")
 
 # --- using dscore_vector()

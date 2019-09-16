@@ -10,11 +10,7 @@
 #' @param x.unit Units given in \code{x} specified by 
 #' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 #' \code{"year"}.
-#' @param ref The LMS reference values. The default uses the 
-#' built-in reference \code{dscore::Dreference} for Dutch children
-#' published in Van Buuren (2014). The table should contain the columns
-#' \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-#' \code{year}, \code{month} or \code{day}.
+#' @param ref The LMS reference values. 
 #' @param dec The number of decimals (default \code{dec = 3}).
 #' @return Named vector with Z-scores with \code{length(d)} elements
 #' @references
@@ -36,7 +32,7 @@
 #' @export
 daz <- function(d, x = as.numeric(names(d)),
                 x.unit = c("year", "month", "day"), 
-                ref = dscore::Dreference, 
+                ref = set_reference("gsed"), 
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
   x.unit <- match.arg(x.unit)
@@ -65,11 +61,7 @@ daz <- function(d, x = as.numeric(names(d)),
 #' @param x.unit Units given in \code{x} specified by 
 #' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 #' \code{"year"}.
-#' @param ref The LMS reference values. The default uses the 
-#' built-in reference \code{dscore::Dreference} for Dutch children
-#' published in Van Buuren (2014). The table should contain the columns
-#' \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-#' \code{year}, \code{month} or \code{day}.
+#' @param ref The LMS reference values. 
 #' @param dec The number of decimals (default \code{dec = 2}).
 #' @return Names vector with D-scores with \code{length(z)} elements
 #' @references
@@ -89,7 +81,7 @@ daz <- function(d, x = as.numeric(names(d)),
 #' @export
 zad <- function(z, x = as.numeric(names(z)),
                 x.unit = c("year", "month", "day"),
-                ref = dscore::Dreference, 
+                ref = set_reference("gsed"), 
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
   x.unit <- match.arg(x.unit)

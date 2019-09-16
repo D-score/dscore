@@ -127,8 +127,8 @@
 #' 
 #' @author Stef van Buuren, Iris Eekhout 2019
 #' @seealso \code{\link{gettau}}, 
-#' \code{\link{itembank}}, \code{\link{posterior}},
-#' \code{\link{Dreference}}
+#' \code{\link{builtin_itembank}}, \code{\link{posterior}},
+#' \code{\link{builtin_references}}
 #' @examples 
 #' \dontrun{
 #'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
@@ -148,7 +148,7 @@ dscore <- function(data,
                    prior_sd = NULL,
                    transform = NULL,
                    qp = -10:100,
-                   reference = dscore::Dreference,
+                   reference = set_reference(key),
                    dec = 3L) {
   
   xunit   <- match.arg(xunit)

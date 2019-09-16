@@ -5,7 +5,7 @@
 \title{D-score standard deviation score: DAZ}
 \usage{
 daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
-  ref = dscore::Dreference, dec = 3)
+  ref = set_reference("gsed"), dec = 3)
 }
 \arguments{
 \item{d}{Vector of D-scores, typically calculated by \code{dscore_vector()}}
@@ -17,11 +17,7 @@ daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
 \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 \code{"year"}.}
 
-\item{ref}{The LMS reference values. The default uses the 
-built-in reference \code{dscore::Dreference} for Dutch children
-published in Van Buuren (2014). The table should contain the columns
-\code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-\code{year}, \code{month} or \code{day}.}
+\item{ref}{The LMS reference values.}
 
 \item{dec}{The number of decimals (default \code{dec = 3}).}
 }

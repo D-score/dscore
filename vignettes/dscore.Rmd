@@ -10,7 +10,7 @@ vignette: >
 ---
 
 ```{r setup, include=FALSE}
-  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
+  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2, eval = FALSE)
   options(width = 80)
 ```
 
@@ -39,7 +39,7 @@ There are 25 children, with four time points each. The names of the items that f
 items <- names(popsdemo)[8:64]
 ```
 
-The names of the items in the data need to be matched against one of the lexicons in the item bank. The item bank in the `dscore` package is called `itembank`. For each item, the item bank contains: 
+The names of the items in the data need to be matched against one of the lexicons in the item bank. The item bank in the `dscore` package is called `builtin_itembank`. For each item, the item bank contains: 
 
 1. The name of the item according to some lexicon (i.e. naming system);
 2. The visit number (`occ`) according to the Dutch child health care system; 
@@ -49,6 +49,7 @@ The names of the items in the data need to be matched against one of the lexicon
 The built-in lexicons are:
 
 ```{r}
+itembank <- builtin_itembank
 names(itembank)[grep("lex_", names(itembank))]
 ```
 

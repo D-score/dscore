@@ -9,44 +9,44 @@ aqicmc008	aqi	cm	c	008		Does your baby make sounds when looking at toys or peopl
 aqicmc009	aqi	cm	c	009		If you call your baby when you are out of sight, does she look in the direction of your voice?
 aqicmc010	aqi	cm	c	010		When a loud noise occurs, does your baby turn to see where the sound came from?
 aqicmc012	aqi	cm	c	012		When playing with sounds, does your baby make grunting, growling, or other deep-toned sounds?
-aqicmc013	aqi	cm	c	013		Does your baby respond to the tone of your voice and stop her activity at least briefly when you say “no-no” to her?
-aqicmc014	aqi	cm	c	014		Does your baby make sounds like “da,” “ga,” “ka,” and “ba”?
+aqicmc013	aqi	cm	c	013		Does your baby respond to the tone of your voice and stop her activity at least briefly when you say "no-no" to her?
+aqicmc014	aqi	cm	c	014		Does your baby make sounds like "da," "ga," "ka," and "ba"?
 aqicmc015	aqi	cm	c	015		If you copy the sounds your baby makes, does your baby repeat the sounds back to you?
-aqicmc016	aqi	cm	c	016		Does your baby make two similar sounds like “ba-ba,” “da-da,” or “ga-ga”? (The sounds do not need to mean anything.)
+aqicmc016	aqi	cm	c	016		Does your baby make two similar sounds like "ba-ba," "da-da," or "ga-ga"? (The sounds do not need to mean anything.)
 aqicmc017	aqi	cm	c	017		Does your baby stop crying when she hears a voice other than yours?
-aqicmc018	aqi	cm	c	018		If you ask your baby to, does he play at least one nursery game even if you don’t show him the activity yourself (such as “bye-bye,” “Peekaboo,” “clap your hands,” “So Big”)?
-aqicmc020	aqi	cm	c	020		When you ask, “Where is the ball (hat, shoe, etc.)?” does your baby look at the object? (Make sure the object is present. Mark “yes” if she knows one object.)
-aqicmc021	aqi	cm	c	021		Does your baby follow one simple command, such as “Come here,” “Give it to me,” or “Put it back,” without your using gestures?
-aqicmc022	aqi	cm	c	022		Does your baby say three words such as “Mama”, “Dada” and "Baba"? (A “word” is a sound or sounds your baby says consistently to mean someone or something)
+aqicmc018	aqi	cm	c	018		If you ask your baby to, does he play at least one nursery game even if you don't show him the activity yourself (such as "bye-bye," "Peekaboo," "clap your hands," "So Big")?
+aqicmc020	aqi	cm	c	020		When you ask, "Where is the ball (hat, shoe, etc.)?" does your baby look at the object? (Make sure the object is present. Mark "yes" if she knows one object.)
+aqicmc021	aqi	cm	c	021		Does your baby follow one simple command, such as "Come here," "Give it to me," or "Put it back," without your using gestures?
+aqicmc022	aqi	cm	c	022		Does your baby say three words such as "Mama", "Dada" and "Baba"? (A "word" is a sound or sounds your baby says consistently to mean someone or something)
 aqicmc023	aqi	cm	c	023		When your child wants something, does she tell you by pointing to it?
-aqicmc024	aqi	cm	c	024		Does your baby shake his head when he means “no” or “yes”?
-aqicmc025	aqi	cm	c	025		Does your baby/child say four or more words in addition to “Mama” and “Dada”?
+aqicmc024	aqi	cm	c	024		Does your baby shake his head when he means "no" or "yes"?
+aqicmc025	aqi	cm	c	025		Does your baby/child say four or more words in addition to "Mama" and "Dada"?
 aqicmc026	aqi	cm	c	026		Without your giving him clues by pointing or using gestures, can your child carry out at least three of these kinds of directions? A. "Put the toy on the table." B."Close the door." C. "Bring me a towel." D."Find your coat." E."Take my hand." F."Get your book."
-aqicmc027	aqi	cm	c	027		When you ask her to, does your baby go into another room to find a familiar toy or object? You might ask, “Where is your ball?” or say, “Bring me your coat” or “Go get your blanket.”
+aqicmc027	aqi	cm	c	027		When you ask her to, does your baby go into another room to find a familiar toy or object? You might ask, "Where is your ball?" or say, "Bring me your coat" or "Go get your blanket."
 aqicmc028	aqi	cm	c	028		When you ask your child to point to her nose, eyes, hair, feet, ears, and so forth, does she correctly point to at least seven body parts? (She can point to parts of herself, you, or a doll.) (Mark "sometimes" if she correctly points to at least three different body parts.)
-aqicmc029	aqi	cm	c	029		Without your showing him, does your child point to the correct picture when you say, “Show me the kitty” or ask, “Where is the dog?” (He needs to identify only one picture correctly.)
-aqicmc030	aqi	cm	c	030		Does your child say eight or more words in addition to “Mama” and “Dada”?
-aqicmc031	aqi	cm	c	031		If you point to a picture of a ball (kitty, cup, hat, etc.) and ask your child, “What is this?” does your child correctly name at least one picture?
-aqicmc032	aqi	cm	c	032		Without giving your child help by pointing or using gestures, ask him to “put the book on the table” and “put the shoe under the chair.” Does your child carry out both of these directions correctly?
-aqicmc033	aqi	cm	c	033		Does your child say 15 or more words in addition to “Mama” and “Dada”?
-aqicmc034	aqi	cm	c	034		Show your child how a zipper on a coat moves up and down, and say, “See, this goes up and down.” Put the zipper to the middle, and ask your child to move the zipper down. Return the zipper to the middle, and ask your child to move the zipper up. Do this several times, placing the zipper in the middle before asking your child to move it up or down. Does your child consistently move the zipper up when you say “up” and down when you say “down”?
-aqicmc035	aqi	cm	c	035		Does your child imitate a two-word sentence? For example, when you say a two-word phrase, such as “Mama eat,” “Daddy play,” “Go home,” or “What’s this?” does your child say both words back to you? (Mark “yes” even if his words are difficult to understand.)
-aqicmc036	aqi	cm	c	036		Does your child say two or three words that represent different ideas together, such as “See dog,” “Mommy come home,” or “Kitty gone”? (Don’t count word combinations that express one idea, such as “Bye-bye,” “All gone,” “All right,” and “What’s that?”) Please give an example of your child’s word combinations:
-aqicmc037	aqi	cm	c	037		When looking at a picture book, does your child tell you what is happening or what action is taking place in the picture? (for example, “barking,” “running,” “eating,” and “crying”) You may ask, “What is the dog (or boy) doing?”
-aqicmc038	aqi	cm	c	038		When you ask, “What is your name?” does your child say her first name or nickname?
-aqicmc039	aqi	cm	c	039		Does your child correctly use at least two words like “me,” “I,” “mine,” and “you”?
+aqicmc029	aqi	cm	c	029		Without your showing him, does your child point to the correct picture when you say, "Show me the kitty" or ask, "Where is the dog?" (He needs to identify only one picture correctly.)
+aqicmc030	aqi	cm	c	030		Does your child say eight or more words in addition to "Mama" and "Dada"?
+aqicmc031	aqi	cm	c	031		If you point to a picture of a ball (kitty, cup, hat, etc.) and ask your child, "What is this?" does your child correctly name at least one picture?
+aqicmc032	aqi	cm	c	032		Without giving your child help by pointing or using gestures, ask him to "put the book on the table" and "put the shoe under the chair." Does your child carry out both of these directions correctly?
+aqicmc033	aqi	cm	c	033		Does your child say 15 or more words in addition to "Mama" and "Dada"?
+aqicmc034	aqi	cm	c	034		Show your child how a zipper on a coat moves up and down, and say, "See, this goes up and down." Put the zipper to the middle, and ask your child to move the zipper down. Return the zipper to the middle, and ask your child to move the zipper up. Do this several times, placing the zipper in the middle before asking your child to move it up or down. Does your child consistently move the zipper up when you say "up" and down when you say "down"?
+aqicmc035	aqi	cm	c	035		Does your child imitate a two-word sentence? For example, when you say a two-word phrase, such as "Mama eat," "Daddy play," "Go home," or "What's this?" does your child say both words back to you? (Mark "yes" even if his words are difficult to understand.)
+aqicmc036	aqi	cm	c	036		Does your child say two or three words that represent different ideas together, such as "See dog," "Mommy come home," or "Kitty gone"? (Don't count word combinations that express one idea, such as "Bye-bye," "All gone," "All right," and "What's that?") Please give an example of your child's word combinations:
+aqicmc037	aqi	cm	c	037		When looking at a picture book, does your child tell you what is happening or what action is taking place in the picture? (for example, "barking," "running," "eating," and "crying") You may ask, "What is the dog (or boy) doing?"
+aqicmc038	aqi	cm	c	038		When you ask, "What is your name?" does your child say her first name or nickname?
+aqicmc039	aqi	cm	c	039		Does your child correctly use at least two words like "me," "I," "mine," and "you"?
 aqicmc040	aqi	cm	c	040		Does your child make sentences that are three or four words long? Please give an example:
-aqicmc041	aqi	cm	c	041		Without your giving help by pointing or repeating directions, does your child follow three directions that are unrelated to one another? Give all three directions before your child starts. For example, you may ask your child to “Clap your hands, walk to the door, and sit down," or “Give me the pen, open the book, and stand up.”                                       (5/26/10 this item was corrected to match the published version,ASQ3 English text)
-aqicmc042	aqi	cm	c	042		Does your child answer the following questions:  (Mark "sometimes" if your child answers only one question.) “What do you do when you are hungry?” (Acceptable answers include: “get food,” “eat,” “ask for something to eat,” and “have a snack.”) Please write your child’s response: “What do you do when you are tired?” (Acceptable answers include: “take a nap,” “rest,” “go to sleep,” “go to bed,” “lie down,” and “sit down.”) Please write your child’s response:.
-aqicmc043	aqi	cm	c	043		Does your child use four- and five-word sentences? For example, does your child say, “I want the car”? Please write an example:
-aqicmc044	aqi	cm	c	044		Does your child name at least three items from a common category? For example, if you say to your child, “Tell me some things that you can eat,” does your child answer with something like, “Cookies, eggs, and cereal”? Or if you say, “Tell me the names of some animals,” does your child answer with something like, “cow, dog, and elephant”?
-aqicmc045	aqi	cm	c	045		Does your child use endings of words, such as “s,” “ed,” and “ing”? For example, does your child say things like, “I see two cats,” “I am playing,” or “I kicked the ball”?
-aqicmc051	aqi	cm	c	051		When talking about something that already happened, does your child use words that end in “ed,” such as "walked", "jumped", or"played"? Ask your child questions, such as “How did you get to the store?” (“We walked.”) “What did you do at your friend’s house?” (“We played.”) Please write an example:
-aqicmc052	aqi	cm	c	052		Does your child tell you at least two things about common objects? For example, if you say to your child, “Tell me about your ball,” does he say something like, “It’s round. I throw it. It’s big”?
-aqicmc055	aqi	cm	c	055		Does your child use all of the words in a sentence (for example, “a,” “the,” “am,” “is,” and “are”) to make complete sentences, such as “I am going to the park,” or “ Is there a toy to play with?” or “ Are you coming, too?”
-aqicmc060	aqi	cm	c	060		Does your child repeat the sentences shown below back to you, without any mistakes?(Read the sentences one at a time. You may repeat each sentence one time. Mark "yes" if your child repeats both sentences without mistakes or “sometimes” if your child repeats one sentence without mistakes. Jane hides her shoes for Maria to find. Al read the blue book under his bed.
-aqicmc061	aqi	cm	c	061		When you ask, “What is your name?” does your child say both her first and last names?
-aqicmc065	aqi	cm	c	065		Does your child use comparison words, such as "heavier," "stronger", or "shorter"? Ask your child questions, such as “A car is big, but a bus is _____” (bigger); “A cat is heavy, but a man is _____” (heavier); “A TV is small, but a book is _____” (smaller). Please write an example:
+aqicmc041	aqi	cm	c	041		Without your giving help by pointing or repeating directions, does your child follow three directions that are unrelated to one another? Give all three directions before your child starts. For example, you may ask your child to "Clap your hands, walk to the door, and sit down," or "Give me the pen, open the book, and stand up."                                       (5/26/10 this item was corrected to match the published version,ASQ3 English text)
+aqicmc042	aqi	cm	c	042		Does your child answer the following questions:  (Mark "sometimes" if your child answers only one question.) "What do you do when you are hungry?" (Acceptable answers include: "get food," "eat," "ask for something to eat," and "have a snack.") Please write your child's response: "What do you do when you are tired?" (Acceptable answers include: "take a nap," "rest," "go to sleep," "go to bed," "lie down," and "sit down.") Please write your child's response:.
+aqicmc043	aqi	cm	c	043		Does your child use four- and five-word sentences? For example, does your child say, "I want the car"? Please write an example:
+aqicmc044	aqi	cm	c	044		Does your child name at least three items from a common category? For example, if you say to your child, "Tell me some things that you can eat," does your child answer with something like, "Cookies, eggs, and cereal"? Or if you say, "Tell me the names of some animals," does your child answer with something like, "cow, dog, and elephant"?
+aqicmc045	aqi	cm	c	045		Does your child use endings of words, such as "s," "ed," and "ing"? For example, does your child say things like, "I see two cats," "I am playing," or "I kicked the ball"?
+aqicmc051	aqi	cm	c	051		When talking about something that already happened, does your child use words that end in "ed," such as "walked", "jumped", or"played"? Ask your child questions, such as "How did you get to the store?" ("We walked.") "What did you do at your friend's house?" ("We played.") Please write an example:
+aqicmc052	aqi	cm	c	052		Does your child tell you at least two things about common objects? For example, if you say to your child, "Tell me about your ball," does he say something like, "It's round. I throw it. It's big"?
+aqicmc055	aqi	cm	c	055		Does your child use all of the words in a sentence (for example, "a," "the," "am," "is," and "are") to make complete sentences, such as "I am going to the park," or " Is there a toy to play with?" or " Are you coming, too?"
+aqicmc060	aqi	cm	c	060		Does your child repeat the sentences shown below back to you, without any mistakes?(Read the sentences one at a time. You may repeat each sentence one time. Mark "yes" if your child repeats both sentences without mistakes or "sometimes" if your child repeats one sentence without mistakes. Jane hides her shoes for Maria to find. Al read the blue book under his bed.
+aqicmc061	aqi	cm	c	061		When you ask, "What is your name?" does your child say both her first and last names?
+aqicmc065	aqi	cm	c	065		Does your child use comparison words, such as "heavier," "stronger", or "shorter"? Ask your child questions, such as "A car is big, but a bus is _____" (bigger); "A cat is heavy, but a man is _____" (heavier); "A TV is small, but a book is _____" (smaller). Please write an example:
 aqifmc001	aqi	fm	c	001		Does your baby touch her face with her hands?
 aqifmc002	aqi	fm	c	002		Does your baby grasp your finger if you touch the palm of her hand?
 aqifmc003	aqi	fm	c	003		Does your baby hold his hands open or partly open when he is awake (rather than in fists, as they were when he was a newborn)?
@@ -58,7 +58,7 @@ aqifmc012	aqi	fm	c	012		Does your baby reach for or grasp a toy using both hands
 aqifmc013	aqi	fm	c	013		Does your baby pick up a small toy, holding it in the center of her hands with her fingers around it?
 aqifmc014	aqi	fm	c	014		Does your baby reach for a crumb or Cheerio and touch it with his finger or hand? (if he already picks up a small object the size of a pea, mark "yes"  for this item)
 aqifmc015	aqi	fm	c	015		Does your baby try to pick up a crumb or Cheerio by using his thumb and all his fingers in a raking motion, even if he isn't able to pick it up? (if he already picks up the crumb or Cheerio, mark "yes" for this item).
-aqifmc016	aqi	fm	c	016		Does your baby successfully pick up a crumb or Cheerio by using his thumb and all his fingers in a raking motion? (If he already picks up a crumb or Cheerio, mark “yes” for this item.)
+aqifmc016	aqi	fm	c	016		Does your baby successfully pick up a crumb or Cheerio by using his thumb and all his fingers in a raking motion? (If he already picks up a crumb or Cheerio, mark "yes" for this item.)
 aqifmc017	aqi	fm	c	017		Does your baby pick up a small toy with the tips of her thumb and fingers? (You should see a space between the toy and her palm.)
 aqifmc018	aqi	fm	c	018		After one or two tries, does your baby pick up a piece of string with her first finger and thumb? (The string may be attached to a toy.)
 aqifmc019	aqi	fm	c	019		Does your baby pick up a crumb or Cheerio with the tips of his thumb and a finger? He may rest his arm or hand on the table while doing it.
@@ -68,8 +68,8 @@ aqifmc022	aqi	fm	c	022		Does your baby/child help turn the pages of a book? (You
 aqifmc023	aqi	fm	c	023		Does your child turn the pages of a book by himself? (He may turn more than one page at a time.)
 aqifmc024	aqi	fm	c	024		Does your baby/child make a mark on the paper with the tip of a crayon (or pencil or pen) when trying to draw?
 aqifmc025	aqi	fm	c	025		Does your baby/child stack a small block or toy on top of another one? (You could also use spools of thread, small boxes, or toys that are about 1 inch in size.)
-aqifmc027	aqi	fm	c	027		Does your baby/child throw a small ball with a forward arm motion? (If he simply drops the ball, mark “not yet” for this item.)
-aqifmc029	aqi	fm	c	029		Does your child get a spoon into her mouth right side up so that the food usually doesn’t spill?
+aqifmc027	aqi	fm	c	027		Does your baby/child throw a small ball with a forward arm motion? (If he simply drops the ball, mark "not yet" for this item.)
+aqifmc029	aqi	fm	c	029		Does your child get a spoon into her mouth right side up so that the food usually doesn't spill?
 aqifmc030	aqi	fm	c	030		Does your child stack six small blocks or toys on top of each other by himself? Note--add this example to 2-22 only (You could also use spools of thread, small boxes, or toys that are about 1 inch in size.)
 aqifmc031	aqi	fm	c	031		Does your child use a turning motion with her hand while trying to turn doorknobs, wind up toys, twist tops, or screw lids on and off jars?
 aqifmc032	aqi	fm	c	032		Does your child turn pages in a book, one page at a time?
@@ -77,21 +77,21 @@ aqifmc033	aqi	fm	c	033		After your child watches you draw a single circle, ask h
 aqifmc034	aqi	fm	c	034		After your child watches you draw a line from the top of the paper to the bottom with a pencil, crayon, or pen,  ask him to make a line like yours. Do not let your child trace your line. Does your child copy you by drawing a single line in a vertical direction?
 aqifmc035	aqi	fm	c	035		After your child watches you draw a line from one side of the paper to the other side, ask her to make a line like yours. Do not let your child trace your line. Does your child copy you by drawing a single line in a horizontal direction?
 aqifmc036	aqi	fm	c	036		Can your child string small items such as beads, macaroni or pasta "wagon wheels", onto a string or shoelace?
-aqifmc037	aqi	fm	c	037		Does your child try to cut paper with child-safe scissors? She does not need to cut the paper but must get the blades to open and close while holding the paper with the other hand. (You may show your child how to use scissors. Carefully watch your child’s use of scissors for safety reasons.)
+aqifmc037	aqi	fm	c	037		Does your child try to cut paper with child-safe scissors? She does not need to cut the paper but must get the blades to open and close while holding the paper with the other hand. (You may show your child how to use scissors. Carefully watch your child's use of scissors for safety reasons.)
 aqifmc038	aqi	fm	c	038		When drawing, does your child hold a pencil, crayon, or pen between her fingers and thumb like an adult does?
 aqifmc039	aqi	fm	c	039		Does your child put together a five to seven piece interlocking puzzle? (If one is not available, take a full-page picture from a magazine or catalog and cut it into six pieces. Does your child put it back together correctly?)
-aqifmc040	aqi	fm	c	040		Does your child unbutton one or more buttons? (Your child may use his own clothing or a doll’s clothing. )
-aqifmc041	aqi	fm	c	041		Using the shape at right to look at, does your child copy it onto a large piece of paper using a pencil or crayon, without tracing? Your child’s drawing should look like the design of the shape, except it may be different in size.
+aqifmc040	aqi	fm	c	040		Does your child unbutton one or more buttons? (Your child may use his own clothing or a doll's clothing. )
+aqifmc041	aqi	fm	c	041		Using the shape at right to look at, does your child copy it onto a large piece of paper using a pencil or crayon, without tracing? Your child's drawing should look like the design of the shape, except it may be different in size.
 aqifmc042	aqi	fm	c	042		Does your child draw pictures of people that have at least three of the following features: head, eyes, nose, mouth, neck, hair, trunk, arms, hands, legs, or feet?
-aqifmc044	aqi	fm	c	044		Using child-safe scissors, does your child cut a paper in half on a more or less straight line, making the blades go up and down? (Carefully watch your child’s use of scissors for safety reasons.)
-aqifmc048	aqi	fm	c	048		Ask your child to trace on the line below with a pencil. Does your child trace on the line without going off the line more than two times? (Mark “sometimes” if your child goes off the line three times.)
-aqifmc049	aqi	fm	c	049		Using the shapes below to look at, does your child copy at least three shapes onto a large piece of paper using a pencil or crayon, without tracing? (Your child’s drawings should look similar to the design of the shapes below, but they may be different in size.)
-aqifmc050	aqi	fm	c	050		Ask your child to draw a picture of a person on a blank sheet of paper. You may ask your child to “Draw a picture of a girl or a boy.” If your child draws a person with head, body, arms, and legs, mark “yes.” If your child draws a person with only three parts (head, body, arms, or legs), mark “sometimes.” If your child draws a person with two or fewer parts (head, body, arms, or legs), mark “not yet.” Be sure to attach the sheet of paper with your child’s drawing to this questionnaire.
+aqifmc044	aqi	fm	c	044		Using child-safe scissors, does your child cut a paper in half on a more or less straight line, making the blades go up and down? (Carefully watch your child's use of scissors for safety reasons.)
+aqifmc048	aqi	fm	c	048		Ask your child to trace on the line below with a pencil. Does your child trace on the line without going off the line more than two times? (Mark "sometimes" if your child goes off the line three times.)
+aqifmc049	aqi	fm	c	049		Using the shapes below to look at, does your child copy at least three shapes onto a large piece of paper using a pencil or crayon, without tracing? (Your child's drawings should look similar to the design of the shapes below, but they may be different in size.)
+aqifmc050	aqi	fm	c	050		Ask your child to draw a picture of a person on a blank sheet of paper. You may ask your child to "Draw a picture of a girl or a boy." If your child draws a person with head, body, arms, and legs, mark "yes." If your child draws a person with only three parts (head, body, arms, or legs), mark "sometimes." If your child draws a person with two or fewer parts (head, body, arms, or legs), mark "not yet." Be sure to attach the sheet of paper with your child's drawing to this questionnaire.
 aqifmc051	aqi	fm	c	051		Does your child color mostly within the lines in a coloring book or within the lines of a 2 inch circle that you draw? (Your child should not go more than 1/4 inch outside the lines on most of the picture).
-aqifmc052	aqi	fm	c	052		Draw a line across a piece of paper. Using child-safe scissors, does your child cut the paper in half on a more or less straight line, making the blades go up and down? (Carefully watch your child’s use of scissors for safety reasons.)
-aqifmc054	aqi	fm	c	054		Using the shapes below to look at, does your child copy the shapes in the space below without tracing? Your child’s drawings should look similar to the design of the shapes below, but they may be different in size. (Mark “yes” if she copies all three shapes; mark “sometimes” if your child copies two shapes.) (Space for child's shapes.)
-aqifmc055	aqi	fm	c	055		Print your child’s first name. Can your child copy the letters? The letters may be large, backward, or reversed. Mark "sometimes" if your child copies about half of the letters. (Space for adult's printing) (Space for child's printing)
-aqifmc059	aqi	fm	c	059		Using the letters below to look at, does your child copy the letters without tracing? Cover up all of the letters except the letter being copied. Mark “yes” if your child copies four of the letters, and you can read them. Mark “sometimes” if your child copies two or three letters, and you can read them. V H T C A  (Copy letters here.)
+aqifmc052	aqi	fm	c	052		Draw a line across a piece of paper. Using child-safe scissors, does your child cut the paper in half on a more or less straight line, making the blades go up and down? (Carefully watch your child's use of scissors for safety reasons.)
+aqifmc054	aqi	fm	c	054		Using the shapes below to look at, does your child copy the shapes in the space below without tracing? Your child's drawings should look similar to the design of the shapes below, but they may be different in size. (Mark "yes" if she copies all three shapes; mark "sometimes" if your child copies two shapes.) (Space for child's shapes.)
+aqifmc055	aqi	fm	c	055		Print your child's first name. Can your child copy the letters? The letters may be large, backward, or reversed. Mark "sometimes" if your child copies about half of the letters. (Space for adult's printing) (Space for child's printing)
+aqifmc059	aqi	fm	c	059		Using the letters below to look at, does your child copy the letters without tracing? Cover up all of the letters except the letter being copied. Mark "yes" if your child copies four of the letters, and you can read them. Mark "sometimes" if your child copies two or three letters, and you can read them. V H T C A  (Copy letters here.)
 aqigmc001	aqi	gm	c	001		While your baby is on his back, does your he wave his arms and legs, wiggle and squirm?
 aqigmc002	aqi	gm	c	002		When your baby is on his back, does he kick his legs?
 aqigmc003	aqi	gm	c	003		After holding her head up while on her tummy, does your baby lay her head back down on the floor, rather than let it drop or fall forward?
@@ -103,7 +103,7 @@ aqigmc008	aqi	gm	c	008		When your baby is on his tummy, does your baby hold his 
 aqigmc009	aqi	gm	c	009		While your baby is on her back, does your baby bring her hands together over her chest, touching her fingers?
 aqigmc010	aqi	gm	c	010		While your baby is on his back, does your baby lift his legs high enough to see his feet?
 aqigmc011	aqi	gm	c	011		When your is on her tummy, does your she hold her head straight up, looking around? (She can rest on her arms while doing this.)
-aqigmc012	aqi	gm	c	012		When you put your baby on the floor, does she lean on her hands while sitting? (If she already sits up straight without leaning on her hands, mark “yes” for this item.)
+aqigmc012	aqi	gm	c	012		When you put your baby on the floor, does she lean on her hands while sitting? (If she already sits up straight without leaning on her hands, mark "yes" for this item.)
 aqigmc013	aqi	gm	c	013		If you hold both hands just to balance your baby, does he support his own weight while standing?
 aqigmc014	aqi	gm	c	014		When your baby is on her tummy, does she straighten both arms and push her whole chest off the bed or floor?
 aqigmc015	aqi	gm	c	015		Does your baby roll from his back to his tummy, getting both arms out from under him?
@@ -113,14 +113,14 @@ aqigmc018	aqi	gm	c	018		When you stand your baby next to furniture or the crib r
 aqigmc020	aqi	gm	c	020		While holding onto furniture, does your baby lower himself with control (without falling or flopping down)?
 aqigmc021	aqi	gm	c	021		While holding onto furniture, does your baby bend down and pick up a toy from the floor and then return to a standing position?
 aqigmc022	aqi	gm	c	022		Does your baby walk beside furniture while holding on with only one hand?
-aqigmc023	aqi	gm	c	023		When you hold one hand just to balance your baby, does she take several steps forward? (If your baby already walks alone, mark “yes” for this item.)
+aqigmc023	aqi	gm	c	023		When you hold one hand just to balance your baby, does she take several steps forward? (If your baby already walks alone, mark "yes" for this item.)
 aqigmc024	aqi	gm	c	024		Does your baby/child bend over or squat to pick up an object from the floor and then stand up again without any support?
 aqigmc025	aqi	gm	c	025		Does your baby/child climb onto furniture or other large objects such as large climbing blocks?
 aqigmc026	aqi	gm	c	026		Does your baby/child stand up in the middle of the floor by himself and take several steps forward?
 aqigmc027	aqi	gm	c	027		Does your baby/child move around by walking, rather than by crawling on his hands and knees?
 aqigmc028	aqi	gm	c	028		Does your child walk well and seldom fall?
 aqigmc029	aqi	gm	c	029		Does your child climb on an object such as a chair to reach something she wants? (For example, to get a toy on a counter or to "help" you in the kitchen.)
-aqigmc030	aqi	gm	c	030		When you show your child how to kick a large ball, does he try to kick the ball by moving his leg forward or by walking into it? (If your child already kicks a ball, mark “yes” for this item.)
+aqigmc030	aqi	gm	c	030		When you show your child how to kick a large ball, does he try to kick the ball by moving his leg forward or by walking into it? (If your child already kicks a ball, mark "yes" for this item.)
 aqigmc031	aqi	gm	c	031		Does your child walk either up or down at least two steps by himself? He may hold onto the railing or wall. Note- 1-27 and 2-30 add (You can look for this at a store, on a playground, or at home.)
 aqigmc032	aqi	gm	c	032		Does your child walk down stairs if you hold onto one of her hands? She may hold onto the railing or wall. (You can look for this at a store, on a playground, or at home.)
 aqigmc033	aqi	gm	c	033		Does your child run fairly well, stopping herself without bumping into things or falling?
@@ -138,7 +138,7 @@ aqigmc047	aqi	gm	c	047		Without holding onto anything, does your child stand on 
 aqigmc048	aqi	gm	c	048		Does your child hop up and down on either the right or left foot at least one time without losing his balance or falling?
 aqigmc054	aqi	gm	c	054		Does your child jump forward a distance of 20 inches from a standing position, starting with her feet together?
 aqigmc059	aqi	gm	c	059		Does your child skip using alternating feet? You may show her how to do this?
-aqigmc062	aqi	gm	c	062		Does your child hop forward on one foot for a distance of 4–6 feet without putting down the other foot? You may give him two tries on each foot. Mark “sometimes” if he can hop on one foot only.
+aqigmc062	aqi	gm	c	062		Does your child hop forward on one foot for a distance of 46 feet without putting down the other foot? You may give him two tries on each foot. Mark "sometimes" if he can hop on one foot only.
 aqipxc001	aqi	px	c	001		Does your baby look at objects that are 8-10 inches away?
 aqipxc002	aqi	px	c	002		When you move a small toy up and down slowly in front of her face (about 10 inches away), does your baby follow the toy with her eyes?
 aqipxc003	aqi	px	c	003		When you move a toy slowly from side to side in front of your baby's face (about 10 inches away), does your baby follow the toy with his eyes, sometimes turning his head?
@@ -148,7 +148,7 @@ aqipxc006	aqi	px	c	006		When you hold your baby in a sitting position, does he l
 aqipxc007	aqi	px	c	007		When you put a toy in his hand, does your baby put the toy in his mouth?
 aqipxc008	aqi	px	c	008		When you dangle a toy above your baby while she is lying on her back, does your baby wave her arms toward the toy?
 aqipxc009	aqi	px	c	009		Does your baby pick up a toy and put it in his mouth?
-aqipxc010	aqi	px	c	010		When your baby  is on his back, does he turn his head to look for a toy when he drops it? (If he already picks it up, mark “yes” for this item.)
+aqipxc010	aqi	px	c	010		When your baby  is on his back, does he turn his head to look for a toy when he drops it? (If he already picks it up, mark "yes" for this item.)
 aqipxc011	aqi	px	c	011		When your baby is on her back, does she try to get a toy she has dropped if she can see it?
 aqipxc012	aqi	px	c	012		Does your baby play by banging a toy up and down on the floor or table?
 aqipxc013	aqi	px	c	013		When a toy is in front of her, does your baby reach for it with both hands?
@@ -156,12 +156,12 @@ aqipxc014	aqi	px	c	014		Does your baby pass a toy back and forth from one hand t
 aqipxc015	aqi	px	c	015		When holding a toy in his hand, does your baby bang it against another toy on the table?
 aqipxc016	aqi	px	c	016		Does your baby pick up two small toys, one in each hand, and hold onto them for about 1 minute?
 aqipxc017	aqi	px	c	017		After watching you hide a small toy under a piece of paper or cloth, does your baby find it? (Be sure the toy is completely hidden.)
-aqipxc018	aqi	px	c	018		While holding a small toy in each hand, does your baby clap the toys together (like “Pat-a-cake”)?
+aqipxc018	aqi	px	c	018		While holding a small toy in each hand, does your baby clap the toys together (like "Pat-a-cake")?
 aqipxc019	aqi	px	c	019		Does your baby poke at or try to get a crumb or Cheerio that is inside a clear bottle (such as a plastic soda-pop bottle or baby bottle)?
-aqipxc020	aqi	px	c	020		If you put a small toy into a bowl or box, does your baby copy you by putting in a toy, although she may not let go of it? (If she already lets go of the toy into a bowl or box, mark “yes” for this item.)
+aqipxc020	aqi	px	c	020		If you put a small toy into a bowl or box, does your baby copy you by putting in a toy, although she may not let go of it? (If she already lets go of the toy into a bowl or box, mark "yes" for this item.)
 aqipxc021	aqi	px	c	021		Does your baby drop two small toys, one after the other, into a container like a bowl or box? (You may show him how to do it.)
 aqipxc022	aqi	px	c	022		If you give your child a bottle, spoon, or pencil upside down, does he turn it right side up so that he can use it properly?
-aqipxc023	aqi	px	c	023		After you scribble back and forth on paper with a crayon (or a pencil or pen), does your baby/child copy you by scribbling? (If she already scribbles on her own, mark “yes” for this item.)
+aqipxc023	aqi	px	c	023		After you scribble back and forth on paper with a crayon (or a pencil or pen), does your baby/child copy you by scribbling? (If she already scribbles on her own, mark "yes" for this item.)
 aqipxc024	aqi	px	c	024		Does your baby/child drop several small toys, one after another, into a container like a bowl or box? (You may show him how to do it.)
 aqipxc025	aqi	px	c	025		Can your baby/child drop a crumb or Cheerio into a small, clear bottle (such as a plastic soda-pop bottle or baby bottle)?
 aqipxc026	aqi	px	c	026		Without your showing him how, does your child scribble back and forth when you give him a crayon (or pencil or pen)?
@@ -173,23 +173,23 @@ aqipxc031	aqi	px	c	031		Does your child pretend objects are something else? For 
 aqipxc032	aqi	px	c	032		While your child watches, line up four objects like blocks or cars in a row. Does your child copy or imitate you and line up at least two blocks side by side? (You can also use spools of thread, small boxes, or other toys.)
 aqipxc033	aqi	px	c	033		If your child wants something she cannot reach, does she find a chair or box to stand on to reach it (for example to get a toy on a counter or to "help" you in the kitchen)?
 aqipxc034	aqi	px	c	034		After you have shown your baby  how, does he try to get a small toy that is slightly out of reach by using a spoon, stick, or similar tool?
-aqipxc035	aqi	px	c	035		When looking in the mirror, ask “Where is _______?” (Use your child’s name.) Does your child point to her image in the mirror?
+aqipxc035	aqi	px	c	035		When looking in the mirror, ask "Where is _______?" (Use your child's name.) Does your child point to her image in the mirror?
 aqipxc037	aqi	px	c	037		Show your child how to make a bridge with blocks, boxes, or cans, like the example. Does your child copy you by making one like it?
-aqipxc038	aqi	px	c	038		When you say, “Say seven three,” does your child repeat just the two numbers in the same order? Do not repeat the numbers.If necessary, try another pair of numbers and say, “Say eight two.” Your child must repeat just one series of two numbers for you to answer “yes” to this question.
-aqipxc039	aqi	px	c	039		Does your child dress up and “play-act,” pretending to be someone or something else? For example, your child may dress up in different clothes and pretend to be a mommy, daddy, brother, or sister, or an imaginary animal or figure.
+aqipxc038	aqi	px	c	038		When you say, "Say seven three," does your child repeat just the two numbers in the same order? Do not repeat the numbers.If necessary, try another pair of numbers and say, "Say eight two." Your child must repeat just one series of two numbers for you to answer "yes" to this question.
+aqipxc039	aqi	px	c	039		Does your child dress up and "play-act," pretending to be someone or something else? For example, your child may dress up in different clothes and pretend to be a mommy, daddy, brother, or sister, or an imaginary animal or figure.
 aqipxc040	aqi	px	c	040		When you point to the figure and ask your child, "What is this?" Does your child say a word that means a person or something similar? (Mark "yes" for responses like "snowman", "boy", "man", "girl", "Daddy", "spaceman" and "monkey"). Please write your child's response here.
-aqipxc041	aqi	px	c	041		Without your giving help by pointing, does your child follow three different directions using the words “under,” “between,” and “middle”? For example, ask your child to put the shoe "under the couch."  Then ask her to put the ball “ between the chairs” and the book “in the middle of the table.”
-aqipxc042	aqi	px	c	042		When you say, “Say five eight three,” does your child repeat just the three numbers in the same order? Do not repeat the numbers. If necessary, try another series of numbers and say, “Say six nine two.” Your child must repeat just one series of three numbers for you to answer “yes” to this question.
-aqipxc043	aqi	px	c	043		After your child draws a “picture,” even a simple scribble, does your child tell you what she drew? (You may say, “Tell me about your picture,” or ask, “What is this?” to prompt her.)
+aqipxc041	aqi	px	c	041		Without your giving help by pointing, does your child follow three different directions using the words "under," "between," and "middle"? For example, ask your child to put the shoe "under the couch."  Then ask her to put the ball " between the chairs" and the book "in the middle of the table."
+aqipxc042	aqi	px	c	042		When you say, "Say five eight three," does your child repeat just the three numbers in the same order? Do not repeat the numbers. If necessary, try another series of numbers and say, "Say six nine two." Your child must repeat just one series of three numbers for you to answer "yes" to this question.
+aqipxc043	aqi	px	c	043		After your child draws a "picture," even a simple scribble, does your child tell you what she drew? (You may say, "Tell me about your picture," or ask, "What is this?" to prompt her.)
 aqipxc044	aqi	px	c	044		After watching you draw a line from the top of the paper to the bottom with a crayon (or pencil or pen), does your child copy you by drawing a single line on the paper in any direction? (Mark "not yet" if your child scribbles back and forth)
-aqipxc045	aqi	px	c	045		When asked, “Which circle is the smallest?” does your child point to the smallest circle? Ask this question without providing help by pointing, gesturing, or looking at the smallest circle.
-aqipxc046	aqi	px	c	046		When shown objects and asked, “What color is this?” does your child name five different colors like red, blue, yellow, orange, black, white, or pink? (Mark “yes” only if your child answers the question correctly using five colors.)
+aqipxc045	aqi	px	c	045		When asked, "Which circle is the smallest?" does your child point to the smallest circle? Ask this question without providing help by pointing, gesturing, or looking at the smallest circle.
+aqipxc046	aqi	px	c	046		When shown objects and asked, "What color is this?" does your child name five different colors like red, blue, yellow, orange, black, white, or pink? (Mark "yes" only if your child answers the question correctly using five colors.)
 aqipxc047	aqi	px	c	047		If you place five objects in front of your child, can he count them saying, "One, two, three, four, five," in order? Ask the question without providing help by pointing, gesturing, or naming.
 aqipxc048	aqi	px	c	048		Does your child know the following six words for shapes? For example, your child says, "That's a square," when pointing to a box. If she knows at least 3 shapes mark "sometimes". a. circle  b. triangle  c. diamond  d. square  e. rectangle  f. star.
-aqipxc051	aqi	px	c	051		Does your child finish the following sentences using a word that means the opposite of the word that is italicized? For example: “A rock is hard, and a pillow is soft.” Please write your child’s responses below: A cow is big, and a mouse is ______. Ice is cold, and fire is ______. We see stars at night, and we see the sun during the ______. When I throw the ball up, it comes ______. Mark “yes” if she finishes three of four sentences correctly. Mark “sometimes” if she finishes two of four sentences correctly.
-aqipxc052	aqi	px	c	052		Does your child know the names of numbers?( Mark “yes” if he identifies the three numbers (3, 1, 2) below. Mark “sometimes” if he identifies two numbers.)
-aqipxc053	aqi	px	c	053		Does your child name at least four letters in her name? Point to the letters and ask, “What letter is this?” (Point to the letters out of order.)
-aqipxc055	aqi	px	c	055		Does your child count up to 15 without making mistakes? If so, mark “yes.” If your child counts to 12 without making mistakes, mark “sometimes.”
+aqipxc051	aqi	px	c	051		Does your child finish the following sentences using a word that means the opposite of the word that is italicized? For example: "A rock is hard, and a pillow is soft." Please write your child's responses below: A cow is big, and a mouse is ______. Ice is cold, and fire is ______. We see stars at night, and we see the sun during the ______. When I throw the ball up, it comes ______. Mark "yes" if she finishes three of four sentences correctly. Mark "sometimes" if she finishes two of four sentences correctly.
+aqipxc052	aqi	px	c	052		Does your child know the names of numbers?( Mark "yes" if he identifies the three numbers (3, 1, 2) below. Mark "sometimes" if he identifies two numbers.)
+aqipxc053	aqi	px	c	053		Does your child name at least four letters in her name? Point to the letters and ask, "What letter is this?" (Point to the letters out of order.)
+aqipxc055	aqi	px	c	055		Does your child count up to 15 without making mistakes? If so, mark "yes." If your child counts to 12 without making mistakes, mark "sometimes."
 aqislc001	aqi	sl	c	001		Does your baby cry when she is hungry, wet, tired, or wants to be held?
 aqislc002	aqi	sl	c	002		Does your baby sometimes try to suck, even when he's not feeding?
 aqislc003	aqi	sl	c	003		Does your baby smile at you?
@@ -205,7 +205,7 @@ aqislc015	aqi	sl	c	015		Does your baby drink water, juice, or formula from a cup
 aqislc016	aqi	sl	c	016		Does your baby act differently toward strangers than he does with you and other familiar people? (Reactions to strangers may include staring, frowning, withdrawing, or crying.)
 aqislc017	aqi	sl	c	017		While your baby is on his back, does he put his foot in his mouth?
 aqislc018	aqi	sl	c	018		When you dress your baby, does he push his arm through a sleeve once his arm is started in the hole of the sleeve?
-aqislc019	aqi	sl	c	019		When you hold out your hand and ask for her toy, does your baby offer it to you even if she doesn’t let go of it? (If she already lets go of the toy into your hand, mark “yes” for this item.)
+aqislc019	aqi	sl	c	019		When you hold out your hand and ask for her toy, does your baby offer it to you even if she doesn't let go of it? (If she already lets go of the toy into your hand, mark "yes" for this item.)
 aqislc020	aqi	sl	c	020		When you hold out your hand and ask for her toy, does your baby let go of it into your hand?
 aqislc021	aqi	sl	c	021		Does your baby roll or throw a ball back to you so that you can return it to him?
 aqislc022	aqi	sl	c	022		Does your baby/child play with a doll or stuffed animal by hugging it?
@@ -222,11 +222,11 @@ aqislc032	aqi	sl	c	032		Does your baby/child help undress himself by taking off 
 aqislc033	aqi	sl	c	033		Does your child eat with a fork?
 aqislc034	aqi	sl	c	034		Does your child take turns by waiting while another child or adult takes a turn?
 aqislc035	aqi	sl	c	035		When playing with either a stuffed animal or doll, does your child pretend to rock it, feed it, change its diapers, put it to bed, and so forth?
-aqislc036	aqi	sl	c	036		When your child is looking in a mirror and you ask, “Who is in the mirror?” does he say either “me” or his own name?
+aqislc036	aqi	sl	c	036		When your child is looking in a mirror and you ask, "Who is in the mirror?" does he say either "me" or his own name?
 aqislc037	aqi	sl	c	037		While looking at himself in the mirror, does your child offer a toy to his own image?
 aqislc038	aqi	sl	c	038		After you put on loose-fitting pants around her feet, does your child pull them completely up to her waist?
-aqislc039	aqi	sl	c	039		Does your child call herself “I” or “me” more often than her own name? For example, “I do it,” more often than “Juanita do it.”
-aqislc041	aqi	sl	c	041		Using these exact words, ask your child, “Are you a girl or a boy?” Does your child answer correctly?
+aqislc039	aqi	sl	c	039		Does your child call herself "I" or "me" more often than her own name? For example, "I do it," more often than "Juanita do it."
+aqislc041	aqi	sl	c	041		Using these exact words, ask your child, "Are you a girl or a boy?" Does your child answer correctly?
 aqislc048	aqi	sl	c	048		Does your child put on a coat, jacket, or shirt by himself?
 aqislc053	aqi	sl	c	053		Does your child serve herself, taking food from one container to another using utensils? For example, does your child use a large spoon to scoop applesauce from a jar into a bowl?
 barxxx001	bar	xx	x	001	EXP2	Smiles in response to an adult or his/her voice
@@ -1000,15 +1000,15 @@ croclc012	cro	cl	c	012		When you talk to the child, does he/she respond by makin
 croclc013	cro	cl	c	013		Does the child recognize his/her name or nickname? That is, does he/she respond differently to his/her name than to other sounds or words?
 croclc014	cro	cl	c	014		Does the child recognize you or other family members (e.g., smile when they enter a room or move toward them)? 
 croclc015	cro	cl	c	015		Can the child use gestures to indicate what he/she wants (e.g., put arms up to indicate that he/she wants to be held, or point to water)? 
-croclc016	cro	cl	c	016		Can the child answer simple questions (e.g., “Do you want water?”) by saying "yes" or "no", rather than nodding? 
-croclc017	cro	cl	c	017		Can the child point to a person or object when asked (e.g., “Where is mama?" or "Where is the ball?")? 
+croclc016	cro	cl	c	016		Can the child answer simple questions (e.g., "Do you want water?") by saying "yes" or "no", rather than nodding? 
+croclc017	cro	cl	c	017		Can the child point to a person or object when asked (e.g., "Where is mama?" or "Where is the ball?")? 
 croclc018	cro	cl	c	018		Does the child try to repeat sounds or words said by other people? 
 croclc019	cro	cl	c	019		Does the child imitate animal or other sounds (e.g., "vroom" for a car, "moo" for a cow)? 
-croclc020	cro	cl	c	020		Can the child follow simple directions (e.g., “Stand up" or "Come here”)? 
+croclc020	cro	cl	c	020		Can the child follow simple directions (e.g., "Stand up" or "Come here")? 
 croclc021	cro	cl	c	021		Can the child say one or more words (e.g., names like "Mama" or "ba" for "ball")? 
 croclc022	cro	cl	c	022		Can the child figure out how to turn a spoon or object if you give it to him/her the wrong way around? 
 croclc023	cro	cl	c	023		Can the child say five or more separate words (e.g., names like "Mama" or objects like "ball")? 
-croclc024	cro	cl	c	024		Can the child speak using short sentences of two words that go together (e.g., “Mama go” or "Dada eat”)?
+croclc024	cro	cl	c	024		Can the child speak using short sentences of two words that go together (e.g., "Mama go" or "Dada eat")?
 croclc025	cro	cl	c	025		Can the child ask for something (e.g., food, water) by name when he/she wants it?
 croclc026	cro	cl	c	026		Can the child follow orders or instructions that have more than one part (e.g., Go get water and go to bed)?
 croclc027	cro	cl	c	027		Can the child say ten or more separate words (e.g., names like "Mama" or objects like "ball")? 
@@ -1088,7 +1088,7 @@ crosec010	cro	se	c	010		When the child is upset, does he/she calm down quickly w
 crosec011	cro	se	c	011		Does the child become very shy, afraid, or upset around strangers, even when you're with him/her?
 crosec012	cro	se	c	012		Is the child generally more irritable or fussy than other children his/her age? 
 crosec013	cro	se	c	013		Does the child have trouble falling asleep most nights? 
-crosec014	cro	se	c	014		Does the child stop at least briefly when told “no” or “stop that"? 
+crosec014	cro	se	c	014		Does the child stop at least briefly when told "no" or "stop that"? 
 crosec015	cro	se	c	015		Does the child often have extreme changes in emotions (e.g., quickly changing from very happy to very angry)? 
 crosec016	cro	se	c	016		Does the child become upset when you are not with him/her? 
 crosec017	cro	se	c	017		Does the child often show affection toward others (e.g., hugging parents, brothers, or sisters)? 
@@ -1708,32 +1708,32 @@ hypgmd005	hyp	gm	d	005		Guttman with an asymptote (simulated)
 iyolgc001	iyo	lg	c	001		Does your child turn his/her head towards your voice or some noise?
 iyolgc002	iyo	lg	c	002		When you TALK to your child, does he/she smile, make noises, or move arms, legs or trunk in response?
 iyolgc003	iyo	lg	c	003		Does your child make sounds when LOOKING at toys or people (not crying)?
-iyolgc004	iyo	lg	c	004		Does your child make single sounds like “buh” or “duh” or “muh”?
+iyolgc004	iyo	lg	c	004		Does your child make single sounds like "buh" or "duh" or "muh"?
 iyolgc005	iyo	lg	c	005		Does your child make noise or gesture TO GET YOUR ATTENTION?
 iyolgc006	iyo	lg	c	006		Does your child make two similar sounds TOGETHER like baba, mumu, pepe, di (single consonant vowel combinations)?
 iyolgc007	iyo	lg	c	007		Does your child point, shake head, or otherwise gesture to let you know WHAT THEY WANT?
 iyolgc008	iyo	lg	c	008		Can your child say at least one word?
 iyolgc009	iyo	lg	c	009		Does your child try to SHOW you something by reaching at you, pulling on your hand or clothes, using gestures, making noises (not words)?
 iyolgc010	iyo	lg	c	010		Does your child put together noises that sound sentence-like even if they are not words?
-iyolgc011	iyo	lg	c	011		If you or someone else invites your child to play a familiar game (peekaboo, wave bye-bye, etc.) does your child know what to do without you showing them? Does he or she understand, even if you don’t show him or her what to do? Does he or she try to participate, even if it’s not exactly correct? Does he or she attempt the movement, activity, or response?
-iyolgc012	iyo	lg	c	012		Can your child identify at least one object? For example, when you ask “where is the ball/spoon/cup/cloth/door/plate/bucket etc.” does your child look at it or point to (or even name) the object?
+iyolgc011	iyo	lg	c	011		If you or someone else invites your child to play a familiar game (peekaboo, wave bye-bye, etc.) does your child know what to do without you showing them? Does he or she understand, even if you don't show him or her what to do? Does he or she try to participate, even if it's not exactly correct? Does he or she attempt the movement, activity, or response?
+iyolgc012	iyo	lg	c	012		Can your child identify at least one object? For example, when you ask "where is the ball/spoon/cup/cloth/door/plate/bucket etc." does your child look at it or point to (or even name) the object?
 iyolgc013	iyo	lg	c	013		Without you making a gesture, does your child follow a simple spoken command or direction? Does your child understand when you ask something? Will they do at least one thing you ask the child to do? Can your child do it without you using a gesture?
 iyolgc014	iyo	lg	c	014		Does your child ask for something (e.g. food, water) by name when he/she wants it?
 iyolgc015	iyo	lg	c	015		Does your child usually understand what you say to him/her when you say it only once? For example, do you have to repeat what you said to be understood?
-iyolgc016	iyo	lg	c	016		Can your child identify at least one body part? For example, if you ask “where are your eyes?” can he or she point to his or her eyes?
-iyolgc017	iyo	lg	c	017		Does your child follow directions with more than one step? For example, “Go to the kitchen and bring me a spoon”?
-iyolgc018	iyo	lg	c	018		Does your child use two WORDS together in a meaningful phrase/speak in short two word sentences? For example, “mama go”, “give mama”, “daddy gone”.
+iyolgc016	iyo	lg	c	016		Can your child identify at least one body part? For example, if you ask "where are your eyes?" can he or she point to his or her eyes?
+iyolgc017	iyo	lg	c	017		Does your child follow directions with more than one step? For example, "Go to the kitchen and bring me a spoon"?
+iyolgc018	iyo	lg	c	018		Does your child use two WORDS together in a meaningful phrase/speak in short two word sentences? For example, "mama go", "give mama", "daddy gone".
 iyolgc019	iyo	lg	c	019		Can your child say at least six words?
 iyolgc020	iyo	lg	c	020		Does your child understand the words over, on top of, above, next to, under and in front of? If you ask the child to put something under the table or on top of the chair, does your child understand?
-iyolgc021	iyo	lg	c	021		When looking at pictures, if you say to your child “what is this?”, can they SAY the name of the object that you point to?
-iyolgc022	iyo	lg	c	022		Can your child identify at least seven objects? For example, when you ask “where is the ball/spoon/cup/cloth/door/plate/bucket etc.” does your child look at or point to (or even name) the objects?
+iyolgc021	iyo	lg	c	021		When looking at pictures, if you say to your child "what is this?", can they SAY the name of the object that you point to?
+iyolgc022	iyo	lg	c	022		Can your child identify at least seven objects? For example, when you ask "where is the ball/spoon/cup/cloth/door/plate/bucket etc." does your child look at or point to (or even name) the objects?
 iyolgc023	iyo	lg	c	023		Does your child usually communicate with words what he/she wants in a way that is understandable to others?
 iyolgc024	iyo	lg	c	024		Does your child ask questions using the words what, which, where, why, or who?
-iyolgc025	iyo	lg	c	025		Can your child speak in sentences that are 3 – 4 words long?
-iyolgc026	iyo	lg	c	026		Does your child know the difference between the words “big” and “small”? For example, if you ask, “Give me the big spoon” can your child understand which one to give if there are two different sizes?
-iyolgc027	iyo	lg	c	027		Does your child talk about or explain things that have happened in the past using the past tense? For example, “I went to the market yesterday” NOT “I go to the market yesterday”? Can your child tell you about something that happened on a last special event? Can they talk about anything that happened in the past?
+iyolgc025	iyo	lg	c	025		Can your child speak in sentences that are 3  4 words long?
+iyolgc026	iyo	lg	c	026		Does your child know the difference between the words "big" and "small"? For example, if you ask, "Give me the big spoon" can your child understand which one to give if there are two different sizes?
+iyolgc027	iyo	lg	c	027		Does your child talk about or explain things that have happened in the past using the past tense? For example, "I went to the market yesterday" NOT "I go to the market yesterday"? Can your child tell you about something that happened on a last special event? Can they talk about anything that happened in the past?
 iyolgc028	iyo	lg	c	028		Does your child count up to 5?
-iyolgc029	iyo	lg	c	029		Does your child understand the term “longest”? For example, if you ask them to choose “which is the longest of 3 objects?” e.g. 3 spoons or sticks – would he/she be able to choose the longest?
+iyolgc029	iyo	lg	c	029		Does your child understand the term "longest"? For example, if you ask them to choose "which is the longest of 3 objects?" e.g. 3 spoons or sticks  would he/she be able to choose the longest?
 iyolgc030	iyo	lg	c	030		Does your child tell a story?
 iyomoc001	iyo	mo	c	001		Does your child try to move his/her head (or eyes) to follow an object or person?
 iyomoc002	iyo	mo	c	002		While your child is on his/her back, does he/she bring his/her hands together?
@@ -1787,13 +1787,13 @@ iyosec009	iyo	se	c	009		When your child sees other children playing, does your c
 iyosec010	iyo	se	c	010		Does your child play together with other children not just by sitting next to each other and doing the same thing, but actively interacting?
 iyosec011	iyo	se	c	011		When your child needs to use the toilet, do they show you by pulling on their clothes, holding himself or herself, crying, or some other way?
 iyosec012	iyo	se	c	012		Does your child share things with other children or family members without being told to do so?
-iyosec013	iyo	se	c	013		Does your child show sympathy or look concerned? If your child’s friend or sibling is sad, what does your child do? Does your child try to comfort the other?
+iyosec013	iyo	se	c	013		Does your child show sympathy or look concerned? If your child's friend or sibling is sad, what does your child do? Does your child try to comfort the other?
 iyosec014	iyo	se	c	014		If your child has a problem with another child (e.g. fighting over a toy or something else), does your child come to you or another adult and ask for help?
 iyosec015	iyo	se	c	015		Does the child usually show respect for authority figures (e.g. teacher, grandparent, elder)?
 iyosec016	iyo	se	c	016		Does your child worry if a known person is sick or hurt? Is your child interested in the wellbeing/health of others?
 iyosec017	iyo	se	c	017		Does your child follow through on instructions, for example, does he/she finish his/her chores?
 iyosec018	iyo	se	c	018		Does your child keep working on something until he/she is finished?
-iyosec019	iyo	se	c	019		Does your child use “imaginary” or not visible objects in play? For example, pretending to give food to a child (even though they have nothing to give)?
+iyosec019	iyo	se	c	019		Does your child use "imaginary" or not visible objects in play? For example, pretending to give food to a child (even though they have nothing to give)?
 iyosec020	iyo	se	c	020		Does your child have difficulty taking turns when playing with others?
 kdifmd001	kdi	fm	d	001		Throws and catches a ball (highest string achieved) 3 games
 kdifmd002	kdi	fm	d	002		Releases a ball purposefully
@@ -1924,7 +1924,7 @@ mdtgmd011	mdt	gm	d	011		Crawls in any way
 mdtgmd012	mdt	gm	d	012		Pulls self to stand/trying to get to standing
 mdtgmd013	mdt	gm	d	013		Able to stand well if holding onto things
 mdtgmd014	mdt	gm	d	014		Walks using both hands of someone
-mdtgmd015	mdt	gm	d	015		Walks with help (using somebodys hand as if led or a piece of furniture)
+mdtgmd015	mdt	gm	d	015		Walks with help (using somebodys hand as if led or a piece of furniture)
 mdtgmd016	mdt	gm	d	016		Walks, but falls over at times
 mdtgmd017	mdt	gm	d	017		Stoops and recovers. (Picks up object off floor without falling)
 mdtgmd018	mdt	gm	d	018		Walks well
@@ -1941,18 +1941,18 @@ mdtgmd028	mdt	gm	d	028		Walks on heels for 6 + steps
 mdtgmd029	mdt	gm	d	029		Jumps over a piece of paper (widthways)
 mdtgmd030	mdt	gm	d	030		Walks on tip toes for six or more steps
 mdtgmd031	mdt	gm	d	031		Hops on one foot without support, has to go 3 steps
-mdtgmd032	mdt	gm	d	032		Stands on one foot for a longer time  (at least 5 seconds -tminute
+mdtgmd032	mdt	gm	d	032		Stands on one foot for a longer time  (at least 5 seconds -tminute
 mdtgmd033	mdt	gm	d	033		Can throw a ball up in the air and catch it with 2 hands
 mdtgmd034	mdt	gm	d	034		Heel/toe walk with one foot behind the other along the string with good balance:
 mdtlgd001	mdt	lg	d	001		Startles or jumps/responds to sounds
-mdtlgd002	mdt	lg	d	002		Happy vocalizing or making sounds  not crying
+mdtlgd002	mdt	lg	d	002		Happy vocalizing or making sounds  not crying
 mdtlgd003	mdt	lg	d	003		Laughs/chuckles
 mdtlgd004	mdt	lg	d	004		Turns to voice
 mdtlgd005	mdt	lg	d	005		Uses single syllables or sounds, for example Ma, Pa, Da, Ba, Ta
 mdtlgd006	mdt	lg	d	006		Responds to his or her name
 mdtlgd007	mdt	lg	d	007		Uses 2/4 syllable babble such as Dada, Mama, Mimi, Tata, Papa, Yaya, Baba
-mdtlgd008	mdt	lg	d	008		Understands when being cautioned about danger. For example when parent says STOP! to child, s/he stops even briefly
-mdtlgd009	mdt	lg	d	009		Indicates by gesture to say No
+mdtlgd008	mdt	lg	d	008		Understands when being cautioned about danger. For example when parent says STOP! to child, s/he stops even briefly
+mdtlgd009	mdt	lg	d	009		Indicates by gesture to say No
 mdtlgd010	mdt	lg	d	010		Follows simple commands (1 step)
 mdtlgd011	mdt	lg	d	011		Unclear talk/jabber in sentences - pretends to talk
 mdtlgd012	mdt	lg	d	012		Says 2 words, but words other than those used for mother and father
@@ -1972,11 +1972,11 @@ mdtlgd025	mdt	lg	d	025		Child is able to follow a 3 step command
 mdtlgd026	mdt	lg	d	026		Is able to tell you the use of 3 or more objects
 mdtlgd027	mdt	lg	d	027		Can do 2 syllable recall
 mdtlgd028	mdt	lg	d	028		Child knows 2 of 3 comprehension questions
-mdtlgd029	mdt	lg	d	029		Understands the adjectives such as faster by answering Which goes faster, a car or a bicycle?
+mdtlgd029	mdt	lg	d	029		Understands the adjectives such as faster by answering Which goes faster, a car or a bicycle?
 mdtlgd030	mdt	lg	d	030		Can do 4 syllable recall
 mdtlgd031	mdt	lg	d	031		Child can understand prepositions and follow tasks related to this
 mdtlgd032	mdt	lg	d	032		Understands the concept of opposites
-mdtlgd033	mdt	lg	d	033		Knows quantities  can count at least 3 objects
+mdtlgd033	mdt	lg	d	033		Knows quantities  can count at least 3 objects
 mdtlgd034	mdt	lg	d	034		SEE ITEM 33
 mdtsed001	mdt	se	d	001		Smiles, but not at a particular person
 mdtsed002	mdt	se	d	002		Smiles in response to a person
@@ -2000,7 +2000,7 @@ mdtsed019	mdt	se	d	019		Does a poo or pees by themselves without wetting their p
 mdtsed020	mdt	se	d	020		Can feed self well using a spoon without spilling
 mdtsed021	mdt	se	d	021		Can make own morsels of food and put in mouth
 mdtsed022	mdt	se	d	022		Able to undress by themselves
-mdtsed023	mdt	se	d	023		Wants to go and visit a friends house (shows independence)
+mdtsed023	mdt	se	d	023		Wants to go and visit a friends house (shows independence)
 mdtsed024	mdt	se	d	024		Can go to the toilet by themselves anywhere
 mdtsed025	mdt	se	d	025		Can eat food with bits in it or bones
 mdtsed026	mdt	se	d	026		Is able to dress self but not completely

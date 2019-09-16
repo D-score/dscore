@@ -39,7 +39,7 @@ gettau(items = c("ddifmd001", "DDigmd052", "xyz"))
 
 }
 \seealso{
-\code{\link{itembank}}, \code{\link{dscore}}
+\code{\link{builtin_itembank}}, \code{\link{dscore}}
 }
 \author{
 Stef van Buuren 2019

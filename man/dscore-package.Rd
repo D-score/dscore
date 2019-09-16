@@ -26,12 +26,13 @@ program of the Bill & Melinda Gates Foundation.
 
 The package contains three sets of built-in data:
 \describe{
-\item{\code{\link{itembank}}}{A data frame containing item naming schemes 
-(lexicons), item descriptions and the the difficulty of the item 
-according to the Rasch model.}
-\item{\code{\link{Dreference}}}{A data frame with LMS reference values used to 
-transform from D-score to DAZ, DAZ to D-score, and to calculate 
-reference charts of normal development.}
+\item{\code{\link{builtin_itembank}}}{A data frame containing 
+the difficulty estimates of the item according to the Rasch model.}
+\item{\code{\link{builtin_itemtable}}}{A data frame containing 
+names and descriptions of items from 23 instruments.}
+\item{\code{\link{builtin_references}}}{A data frame with LMS 
+reference values used to transform from D-score to DAZ, 
+DAZ to D-score, and to calculate reference charts of normal development.}
 \item{\code{\link{popsdemo}}}{A small demo dataset from the POPS study, where the PASS/FAIL 
 responses at various time points per child are scored on appropriate
 of developmental items.}

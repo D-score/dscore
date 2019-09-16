@@ -28,5 +28,6 @@ colnames(p) <- c(paste0("P", percentiles),
 ref_gcdg <- bind_cols(ref_gcdg, data.frame(p))
 
 # save to /data
-builtin_references <- bind_rows(ref_dutch, ref_gcdg) 
+builtin_references <- bind_rows(ref_dutch, ref_gcdg) %>% 
+  select(pop, everything())
 usethis::use_data(builtin_references, overwrite = TRUE)

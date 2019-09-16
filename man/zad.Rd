@@ -5,7 +5,7 @@
 \title{Inverse D-score standard deviation score}
 \usage{
 zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
-  ref = dscore::Dreference, dec = 2)
+  ref = set_reference("gsed"), dec = 2)
 }
 \arguments{
 \item{z}{Vector of standard deviation scores (DAZ)}
@@ -17,11 +17,7 @@ zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
 \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 \code{"year"}.}
 
-\item{ref}{The LMS reference values. The default uses the 
-built-in reference \code{dscore::Dreference} for Dutch children
-published in Van Buuren (2014). The table should contain the columns
-\code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-\code{year}, \code{month} or \code{day}.}
+\item{ref}{The LMS reference values.}
 
 \item{dec}{The number of decimals (default \code{dec = 2}).}
 }

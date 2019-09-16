@@ -8,7 +8,7 @@
 #' @return A named vector with the difficulty estimate per item with
 #' \code{length(items)} elements.
 #' @author Stef van Buuren 2019
-#' @seealso \code{\link{itembank}}, \code{\link{dscore}}
+#' @seealso \code{\link{builtin_itembank}}, \code{\link{dscore}}
 #' @examples 
 #' # difficulty levels in the GHAP lexicon
 #' gettau(items = c("ddifmd001", "DDigmd052", "xyz"))

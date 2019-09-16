@@ -8,7 +8,7 @@ dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   "days", "months"), key = "gsed", itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"), prior_mean = ".gcdg",
   prior_sd = NULL, transform = NULL, qp = -10:100,
-  reference = dscore::Dreference, dec = 3L)
+  reference = set_reference(key), dec = 3L)
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
@@ -160,8 +160,8 @@ BMJ Global Health, accepted for publication.
 }
 \seealso{
 \code{\link{gettau}}, 
-\code{\link{itembank}}, \code{\link{posterior}},
-\code{\link{Dreference}}
+\code{\link{builtin_itembank}}, \code{\link{posterior}},
+\code{\link{builtin_references}}
 }
 \author{
 Stef van Buuren, Iris Eekhout 2019

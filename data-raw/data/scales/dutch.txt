@@ -1,4 +1,4 @@
-key	item	tau
+scale	item	tau
 dutch	ddicmm029	1.7
 dutch	ddicmm030	11.3
 dutch	ddicmm031	14.5

@@ -1,32 +1,25 @@
 #' Built-in itembank
 #' 
-#' A data frame with administrative information per item: 
-#' item name (in various systems), item labels and difficulty. 
+#' A data frame with administrative information per item. Includes 
+#' only items that are part of a Rasch model.
+#' See \code{\link{builtin_itemtable}} for an overview of all currently 
+#' defined items.
 #' 
 #' @docType data
 #' @format A \code{data.frame} with 112 rows and 13 variables:
 #' \describe{
-#' \item{lex_dutch1996}{Item naming, VWO1996 version}
-#' \item{lex_dutch2005}{Item naming, VWO2005 version}
-#' \item{lex_dutch1983}{Item naming, VWO1983 version}
-#' \item{lex_smocc}{Item naming, original SMOCC variable names}
-#' \item{lex_ghap}{Item naming used by GHAP platform of BMGF}
-#' \item{lex_gcdg}{Item naming for GCDG project}
-#' \item{lex_gsed}{Item naming for GSED project}
-#' \item{occ}{Occasion number}
-#' \item{labelNL}{Label (Dutch)}
-#' \item{labelEN}{Label (English)}
-#' \item{tau}{Difficulty level}
-#' \item{m}{ }
-#' \item{LR}{Left-right item scores}
-#' \item{hot}{Item used to estimate D-score? (1=y, 0=no)}
+#' \item{key}{String indicating a specific Rasch model, either \code{"gsed"}, \code{"gcdg"} or \code{"dutch"}}
+#' \item{item}{Item name, gsed lexicon}
+#' \item{tau}{Difficulty estimate}
+#' \item{instrument}{Instrument code, 3 letters}
+#' \item{domain}{Domain code, 2 letter}
+#' \item{mode}{Mode code, 1 letter}
+#' \item{number}{Item number}
+#' \item{label}{Label (English)}
 #' }
 #' 
 #' @examples 
 #' head(builtin_itembank)
 #' 
-#' @references
-#' Van Buuren S (2014). Growth charts of human development.
-#' Stat Methods Med Res, 23(4), 346-368.
-#' @seealso \code{\link{dscore}}, \code{\link{gettau}}
+#' @seealso \code{\link{dscore}}, \code{\link{gettau}}, \code{\link{builtin_itemtable}}
 "builtin_itembank"

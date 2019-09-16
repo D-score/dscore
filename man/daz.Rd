@@ -2,10 +2,14 @@
 % Please edit documentation in R/daz.R
 \name{daz}
 \alias{daz}
+\alias{zad}
 \title{D-score standard deviation score: DAZ}
 \usage{
 daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
-  ref = set_reference("gsed"), dec = 3)
+  ref = set_reference("gcdg"), dec = 3)
+
+zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
+  ref = set_reference("gcdg"), dec = 2)
 }
 \arguments{
 \item{d}{Vector of D-scores, typically calculated by \code{dscore_vector()}}
@@ -17,17 +21,28 @@ daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
 \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 \code{"year"}.}
 
-\item{ref}{The LMS reference values.}
+\item{ref}{The LMS reference values. The default is to take 
+GCDG-references 0-5 year. For Dutch data and key, use 
+Dutch references.}
 
 \item{dec}{The number of decimals (default \code{dec = 3}).}
+
+\item{z}{Vector of standard deviation scores (DAZ)}
 }
 \value{
-Named vector with Z-scores with \code{length(d)} elements
+The \code{daz()} function return a named vector with 
+Z-scores with \code{length(d)} elements
+
+The \code{zad()} function returns a vector with D-scores 
+with \code{length(z)} elements.
 }
 \description{
-DAZ stands for "Development - Age adjusted Z-score". 
+The \code{daz()} function calculated the 
+"Development for Age Z-score". 
 The DAZ represents a child's D-score after adjusting 
 for age by an external age-conditional reference.
+The \code{zad()} is the inverse of \code{daz()}: Given age and 
+the Z-score, it finds the raw D-score.
 }
 \examples{
 # preterms, uncorrected age, all Z-scores are fairly low
@@ -40,6 +55,14 @@ abline(0, 1, lty = 2)
 daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
 plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
 abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
+# population median at ages 0.5, 1 and 2 years
+zad(z = rep(0, 3), x = c(0.5, 1, 2))
+
+# percentiles of D-score reference
+g <- expand.grid(age = seq(0.1, 2, 0.1), p = c(0.1,0.5,0.9))
+d <- zad(z = qnorm(g$p), x = g$age)
+matplot(x = matrix(g$age, ncol = 3), y = matrix(d, ncol = 3), type = "l",
+lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score")
 }
 \references{
 Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
@@ -47,5 +70,5 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 1305-1319.
 }
 \seealso{
-\code{\link{dscore}}, \code{\link{daz}}
+\code{\link{dscore}}
 }

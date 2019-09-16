@@ -6,7 +6,7 @@
 #' defined items.
 #' 
 #' @docType data
-#' @format A \code{data.frame} with 112 rows and 13 variables:
+#' @format A \code{data.frame} with variables:
 #' \describe{
 #' \item{key}{String indicating a specific Rasch model, either \code{"gsed"}, \code{"gcdg"} or \code{"dutch"}}
 #' \item{item}{Item name, gsed lexicon}

@@ -1,23 +1,31 @@
 #' D-score standard deviation score: DAZ
 #' 
-#' DAZ stands for "Development - Age adjusted Z-score". 
+#' The \code{daz()} function calculated the 
+#' "Development for Age Z-score". 
 #' The DAZ represents a child's D-score after adjusting 
 #' for age by an external age-conditional reference.
-#' @aliases daz
+#' The \code{zad()} is the inverse of \code{daz()}: Given age and 
+#' the Z-score, it finds the raw D-score.
+#' 
+#' @rdname daz
 #' @param d Vector of D-scores, typically calculated by \code{dscore_vector()}
+#' @param z Vector of standard deviation scores (DAZ)
 #' @param x Vector of ages. The default is to take age from 
 #' \code{names(d)}.
 #' @param x.unit Units given in \code{x} specified by 
 #' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 #' \code{"year"}.
-#' @param ref The LMS reference values. 
+#' @param ref The LMS reference values. The default is to take 
+#' GCDG-references 0-5 year. For Dutch data and key, use 
+#' Dutch references.
 #' @param dec The number of decimals (default \code{dec = 3}).
-#' @return Named vector with Z-scores with \code{length(d)} elements
+#' @return The \code{daz()} function return a named vector with 
+#' Z-scores with \code{length(d)} elements
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
 #' method and penalized likelihood. Statistics in Medicine, 11(10), 
 #' 1305-1319.
-#' @seealso \code{\link{dscore}}, \code{\link{daz}}
+#' @seealso \code{\link{dscore}}
 #' @examples
 #' # preterms, uncorrected age, all Z-scores are fairly low
 #' daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
@@ -32,7 +40,7 @@
 #' @export
 daz <- function(d, x = as.numeric(names(d)),
                 x.unit = c("year", "month", "day"), 
-                ref = set_reference("gsed"), 
+                ref = set_reference("gcdg"), 
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
   x.unit <- match.arg(x.unit)
@@ -50,25 +58,10 @@ daz <- function(d, x = as.numeric(names(d)),
   return(round(z, dec))
 }
 
-#' Inverse D-score standard deviation score
-#' 
-#' This function is the inverse of \code{daz()}: Given age and 
-#' the Z-score, it finds the raw D-score.
-#' @aliases zad
-#' @param z Vector of standard deviation scores (DAZ)
-#' @param x Vector of ages. The default is to take age from 
-#' \code{names(z)}.
-#' @param x.unit Units given in \code{x} specified by 
-#' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
-#' \code{"year"}.
-#' @param ref The LMS reference values. 
-#' @param dec The number of decimals (default \code{dec = 2}).
-#' @return Names vector with D-scores with \code{length(z)} elements
-#' @references
-#' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
-#' method and penalized likelihood. Statistics in Medicine, 11(10), 
-#' 1305-1319.
-#' @seealso \code{\link{dscore}}, \code{\link{daz}}
+
+#' @return The \code{zad()} function returns a vector with D-scores 
+#' with \code{length(z)} elements.
+#' @rdname daz
 #' @examples
 #' # population median at ages 0.5, 1 and 2 years
 #' zad(z = rep(0, 3), x = c(0.5, 1, 2))
@@ -81,7 +74,7 @@ daz <- function(d, x = as.numeric(names(d)),
 #' @export
 zad <- function(z, x = as.numeric(names(z)),
                 x.unit = c("year", "month", "day"),
-                ref = set_reference("gsed"), 
+                ref = set_reference("gcdg"), 
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
   x.unit <- match.arg(x.unit)

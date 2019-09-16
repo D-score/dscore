@@ -1,4 +1,4 @@
-scale	item	tau
+key	item	tau
 gsed	aqicmc033	58.74
 gsed	aqicmc038	65.81
 gsed	aqicmc040	65.66

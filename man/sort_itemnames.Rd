@@ -10,7 +10,7 @@ sort_itemnames(x, order = "idnm")
 order_itemnames(x, order = "idnm")
 }
 \arguments{
-\item{x}{A character vector containing item names (gcdg lexicon)}
+\item{x}{A character vector containing item names (gsed lexicon)}
 
 \item{order}{A four-letter string specifying the sorting order.
 The four letters are: \code{i} for instrument, \code{d} for domain,

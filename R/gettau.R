@@ -13,23 +13,23 @@
 #' # difficulty levels in the GHAP lexicon
 #' gettau(items = c("ddifmd001", "DDigmd052", "xyz"))
 #' 
-#' # difficulty levels in the GHAP lexicon
-#' gettau(items = c("GSFIXEYE", "gsmarm", "GSMARMR"), lexicon = "ghap")
-#' 
-#' # difficulty levels of same items in the SMOCC lexicon
-#' gettau(items = c("v1430", "V1432", "v1432", "IdontExist"), lexicon = "smocc")
-#' 
 #' @export
 gettau <- function(items, 
-                   lexicon = "gsed", 
-                   itembank = dscore::itembank) {
+                   key = "gsed", 
+                   itembank = dscore::builtin_itembank) {
   
-  itembank_items <- lexicon(lexicon = lexicon, itembank = itembank, 
-                            na.omit = FALSE)
+  # no itembank, no items, no tau
+  ibname <- deparse(substitute(itembank))
+  ibname <- unlist(strsplit(ibname, "::"))
+  ibname <- ibname[length(ibname)]
+  if (!exists(ibname)) return(numeric(0))
+  
+  # no lexixon, no items
+  mib <- itembank[itembank$key == key, c("key", "item", "tau")]
 
   # find exact matching items rows
-  p <- match(tolower(items), tolower(itembank_items))
-  r <- itembank[p, "tau"]
+  p <- match(tolower(items), tolower(mib$item))
+  r <- mib[p, "tau"]
   names(r) <- items
   return(r)
 }

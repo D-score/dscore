@@ -11,26 +11,21 @@
 #' @param items A character vector containing names of items to be 
 #' included into the D-score calculation. Milestone scores are coded 
 #' numerically as \code{1} (pass) and \code{0} (fail). By default, 
-#' all items found in the data are included that 1) appear in the specified 
-#' lexicon, and 2) that have a difficulty parameter under the specified 
-#' \code{model}.
+#' D-score calculation is done on all items found in the data 
+#' that have a difficulty parameter under the specified \code{key}.
 #' @param xname A string with the name of the age variable in 
 #' \code{data}. The default is \code{"age"}.
 #' @param xunit A string specifying the unit in which age is measured 
 #' (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 #' The default (\code{"decimal"}) means decimal age in years.
-#' @param lexicon Item naming scheme. The built-in itembank supports
-#' lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
-#' \code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
-#' and \code{"smocc"}. See details.
-#' @param model The model from which the difficulty estimates are taken.
-#' The built-in itembank supports models \code{"807_17"} (default), 
-#' \code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.
-#' @param itembank A \code{data.frame} that contains the item names 
-#' (in various lexicons), the item label, and item difficulty 
-#' parameters \code{tau} under various models. 
-#' Lexicon column names start with \code{"lex_"}. 
-#' The function uses the \code{dscore::builtin_itembank} object by 
+#' @param key A string that sets the key, the set of difficulty 
+#' estimates from a fitted Rasch model.
+#' The built-in keys are: \code{"gsed"} (default), \code{"gcdg"}, 
+#' and \code{"dutch"}. See details.
+#' @param itembank A \code{data.frame} with columns
+#' \code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain}, 
+#' \code{mode}, \code{number} and \code{label}.
+#' The function uses \code{dscore::builtin_itembank} by 
 #' default.
 #' @param metric A string, either \code{"dscore"} (default) or 
 #' \code{"logit"}, signalling the metric in which ability is estimated.
@@ -77,44 +72,24 @@
 #' method uses Bayes rule to update a prior ability into a posterior
 #' ability. 
 #' 
-#' The following table describes the variable names accepted 
-#' under each lexicon:
-#'  
-#' \tabular{lll}{
-#'   Lexicon \tab Example \tab Dataset \cr
+#' The item names should correspond to the \code{"gsed"} lexicon.
+#' 
+#' The built-in itembank (object \code{builtin_keys}) supports 
+#' keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}. 
+#' A key is defined by the set of estimated item difficulties.
+#' 
+#' \tabular{llcccl}{
+#'   Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
 #'   \cr
-#'   \code{gsed}      \tab \code{ddifmd001} \tab Global Scale of Early Development\cr
-#'   \code{gcdg}      \tab \code{acom22}    \tab Global Child Developement Group\cr
-#'   \code{ghap}      \tab \code{GSFIXEYE}  \tab Global Health Analysis Platform\cr
-#'   \code{dutch1983} \tab \code{v1}        \tab Dutch Development Instrument 1983\cr
-#'   \code{dutch1996} \tab \code{v1}        \tab Dutch Development Instrument 1996\cr
-#'   \code{dutch2005} \tab \code{v1}        \tab Dutch Development Instrument 2005\cr
-#'   \code{smocc}     \tab \code{v1430}     \tab SMOCC data variable names 
-#' }
-#' 
-#' When the names in the input data do not correspond to any of these
-#' schemes, the advice is to rename variables into the most generic 
-#' and extendable lexicon, the \code{"gsed"}.
-#' 
-#' The built-in itembank (object \code{builtin_itembank}) supports 
-#' models \code{"807_17"} (default), \code{"565_18"}, \code{"75_0"} 
-#' and \code{"57_0"}. The model holds the estimated item difficulties
-#' from various the D-score models that have been fitted created 
-#' over time. 
-#' 
-#' \tabular{llll}{
-#'   Model \tab Instruments \tab Direct/Caregiver \tab Reference\cr
-#'   \cr
-#'   \code{807_17} \tab 22      \tab mixed \tab GSED Team, 2019\cr
-#'   \code{565_18} \tab 13      \tab direct \tab Weber, 2019\cr
-#'   \code{75_0}   \tab 1 (DDI 0-4) \tab direct \tab Van Buuren, 2917\cr
-#'   \code{57_0}   \tab 1 (DDI 0-2) \tab direct \tab Van Buuren, 2014
+#'   gsed  \tab \code{807_17} \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
+#'   gcdg  \tab \code{565_18} \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
+#'   dutch \tab \code{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
 #' }
 #' 
 #' As a general rule, one should only compare D-scores 
-#' that are calculated under the same model and the same
+#' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data, 
-#' the advice is to use the most general model (\code{807_17}).
+#' the advice is to use the most general key: (\code{gsed}).
 #' 
 #' The default starting prior is a mean calculated from a so-called 
 #' "Count model" that describes mean D-score as a function of age. The
@@ -159,15 +134,14 @@
 #'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
 #'data$age <- data$age/12    
 #'items <- dmetric::prepare_items(study="Netherlands 1")$items
-#'dscore(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
+#'dscore(data=data, items=items, itembank=gcdg_itembank)
 #'}
 #' @export
 dscore <- function(data, 
                    items = names(data),
                    xname = "age", 
                    xunit = c("decimal", "days", "months"),
-                   lexicon = "gsed",
-                   model = "807_17", 
+                   key = "gsed",
                    itembank = dscore::builtin_itembank,
                    metric = c("dscore", "logit"),
                    prior_mean = ".gcdg",
@@ -181,22 +155,31 @@ dscore <- function(data,
   metric  <- match.arg(metric)
   
   # get decimal age
-  if (!xname %in% names(data))  stop("Variable", xname, "not found")
+  if (!xname %in% names(data)) stop("Variable", xname, "not found")
   a <- switch(xunit,
-              decimal = round(data[[xname]], 3),
-              months  = round(data[[xname]] / 12, 3),
-              days    = round(data[[xname]] / 365.25, 3),
+              decimal = round(data[[xname]], 3L),
+              months  = round(data[[xname]] / 12, 3L),
+              days    = round(data[[xname]] / 365.25, 3L),
               rep(NA, nrow(data)))
   
   # obtain difficulty estimates
-  key <- data.frame(
+  ib <- data.frame(
     item = items,
-    tau = gettau(items = items, lexicon = lexicon, itembank = itembank),
+    tau = gettau(items = items, key = key, itembank = itembank),
     stringsAsFactors = FALSE)
   
   # subset items
   items <- intersect(items, names(data))
-  items <- items[!is.na(key$tau)]
+  items <- items[!is.na(ib$tau)]
+  
+  # handle case where not a single tau is found
+  if (length(items) == 0L) return(
+    data.frame(a = a,
+               n = 0L,
+               p = NA,
+               d = NA,
+               sem = NA,
+               daz = NA))
   
   # determine mu for the prior
   mu <- rep(NA, nrow(data))
@@ -216,10 +199,10 @@ dscore <- function(data,
   
   # setup for logit scale
   if (metric == "logit") {
-    key$tau <- (key$tau - transform[1]) / transform[2]
-    qp <- (qp - transform[1]) / transform[2]
-    mu <- (mu - transform[1]) / transform[2]
-    sd <- sd / transform[2]
+    ib$tau <- (ib$tau - transform[1L]) / transform[2L]
+    qp <- (qp - transform[1L]) / transform[2L]
+    mu <- (mu - transform[1L]) / transform[2L]
+    sd <- sd / transform[2L]
   }
   
   # bind difficulty estimates to data
@@ -227,11 +210,11 @@ dscore <- function(data,
     bind_cols(a = a) %>% 
     mutate(mu = mu, 
            sd = sd,
-           .rownum = 1:n()) %>%
+           .rownum = 1L:n()) %>%
     select(.data$.rownum, .data$a, .data$mu, .data$sd, items) %>% 
     gather(key = "item", value = "score", items, na.rm = TRUE) %>%
     arrange(.data$.rownum, .data$item) %>%
-    left_join(key, by = "item")
+    left_join(ib, by = "item")
   
   # summarise n, p, d and sem
   data3 <- data2 %>%
@@ -253,7 +236,7 @@ dscore <- function(data,
     )
   
   # add daz, shape end result
-  data.frame(.rownum = 1:nrow(data)) %>%
+  data.frame(.rownum = 1L:nrow(data)) %>%
     left_join(data3, by = ".rownum") %>%
     mutate(n = recode(.data$n, .missing = 0L),
            daz = daz(d = .data$d, x = .data$a, ref = reference, dec = dec),

@@ -5,10 +5,10 @@
 \title{D-score estimation}
 \usage{
 dscore(data, items = names(data), xname = "age", xunit = c("decimal",
-  "days", "months"), lexicon = "gsed", model = "807_17",
-  itembank = dscore::builtin_itembank, metric = c("dscore", "logit"),
-  prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
-  qp = -10:100, reference = dscore::Dreference, dec = 3L)
+  "days", "months"), key = "gsed", itembank = dscore::builtin_itembank,
+  metric = c("dscore", "logit"), prior_mean = ".gcdg",
+  prior_sd = NULL, transform = NULL, qp = -10:100,
+  reference = dscore::Dreference, dec = 3L)
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
@@ -20,9 +20,8 @@ children or different ages.}
 \item{items}{A character vector containing names of items to be 
 included into the D-score calculation. Milestone scores are coded 
 numerically as \code{1} (pass) and \code{0} (fail). By default, 
-all items found in the data are included that 1) appear in the specified 
-lexicon, and 2) that have a difficulty parameter under the specified 
-\code{model}.}
+D-score calculation is done on all items found in the data 
+that have a difficulty parameter under the specified \code{key}.}
 
 \item{xname}{A string with the name of the age variable in 
 \code{data}. The default is \code{"age"}.}
@@ -31,20 +30,15 @@ lexicon, and 2) that have a difficulty parameter under the specified
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
 
-\item{lexicon}{Item naming scheme. The built-in itembank supports
-lexicons \code{"gsed"} (default), \code{"gcdg"}, \code{"ghap"}, 
-\code{"dutch1983"}, \code{"dutch1996"}, \code{"dutch2005"} 
-and \code{"smocc"}. See details.}
+\item{key}{A string that sets the key, the set of difficulty 
+estimates from a fitted Rasch model.
+The built-in keys are: \code{"gsed"} (default), \code{"gcdg"}, 
+and \code{"dutch"}. See details.}
 
-\item{model}{The model from which the difficulty estimates are taken.
-The built-in itembank supports models \code{"807_17"} (default), 
-\code{"565_18"}, \code{"75_0"} and \code{"57_0"}. See details.}
-
-\item{itembank}{A \code{data.frame} that contains the item names 
-(in various lexicons), the item label, and item difficulty 
-parameters \code{tau} under various models. 
-Lexicon column names start with \code{"lex_"}. 
-The function uses the \code{dscore::builtin_itembank} object by 
+\item{itembank}{A \code{data.frame} with columns
+\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain}, 
+\code{mode}, \code{number} and \code{label}.
+The function uses \code{dscore::builtin_itembank} by 
 default.}
 
 \item{metric}{A string, either \code{"dscore"} (default) or 
@@ -103,44 +97,24 @@ The algorithm is based on the method by Bock and Mislevy (1982). The
 method uses Bayes rule to update a prior ability into a posterior
 ability. 
 
-The following table describes the variable names accepted 
-under each lexicon:
- 
-\tabular{lll}{
-  Lexicon \tab Example \tab Dataset \cr
+The item names should correspond to the \code{"gsed"} lexicon.
+
+The built-in itembank (object \code{builtin_keys}) supports 
+keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}. 
+A key is defined by the set of estimated item difficulties.
+
+\tabular{llcccl}{
+  Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
   \cr
-  \code{gsed}      \tab \code{ddifmd001} \tab Global Scale of Early Development\cr
-  \code{gcdg}      \tab \code{acom22}    \tab Global Child Developement Group\cr
-  \code{ghap}      \tab \code{GSFIXEYE}  \tab Global Health Analysis Platform\cr
-  \code{dutch1983} \tab \code{v1}        \tab Dutch Development Instrument 1983\cr
-  \code{dutch1996} \tab \code{v1}        \tab Dutch Development Instrument 1996\cr
-  \code{dutch2005} \tab \code{v1}        \tab Dutch Development Instrument 2005\cr
-  \code{smocc}     \tab \code{v1430}     \tab SMOCC data variable names 
-}
-
-When the names in the input data do not correspond to any of these
-schemes, the advice is to rename variables into the most generic 
-and extendable lexicon, the \code{"gsed"}.
-
-The built-in itembank (object \code{builtin_itembank}) supports 
-models \code{"807_17"} (default), \code{"565_18"}, \code{"75_0"} 
-and \code{"57_0"}. The model holds the estimated item difficulties
-from various the D-score models that have been fitted created 
-over time. 
-
-\tabular{llll}{
-  Model \tab Instruments \tab Direct/Caregiver \tab Reference\cr
-  \cr
-  \code{807_17} \tab 22      \tab mixed \tab GSED Team, 2019\cr
-  \code{565_18} \tab 13      \tab direct \tab Weber, 2019\cr
-  \code{75_0}   \tab 1 (DDI 0-4) \tab direct \tab Van Buuren, 2917\cr
-  \code{57_0}   \tab 1 (DDI 0-2) \tab direct \tab Van Buuren, 2014
+  gsed  \tab \code{807_17} \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
+  gcdg  \tab \code{565_18} \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
+  dutch \tab \code{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
 }
 
 As a general rule, one should only compare D-scores 
-that are calculated under the same model and the same
+that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data, 
-the advice is to use the most general model (\code{807_17}).
+the advice is to use the most general key: (\code{gsed}).
 
 The default starting prior is a mean calculated from a so-called 
 "Count model" that describes mean D-score as a function of age. The
@@ -157,7 +131,7 @@ valid items, and unformative for large number of items (say >10 items).
 data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
 data$age <- data$age/12    
 items <- dmetric::prepare_items(study="Netherlands 1")$items
-dscore(data=data, items=items,lexicon="gcdg", itembank=gcdg_itembank)
+dscore(data=data, items=items, itembank=gcdg_itembank)
 }
 }
 \references{

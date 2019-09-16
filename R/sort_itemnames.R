@@ -3,7 +3,7 @@
 #' This function sorts the item names according to instrument,
 #' domain, mode and number. The user can specify the sorting
 #' order.
-#' @param x A character vector containing item names (gcdg lexicon)
+#' @param x A character vector containing item names (gsed lexicon)
 #' @param order A four-letter string specifying the sorting order.
 #' The four letters are: \code{i} for instrument, \code{d} for domain,
 #' \code{m} for mode and \code{n} for number. The default is

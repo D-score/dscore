@@ -1,4 +1,4 @@
-key	item	tau
+scale	item	tau
 gcdg	aqicmc022	44.3
 gcdg	aqicmc023	46.77
 gcdg	aqicmc027	50.53

@@ -5,39 +5,39 @@ library(openxlsx)
 # define project
 project <- path.expand("~/Package/dscore/dscore")
 
-# ------------- export dutch key
+# ------------- export dutch scale
 fn <- file.path(project, "data-raw/data/itembankVWO1.txt")  # May 27, 2019
 ib_dutch <- read.delim(file = fn, stringsAsFactors = FALSE) %>% 
-  mutate(key = "dutch") %>% 
-  select(one_of(c("key", "lex_gsed", "tau"))) %>% 
+  mutate(scale = "dutch") %>% 
+  select(one_of(c("scale", "lex_gsed", "tau"))) %>% 
   filter(!is.na(tau)) %>% 
   rename(item = lex_gsed)
 ib_dutch <- ib_dutch[order_itemnames(ib_dutch$item), ]
-fo <- file.path(project, "data-raw/data/keys/dutch.txt")
+fo <- file.path(project, "data-raw/data/scales/dutch.txt")
 write.table(ib_dutch, file = fo, quote = FALSE, sep = "\t",
             na = "", row.names = FALSE)
 
-# ------------- export gcdg key
+# ------------- export gcdg scale
 fn  <- path.expand("~/Package/dscore/dscore/data-raw/data/gcdg_itembank.txt")
 ib_gcdg <- read.delim(fn, stringsAsFactors = FALSE) %>% 
-  mutate(key = "gcdg",
+  mutate(scale = "gcdg",
          item = gseddata::rename_gcdg_gsed(lex_gcdg),
          tau = round(tau, 2)) %>% 
-  select(one_of(c("key", "item", "tau")))
+  select(one_of(c("scale", "item", "tau")))
 ib_gcdg <- ib_gcdg[order_itemnames(ib_gcdg$item), ]
-fo <- file.path(project, "data-raw/data/keys/gcdg.txt")
+fo <- file.path(project, "data-raw/data/scales/gcdg.txt")
 write.table(ib_gcdg, file = fo, quote = FALSE, sep = "\t",
             na = "", row.names = FALSE)
 
-# ------------- export gsed key
+# ------------- export gsed scale
 fn <- path.expand("~/Project/GSED/dmetric/models/807_17/model.Rds")
 gsed_model_807_17 <- readRDS(file = fn)
 ib_gsed <- gsed_model_807_17$itembank %>% 
-  mutate(key = "gsed",
+  mutate(scale = "gsed",
          item  = lex_gsed,
          tau = round(tau, 2)) %>% 
-  select(one_of("key", "item", "tau"))
+  select(one_of("scale", "item", "tau"))
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
-fo <- file.path(project, "data-raw/data/keys/gsed.txt")
+fo <- file.path(project, "data-raw/data/scales/gsed.txt")
 write.table(ib_gsed, file = fo, quote = FALSE, sep = "\t",
             na = "", row.names = FALSE)

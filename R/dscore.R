@@ -230,8 +230,8 @@ dscore <- function(data,
       w = list(calculate_posterior(scores = .data$score, 
                                    tau = .data$tau, 
                                    qp  = qp,
-                                   mu  = .data$mu,
-                                   sd  = .data$sd)$posterior)) %>% 
+                                   mu  = (.data$mu)[1],
+                                   sd  = (.data$sd)[1])$posterior)) %>% 
     unnest() %>%
     group_by(.data$.rownum, .data$a, .data$n, .data$p) %>% 
     summarise(

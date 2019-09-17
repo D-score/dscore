@@ -8,7 +8,7 @@ dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   "days", "months"), key = "gsed", itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"), prior_mean = ".gcdg",
   prior_sd = NULL, transform = NULL, qp = -10:100,
-  reference = set_reference(key), dec = 3L)
+  reference = set_reference(pop = key), dec = 3L)
 }
 \arguments{
 \item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
@@ -66,11 +66,15 @@ needed if \code{metric == "logit"}.}
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
-\item{reference}{The LMS reference values. The default uses the 
-built-in reference \code{dscore::Dreference} for Dutch children
-published in Van Buuren (2014). The table should contain the columns
-\code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-\code{year}, \code{month} or \code{day}.}
+\item{reference}{A \code{data.frame} with the LMS reference values. 
+The default is to select the rows in \code{builtin_references} 
+where the \code{pop} column corresponds to the \code{key} argument. 
+Thus, for 
+\code{key == "dutch"} the function will select the references 
+for Dutch children (van Buuren, 2014). No references for the 
+default \code{key = "gsed"} exist. Therefore, \code{key = "gsed"} 
+will silently translate into to the \code{GCDG}-references, calculated 
+from 15 cohorts with direct observations (Weber, 2019).}
 
 \item{dec}{Integer specifying the number of decimals for 
 rounding the ability estimates and the DAZ. The default is 

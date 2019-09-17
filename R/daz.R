@@ -8,6 +8,7 @@
 #' the Z-score, it finds the raw D-score.
 #' 
 #' @rdname daz
+#' @inheritParams dscore
 #' @param d Vector of D-scores, typically calculated by \code{dscore_vector()}
 #' @param z Vector of standard deviation scores (DAZ)
 #' @param x Vector of ages. The default is to take age from 
@@ -15,9 +16,10 @@
 #' @param x.unit Units given in \code{x} specified by 
 #' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 #' \code{"year"}.
-#' @param ref The LMS reference values. The default is to take 
-#' GCDG-references 0-5 year. For Dutch data and key, use 
-#' Dutch references.
+#' @param reference A \code{data.frame} with the LMS reference values. 
+#' The default uses the \code{set_reference()} function. This selects 
+#' a subset of rows from the \code{builtin_references} using its
+#' default \code{pop} argument.
 #' @param dec The number of decimals (default \code{dec = 3}).
 #' @return The \code{daz()} function return a named vector with 
 #' Z-scores with \code{length(d)} elements
@@ -40,15 +42,15 @@
 #' @export
 daz <- function(d, x = as.numeric(names(d)),
                 x.unit = c("year", "month", "day"), 
-                ref = set_reference("gcdg"), 
+                reference = set_reference(), 
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
   x.unit <- match.arg(x.unit)
   
   # interpolate to proper ages
-  L <- approx(x = ref[, x.unit], y = ref[, "nu"], xout = x)$y
-  M <- approx(x = ref[, x.unit], y = ref[, "mu"], xout = x)$y
-  S <- approx(x = ref[, x.unit], y = ref[, "sigma"], xout = x)$y
+  L <- approx(x = reference[, x.unit], y = reference[, "nu"], xout = x)$y
+  M <- approx(x = reference[, x.unit], y = reference[, "mu"], xout = x)$y
+  S <- approx(x = reference[, x.unit], y = reference[, "sigma"], xout = x)$y
   
   # LMS formula
   z <- ifelse(L > 0.01 | L < (-0.01), 
@@ -74,15 +76,15 @@ daz <- function(d, x = as.numeric(names(d)),
 #' @export
 zad <- function(z, x = as.numeric(names(z)),
                 x.unit = c("year", "month", "day"),
-                ref = set_reference("gcdg"), 
+                reference = set_reference("gcdg"), 
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
   x.unit <- match.arg(x.unit)
   
   # interpolate to proper ages
-  mu <- approx(ref[, x.unit], ref[, "mu"], xout = x)$y
-  sigma <- approx(ref[, x.unit], ref[, "sigma"], xout = x)$y
-  nu <- approx(ref[, x.unit], ref[, "nu"], xout = x)$y
+  mu <- approx(reference[, x.unit], reference[, "mu"], xout = x)$y
+  sigma <- approx(reference[, x.unit], reference[, "sigma"], xout = x)$y
+  nu <- approx(reference[, x.unit], reference[, "nu"], xout = x)$y
   
   # centile formula
   d <- ifelse(nu > 0.01 | nu < (-0.01), 

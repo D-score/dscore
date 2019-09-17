@@ -12,7 +12,9 @@ Imports:
     dplyr,
     rlang,
     stats,
-    tidyr
+    tidyr,
+    Rcpp
+LinkingTo: Rcpp, RcppArmadillo
 Suggests:
     knitr,
     testthat,

@@ -6,10 +6,10 @@
 \title{D-score standard deviation score: DAZ}
 \usage{
 daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
-  ref = set_reference("gcdg"), dec = 3)
+  reference = set_reference(), dec = 3)
 
 zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
-  ref = set_reference("gcdg"), dec = 2)
+  reference = set_reference("gcdg"), dec = 2)
 }
 \arguments{
 \item{d}{Vector of D-scores, typically calculated by \code{dscore_vector()}}
@@ -21,9 +21,10 @@ zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
 \code{"year"}, \code{"month"} or \code{"day"}. The default is 
 \code{"year"}.}
 
-\item{ref}{The LMS reference values. The default is to take 
-GCDG-references 0-5 year. For Dutch data and key, use 
-Dutch references.}
+\item{reference}{A \code{data.frame} with the LMS reference values. 
+The default uses the \code{set_reference()} function. This selects 
+a subset of rows from the \code{builtin_references} using its
+default \code{pop} argument.}
 
 \item{dec}{The number of decimals (default \code{dec = 3}).}
 

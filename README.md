@@ -126,7 +126,7 @@ ggplot(md, aes(x = a, y = d, group = id, color = sex)) +
   ylab("D-score") +
   geom_line(lwd = 0.1) +
   geom_point(size = 1) +
-  scale_fill_discrete(palette = "Dark2") +
+  scale_colour_hue(l = 45) +
   theme_light()
 ```
 
@@ -145,11 +145,110 @@ ggplot(md, aes(x = a, y = daz, group = id, color = sex)) +
   coord_cartesian(ylim = c(-4, 4)) +
   geom_line(lwd = 0.1) +
   geom_point(size = 1) +
-  scale_fill_discrete(palette = "Dark2") +
+  scale_colour_hue(l = 45) +
   xlab("Age (in years)") +
   ylab("DAZ")
 ```
 
 <img src="man/figures/README-graphDAZ-1.png" width="100%" />
 
-### Tools for item names
+Note that the D-scores and DAZ are a little lower than average. The
+explanation here is that these all children are born preterm.
+
+### Tools for mapping item names
+
+The `dscore()` function assumes that the item names follow the GSED
+naming convention, a nine-position word that identifies the instrument,
+the domain, the administration mode and the item number. You may
+decompose an item names into these components, as follows:
+
+``` r
+decompose_itemnames(items)
+#>   instrument domain mode number
+#> 1        ddi     gm    d    053
+#> 2        ddi     gm    d    056
+#> 3        ddi     cm    m    030
+#> 4        ddi     fm    d    002
+#> 5        ddi     fm    d    003
+#> 6        ddi     fm    m    004
+#> 7        ddi     cm    m    031
+```
+
+which gives four components of the seven items.
+
+In practice, you will spend most of your time in renaming your own item
+names according to the GSED convention. In order to ease this process,
+the `dscore` package offers several functions that can help.
+
+First of all, the measurement instrument needs to be one of the
+instruments supported by the `dscore` package. Here’s the table of
+instruments that are currently defined in the package:
+
+| Code | Items | Instrument |
+| ---- | ----: | ---------- |
+| aqi  |   230 |            |
+| bar  |    22 |            |
+| bat  |   137 |            |
+| by1  |   156 |            |
+| by2  |   121 |            |
+| by3  |   320 |            |
+| cro  |   149 |            |
+| ddi  |    77 |            |
+| den  |   111 |            |
+| dmc  |    66 |            |
+| gri  |   312 |            |
+| hyp  |     5 |            |
+| iyo  |    90 |            |
+| kdi  |    69 |            |
+| mac  |     6 |            |
+| mds  |     6 |            |
+| mdt  |   136 |            |
+| peg  |     2 |            |
+| pri  |    63 |            |
+| sbi  |    33 |            |
+| sgr  |    58 |            |
+| tep  |    61 |            |
+| vin  |    50 |            |
+
+Not every defined instruments can be used to calculate the D-score.
+There are currently three keys in the software: `dutch`, `gcdg` and
+`gsed`. Different keys cover different sets of instruments. The table
+below displays the number of items per instrument under each of the
+three keys.
+
+| Code | Items | dutch | gcdg | gsed |
+| ---- | ----: | ----: | ---: | ---: |
+| aqi  |   230 |       |   29 |   17 |
+| bar  |    22 |       |   15 |   13 |
+| bat  |   137 |       |      |      |
+| by1  |   156 |       |   85 |   76 |
+| by2  |   121 |       |   16 |   16 |
+| by3  |   320 |       |  105 |   67 |
+| cro  |   149 |       |      |   62 |
+| ddi  |    77 |    76 |   65 |   64 |
+| den  |   111 |       |   67 |   50 |
+| dmc  |    66 |       |      |   43 |
+| gri  |   312 |       |  104 |   93 |
+| hyp  |     5 |       |      |      |
+| iyo  |    90 |       |      |   55 |
+| kdi  |    69 |       |      |      |
+| mac  |     6 |       |    3 |    3 |
+| mds  |     6 |       |      |    1 |
+| mdt  |   136 |       |      |  126 |
+| peg  |     2 |       |    1 |    1 |
+| pri  |    63 |       |      |      |
+| sbi  |    33 |       |    6 |    1 |
+| sgr  |    58 |       |   19 |   19 |
+| tep  |    61 |       |   33 |   31 |
+| vin  |    50 |       |   17 |   17 |
+|      |       |       |      |      |
+| ALL  |  2280 |    76 |  565 |  807 |
+
+In practice, the means that key choice is limited by the available
+instrument. For example, if you have collected `cro`, then the only
+choice is the `gsed` key, but for `gri`, we may choose between `gcdg`
+and `gsed`. The actual choice will depend on the goals of your analysis.
+If you want to compare to other D-scores calculated under key `gcdg`,
+then pick the `gcdg` key. If that is not the case, then `gsed` is the
+better choice since it account for a wider variety of instruments. By
+default, `gsed` is chosen.

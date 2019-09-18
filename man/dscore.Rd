@@ -11,7 +11,7 @@ dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   reference = set_reference(pop = key), dec = 3L)
 }
 \arguments{
-\item{data}{A \code{tbl_df} or \code{data.frame} with the data. 
+\item{data}{A \code{data.frame} with the data. 
 A row collects all observations made on a child on a set of 
 milestones administered at a given age. The function calculates 
 a D-score for each row. Different rows correspond to different

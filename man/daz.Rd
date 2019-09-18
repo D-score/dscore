@@ -47,15 +47,15 @@ the Z-score, it finds the raw D-score.
 }
 \examples{
 # preterms, uncorrected age, all Z-scores are fairly low
-daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
-daz2 <- daz(d = popsdemo$dscore, x = popsdemo$age, x.unit = "day")
-plot(daz1, daz2)
-abline(0, 1, lty = 2)
+# daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
+# daz2 <- daz(d = popsdemo$dscore, x = popsdemo$age, x.unit = "day")
+# plot(daz1, daz2)
+# abline(0, 1, lty = 2)
 
 # preterms, corrected age, most Z-scores are between -2 and +2 SD
-daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
-plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
-abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
+# daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
+# plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
+# abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
 # population median at ages 0.5, 1 and 2 years
 zad(z = rep(0, 3), x = c(0.5, 1, 2))
 

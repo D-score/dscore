@@ -41,7 +41,7 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 //' @param prior Vector of prior values on quadrature points \code{qp}
 //' @param qp vector of equally spaced quadrature points
 //' @return A vector of length \code{length(prior)}
-//' @author Stef van Buuren 2018
+//' @author Stef van Buuren, Arjan Huizing, 2019
 //' @seealso \code{\link{dscore}}, 
 //' \code{\link[sirt]{rasch.pairwise.itemcluster}}
 // [[Rcpp::export]]
@@ -96,6 +96,7 @@ double wmean(NumericVector x, NumericVector w) {
 //' @param tau A vector containing the item difficulties for the item scores in \code{scores}
 //' estimated from the Rasch model in the prefferred metric/scale.
 //' @param mu Numeric scalar. The mean of the prior.
+//' @author Stef van Buuren, Arjan Huizing, 2019
 //' @param sd Numeric scalar. Standard deviation of the prior.
 // [[Rcpp::export]]
 List calculate_posterior(NumericVector scores, 

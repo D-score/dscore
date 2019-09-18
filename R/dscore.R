@@ -129,7 +129,7 @@
 #' the early development of infants and toddlers across global settings. 
 #' BMJ Global Health, accepted for publication.
 #' 
-#' @author Stef van Buuren, Iris Eekhout 2019
+#' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
 #' @seealso \code{\link{gettau}}, 
 #' \code{\link{builtin_itembank}}, \code{\link{posterior}},
 #' \code{\link{builtin_references}}

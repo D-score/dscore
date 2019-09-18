@@ -49,10 +49,10 @@ ids <- table(popsdemo$subjid)
 set.seed(15199)
 id <- sample(100:999, size = length(ids))
 popsdemo$id <- rep(id, ids)
-preterm27 <- popsdemo %>%
+milestones <- popsdemo %>%
   select(-subjid, agedays, -dead, -handicap) %>% 
   select(id, agedays, age, sex, everything()) %>% 
   arrange(id, age)
 
 # save to /data
-usethis::use_data(preterm27, overwrite = TRUE)
+usethis::use_data(milestones, overwrite = TRUE)

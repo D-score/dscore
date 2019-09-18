@@ -33,9 +33,8 @@ names and descriptions of items from 23 instruments.}
 \item{\code{\link{builtin_references}}}{A data frame with LMS 
 reference values used to transform from D-score to DAZ, 
 DAZ to D-score, and to calculate reference charts of normal development.}
-\item{\code{\link{popsdemo}}}{A small demo dataset from the POPS study, where the PASS/FAIL 
-responses at various time points per child are scored on appropriate
-of developmental items.}
+\item{\code{\link{preterm27}}}{A small demo dataset with PASS/FAIL 
+responses for 27 preterms at various ages.}
 }
 }
 

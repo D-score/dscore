@@ -8,7 +8,7 @@ data <- data.frame(
 # abil <- dscore(data, lexicon = "ghap", dec = 4)$b
 
 # pops
-items <- names(popsdemo)[8:64]
+# items <- names(popsdemo)[8:64]
 # itemset <- !is.na(itembank$lex_dutch1983)
 #ib <- itembank[itemset,c("lex_dutch1983", "lex_ghap", "labelEN", "tau")]
 

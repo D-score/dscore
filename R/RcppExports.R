@@ -11,10 +11,8 @@
 #' @return A \code{vector} of \code{length(d)} elements with 
 #' the prior density estimate at each quadature point.
 #' @examples 
-#' // simple normalization examples
 #' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
 #' 
-#' // the sum is always equal to 1
 #' sum(dscore:::normalize(rnorm(5), qp = 1:5))
 normalize <- function(d, qp) {
     .Call('_dscore_normalize', PACKAGE = 'dscore', d, qp)
@@ -29,12 +27,12 @@ normalize <- function(d, qp) {
 #' 
 #' @aliases posterior
 #' @param score Integer, either 0 (fail) and 1 (pass)
-#' @param delta Numeric, difficulty parameter
+#' @param tau Numeric, difficulty parameter
 #' @param prior Vector of prior values on quadrature points \code{qp}
 #' @param qp vector of equally spaced quadrature points
 #' @return A vector of length \code{length(prior)}
 #' @author Stef van Buuren 2018
-#' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
+#' @seealso \code{\link{dscore}}, 
 #' \code{\link[sirt]{rasch.pairwise.itemcluster}}
 posterior <- function(score, tau, prior, qp) {
     .Call('_dscore_posterior', PACKAGE = 'dscore', score, tau, prior, qp)

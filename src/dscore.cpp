@@ -16,10 +16,8 @@ using namespace Rcpp;
 //' @return A \code{vector} of \code{length(d)} elements with 
 //' the prior density estimate at each quadature point.
 //' @examples 
-//' // simple normalization examples
 //' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
 //' 
-//' // the sum is always equal to 1
 //' sum(dscore:::normalize(rnorm(5), qp = 1:5))
 // [[Rcpp::export]]
 NumericVector normalize(NumericVector d, NumericVector qp) {
@@ -39,12 +37,12 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 //' 
 //' @aliases posterior
 //' @param score Integer, either 0 (fail) and 1 (pass)
-//' @param delta Numeric, difficulty parameter
+//' @param tau Numeric, difficulty parameter
 //' @param prior Vector of prior values on quadrature points \code{qp}
 //' @param qp vector of equally spaced quadrature points
 //' @return A vector of length \code{length(prior)}
 //' @author Stef van Buuren 2018
-//' @seealso \code{\link{dscore}}, \code{\link{adp}}, 
+//' @seealso \code{\link{dscore}}, 
 //' \code{\link[sirt]{rasch.pairwise.itemcluster}}
 // [[Rcpp::export]]
 NumericVector posterior(int score, double tau, 

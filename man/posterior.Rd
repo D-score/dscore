@@ -9,11 +9,11 @@ posterior(score, tau, prior, qp)
 \arguments{
 \item{score}{Integer, either 0 (fail) and 1 (pass)}
 
+\item{tau}{Numeric, difficulty parameter}
+
 \item{prior}{Vector of prior values on quadrature points \code{qp}}
 
 \item{qp}{vector of equally spaced quadrature points}
-
-\item{delta}{Numeric, difficulty parameter}
 }
 \value{
 A vector of length \code{length(prior)}
@@ -27,7 +27,7 @@ a binary Rasch model (e.g. by
 \code{sirt::rasch.pairwise.itemcluster()}).
 }
 \seealso{
-\code{\link{dscore}}, \code{\link{adp}}, 
+\code{\link{dscore}}, 
 \code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
 \author{

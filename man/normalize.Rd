@@ -20,9 +20,7 @@ the prior density estimate at each quadature point.
 Normalizes the distribution so that the total mass equals 1.
 }
 \examples{
-// simple normalization examples
 dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
 
-// the sum is always equal to 1
 sum(dscore:::normalize(rnorm(5), qp = 1:5))
 }

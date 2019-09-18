@@ -1,10 +1,12 @@
 ---
 output: github_document
+always_allow_html: yes
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
+options(width = 130)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -42,25 +44,97 @@ remotes::install_github("stefvanbuuren/dscore")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+### Inspect the data
 
-```{r example}
+The `milestones` dataset in the `dscore` package contain responses
+of 27 preterm children measured at various age between birth and 2.5 
+years on the Dutch Development Instrument (DDI). The dataset looks 
+like:
+
+```{r milestones}
 library(dscore)
-## basic example code
+head(milestones[, c(1, 3, 4, 9:15)])
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Each row corresponds to a visit. Most children have three or four visits.
+Columns starting with `ddi` hold the responses on DDI-items. A 
+`1` means a PASS, a `0` means a FAIL, and `NA` means that the item was 
+not administered.
 
-```{r cars}
-summary(cars)
+The `get_labels()` function obtains the labels of the milestones, e.g.,
+
+```{r}
+items <- names(milestones)[9:15]
+labels <- get_labels(items)
+print(data.frame(items, labels), right = FALSE, row.names = FALSE)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+### Calculate the D-score and DAZ
 
-You can also embed plots, for example:
+The `milestones` dataset has properly named columns that identifies each
+item. Calculating the D-score and DAZ is then done by:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r}
+ds <- dscore(milestones)
+dim(ds)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+where `ds` is a `data.frame` with the same number of rows than the input 
+data. The first six rows are
+
+```{r}
+head(ds)
+```
+
+The table below provides the interpretation of each column: 
+
+Name | Interpretation
+---- | -------------
+a    | Decimal age
+n    | Number of items used to calculate D-score
+p    | Percentage of passed milestones
+d    | D-score estimate, mean of posterior
+sem  | Standard error of measurement, standard deviation of the posterior
+daz  | D-score corrected for age
+
+### Graphs of D-score and DAZ
+
+The `milestones` data and the result can be combined as
+
+```{r}
+md <- cbind(milestones, ds)
+```
+
+The individual developmental curves of 27 children can be plotted.
+
+```{r graphD, dpi = 144}
+library(ggplot2)
+ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 
+  xlab("Age (in years)") + 
+  ylab("D-score") +
+  geom_line(lwd = 0.1) +
+  geom_point(size = 1) +
+  scale_fill_discrete(palette = "Dark2") +
+  theme_light()
+```
+
+The DAZ is an age-standardized D-score with a standard normal distribution
+with mean 0 and variance 1. The individual DAZ curves are plotted as
+
+```{r graphDAZ, dpi = 144}
+ggplot(md, aes(x = a, y = daz, group = id, color = sex)) + 
+  theme_light() +
+  geom_rect(xmin = 0, xmax = 3, ymin = -2, ymax = 2, 
+            fill = "grey97", linetype = 0, show.legend = FALSE) +
+  geom_hline(yintercept = -1:1, colour = "white", lwd = 0.5) +
+  coord_cartesian(ylim = c(-4, 4)) +
+  geom_line(lwd = 0.1) +
+  geom_point(size = 1) +
+  scale_fill_discrete(palette = "Dark2") +
+  xlab("Age (in years)") +
+  ylab("DAZ")
+```
+
+### Tools for item names
+
+

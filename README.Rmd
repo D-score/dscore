@@ -1,47 +1,66 @@
 ---
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
+# dscore
 
-# dscore: Measuring child development by the D-score
+<!-- badges: start -->
+<!-- badges: end -->
 
-The D-score is a numerical score that measures generic development in children 0-4 years. The D-score can be used to analyze and predict development of children using tools developed for numerical measures, like height and weight.
+The `dscore` package contains tools to
+
+- Calculate D-score from item level responses
+- Transform the D-scores into DAZ, age-standardised Z-scores
+
+The required input consists of *item level* responses on milestones
+from widely used instruments for measuring child development.
 
 ## Installation
 
-If you have been marked as a collaborator on GitHub, generated a personal access token (PAT) on <https://github.com/settings/tokens>. Store your PAT by `Sys.setenv(GITHUB_PAT = "51he..")`, where `51he..` is the 40-character token. Alternatively, put the line `GITHUB_PAT=51he...` in your `.Renviron` file. The latter method is persistent over sessions. Install the `dscore` package from GitHub as follows: 
+You can install the released version of dscore from [CRAN](https://CRAN.R-project.org) with:
 
-```{r eval = FALSE}
-install.packages("devtools")
-devtools::install_github(repo = "stefvanbuuren/dscore")
+``` r
+install.packages("dscore")
 ```
 
+And the development version from [GitHub](https://github.com/) with:
 
-## Overview
+``` r
+# install.packages("remotes")
+remotes::install_github("stefvanbuuren/dscore")
+```
 
-The `dscore` package contains functions to
+## Example
 
-- Calculate D-score from item level responses
-- Transform the D-scores into standardised Z-scores, and back
-- Plot individual trajectories of the D-score (not yet implemented).
+This is a basic example which shows you how to solve a common problem:
 
-## Main functions
+```{r example}
+library(dscore)
+## basic example code
+```
 
-The main functions in the `dscore` package are:
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-Function name        | Description
----------------------|---------------------------------
-`dscore()`           | Estimate D-scores of children
-`daz()`              | Transform to age-adjusted standardized D-score
-`zad()`              | Inverse of `daz()`
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

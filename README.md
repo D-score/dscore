@@ -1,44 +1,65 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-dscore: Measuring child development by the D-score
-==================================================
 
-The D-score is a numerical score that measures generic development in
-children 0-4 years. The D-score can be used to analyze and predict
-development of children using tools developed for numerical measures,
-like height and weight.
+# dscore
 
-Installation
-------------
+<!-- badges: start -->
 
-If you have been marked as a collaborator on GitHub, generated a
-personal access token (PAT) on
-<a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a>.
-Store your PAT by `Sys.setenv(GITHUB_PAT = "51he..")`, where `51he..` is
-the 40-character token. Alternatively, put the line `GITHUB_PAT=51he...`
-in your `.Renviron` file. The latter method is persistent over sessions.
-Install the `dscore` package from GitHub as follows:
+<!-- badges: end -->
+
+The `dscore` package contains tools to
+
+  - Calculate D-score from item level responses
+  - Transform the D-scores into DAZ, age-standardised Z-scores
+
+The required input consists of *item level* responses on milestones from
+widely used instruments for measuring child development.
+
+## Installation
+
+You can install the released version of dscore from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("devtools")
-devtools::install_github(repo = "stefvanbuuren/dscore")
+install.packages("dscore")
 ```
 
-Overview
---------
+And the development version from [GitHub](https://github.com/) with:
 
-The `dscore` package contains functions to
+``` r
+# install.packages("remotes")
+remotes::install_github("stefvanbuuren/dscore")
+```
 
--   Calculate D-score from item level responses
--   Transform the D-scores into standardised Z-scores, and back
--   Plot individual trajectories of the D-score (not yet implemented).
+## Example
 
-Main functions
---------------
+This is a basic example which shows you how to solve a common problem:
 
-The main functions in the `dscore` package are:
+``` r
+library(dscore)
+## basic example code
+```
 
-| Function name | Description                                    |
-|---------------|------------------------------------------------|
-| `dscore()`    | Estimate D-scores of children                  |
-| `daz()`       | Transform to age-adjusted standardized D-score |
-| `zad()`       | Inverse of `daz()`                             |
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
+
+``` r
+summary(cars)
+#>      speed           dist    
+#>  Min.   : 4.0   Min.   :  2  
+#>  1st Qu.:12.0   1st Qu.: 26  
+#>  Median :15.0   Median : 36  
+#>  Mean   :15.4   Mean   : 43  
+#>  3rd Qu.:19.0   3rd Qu.: 56  
+#>  Max.   :25.0   Max.   :120
+```
+
+You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date.
+
+You can also embed plots, for example:
+
+<img src="man/figures/README-pressure-1.png" width="100%" />
+
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub\!

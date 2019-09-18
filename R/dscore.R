@@ -3,7 +3,7 @@
 #' This function estimates the D-score, a numeric score that measures
 #' child development, from PASS/FAIL observations on milestones. 
 #' 
-#' @param data  A \code{tbl_df} or \code{data.frame} with the data. 
+#' @param data  A \code{data.frame} with the data. 
 #' A row collects all observations made on a child on a set of 
 #' milestones administered at a given age. The function calculates 
 #' a D-score for each row. Different rows correspond to different
@@ -249,3 +249,4 @@ dscore <- function(data,
            d = round(.data$d, digits = dec)) %>% 
     select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
 }
+

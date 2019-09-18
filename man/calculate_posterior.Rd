@@ -25,3 +25,6 @@ This vector should span the range of all D-score values. The default
 \description{
 Calculate posterior of ability
 }
+\author{
+Stef van Buuren, Arjan Huizing, 2019
+}

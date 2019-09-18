@@ -31,5 +31,5 @@ a binary Rasch model (e.g. by
 \code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
 \author{
-Stef van Buuren 2018
+Stef van Buuren, Arjan Huizing, 2019
 }

@@ -168,5 +168,5 @@ BMJ Global Health, accepted for publication.
 \code{\link{builtin_references}}
 }
 \author{
-Stef van Buuren, Iris Eekhout 2019
+Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
 }

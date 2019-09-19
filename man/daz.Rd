@@ -5,24 +5,19 @@
 \alias{zad}
 \title{D-score standard deviation score: DAZ}
 \usage{
-daz(d, x = as.numeric(names(d)), x.unit = c("year", "month", "day"),
-  reference = set_reference(), dec = 3)
+daz(d, x = as.numeric(names(d)), reference = get_reference(),
+  dec = 3)
 
-zad(z, x = as.numeric(names(z)), x.unit = c("year", "month", "day"),
-  reference = set_reference("gcdg"), dec = 2)
+zad(z, x = as.numeric(names(z)), reference = get_reference(),
+  dec = 2)
 }
 \arguments{
-\item{d}{Vector of D-scores, typically calculated by \code{dscore_vector()}}
+\item{d}{Vector of D-scores}
 
-\item{x}{Vector of ages. The default is to take age from 
-\code{names(d)}.}
-
-\item{x.unit}{Units given in \code{x} specified by 
-\code{"year"}, \code{"month"} or \code{"day"}. The default is 
-\code{"year"}.}
+\item{x}{Vector of ages (decimal age)}
 
 \item{reference}{A \code{data.frame} with the LMS reference values. 
-The default uses the \code{set_reference()} function. This selects 
+The default uses the \code{get_reference()} function. This selects 
 a subset of rows from the \code{builtin_references} using its
 default \code{pop} argument.}
 
@@ -46,18 +41,16 @@ The \code{zad()} is the inverse of \code{daz()}: Given age and
 the Z-score, it finds the raw D-score.
 }
 \examples{
-# preterms, uncorrected age, all Z-scores are fairly low
-# daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
-# daz2 <- daz(d = popsdemo$dscore, x = popsdemo$age, x.unit = "day")
-# plot(daz1, daz2)
-# abline(0, 1, lty = 2)
+# using gcdg-reference
+daz(d = c(35, 50), x = c(0.5, 1.0))
 
-# preterms, corrected age, most Z-scores are between -2 and +2 SD
-# daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
-# plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
-# abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
-# population median at ages 0.5, 1 and 2 years
+# using Dutch reference
+daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("dutch"))
+# population median at ages 0.5, 1 and 2 years, gcdg reference
 zad(z = rep(0, 3), x = c(0.5, 1, 2))
+
+# population median at ages 0.5, 1 and 2 years, dutch reference
+zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("dutch"))
 
 # percentiles of D-score reference
 g <- expand.grid(age = seq(0.1, 2, 0.1), p = c(0.1,0.5,0.9))
@@ -72,4 +65,7 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 }
 \seealso{
 \code{\link{dscore}}
+}
+\author{
+Stef van Buuren 2019
 }

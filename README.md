@@ -17,18 +17,12 @@ widely used instruments for measuring child development.
 
 ## Installation
 
-You can install the released version of dscore from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("dscore")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("stefvanbuuren/dscore")
+remotes::install_github("stefvanbuuren/dscore@rename")
 ```
 
 ## Example
@@ -155,12 +149,13 @@ ggplot(md, aes(x = a, y = daz, group = id, color = sex)) +
 Note that the D-scores and DAZ are a little lower than average. The
 explanation here is that these all children are born preterm.
 
-### Tools for mapping item names
+### Mapping items names
 
-The `dscore()` function assumes that the item names follow the GSED
-naming convention, a nine-position word that identifies the instrument,
-the domain, the administration mode and the item number. You may
-decompose an item names into these components, as follows:
+The `dscore()` function assumes that the item names in your data follow
+the GSED naming convention. This convention is a nine-position word that
+identifies the instrument, the domain, the administration mode and the
+item number. You may decompose an item names into these components, as
+follows:
 
 ``` r
 decompose_itemnames(items)
@@ -176,12 +171,12 @@ decompose_itemnames(items)
 
 which gives four components of the seven items.
 
-In practice, you will spend most of your time in renaming your own item
+In practice, you will need to spend some time in renaming your own item
 names according to the GSED convention. In order to ease this process,
 the `dscore` package offers several functions that can help.
 
-First of all, the measurement instrument needs to be one of the
-instruments supported by the `dscore` package. Here’s the table of
+First of all, the measurement instrument in your data needs to be one of
+the instruments supported by the `dscore` package. Here’s the table of
 instruments that are currently defined in the package:
 
 | Code | Items | Instrument |
@@ -210,11 +205,17 @@ instruments that are currently defined in the package:
 | tep  |    61 |            |
 | vin  |    50 |            |
 
-Not every defined instruments can be used to calculate the D-score.
-There are currently three keys in the software: `dutch`, `gcdg` and
-`gsed`. Different keys cover different sets of instruments. The table
-below displays the number of items per instrument under each of the
-three keys.
+If your instrument is not here, you cannot calculate the D-score. But
+even if your instrument is in the table, there is no garantee that it
+can be used for the D-score. Instruments are tied to the D-score by
+means of a *measurement model*. The measurement model provides the *key*
+for converting the item responses to the D-score.
+
+The `dscore` package currently support three keys: `dutch`, `gcdg` and
+`gsed`. Although there is much overlap, different keys cover different
+instrument. The table below displays the number of items per instrument
+under each of the three keys. If the entry is blank, the key does not
+cover the instrument.
 
 | Code | Items | dutch | gcdg | gsed |
 | ---- | ----: | ----: | ---: | ---: |
@@ -244,11 +245,138 @@ three keys.
 |      |       |       |      |      |
 | ALL  |  2280 |    76 |  565 |  807 |
 
-In practice, the means that key choice is limited by the available
-instrument. For example, if you have collected `cro`, then the only
-choice is the `gsed` key, but for `gri`, we may choose between `gcdg`
-and `gsed`. The actual choice will depend on the goals of your analysis.
-If you want to compare to other D-scores calculated under key `gcdg`,
-then pick the `gcdg` key. If that is not the case, then `gsed` is the
-better choice since it account for a wider variety of instruments. By
-default, `gsed` is chosen.
+For some instruments, e.g., for `cro` only one choice is possible (only
+key `gsed`). For `gri`, we may choose between `gcdg` and `gsed`. The
+actual choice will depend on the goals of your analysis. If you want to
+compare to other D-scores calculated under key `gcdg`, or reproduce an
+analysis made under key, then pick `gcdg`. If that is not the case, then
+`gsed` is the better choice since it account for a wider variety of
+comparisons to other instruments. The differences between the D-scores
+calculated under different keys are small, but these are not identical.
+If you don’t specify `key`, the `dscore()` function will use `key =
+"gsed"` for maximum instrument coverage.
+
+The `dscore` package will recognize 2280 item names. Call the
+`get_itemnames()` function with any arguments to see them all. If you
+want to see all names of a particular instrument and a particul domain,
+then use
+
+``` r
+# find all item name in mdt (MDAT), domain gm (gross motor)
+items <- get_itemnames(instrument = "mdt", domain = "gm")
+items
+#>  [1] "mdtgmd001" "mdtgmd002" "mdtgmd003" "mdtgmd004" "mdtgmd005" "mdtgmd006" "mdtgmd007" "mdtgmd008" "mdtgmd009" "mdtgmd010"
+#> [11] "mdtgmd011" "mdtgmd012" "mdtgmd013" "mdtgmd014" "mdtgmd015" "mdtgmd016" "mdtgmd017" "mdtgmd018" "mdtgmd019" "mdtgmd020"
+#> [21] "mdtgmd021" "mdtgmd022" "mdtgmd023" "mdtgmd024" "mdtgmd025" "mdtgmd026" "mdtgmd027" "mdtgmd028" "mdtgmd029" "mdtgmd030"
+#> [31] "mdtgmd031" "mdtgmd032" "mdtgmd033" "mdtgmd034"
+```
+
+The labels for this set of items can be found by
+
+``` r
+head(get_labels(items))
+#>                                             mdtgmd001                                             mdtgmd002 
+#>                                "Lifts chin off floor"    "Prone (on tummy), can lift head up to 90 degrees" 
+#>                                             mdtgmd003                                             mdtgmd004 
+#>                "Holds head upright for a few seconds"                       "Pulls to sit with no head lag" 
+#>                                             mdtgmd005                                             mdtgmd006 
+#>          "Lifts head, shoulders and chest when prone" "Bears weight on legs when held in standing position"
+```
+
+Alternatively, use `decompose_itemnames()` to break down the item names
+into its components.
+
+Using these functions, it should be relatively easy to map and rename
+your item names into the GSED-convention.
+
+## Resources
+
+### Books and reports
+
+1.  [Introduction into the D-score](https://stefvanbuuren.name/dbook1/)
+2.  [Inventory of 147 instruments for measuring early child
+    development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
+    Fernald et al. ([2017](#ref-fernald2017))
+
+### Keys
+
+1.  Project with `dutch` key, 0-2 years: van Buuren
+    ([2014](#ref-vanbuuren2014))
+2.  Project with `gcdg` key: Weber et al. ([2019](#ref-weber2019))
+3.  Project with `gsed` key: GSED team (Maureen Black, Kieran Bromley,
+    Vanessa Cavallera (lead author), Jorge Cuartas, Tarun Dua
+    (corresponding author), Iris Eekhout, Günther Fink, Melissa
+    Gladstone, Katelyn Hepworth, Magdalena Janus, Patricia Kariger,
+    Gillian Lancaster, Dana McCoy, Gareth McCray, Abbie Raikes, Marta
+    Rubio-Codina, Stef van Buuren, Marcus Waldman, Susan Walker and Ann
+    Weber) ([2019](#ref-gsedteam2019))
+
+### Methodology
+
+1.  Interval scale: Jacobusse, van Buuren, and Verkerk
+    ([2006](#ref-jacobusse2006))
+2.  Adaptive testing: Jacobusse and van Buuren
+    ([2007](#ref-jacobusse2007))
+
+### Literature
+
+<div id="refs" class="references">
+
+<div id="ref-fernald2017">
+
+Fernald, L.C.H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
+for Measuring Early Childhood Development in Low and Middle-Income
+Countries.”
+<http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
+
+</div>
+
+<div id="ref-gsedteam2019">
+
+GSED team (Maureen Black, Kieran Bromley, Vanessa Cavallera (lead
+author), Jorge Cuartas, Tarun Dua (corresponding author), Iris Eekhout,
+Günther Fink, Melissa Gladstone, Katelyn Hepworth, Magdalena Janus,
+Patricia Kariger, Gillian Lancaster, Dana McCoy, Gareth McCray, Abbie
+Raikes, Marta Rubio-Codina, Stef van Buuren, Marcus Waldman, Susan
+Walker and Ann Weber). 2019. “The Global Scale for Early Development
+(Gsed).” *Early Childhood Matters*.
+<https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/>.
+
+</div>
+
+<div id="ref-jacobusse2007">
+
+Jacobusse, G., and S. van Buuren. 2007. “Computerized Adaptive Testing
+for Measuring Development of Young Children.” *Statistics in Medicine*
+26 (13): 2629–38.
+<https://stefvanbuuren.name/publication/2007-01-01_jacobusse2007/>.
+
+</div>
+
+<div id="ref-jacobusse2006">
+
+Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale
+for Development of Children Aged 0-2 Years.” *Statistics in Medicine* 25
+(13): 2272–83.
+<https://stefvanbuuren.name/publication/2006-01-01_jacobusse2006/>.
+
+</div>
+
+<div id="ref-vanbuuren2014">
+
+van Buuren, S. 2014. “Growth Charts of Human Development.” *Statistical
+Methods in Medical Research* 23 (4): 346–68.
+<https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/>.
+
+</div>
+
+<div id="ref-weber2019">
+
+Weber, A.M., M. Rubio-Codina, S.P. Walker, S. van Buuren, I. Eekhout, S.
+Grantham-McGregor, M.C. Araujo, et al. 2019. “The D-Score: A Metric for
+Interpreting the Early Development of Infants and Toddlers Across Global
+Settings.” *BMJ Global Health* to appear.
+
+</div>
+
+</div>

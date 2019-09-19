@@ -47,15 +47,8 @@
 #' @param qp Numeric vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values. The default
 #' (\code{qp = -10:100}) is suitable for age range 0-4 years.
-#' @param reference A \code{data.frame} with the LMS reference values. 
-#' The default is to select the rows in \code{builtin_references} 
-#' where the \code{pop} column corresponds to the \code{key} argument. 
-#' Thus, for 
-#' \code{key == "dutch"} the function will select the references 
-#' for Dutch children (van Buuren, 2014). No references for the 
-#' default \code{key = "gsed"} exist. Therefore, \code{key = "gsed"} 
-#' will silently translate into to the \code{GCDG}-references, calculated 
-#' from 15 cohorts with direct observations (Weber, 2019).
+#' @param population A string describing the population. Currently 
+#' supported are \code{"dutch"} and \code{"gcdg"} (default).
 #' @param dec Integer specifying the number of decimals for 
 #' rounding the ability estimates and the DAZ. The default is 
 #' \code{dec = 3}.
@@ -152,7 +145,7 @@ dscore <- function(data,
                    prior_sd = NULL,
                    transform = NULL,
                    qp = -10:100,
-                   reference = set_reference(pop = key),
+                   population = key,
                    dec = 3L) {
   
   xunit   <- match.arg(xunit)
@@ -243,10 +236,10 @@ dscore <- function(data,
   data.frame(.rownum = 1L:nrow(data)) %>%
     left_join(data3, by = ".rownum") %>%
     mutate(n = recode(.data$n, .missing = 0L),
-           daz = daz(d = .data$d, x = .data$a, reference = reference, 
+           daz = daz(d = .data$d, x = .data$a, 
+                     reference = get_reference(population),
                      dec = dec),
            daz = ifelse(is.nan(.data$daz), NA, .data$daz),
            d = round(.data$d, digits = dec)) %>% 
     select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
 }
-

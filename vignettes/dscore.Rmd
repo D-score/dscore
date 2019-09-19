@@ -77,10 +77,10 @@ item_locations <- names(popsdemo) %in% items
 names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
 ```
 
-The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `gettau()` function:
+The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `get_tau()` function:
 
 ```{r}
-gettau(items = names(popsdemo)[item_locations])
+get_tau(items = names(popsdemo)[item_locations])
 ```
 
 ## 2. Reorganize the data into a long matrix

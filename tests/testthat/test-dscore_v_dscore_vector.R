@@ -15,7 +15,7 @@ data <- data.frame(
 # item_locations <- names(popsdemo) %in% items
 # names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
 # 
-# tau <- gettau(items = names(popsdemo)[item_locations])
+# tau <- get_tau(items = names(popsdemo)[item_locations])
 # items <- names(tau)
 # 
 # data <- popsdemo

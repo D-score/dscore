@@ -21,5 +21,5 @@
 #' @examples 
 #' head(builtin_itembank)
 #' 
-#' @seealso \code{\link{dscore}}, \code{\link{gettau}}, \code{\link{builtin_itemtable}}
+#' @seealso \code{\link{dscore}}, \code{\link{get_tau}}, \code{\link{builtin_itemtable}}
 "builtin_itembank"

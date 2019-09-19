@@ -163,7 +163,7 @@ the early development of infants and toddlers across global settings.
 BMJ Global Health, accepted for publication.
 }
 \seealso{
-\code{\link{gettau}}, 
+\code{\link{get_tau}}, 
 \code{\link{builtin_itembank}}, \code{\link{posterior}},
 \code{\link{builtin_references}}
 }

@@ -11,10 +11,7 @@
 #' @format A \code{data.frame} with 144 rows and 19 variables:
 #' \describe{
 #' \item{pop}{Population, either \code{dutch} or \code{gcdg}}
-#' \item{day}{Age in days}
-#' \item{week}{Age in weeks}
-#' \item{month}{Age in months}
-#' \item{year}{Decimal age in years}
+#' \item{age}{Decimal age in years}
 #' \item{mu}{M-curve, median D-score, P50}
 #' \item{sigma}{S-curve, spread expressed as coefficient of variation}
 #' \item{nu}{L-curve, the lambda coefficient of the LMS model for skewness}

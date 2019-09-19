@@ -29,5 +29,8 @@ ref_gcdg <- bind_cols(ref_gcdg, data.frame(p))
 
 # save to /data
 builtin_references <- bind_rows(ref_dutch, ref_gcdg) %>% 
-  select(pop, everything())
+  rename(age = year) %>% 
+  select(pop, age, mu, sigma, nu, P3, P10, P25, P50, P75, P90, P97, 
+         SDM2, SDM1, SD0, SDP1, SDP2)
+
 usethis::use_data(builtin_references, overwrite = TRUE)

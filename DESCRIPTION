@@ -21,7 +21,7 @@ Suggests:
     testthat,
     rmarkdown
 Encoding: UTF-8
-License: file LICENSE
+License: LGPL (>= 2.1)
 LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1

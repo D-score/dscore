@@ -7,6 +7,7 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![](https://img.shields.io/badge/github%20version-0.38-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
 <!-- badges: end -->
 
 The `dscore` package contains tools to

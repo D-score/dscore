@@ -13,6 +13,7 @@ The `dscore` package contains tools to
 
   - Calculate D-score from item level responses
   - Transform the D-scores into DAZ, age-standardised Z-scores
+  - Map your item names to the GSED convention
 
 The required input consists of *item level* responses on milestones from
 widely used instruments for measuring child development.
@@ -179,33 +180,35 @@ the `dscore` package offers several functions that can help.
 
 First of all, the measurement instrument in your data needs to be one of
 the instruments supported by the `dscore` package. Here’s the table of
-instruments that are currently defined in the package:
+instrument names and number of items that are currently defined in the
+package:
 
-| Code | Items | Instrument |
-| ---- | ----: | ---------- |
-| aqi  |   230 |            |
-| bar  |    22 |            |
-| bat  |   137 |            |
-| by1  |   156 |            |
-| by2  |   121 |            |
-| by3  |   320 |            |
-| cro  |   149 |            |
-| ddi  |    77 |            |
-| den  |   111 |            |
-| dmc  |    66 |            |
-| gri  |   312 |            |
-| hyp  |     5 |            |
-| iyo  |    90 |            |
-| kdi  |    69 |            |
-| mac  |     6 |            |
-| mds  |     6 |            |
-| mdt  |   136 |            |
-| peg  |     2 |            |
-| pri  |    63 |            |
-| sbi  |    33 |            |
-| sgr  |    58 |            |
-| tep  |    61 |            |
-| vin  |    50 |            |
+| Code  | Instrument                                              | Items | dutch | gcdg | gsed |
+| ----- | ------------------------------------------------------- | ----: | ----: | ---: | ---: |
+| `aqi` | Ages & Stages Questionnaires-3                          |   230 |       |   29 |   17 |
+| `bar` | Barrera Moncada                                         |    22 |       |   15 |   13 |
+| `bat` | Battelle Development Inventory and Screener-2           |   137 |       |      |      |
+| `by1` | Bayley Scales for Infant and Toddler Development-1      |   156 |       |   85 |   76 |
+| `by2` | Bayley Scales for Infant and Toddler Development-2      |   121 |       |   16 |   16 |
+| `by3` | Bayley Scales for Infant and Toddler Development-3      |   320 |       |  105 |   67 |
+| `cro` | Caregiver Reported Early Development Instrument (CREDI) |   149 |       |      |   62 |
+| `ddi` | Dutch Development Instrument (Van Wiechenschema)        |    77 |    76 |   65 |   64 |
+| `den` | Denver-2                                                |   111 |       |   67 |   50 |
+| `dmc` | Developmental Milestones Checklist                      |    66 |       |      |   43 |
+| `gri` | Griffiths Mental Development Scales                     |   312 |       |  104 |   93 |
+| `iyo` | Infant and Young Child Development (IYCD)               |    90 |       |      |   55 |
+| `kdi` | Kilifi Developmental Inventory                          |    69 |       |      |      |
+| `mac` | MacArthur Communicative Development Inventory           |     6 |       |    3 |    3 |
+| `mds` | WHO Motor Development Milestones                        |     6 |       |      |    1 |
+| `mdt` | Malawi Developmental Assessment Tool (MDAT)             |   136 |       |      |  126 |
+| `peg` | Pegboard                                                |     2 |       |    1 |    1 |
+| `pri` | Project on Child Development Indicators (PRIDI)         |    63 |       |      |      |
+| `sbi` | Stanford Binet Intelligence Scales-4/5                  |    33 |       |    6 |    1 |
+| `sgr` | Griffiths for South Africa                              |    58 |       |   19 |   19 |
+| `tep` | Test de Desarrollo Psicomotor (TEPSI)                   |    61 |       |   33 |   31 |
+| `vin` | Vineland Social Maturity Scale                          |    50 |       |   17 |   17 |
+| `hyp` | \[special codes, hypothetical instrument\]              |     5 |       |      |      |
+|       |                                                         |  2280 |    76 |  565 |  807 |
 
 If your instrument is not here, you cannot calculate the D-score. But
 even if your instrument is in the table, there is no garantee that it
@@ -218,34 +221,6 @@ The `dscore` package currently support three keys: `dutch`, `gcdg` and
 instrument. The table below displays the number of items per instrument
 under each of the three keys. If the entry is blank, the key does not
 cover the instrument.
-
-| Code | Items | dutch | gcdg | gsed |
-| ---- | ----: | ----: | ---: | ---: |
-| aqi  |   230 |       |   29 |   17 |
-| bar  |    22 |       |   15 |   13 |
-| bat  |   137 |       |      |      |
-| by1  |   156 |       |   85 |   76 |
-| by2  |   121 |       |   16 |   16 |
-| by3  |   320 |       |  105 |   67 |
-| cro  |   149 |       |      |   62 |
-| ddi  |    77 |    76 |   65 |   64 |
-| den  |   111 |       |   67 |   50 |
-| dmc  |    66 |       |      |   43 |
-| gri  |   312 |       |  104 |   93 |
-| hyp  |     5 |       |      |      |
-| iyo  |    90 |       |      |   55 |
-| kdi  |    69 |       |      |      |
-| mac  |     6 |       |    3 |    3 |
-| mds  |     6 |       |      |    1 |
-| mdt  |   136 |       |      |  126 |
-| peg  |     2 |       |    1 |    1 |
-| pri  |    63 |       |      |      |
-| sbi  |    33 |       |    6 |    1 |
-| sgr  |    58 |       |   19 |   19 |
-| tep  |    61 |       |   33 |   31 |
-| vin  |    50 |       |   17 |   17 |
-|      |       |       |      |      |
-| ALL  |  2280 |    76 |  565 |  807 |
 
 For some instruments, e.g., for `cro` only one choice is possible (only
 key `gsed`). For `gri`, we may choose between `gcdg` and `gsed`. The

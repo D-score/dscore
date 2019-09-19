@@ -1,50 +1,46 @@
 #' D-score standard deviation score: DAZ
 #' 
-#' DAZ stands for "Development - Age adjusted Z-score". 
+#' The \code{daz()} function calculated the 
+#' "Development for Age Z-score". 
 #' The DAZ represents a child's D-score after adjusting 
 #' for age by an external age-conditional reference.
-#' @aliases daz
-#' @param d Vector of D-scores, typically calculated by \code{dscore()}
-#' @param x Vector of ages. The default is to take age from 
-#' \code{names(d)}.
-#' @param x.unit Units given in \code{x} specified by 
-#' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
-#' \code{"year"}.
-#' @param ref The LMS reference values. The default uses the 
-#' built-in reference \code{dscore::Dreference} for Dutch children
-#' published in Van Buuren (2014). The table should contain the columns
-#' \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-#' \code{year}, \code{month} or \code{day}.
+#' The \code{zad()} is the inverse of \code{daz()}: Given age and 
+#' the Z-score, it finds the raw D-score.
+#' 
+#' @rdname daz
+#' @inheritParams dscore
+#' @param d Vector of D-scores
+#' @param z Vector of standard deviation scores (DAZ)
+#' @param x Vector of ages (decimal age)
+#' @param reference A \code{data.frame} with the LMS reference values. 
+#' The default uses the \code{get_reference()} function. This selects 
+#' a subset of rows from the \code{builtin_references} using its
+#' default \code{pop} argument.
 #' @param dec The number of decimals (default \code{dec = 3}).
-#' @return Named vector with Z-scores with \code{length(d)} elements
+#' @return The \code{daz()} function return a named vector with 
+#' Z-scores with \code{length(d)} elements
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
 #' method and penalized likelihood. Statistics in Medicine, 11(10), 
 #' 1305-1319.
-#' @seealso \code{\link{dscore}}, \code{\link{daz}}
+#' @seealso \code{\link{dscore}}
+#' @author Stef van Buuren 2019
 #' @examples
-#' # preterms, uncorrected age, all Z-scores are fairly low
-#' daz1 <- daz(d = popsdemo$dscore, x = popsdemo$age/365.25)
-#' daz2 <- daz(d = popsdemo$dscore, x = popsdemo$age, x.unit = "day")
-#' plot(daz1, daz2)
-#' abline(0, 1, lty = 2)
+#' # using gcdg-reference
+#' daz(d = c(35, 50), x = c(0.5, 1.0))
 #' 
-#' # preterms, corrected age, most Z-scores are between -2 and +2 SD
-#' daz3 <- daz(d = popsdemo$dscore, x = popsdemo$daycor, x.unit = "day")
-#' plot(daz2, daz3, xlab = "DAZ uncorrected age", ylab = "DAZ corrected age")
-#' abline(0, 1, lty = 2, h = c(2, 0, -2), v = c(2, 0, -2))
+#' # using Dutch reference
+#' daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("dutch"))
 #' @export
 daz <- function(d, x = as.numeric(names(d)),
-                x.unit = c("year", "month", "day"), 
-                ref = dscore::Dreference, 
+                reference = get_reference(), 
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
-  x.unit <- match.arg(x.unit)
-  
+
   # interpolate to proper ages
-  L <- approx(x = ref[, x.unit], y = ref[, "nu"], xout = x)$y
-  M <- approx(x = ref[, x.unit], y = ref[, "mu"], xout = x)$y
-  S <- approx(x = ref[, x.unit], y = ref[, "sigma"], xout = x)$y
+  L <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
+  M <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
+  S <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
   
   # LMS formula
   z <- ifelse(L > 0.01 | L < (-0.01), 
@@ -54,32 +50,15 @@ daz <- function(d, x = as.numeric(names(d)),
   return(round(z, dec))
 }
 
-#' Inverse D-score standard deviation score
-#' 
-#' This function is the inverse of \code{daz()}: Given age and 
-#' the Z-score, it finds the raw D-score.
-#' @aliases zad
-#' @param z Vector of standard deviation scores (DAZ)
-#' @param x Vector of ages. The default is to take age from 
-#' \code{names(z)}.
-#' @param x.unit Units given in \code{x} specified by 
-#' \code{"year"}, \code{"month"} or \code{"day"}. The default is 
-#' \code{"year"}.
-#' @param ref The LMS reference values. The default uses the 
-#' built-in reference \code{dscore::Dreference} for Dutch children
-#' published in Van Buuren (2014). The table should contain the columns
-#' \code{nu}, \code{mu} and \code{sigma}, and at least one of the columns
-#' \code{year}, \code{month} or \code{day}.
-#' @param dec The number of decimals (default \code{dec = 2}).
-#' @return Names vector with D-scores with \code{length(z)} elements
-#' @references
-#' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS 
-#' method and penalized likelihood. Statistics in Medicine, 11(10), 
-#' 1305-1319.
-#' @seealso \code{\link{dscore}}, \code{\link{daz}}
+#' @return The \code{zad()} function returns a vector with D-scores 
+#' with \code{length(z)} elements.
+#' @rdname daz
 #' @examples
-#' # population median at ages 0.5, 1 and 2 years
+#' # population median at ages 0.5, 1 and 2 years, gcdg reference
 #' zad(z = rep(0, 3), x = c(0.5, 1, 2))
+#' 
+#' # population median at ages 0.5, 1 and 2 years, dutch reference
+#' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("dutch"))
 #' 
 #' # percentiles of D-score reference
 #' g <- expand.grid(age = seq(0.1, 2, 0.1), p = c(0.1,0.5,0.9))
@@ -88,16 +67,14 @@ daz <- function(d, x = as.numeric(names(d)),
 #' lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score")
 #' @export
 zad <- function(z, x = as.numeric(names(z)),
-                x.unit = c("year", "month", "day"),
-                ref = dscore::Dreference, 
+                reference = get_reference(), 
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
-  x.unit <- match.arg(x.unit)
-  
+
   # interpolate to proper ages
-  mu <- approx(ref[, x.unit], ref[, "mu"], xout = x)$y
-  sigma <- approx(ref[, x.unit], ref[, "sigma"], xout = x)$y
-  nu <- approx(ref[, x.unit], ref[, "nu"], xout = x)$y
+  mu <- approx(reference[, "age"], reference[, "mu"], xout = x)$y
+  sigma <- approx(reference[, "age"], reference[, "sigma"], xout = x)$y
+  nu <- approx(reference[, "age"], reference[, "nu"], xout = x)$y
   
   # centile formula
   d <- ifelse(nu > 0.01 | nu < (-0.01), 

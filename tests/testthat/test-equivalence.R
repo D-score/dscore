@@ -1,29 +1,20 @@
 context("logit and dscore equivalence")
 
+# note: setting 2.23 --> 1.0 provides identical solutions
 transform <- c(41.10, 2.23)
 
-# ability
+# dscore
 data <- data.frame(
   age = rep(round(21/365.25, 4), 10),
   GSFIXEYE = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   GSRSPCH =  c(NA, NA, 0, 0, 1, 0, 1, 0, 1, 1),
   GSMLEG =   c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
-items <- c("GSFIXEYE", "GSRSPCH", "GSMLEG")
 
-keyd <- data.frame(item = items,
-                   delta = gettau(items = items),
-                   stringsAsFactors = FALSE)
+#zd <- dscore(data, lexicon = "ghap")$b
+#zl <- dscore(data, lexicon = "ghap", transform = transform, metric = "logit")$b
+#zl <- dscore(data, lexicon = "ghap", metric = "logit")$b
 
-zd <- ability(data, items = items, dec = 4, metric = "dscore", 
-              key = keyd)$b
-
-qpl <- ((-10:100) - transform[1]) / transform[2]
-keyl <- data.frame(item = items,
-                   delta = gettau(items = items),
-                   stringsAsFactors = FALSE)
-keyl$delta <- (keyl$delta - transform[1]) / transform[2]
-zl <- ability(data, items = items, dec = 4, transform = transform, 
-              qp = qpl, metric = "logit", key = keyl)$b
+# plot(zd, zl, type = "b")
 
 test_that("logit and dscore are identical", {
   # expect_identical(zl, (zd - transform[1])/transform[2])

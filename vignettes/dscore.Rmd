@@ -1,7 +1,5 @@
 ---
 title: "Calculate D-score and DAZ"
-author: "Stef van Buuren"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 bibliography: bibliography.bib
 biblio-style: "apalike"
@@ -12,7 +10,7 @@ vignette: >
 ---
 
 ```{r setup, include=FALSE}
-  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
+  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2, eval = FALSE)
   options(width = 80)
 ```
 
@@ -41,7 +39,7 @@ There are 25 children, with four time points each. The names of the items that f
 items <- names(popsdemo)[8:64]
 ```
 
-The names of the items in the data need to be matched against one of the lexicons in the item bank. The item bank in the `dscore` package is called `itembank`. For each item, the item bank contains: 
+The names of the items in the data need to be matched against one of the lexicons in the item bank. The item bank in the `dscore` package is called `builtin_itembank`. For each item, the item bank contains: 
 
 1. The name of the item according to some lexicon (i.e. naming system);
 2. The visit number (`occ`) according to the Dutch child health care system; 
@@ -51,6 +49,7 @@ The names of the items in the data need to be matched against one of the lexicon
 The built-in lexicons are:
 
 ```{r}
+itembank <- builtin_itembank
 names(itembank)[grep("lex_", names(itembank))]
 ```
 
@@ -78,15 +77,15 @@ item_locations <- names(popsdemo) %in% items
 names(popsdemo)[item_locations] <- as.character(ib$lex_ghap)
 ```
 
-The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `gettau()` function:
+The source data has now names that are recognized in the itembank. To check this, find the difficulties for each item by the `get_tau()` function:
 
 ```{r}
-gettau(items = names(popsdemo)[item_locations])
+get_tau(items = names(popsdemo)[item_locations])
 ```
 
 ## 2. Reorganize the data into a long matrix
 
-The `dscore()` function takes vectors of item scores, item names and ages. Rearringing the data makes it easy to extract the relevant vectors. We need to create a data set with the following variables: `patid`, `moment`, `age`, `daycor`, `item` and `score`, and select only the rows where we have an observed score.
+The `dscore_vector()` function takes vectors of item scores, item names and ages. Rearringing the data makes it easy to extract the relevant vectors. We need to create a data set with the following variables: `patid`, `moment`, `age`, `daycor`, `item` and `score`, and select only the rows where we have an observed score.
 
 ```{r warnings=FALSE, message=FALSE}
 library("tidyr")
@@ -104,34 +103,34 @@ There are `r nrow(data)` records with a nonmissing item score.
 
 For illustration, let us first calculate the D-score of the first child, with ID 11126. There are 75 scores for this child, spread over four time points. This is a preterm child, so we correct calener age for gestational age as in `daycor`:
 
-```{r}
-child1 <- filter(data, patid == 11126)
+```{r eval=FALSE}
+child1 <- dplyr::filter(data, patid == 11126)
 
 scores <- child1$scores
 items <- as.character(child1$items)
 ages <- round(child1$daycor/365.25, 4)
 
 # calculate dscore and daz for each time point for given child
-(d <- dscore(scores, items, ages))
+(d <- dscore_vector(scores, items, ages))
 daz(d)
 ```
 
 If desired, one may also back-calculate the D-score from the standard deviation score by 
-```{r}
+```{r eval=FALSE}
 zad(daz(d))
 ```
 
 If we specify the child identifier \code{patid} as a by-group variable, 
 we may calculate the D-score and DAZ for all children by
 
-```{r}
+```{r eval=FALSE}
 # use age corrected for gestational age
 data <- data.frame(data)
 data$ages <- round(data$daycor/365.25, 4)
 
 # calculate D-score and DAZ
 ds <- split(data, data$patid)
-dl <- parallel::mclapply(ds, FUN = dscore)
+dl <- parallel::mclapply(ds, FUN = dscore_vector)
 dazl <- lapply(dl, FUN = daz)
 df <- data.frame(
   patid = rep(as.numeric(names(dl)), times = unlist(lapply(dl, length))),
@@ -145,7 +144,7 @@ head(df)
 
 Finally, in order to do further analyses, we need to put the estimated D-score and DAZ back into the source data.
 
-```{r}
+```{r eval=FALSE}
 # merge dscore and daz into popsdemo data
 popsdemo$ages <- round(popsdemo$daycor/365.25, 4)
 popsdemo <- merge(popsdemo, df, all.x = TRUE)

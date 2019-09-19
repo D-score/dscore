@@ -1,0 +1,2281 @@
+item	instrument	domain	mode	number	equate	label
+aqicmc001	aqi	cm	c	001		Does your baby sometimes make throaty or gurgling sounds?
+aqicmc002	aqi	cm	c	002		After you have been out of sight, does your baby smile or get excited when she sees you?
+aqicmc003	aqi	cm	c	003		Does your baby make cooing sounds such as "ooo", "gah," and  "ah"?
+aqicmc004	aqi	cm	c	004		Does your baby make high-pitched squeals?
+aqicmc006	aqi	cm	c	006		When you speak to your baby, does she make sounds back to you?
+aqicmc007	aqi	cm	c	007		Does your baby laugh?
+aqicmc008	aqi	cm	c	008		Does your baby make sounds when looking at toys or people?
+aqicmc009	aqi	cm	c	009		If you call your baby when you are out of sight, does she look in the direction of your voice?
+aqicmc010	aqi	cm	c	010		When a loud noise occurs, does your baby turn to see where the sound came from?
+aqicmc012	aqi	cm	c	012		When playing with sounds, does your baby make grunting, growling, or other deep-toned sounds?
+aqicmc013	aqi	cm	c	013		Does your baby respond to the tone of your voice and stop her activity at least briefly when you say "no-no" to her?
+aqicmc014	aqi	cm	c	014		Does your baby make sounds like "da," "ga," "ka," and "ba"?
+aqicmc015	aqi	cm	c	015		If you copy the sounds your baby makes, does your baby repeat the sounds back to you?
+aqicmc016	aqi	cm	c	016		Does your baby make two similar sounds like "ba-ba," "da-da," or "ga-ga"? (The sounds do not need to mean anything.)
+aqicmc017	aqi	cm	c	017		Does your baby stop crying when she hears a voice other than yours?
+aqicmc018	aqi	cm	c	018		If you ask your baby to, does he play at least one nursery game even if you don't show him the activity yourself (such as "bye-bye," "Peekaboo," "clap your hands," "So Big")?
+aqicmc020	aqi	cm	c	020		When you ask, "Where is the ball (hat, shoe, etc.)?" does your baby look at the object? (Make sure the object is present. Mark "yes" if she knows one object.)
+aqicmc021	aqi	cm	c	021		Does your baby follow one simple command, such as "Come here," "Give it to me," or "Put it back," without your using gestures?
+aqicmc022	aqi	cm	c	022		Does your baby say three words such as "Mama", "Dada" and "Baba"? (A "word" is a sound or sounds your baby says consistently to mean someone or something)
+aqicmc023	aqi	cm	c	023		When your child wants something, does she tell you by pointing to it?
+aqicmc024	aqi	cm	c	024		Does your baby shake his head when he means "no" or "yes"?
+aqicmc025	aqi	cm	c	025		Does your baby/child say four or more words in addition to "Mama" and "Dada"?
+aqicmc026	aqi	cm	c	026		Without your giving him clues by pointing or using gestures, can your child carry out at least three of these kinds of directions? A. "Put the toy on the table." B."Close the door." C. "Bring me a towel." D."Find your coat." E."Take my hand." F."Get your book."
+aqicmc027	aqi	cm	c	027		When you ask her to, does your baby go into another room to find a familiar toy or object? You might ask, "Where is your ball?" or say, "Bring me your coat" or "Go get your blanket."
+aqicmc028	aqi	cm	c	028		When you ask your child to point to her nose, eyes, hair, feet, ears, and so forth, does she correctly point to at least seven body parts? (She can point to parts of herself, you, or a doll.) (Mark "sometimes" if she correctly points to at least three different body parts.)
+aqicmc029	aqi	cm	c	029		Without your showing him, does your child point to the correct picture when you say, "Show me the kitty" or ask, "Where is the dog?" (He needs to identify only one picture correctly.)
+aqicmc030	aqi	cm	c	030		Does your child say eight or more words in addition to "Mama" and "Dada"?
+aqicmc031	aqi	cm	c	031		If you point to a picture of a ball (kitty, cup, hat, etc.) and ask your child, "What is this?" does your child correctly name at least one picture?
+aqicmc032	aqi	cm	c	032		Without giving your child help by pointing or using gestures, ask him to "put the book on the table" and "put the shoe under the chair." Does your child carry out both of these directions correctly?
+aqicmc033	aqi	cm	c	033		Does your child say 15 or more words in addition to "Mama" and "Dada"?
+aqicmc034	aqi	cm	c	034		Show your child how a zipper on a coat moves up and down, and say, "See, this goes up and down." Put the zipper to the middle, and ask your child to move the zipper down. Return the zipper to the middle, and ask your child to move the zipper up. Do this several times, placing the zipper in the middle before asking your child to move it up or down. Does your child consistently move the zipper up when you say "up" and down when you say "down"?
+aqicmc035	aqi	cm	c	035		Does your child imitate a two-word sentence? For example, when you say a two-word phrase, such as "Mama eat," "Daddy play," "Go home," or "What's this?" does your child say both words back to you? (Mark "yes" even if his words are difficult to understand.)
+aqicmc036	aqi	cm	c	036		Does your child say two or three words that represent different ideas together, such as "See dog," "Mommy come home," or "Kitty gone"? (Don't count word combinations that express one idea, such as "Bye-bye," "All gone," "All right," and "What's that?") Please give an example of your child's word combinations:
+aqicmc037	aqi	cm	c	037		When looking at a picture book, does your child tell you what is happening or what action is taking place in the picture? (for example, "barking," "running," "eating," and "crying") You may ask, "What is the dog (or boy) doing?"
+aqicmc038	aqi	cm	c	038		When you ask, "What is your name?" does your child say her first name or nickname?
+aqicmc039	aqi	cm	c	039		Does your child correctly use at least two words like "me," "I," "mine," and "you"?
+aqicmc040	aqi	cm	c	040		Does your child make sentences that are three or four words long? Please give an example:
+aqicmc041	aqi	cm	c	041		Without your giving help by pointing or repeating directions, does your child follow three directions that are unrelated to one another? Give all three directions before your child starts. For example, you may ask your child to "Clap your hands, walk to the door, and sit down," or "Give me the pen, open the book, and stand up."                                       (5/26/10 this item was corrected to match the published version,ASQ3 English text)
+aqicmc042	aqi	cm	c	042		Does your child answer the following questions:  (Mark "sometimes" if your child answers only one question.) "What do you do when you are hungry?" (Acceptable answers include: "get food," "eat," "ask for something to eat," and "have a snack.") Please write your child's response: "What do you do when you are tired?" (Acceptable answers include: "take a nap," "rest," "go to sleep," "go to bed," "lie down," and "sit down.") Please write your child's response:.
+aqicmc043	aqi	cm	c	043		Does your child use four- and five-word sentences? For example, does your child say, "I want the car"? Please write an example:
+aqicmc044	aqi	cm	c	044		Does your child name at least three items from a common category? For example, if you say to your child, "Tell me some things that you can eat," does your child answer with something like, "Cookies, eggs, and cereal"? Or if you say, "Tell me the names of some animals," does your child answer with something like, "cow, dog, and elephant"?
+aqicmc045	aqi	cm	c	045		Does your child use endings of words, such as "s," "ed," and "ing"? For example, does your child say things like, "I see two cats," "I am playing," or "I kicked the ball"?
+aqicmc051	aqi	cm	c	051		When talking about something that already happened, does your child use words that end in "ed," such as "walked", "jumped", or"played"? Ask your child questions, such as "How did you get to the store?" ("We walked.") "What did you do at your friend's house?" ("We played.") Please write an example:
+aqicmc052	aqi	cm	c	052		Does your child tell you at least two things about common objects? For example, if you say to your child, "Tell me about your ball," does he say something like, "It's round. I throw it. It's big"?
+aqicmc055	aqi	cm	c	055		Does your child use all of the words in a sentence (for example, "a," "the," "am," "is," and "are") to make complete sentences, such as "I am going to the park," or " Is there a toy to play with?" or " Are you coming, too?"
+aqicmc060	aqi	cm	c	060		Does your child repeat the sentences shown below back to you, without any mistakes?(Read the sentences one at a time. You may repeat each sentence one time. Mark "yes" if your child repeats both sentences without mistakes or "sometimes" if your child repeats one sentence without mistakes. Jane hides her shoes for Maria to find. Al read the blue book under his bed.
+aqicmc061	aqi	cm	c	061		When you ask, "What is your name?" does your child say both her first and last names?
+aqicmc065	aqi	cm	c	065		Does your child use comparison words, such as "heavier," "stronger", or "shorter"? Ask your child questions, such as "A car is big, but a bus is _____" (bigger); "A cat is heavy, but a man is _____" (heavier); "A TV is small, but a book is _____" (smaller). Please write an example:
+aqifmc001	aqi	fm	c	001		Does your baby touch her face with her hands?
+aqifmc002	aqi	fm	c	002		Does your baby grasp your finger if you touch the palm of her hand?
+aqifmc003	aqi	fm	c	003		Does your baby hold his hands open or partly open when he is awake (rather than in fists, as they were when he was a newborn)?
+aqifmc004	aqi	fm	c	004		Is your baby's hand usually tightly closed when he is awake?(If your baby used to do this but no longer does, mark "yes.")
+aqifmc005	aqi	fm	c	005		Does your baby grab or scratch at her clothes?
+aqifmc009	aqi	fm	c	009		Does your baby grab a toy you offer and look at it, wave it about, or chew on it for about 1 minute?
+aqifmc011	aqi	fm	c	011		Does your baby pick up a small toy with only one hand?
+aqifmc012	aqi	fm	c	012		Does your baby reach for or grasp a toy using both hands at once?
+aqifmc013	aqi	fm	c	013		Does your baby pick up a small toy, holding it in the center of her hands with her fingers around it?
+aqifmc014	aqi	fm	c	014		Does your baby reach for a crumb or Cheerio and touch it with his finger or hand? (if he already picks up a small object the size of a pea, mark "yes"  for this item)
+aqifmc015	aqi	fm	c	015		Does your baby try to pick up a crumb or Cheerio by using his thumb and all his fingers in a raking motion, even if he isn't able to pick it up? (if he already picks up the crumb or Cheerio, mark "yes" for this item).
+aqifmc016	aqi	fm	c	016		Does your baby successfully pick up a crumb or Cheerio by using his thumb and all his fingers in a raking motion? (If he already picks up a crumb or Cheerio, mark "yes" for this item.)
+aqifmc017	aqi	fm	c	017		Does your baby pick up a small toy with the tips of her thumb and fingers? (You should see a space between the toy and her palm.)
+aqifmc018	aqi	fm	c	018		After one or two tries, does your baby pick up a piece of string with her first finger and thumb? (The string may be attached to a toy.)
+aqifmc019	aqi	fm	c	019		Does your baby pick up a crumb or Cheerio with the tips of his thumb and a finger? He may rest his arm or hand on the table while doing it.
+aqifmc020	aqi	fm	c	020		Does your baby put a small toy down, without dropping it, and then take her hand off the toy?
+aqifmc021	aqi	fm	c	021		Without resting his arm or hand on the table, does your baby pick up a crumb or Cheerio with the tip of his thumb and a finger?
+aqifmc022	aqi	fm	c	022		Does your baby/child help turn the pages of a book? (You may lift a page for her to grasp.)
+aqifmc023	aqi	fm	c	023		Does your child turn the pages of a book by himself? (He may turn more than one page at a time.)
+aqifmc024	aqi	fm	c	024		Does your baby/child make a mark on the paper with the tip of a crayon (or pencil or pen) when trying to draw?
+aqifmc025	aqi	fm	c	025		Does your baby/child stack a small block or toy on top of another one? (You could also use spools of thread, small boxes, or toys that are about 1 inch in size.)
+aqifmc027	aqi	fm	c	027		Does your baby/child throw a small ball with a forward arm motion? (If he simply drops the ball, mark "not yet" for this item.)
+aqifmc029	aqi	fm	c	029		Does your child get a spoon into her mouth right side up so that the food usually doesn't spill?
+aqifmc030	aqi	fm	c	030		Does your child stack six small blocks or toys on top of each other by himself? Note--add this example to 2-22 only (You could also use spools of thread, small boxes, or toys that are about 1 inch in size.)
+aqifmc031	aqi	fm	c	031		Does your child use a turning motion with her hand while trying to turn doorknobs, wind up toys, twist tops, or screw lids on and off jars?
+aqifmc032	aqi	fm	c	032		Does your child turn pages in a book, one page at a time?
+aqifmc033	aqi	fm	c	033		After your child watches you draw a single circle, ask him to make a circle like yours. Do not let him trace your circle. Does your child copy you by drawing a circle?
+aqifmc034	aqi	fm	c	034		After your child watches you draw a line from the top of the paper to the bottom with a pencil, crayon, or pen,  ask him to make a line like yours. Do not let your child trace your line. Does your child copy you by drawing a single line in a vertical direction?
+aqifmc035	aqi	fm	c	035		After your child watches you draw a line from one side of the paper to the other side, ask her to make a line like yours. Do not let your child trace your line. Does your child copy you by drawing a single line in a horizontal direction?
+aqifmc036	aqi	fm	c	036		Can your child string small items such as beads, macaroni or pasta "wagon wheels", onto a string or shoelace?
+aqifmc037	aqi	fm	c	037		Does your child try to cut paper with child-safe scissors? She does not need to cut the paper but must get the blades to open and close while holding the paper with the other hand. (You may show your child how to use scissors. Carefully watch your child's use of scissors for safety reasons.)
+aqifmc038	aqi	fm	c	038		When drawing, does your child hold a pencil, crayon, or pen between her fingers and thumb like an adult does?
+aqifmc039	aqi	fm	c	039		Does your child put together a five to seven piece interlocking puzzle? (If one is not available, take a full-page picture from a magazine or catalog and cut it into six pieces. Does your child put it back together correctly?)
+aqifmc040	aqi	fm	c	040		Does your child unbutton one or more buttons? (Your child may use his own clothing or a doll's clothing. )
+aqifmc041	aqi	fm	c	041		Using the shape at right to look at, does your child copy it onto a large piece of paper using a pencil or crayon, without tracing? Your child's drawing should look like the design of the shape, except it may be different in size.
+aqifmc042	aqi	fm	c	042		Does your child draw pictures of people that have at least three of the following features: head, eyes, nose, mouth, neck, hair, trunk, arms, hands, legs, or feet?
+aqifmc044	aqi	fm	c	044		Using child-safe scissors, does your child cut a paper in half on a more or less straight line, making the blades go up and down? (Carefully watch your child's use of scissors for safety reasons.)
+aqifmc048	aqi	fm	c	048		Ask your child to trace on the line below with a pencil. Does your child trace on the line without going off the line more than two times? (Mark "sometimes" if your child goes off the line three times.)
+aqifmc049	aqi	fm	c	049		Using the shapes below to look at, does your child copy at least three shapes onto a large piece of paper using a pencil or crayon, without tracing? (Your child's drawings should look similar to the design of the shapes below, but they may be different in size.)
+aqifmc050	aqi	fm	c	050		Ask your child to draw a picture of a person on a blank sheet of paper. You may ask your child to "Draw a picture of a girl or a boy." If your child draws a person with head, body, arms, and legs, mark "yes." If your child draws a person with only three parts (head, body, arms, or legs), mark "sometimes." If your child draws a person with two or fewer parts (head, body, arms, or legs), mark "not yet." Be sure to attach the sheet of paper with your child's drawing to this questionnaire.
+aqifmc051	aqi	fm	c	051		Does your child color mostly within the lines in a coloring book or within the lines of a 2 inch circle that you draw? (Your child should not go more than 1/4 inch outside the lines on most of the picture).
+aqifmc052	aqi	fm	c	052		Draw a line across a piece of paper. Using child-safe scissors, does your child cut the paper in half on a more or less straight line, making the blades go up and down? (Carefully watch your child's use of scissors for safety reasons.)
+aqifmc054	aqi	fm	c	054		Using the shapes below to look at, does your child copy the shapes in the space below without tracing? Your child's drawings should look similar to the design of the shapes below, but they may be different in size. (Mark "yes" if she copies all three shapes; mark "sometimes" if your child copies two shapes.) (Space for child's shapes.)
+aqifmc055	aqi	fm	c	055		Print your child's first name. Can your child copy the letters? The letters may be large, backward, or reversed. Mark "sometimes" if your child copies about half of the letters. (Space for adult's printing) (Space for child's printing)
+aqifmc059	aqi	fm	c	059		Using the letters below to look at, does your child copy the letters without tracing? Cover up all of the letters except the letter being copied. Mark "yes" if your child copies four of the letters, and you can read them. Mark "sometimes" if your child copies two or three letters, and you can read them. V H T C A  (Copy letters here.)
+aqigmc001	aqi	gm	c	001		While your baby is on his back, does your he wave his arms and legs, wiggle and squirm?
+aqigmc002	aqi	gm	c	002		When your baby is on his back, does he kick his legs?
+aqigmc003	aqi	gm	c	003		After holding her head up while on her tummy, does your baby lay her head back down on the floor, rather than let it drop or fall forward?
+aqigmc004	aqi	gm	c	004		When your baby is on his tummy, does he hold his head up for a few seconds?
+aqigmc005	aqi	gm	c	005		While your baby is on his back, does he baby move his head from side to side?
+aqigmc006	aqi	gm	c	006		When your baby is on her tummy, does she turn her head to the side?
+aqigmc007	aqi	gm	c	007		When you hold him in a sitting position, does your baby hold his head steady?
+aqigmc008	aqi	gm	c	008		When your baby is on his tummy, does your baby hold his head up so that his chin is about 3 inches from the floor for at least 15 seconds?
+aqigmc009	aqi	gm	c	009		While your baby is on her back, does your baby bring her hands together over her chest, touching her fingers?
+aqigmc010	aqi	gm	c	010		While your baby is on his back, does your baby lift his legs high enough to see his feet?
+aqigmc011	aqi	gm	c	011		When your is on her tummy, does your she hold her head straight up, looking around? (She can rest on her arms while doing this.)
+aqigmc012	aqi	gm	c	012		When you put your baby on the floor, does she lean on her hands while sitting? (If she already sits up straight without leaning on her hands, mark "yes" for this item.)
+aqigmc013	aqi	gm	c	013		If you hold both hands just to balance your baby, does he support his own weight while standing?
+aqigmc014	aqi	gm	c	014		When your baby is on her tummy, does she straighten both arms and push her whole chest off the bed or floor?
+aqigmc015	aqi	gm	c	015		Does your baby roll from his back to his tummy, getting both arms out from under him?
+aqigmc016	aqi	gm	c	016		When sitting on the floor, does your baby sit up straight for several minutes without using her hands for support?
+aqigmc017	aqi	gm	c	017		Does your baby get into a crawling position by getting up on her hands and knees?
+aqigmc018	aqi	gm	c	018		When you stand your baby next to furniture or the crib rail, does he hold on without leaning his chest against the furniture for support?
+aqigmc020	aqi	gm	c	020		While holding onto furniture, does your baby lower himself with control (without falling or flopping down)?
+aqigmc021	aqi	gm	c	021		While holding onto furniture, does your baby bend down and pick up a toy from the floor and then return to a standing position?
+aqigmc022	aqi	gm	c	022		Does your baby walk beside furniture while holding on with only one hand?
+aqigmc023	aqi	gm	c	023		When you hold one hand just to balance your baby, does she take several steps forward? (If your baby already walks alone, mark "yes" for this item.)
+aqigmc024	aqi	gm	c	024		Does your baby/child bend over or squat to pick up an object from the floor and then stand up again without any support?
+aqigmc025	aqi	gm	c	025		Does your baby/child climb onto furniture or other large objects such as large climbing blocks?
+aqigmc026	aqi	gm	c	026		Does your baby/child stand up in the middle of the floor by himself and take several steps forward?
+aqigmc027	aqi	gm	c	027		Does your baby/child move around by walking, rather than by crawling on his hands and knees?
+aqigmc028	aqi	gm	c	028		Does your child walk well and seldom fall?
+aqigmc029	aqi	gm	c	029		Does your child climb on an object such as a chair to reach something she wants? (For example, to get a toy on a counter or to "help" you in the kitchen.)
+aqigmc030	aqi	gm	c	030		When you show your child how to kick a large ball, does he try to kick the ball by moving his leg forward or by walking into it? (If your child already kicks a ball, mark "yes" for this item.)
+aqigmc031	aqi	gm	c	031		Does your child walk either up or down at least two steps by himself? He may hold onto the railing or wall. Note- 1-27 and 2-30 add (You can look for this at a store, on a playground, or at home.)
+aqigmc032	aqi	gm	c	032		Does your child walk down stairs if you hold onto one of her hands? She may hold onto the railing or wall. (You can look for this at a store, on a playground, or at home.)
+aqigmc033	aqi	gm	c	033		Does your child run fairly well, stopping herself without bumping into things or falling?
+aqigmc034	aqi	gm	c	034		Without holding onto anything for support, does your child kick a ball by swinging his leg forward?
+aqigmc036	aqi	gm	c	036		Does your child jump with both feet leaving the floor at the same time?
+aqigmc037	aqi	gm	c	037		While standing, does your child throw a ball overhand by raising his arm to shoulder height and throwing the ball forward? (Dropping the ball or throwing the ball underhand should be scored as "not yet".)
+aqigmc038	aqi	gm	c	038		Does your child walk up stairs, using only one foot on each stair? (The left foot is on one step, and the right foot is on the next.) She may hold onto the railing or wall.
+aqigmc039	aqi	gm	c	039		Does your child jump forward at least 3 inches with both feet leaving the ground at the same time?
+aqigmc040	aqi	gm	c	040		Does your child stand on one foot for about 1 second without holding onto anything?
+aqigmc041	aqi	gm	c	041		While standing, does your child throw a ball overhand in the direction of a person standing at least 6 feet away? To throw overhand, your child must raise her arm to shoulder height and throw the ball forward. (Dropping the ball or throwing the ball underhand should be scored as "not yet".)
+aqigmc042	aqi	gm	c	042		Does your child walk on his tiptoes for 15 feet (about the length of a large car)? (You may show him how to do this.)
+aqigmc043	aqi	gm	c	043		Does your child catch a large ball with both hands? (You should stand about 5 feet away and give your child two or three tries before you mark the answer.)
+aqigmc044	aqi	gm	c	044		Does your child jump forward at least 6 inches with both feet leaving the ground at the same time?
+aqigmc047	aqi	gm	c	047		Without holding onto anything, does your child stand on one foot for at least 5 seconds without losing his balance and putting his foot down? You may give your child two or three tries before you mark the answer.)
+aqigmc048	aqi	gm	c	048		Does your child hop up and down on either the right or left foot at least one time without losing his balance or falling?
+aqigmc054	aqi	gm	c	054		Does your child jump forward a distance of 20 inches from a standing position, starting with her feet together?
+aqigmc059	aqi	gm	c	059		Does your child skip using alternating feet? You may show her how to do this?
+aqigmc062	aqi	gm	c	062		Does your child hop forward on one foot for a distance of 46 feet without putting down the other foot? You may give him two tries on each foot. Mark "sometimes" if he can hop on one foot only.
+aqipxc001	aqi	px	c	001		Does your baby look at objects that are 8-10 inches away?
+aqipxc002	aqi	px	c	002		When you move a small toy up and down slowly in front of her face (about 10 inches away), does your baby follow the toy with her eyes?
+aqipxc003	aqi	px	c	003		When you move a toy slowly from side to side in front of your baby's face (about 10 inches away), does your baby follow the toy with his eyes, sometimes turning his head?
+aqipxc004	aqi	px	c	004		When you move around, does your baby follow you with her eyes ?
+aqipxc005	aqi	px	c	005		When you put a toy in her hand, does your baby look at it?
+aqipxc006	aqi	px	c	006		When you hold your baby in a sitting position, does he look at a toy (about the size of a cup or rattle) that you place on the table or floor in front of him?
+aqipxc007	aqi	px	c	007		When you put a toy in his hand, does your baby put the toy in his mouth?
+aqipxc008	aqi	px	c	008		When you dangle a toy above your baby while she is lying on her back, does your baby wave her arms toward the toy?
+aqipxc009	aqi	px	c	009		Does your baby pick up a toy and put it in his mouth?
+aqipxc010	aqi	px	c	010		When your baby  is on his back, does he turn his head to look for a toy when he drops it? (If he already picks it up, mark "yes" for this item.)
+aqipxc011	aqi	px	c	011		When your baby is on her back, does she try to get a toy she has dropped if she can see it?
+aqipxc012	aqi	px	c	012		Does your baby play by banging a toy up and down on the floor or table?
+aqipxc013	aqi	px	c	013		When a toy is in front of her, does your baby reach for it with both hands?
+aqipxc014	aqi	px	c	014		Does your baby pass a toy back and forth from one hand to the other?
+aqipxc015	aqi	px	c	015		When holding a toy in his hand, does your baby bang it against another toy on the table?
+aqipxc016	aqi	px	c	016		Does your baby pick up two small toys, one in each hand, and hold onto them for about 1 minute?
+aqipxc017	aqi	px	c	017		After watching you hide a small toy under a piece of paper or cloth, does your baby find it? (Be sure the toy is completely hidden.)
+aqipxc018	aqi	px	c	018		While holding a small toy in each hand, does your baby clap the toys together (like "Pat-a-cake")?
+aqipxc019	aqi	px	c	019		Does your baby poke at or try to get a crumb or Cheerio that is inside a clear bottle (such as a plastic soda-pop bottle or baby bottle)?
+aqipxc020	aqi	px	c	020		If you put a small toy into a bowl or box, does your baby copy you by putting in a toy, although she may not let go of it? (If she already lets go of the toy into a bowl or box, mark "yes" for this item.)
+aqipxc021	aqi	px	c	021		Does your baby drop two small toys, one after the other, into a container like a bowl or box? (You may show him how to do it.)
+aqipxc022	aqi	px	c	022		If you give your child a bottle, spoon, or pencil upside down, does he turn it right side up so that he can use it properly?
+aqipxc023	aqi	px	c	023		After you scribble back and forth on paper with a crayon (or a pencil or pen), does your baby/child copy you by scribbling? (If she already scribbles on her own, mark "yes" for this item.)
+aqipxc024	aqi	px	c	024		Does your baby/child drop several small toys, one after another, into a container like a bowl or box? (You may show him how to do it.)
+aqipxc025	aqi	px	c	025		Can your baby/child drop a crumb or Cheerio into a small, clear bottle (such as a plastic soda-pop bottle or baby bottle)?
+aqipxc026	aqi	px	c	026		Without your showing him how, does your child scribble back and forth when you give him a crayon (or pencil or pen)?
+aqipxc027	aqi	px	c	027		After a crumb or Cheerio is dropped into a small, clear bottle, does your child turn the bottle upside down to dump it out? (You may show her how.) (You can use a soda-pop bottle or a baby bottle.)
+aqipxc028	aqi	px	c	028		After a crumb or Cheerio is dropped into a small, clear bottle, does your child turn the bottle upside down to dump out the crumb or Cheerio?( Do not show her how.) Note--on 5-22 and 2-24 add:(You can use a soda pop bottle or a baby bottle.)
+aqipxc029	aqi	px	c	029		If you do any of the following gestures, does your child copy at least one of them? a. Open and close your mouth. b. Blink your eyes. c. Pull on your earlobe.  d. Pat your cheek.
+aqipxc030	aqi	px	c	030		Does your child put things away where they belong? For example, does he know his toys belong on the toy shelf, his blanket goes on his bed, and dishes go in the kitchen?
+aqipxc031	aqi	px	c	031		Does your child pretend objects are something else? For example, does your child hold a cup to his ear, pretending it is a telephone? Does he put a box on his head, pretending it is a hat? Does he use a block or small toy to stir food?
+aqipxc032	aqi	px	c	032		While your child watches, line up four objects like blocks or cars in a row. Does your child copy or imitate you and line up at least two blocks side by side? (You can also use spools of thread, small boxes, or other toys.)
+aqipxc033	aqi	px	c	033		If your child wants something she cannot reach, does she find a chair or box to stand on to reach it (for example to get a toy on a counter or to "help" you in the kitchen)?
+aqipxc034	aqi	px	c	034		After you have shown your baby  how, does he try to get a small toy that is slightly out of reach by using a spoon, stick, or similar tool?
+aqipxc035	aqi	px	c	035		When looking in the mirror, ask "Where is _______?" (Use your child's name.) Does your child point to her image in the mirror?
+aqipxc037	aqi	px	c	037		Show your child how to make a bridge with blocks, boxes, or cans, like the example. Does your child copy you by making one like it?
+aqipxc038	aqi	px	c	038		When you say, "Say seven three," does your child repeat just the two numbers in the same order? Do not repeat the numbers.If necessary, try another pair of numbers and say, "Say eight two." Your child must repeat just one series of two numbers for you to answer "yes" to this question.
+aqipxc039	aqi	px	c	039		Does your child dress up and "play-act," pretending to be someone or something else? For example, your child may dress up in different clothes and pretend to be a mommy, daddy, brother, or sister, or an imaginary animal or figure.
+aqipxc040	aqi	px	c	040		When you point to the figure and ask your child, "What is this?" Does your child say a word that means a person or something similar? (Mark "yes" for responses like "snowman", "boy", "man", "girl", "Daddy", "spaceman" and "monkey"). Please write your child's response here.
+aqipxc041	aqi	px	c	041		Without your giving help by pointing, does your child follow three different directions using the words "under," "between," and "middle"? For example, ask your child to put the shoe "under the couch."  Then ask her to put the ball " between the chairs" and the book "in the middle of the table."
+aqipxc042	aqi	px	c	042		When you say, "Say five eight three," does your child repeat just the three numbers in the same order? Do not repeat the numbers. If necessary, try another series of numbers and say, "Say six nine two." Your child must repeat just one series of three numbers for you to answer "yes" to this question.
+aqipxc043	aqi	px	c	043		After your child draws a "picture," even a simple scribble, does your child tell you what she drew? (You may say, "Tell me about your picture," or ask, "What is this?" to prompt her.)
+aqipxc044	aqi	px	c	044		After watching you draw a line from the top of the paper to the bottom with a crayon (or pencil or pen), does your child copy you by drawing a single line on the paper in any direction? (Mark "not yet" if your child scribbles back and forth)
+aqipxc045	aqi	px	c	045		When asked, "Which circle is the smallest?" does your child point to the smallest circle? Ask this question without providing help by pointing, gesturing, or looking at the smallest circle.
+aqipxc046	aqi	px	c	046		When shown objects and asked, "What color is this?" does your child name five different colors like red, blue, yellow, orange, black, white, or pink? (Mark "yes" only if your child answers the question correctly using five colors.)
+aqipxc047	aqi	px	c	047		If you place five objects in front of your child, can he count them saying, "One, two, three, four, five," in order? Ask the question without providing help by pointing, gesturing, or naming.
+aqipxc048	aqi	px	c	048		Does your child know the following six words for shapes? For example, your child says, "That's a square," when pointing to a box. If she knows at least 3 shapes mark "sometimes". a. circle  b. triangle  c. diamond  d. square  e. rectangle  f. star.
+aqipxc051	aqi	px	c	051		Does your child finish the following sentences using a word that means the opposite of the word that is italicized? For example: "A rock is hard, and a pillow is soft." Please write your child's responses below: A cow is big, and a mouse is ______. Ice is cold, and fire is ______. We see stars at night, and we see the sun during the ______. When I throw the ball up, it comes ______. Mark "yes" if she finishes three of four sentences correctly. Mark "sometimes" if she finishes two of four sentences correctly.
+aqipxc052	aqi	px	c	052		Does your child know the names of numbers?( Mark "yes" if he identifies the three numbers (3, 1, 2) below. Mark "sometimes" if he identifies two numbers.)
+aqipxc053	aqi	px	c	053		Does your child name at least four letters in her name? Point to the letters and ask, "What letter is this?" (Point to the letters out of order.)
+aqipxc055	aqi	px	c	055		Does your child count up to 15 without making mistakes? If so, mark "yes." If your child counts to 12 without making mistakes, mark "sometimes."
+aqislc001	aqi	sl	c	001		Does your baby cry when she is hungry, wet, tired, or wants to be held?
+aqislc002	aqi	sl	c	002		Does your baby sometimes try to suck, even when he's not feeding?
+aqislc003	aqi	sl	c	003		Does your baby smile at you?
+aqislc004	aqi	sl	c	004		When you smile at your baby, does she smile back?
+aqislc005	aqi	sl	c	005		When your baby sees the breast or bottle, does he seem to know he is about to be fed?
+aqislc007	aqi	sl	c	007		Does your baby watch his hands?
+aqislc009	aqi	sl	c	009		When in front of a large mirror, does your baby smile or coo at herself?
+aqislc010	aqi	sl	c	010		While lying on her back, does your baby play by grabbing her foot?
+aqislc011	aqi	sl	c	011		Does your baby try to get a toy that is out of reach? (She may roll, pivot on her tummy, or crawl to get it.)
+aqislc013	aqi	sl	c	013		When in front of a large mirror, does your baby reach out to pat the mirror?
+aqislc014	aqi	sl	c	014		Does your baby feed himself a cracker or a cookie?
+aqislc015	aqi	sl	c	015		Does your baby drink water, juice, or formula from a cup while you hold it?
+aqislc016	aqi	sl	c	016		Does your baby act differently toward strangers than he does with you and other familiar people? (Reactions to strangers may include staring, frowning, withdrawing, or crying.)
+aqislc017	aqi	sl	c	017		While your baby is on his back, does he put his foot in his mouth?
+aqislc018	aqi	sl	c	018		When you dress your baby, does he push his arm through a sleeve once his arm is started in the hole of the sleeve?
+aqislc019	aqi	sl	c	019		When you hold out your hand and ask for her toy, does your baby offer it to you even if she doesn't let go of it? (If she already lets go of the toy into your hand, mark "yes" for this item.)
+aqislc020	aqi	sl	c	020		When you hold out your hand and ask for her toy, does your baby let go of it into your hand?
+aqislc021	aqi	sl	c	021		Does your baby roll or throw a ball back to you so that you can return it to him?
+aqislc022	aqi	sl	c	022		Does your baby/child play with a doll or stuffed animal by hugging it?
+aqislc023	aqi	sl	c	023		When you dress your baby does she lift her foot for her shoe, sock, or pant leg?
+aqislc024	aqi	sl	c	024		Does your child copy the activities you do, such as wipe up a spill, sweep, shave, or comb hair?
+aqislc025	aqi	sl	c	025		Does your child push a little wagon, stroller or other toy on wheels, steering it around objects and backing out of corners if he cannot turn?
+aqislc026	aqi	sl	c	026		Does your baby/child feed herself with a spoon, even though she may spill some food?
+aqislc027	aqi	sl	c	027		Does your baby/child get your attention or try to show you something by pulling on your hand or clothes?
+aqislc028	aqi	sl	c	028		Does your child come to you when she needs help, such as with winding up a toy or unscrewing a lid from a jar?
+aqislc029	aqi	sl	c	029		Does your child use a spoon to feed himself with little spilling?
+aqislc030	aqi	sl	c	030		Does your child drink from a cup or glass, putting it down again with little spilling?
+aqislc031	aqi	sl	c	031		If you do any of the following gestures, does your child copy at least one of them?  a. Open and close your mouth. b. Blink your eyes. c. Pull on your earlobe. d. Pat your cheek
+aqislc032	aqi	sl	c	032		Does your baby/child help undress himself by taking off clothes like socks, hat, shoes, or mittens?
+aqislc033	aqi	sl	c	033		Does your child eat with a fork?
+aqislc034	aqi	sl	c	034		Does your child take turns by waiting while another child or adult takes a turn?
+aqislc035	aqi	sl	c	035		When playing with either a stuffed animal or doll, does your child pretend to rock it, feed it, change its diapers, put it to bed, and so forth?
+aqislc036	aqi	sl	c	036		When your child is looking in a mirror and you ask, "Who is in the mirror?" does he say either "me" or his own name?
+aqislc037	aqi	sl	c	037		While looking at himself in the mirror, does your child offer a toy to his own image?
+aqislc038	aqi	sl	c	038		After you put on loose-fitting pants around her feet, does your child pull them completely up to her waist?
+aqislc039	aqi	sl	c	039		Does your child call herself "I" or "me" more often than her own name? For example, "I do it," more often than "Juanita do it."
+aqislc041	aqi	sl	c	041		Using these exact words, ask your child, "Are you a girl or a boy?" Does your child answer correctly?
+aqislc048	aqi	sl	c	048		Does your child put on a coat, jacket, or shirt by himself?
+aqislc053	aqi	sl	c	053		Does your child serve herself, taking food from one container to another using utensils? For example, does your child use a large spoon to scoop applesauce from a jar into a bowl?
+barxxx001	bar	xx	x	001	EXP2	Smiles in response to an adult or his/her voice
+barxxx002	bar	xx	x	002	EXP5	Makes sounds spontaneously or in response to a stimulus
+barxxx003	bar	xx	x	003	GM23	Has head control while being pulled to stand upright
+barxxx004	bar	xx	x	004	FM12	Holds a toy with one or both hands when it is presented 
+barxxx005	bar	xx	x	005	GM25	Rolls from back to stomach
+barxxx006	bar	xx	x	006	GM26	Sits without support for some time
+barxxx007	bar	xx	x	007	GM31	Starting to crawl
+barxxx008	bar	xx	x	008	FM26	Grasps with fingertip to to take small objects
+barxxx009	bar	xx	x	009	GM35	Stands up when being pulled
+barxxx010	bar	xx	x	010	GM37	Walks with support, holding on to a railing, furniture or adult
+barxxx011	bar	xx	x	011	GM40	Stands for "some moments"
+barxxx012	bar	xx	x	012	GM42	Walks alone with "some steps"
+barxxx013	bar	xx	x	013		Drinks well from a cup or glass
+barxxx014	bar	xx	x	014	EXP23	Says more than 5 words
+barxxx015	bar	xx	x	015	GM54	Jumps in place
+barxxx016	bar	xx	x	016		Washes and dries hands
+barxxx017	bar	xx	x	017		Says his full name
+barxxx018	bar	xx	x	018	FM43	Copies a circle
+barxxx019	bar	xx	x	019	GM60	Balances on one foot for more than 5 seconds
+barxxx020	bar	xx	x	020		Bowel and bladder control
+barxxx021	bar	xx	x	021	FM66	Copies a square well
+barxxx022	bar	xx	x	022	COG68	Recognizes 4 colors
+batadd001	bat	ad	d	001		Takes strained food from spoon and swallows it (TS21)
+batadd002	bat	ad	d	002		Attends to ongoing sound or activity for 15 or more seconds (TS22)
+batadd003	bat	ad	d	003		Place both hands on a bottle or breast during feeding (TS23)
+batadd004	bat	ad	d	004		Eats semisolid food when it is placed in his or her mouth (TS24)
+batadd005	bat	ad	d	005		Begins to use spoon or other utensil to feed self (TS25)
+batadd006	bat	ad	d	006		Removes small articles of clothing without assistance (TS26)
+batadd007	bat	ad	d	007		Distinguishes between food substances and non-food substances (TS27)
+batadd008	bat	ad	d	008		Removes simple garment such as jacket, shorts, or shirt without assistance (TS28
+batadd009	bat	ad	d	009		Expresses need to go to bathroom (TS29)
+batadd010	bat	ad	d	010		Obtains drink from tap or other source without assistance (TS30)
+batadd011	bat	ad	d	011		Sucks with smooth, coordinated movements
+batadd012	bat	ad	d	012		Helps dress self by holding out his/her arms or legs
+batadd013	bat	ad	d	013		Asks for foor or liquid with words or gestures
+batadd014	bat	ad	d	014		Removes shoes without assistance
+batadd015	bat	ad	d	015		Feeds self with a spoon or fork without assistance
+batadd016	bat	ad	d	016		Puts away toys when asked
+batadd017	bat	ad	d	017		Blows his/her nose with assistance
+batadd018	bat	ad	d	018		Washes and dries hands without assistance
+batadd019	bat	ad	d	019		Chooses the appropriate ustensil for the food he/she is eating
+batadd020	bat	ad	d	020		Responds to instructions given in a small group and initiates an appropriate task without being reminded
+batadd021	bat	ad	d	021		Cuts soft foods with the side of a fork
+batadd022	bat	ad	d	022		Answers "what-to-do-if" questions involving personal responsibility
+batadd023	bat	ad	d	023		Chooses clothing that is approprate for the weather
+batadd024	bat	ad	d	024		Knows his/her own phone number
+batadd025	bat	ad	d	025		Goes to bed without assistance
+batadd026	bat	ad	d	026		Uses emergency phone numbers
+batcgd001	bat	cg	d	001	COG175	Follows visual stimulus (TS 79)
+batcgd002	bat	cg	d	002	COG16	Feels and explore objects (TS 8)
+batcgd003	bat	cg	d	003	COG176	Uncovers hidden toy (TS 81)
+batcgd004	bat	cg	d	004	COG25	Searches for removed object (TS 82)
+batcgd005	bat	cg	d	005	COG177	Reaches around barrier to obtain toy (TS 83)
+batcgd006	bat	cg	d	006	COG22	Recognizes self as cause of events or happenings (TS 84)
+batcgd007	bat	cg	d	007	COG56	Matches circle, square and triangle (TS 85)
+batcgd008	bat	cg	d	008	COG178	Repeats two-digits sequences (TS 86)
+batcgd009	bat	cg	d	009	COG179	Visually attends to a light source moving in a 180-degree arc
+batcgd010	bat	cg	d	010	COG180	Turns eyes towards a light source
+batcgd011	bat	cg	d	011	COG181	Attends to an ongoing sound or activity for 15 or more seconds
+batcgd012	bat	cg	d	012	COG182	Attends to a game of pekaboo for 1 min
+batcgd013	bat	cg	d	013	COG32	Looks at, points to, or touches pictures in a book
+batcgd014	bat	cg	d	014	COG183	Imitates simple facial gestures
+batcgd015	bat	cg	d	015	COG45	Finds an object hidden under one of two cups
+batcgd016	bat	cg	d	016	COG184	Nests objects inside one another
+batcgd017	bat	cg	d	017	COG185	Locates hidden items in a picture scene - Level 1
+batcgd018	bat	cg	d	018		Names the colores red, green, and blue
+batcgd019	bat	cg	d	019	COG186	Locates hidden items in a picture scene - Level 2
+batcgd020	bat	cg	d	020	COG83	Recognises visual differences among similar numerals and letters
+batcgd021	bat	cg	d	021	COG88	Identifies the picture that is different
+batcgd022	bat	cg	d	022	COG187	Categorises familiar objects by function
+batcgd023	bat	cg	d	023	COG188	Matches simple words
+batcgd024	bat	cg	d	024	COG189	Knows the right and left sides of his/her body
+batcgd025	bat	cg	d	025	COG190	Repeats sequences of 4 and 5 objects from memory
+batcgd026	bat	cg	d	026	COG191	Groups objects by shape and color
+batcmd001	bat	cm	d	001	REC6	Turns head toward source of sound outside field of vision (TS 61)
+batcmd002	bat	cm	d	002	EXP3	Vocalizes sound to express feelings (TS 62)
+batcmd003	bat	cm	d	003	REC11	Associates spoken words with familiar objects or actions(TS 63)
+batcmd004	bat	cm	d	004	EXP8	Produces one or more single-syllable consonant-vowel sounds (TS 64)
+batcmd005	bat	cm	d	005	REC69	Responds to simultaneous verbal and gestural commands (TS 65)
+batcmd006	bat	cm	d	006	EXP23	Uses 1 or more words (TS 66)
+batcmd007	bat	cm	d	007	REC42	Responds to prepositions in, out, on, in front of, toward, and behind (TS 67)
+batcmd008	bat	cm	d	008	EXP30	Uses pronouns I, you and me TS 68)
+batcmd009	bat	cm	d	009	REC3	Is soothed by a familiar adult's voice
+batcmd010	bat	cm	d	010	EXP98	Produces differenciated cries
+batcmd011	bat	cm	d	011	REC12	Responds to different tones of a person's voice
+batcmd012	bat	cm	d	012	REC70	Identifies family members or pets when named
+batcmd013	bat	cm	d	013	EXP12	Uses variations in his/her voice
+batcmd014	bat	cm	d	014	REC14	Follows 3 or more familiar verbal commands
+batcmd015	bat	cm	d	015	EXP99	Spontaneously initiates sounds, words, or gesturres that are associated with objects in the immediate environment
+batcmd016	bat	cm	d	016	REC32	Responds to the prepositions out and on
+batcmd017	bat	cm	d	017	EXP26	Uses 2-words utterances to express meaningful relationships
+batcmd018	bat	cm	d	018	REC71	Responds to who and what questions
+batcmd019	bat	cm	d	019	EXP100	Uses words to relate information about other people, their actions, or their experiences
+batcmd020	bat	cm	d	020	REC72	Responds to where and when questions
+batcmd021	bat	cm	d	021	EXP101	Repeats familiar words with clear articulation
+batcmd022	bat	cm	d	022	EXP102	Converses on topics for more than 5 turn-taking exchanges
+batcmd023	bat	cm	d	023	REC73	Identifies a word from its definition
+batcmd024	bat	cm	d	024	REC74	Follows 3-step verbal commands
+batcmd025	bat	cm	d	025	EXP38	Uses plural forms ending in the /ez/ sound
+batcmd026	bat	cm	d	026	EXP103	Recalls events from a sotry presented orally
+batcmd027	bat	cm	d	027	EXP46	Describes what is happening in a picture
+batmod001	bat	mo	d	001	FM138	Moves object held in hand to mouth (TS 41)
+batmod002	bat	mo	d	002	FM12	Reaches for objects placed before him/her and touches it (TS 42)
+batmod003	bat	mo	d	003	GM34	Moves three or more feet by crawling (TS 43)
+batmod004	bat	mo	d	004	FM24	Picks up raisin with several fingers opposed to thumb (partial finger prehension
+batmod005	bat	mo	d	005	GM47	Walks up four steps with support (TS 45)
+batmod006	bat	mo	d	006	FM26	Picks up raisin with ends of thumb and index finger in overhand approach
+batmod007	bat	mo	d	007	GM58	Walks up and down stairs without assistance, placing both feet on each step
+batmod008	bat	mo	d	008	FM139	Places four ring on post in any order (TS 48)
+batmod009	bat	mo	d	009	GM158	Jumps forward with both feet together (TS49)
+batmod010	bat	mo	d	010	FM140	Opens door by turning knob(TS 50)
+batmod011	bat	mo	d	011	GM159	Mantains an upright posture at adult's shoulder without assistance for at least 2 min
+batmod012	bat	mo	d	012	FM10	Holds hands in an open, loose-fisted position when not grasping an object
+batmod013	bat	mo	d	013	FM17	Retrieves a small object by raking it with his/her fingers and pulling it into the palm of the hand
+batmod014	bat	mo	d	014	FM21	Transfers an object from one hand to the other
+batmod015	bat	mo	d	015	GM160	Moves from a sitting position to a standing position without support
+batmod016	bat	mo	d	016	GM44	Intentionally propels or throws an object
+batmod017	bat	mo	d	017	GM161	Maintains or corrects his/her balance when moving from a standing position to other, nonvertical positions
+batmod018	bat	mo	d	018	FM141	Removes forms from a form board
+batmod019	bat	mo	d	019	GM50	Runs 1 feet without falling
+batmod020	bat	mo	d	020	FM30	Scribbles linear and/or circular patterns spontaneously
+batmod021	bat	mo	d	021	GM162	Walks forward 2 or more steps on a line on the floor, alternating feet
+batmod022	bat	mo	d	022	FM38	Stacks 8 cubes vertically
+batmod023	bat	mo	d	023	GM68	Hops forward on one foot without support
+batmod024	bat	mo	d	024	FM142	Folds a sheet of paper
+batmod025	bat	mo	d	025	FM143	Touches the fingertips of each hand successively with the thumb of the same hand
+batmod026	bat	mo	d	026	FM144	Draws a person with 6 parts
+batmod027	bat	mo	d	027	GM71	Walks a 6-foot line on the floor, heel-to-toe, with eyes open
+batmod028	bat	mo	d	028	FM145	Copies the numerals 1 through 5
+batmod029	bat	mo	d	029	GM163	Skips on alternate feet for 20 feet
+batmod030	bat	mo	d	030	FM146	Ties a single overhand knot around a crayon with a string
+batsld001	bat	sl	d	001		Shows awareness of his/her hands (TS1)
+batsld002	bat	sl	d	002		Shows desire to be picked up or held by familiar persons (TS2)
+batsld003	bat	sl	d	003		Plays peekaboo(TS3)
+batsld004	bat	sl	d	004	REC9	Responds to his/her name (TS4)
+batsld005	bat	sl	d	005		Initiates social contact with peers in play (TS5)
+batsld006	bat	sl	d	006		Imitates another child or children at play(TS6)
+batsld007	bat	sl	d	007	REC13	Generally follows directions related to daily routine (TS7)
+batsld008	bat	sl	d	008		Plays independently in company of peers (TS8)
+batsld009	bat	sl	d	009		Knows his/her first name (TS9)
+batsld010	bat	sl	d	010		Uses pronoun or his/her name to refer to self (TS10)
+batsld011	bat	sl	d	011		Shows awareness of other people
+batsld012	bat	sl	d	012		Smiles or vocalizes in response to adult attention
+batsld013	bat	sl	d	013		Shows a desire for social attention
+batsld014	bat	sl	d	014		Is aware of his/her feet
+batsld015	bat	sl	d	015		Discriminates between familiar and unfamiliar people
+batsld016	bat	sl	d	016		Displays independent behavior
+batsld017	bat	sl	d	017		Greets familiar adults spontaneously
+batsld018	bat	sl	d	018		Responds positively when familiar adults or adults in authority initiate social contact
+batsld019	bat	sl	d	019		Responds differently to familiar and unfamiliar children
+batsld020	bat	sl	d	020		Allow others to participate in his/her activities
+batsld021	bat	sl	d	021		Engages in adult role-playing and imitation
+batsld022	bat	sl	d	022		Follows adult directions with little or no resistance
+batsld023	bat	sl	d	023		Recognizes an adult's feelings
+batsld024	bat	sl	d	024		Cooperates in group activities
+batsld025	bat	sl	d	025		Discriminates between socially acceptable and unacceptable behavior
+batsld026	bat	sl	d	026		Trusts familiar adults and accepts explanations from them
+batsld027	bat	sl	d	027		Waits his/her turn for a teacher's or adult's attention
+batsld028	bat	sl	d	028		Delays gratification until a task is completed
+by1mdd037	by1	md	d	037		Reaches for dangling ring
+by1mdd038	by1	md	d	038		Pushes car along
+by1mdd039	by1	md	d	039		Fingers hand in play
+by1mdd040	by1	md	d	040		Head follows dangling ring
+by1mdd041	by1	md	d	041		Head follows vanishing spoon
+by1mdd042	by1	md	d	042		Aware of strange situation
+by1mdd043	by1	md	d	043		Manipulates table edge slightly
+by1mdd044	by1	md	d	044	COG17	Carries ring to mouth
+by1mdd045	by1	md	d	045	COG18	inspects own hand
+by1mdd046	by1	md	d	046		Closes on dangling ring (check hand preference)
+by1mdd047	by1	md	d	047	REC6	turns head to sound of bell
+by1mdd048	by1	md	d	048	REC52	turns head to sound of rattle
+by1mdd049	by1	md	d	049	COG21	reaches for cube
+by1mdd050	by1	md	d	050		manipulates table edge actively
+by1mdd051	by1	md	d	051		eye-hand coordination in reaching
+by1mdd052	by1	md	d	052		regards pellet
+by1mdd053	by1	md	d	053	COG19	mirror image approach
+by1mdd054	by1	md	d	054		picks up cube (check hand preference)
+by1mdd055	by1	md	d	055		Vocalises attitudes
+by1mdd056	by1	md	d	056	COG30	retains 2 cubes
+by1mdd057	by1	md	d	057		exploitive paper play
+by1mdd058	by1	md	d	058		Discriminates strangers
+by1mdd059	by1	md	d	059		recovers rattle, in crib
+by1mdd060	by1	md	d	060		reaches persistently
+by1mdd061	by1	md	d	061		Likes frolic play
+by1mdd062	by1	md	d	062		turns head after fallen spoon
+by1mdd063	by1	md	d	063		lifts inverted cup
+by1mdd064	by1	md	d	064	COG27	reaches for second cube
+by1mdd065	by1	md	d	065	COG93	smiles at mirror (5.4 months)
+by1mdd066	by1	md	d	066	COG24	bangs in play
+by1mdd067	by1	md	d	067	COG95	sustained inspection of ring
+by1mdd068	by1	md	d	068	COG23	exploitive string play
+by1mdd069	by1	md	d	069	FM21	transfers objects hand to hand
+by1mdd070	by1	md	d	070	FM67	picks up cube deftly and directly
+by1mdd071	by1	md	d	071	COG96	pulls string: secures ring
+by1mdd072	by1	md	d	072	REC51	interest in sound production
+by1mdd073	by1	md	d	073	FM25	lifts cup with handle
+by1mdd074	by1	md	d	074	FM68	attends to scribbling
+by1mdd075	by1	md	d	075	COG25	looks for fallen spoon
+by1mdd076	by1	md	d	076	COG22	playful response to mirror
+by1mdd077	by1	md	d	077	COG33	retains 2 of 3 cubes offered
+by1mdd078	by1	md	d	078	COG26	manipulates bell: insterest in details
+by1mdd079	by1	md	d	079	EXP49	vocalizes 4 different syllables
+by1mdd080	by1	md	d	080	COG29	pulls string adaptively: secures ring
+by1mdd081	by1	md	d	081	COG99	cooperates in games (is this some other scale?)
+by1mdd082	by1	md	d	082	COG37	attempts to secure 3 cubes
+by1mdd083	by1	md	d	083	COG31	rings bell purposely
+by1mdd084	by1	md	d	084	REC11	listens selectively with familiar words
+by1mdd085	by1	md	d	085	EXP10	says "da-da" or equivalent
+by1mdd086	by1	md	d	086	COG28	Uncovers toy (check manual if by pulling cloth
+by1mdd087	by1	md	d	087	COG38	fingers holes in pegboard
+by1mdd088	by1	md	d	088	COG100	picks up cup, secures cube
+by1mdd089	by1	md	d	089	REC14	responds to verbal request
+by1mdd090	by1	md	d	090	COG36	puts cube in cup on command
+by1mdd091	by1	md	d	091	COG101	looks for content of box
+by1mdd092	by1	md	d	092		stirs with spoon in imitation
+by1mdd093	by1	md	d	093	COG32	looks at pictures in book
+by1mdd094	by1	md	d	094	REC12	inhibits on command
+by1mdd095	by1	md	d	095	FM69	attempting to imitate scribble
+by1mdd096	by1	md	d	096	COG102	unwraps cube
+by1mdd097	by1	md	d	097		repeats performance laughed at
+by1mdd098	by1	md	d	098	FM28	holds crayon adaptively
+by1mdd099	by1	md	d	099	COG39	pushes car along
+by1mdd100	by1	md	d	100	COG103	puts 3 or more cubes in cup
+by1mdd101	by1	md	d	101	EXP12	jabbers expressively
+by1mdd102	by1	md	d	102	COG104	uncovers blue box
+by1mdd103	by1	md	d	103	FM27	turns pages of books
+by1mdd104	by1	md	d	104	COG44	Pats toy (whistle doll) in imitation
+by1mdd105	by1	md	d	105	COG41	dangles ring by string
+by1mdd106	by1	md	d	106	EXP16	imitates words
+by1mdd107	by1	md	d	107	FM70	puts beads in box (6 of 8)
+by1mdd108	by1	md	d	108	COG47	places 1 peg repeateadly
+by1mdd109	by1	md	d	109	COG42	removes pellet from bottle
+by1mdd110	by1	md	d	110	COG51	blue board: places 1 round block
+by1mdd111	by1	md	d	111	FM31	builds tower of 2 cubes
+by1mdd112	by1	md	d	112	FM30	scribbles sponstaneously
+by1mdd113	by1	md	d	113	EXP18	says 2 words
+by1mdd114	by1	md	d	114	COG54	puts 9 cubes in cup
+by1mdd115	by1	md	d	115	FM71	closes round box
+by1mdd116	by1	md	d	116	EXP9	uses gestures to  make wants known
+by1mdd117	by1	md	d	117	REC16	shows shoes or other clothing, or own toy
+by1mdd118	by1	md	d	118	COG55	pegs placed in 70 seconds
+by1mdd119	by1	md	d	119	FM72	builds tower of 3 cubes
+by1mdd120	by1	md	d	120	COG49	pink board: places round block
+by1mdd121	by1	md	d	121	COG110	blue board: places 2 round blocks
+by1mdd122	by1	md	d	122	COG57	attains toy with stick
+by1mdd123	by1	md	d	123	COG112	pegs placed in 42 seconds
+by1mdd124	by1	md	d	124	EXP20	names 1 object
+by1mdd125	by1	md	d	125	FM32	imitates crayon stroke
+by1mdd126	by1	md	d	126	REC20	follows directions doll (check parts passed)
+by1mdd127	by1	md	d	127	EXP19	uses words to  make wants known
+by1mdd128	by1	md	d	128	REC24	points to parts of doll (check parts recognised, check manual number of parts)
+by1mdd129	by1	md	d	129	COG58	blue board: places 2 round and 2 square blocks
+by1mdd130	by1	md	d	130	EXP22	names 1 picture
+by1mdd131	by1	md	d	131	COG105	finds 2 objects
+by1mdd132	by1	md	d	132	REC21	points to 3 pictures
+by1mdd133	by1	md	d	133		No label:  b1m133
+by1mdd134	by1	md	d	134	COG113	pegs placed in 30 seconds
+by1mdd135	by1	md	d	135	FM73	differentiates scribble from stroke
+by1mdd136	by1	md	d	136	EXP26	sentence of 2 words
+by1mdd137	by1	md	d	137	COG56	pink board: completes
+by1mdd138	by1	md	d	138	EXP50	names 2 objects
+by1mdd139	by1	md	d	139	REC53	points to 5 pictures
+by1mdd140	by1	md	d	140	COG106	broken doll: mends approximately
+by1mdd141	by1	md	d	141	EXP51	names 3 pictures
+by1mdd142	by1	md	d	142	COG111	blue board: places 6 blocks
+by1mdd143	by1	md	d	143	FM38	builds tower of 6 cubes
+by1mdd144	by1	md	d	144	COG107	discriminates 2: cup, plate, box
+by1mdd145	by1	md	d	145	EXP52	names watch, 4th picture
+by1mdd146	by1	md	d	146	EXP27	names 3 objects
+by1mdd147	by1	md	d	147	FM41	imitates strokes: vertical and horizontal
+by1mdd148	by1	md	d	148	REC54	points to 7 pictures
+by1mdd149	by1	md	d	149	EXP28	names 5 pictures
+by1mdd150	by1	md	d	150	EXP53	names watch, 2nd picture
+by1mdd151	by1	md	d	151	COG60	pink board: reverse
+by1mdd152	by1	md	d	152	COG108	discriminates 3: cup, plate, box
+by1mdd153	by1	md	d	153	COG109	broken doll: mends exactly
+by1pdd016	by1	pd	d	016		Ulnar-palmar prehension
+by1pdd017	by1	pd	d	017	GM16	Sits with slight support
+by1pdd018	by1	pd	d	018	GM13	Head balanced
+by1pdd019	by1	pd	d	019	GM20	Turns from back to side
+by1pdd020	by1	pd	d	020	GM81	Lifts head, dorsal position
+by1pdd021	by1	pd	d	021		Partial thumb opposition
+by1pdd022	by1	pd	d	022	GM23	Pulls to sitting
+by1pdd023	by1	pd	d	023	GM22	Sits momentarily
+by1pdd024	by1	pd	d	024		Unilateral reaching
+by1pdd025	by1	pd	d	025		Attempts to secure pellet
+by1pdd026	by1	pd	d	026		Rotates wrist
+by1pdd027	by1	pd	d	027	GM26	Sits alone 30 seconds
+by1pdd028	by1	pd	d	028	GM25	Rolls from back to stomach
+by1pdd029	by1	pd	d	029	GM82	Sits steadily
+by1pdd030	by1	pd	d	030		Scoops pellet
+by1pdd031	by1	pd	d	031	GM27	Sits good coordination
+by1pdd032	by1	pd	d	032		Complete thumb opposition
+by1pdd033	by1	pd	d	033	GM30	Prewalking
+by1pdd034	by1	pd	d	034	GM29	Early stepping movements
+by1pdd035	by1	pd	d	035		Partial finger prehension
+by1pdd036	by1	pd	d	036	GM83	Pulls to stand
+by1pdd037	by1	pd	d	037	GM84	Raise self to sitting
+by1pdd038	by1	pd	d	038	GM35	Stands up by furniture
+by1pdd039	by1	pd	d	039		Combine midline
+by1pdd040	by1	pd	d	040	GM85	Stepping movements
+by1pdd041	by1	pd	d	041		Fine prehension
+by1pdd042	by1	pd	d	042	GM37	Walks with help
+by1pdd043	by1	pd	d	043	GM39	Sits down
+by1pdd044	by1	pd	d	044	GM86	Play clap hands
+by1pdd045	by1	pd	d	045	GM40	Stands alone
+by1pdd046	by1	pd	d	046	GM42	Walks alone
+by1pdd047	by1	pd	d	047	GM41	Stands up
+by1pdd048	by1	pd	d	048	GM44	Throws ball
+by1pdd049	by1	pd	d	049	GM38	Walsk sideways
+by1pdd050	by1	pd	d	050	GM48	Walks backwards
+by1pdd051	by1	pd	d	051	GM51	Stands on right foot with help
+by1pdd052	by1	pd	d	052	GM52	Stands on left foot with help
+by1pdd053	by1	pd	d	053	GM47	Walsk up stairs with help
+by1pdd054	by1	pd	d	054	GM49	Walks down stairs with help
+by2mdd071	by2	md	d	071	EXP10	Consonant vowel combination 1 combination
+by2mdd072	by2	md	d	072	COG34	Looks for contents of box
+by2mdd073	by2	md	d	073	FM27	Turns pages of books
+by2mdd074	by2	md	d	074	COG36	Puts 1 cube in cup
+by2mdd075	by2	md	d	075	COG37	Attempts to secure 3 cubes
+by2mdd076	by2	md	d	076	EXP12	Jabbers expressively
+by2mdd077	by2	md	d	077	COG39	Pushes car
+by2mdd078	by2	md	d	078	EXP13	Consonant-Vowel Combination Series: 4 Combination
+by2mdd079	by2	md	d	079	COG38	Fingers holes in pegboard
+by2mdd080	by2	md	d	080	COG46	Removes lid from box
+by2mdd081	by2	md	d	081	REC14	Responds to spoken request
+by2mdd082	by2	md	d	082	COG41	Suspects ring by spring
+by2mdd083	by2	md	d	083	COG44	Pats toy in imitation
+by2mdd084	by2	md	d	084	COG40	Finds one object
+by2mdd085	by2	md	d	085	COG42	Removes pellet
+by2mdd086	by2	md	d	086		Puts three cubes in cup
+by2mdd087	by2	md	d	087	COG47	Places 1 peg repeatedly
+by2mdd088	by2	md	d	088	COG43	Retrieves toy - clear box 1
+by2mdd089	by2	md	d	089		Puts six beads in box
+by2mdd090	by2	md	d	090	COG51	Places 1 piece - blue
+by2mdd091	by2	md	d	091	FM30	Scribbles spontaneously
+by2mdd092	by2	md	d	092		Closes round container 
+by2mdd093	by2	md	d	093	COG49	Places circle pink
+by2mdd094	by2	md	d	094		Imitates word
+by2mdd095	by2	md	d	095	COG54	9 cubes in cup
+by2mdd096	by2	md	d	096	COG45	Finds toy under reversed cups
+by2mdd097	by2	md	d	097	FM31	Tower of 2 cubes
+by2mdd098	by2	md	d	098	COG55	Places pegs in 70 sec
+by2mdd099	by2	md	d	099		Points to two pictures
+by2mdd100	by2	md	d	100	EXP18	Uses Words Appropriately Series: 2 words
+by2mdd101	by2	md	d	101	REC16	Shows shoes other clothing or object
+by2mdd102	by2	md	d	102	COG50	Retrieves toy - visible displacement
+by2mdd103	by2	md	d	103	FM32	Imitates Stroke Series: Random
+by2mdd104	by2	md	d	104	COG57	Uses rod to attain toy
+by2mdd105	by2	md	d	105		Retrieves Toy (Clear BoxII)
+by2mdd106	by2	md	d	106	EXP19	Uses word to make wants known
+by2mdd107	by2	md	d	107	REC20	Follows direction doll
+by2mdd108	by2	md	d	108	REC24	Points to 3 body parts
+by2mdd109	by2	md	d	109	EXP22	Names Picture Series: 1 Picture
+by2mdd110	by2	md	d	110	EXP20	Names Object Series: 1 Object
+by2mdd111	by2	md	d	111	EXP21	Combines word and gesture
+by2mdd112	by2	md	d	112	COG58	Places 4 pieces in 150 sec
+by2mdd113	by2	md	d	113	EXP23	Says 8 words
+by2mdd114	by2	md	d	114	EXP26	Uses a two-word utterance
+by2mdd115	by2	md	d	115	COG56	Completes pink
+by2mdd116	by2	md	d	116	FM43	Differentiates scribble from stroke
+by2mdd117	by2	md	d	117	EXP25	Imitates a two-word utterance
+by2mdd118	by2	md	d	118		Identifies Objects in Photograph
+by2mdd119	by2	md	d	119	COG62	Completes pegboard 25 sec
+by2mdd120	by2	md	d	120	COG60	Completes reversed pink
+by2mdd121	by2	md	d	121	EXP30	Uses pronouns
+by2mdd122	by2	md	d	122		Points to Five Pictures
+by2mdd123	by2	md	d	123	FM38	Tower of 6 cubes
+by2mdd124	by2	md	d	124		Discriminates Book, Cube and Key
+by2mdd125	by2	md	d	125	COG64	Matches pictures
+by2mdd126	by2	md	d	126	EXP27	Names Object Series: 3 Object
+by2mdd127	by2	md	d	127	EXP29	Uses 3 word sentence
+by2mdd128	by2	md	d	128	COG68	Matches 3 colors
+by2mdd129	by2	md	d	129	EXP33	Makes a contingent utterance
+by2mdd130	by2	md	d	130	COG66	Blue board - 75 sec
+by2mdd131	by2	md	d	131	COG59	Attends to story
+by2mdd132	by2	md	d	132		Places Beads in Tube in 120 seconds
+by2mdd133	by2	md	d	133	EXP28	Names Picture Series: 5 Pictures
+by2mdd134	by2	md	d	134	EXP35	Displays verbal comprehension
+by2mdd135	by2	md	d	135		Builds Tower of Eight Cubes
+by2mdd136	by2	md	d	136	EXP32	Poses questions
+by2mdd137	by2	md	d	137		Matches Four Colours
+by2mdd138	by2	md	d	138		Builds train of cubes
+by2mdd139	by2	md	d	139		Imitates vertical and horizontal strokes
+by2mdd140	by2	md	d	140	REC32	Understands Preposition Series: 2 correct
+by2mdd141	by2	md	d	141	COG70	Understands concept of 1
+by2mdd142	by2	md	d	142		Produces multiple word utterances in response to picture book
+by2mdd143	by2	md	d	143		Recalls geometric forms
+by2mdd144	by2	md	d	144		Discriminates pictures I
+by2mdd145	by2	md	d	145	REC31	Compares sizes
+by2mdd146	by2	md	d	146		Counts (number names)
+by2mdd147	by2	md	d	147	COG74	Compares masses
+by2mdd148	by2	md	d	148	EXP47	Uses past tense
+by2pdd051	by2	pd	d	051	GM32	Moves from sitting to creeping position
+by2pdd052	by2	pd	d	052	GM35	Raises self to standing position
+by2pdd053	by2	pd	d	053	GM37	Attempts to walk
+by2pdd054	by2	pd	d	054	GM38	Walks sideways while holding on to furniture
+by2pdd055	by2	pd	d	055	GM39	Sits down
+by2pdd056	by2	pd	d	056	FM26	Food Pellet Series: Thumb-fingertip grasp
+by2pdd057	by2	pd	d	057		Uses partial thumb opposition to graps rod
+by2pdd058	by2	pd	d	058		Grasp pencil of farthest end
+by2pdd059	by2	pd	d	059	GM41	Stands up 1
+by2pdd060	by2	pd	d	060		Walks with help
+by2pdd061	by2	pd	d	061	GM40	Stands alone
+by2pdd062	by2	pd	d	062	GM42	Walks alone
+by2pdd063	by2	pd	d	063	GM43	Walks alone with good coordination
+by2pdd064	by2	pd	d	064	GM44	Throws ball
+by2pdd065	by2	pd	d	065	GM45	Squats briefly
+by2pdd066	by2	pd	d	066	GM47	Walks up stairs with help
+by2pdd067	by2	pd	d	067	GM48	Walks backwards
+by2pdd068	by2	pd	d	068	GM46	Stands up II
+by2pdd069	by2	pd	d	069	GM49	Walks down stairs with help
+by2pdd070	by2	pd	d	070		Grasp pencil at Middle
+by2pdd071	by2	pd	d	071	GM53	Walks sideways  
+by2pdd072	by2	pd	d	072	GM51	Stands on right foot with help
+by2pdd073	by2	pd	d	073	GM52	Stands on left foot with help
+by2pdd074	by2	pd	d	074	FM37	Uses pads of fingertips to grasp pencil
+by2pdd075	by2	pd	d	075	FM39	Uses hand to hold paper in place
+by2pdd076	by2	pd	d	076	FM33	Places 10 pellets in bottle (60 seconds)
+by2pdd077	by2	pd	d	077	GM50	Runs with coordination
+by2pdd078	by2	pd	d	078		Jumps off floor (both feet)
+by2pdd079	by2	pd	d	079	GM57	Walks up stairs alone, placing both feet on each step
+by2pdd080	by2	pd	d	080	GM58	Walks down stairs alone, placing both feet on each step
+by2pdd081	by2	pd	d	081	GM54	Jumps from bottom step
+by2pdd082	by2	pd	d	082	GM60	Stands alone on right foot
+by2pdd083	by2	pd	d	083	GM61	Stands alone on left foot
+by2pdd084	by2	pd	d	084	GM56	Walks forward on line
+by2pdd085	by2	pd	d	085	GM63	Walks backwards close to line
+by2pdd086	by2	pd	d	086	GM55	Swings leg to kick ball
+by2pdd087	by2	pd	d	087	GM59	Jumps distance of 4 inches
+by2pdd088	by2	pd	d	088	FM45	Laces 3 beads
+by2pdd089	by2	pd	d	089	GM62	Walks on tiptoe for 4 steps
+by2pdd090	by2	pd	d	090		Grasps pencil at nearest end
+by2pdd091	by2	pd	d	091	FM46	Imitates hand movements
+by2pdd092	by2	pd	d	092	FM49	Tactilely discriminates shapes
+by2pdd093	by2	pd	d	093		Manipulates pencil in hand
+by3cgd003	by3	cg	d	003		Regards 3 sec
+by3cgd004	by3	cg	d	004		Habituates rattle
+by3cgd005	by3	cg	d	005		Discriminates between obj
+by3cgd006	by3	cg	d	006		Recog caregiver
+by3cgd007	by3	cg	d	007		Becomes excited antic
+by3cgd008	by3	cg	d	008		Regards object 5 sec
+by3cgd009	by3	cg	d	009		Reacts disappear face
+by3cgd010	by3	cg	d	010		Shifts attention
+by3cgd011	by3	cg	d	011		Shows visual pref
+by3cgd012	by3	cg	d	012		Habituates to object
+by3cgd013	by3	cg	d	013		Prefers novel obj
+by3cgd014	by3	cg	d	014		Habituates pict - balloons
+by3cgd015	by3	cg	d	015		Prefers novel pict
+by3cgd016	by3	cg	d	016		Explores object
+by3cgd017	by3	cg	d	017		Carries object to mouth
+by3cgd018	by3	cg	d	018		Inspects own hand
+by3cgd019	by3	cg	d	019		Mirror Image Series: Approaches
+by3cgd020	by3	cg	d	020		Responds to surroundings; awareness of novelty
+by3cgd021	by3	cg	d	021		Persistent reach
+by3cgd022	by3	cg	d	022		Mirror Image Series: Responds positively
+by3cgd023	by3	cg	d	023		Plays with string
+by3cgd024	by3	cg	d	024		Bangs in play
+by3cgd025	by3	cg	d	025		Searches for fallen object
+by3cgd026	by3	cg	d	026		Bell Series: Manipulates
+by3cgd027	by3	cg	d	027		Picks Up Block Series: Reaches for second block
+by3cgd028	by3	cg	d	028		Pulls cloth to obtain object
+by3cgd029	by3	cg	d	029		Pulls string adaptively
+by3cgd030	by3	cg	d	030		Retains both blocks
+by3cgd031	by3	cg	d	031		Bell Series: Rings purposely
+by3cgd032	by3	cg	d	032		Looks at pictures
+by3cgd033	by3	cg	d	033		Picks Up Block Series: Retains 2 of 3 blocks
+by3cgd034	by3	cg	d	034		Searches for missing objects
+by3cgd035	by3	cg	d	035		Takes blocks out of cup
+by3cgd036	by3	cg	d	036		Block Series: 1 Block
+by3cgd037	by3	cg	d	037		Picks up Block Series: 3 blocks
+by3cgd038	by3	cg	d	038		Explores holes in pegboard
+by3cgd039	by3	cg	d	039		Pushes car
+by3cgd040	by3	cg	d	040		Finds hidden object
+by3cgd041	by3	cg	d	041		Suspends ring
+by3cgd042	by3	cg	d	042		Removes pellet
+by3cgd043	by3	cg	d	043		Clear Box: Front
+by3cgd044	by3	cg	d	044		Squeezes object
+by3cgd045	by3	cg	d	045		Finds hidden object (Reversed)
+by3cgd046	by3	cg	d	046		Removes lid from bottle
+by3cgd047	by3	cg	d	047		Pegboard Series: 2 holes
+by3cgd048	by3	cg	d	048		Relational Play Series: Self
+by3cgd049	by3	cg	d	049		Pink Board Series: 1 piece
+by3cgd050	by3	cg	d	050		Finds hidden object (Visible Displacement)
+by3cgd051	by3	cg	d	051		Blue Board Series: 1 piece
+by3cgd052	by3	cg	d	052		Clear Box: Sides
+by3cgd053	by3	cg	d	053		Relational Play Series: Others
+by3cgd054	by3	cg	d	054		Block Series: 9 Blocks
+by3cgd055	by3	cg	d	055		Pegboard Series: 6 Pegs
+by3cgd056	by3	cg	d	056		Pink Board Series: Completes
+by3cgd057	by3	cg	d	057		Uses pencil to obtain object
+by3cgd058	by3	cg	d	058		Blue Board Series: 4 Pieces
+by3cgd059	by3	cg	d	059		Attends to story
+by3cgd060	by3	cg	d	060		Rotated pink board
+by3cgd061	by3	cg	d	061		Object assembly (Ball)
+by3cgd062	by3	cg	d	062		Completes Pegboard: 25 Seconds
+by3cgd063	by3	cg	d	063		Object assembly (Ice Cream Cone)
+by3cgd064	by3	cg	d	064		Matches pictures
+by3cgd065	by3	cg	d	065		Representational play
+by3cgd066	by3	cg	d	066		Blue Board Series: Completes (75 seconds)
+by3cgd067	by3	cg	d	067		Imitates a two-step action.
+by3cgd068	by3	cg	d	068		Matches 3 colors
+by3cgd069	by3	cg	d	069		Imaginary play
+by3cgd070	by3	cg	d	070		Understands concept of one
+by3cgd071	by3	cg	d	071		Multischeme combination play
+by3cgd072	by3	cg	d	072		Concept Grouping: colour
+by3cgd073	by3	cg	d	073		Concept Grouping: Size
+by3cgd074	by3	cg	d	074		Compares masses
+by3cgd075	by3	cg	d	075		Matches size
+by3cgd076	by3	cg	d	076		Discriminates pictures
+by3cgd077	by3	cg	d	077		Simple pattern
+by3cgd078	by3	cg	d	078		Sorts pegs by colour
+by3cgd079	by3	cg	d	079		Counts (One-to-one correspondence)
+by3cgd080	by3	cg	d	080		Discriminates size
+by3cgd081	by3	cg	d	081		Identifies 3 incomplete pictures
+by3cgd082	by3	cg	d	082		Object assembly (Dog)
+by3cgd083	by3	cg	d	083		Discriminates patterns
+by3cgd084	by3	cg	d	084		Spatial memory
+by3cgd085	by3	cg	d	085		Counts (Cardinally)
+by3cgd086	by3	cg	d	086		Number constancy
+by3cgd087	by3	cg	d	087		Laces card
+by3cgd088	by3	cg	d	088		Classifies objects
+by3cgd089	by3	cg	d	089		Understands concept of more
+by3cgd090	by3	cg	d	090		Repeats number sequences
+by3cgd091	by3	cg	d	091		Completes patterns
+by3exd001	by3	ex	d	001		Undifferentiated throaty sounds
+by3exd002	by3	ex	d	002		Social smile
+by3exd003	by3	ex	d	003		Vocalizes mood
+by3exd004	by3	ex	d	004		Undifferentiated nasal sounds
+by3exd005	by3	ex	d	005		Social vocalization or laughing
+by3exd006	by3	ex	d	006		2 Vowel sounds
+by3exd007	by3	ex	d	007		Gets attention
+by3exd008	by3	ex	d	008		2 Consonant sounds
+by3exd009	by3	ex	d	009		Uses gestures
+by3exd010	by3	ex	d	010		Consonant-Vowel Combination Series: 1 Combination
+by3exd011	by3	ex	d	011		Participates in play routine
+by3exd012	by3	ex	d	012		Jabbers expressively
+by3exd013	by3	ex	d	013		Consonant-Vowel Combination Series: 4 Combination
+by3exd014	by3	ex	d	014		Uses one-word approximations
+by3exd015	by3	ex	d	015		Directs attention of other
+by3exd016	by3	ex	d	016		Imitates word
+by3exd017	by3	ex	d	017		Initiates play interaction
+by3exd018	by3	ex	d	018		Uses Words Appropriately Series: 2 words
+by3exd019	by3	ex	d	019		Uses word to make wants known
+by3exd020	by3	ex	d	020		Names Object Series: 1 Object
+by3exd021	by3	ex	d	021		Combines word and gesture
+by3exd022	by3	ex	d	022		Names Picture Series: 1 Picture
+by3exd023	by3	ex	d	023		Uses Words Appropriately Series: 8 words
+by3exd024	by3	ex	d	024		Answers yes or no verbally in response to questions
+by3exd025	by3	ex	d	025		Imitates a two-word utterance
+by3exd026	by3	ex	d	026		Uses a two-word utterance
+by3exd027	by3	ex	d	027		Names Object Series: 3 Object
+by3exd028	by3	ex	d	028		Names Picture Series: 5 Pictures
+by3exd029	by3	ex	d	029		Uses multiple-word utterances
+by3exd030	by3	ex	d	030		Uses pronouns
+by3exd031	by3	ex	d	031		Names Action Picture Series: 1 Picture
+by3exd032	by3	ex	d	032		Poses multiple-word questions
+by3exd033	by3	ex	d	033		Makes a contingent utterance
+by3exd034	by3	ex	d	034		Uses verb +ing
+by3exd035	by3	ex	d	035		Names Action Picture Series: 3 Pictures
+by3exd036	by3	ex	d	036		Uses different word combinations
+by3exd037	by3	ex	d	037		Names Action Picture Series: 5 Pictures
+by3exd038	by3	ex	d	038		Uses plurals
+by3exd039	by3	ex	d	039		Answers what or where questions
+by3exd040	by3	ex	d	040		Uses possessives
+by3exd041	by3	ex	d	041		Names 4 colours
+by3exd042	by3	ex	d	042		Answers questions logically (Related to functions)
+by3exd043	by3	ex	d	043		Tells how an object is used
+by3exd044	by3	ex	d	044		Uses prepositions
+by3exd045	by3	ex	d	045		Uses present progressive form
+by3exd046	by3	ex	d	046		Describes Pictures Series: Uses 4-5 word sentences
+by3exd047	by3	ex	d	047		Describes Pictures Series: Uses past tense
+by3exd048	by3	ex	d	048		Describes Pictures Series: Uses future tense
+by3fmd001	by3	fm	d	001		Hands are fisted
+by3fmd002	by3	fm	d	002		Eyes follow  moving person
+by3fmd003	by3	fm	d	003		Eyes follow ring horizontal
+by3fmd004	by3	fm	d	004		Eyes follow ring vertical
+by3fmd005	by3	fm	d	005		Attempts to bring hand to mouth
+by3fmd006	by3	fm	d	006		Retains ring
+by3fmd007	by3	fm	d	007		Eyes follow ring circular
+by3fmd008	by3	fm	d	008		Head follow ring
+by3fmd009	by3	fm	d	009		Eyes follow rolling ball
+by3fmd010	by3	fm	d	010		Keeps hand open
+by3fmd011	by3	fm	d	011		Rotates wrist
+by3fmd012	by3	fm	d	012		Grasps suspended ring
+by3fmd013	by3	fm	d	013		Blocks series reaches for block
+by3fmd014	by3	fm	d	014		Touches block
+by3fmd015	by3	fm	d	015		Block Series: Whole hand grasp
+by3fmd016	by3	fm	d	016		Reaches unilaterally
+by3fmd017	by3	fm	d	017		Food Pellet Series: Raking grasp
+by3fmd018	by3	fm	d	018		Block Series: Partial thumb opposition
+by3fmd019	by3	fm	d	019		Transfers ring
+by3fmd020	by3	fm	d	020		Food Pellet Series: Whole hand grasp
+by3fmd021	by3	fm	d	021		Transfers block
+by3fmd022	by3	fm	d	022		Block Series: Thumb-fingertip grasp
+by3fmd023	by3	fm	d	023		Brings spoons or blocks to midline
+by3fmd024	by3	fm	d	024		Food Pellet Series: Partial thumb opposition
+by3fmd025	by3	fm	d	025		Lifts cup by the handle
+by3fmd026	by3	fm	d	026		Food Pellet Series: Thumb-fingertip grasp
+by3fmd027	by3	fm	d	027		Turns pages of books
+by3fmd028	by3	fm	d	028		Grasp series: Palmar grasp
+by3fmd029	by3	fm	d	029		Isolates extended ring finger
+by3fmd030	by3	fm	d	030		Scribbles spontaneously
+by3fmd031	by3	fm	d	031		Block Stacking Series: 2 blocks
+by3fmd032	by3	fm	d	032		Imitates Stroke Series: Random
+by3fmd033	by3	fm	d	033		Places 10 pellets in bottle (60 seconds)
+by3fmd034	by3	fm	d	034		Grasp series: Transitional grasp
+by3fmd035	by3	fm	d	035		Coins in slot
+by3fmd036	by3	fm	d	036		Connecting Blocks: Apart
+by3fmd037	by3	fm	d	037		Grasp Series: Intermediate (Tripod) grasp
+by3fmd038	by3	fm	d	038		Block stacking Series: 6 blocks
+by3fmd039	by3	fm	d	039		Uses hand to hold paper in place
+by3fmd040	by3	fm	d	040		Imitates Strokes Series: Horizontal
+by3fmd041	by3	fm	d	041		Imitates Strokes Series: Vertical
+by3fmd042	by3	fm	d	042		Connecting Blocks: Together
+by3fmd043	by3	fm	d	043		Imitates Strokes Series: Circular
+by3fmd044	by3	fm	d	044		Builds train of blocks
+by3fmd045	by3	fm	d	045		Strings 3 blocks
+by3fmd046	by3	fm	d	046		Imitates hand movements
+by3fmd047	by3	fm	d	047		Snips paper
+by3fmd048	by3	fm	d	048		Grasp Series: Dynamic grasp
+by3fmd049	by3	fm	d	049		Tactilely discriminates shapes
+by3fmd050	by3	fm	d	050		Builds wall
+by3fmd051	by3	fm	d	051		Cuts paper
+by3fmd052	by3	fm	d	052		Builds bridge
+by3fmd053	by3	fm	d	053		Imitates plus sign
+by3fmd054	by3	fm	d	054		Block stacking Series: 8 blocks
+by3fmd055	by3	fm	d	055		Cuts on line
+by3fmd056	by3	fm	d	056		Builds T
+by3fmd057	by3	fm	d	057		Buttons 1 button
+by3fmd058	by3	fm	d	058		Builds steps
+by3fmd059	by3	fm	d	059		Traces designs
+by3fmd060	by3	fm	d	060		Imitates square
+by3fmd061	by3	fm	d	061		Copies plus sign
+by3fmd062	by3	fm	d	062		Tapbs fingers
+by3fmd063	by3	fm	d	063		Places 20 pellets in bottle
+by3fmd064	by3	fm	d	064		Cuts circle
+by3fmd065	by3	fm	d	065		Cuts square
+by3fmd066	by3	fm	d	066		Copies square
+by3gmd005	by3	gm	d	005		Turns head to side
+by3gmd006	by3	gm	d	006		Makes crawling movements
+by3gmd007	by3	gm	d	007		Controls head in dorsal suspension
+by3gmd008	by3	gm	d	008		Controls head in ventral suspension
+by3gmd009	by3	gm	d	009		Controls head while upright Series: 15 seconds
+by3gmd010	by3	gm	d	010		Holds head in midline
+by3gmd011	by3	gm	d	011		Holds head upright while carried
+by3gmd012	by3	gm	d	012		Controls head while prone Series: 45 degrees
+by3gmd013	by3	gm	d	013		Rights head
+by3gmd014	by3	gm	d	014		Rolls from side to back
+by3gmd015	by3	gm	d	015		Elevates trunk while Prone Series: Elbows and forearms
+by3gmd016	by3	gm	d	016		Sits with Support Series: Briefly
+by3gmd017	by3	gm	d	017		Controls head while prone Series: 90 degrees
+by3gmd018	by3	gm	d	018		Elevates trunk while prone
+by3gmd019	by3	gm	d	019		Sits with Support Series: 30 seconds
+by3gmd020	by3	gm	d	020		Rolls from back to sides
+by3gmd021	by3	gm	d	021		Elevates Trunk while Prone Series: Extended arms
+by3gmd022	by3	gm	d	022		Sits with Support Series: 5 seconds
+by3gmd023	by3	gm	d	023		Pulls up to sit
+by3gmd024	by3	gm	d	024		Grasps foot with hands
+by3gmd025	by3	gm	d	025		Rolls from back to stomach
+by3gmd026	by3	gm	d	026		Sits without Support Series: 30 seconds
+by3gmd027	by3	gm	d	027		Sits without support and holds objects
+by3gmd028	by3	gm	d	028		Rotates trunk while seated
+by3gmd029	by3	gm	d	029		Makes stepping movements
+by3gmd030	by3	gm	d	030		Crawls Series: On stomach
+by3gmd031	by3	gm	d	031		Crawls Series: Crawl position
+by3gmd032	by3	gm	d	032		Moves from sitting to hands and knees
+by3gmd033	by3	gm	d	033		Supports weight
+by3gmd034	by3	gm	d	034		Crawls Series: Crawl movement
+by3gmd035	by3	gm	d	035		Raises self to standing position
+by3gmd036	by3	gm	d	036		Bounces while standing
+by3gmd037	by3	gm	d	037		Walks Series: With support
+by3gmd038	by3	gm	d	038		Walks sideways with support
+by3gmd039	by3	gm	d	039		Sits down with control
+by3gmd040	by3	gm	d	040		Stands alone
+by3gmd041	by3	gm	d	041		Stands up Series: Alone
+by3gmd042	by3	gm	d	042		Walks Series: Alone
+by3gmd043	by3	gm	d	043		Walks Series: Alone with coordination
+by3gmd044	by3	gm	d	044		Throws ball
+by3gmd045	by3	gm	d	045		Squats without support
+by3gmd046	by3	gm	d	046		Stands up Series: Mature
+by3gmd047	by3	gm	d	047		Walks Up Stairs Series: Both feet on each step, with support.
+by3gmd048	by3	gm	d	048		Walks backward 2 steps
+by3gmd049	by3	gm	d	049		Walks Down Stairs Series: Both feet on each step, with support
+by3gmd050	by3	gm	d	050		Runs with coordination
+by3gmd051	by3	gm	d	051		Balances on Right Foot Series: With support
+by3gmd052	by3	gm	d	052		Balances on Left Foot Series: With support
+by3gmd053	by3	gm	d	053		Walks sideways without support
+by3gmd054	by3	gm	d	054		Jumps from bottom step
+by3gmd055	by3	gm	d	055		Kicks ball
+by3gmd056	by3	gm	d	056		Walks forward on path
+by3gmd057	by3	gm	d	057		Walks Up Stairs Series: Both feet on each step, alone.
+by3gmd058	by3	gm	d	058		Walks Down Stairs Series: Both feet on each step, alone
+by3gmd059	by3	gm	d	059		Jumps Forward Series: 4 inches
+by3gmd060	by3	gm	d	060		Balances on right Foot Series: 2 seconds, alone
+by3gmd061	by3	gm	d	061		Balances on Left Foot Series: 2 seconds, alone
+by3gmd062	by3	gm	d	062		Walks on tiptoes 4 steps
+by3gmd063	by3	gm	d	063		Walks backward close to path
+by3gmd064	by3	gm	d	064		Walks Up Stairs Series: Alternating feet, alone
+by3gmd065	by3	gm	d	065		Imitates postures
+by3gmd066	by3	gm	d	066		Stops from a full run
+by3gmd067	by3	gm	d	067		Walks Down Stairs Series: Alternating feet, alone
+by3gmd068	by3	gm	d	068		Hops 5 feet
+by3gmd069	by3	gm	d	069		Balances on Right Foot Series: 8 seconds, alone
+by3gmd070	by3	gm	d	070		Balances on Left Foot Series: 8 seconds, alone
+by3gmd071	by3	gm	d	071		Walks heel to toe
+by3gmd072	by3	gm	d	072		Jumps Forward Series: 24 inches
+by3red001	by3	re	d	001		Regards person momentarily
+by3red002	by3	re	d	002		Tolerates attention
+by3red003	by3	re	d	003		Calms when spoken to
+by3red004	by3	re	d	004		Reacts to sound in environment
+by3red005	by3	re	d	005		Responds to voice
+by3red006	by3	re	d	006		Searches with head turn
+by3red007	by3	re	d	007		Discriminates sounds
+by3red008	by3	re	d	008		Sustained play with objects
+by3red009	by3	re	d	009		Responds to name
+by3red010	by3	re	d	010		Interrupts activity
+by3red011	by3	re	d	011		Recognizes 2 familiar words
+by3red012	by3	re	d	012		Responds to no-no
+by3red013	by3	re	d	013		Attends to other's play routine
+by3red014	by3	re	d	014		Responds to request for social routines
+by3red015	by3	re	d	015		Identifies Object Series: 1 correct
+by3red016	by3	re	d	016		Identifies object in the environment
+by3red017	by3	re	d	017		Identifies Picture Series: 1 correct
+by3red018	by3	re	d	018		Understands inhibitory words
+by3red019	by3	re	d	019		Identifies Object Series: 3 correct
+by3red020	by3	re	d	020		Follows one-part directions
+by3red021	by3	re	d	021		Identifies Picture Series: 3 Correct
+by3red022	by3	re	d	022		Identifies 3 clothing items
+by3red023	by3	re	d	023		Identifies Action Picture Series: 1 correct
+by3red024	by3	re	d	024		Identifies 5 parts of the body
+by3red025	by3	re	d	025		Follows two-part directions
+by3red026	by3	re	d	026		Identifies Action Picture Series: 3 correct
+by3red027	by3	re	d	027		Understands use of objects
+by3red028	by3	re	d	028		Understands part/whole relationships
+by3red029	by3	re	d	029		Identifies Action Picture Series: 5 correct
+by3red030	by3	re	d	030		Understands pronouns (him, me, my, you, your)
+by3red031	by3	re	d	031		Understands labels for sizes
+by3red032	by3	re	d	032		Understands Preposition Series: 2 correct
+by3red033	by3	re	d	033		Understands possessives
+by3red034	by3	re	d	034		Understands verb +ing
+by3red035	by3	re	d	035		Identifies colours
+by3red036	by3	re	d	036		Understands label of one
+by3red037	by3	re	d	037		Understands pronouns (they, he, she)
+by3red038	by3	re	d	038		Understands pronouns (his, her)
+by3red039	by3	re	d	039		Understands plurals
+by3red040	by3	re	d	040		Understands more
+by3red041	by3	re	d	041		Understands most
+by3red042	by3	re	d	042		Understands Preposition Series: 4 correct
+by3red043	by3	re	d	043		Understands negatives in sentences
+by3red044	by3	re	d	044		Understands past tense
+by3red045	by3	re	d	045		Understands labels for mass
+by3red046	by3	re	d	046		Understands least
+by3red047	by3	re	d	047		Understands less
+by3red048	by3	re	d	048		Understands descriptive labels
+by3red049	by3	re	d	049		Identifies categories of objects
+croclc001	cro	cl	c	001		Does the child look at a person when that person starts talking or making noise? 
+croclc002	cro	cl	c	002		Does the child follow a moving person or object with his/her eyes? 
+croclc003	cro	cl	c	003		Does the child make different sounds when happy, upset, or hungry? 
+croclc004	cro	cl	c	004		Does the child show interest in new objects that are put in front of him/her by reaching out for them?
+croclc005	cro	cl	c	005		Does the child show interest in new objects by trying to put them in his/her mouth? 
+croclc006	cro	cl	c	006		Does the child laugh? 
+croclc007	cro	cl	c	007		Does the child play by tapping an object on the ground or a table? 
+croclc008	cro	cl	c	008		Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)? 
+croclc009	cro	cl	c	009		Can the child make simple sounds like "ba," "da," or "do?" 
+croclc010	cro	cl	c	010		Does the child look at an object when someone says "look!" and points to it? 
+croclc011	cro	cl	c	011		Does the child intentionally move or change his/her position to get objects that are out of reach? 
+croclc012	cro	cl	c	012		When you talk to the child, does he/she respond by making a sound (e.g., "ba," "da," or "do") or by saying a word? 
+croclc013	cro	cl	c	013		Does the child recognize his/her name or nickname? That is, does he/she respond differently to his/her name than to other sounds or words?
+croclc014	cro	cl	c	014		Does the child recognize you or other family members (e.g., smile when they enter a room or move toward them)? 
+croclc015	cro	cl	c	015		Can the child use gestures to indicate what he/she wants (e.g., put arms up to indicate that he/she wants to be held, or point to water)? 
+croclc016	cro	cl	c	016		Can the child answer simple questions (e.g., "Do you want water?") by saying "yes" or "no", rather than nodding? 
+croclc017	cro	cl	c	017		Can the child point to a person or object when asked (e.g., "Where is mama?" or "Where is the ball?")? 
+croclc018	cro	cl	c	018		Does the child try to repeat sounds or words said by other people? 
+croclc019	cro	cl	c	019		Does the child imitate animal or other sounds (e.g., "vroom" for a car, "moo" for a cow)? 
+croclc020	cro	cl	c	020		Can the child follow simple directions (e.g., "Stand up" or "Come here")? 
+croclc021	cro	cl	c	021		Can the child say one or more words (e.g., names like "Mama" or "ba" for "ball")? 
+croclc022	cro	cl	c	022		Can the child figure out how to turn a spoon or object if you give it to him/her the wrong way around? 
+croclc023	cro	cl	c	023		Can the child say five or more separate words (e.g., names like "Mama" or objects like "ball")? 
+croclc024	cro	cl	c	024		Can the child speak using short sentences of two words that go together (e.g., "Mama go" or "Dada eat")?
+croclc025	cro	cl	c	025		Can the child ask for something (e.g., food, water) by name when he/she wants it?
+croclc026	cro	cl	c	026		Can the child follow orders or instructions that have more than one part (e.g., Go get water and go to bed)?
+croclc027	cro	cl	c	027		Can the child say ten or more separate words (e.g., names like "Mama" or objects like "ball")? 
+croclc028	cro	cl	c	028		Can the child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)? 
+croclc029	cro	cl	c	029		Can the child speak using sentences of three or more words that go together (e.g., "I want water" or "The house is big")? 
+croclc030	cro	cl	c	030		Does the child maintain attention for at least one minute when an adult is talking? 
+croclc031	cro	cl	c	031		Can the child correctly use any of the words "I," "you," "she," or "he" (e.g., "I go to store," or "He eats rice")? 
+croclc032	cro	cl	c	032		Can the child tell you or someone familiar his/her own name or nickname when asked to?
+croclc033	cro	cl	c	033		Can the child use a tool (e.g., a stick or spoon) to reach objects that are far away?
+croclc034	cro	cl	c	034		If you show the child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it? 
+croclc035	cro	cl	c	035		If you show the child two objects or people of different size, can he/she tell you which one is the big one and which is the small one? 
+croclc036	cro	cl	c	036		Can the child whisper? 
+croclc037	cro	cl	c	037		Can the child sing a short song or repeat parts of a rhyme from memory by him/herself? 
+croclc038	cro	cl	c	038		Does the child know the names of at least two body parts (e.g., arm, eye, or nose)? 
+croclc039	cro	cl	c	039		Can the child explain in words what common objects like a cup or chair are used for? 
+croclc040	cro	cl	c	040		Does the child play by pretending objects are something else (e.g., imagining a bottle is a doll, a stone is a car, or a spoon is an airplane)? 
+croclc041	cro	cl	c	041		Can the child count up to five objects (e.g., fingers, people)? 
+croclc042	cro	cl	c	042		Can the child correctly ask questions using any of the words "what," "which," "where," or "who"? 
+croclc043	cro	cl	c	043		If you ask the child to give you three objects (e.g., stones, beans), does the child give you the correct amount? 
+croclc044	cro	cl	c	044		Can the child identify at least one color (e.g., red, blue, yellow)? 
+croclc045	cro	cl	c	045		Can the child talk about things that have happened in the past using correct language (e.g., "Yesterday I played with my friend" or "Last week she went to the market")?
+croclc046	cro	cl	c	046		Does the child pronounce most of his/her words correctly? 
+croclc047	cro	cl	c	047		Does the child know the names of any letters (e.g., A, B, C)? 
+croclc048	cro	cl	c	048		Can the child talk about things that will happen in the future using correct language (e.g., "Tomorrow he will attend school" or "Next week we will go to the market")? 
+croclc049	cro	cl	c	049		If you point to an object, can the child correctly use the words "on," "in," or under to describe where it is (e.g., "The cup is on the table" instead of "The cup is in the table.")
+croclc050	cro	cl	c	050		Does the child regularly use describing words such as "fast," "short," "hot," "fat," or "beautiful" correctly? 
+croclc051	cro	cl	c	051		Does the child ask "why" questions (e.g., "Why are you tall?")? 
+cromoc001	cro	mo	c	001		Does the child hold his/her hands in fists all the time? 
+cromoc002	cro	mo	c	002		When held in a sitting position, can the child hold his/her head steady and straight? 
+cromoc003	cro	mo	c	003		Can the child bring his/her hands together? 
+cromoc004	cro	mo	c	004		When lying on his/her stomach, can the child hold his/her head off the ground? 
+cromoc005	cro	mo	c	005		When lying on his/her stomach, can the child hold his/her head and chest off the ground using only his/her hands and arms for support? 
+cromoc006	cro	mo	c	006		Does the child grasp onto a small object (e.g., your finger, a spoon) when put in his/her hand? 
+cromoc007	cro	mo	c	007		Does the child bring his/her hand to his/her mouth? 
+cromoc008	cro	mo	c	008		When lying on his/her back, does the child move his/her arms and legs? 
+cromoc009	cro	mo	c	009		When lying on his/her back, does the child grab his/her feet? 
+cromoc010	cro	mo	c	010		Can the child roll from his/her back to stomach, or stomach to back, on his/her own? 
+cromoc011	cro	mo	c	011		Can the child hold him/herself in a sitting position without help or support for longer than a few seconds? 
+cromoc012	cro	mo	c	012		Can the child pick up a small object (e.g., a small toy or small stone) using just one hand? 
+cromoc013	cro	mo	c	013		Does the child clap his/her hands together? 
+cromoc014	cro	mo	c	014		Can the child crawl, roll, or scoot forward on his/her own? 
+cromoc015	cro	mo	c	015		Can the child maintain a standing position while holding on to a person or object (e.g., wall or furniture)? 
+cromoc016	cro	mo	c	016		Can the child pick up and eat small pieces of food with his/her fingers? 
+cromoc017	cro	mo	c	017		Can the child maintain a standing position on his/her own, without holding on or receiving support? 
+cromoc018	cro	mo	c	018		Can the child walk several steps while holding on to a person or object (e.g., wall or furniture)? 
+cromoc019	cro	mo	c	019		Can the child pick up a small object (e.g., a small toy or small stone) with just his/her thumb and a finger? 
+cromoc020	cro	mo	c	020		Can the child transfer a small object (e.g., a small toy or small stone) from one hand to the other? 
+cromoc021	cro	mo	c	021		Can the child walk several steps on his/her own, without holding on or receiving support? 
+cromoc022	cro	mo	c	022		Can the child pick up and drop a small object (e.g., a small toy or small stone) into a bucket or bowl while sitting? 
+cromoc023	cro	mo	c	023		Can the child throw a small ball or small stone in a forward direction using his/her hand? 
+cromoc024	cro	mo	c	024		Can the child bend down to the ground and stand up again without falling and without holding onto a person or object? 
+cromoc025	cro	mo	c	025		Can the child kick a ball or other round object forward using his/her foot? 
+cromoc026	cro	mo	c	026		Can the child climb onto an object such as a chair or bench? 
+cromoc027	cro	mo	c	027		Can the child drink from a cup (without a lid) on his/her own without spilling? 
+cromoc028	cro	mo	c	028		Can the child draw a line or shape on paper with a pen or crayon, or in the dirt with a stick? 
+cromoc029	cro	mo	c	029		Can the child stack three or more small objects (e.g., blocks, cups, bottle caps) on top of each other? 
+cromoc030	cro	mo	c	030		Can the child run more than a few steps without falling or bumping into objects? 
+cromoc031	cro	mo	c	031		Can the child walk on an uneven surface (e.g., a bumpy or steep road) without falling? 
+cromoc032	cro	mo	c	032		Can the child feed him/herself using a spoon or other utensil without spilling? 
+cromoc033	cro	mo	c	033		Can the child unscrew the lid from a bottle or jar? 
+cromoc034	cro	mo	c	034		Can the child jump with both feet leaving the ground? 
+cromoc035	cro	mo	c	035		Can the child remove an item of clothing (e.g., take off his/her shirt)? 
+cromoc036	cro	mo	c	036		Can the child stand on one foot for several seconds without holding on to a person or object (e.g., wall or furniture)? 
+cromoc037	cro	mo	c	037		Can the child walk backwards? 
+cromoc038	cro	mo	c	038		Can the child dress him/herself (e.g., put on his/her pants and shirt without help)? 
+cromoc039	cro	mo	c	039		Can the child fasten and unfasten buttons without help? 
+crosec001	cro	se	c	001		Does the child smile when others smile at him/her? 
+crosec002	cro	se	c	002		Does the child look at your face when you speak to him/her? 
+crosec003	cro	se	c	003		Does the child smile or become excited when seeing someone familiar? 
+crosec004	cro	se	c	004		Does the child sometimes suck his/her thumb or fingers? 
+crosec005	cro	se	c	005		Does the child react differently according to the tone of your voice (e.g., smiles when you say something in a happy tone)? 
+crosec006	cro	se	c	006		Does the child ask you for help using signs or words when he/she cannot do something on his/her own (e.g., to reach an object up high)?
+crosec007	cro	se	c	007		Does the child watch what other children do and try to copy them? 
+crosec008	cro	se	c	008		Does the child become overly distressed (e.g., cries, screams) in response to loud sounds or bright lights? 
+crosec009	cro	se	c	009		Does the child often cry for no reason (e.g., when he/she is not hungry or tired)? 
+crosec010	cro	se	c	010		When the child is upset, does he/she calm down quickly when you soothe or hold him/her? 
+crosec011	cro	se	c	011		Does the child become very shy, afraid, or upset around strangers, even when you're with him/her?
+crosec012	cro	se	c	012		Is the child generally more irritable or fussy than other children his/her age? 
+crosec013	cro	se	c	013		Does the child have trouble falling asleep most nights? 
+crosec014	cro	se	c	014		Does the child stop at least briefly when told "no" or "stop that"? 
+crosec015	cro	se	c	015		Does the child often have extreme changes in emotions (e.g., quickly changing from very happy to very angry)? 
+crosec016	cro	se	c	016		Does the child become upset when you are not with him/her? 
+crosec017	cro	se	c	017		Does the child often show affection toward others (e.g., hugging parents, brothers, or sisters)? 
+crosec018	cro	se	c	018		Does the child cry or whine when he/she is made to wait for something he/she wants (e.g., toy or food)? 
+crosec019	cro	se	c	019		Can the child indicate when he/she needs to go to toilet? 
+crosec020	cro	se	c	020		Can the child sit or play on his/her own for at least 20 minutes? 
+crosec021	cro	se	c	021		Does the child listen to someone telling a story with interest? 
+crosec022	cro	se	c	022		Does the child wake up more than two times at night and want your attention (e.g., cries, asks for you)? 
+crosec023	cro	se	c	023		Does the child frequently complain of headaches or stomach-aches when he/she is not physically ill? 
+crosec024	cro	se	c	024		Does the child show curiosity to learn new things (e.g., by asking questions or exploring a new area)? 
+crosec025	cro	se	c	025		Does the child imitate others' behaviors (e.g., washing hands or dishes)? 
+crosec026	cro	se	c	026		Does the child quickly calm down when he/she doesn't get what he/she wants? 
+crosec027	cro	se	c	027		Does the child show signs of regressing behavior (i.e. behave or act younger than he/she is?) 
+crosec028	cro	se	c	028		Does the child usually follow rules and obey adults (e.g., "go there" or "don't do that")?
+crosec029	cro	se	c	029		Can the child sit still when asked to by an adult (e.g., for two minutes)? 
+crosec030	cro	se	c	030		Does the child involve others in play (i.e., play interactive games with other children)? 
+crosec031	cro	se	c	031		When the child is upset, does he/she calm down quickly on his/her own? 
+crosec032	cro	se	c	032		Is the child frequently sad, worried, or anxious? 
+crosec033	cro	se	c	033		Does the child cling excessively to his/her caregiver, even in a safe setting? 
+crosec034	cro	se	c	034		Is the child often impatient or unwilling to wait when you ask him/her to? 
+crosec035	cro	se	c	035		Can the child easily switch back and forth between activities (e.g., go back to a game after being interrupted)? 
+crosec036	cro	se	c	036		Can the child concentrate on one task (e.g., playing with friends, eating meal) for 20 minutes? 
+crosec037	cro	se	c	037		Does the child often refuse to play with other children? 
+crosec038	cro	se	c	038		Does the child usually finish an activity he/she enjoys (e.g., a game or book)? 
+crosec039	cro	se	c	039		Does the child often show panic or fear for no reason? 
+crosec040	cro	se	c	040		Does the child often reject or turn away from affection (e.g., refuses or pulls away from hugs from well-known family members)? 
+crosec041	cro	se	c	041		Can the child tell you when he/she is tired or hungry? 
+crosec042	cro	se	c	042		Can the child say what he/she likes or dislikes (e.g., "I like sweets")? 
+crosec043	cro	se	c	043		Does the child sometimes share things (e.g., food, toys) with others without being told? 
+crosec044	cro	se	c	044		Does the child show sympathy or look concerned when others are hurt or sad? 
+crosec045	cro	se	c	045		Is the child kind to younger children (e.g., speaks to them nicely and touches them gently)? 
+crosec046	cro	se	c	046		Does the child greet neighbors or other people he/she knows without being told (e.g., by saying hello or gesturing hello)? 
+crosec047	cro	se	c	047		Does the child prefer to play alone when other children are present? 
+crosec048	cro	se	c	048		Does the child frequently destroy or act aggressively with objects on purpose? 
+crosec049	cro	se	c	049		Can the child tell you when he/she is happy, angry, or sad? 
+crosec050	cro	se	c	050		Does the child usually put objects or toys back where they belong after using them?
+crosec051	cro	se	c	051		Can the child say what others like or dislike (e.g., "Mama doesn't like fruit," Papa likes football)?
+crosec052	cro	se	c	052		Does the child sometimes save things like candy or new toys for the future? 
+crosec053	cro	se	c	053		Does the child frequently act impulsively or without thinking (e.g., running into the street without looking)? 
+crosec054	cro	se	c	054		Does the child have difficulty getting along with other children? 
+crosec055	cro	se	c	055		Does the child often kick, bite, or hit other children or adults? 
+crosec056	cro	se	c	056		Does the child usually show respect for authority figures (e.g., a teacher, grandparent)? 
+crosec057	cro	se	c	057		Does the child become extremely withdrawn or shy in new situations? 
+crosec058	cro	se	c	058		Does the child ask about familiar people other than parents when they are not there (e.g., "Where is the neighbor?")? 
+crosec059	cro	se	c	059		Can the child tell you when others are happy, angry, or sad? 
+ddicmm029	ddi	cm	m	029	REC50	Reacts when spoken to
+ddicmm030	ddi	cm	m	030		Smiles in response (M; can ask parents)
+ddicmm031	ddi	cm	m	031	EXP5	vocalizes in response
+ddicmm033	ddi	cm	m	033	EXP10	Says dada, baba, gaga
+ddicmm034	ddi	cm	m	034	EXP12	Babbles while playing
+ddicmm036	ddi	cm	m	036		Waves 'bye-bye' (M; can ask parents)
+ddicmm037	ddi	cm	m	037	EXP18	Uses two words with comprehension
+ddicmm039	ddi	cm	m	039		Says three 'words'
+ddicmm040	ddi	cm	m	040	REC25	Understands 'play' orders.  For example, "Give the dolly a little bite of your cookie"
+ddicmm041	ddi	cm	m	041	EXP26	Says sentences with 2 words
+ddicmm042	ddi	cm	m	042	REC24	Points at 6 parts of body of a doll.
+ddicmm043	ddi	cm	m	043		Refers to self using 'me' or 'I' (M; can ask parents)
+ddicmd044	ddi	cm	d	044		Points at 5 pictures in the book
+ddicmm045	ddi	cm	m	045	EXP36	Says "sentences" of 3 or more words
+ddicmm046	ddi	cm	m	046		Can be understood by family (M; can ask parents)
+ddicmm047	ddi	cm	m	047		Talks spontaneously on daily events (M; can ask parents)
+ddicmm048	ddi	cm	m	048	EXP32	Asks questions about "who", "what", Asks questions beginning by who, what, where and "how"
+ddicmd049	ddi	cm	d	049		Can be understood by tester
+ddicmm050	ddi	cm	m	050		Asks questions:how many, when, why (M; can ask parents)
+ddicmd116	ddi	cm	d	116	REC6	Turn head to sound
+ddicmd136	ddi	cm	d	136		Reacts to verbal request (M; can ask parents)
+ddicmd141	ddi	cm	d	141		Identifies two named objects
+ddicmd148	ddi	cm	d	148		Understands 'play' orders
+ddifmd001	ddi	fm	d	001	COG3	Eyes fixate
+ddifmd002	ddi	fm	d	002		Follows with eyes and head 30d  < 0 > 30d 
+ddifmd003	ddi	fm	d	003	FM10	Hands open occasionally
+ddifmm004	ddi	fm	m	004	COG18	Watches own hands
+ddifmd005	ddi	fm	d	005		Plays with hands in midline
+ddifmd007	ddi	fm	d	007	FM19	Passes cube from hand to hand
+ddifmd008	ddi	fm	d	008	COG30	Holds cube, grasps another one with other hand
+ddifmm009	ddi	fm	m	009	GM24	Plays with both feet
+ddifmd010	ddi	fm	d	010	FM26	Picks up pellet between thumb and index finger
+ddifmd011	ddi	fm	d	011	COG36	Puts cube in and out of a box
+ddifmm012	ddi	fm	m	012		Plays 'give and take' (M; can ask parents)
+ddifmd013	ddi	fm	d	013	FM31	Tower of 2 cubes
+ddifmm014	ddi	fm	m	014		Explores environment energetically (M; can ask parents)
+ddifmd015	ddi	fm	d	015	FM72	Builds tower of 3 cubes
+ddifmm016	ddi	fm	m	016		Imitates everyday activities (M; can ask parents)
+ddifmd017	ddi	fm	d	017	FM38	Tower of 6 cubes
+ddifmd018	ddi	fm	d	018	COG49	Places round block in board
+ddifmm019	ddi	fm	m	019		Takes off shoes and socks (M; can ask parents)
+ddifmd020	ddi	fm	d	020	FM44	Imitates building a truck
+ddifmd021	ddi	fm	d	021	COG56	Places 3 forms in form-box
+ddifmd022	ddi	fm	d	022	FM41	Imitates drawing vertical line
+ddifmd023	ddi	fm	d	023	FM52	Imitates building a bridge
+ddifmd024	ddi	fm	d	024	COG58	Places 4 forms in form-box
+ddifmm025	ddi	fm	m	025		Can dress (one piece) (M; can ask parents)
+ddifmd026	ddi	fm	d	026	FM43	Copies a circle
+ddifmd027	ddi	fm	d	027	FM37	Holds pencil with fingers
+ddifmd154	ddi	fm	d	154		Eats with spoon without help (M; can ask parents)
+ddigmd006	ddi	gm	d	006	FM12	Grasps object within reach
+ddigmd052	ddi	gm	d	052	GM2	Moves arms equally well
+ddigmd053	ddi	gm	d	053	GM1	Moves legs equally well
+ddigmd054	ddi	gm	d	054		Stays suspended when lifted under the armpits
+ddigmd055	ddi	gm	d	055	GM23	No head lag if pulled to sitting
+ddigmd056	ddi	gm	d	056		Lifts chin off table for a moment
+ddigmd057	ddi	gm	d	057	GM12	Lifts head to 45 degrees on prone position
+ddigmd058	ddi	gm	d	058		Looks around to side with angle face-table 90 
+ddigmd059	ddi	gm	d	059		Flexes or stomps legs while being swung
+ddigmm060	ddi	gm	m	060	GM25	Rolls over back to front
+ddigmd061	ddi	gm	d	061		Balances head well while sitting
+ddigmd062	ddi	gm	d	062		Sits on buttocks while legs stretched
+ddigmd063	ddi	gm	d	063	GM26	Sits in stable position without support
+ddigmm064	ddi	gm	m	064	GM30	Crawls forward, abdomen on the floor
+ddigmm065	ddi	gm	m	065	GM35	Pulls up to standing position
+ddigmm066	ddi	gm	m	066		Crawls, abdomen off the floor (M; can ask parents)
+ddigmm067	ddi	gm	m	067	GM38	Walks while holding onto play-pen or furniture
+ddigmd068	ddi	gm	d	068	GM42	Walks alone
+ddigmd069	ddi	gm	d	069	GM44	Throws ball without falling
+ddigmd070	ddi	gm	d	070	GM45	Squats or bends to pick things up
+ddigmd071	ddi	gm	d	071	GM55	Kicks ball
+ddigmd072	ddi	gm	d	072	GM28	Can rotace fluently in sitting position
+ddigmm073	ddi	gm	m	073		Rides on tricycle (M; can ask parents)
+ddigmd074	ddi	gm	d	074	GM54	Jumps with both feet simultaneously
+ddigmd146	ddi	gm	d	146		Drinks from cup (M; can ask parents)
+ddigmd168	ddi	gm	d	168		Walks well
+ddigmd268	ddi	gm	d	268	GM43	Walks well alone/walks smoothly
+denfmd002	den	fm	d	002	FM76	Follow Past Midline
+denfmd003	den	fm	d	003	FM77	Hold Rattle
+denfmd004	den	fm	d	004	FM78	Hands Together
+denfmd005	den	fm	d	005	FM79	Follow 180 Degrees
+denfmd006	den	fm	d	006	FM80	Regard raisin
+denfmd007	den	fm	d	007	COG174	Reaches
+denfmd008	den	fm	d	008	COG25	Look for Yarn
+denfmd009	den	fm	d	009	FM20	Rake Raisin
+denfmd010	den	fm	d	010	FM21	Pass Block
+denfmd011	den	fm	d	011	COG27	Take 2 Blocks
+denfmd012	den	fm	d	012	FM24	Thumb-Finger Grip
+denfmd013	den	fm	d	013	COG24	Bang 2 Blocks 
+denfmd014	den	fm	d	014	COG36	Put Block in Cup
+denfmd015	den	fm	d	015	FM30	Scribbles
+denfmd016	den	fm	d	016	COG42	Drop Raisin
+denfmd017	den	fm	d	017	FM31	2 Blocks
+denfmd018	den	fm	d	018	FM81	4 Blocks
+denfmd019	den	fm	d	019	FM38	6 Blocks
+denfmd020	den	fm	d	020	FM41	Imitate Vertical Line
+denfmd021	den	fm	d	021	FM54	8 Blocks
+denfmd022	den	fm	d	022	FM82	Wiggle Thumb
+denfmd023	den	fm	d	023	FM43	Copy a Circle
+denfmd024	den	fm	d	024	FM83	Draws 3 or more body parts
+denfmd025	den	fm	d	025	FM61	Copy +  (2 lines that intersect near the midpoint using only 2 strokes)
+denfmd026	den	fm	d	026	FM84	Pick Longer Line
+denfmd027	den	fm	d	027	FM60	Copy Square, Demonstrated
+denfmd028	den	fm	d	028	FM86	Draws 6 or more body parts
+denfmd029	den	fm	d	029	FM66	Copy Square
+dengmd007	den	gm	d	007	GM21	Lift Chest with Arms
+dengmd008	den	gm	d	008	GM25	Roll Over/from back to side
+dengmd009	den	gm	d	009	GM23	Pull to Sit, No Head Lag
+dengmd010	den	gm	d	010	GM26	Sit No Support
+dengmd011	den	gm	d	011	GM77	Stand, Holding On
+dengmd012	den	gm	d	012	GM35	Pull to Stand
+dengmd013	den	gm	d	013	GM78	Get To Sitting 
+dengmd014	den	gm	d	014	GM33	Stand 2 Seconds
+dengmd015	den	gm	d	015	GM40	Stand 10 seconds
+dengmd016	den	gm	d	016	GM79	Stoop and Recover
+dengmd017	den	gm	d	017	GM43	Walk Well
+dengmd018	den	gm	d	018	GM48	Walk Backwards 
+dengmd019	den	gm	d	019	GM50	Runs
+dengmd020	den	gm	d	020	GM47	Walk Up Stairs 
+dengmd021	den	gm	d	021	GM55	Kick Ball Forward
+dengmd022	den	gm	d	022	GM59	Jump Up
+dengmd023	den	gm	d	023	GM44	Throw Ball Overhand
+dengmd024	den	gm	d	024	GM72	Long Jump
+dengmd025	den	gm	d	025		Balance each foot 1 second
+dengmd026	den	gm	d	026	GM61	Balance each foot 2 seconds
+dengmd027	den	gm	d	027	GM68	Hop
+dengmd028	den	gm	d	028		Balance each foot 3 seconds
+dengmd029	den	gm	d	029		Balance each foot 4 seconds
+dengmd030	den	gm	d	030		Balance each foot 5 seconds
+dengmd031	den	gm	d	031	GM71	Walk heel to toe
+dengmd032	den	gm	d	032	GM70	Balance each foot 6 seconds
+denlgd005	den	lg	d	005	EXP54	Squeals 
+denlgd006	den	lg	d	006	REC6	Turn to Rattle Sound
+denlgd007	den	lg	d	007	REC9	Turn to Voice
+denlgd008	den	lg	d	008	EXP8	Single Syllables 
+denlgd009	den	lg	d	009	EXP55	Imitate Speech Sounds 
+denlgd010	den	lg	d	010	EXP10	Abba / Mama Nonspecific 
+denlgd011	den	lg	d	011	EXP13	Combine Syllables 
+denlgd012	den	lg	d	012	EXP56	Babbles 
+denlgd013	den	lg	d	013		dada/mama specific
+denlgd014	den	lg	d	014	EXP14	Say 1 Word 
+denlgd015	den	lg	d	015	EXP18	Say 2 Words 
+denlgd016	den	lg	d	016		Say 3 Words 
+denlgd017	den	lg	d	017	EXP23	Say 6 Words 
+denlgd018	den	lg	d	018	REC17	Point to Pictures (2) 
+denlgd019	den	lg	d	019	EXP26	Combine Words 
+denlgd020	den	lg	d	020	EXP22	Name Pictures (1)
+denlgd021	den	lg	d	021	REC24	Body Parts
+denlgd022	den	lg	d	022	REC21	Point to Pictures (4) 
+denlgd023	den	lg	d	023	EXP57	Speech Half Understandable
+denlgd024	den	lg	d	024		Name 4 pictures
+denlgd025	den	lg	d	025	REC23	Know Actions (2)
+denlgd026	den	lg	d	026	EXP58	Know Adjectives (2)
+denlgd027	den	lg	d	027	COG68	Name Color (1 or 4)
+denlgd028	den	lg	d	028	REC27	Use of two objects
+denlgd029	den	lg	d	029	COG70	Count 1 Block
+denlgd030	den	lg	d	030	REC27	Use of four objects
+denlgd031	den	lg	d	031	REC26	Know Actions (2) (4)
+denlgd032	den	lg	d	032	EXP33	Speech All-Understandable
+denlgd033	den	lg	d	033	REC42	Understand 4 Prepositions
+denlgd034	den	lg	d	034	EXP41	Name Color (4)
+denlgd035	den	lg	d	035	EXP59	Define 5 words
+denlgd036	den	lg	d	036		Knows adjectives (3)
+denlgd037	den	lg	d	037	COG79	Count 5 Blocks
+denlgd038	den	lg	d	038	EXP60	Opposites (2)
+denlgd039	den	lg	d	039	EXP59	Count blocks (5)
+densld004	den	sl	d	004		Regard own hand
+densld005	den	sl	d	005		Work for toy
+densld006	den	sl	d	006		feed self
+densld007	den	sl	d	007	EXP11	Clapping game "pat a cake"
+densld008	den	sl	d	008	EXP9	Indicate Wants 
+densld009	den	sl	d	009		wave bye-bye
+densld010	den	sl	d	010	COG53	Play Ball with You 
+densld011	den	sl	d	011	COG65	Imitate Activities 
+densld012	den	sl	d	012		Drink from a cup
+densld013	den	sl	d	013		help in house
+densld014	den	sl	d	014		use spoon/fork
+densld015	den	sl	d	015		remove garment
+densld016	den	sl	d	016		feed doll
+densld017	den	sl	d	017		put on clothing
+densld018	den	sl	d	018		brush teeth with help
+densld019	den	sl	d	019		wash and dry hands
+densld020	den	sl	d	020		name friend
+densld021	den	sl	d	021		put on T-shirt
+densld022	den	sl	d	022		dress no help
+densld023	den	sl	d	023	COG71	Play Games 
+densld024	den	sl	d	024		brush teeth no help
+densld025	den	sl	d	025		prepare cereal
+dmcfmd001	dmc	fm	d	001		Watches a moving item in front of face
+dmcfmd002	dmc	fm	d	002		Reaches out for objects unsuccessfully
+dmcfmd003	dmc	fm	d	003		Reaches out and grasps objects
+dmcfmd004	dmc	fm	d	004		Picks up small objects in anyway
+dmcfmd005	dmc	fm	d	005		Picks up small objects using one hand rather than two
+dmcfmd006	dmc	fm	d	006		Picks grains
+dmcfmd007	dmc	fm	d	007		Holds a pen in anyway
+dmcfmd008	dmc	fm	d	008		Holds a pen between finger and thumb
+dmcfmd009	dmc	fm	d	009		Scribbles with a pen
+dmcfmd010	dmc	fm	d	010		Opens a door that requires pushing.
+dmcfmd011	dmc	fm	d	011		Opens a door by turning and pulling doorknob.
+dmcgmd001	dmc	gm	d	001		Holds head erect for a few minutes
+dmcgmd002	dmc	gm	d	002		Controls the head
+dmcgmd003	dmc	gm	d	003		Sits supported
+dmcgmd004	dmc	gm	d	004		Sits alone on the floor
+dmcgmd005	dmc	gm	d	005		Crawls
+dmcgmd006	dmc	gm	d	006		Stands when held up
+dmcgmd007	dmc	gm	d	007		Pulls self while holding on to object into a standing position
+dmcgmd008	dmc	gm	d	008		Stands holding on to furniture or object
+dmcgmd009	dmc	gm	d	009		Stands alone
+dmcgmd010	dmc	gm	d	010		Walks when held
+dmcgmd011	dmc	gm	d	011		Walks alone
+dmcgmd012	dmc	gm	d	012		Climbs onto a low chair
+dmcgmd013	dmc	gm	d	013		Climbs out of a low chair
+dmcgmd014	dmc	gm	d	014		Runs 
+dmcgmd015	dmc	gm	d	015		Jumps
+dmcgmd016	dmc	gm	d	016		Kicks football
+dmcgmd017	dmc	gm	d	017		Throws football
+dmclgd001	dmc	lg	d	001		Repeats vowels in strings e.g. aa aa aa
+dmclgd002	dmc	lg	d	002		Repeats syllables in strings e.g. ma ma ma
+dmclgd003	dmc	lg	d	003		Uses synonyms e.g. tamu tamu for sweet foods
+dmclgd004	dmc	lg	d	004		Uses onomatopes. These are words that describe sounds in a particular situation. E.g. mee for goat, boo for cow
+dmclgd005	dmc	lg	d	005		Uses gestures to communicate
+dmclgd006	dmc	lg	d	006		Uses one definite word
+dmclgd007	dmc	lg	d	007		Says more than three words
+dmclgd008	dmc	lg	d	008		Says more than ----- words (record the number of word the mother says)
+dmclgd009	dmc	lg	d	009		Uses two words combinations
+dmclgd010	dmc	lg	d	010		Identifies of familiar objects: record the number reported
+dmclgd011	dmc	lg	d	011		Names familiar objects: record the number reported
+dmcsld001	dmc	sl	d	001		Regards person: fleeting
+dmcsld002	dmc	sl	d	002		Follows moving person with eyes
+dmcsld003	dmc	sl	d	003		Smiles
+dmcsld004	dmc	sl	d	004		Vocalizes when talked to
+dmcsld005	dmc	sl	d	005		Visually recognises the mother
+dmcsld006	dmc	sl	d	006		Knows strangers from familiar people
+dmcsld007	dmc	sl	d	007		Reaches out for familiar people
+dmcsld008	dmc	sl	d	008		Goes happily with people he know
+dmcsld009	dmc	sl	d	009		Reacts to own name
+dmcsld010	dmc	sl	d	010		Watches others and plays next to them.
+dmcsld011	dmc	sl	d	011		Shows an interest in what others are doing.
+dmcsld012	dmc	sl	d	012		Joins other children in play
+dmcsld013	dmc	sl	d	013		Tries to help dress arms into a shirt or blouse.
+dmcsld014	dmc	sl	d	014		Undresses self
+dmcsld015	dmc	sl	d	015		Dresses self with minimal assistance
+dmcsld016	dmc	sl	d	016		Dresses self without any assistance.
+dmcsld017	dmc	sl	d	017		Takes liquids from cups when held to lips
+dmcsld018	dmc	sl	d	018		Drinks from a cup with assistance
+dmcsld019	dmc	sl	d	019		Can manage a cup well.
+dmcsld020	dmc	sl	d	020		Uses hands to feed self: spillage
+dmcsld021	dmc	sl	d	021		Uses hands to feed self: no spillage
+dmcsld022	dmc	sl	d	022		Uses spoon to feed self: spillage
+dmcsld023	dmc	sl	d	023		Uses spoon to feed self: no spillage
+dmcsld024	dmc	sl	d	024		Usually stays dry and clean for up to an hour
+dmcsld025	dmc	sl	d	025		Indicates when wet
+dmcsld026	dmc	sl	d	026		Usually says when pressed (wants to go for a short call).
+dmcsld027	dmc	sl	d	027		Bowel control complete, rarely dirty by day
+gricgd004	gri	cg	d	004		Holds rod put in hand (see E7)
+gricgd006	gri	cg	d	006		Plays with own fingers
+gricgd007	gri	cg	d	007		Resists withdrawal of rod
+gricgd008	gri	cg	d	008		Claps cube put in hand
+gricgd009	gri	cg	d	009		Reaches to Paper III - Pulls it away
+gricgd010	gri	cg	d	010		Shows interest in box
+gricgd011	gri	cg	d	011	COG30	(Performance) Holds 2 cubes.
+gricgd012	gri	cg	d	012	FM15	(Performance) Takes cube or toy from table
+gricgd013	gri	cg	d	013	FM21	(Performance) Passes toy from hand to hand
+gricgd014	gri	cg	d	014		Drops one cube for third
+gricgd015	gri	cg	d	015		Manipulates 2 objects at once
+gricgd016	gri	cg	d	016		Reacts to Paper IV - Plays with, crumbles, etc.
+gricgd017	gri	cg	d	017		Lifts inverted cup in search of toy
+gricgd018	gri	cg	d	018		Rattles box
+gricgd019	gri	cg	d	019		Lifts lid off box
+gricgd020	gri	cg	d	020	FM23	(Performance) Clicks 2 bricks together
+gricgd021	gri	cg	d	021		Tries to take cubes out of box
+gricgd022	gri	cg	d	022		Finds toy under cup
+gricgd023	gri	cg	d	023	COG37	(Performance) Accepts 3rd cube without dropping
+gricgd024	gri	cg	d	024		Manipulates box, lid and cubes
+gricgd201	gri	cg	d	201		Remove both cubes from box (shown)
+gricgd202	gri	cg	d	202		Unwraps and finds toy
+gricgd203	gri	cg	d	203		One circle board - 2 trials
+gricgd204	gri	cg	d	204		Opens 2 boxes
+gricgd205	gri	cg	d	205		Puts cubes in and out of boxes in play
+gricgd206	gri	cg	d	206		Puts 2 cubes back into one box when encouraged to do so
+gricgd207	gri	cg	d	207		Two circle board - one in
+gricgd208	gri	cg	d	208		Square board - 2 trials
+gricgd209	gri	cg	d	209		Two circle board - two in
+gricgd210	gri	cg	d	210		Can put lid back on box
+gricgd211	gri	cg	d	211	COG49	(Performance) Three hole board - one in.
+gricgd212	gri	cg	d	212		Puts 2 cubes into box lid on - all complete
+gricgd213	gri	cg	d	213		Circle and square board together
+gricgd214	gri	cg	d	214		Three-hole board - two in
+gricgd215	gri	cg	d	215	COG56	(Performance) Three-hole board - three in. 
+gricgd216	gri	cg	d	216		Two circle board, rotated
+gricgd217	gri	cg	d	217		Circle and square board rotated 
+gricgd218	gri	cg	d	218		(credit as 2 items)
+gricgd219	gri	cg	d	219		Assembles three boxes 
+gricgd220	gri	cg	d	220		(credit as 2 items)
+gricgd221	gri	cg	d	221		Can open screw toy 
+gricgd222	gri	cg	d	222	COG46	(Performance) Can open screw toy (credit as two items)
+gricgd223	gri	cg	d	223		Three-hole board, rotated 
+gricgd224	gri	cg	d	224	COG60	(Performance) Three-hole board, rotated (credit as two items)
+gricgd301	gri	cg	d	301		Reassembles screw toy
+gricgd302	gri	cg	d	302		Returns 9 bricks to box and replaces lid within one minute
+gricgd303	gri	cg	d	303		Four-squares board completed within one minute - 2 trials
+gricgd304	gri	cg	d	304		Six-hole board completed within one minute - 2 trials
+gricgd305	gri	cg	d	305		Four-squares board: (40 secs).
+gricgd306	gri	cg	d	306		Six-hole board: (40 secs).
+gricgd401	gri	cg	d	401		Returns 9 bricks to box and replaces lid within 40 seconds
+gricgd402	gri	cg	d	402	FM52	(Performance) Builds bridge with 3 boxes - inferior model but still stands.
+gricgd403	gri	cg	d	403		Assembles brick-boxes by colour - no error
+gricgd404	gri	cg	d	404		Four-squares board: (15 secs)
+gricgd405	gri	cg	d	405		Train under bridge successfully
+gricgd406	gri	cg	d	406		Eleven-hole board (within 60 secs) Time taken (.....)
+gricgd501	gri	cg	d	501		Six-hole board within (20 seconds)
+gricgd502	gri	cg	d	502		Builds bridge - superior model
+gricgd503	gri	cg	d	503		Pattern making no. 2 (60 seconds). Time taken (........)
+gricgd504	gri	cg	d	504		Builds gate to model
+gricgd505	gri	cg	d	505		Pattern making No. 2 (40 seconds)
+gricgd506	gri	cg	d	506		Pattern making No.5 (60 seconds). (Time taken ....)
+gricgd601	gri	cg	d	601		Eleven-hole board - within 40 seconds.
+gricgd602	gri	cg	d	602		Pattern making No. 5 - within 40 seconds
+gricgd603	gri	cg	d	603		Ten-brick Memory Stairs (Imitation)
+gricgd604	gri	cg	d	604		Pattern making No. 3 - within 60 seconds (Time taken ....)
+griehd005	gri	eh	d	005		Follows a bell-ring - vomed in a complete circle
+griehd006	gri	eh	d	006		Glances from one object to another
+griehd007	gri	eh	d	007		Watches objects pulled along by string
+griehd008	gri	eh	d	008		Visually explores new environment
+griehd009	gri	eh	d	009		Reaches for ring and grasps
+griehd010	gri	eh	d	010		Secures dangling ring
+griehd011	gri	eh	d	011		Hands explore table surface
+griehd012	gri	eh	d	012		Plays with ring - shaking bells, banging, etc.
+griehd013	gri	eh	d	013	COG25	(Eye and Hand Co-ordination) Looks for falling object
+griehd014	gri	eh	d	014		Strikes one object with another
+griehd015	gri	eh	d	015	FM18	(Eye and Hand Co-ordination) Forefinger and thumb partly specialized
+griehd016	gri	eh	d	016	COG29	(Eye and Hand Co-ordination)  Secures ring by means of string on table surface
+griehd017	gri	eh	d	017	FM24	(Eye and Hand Co-ordination) Fine prehension.
+griehd018	gri	eh	d	018	COG41	(Eye and Hand Co-ordination) Dangles ring by the string
+griehd019	gri	eh	d	019		Throws object
+griehd020	gri	eh	d	020	FM22	(Eye and Hand Co-ordination) Thumb opposition complete.
+griehd021	gri	eh	d	021	FM29	(Eye and Hand Co-ordination) Can point with index finger.
+griehd022	gri	eh	d	022		Interest in motor car
+griehd023	gri	eh	d	023	FM28	(Eye and Hand Co-ordination) Can hold pencil as if to mark on paper.
+griehd024	gri	eh	d	024		Likes holding little toys 
+griehd201	gri	eh	d	201		Uses pencil on paper a little 
+griehd202	gri	eh	d	202		Shows preference for one hand
+griehd203	gri	eh	d	203		Plays rolling a ball
+griehd204	gri	eh	d	204		Can hold 4 cubes in hands at once
+griehd205	gri	eh	d	205	COG39	(Eye and Hand Co-ordination) Plays pushing little cars along
+griehd206	gri	eh	d	206		Places one box, lid or brick upon another
+griehd207	gri	eh	d	207	FM31	(Eye and Hand Co-ordination)  Tower of 2 bricks - imitation..
+griehd208	gri	eh	d	208	COG28	(Eye and Hand Co-ordination) Pulls paper or cloth to get toy
+griehd209	gri	eh	d	209	FM30	(Eye and Hand Co-ordination) Scribbles more freely, and deliberately.
+griehd210	gri	eh	d	210		Constructive play with boxes or other materials 
+griehd211	gri	eh	d	211	COG53	(Eye and Hand Coordination) Constructive play with boxes or other materials (credit as 2 items)
+griehd212	gri	eh	d	212		Builds tower of 3 bricks
+griehd213	gri	eh	d	213		Can throw a ball 
+griehd214	gri	eh	d	214	GM44	(Eye and hand) Can throw a ball
+griehd215	gri	eh	d	215		Tower of 4+ bricks
+griehd216	gri	eh	d	216		Enjoys vigourous scribble
+griehd217	gri	eh	d	217		Can pour water from one cup to another 
+griehd218	gri	eh	d	218		Tower of 5+ bricks 
+griehd219	gri	eh	d	219	FM43	(Eye and Hand Co-ordination) Circular scribble in imitation
+griehd220	gri	eh	d	220		Makes train of 3+ bricks 
+griehd221	gri	eh	d	221		(Credit as 2 items)
+griehd222	gri	eh	d	222		Makes a brick or toy walk
+griehd223	gri	eh	d	223	FM38	(Eye and Hand Co-ordination) Tower of 6 or 7 bricks.
+griehd224	gri	eh	d	224	FM41	(Eye and Hand Co-ordination) Draws a perpendicular stroke or line (in imitation)  
+griehd301	gri	eh	d	301	FM40	(Eye and Hand Co-ordination) Draws a horizontal stroke in imitation
+griehd302	gri	eh	d	302		Threads 6 beads
+griehd303	gri	eh	d	303	FM54	(Eye and Hand Co-ordination) Builds a tower of 8+ bricks.
+griehd304	gri	eh	d	304		Handles scissors - tries to cut paper (4 inch square)
+griehd305	gri	eh	d	305		Copies a circle - primitive model. Stage I.
+griehd306	gri	eh	d	306	FM61	(Eye and Hand Co-ordination) Copies a cross -recognisable. Stage I
+griehd401	gri	eh	d	401		Folds a four-inch square of paper once (i.e. in half)
+griehd402	gri	eh	d	402		Threads 12+ beads (not by pattern)
+griehd403	gri	eh	d	403	FM51	(Eye and Hand Co-ordination) Can cut square into two fairly equal pieces.
+griehd404	gri	eh	d	404		Folds a four-inch square twice
+griehd405	gri	eh	d	405		Copies a 'ladder'. Stage I.
+griehd406	gri	eh	d	406		Draws a 'man' recognisable. Stage I.
+griehd501	gri	eh	d	501		Copies a cross - good shape and well drawn. Stage II
+griehd502	gri	eh	d	502		Copies circle - good shape - neatly closed. Stage II
+griehd503	gri	eh	d	503	FM66	(Eye and Hand Co-ordination) Draws a square - recognizable. Stage 1 
+griehd504	gri	eh	d	504		Window - recognizable. Stage I
+griehd505	gri	eh	d	505		House. Stage I
+griehd506	gri	eh	d	506	FM55	(Eye and Hand c-ordination) Scissors: can strip edge of paper neatly
+griehd601	gri	eh	d	601		Threads 12 beads to colour pattern
+griehd602	gri	eh	d	602		Triangle - fairly good (Stage A)
+grigmd005	gri	gm	d	005		Lifts head when in dorsal position
+grigmd006	gri	gm	d	006		Back firm when held in siting position
+grigmd007	gri	gm	d	007		Lifts head and chest when prone
+grigmd008	gri	gm	d	008		Can hold head erect continuously
+grigmd009	gri	gm	d	009		Lifts head and shoulders when in dorsal position
+grigmd010	gri	gm	d	010		Can roll from side to side
+grigmd011	gri	gm	d	011		Crawling Reaction I: Draws up knee
+grigmd012	gri	gm	d	012	GM19	(Locomotor) Sits with slight support.
+grigmd013	gri	gm	d	013	GM25	(Locomotor) Can roll from back to stomach, etc.
+grigmd014	gri	gm	d	014		Crawling Reaction II: Tries vigorously to crawl
+grigmd015	gri	gm	d	015	GM22	(Locomotor) Sits alone for a short time
+grigmd016	gri	gm	d	016	GM29	(Locomotor) Stepping reaction - one foot in front of the other
+grigmd017	gri	gm	d	017	GM27	(Locomotor) Can be left sitting on the floor.
+grigmd018	gri	gm	d	018		Stands when held up
+grigmd019	gri	gm	d	019		Crawling Reaction III: Makes some progress forwards or backwards 
+grigmd020	gri	gm	d	020		Sits well in a chair
+grigmd021	gri	gm	d	021	GM35	(Locomotor) Pulls self up and stands holding on to furniture.
+grigmd022	gri	gm	d	022	GM34	(Locomotor) Crawling Reaction IV: Creeps on hands and knees
+grigmd023	gri	gm	d	023	GM38	(Locomotor) Side-steps around inside cot or play-pen holding rails.
+grigmd024	gri	gm	d	024	GM37	(Locomotor) Can walk when led.
+grigmd201	gri	gm	d	201		Climbs on a low ledge or step
+grigmd202	gri	gm	d	202	GM40	(Locomotor) Stands alone 
+grigmd203	gri	gm	d	203	GM42	(Locomotor) Takes a few steps alone
+grigmd204	gri	gm	d	204		Kneels on floor or chair
+grigmd205	gri	gm	d	205		Climbs - stairs (up)
+grigmd206	gri	gm	d	206		Likes pushing pram, toy horse, etc.
+grigmd207	gri	gm	d	207	GM43	(Locomotor) Walks alone well
+grigmd208	gri	gm	d	208	GM45	(Locomotor) Stoops.
+grigmd209	gri	gm	d	209		Develops a quick trot
+grigmd210	gri	gm	d	210		Climbs into a low armchair
+grigmd211	gri	gm	d	211	GM48	(Locomotor) Can walk backwards a few steps
+grigmd212	gri	gm	d	212		Walks pulling toy on a string
+grigmd213	gri	gm	d	213		Climbs stairs (up and down)
+grigmd214	gri	gm	d	214	GM50	(Locomotor) Runs
+grigmd215	gri	gm	d	215		Jumps (on the level floor)
+grigmd216	gri	gm	d	216		Climbs to stand on a chair
+grigmd217	gri	gm	d	217	GM47	(Locomotor) Walks upstairs- holding adult's hand
+grigmd218	gri	gm	d	218		Can seat self at table
+grigmd219	gri	gm	d	219	GM49	(Locomotor) Walks up and down stairs.
+grigmd220	gri	gm	d	220	GM55	(Locomotor) Can kick a ball.
+grigmd221	gri	gm	d	221	GM54	(Locomotor) Can jump off a step
+grigmd222	gri	gm	d	222	GM58	(Locomotor) Goes alone on the stairs (any method)
+grigmd223	gri	gm	d	223		Throws ball into basket 
+grigmd224	gri	gm	d	224		Can bring chair and seat self at table
+grigmd301	gri	gm	d	301		Jumps off one step- both feet together
+grigmd302	gri	gm	d	302	GM69	(Locomotor) Can stand on one foot - for 6+ seconds
+grigmd303	gri	gm	d	303		Rises from kneeling without using hands
+grigmd304	gri	gm	d	304		Can cross both feet and knees when seated
+grigmd305	gri	gm	d	305	GM62	(Locomotor) Can stand and walk tip-toe (6+ steps)
+grigmd306	gri	gm	d	306	GM64	(Locomotor) Walks upstairs: one foot on each step, adult manner.
+grigmd401	gri	gm	d	401		Can run fast (indoors)
+grigmd402	gri	gm	d	402		Can ride a tricycle or other pedal toy
+grigmd403	gri	gm	d	403		Marches in time to music
+grigmd404	gri	gm	d	404		Walks a chalkline - 4 ft
+grigmd405	gri	gm	d	405	GM68	(Locomotor) Can hop on one foot - 3+ steps
+grigmd406	gri	gm	d	406		Jumps off 2 steps
+grigmd501	gri	gm	d	501		Can run to kick ball
+grigmd502	gri	gm	d	502	GM67	(Locomotor) Walks downstairs: one foot on each step, adult manner.
+grigmd503	gri	gm	d	503		Touches toes with knees straight
+grigmd504	gri	gm	d	504		Jumps a 6 in. high rope - both feet together
+grigmd505	gri	gm	d	505		Can climb on and off a box unaided
+grigmd506	gri	gm	d	506		Can run upstairs
+grigmd601	gri	gm	d	601		Can bounce and catch a ball
+grigmd602	gri	gm	d	602		Can run fast out of doors
+grigmd603	gri	gm	d	603		Can throw a ball up about 2 ft. and catch it
+grigmd604	gri	gm	d	604		Can hopskip 4+
+grigmd605	gri	gm	d	605		Can jump off 3 steps
+grigmd606	gri	gm	d	606		Hopscotch I (one successful hop)
+grigmd701	gri	gm	d	701		Jumos a 10 in. high rope, both feet together
+grigmd702	gri	gm	d	702		Hopskips more freely: 12 +
+grigmd703	gri	gm	d	703		Hopscotch II (2 successful hops - second foot up)
+grigmd704	gri	gm	d	704		Can run, with steady trot, all round playground
+grigmd705	gri	gm	d	705		Can skip a little with rope, 3+ skips
+grigmd706	gri	gm	d	706		Hopscotch III (3 hops - with second foot up)
+grigmd801	gri	gm	d	801		Runs - downstairs
+grigmd802	gri	gm	d	802		Can jump off 4+ stairs
+grigmd803	gri	gm	d	803		Rides a bicycle (2-wheeler) short distance
+grigmd804	gri	gm	d	804		Hopscotch IV (4 hops - with one foot up)
+grigmd805	gri	gm	d	805		Fast single skipping with rope
+grigmd806	gri	gm	d	806		Skips well 12 + ordinary double skipping
+grigmd807	gri	gm	d	807		Hopskips some distance - out-of-doors
+grigmd808	gri	gm	d	808		Rides a 2-wheeler with competence
+grihsd004	gri	hs	d	004		Searches for sound with eyes
+grihsd005	gri	hs	d	005	EXP8	(Hearing and Speech) Makes 2 + different speech sounds
+grihsd006	gri	hs	d	006		Listens to music
+grihsd007	gri	hs	d	007		Searches for sound with head movements
+grihsd008	gri	hs	d	008		Listens to tuning fork
+grihsd009	gri	hs	d	009	REC6	(Hearing and Speech)Turns head deliberately to bell
+grihsd010	gri	hs	d	010		Coos or stops crying on hearing music
+grihsd011	gri	hs	d	011	EXP12	Talks (babbles) to person
+grihsd012	gri	hs	d	012		Makes 4+ different sounds.
+grihsd013	gri	hs	d	013		Responds when called
+grihsd014	gri	hs	d	014	EXP10	2 syllable babble
+grihsd015	gri	hs	d	015		Listens to conversations
+grihsd016	gri	hs	d	016	EXP13	(Hearing and Speech) Babbled phrases: 4 + syllables
+grihsd017	gri	hs	d	017	EXP14	(Hearing and Speech) Says Mama or Dada, etc. (one word clear)
+grihsd018	gri	hs	d	018		Listens to stop watch
+grihsd019	gri	hs	d	019	COG31	(Hearing and Speech) Rings the bell
+grihsd020	gri	hs	d	020		Shakes head for no
+grihsd021	gri	hs	d	021	EXP18	says 2 clear words
+grihsd022	gri	hs	d	022		Short babbled sentences of 6+ syllables
+grihsd023	gri	hs	d	023		Babbled monologue when alone
+grihsd024	gri	hs	d	024		Says three clear words
+grihsd201	gri	hs	d	201		Looks at pictures for a sew seconds
+grihsd202	gri	hs	d	202		Tries definitely to sing
+grihsd203	gri	hs	d	203	REC9	(Hearing and Speech)Knows own name.
+grihsd204	gri	hs	d	204		Likes rhymes and jingles
+grihsd205	gri	hs	d	205	COG32	(Hearing and Speech) Looks at pictures with interest
+grihsd206	gri	hs	d	206		Uses 4 clear words
+grihsd207	gri	hs	d	207	REC15	(Hearing and Speech) One object in box identified
+grihsd208	gri	hs	d	208		Uses 5 clear words
+grihsd209	gri	hs	d	209		Long babbled sentences - some words clear
+grihsd210	gri	hs	d	210		Enjoys pictre book
+grihsd211	gri	hs	d	211		Uses 6 or 7 clear words
+grihsd212	gri	hs	d	212		Two objects in box identified
+grihsd213	gri	hs	d	213	EXP23	9+  clear words
+grihsd214	gri	hs	d	214	REC19	(Hearing and Speech)  Four objects in box identified
+grihsd215	gri	hs	d	215	EXP22	(Hearing and Speech) Picture vocabulary (1)
+grihsd216	gri	hs	d	216		Uses 12+ clear words
+grihsd217	gri	hs	d	217	EXP26	Uses word combinations
+grihsd218	gri	hs	d	218		Picture vocabulary (2)
+grihsd219	gri	hs	d	219		Uses 20+ clear words
+grihsd220	gri	hs	d	220		Eight objects in box identified
+grihsd221	gri	hs	d	221		Listens to stories
+grihsd222	gri	hs	d	222	EXP27	(Hearing and Speech) Names 4 objects in box
+grihsd223	gri	hs	d	223	EXP28	(Hearing and Speech) Picture vocabulary (4)
+grihsd224	gri	hs	d	224	EXP29	(Hearing and Speech) Uses sentences of 4+ syllables
+grihsd301	gri	hs	d	301		Names 12 of 18 objects in box
+grihsd302	gri	hs	d	302		Picture vocabulary (12)
+grihsd303	gri	hs	d	303		Defines by use (2+) - cup, knife, chair, coat, car, house, pencil, watch, key
+grihsd304	gri	hs	d	304		Repeats one six-syllable sentence
+grihsd305	gri	hs	d	305		Uses 2 descriptive words
+grihsd306	gri	hs	d	306		Talks well in sentences of 6+ syllables (record).
+grihsd401	gri	hs	d	401		Names six or more objects in large picture
+grihsd402	gri	hs	d	402		Names 17-18 objects in box
+grihsd403	gri	hs	d	403		Uses 2+ personal pronouns
+grihsd404	gri	hs	d	404	EXP42	(Hearing and Speech) Comprehension 2+ items
+grihsd405	gri	hs	d	405		Picture vocabulary (18+)
+grihsd406	gri	hs	d	406	EXP41	(Hearing and Speech) Knows 6+ colours
+grihsd501	gri	hs	d	501	EXP43	(Hearing and Speech) Defines by use: 6+.
+grihsd502	gri	hs	d	502		Opposites - 2
+grihsd503	gri	hs	d	503		Materials (2+) "What is a table made of? .... a window? ..... a house? ......
+grihsd504	gri	hs	d	504		Repeats sentences of 10+ syllables
+grihsd505	gri	hs	d	505	EXP46	(Hearing and Speech)  Picture description: 1+ sentences. 
+grihsd506	gri	hs	d	506		Names 12 objects in large picture
+grihsd601	gri	hs	d	601		Talks in sentences of 10 + syllables (record)
+grihsd602	gri	hs	d	602		Comprehension 4 +
+grihsd603	gri	hs	d	603		Uses 6+ descriptive words
+grihsd604	gri	hs	d	604		Knows 10+ capital letters (Test)
+grihsd605	gri	hs	d	605		Uses 6 + personal pronouns
+grihsd606	gri	hs	d	606		Knows 10 colours (Test)
+grihsd701	gri	hs	d	701		Repeats sentence of 16 syllables
+grihsd702	gri	hs	d	702		Picture Description - (3+), three sentences describing a picture
+grihsd703	gri	hs	d	703		Knows 20 + capital letters (Test).
+grihsd704	gri	hs	d	704		Similarities - one
+grihsd705	gri	hs	d	705		Differences - two.
+grihsd706	gri	hs	d	706		Capital letter - knows all 26
+grihsd801	gri	hs	d	801		Picture description - (4+), four sentences describing picture
+grihsd802	gri	hs	d	802		Similarities - two
+grired301	gri	re	d	301		Repeats one digit - 8;2;7
+grired302	gri	re	d	302		Knows 'dollar' or money
+grired303	gri	re	d	303		Repeats two digits 16;53;94
+grired304	gri	re	d	304		Compares 2 insets for size "which one is bigger?"
+grired305	gri	re	d	305		Repeats 3 digits 982; 475; 136
+grired306	gri	re	d	306	COG73	practical reasoning (PR) knows big and little
+grired401	gri	re	d	401		Compares 2 towers: 'Which one is higher?' (5;3 bricks)
+grired402	gri	re	d	402		Compares 2 lines for length
+grired403	gri	re	d	403		Preliminary counting to 4+
+grired404	gri	re	d	404	COG79	PR counts 4 bricks correctly
+grired405	gri	re	d	405		Repeats 4 digits - 5816; 3729; 4952
+grired406	gri	re	d	406	COG74	PR compares 2 weights: which is heavier
+grired501	gri	re	d	501		Knows 2 coins (of 7 shown) N = .....
+grired502	gri	re	d	502		Can count 10 bricks
+grired503	gri	re	d	503		Knows morning and afternoon
+grired504	gri	re	d	504		Knows 3 coins (of 7 shown)
+grired505	gri	re	d	505		'Which goes faster?' 3+
+grired506	gri	re	d	506		Can count 15 bricks
+grired601	gri	re	d	601		Knows No. of fingers on each hand
+grired602	gri	re	d	602		Knows 4 coins
+grired603	gri	re	d	603		Knows 5 coins
+grired604	gri	re	d	604		Repeats 5 digits - 61384; 59271; 92786
+grired606	gri	re	d	606		Know 'high' and 'low'
+hypgmd001	hyp	gm	d	001		Pure noise item (simulated)
+hypgmd002	hyp	gm	d	002		Item with an asymptote (simulated)
+hypgmd003	hyp	gm	d	003		Wrongly coded item (simulated)
+hypgmd004	hyp	gm	d	004		Perfect (Guttman) item (simulated)
+hypgmd005	hyp	gm	d	005		Guttman with an asymptote (simulated)
+iyolgc001	iyo	lg	c	001		Does your child turn his/her head towards your voice or some noise?
+iyolgc002	iyo	lg	c	002		When you TALK to your child, does he/she smile, make noises, or move arms, legs or trunk in response?
+iyolgc003	iyo	lg	c	003		Does your child make sounds when LOOKING at toys or people (not crying)?
+iyolgc004	iyo	lg	c	004		Does your child make single sounds like "buh" or "duh" or "muh"?
+iyolgc005	iyo	lg	c	005		Does your child make noise or gesture TO GET YOUR ATTENTION?
+iyolgc006	iyo	lg	c	006		Does your child make two similar sounds TOGETHER like baba, mumu, pepe, di (single consonant vowel combinations)?
+iyolgc007	iyo	lg	c	007		Does your child point, shake head, or otherwise gesture to let you know WHAT THEY WANT?
+iyolgc008	iyo	lg	c	008		Can your child say at least one word?
+iyolgc009	iyo	lg	c	009		Does your child try to SHOW you something by reaching at you, pulling on your hand or clothes, using gestures, making noises (not words)?
+iyolgc010	iyo	lg	c	010		Does your child put together noises that sound sentence-like even if they are not words?
+iyolgc011	iyo	lg	c	011		If you or someone else invites your child to play a familiar game (peekaboo, wave bye-bye, etc.) does your child know what to do without you showing them? Does he or she understand, even if you don't show him or her what to do? Does he or she try to participate, even if it's not exactly correct? Does he or she attempt the movement, activity, or response?
+iyolgc012	iyo	lg	c	012		Can your child identify at least one object? For example, when you ask "where is the ball/spoon/cup/cloth/door/plate/bucket etc." does your child look at it or point to (or even name) the object?
+iyolgc013	iyo	lg	c	013		Without you making a gesture, does your child follow a simple spoken command or direction? Does your child understand when you ask something? Will they do at least one thing you ask the child to do? Can your child do it without you using a gesture?
+iyolgc014	iyo	lg	c	014		Does your child ask for something (e.g. food, water) by name when he/she wants it?
+iyolgc015	iyo	lg	c	015		Does your child usually understand what you say to him/her when you say it only once? For example, do you have to repeat what you said to be understood?
+iyolgc016	iyo	lg	c	016		Can your child identify at least one body part? For example, if you ask "where are your eyes?" can he or she point to his or her eyes?
+iyolgc017	iyo	lg	c	017		Does your child follow directions with more than one step? For example, "Go to the kitchen and bring me a spoon"?
+iyolgc018	iyo	lg	c	018		Does your child use two WORDS together in a meaningful phrase/speak in short two word sentences? For example, "mama go", "give mama", "daddy gone".
+iyolgc019	iyo	lg	c	019		Can your child say at least six words?
+iyolgc020	iyo	lg	c	020		Does your child understand the words over, on top of, above, next to, under and in front of? If you ask the child to put something under the table or on top of the chair, does your child understand?
+iyolgc021	iyo	lg	c	021		When looking at pictures, if you say to your child "what is this?", can they SAY the name of the object that you point to?
+iyolgc022	iyo	lg	c	022		Can your child identify at least seven objects? For example, when you ask "where is the ball/spoon/cup/cloth/door/plate/bucket etc." does your child look at or point to (or even name) the objects?
+iyolgc023	iyo	lg	c	023		Does your child usually communicate with words what he/she wants in a way that is understandable to others?
+iyolgc024	iyo	lg	c	024		Does your child ask questions using the words what, which, where, why, or who?
+iyolgc025	iyo	lg	c	025		Can your child speak in sentences that are 3  4 words long?
+iyolgc026	iyo	lg	c	026		Does your child know the difference between the words "big" and "small"? For example, if you ask, "Give me the big spoon" can your child understand which one to give if there are two different sizes?
+iyolgc027	iyo	lg	c	027		Does your child talk about or explain things that have happened in the past using the past tense? For example, "I went to the market yesterday" NOT "I go to the market yesterday"? Can your child tell you about something that happened on a last special event? Can they talk about anything that happened in the past?
+iyolgc028	iyo	lg	c	028		Does your child count up to 5?
+iyolgc029	iyo	lg	c	029		Does your child understand the term "longest"? For example, if you ask them to choose "which is the longest of 3 objects?" e.g. 3 spoons or sticks  would he/she be able to choose the longest?
+iyolgc030	iyo	lg	c	030		Does your child tell a story?
+iyomoc001	iyo	mo	c	001		Does your child try to move his/her head (or eyes) to follow an object or person?
+iyomoc002	iyo	mo	c	002		While your child is on his/her back, does he/she bring his/her hands together?
+iyomoc003	iyo	mo	c	003		Does your child put objects or hands to his/her mouth?
+iyomoc004	iyo	mo	c	004		Does your child hold his/her head steady for at least a few seconds, without it flopping to the side?
+iyomoc005	iyo	mo	c	005		When he/she is on his/her tummy, does your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.
+iyomoc006	iyo	mo	c	006		Does your child try to reach for objects that are in front of him/her by extending one or both arms?
+iyomoc007	iyo	mo	c	007		Does your child reach for AND HOLD an object, at least for a few seconds?
+iyomoc008	iyo	mo	c	008		Does your child sit WITH support, either leaning against something (furniture or person), or by leaning forward on his or her hands?
+iyomoc009	iyo	mo	c	009		If an object falls to the ground, does your child look for it?
+iyomoc010	iyo	mo	c	010		Does your child drink from an OPEN cup while you hold it?
+iyomoc011	iyo	mo	c	011		Does your child bang objects together, or bang an object on the table or on the ground?
+iyomoc012	iyo	mo	c	012		Does your child pass an object from one hand to the other?
+iyomoc013	iyo	mo	c	013		Does your child sit upright, with fairly straight back and neck control, without holding on to you, an object, or resting hands on the floor?
+iyomoc014	iyo	mo	c	014		Does your child pick up small items, like pieces of food USING THUMB AND FINGER TIPS? 
+iyomoc015	iyo	mo	c	015		Does your child intentionally SQUEEZE or PAT/HIT an object that makes a noise in order to hear it? For example, squeezing or hitting an empty plastic bottle, or other object, to make noise? Not shaking or banging, but deliberately patting or squeezing it? 
+iyomoc016	iyo	mo	c	016		Does your child pull themselves up from the floor while holding onto something? For example, can they pull themselves up using a chair, a person, or some other object?
+iyomoc017	iyo	mo	c	017		Does your child pick up small items, like pieces of food using thumb and JUST ONE FINGER TIP?
+iyomoc018	iyo	mo	c	018		When someone holds one or both hands (just to balance), or when your child is holding furniture or other object WITH JUST ONE HAND, does he/she make a few steps forward, without tripping?
+iyomoc019	iyo	mo	c	019		Can your child push a toy car intentionally, all four wheels on the ground?
+iyomoc020	iyo	mo	c	020		Does your child stand up WITHOUT holding onto anything, even if just for a few seconds?
+iyomoc021	iyo	mo	c	021		Does your child make any light marks on paper or in dirt with a crayon or a stick?
+iyomoc022	iyo	mo	c	022		Does your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?
+iyomoc023	iyo	mo	c	023		Does your child bend down or squat to pick up an object from the floor and then stand up again, without help from a person or object?
+iyomoc024	iyo	mo	c	024		Does your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately? 
+iyomoc025	iyo	mo	c	025		Does your child make a scribble on paper, or in dirt, in a BACK AND FORTH manner? For example, can he or she move the pen or pencil or stick back and forth? 
+iyomoc026	iyo	mo	c	026		Does your child drink WITHOUT HELP from an OPEN cup?
+iyomoc027	iyo	mo	c	027		Does your child walk well, with coordination, without falling down often? With one foot in front of the other (rather than shifting weight side to side, stiff- legged)?
+iyomoc028	iyo	mo	c	028		While standing, does your child purposefully THROW the ball and not just drop it?
+iyomoc029	iyo	mo	c	029		Is your child able to unscrew a lid, at least turning the lid one rotation?
+iyomoc030	iyo	mo	c	030		Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?
+iyomoc031	iyo	mo	c	031		While standing, does your child kick a ball by swinging his/her leg forward?
+iyomoc032	iyo	mo	c	032		Does your child run well, without falling or bumping into objects?
+iyomoc033	iyo	mo	c	033		Does your child stand on one foot WITH SUPPORT by holding onto something or somebody?
+iyomoc034	iyo	mo	c	034		Does your child walk sideways, two or more steps WITHOUT any support?
+iyomoc035	iyo	mo	c	035		Does your child run and kick a ball, and do so successfully?
+iyomoc036	iyo	mo	c	036		Does your child jump WITH BOTH FEET LEAVING THE GROUND AT ABOUT THE SAME TIME? 
+iyomoc037	iyo	mo	c	037		If you draw a straight line does your child do it, just as you did?
+iyomoc038	iyo	mo	c	038		If you draw a circle does your child do it, just as you did?
+iyomoc039	iyo	mo	c	039		Does your child stand on one foot WITHOUT any support for at least a few seconds?
+iyomoc040	iyo	mo	c	040		Does your child dress him/herself completely (except for shoelaces, buttons and zippers)?
+iyosec001	iyo	se	c	001		Does your child stop crying or calm down when you come to the room after being out of sight, or when you pick him or her up?
+iyosec002	iyo	se	c	002		When you are about to pick up your child, does he/she act happy or excited?
+iyosec003	iyo	se	c	003		If you play a game with your child, does he/she respond with interest? For example, if you play peek-a-boo, pat-a-cake, wave bye-bye, etc. does your child smile, widen their eyes, kick or move arms or vocalize?
+iyosec004	iyo	se	c	004		Does your child smile when you smile or talk with him/her?
+iyosec005	iyo	se	c	005		Does your child smile, move excitedly, kick legs, move arms or trunk, or make coo noises when a known person enters the room or speaks to them?
+iyosec006	iyo	se	c	006		Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?
+iyosec007	iyo	se	c	007		Is your child very interested to play with a new toy?
+iyosec008	iyo	se	c	008		Does your child usually get along with other children he/she plays with such as siblings or other family members? Can your child make friends easily? When your child spends time with other children, do they mostly agree on things and not quarrel?
+iyosec009	iyo	se	c	009		When your child sees other children playing, does your child play next to them without joining in? Does he/she play alongside?
+iyosec010	iyo	se	c	010		Does your child play together with other children not just by sitting next to each other and doing the same thing, but actively interacting?
+iyosec011	iyo	se	c	011		When your child needs to use the toilet, do they show you by pulling on their clothes, holding himself or herself, crying, or some other way?
+iyosec012	iyo	se	c	012		Does your child share things with other children or family members without being told to do so?
+iyosec013	iyo	se	c	013		Does your child show sympathy or look concerned? If your child's friend or sibling is sad, what does your child do? Does your child try to comfort the other?
+iyosec014	iyo	se	c	014		If your child has a problem with another child (e.g. fighting over a toy or something else), does your child come to you or another adult and ask for help?
+iyosec015	iyo	se	c	015		Does the child usually show respect for authority figures (e.g. teacher, grandparent, elder)?
+iyosec016	iyo	se	c	016		Does your child worry if a known person is sick or hurt? Is your child interested in the wellbeing/health of others?
+iyosec017	iyo	se	c	017		Does your child follow through on instructions, for example, does he/she finish his/her chores?
+iyosec018	iyo	se	c	018		Does your child keep working on something until he/she is finished?
+iyosec019	iyo	se	c	019		Does your child use "imaginary" or not visible objects in play? For example, pretending to give food to a child (even though they have nothing to give)?
+iyosec020	iyo	se	c	020		Does your child have difficulty taking turns when playing with others?
+kdifmd001	kdi	fm	d	001		Throws and catches a ball (highest string achieved) 3 games
+kdifmd002	kdi	fm	d	002		Releases a ball purposefully
+kdifmd003	kdi	fm	d	003		Throws a ball towards someone
+kdifmd004	kdi	fm	d	004		Catches a ball uses hands and arms
+kdifmd005	kdi	fm	d	005		Catches a ball using hands only
+kdifmd006	kdi	fm	d	006		Reaches for dangling ring
+kdifmd007	kdi	fm	d	007		Takes dangling ring
+kdifmd008	kdi	fm	d	008		Follows red tassel with eyes/ attempts to grasp
+kdifmd009	kdi	fm	d	009		Grasps red tassel successfully
+kdifmd010	kdi	fm	d	010		Can hold and examine object (ring, bear etc)
+kdifmd011	kdi	fm	d	011		Passes object from hand to hand
+kdifmd012	kdi	fm	d	012		Can do up button with adult holding one piece of cloth
+kdifmd013	kdi	fm	d	013		Can do up button alone
+kdifmd017	kdi	fm	d	017		kdifmd017
+kdifmd018	kdi	fm	d	018		kdifmd018
+kdifmd019	kdi	fm	d	019		kdifmd019
+kdifmd020	kdi	fm	d	020		kdifmd020
+kdifmd021	kdi	fm	d	021		kdifmd021
+kdifmd023	kdi	fm	d	023		Holds a pen in any way
+kdifmd024	kdi	fm	d	024		Holds a pen between finger and thumb
+kdifmd025	kdi	fm	d	025		Can scribble using a pen
+kdifmd026	kdi	fm	d	026		Can imitate a straight line
+kdifmd027	kdi	fm	d	027		Can imitate a circle
+kdifmd141	kdi	fm	d	141		kdifmd141
+kdifmd142	kdi	fm	d	142		kdifmd142
+kdifmd143	kdi	fm	d	143		kdifmd143
+kdifmd144	kdi	fm	d	144		kdifmd144
+kdifmd151	kdi	fm	d	151		kdifmd151
+kdifmd152	kdi	fm	d	152		kdifmd152
+kdifmd153	kdi	fm	d	153		kdifmd153
+kdifmd154	kdi	fm	d	154		kdifmd154
+kdifmd161	kdi	fm	d	161		kdifmd161
+kdifmd162	kdi	fm	d	162		kdifmd162
+kdifmd163	kdi	fm	d	163		kdifmd163
+kdigmd001	kdi	gm	d	001		Stands with Support
+kdigmd002	kdi	gm	d	002		Stands without support
+kdigmd003	kdi	gm	d	003		Can kick a ball from stationary position
+kdigmd004	kdi	gm	d	004		Can kick a moving ball
+kdigmd005	kdi	gm	d	005		Walks when one hand held
+kdigmd006	kdi	gm	d	006		Walks without help
+kdigmd007	kdi	gm	d	007		Jumps with two feet together, holding on to person's hand
+kdigmd008	kdi	gm	d	008		Jumps with two feet together unsupported both feet leave the ground
+kdigmd009	kdi	gm	d	009		Stands on one leg, without support for 10-20 seconds
+kdigmd010	kdi	gm	d	010		Stands on one leg, without support for 21+ seconds
+kdigmd011	kdi	gm	d	011		Walk on tip toes for 3 or more steps
+kdigmd012	kdi	gm	d	012		Walk on tip toes for length of mat
+kdigmd013	kdi	gm	d	013		Walks backwards with support or for less than length of mat
+kdigmd014	kdi	gm	d	014		Walks backwards alone for length of mat
+kdigmd015	kdi	gm	d	015		Walks along line heel to toe, arms out for 3 steps
+kdigmd016	kdi	gm	d	016		Walks along line heel to toe, arms out for length of mat
+kdigmd017	kdi	gm	d	017		Walks on side of feet
+kdigmd018	kdi	gm	d	018		Can pull self onto platform
+kdigmd019	kdi	gm	d	019		Can climb straight onto platform
+kdigmd020	kdi	gm	d	020		Jumps off platform with support
+kdigmd021	kdi	gm	d	021		Jumps off platform and lands on both feet
+kdigmd022	kdi	gm	d	022		Hops on oneleg on spot
+kdigmd023	kdi	gm	d	023		Hops on one leg for length of mat
+kdigmd024	kdi	gm	d	024		Lifts upper body while lying on stomach
+kdigmd025	kdi	gm	d	025		Sits with support
+kdigmd026	kdi	gm	d	026		Can sit steadily/ without support
+kdigmd027	kdi	gm	d	027		No head lag in sitting position
+kdigmd028	kdi	gm	d	028		Can reach out and return to sitting position
+kdigmd029	kdi	gm	d	029		Rolls from side to back
+kdigmd030	kdi	gm	d	030		Rolls from side to side
+kdigmd031	kdi	gm	d	031		Moves from lying to sitting pushing up with hands
+kdigmd032	kdi	gm	d	032		Moves from lying to sitting not using hands
+kdigmd033	kdi	gm	d	033		Moves from sitting to standing rolling over and up
+kdigmd034	kdi	gm	d	034		Moves from sitting to standing not using hands
+kdigmd035	kdi	gm	d	035		Can sit down steadily (from a standing position)
+macgmd001	mac	gm	d	001	GM56	Child walks in a straight line
+macgmd002	mac	gm	d	002	GM63	Walks backwards for 5 steps
+macgmd003	mac	gm	d	003	GM62	Walks on tiptoes for 5 steps or more
+macgmd005	mac	gm	d	005	GM59	Jumps with feet together;  2-5 jumps
+macgmd041	mac	gm	d	04a	GM60	Balances on either foot for 3-9 secs
+macgmd042	mac	gm	d	04b	GM69	Balances on either foot for 10 secs 
+mdsgmd001	mds	gm	d	001		Sitting without support
+mdsgmd002	mds	gm	d	002		Hands-and-knees crawling
+mdsgmd003	mds	gm	d	003		Standing with assistance
+mdsgmd004	mds	gm	d	004		Walking with assistance
+mdsgmd005	mds	gm	d	005		Standing alone
+mdsgmd006	mds	gm	d	006		Walking alone
+mdtfmd001	mdt	fm	d	001		Follows face/object to midline
+mdtfmd002	mdt	fm	d	002		Fixes and follows through 180 degrees
+mdtfmd003	mdt	fm	d	003		Puts hands together in front of eyes or mouth
+mdtfmd004	mdt	fm	d	004		Reaches for large thing
+mdtfmd005	mdt	fm	d	005		When holding objects, tends to put in mouth
+mdtfmd006	mdt	fm	d	006		Grasps hold of large thing
+mdtfmd007	mdt	fm	d	007		Can pick up a larger object from ground. (e.g. spoon or rattle)
+mdtfmd008	mdt	fm	d	008		Can see a small object such as a piece of maize or a bean
+mdtfmd009	mdt	fm	d	009		Transfers objects from one hand to the other hand
+mdtfmd010	mdt	fm	d	010		Picks up small things in a RAKING fashion
+mdtfmd011	mdt	fm	d	011		Strikes on object with another in imitation with the examiner
+mdtfmd012	mdt	fm	d	012		Finds object under piece of cloth
+mdtfmd013	mdt	fm	d	013		Picks up maize or bean with thumb and one finger
+mdtfmd014	mdt	fm	d	014		Puts 1 or more blocks in and out of cup
+mdtfmd015	mdt	fm	d	015		Pushes a little car along
+mdtfmd016	mdt	fm	d	016		Puts blocks into jar with screw on lid in imitation
+mdtfmd017	mdt	fm	d	017		Dumps blocks out of jar purposefully
+mdtfmd018	mdt	fm	d	018		Scribbles on paper (straight scribble)
+mdtfmd019	mdt	fm	d	019		Scribbles on paper (circular scribble)
+mdtfmd020	mdt	fm	d	020		Builds a tower of 2 blocks
+mdtfmd021	mdt	fm	d	021		Puts pegs into board in <= 2 minutes
+mdtfmd022	mdt	fm	d	022		Builds tower of 4 blocks
+mdtfmd023	mdt	fm	d	023		Builds tower of 6 blocks
+mdtfmd024	mdt	fm	d	024		Puts pegs into board in up to <=30 seconds
+mdtfmd025	mdt	fm	d	025		Unscrews and screws back on lid of jar
+mdtfmd026	mdt	fm	d	026		Threads 6 beads
+mdtfmd027	mdt	fm	d	027		Copies a vertical line (as drawn by the examiner) within about 30 degrees
+mdtfmd028	mdt	fm	d	028		Picks longest stick 3 times out of 3 tries
+mdtfmd029	mdt	fm	d	029		Picks heaviest box 3 time out of 3 tries
+mdtfmd030	mdt	fm	d	030		Can make a bridge with 3 blocks
+mdtfmd031	mdt	fm	d	031		Makes a doll out of clay
+mdtfmd032	mdt	fm	d	032		Copies a circle
+mdtfmd033	mdt	fm	d	033		Copies a cross
+mdtfmd034	mdt	fm	d	034		Copies a square
+mdtgmd001	mdt	gm	d	001		Lifts chin off floor
+mdtgmd002	mdt	gm	d	002		Prone (on tummy), can lift head up to 90 degrees
+mdtgmd003	mdt	gm	d	003		Holds head upright for a few seconds
+mdtgmd004	mdt	gm	d	004		Pulls to sit with no head lag
+mdtgmd005	mdt	gm	d	005		Lifts head, shoulders and chest when prone
+mdtgmd006	mdt	gm	d	006		Bears weight on legs when held in standing position
+mdtgmd007	mdt	gm	d	007		Sits with help
+mdtgmd008	mdt	gm	d	008		Rolls over from back to front
+mdtgmd009	mdt	gm	d	009		Sits without help for a short time
+mdtgmd010	mdt	gm	d	010		Sits by self well
+mdtgmd011	mdt	gm	d	011		Crawls in any way
+mdtgmd012	mdt	gm	d	012		Pulls self to stand/trying to get to standing
+mdtgmd013	mdt	gm	d	013		Able to stand well if holding onto things
+mdtgmd014	mdt	gm	d	014		Walks using both hands of someone
+mdtgmd015	mdt	gm	d	015		Walks with help (using somebodys hand as if led or a piece of furniture)
+mdtgmd016	mdt	gm	d	016		Walks, but falls over at times
+mdtgmd017	mdt	gm	d	017		Stoops and recovers. (Picks up object off floor without falling)
+mdtgmd018	mdt	gm	d	018		Walks well
+mdtgmd019	mdt	gm	d	019		Basic running, may fall over
+mdtgmd020	mdt	gm	d	020		Kicks ball, tries to kick ball
+mdtgmd021	mdt	gm	d	021		Runs well, stopping and starting without falling
+mdtgmd022	mdt	gm	d	022		Kneels and gets up without using hands
+mdtgmd023	mdt	gm	d	023		Throws a ball into a basket (at least one of 3 times) 1 meter away
+mdtgmd024	mdt	gm	d	024		Runs, stops and is able to kick a ball some distance
+mdtgmd025	mdt	gm	d	025		Jumps with feet together off the ground
+mdtgmd026	mdt	gm	d	026		Jumps over line/string on the ground
+mdtgmd027	mdt	gm	d	027		Stands on one foot for less than 5 seconds
+mdtgmd028	mdt	gm	d	028		Walks on heels for 6 + steps
+mdtgmd029	mdt	gm	d	029		Jumps over a piece of paper (widthways)
+mdtgmd030	mdt	gm	d	030		Walks on tip toes for six or more steps
+mdtgmd031	mdt	gm	d	031		Hops on one foot without support, has to go 3 steps
+mdtgmd032	mdt	gm	d	032		Stands on one foot for a longer time  (at least 5 seconds -tminute
+mdtgmd033	mdt	gm	d	033		Can throw a ball up in the air and catch it with 2 hands
+mdtgmd034	mdt	gm	d	034		Heel/toe walk with one foot behind the other along the string with good balance:
+mdtlgd001	mdt	lg	d	001		Startles or jumps/responds to sounds
+mdtlgd002	mdt	lg	d	002		Happy vocalizing or making sounds  not crying
+mdtlgd003	mdt	lg	d	003		Laughs/chuckles
+mdtlgd004	mdt	lg	d	004		Turns to voice
+mdtlgd005	mdt	lg	d	005		Uses single syllables or sounds, for example Ma, Pa, Da, Ba, Ta
+mdtlgd006	mdt	lg	d	006		Responds to his or her name
+mdtlgd007	mdt	lg	d	007		Uses 2/4 syllable babble such as Dada, Mama, Mimi, Tata, Papa, Yaya, Baba
+mdtlgd008	mdt	lg	d	008		Understands when being cautioned about danger. For example when parent says STOP! to child, s/he stops even briefly
+mdtlgd009	mdt	lg	d	009		Indicates by gesture to say No
+mdtlgd010	mdt	lg	d	010		Follows simple commands (1 step)
+mdtlgd011	mdt	lg	d	011		Unclear talk/jabber in sentences - pretends to talk
+mdtlgd012	mdt	lg	d	012		Says 2 words, but words other than those used for mother and father
+mdtlgd013	mdt	lg	d	013		Says 2 words together
+mdtlgd014	mdt	lg	d	014		Says 6 words, but words other than those used for mother and father
+mdtlgd015	mdt	lg	d	015		Follows 2 step commands
+mdtlgd016	mdt	lg	d	016		Child can IDENTIFY (point to or give you) 5 objects you name
+mdtlgd017	mdt	lg	d	017		Speaks clearly in sentences
+mdtlgd018	mdt	lg	d	018		Points to 2 or more body parts
+mdtlgd019	mdt	lg	d	019		Child can NAME 5 objects in the basket
+mdtlgd020	mdt	lg	d	020		Child can tell you his or her first name
+mdtlgd021	mdt	lg	d	021		Knows actions of 3 or more objects
+mdtlgd022	mdt	lg	d	022		Child can IDENTIFY (point to or give you) 10 objects you name
+mdtlgd023	mdt	lg	d	023		Child can NAME 10 objects in the basket
+mdtlgd024	mdt	lg	d	024		Child is able to categorize things
+mdtlgd025	mdt	lg	d	025		Child is able to follow a 3 step command
+mdtlgd026	mdt	lg	d	026		Is able to tell you the use of 3 or more objects
+mdtlgd027	mdt	lg	d	027		Can do 2 syllable recall
+mdtlgd028	mdt	lg	d	028		Child knows 2 of 3 comprehension questions
+mdtlgd029	mdt	lg	d	029		Understands the adjectives such as faster by answering Which goes faster, a car or a bicycle?
+mdtlgd030	mdt	lg	d	030		Can do 4 syllable recall
+mdtlgd031	mdt	lg	d	031		Child can understand prepositions and follow tasks related to this
+mdtlgd032	mdt	lg	d	032		Understands the concept of opposites
+mdtlgd033	mdt	lg	d	033		Knows quantities  can count at least 3 objects
+mdtlgd034	mdt	lg	d	034		SEE ITEM 33
+mdtsed001	mdt	se	d	001		Smiles, but not at a particular person
+mdtsed002	mdt	se	d	002		Smiles in response to a person
+mdtsed003	mdt	se	d	003		Frolics with mother or caregiver (moves body in response to another person)
+mdtsed004	mdt	se	d	004		Frolics alone, plays around moving body, kicking legs in a happy way
+mdtsed005	mdt	se	d	005		Recognizes or calms and quiets with caregivers/known family members
+mdtsed006	mdt	se	d	006		Will take porridge from a spoon when fed by a caregiver
+mdtsed007	mdt	se	d	007		Helps to hold a cup while mom gives a drink
+mdtsed008	mdt	se	d	008		Puts arms up or indicates in some way that they want to be picked up
+mdtsed009	mdt	se	d	009		Can hold a spoon with porridge but not get to mouth well
+mdtsed010	mdt	se	d	010		Drinks form a cup well without spilling
+mdtsed011	mdt	se	d	011		Is able to indicate, by pointing, that they want something
+mdtsed012	mdt	se	d	012		Can eat by picking up morsels of food from a plate
+mdtsed013	mdt	se	d	013		Puts hands out to have them washed
+mdtsed014	mdt	se	d	014		Can hold a spoon and take porridge by self, but spills some
+mdtsed015	mdt	se	d	015		Indicates in some way that they need to go for a poo/pee, for example by crying, pulling at pants or saying something
+mdtsed016	mdt	se	d	016		Wants to join in with singing games
+mdtsed017	mdt	se	d	017		Able to greet either by extending hand or verbally
+mdtsed018	mdt	se	d	018		Sharing things, including food with others
+mdtsed019	mdt	se	d	019		Does a poo or pees by themselves without wetting their pants
+mdtsed020	mdt	se	d	020		Can feed self well using a spoon without spilling
+mdtsed021	mdt	se	d	021		Can make own morsels of food and put in mouth
+mdtsed022	mdt	se	d	022		Able to undress by themselves
+mdtsed023	mdt	se	d	023		Wants to go and visit a friends house (shows independence)
+mdtsed024	mdt	se	d	024		Can go to the toilet by themselves anywhere
+mdtsed025	mdt	se	d	025		Can eat food with bits in it or bones
+mdtsed026	mdt	se	d	026		Is able to dress self but not completely
+mdtsed027	mdt	se	d	027		Washes hands well by self before/after eating
+mdtsed028	mdt	se	d	028		Knows to keep quiet at important meetings or ceremonies
+mdtsed029	mdt	se	d	029		Does household chores or helps father or mother in a useful way
+mdtsed030	mdt	se	d	030		Able to dress by themselves completely
+mdtsed031	mdt	se	d	031		Understands the concept of discipline
+mdtsed032	mdt	se	d	032		Knows how to be respectful to elders
+mdtsed033	mdt	se	d	033		Is able to go to the toilet/pit latrine by self
+mdtsed034	mdt	se	d	034		Label unknown
+pegfmd001	peg	fm	d	001	COG47	Places 2 or more pegs in 30 sec with either hand
+pegfmd002	peg	fm	d	002	COG62	Places  6 or more pegs in 30 sec with either hand
+prifad011	pri	fa	d	011		Response to being asked to put 2 biscuits in bowl.
+prifad012	pri	fa	d	012		Response to being asked to put 1 more biscuit in bowl as dog still hungry.
+prifad021	pri	fa	d	021		Child points to the plate with many (6) biscuits.
+prifad031	pri	fa	d	031		Constructs bridge of 5 blocks.
+prifad041	pri	fa	d	041		Child puts cows together
+prifad042	pri	fa	d	042		Child puts chickens together
+prifad043	pri	fa	d	043		Child puts horses tougher
+prifad051	pri	fa	d	051		Names finger
+prifad052	pri	fa	d	052		Names eyebrows
+prifad053	pri	fa	d	053		Names knee
+prifad054	pri	fa	d	054		Names belly
+prifad055	pri	fa	d	055		Names elbow
+prifad061	pri	fa	d	061		Puts together 2 pieces
+prifad071	pri	fa	d	071		Says name of mother
+prifad081	pri	fa	d	081		Puts Behind
+prifad082	pri	fa	d	082		Puts In Front
+prifad091	pri	fa	d	091		Puts object on top
+prifad092	pri	fa	d	092		Puts object under
+prifad101	pri	fa	d	101		Number of correct responses -- times (5 possible) child put hand on cow.
+prifad102	pri	fa	d	102		Number of errors  times (5 possible) child put hand on chicken or dog.
+prifad111	pri	fa	d	111		Examiner asks What do you do when you fall and get a (scratch/bruise)?
+prifad112	pri	fa	d	112		Examiner asks What do you do when you are sleepy?
+prifad113	pri	fa	d	113		Examiner asks What do you do when you are hungry?
+prifad121	pri	fa	d	121		Petting dog.
+prifad122	pri	fa	d	122		Knitting
+prifad123	pri	fa	d	123		Milking cow.
+prifad124	pri	fa	d	124		Braiding hair.
+prifad125	pri	fa	d	125		Washing cloths.
+prifad126	pri	fa	d	126		Sweeping.
+prifad127	pri	fa	d	127		Laying bricks, building with bricks.
+prifad128	pri	fa	d	128		Swinging on swing.
+prifad131	pri	fa	d	131		Child repeats correctly 2 series of 2 words
+prifad132	pri	fa	d	132		Child repeats correctly 2 series of 3 words
+prifad133	pri	fa	d	133		Child repeats correctly 2 series of 4 words
+prihdd001	pri	hd	d	001		Can (childs name) identify or name at least 10 letters of alphabet?
+prihdd002	pri	hd	d	002		Can (name) read at least 4 simple, popular words?
+prihdd003	pri	hd	d	003		Does (name) know the name of and recognize the symbols of all numbers 1-10?
+prihdd004	pri	hd	d	004		Can (name) pick up a small object like a stick or a (stone floor piece?) with two fingers?
+prihdd005	pri	hd	d	005		Does (name) at times feel too sick to play?
+prihdd006	pri	hd	d	006		Can (name) follow simple instructions about how to do something correctly?
+prihdd007	pri	hd	d	007		When you give (name) something to make/do, can (name) do it by him/herself?
+prihdd008	pri	hd	d	008		Does (name) get along well with other children?
+prihdd009	pri	hd	d	009		Does (name) kick, bite or hit other children or adults?
+prihdd010	pri	hd	d	010		Is (name) easily distracted?
+prihdd011	pri	hd	d	011		Brush teeth after eating something.
+prihdd012	pri	hd	d	012		Wash hands before eating.
+prihdd013	pri	hd	d	013		Wash hands after going to the bathroom.
+prised001	pri	se	d	001		(Name) likes to draw or paint.
+prised002	pri	se	d	002		(Name) can play 15 minutes or more without needing the attention of an adult.
+prised003	pri	se	d	003		(NAME) likes to meet/know adults
+prised004	pri	se	d	004		(Name) has some favorite/preferred friends.
+prised005	pri	se	d	005		(Name) worries if a known/familiar person is sick or hurt (is interested in the wellbeing/health of that person.
+prised006	pri	se	d	006		(Name) has preferences for some toys or activities
+prised007	pri	se	d	007		When you have to leave, (NAME) cries
+prised008	pri	se	d	008		After a conflict, (NAME) can control self (control emotions, calm self?) with the help of an adult
+prised009	pri	se	d	009		(NAME) goes to the bathroom alone without the help of an adult
+prised010	pri	se	d	010		(NAME) helps with some things around the house when asked
+prised011	pri	se	d	011		(NAME) worries if a person is crying (is interested in the wellbeing of that person)
+prised012	pri	se	d	012		(NAME) likes to play with other children, even if s/he does not know them
+prised013	pri	se	d	013		(Name) imitates (in play) adults
+prised014	pri	se	d	014		When a known/familiar adult asks child to do something, s/he complies.
+prised015	pri	se	d	015		When (NAME) is very disturbed/upset/bothered by something, s/he can later calm self quickly
+prised016	pri	se	d	016		When something bothers (NAME), s/he can go to a familiar/well known person and tell him/her.
+sbifrd001	sbi	fr	d	001		Identify missing object: Stick with 2 units (similarity)
+sbifrd003	sbi	fr	d	003		Identify missing object: Green cube
+sbifrd004	sbi	fr	d	004		Identify missing object: Blue circle
+sbifrd005	sbi	fr	d	005		Identify missing object: Green cube
+sbifrd006	sbi	fr	d	006		Identify missing object: Stick with 2 units (series)
+sbifrd007	sbi	fr	d	007		Identify missing object: Stick with 2 units (descending order)
+sbifrd008	sbi	fr	d	008		Identify missing object: Stick with 2 units (alternation)
+sbifrd009	sbi	fr	d	009		Identify missing image: Red triangle
+sbifrd010	sbi	fr	d	010		Identify missing image: Yellow square
+sbifrd011	sbi	fr	d	011		Identify missing image: Blue circle
+sbifrd012	sbi	fr	d	012		Identify missing image: Cat
+sbivsd001	sbi	vs	d	001	COG49	Places circle in form board within 15 secs
+sbivsd002	sbi	vs	d	002		Places circle & square in form board within 15 secs
+sbivsd003	sbi	vs	d	003	COG56	Places 3 pieces: circle, square, triangle in form board in 15 sec
+sbivsd004	sbi	vs	d	004	COG60	Places 3 pieces: circle, square, triangle in rotated form board in 30 sec
+sbivsd005	sbi	vs	d	005		Places 2 semicircles - big triangle - square in 30 sec
+sbivsd006	sbi	vs	d	006		Places circle - 2 small triangles - square in 45 sec
+sbivsd007	sbi	vs	d	007		Places 2 semicircles - 2 small triangles - square in 45 sec
+sbivsd008	sbi	vs	d	008		Places circle - 2 small triangles - 2 rectangles in 45 sec
+sbivsd009	sbi	vs	d	009		Places 2 semi-circles - 2 small triangles - 2 rectangles in 45 sec
+sbivsd010	sbi	vs	d	010	COG116	Placement of all pieces with 90 deg rotation in 45 sec
+sbiwmd001	sbi	wm	d	001	COG40	Finds plastic duck hidden under one of 2 cups
+sbiwmd002	sbi	wm	d	002	COG45	Finds plastic duck hidden under one of 2 inverted cups
+sbiwmd003	sbi	wm	d	003		Finds car  hidden under middle of 3 cups after cups hidden by a screen
+sbiwmd004	sbi	wm	d	004		Finds car hidden under right side of 3 cups after cups hidden by a screen
+sbiwmd005	sbi	wm	d	005		Repeats tapping 1 block
+sbiwmd006	sbi	wm	d	006		Repeats tapping 1 block
+sbiwmd007	sbi	wm	d	007		Repeats sequence of tapping 2 blocks
+sbiwmd008	sbi	wm	d	008		Repeats sequence of tapping 2 blocks
+sbiwmd009	sbi	wm	d	009		Repeats sequence of tapping 2 blocks
+sbiwmd010	sbi	wm	d	010	COG118	Increasingly difficult sequences of tapping blocks v1
+sbiwmd011	sbi	wm	d	011	COG118	Increasingly difficult sequences of tapping blocks v2
+sbiwmd012	sbi	wm	d	012	COG118	Increasingly difficult sequences of tapping blocks v3
+sgrehd009	sgr	eh	d	009		Grasps ring
+sgrehd012	sgr	eh	d	012	COG17	Carries ring to mouth
+sgrehd013	sgr	eh	d	013		Clutches ring
+sgrehd017	sgr	eh	d	017	COG23	Reaches for string
+sgrehd020	sgr	eh	d	020		Watches scribble
+sgrehd025	sgr	eh	d	025		Pulls toy by string
+sgrfmd008	sgr	fm	d	008		 Looks  at box on  table
+sgrfmd011	sgr	fm	d	011		Drops one block for second
+sgrfmd016	sgr	fm	d	016		 Grasps box.
+sgrfmd017	sgr	fm	d	017		 Manipulates cube
+sgrfmd018	sgr	fm	d	018		Takes paper
+sgrgmd006	sgr	gm	d	006		Active in bath
+sgrgmd008	sgr	gm	d	008	GM14	Rolls from side to back
+sgrgmd014	sgr	gm	d	014		Plays with own toes
+sgrgmd018	sgr	gm	d	018		Stepping movements
+sgrgmd022	sgr	gm	d	022		Can turn on floor
+sgrgmd028	sgr	gm	d	028		Can stand next to furniture
+sgrhsd010	sgr	hs	d	010		Laughs aloud
+sgrhsd015	sgr	hs	d	015		Manipulates bell
+sgrhsd019	sgr	hs	d	019		Shouts for attention
+sgrhsd021	sgr	hs	d	021		Singing tones
+sgrhsd029	sgr	hs	d	029		Reacts to music
+sgrred006	sgr	re	d	006		Vocalises when spoken to
+sgrred007	sgr	re	d	007		Follows moving person
+sgrred008	sgr	re	d	008		Coos and smiles
+sgrred009	sgr	re	d	009		Friendly to strangers
+sgrred010	sgr	re	d	010		Resist ring being taken away
+sgrred011	sgr	re	d	011		Frolics when played with
+sgrred012	sgr	re	d	012		Stops crying when spoken to
+sgrred013	sgr	re	d	013		Turns head to person talking
+sgrred014	sgr	re	d	014		Anticipate being lifted
+sgrred015	sgr	re	d	015		Holds a spoon
+sgrred016	sgr	re	d	016		Stretches to be taken
+sgrred017	sgr	re	d	017		Drinks from a cup
+sgrred018	sgr	re	d	018		Manipulates cup or spoon in play
+sgrred019	sgr	re	d	019		Reacts to mirror image
+sgrred020	sgr	re	d	020		Knows strangers
+sgrred021	sgr	re	d	021		Enthusiastic
+sgrred022	sgr	re	d	022		Displeased when toy taken
+sgrred023	sgr	re	d	023		Helps hold cup
+sgrred024	sgr	re	d	024		Pulls off hat
+sgrred025	sgr	re	d	025		Smiles, plays mirror
+sgrred026	sgr	re	d	026		Waves bye bye
+sgrred027	sgr	re	d	027		Gives affection
+sgrred028	sgr	re	d	028		Finger feeds
+sgrred029	sgr	re	d	029		Plays cup, saucer
+sgrred030	sgr	re	d	030		Obeys simple requests
+sgrred031	sgr	re	d	031		Pays pat-a-cake
+sgrred032	sgr	re	d	032		Puts block in and out of cup
+sgrred033	sgr	re	d	033		Helps dressing
+sgrred034	sgr	re	d	034		Hold cup
+sgrred035	sgr	re	d	035		Uses spoon
+sgrred036	sgr	re	d	036		Shoes shoes
+sgrred037	sgr	re	d	037		tries doorknob
+sgrred038	sgr	re	d	038		sks toilet
+sgrred039	sgr	re	d	039		Manages cup well
+sgrred040	sgr	re	d	040		Can take off shoes and socks
+sgrred041	sgr	re	d	041		Like book showing
+tepcod001	tep	co	d	001	FM129	Child carries water without spilling
+tepcod010	tep	co	d	010	FM61	Child draws 2 perpendicular lines
+tepcod011	tep	co	d	011	FM133	Child can copy a triangle
+tepcod012	tep	co	d	012	FM66	Child copies a square
+tepcod016	tep	co	d	016	FM137	Child can organize materials by size
+tepcod131	tep	co	d	131		No label:  j13b__1
+tepcod132	tep	co	d	132		No label:  j13b__2
+tepcod133	tep	co	d	133		No label:  j13b__3
+teplgd002	tep	lg	d	002	FM52	Child constructs a bridge with 3 blocks.
+teplgd003	tep	lg	d	003	FM54	Child constructs a tower with 8 or more blocks.
+teplgd004	tep	lg	d	004	FM130	Child can unbutton 1 large button
+teplgd017	tep	lg	d	017	REC31	Child can tell difference between large and small
+teplgd018	tep	lg	d	018	REC40	Child understands difference between more and less
+teplgd019	tep	lg	d	019		Child names 5 out of 8 animals
+teplgd020	tep	lg	d	020		Child names 5 out of 8 objects
+teplgd021	tep	lg	d	021	REC66	Child understands long v. short
+teplgd022	tep	lg	d	022		Child names 3 out of 4 actions
+teplgd023	tep	lg	d	023		Child describes use of objects (minimum 4)
+teplgd024	tep	lg	d	024		No label:  j24b
+teplgd025	tep	lg	d	025		Child can say own name
+teplgd026	tep	lg	d	026		Child can say own sex
+teplgd027	tep	lg	d	027		Child knows parents names
+teplgd031	tep	lg	d	031		Child can name at least 2 colors
+teplgd032	tep	lg	d	032	REC67	Child can point to and identify at least 2 colors
+teplgd033	tep	lg	d	033		Child names at least 2 shapes
+teplgd034	tep	lg	d	034	REC68	Child can point to and identify at least 2 shapes
+teplgd035	tep	lg	d	035		Child describes a picture
+teplgd036	tep	lg	d	036		Child can describe an absurd picture
+teplgd037	tep	lg	d	037		Child uses plurals
+teplgd038	tep	lg	d	038	REC44	Child understands before v. after
+teplgd040	tep	lg	d	040		Describe at least 2 characteristics of "ball", "balloon", and "bag"
+teplgd281	tep	lg	d	281		Child gives logical response to what to do if "hungry"
+teplgd282	tep	lg	d	282		No label:  j28b__2
+teplgd283	tep	lg	d	283		No label:  j28b__3
+teplgd291	tep	lg	d	291		Child correctly uses preposition "behind"
+teplgd292	tep	lg	d	292		No label:  j29b__2
+teplgd293	tep	lg	d	293		No label:  j29b__3
+teplgd301	tep	lg	d	301		Child can describe "ice"
+teplgd302	tep	lg	d	302		Child can describe "mouse"
+teplgd303	tep	lg	d	303		Child can describe "mother"
+teplgd391	tep	lg	d	391		Define "apple"
+teplgd392	tep	lg	d	392		Define "ball"
+teplgd393	tep	lg	d	393		Define "show" 
+teplgd394	tep	lg	d	394		Define "coat"
+tepmod005	tep	mo	d	005	FM57	Child can button 1 large button
+tepmod006	tep	mo	d	006	FM131	Child can thread a needle
+tepmod007	tep	mo	d	007	FM132	Child can untie shoes
+tepmod008	tep	mo	d	008	FM40	Child copies a straight line
+tepmod009	tep	mo	d	009	FM43	Child copies a circle
+tepmod041	tep	mo	d	041		Child jumps with both feet
+tepmod042	tep	mo	d	042		Child walks without spilling glass of water
+tepmod043	tep	mo	d	043		Child throws ball forward
+tepmod047	tep	mo	d	047		Child walks on tiptoes without touching heels to floor
+tepmod048	tep	mo	d	048		Child jumps with both feet a minimum of 18 inches
+tepmod049	tep	mo	d	049		Child hops on one foot without help
+tepmod050	tep	mo	d	050		Child catches the ball with 1 or 2 hands
+tepmod051	tep	mo	d	051		Child walks forwards >4 steps in a straight line
+tepmod052	tep	mo	d	052		Child walks backwards unassisted >4 steps in a stright line
+tepmod441	tep	mo	d	441		Child balances on one foot >10 second
+tepmod442	tep	mo	d	442		Child balances on one foot for 5-8 seconds
+tepmod443	tep	mo	d	443		Child balances on one foot for 1-4 seconds
+vinxxc002	vin	xx	c	002		chew solid foods
+vinxxc003	vin	xx	c	003		take off socks / shoes
+vinxxc004	vin	xx	c	004		transfer objects
+vinxxc005	vin	xx	c	005		overcome simple obstacles
+vinxxc006	vin	xx	c	006		fetch something
+vinxxc007	vin	xx	c	007		drink from  cup / glass
+vinxxc008	vin	xx	c	008	GM43	walk by his / herself
+vinxxc009	vin	xx	c	009		get on with other children
+vinxxc010	vin	xx	c	010		eat soft food with a spoon
+vinxxc011	vin	xx	c	011		walk around the yard without supervision
+vinxxc012	vin	xx	c	012		know what's edible
+vinxxc013	vin	xx	c	013	EXP20	use names of objects - shoe
+vinxxc014	vin	xx	c	014	GM47	walk upstairs
+vinxxc015	vin	xx	c	015		unwrap sweet
+vinxxc016	vin	xx	c	016	EXP36	use a short sentence
+vinxxc017	vin	xx	c	017		ask or tell when it needs the toilet
+vinxxc018	vin	xx	c	018		play by his / herself
+vinxxc019	vin	xx	c	019		take off dress / shirt if buttons / zip undone
+vinxxc020	vin	xx	c	020		get a cup of water without help
+vinxxc021	vin	xx	c	021		dry hands after you have washed them
+vinxxc022	vin	xx	c	022		avoid simple danger - knife / hot
+vinxxc023	vin	xx	c	023		put on own dress / shirt
+vinxxc024	vin	xx	c	024	EXP45	tell you things / simple story
+vinxxc025	vin	xx	c	025	GM49	walk downstairs
+vinxxc026	vin	xx	c	026		play / do things with children - song
+vinxxc027	vin	xx	c	027		put on own dress / shirt and do buttons
+vinxxc028	vin	xx	c	028		help around the house / clear table
+vinxxc029	vin	xx	c	029		perform for others stunts / rhymes
+vinxxc030	vin	xx	c	030		wash hands and dry
+vinxxc031	vin	xx	c	031		Play or do things with other children of same age eg sing song
+vinxxc032	vin	xx	c	032		Use pencil or crayon for drawing
+vinxxc033	vin	xx	c	033		Avoid simple dangers eg hot things, knives
+vinxxc034	vin	xx	c	034		Buttons coat or dress
+vinxxc035	vin	xx	c	035		Play competition exercise games eg skipping, marbles
+vinxxc036	vin	xx	c	036		Walk down steps with one foot one ach step
+vinxxc037	vin	xx	c	037		Dy hands without help
+vinxxc038	vin	xx	c	038		Eat food with an implement
+vinxxc039	vin	xx	c	039		Get a cup of water without help
+vinxxc040	vin	xx	c	040		Help with little things around the house eg pick up things
+vinxxc041	vin	xx	c	041		Tell things that happen or simple stories
+vinxxc042	vin	xx	c	042		Put on jacket or dress without help except for zip or buttons
+vinxxc043	vin	xx	c	043		Peform for other people, stunts, show off
+vinxxc044	vin	xx	c	044		Use a pair of scissors without supervision
+vinxxc045	vin	xx	c	045		Go to toilet by self, remove clothes, wipe
+vinxxc046	vin	xx	c	046		Take off jacket or dress without help except for zip or buttons
+vinxxc047	vin	xx	c	047		Wash face without help
+vinxxc048	vin	xx	c	048		Wash hands without help
+vinxxc049	vin	xx	c	049		Play by themselves without supervision for short time
+vinxxc050	vin	xx	c	050		Ask or tell when wants to go to toilet
+vinxxc051	vin	xx	c	051		Generally dress self except for difficult fasteners

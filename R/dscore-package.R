@@ -1,43 +1,37 @@
-#' @importFrom dplyr select mutate slice bind_rows arrange %>%
-#'             group_by summarise ungroup left_join one_of n pull
-#'             recode
-#' @importFrom tidyr gather
-#' @importFrom stats approx dnorm weighted.mean lm na.omit predict
-#'             plogis
-#' @importFrom utils head flush.console
-#' @importFrom grDevices col2rgb rgb
-#' @importFrom lazyeval interp
-#' @importFrom rlang UQ sym .data
-NULL
-
-utils::globalVariables(c("item", "score", "temp_ages", "d", 
-                         ".rownum", "delta", "b"))
-
-#' dscore: Measuring child development by the D-score
+#' dscore: D-score for Child Development
 #' 
-#' The \code{dscore} package implements several steps needed to 
+#' The \code{dscore} package implements several tools needed to 
 #' calculate the D-score, a numerical score that measures
-#' generic development in children 0-4 years.
+#' generic development in children.
 #' 
-#' The main functions are:
+#' @section User functions:
+#' The available functions are:
 #' \tabular{ll}{
-#'   \code{\link{dscore}} \tab Estimate D-scores of children\cr
-#'   \code{\link{daz}} \tab Transform to age-adjusted standardized D-score\cr
-#'   \code{\link{zad}} \tab Inverse of \code{\link{daz}}
+#'   \code{\link{dscore}}  \tab Estimate D-score and DAZ\cr
+#'   \code{\link{daz}}     \tab Transform to age-adjusted standardized D-score\cr
+#'   \code{\link{zad}}     \tab Inverse of \code{\link{daz}}\cr
+#'   \code{\link{get_tau}}  \tab Get difficulty parameters from item bank\cr
+#'   \code{\link{get_itemnames}} \tab Extract item names \cr
+#'   \code{\link{get_itemtable}} \tab Get a subset from the itemtable\cr
+#'   \code{\link{get_reference}} \tab Get D-score reference\cr
+#'   \code{\link{get_labels}}     \tab Get labels for items \cr
+#'   \code{\link{order_itemnames}}\tab Sort item names  \cr
+#'   \code{\link{sort_itemnames}}  \tab Sort item names  \cr
 #'   }
-#'   
+#' 
 #' @section Built-in data:
-#' The package contains three sets of built-in data:
-#' \describe{
-#' \item{\code{\link{itembank}}}{A data frame containing item naming schemes 
-#' (lexicons), item descriptions and the the difficulty of the item 
-#' according to the Rasch model.}
-#' \item{\code{\link{Dreference}}}{A data frame with LMS reference values used to 
-#' transform from D-score to DAZ, DAZ to D-score, and to calculate 
-#' reference charts of normal development.}
-#' \item{\code{\link{popsdemo}}}{A small demo dataset from the POPS study, where the PASS/FAIL 
-#' responses at various time points per child are scored on appropriate
-#' of developmental items.}
+#' The package contains the following built-in data:
+#' \tabular{ll}{
+#' \code{\link{builtin_itembank}} \tab A \code{data.frame} containing 
+#' the difficulty estimates of items according to final Rasch models.\cr
+#' \code{\link{builtin_itemtable}} \tab A \code{data.frame} containing 
+#' names and descriptions of items from 22 instruments.\cr
+#' \code{\link{builtin_references}} \tab A \code{data.frame} with LMS 
+#' reference values used to transform from D-score to DAZ, 
+#' DAZ to D-score, and to calculate reference charts of normal development.\cr
+#' \code{\link{milestones}} \tab A small demo dataset with PASS/FAIL 
+#' responses from 27 preterms, measured at various ages between birth 
+#' and 2.5 years.\cr
 #' }
 #' 
 #' @references
@@ -49,6 +43,23 @@ utils::globalVariables(c("item", "score", "temp_ages", "d",
 #' Birth, Growth and Development knowledge integration (HBGDki)
 #' program of the Bill & Melinda Gates Foundation.
 #' 
-#' @docType package
 #' @name dscore-package
+#' @docType package
+#' @aliases dscore-package
+NULL
+
+# The following block is used by usethis to automatically manage
+# roxygen namespace tags. Modify with care!
+## usethis namespace: start
+## usethis namespace: end
+NULL
+
+## usethis namespace: start
+#' @useDynLib dscore
+## usethis namespace: end
+NULL
+
+## usethis namespace: start
+#' @importFrom Rcpp sourceCpp
+## usethis namespace: end
 NULL

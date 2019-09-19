@@ -23,7 +23,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("stefvanbuuren/dscore@rename")
+remotes::install_github("stefvanbuuren/dscore")
 ```
 
 Example

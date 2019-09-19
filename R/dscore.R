@@ -130,7 +130,7 @@
 #' BMJ Global Health, accepted for publication.
 #' 
 #' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
-#' @seealso \code{\link{gettau}}, 
+#' @seealso \code{\link{get_tau}}, 
 #' \code{\link{builtin_itembank}}, \code{\link{posterior}},
 #' \code{\link{builtin_references}}
 #' @examples 
@@ -169,7 +169,7 @@ dscore <- function(data,
   # obtain difficulty estimates
   ib <- data.frame(
     item = items,
-    tau = gettau(items = items, key = key, itembank = itembank),
+    tau = get_tau(items = items, key = key, itembank = itembank),
     stringsAsFactors = FALSE)
   
   # subset items

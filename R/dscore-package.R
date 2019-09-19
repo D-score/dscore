@@ -8,7 +8,7 @@
 #'   \code{\link{dscore}}  \tab Estimate D-score and DAZ\cr
 #'   \code{\link{daz}}     \tab Transform to age-adjusted standardized D-score\cr
 #'   \code{\link{zad}}     \tab Inverse of \code{\link{daz}}\cr
-#'   \code{\link{gettau}}  \tab Get difficulty parameters from item bank\cr
+#'   \code{\link{get_tau}}  \tab Get difficulty parameters from item bank\cr
 #'   \code{\link{get_itemnames}} \tab Extract item names \cr
 #'   \code{\link{get_itemtable}} \tab Get a subset from the itemtable\cr
 #'   \code{\link{get_labels}}     \tab Get labels for items \cr

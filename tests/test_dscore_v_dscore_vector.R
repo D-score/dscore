@@ -6,7 +6,7 @@
 # adm <- names(data)[1:5]
 # items <- ddata::item_names(study = "Netherlands 1")
 # key <- data.frame(item = items,
-#                   tau = dscore::gettau(items = items, 
+#                   tau = dscore::get_tau(items = items, 
 #                                          lexicon = "gcdg"))
 # data$age <- data$age/12
 # 

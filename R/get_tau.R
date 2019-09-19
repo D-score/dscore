@@ -11,10 +11,10 @@
 #' @seealso \code{\link{builtin_itembank}}, \code{\link{dscore}}
 #' @examples 
 #' # difficulty levels in the GHAP lexicon
-#' gettau(items = c("ddifmd001", "DDigmd052", "xyz"))
+#' get_tau(items = c("ddifmd001", "DDigmd052", "xyz"))
 #' 
 #' @export
-gettau <- function(items, 
+get_tau <- function(items, 
                    key = "gsed", 
                    itembank = dscore::builtin_itembank) {
   

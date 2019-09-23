@@ -1,0 +1,566 @@
+lex_gcdg	instrument	equate	domain	label	tau
+acom22	ASQ-I	NA	Communication	says 3 words such as mama dada and baba	44.2960254233313
+acom23	ASQ-I	NA	Communication	points to something when wants it	46.7659877333966
+acom27	ASQ-I	NA	Communication	goes into another room to find toy or object	50.5317244840477
+acom33	ASQ-I	NA	Communication	says 15 or more words in addition to mama and dada	58.7464041848225
+acom37	ASQ-I	NA	Communication	tells caregiver what is happening in the picture	67.3394543394251
+acom38	ASQ-I	NA	Communication	says first name or nickname	65.8174184495705
+acom40	ASQ-I	NA	Communication	makes sentences that are 3 or 4 words long	65.6702578534336
+acom41	ASQ-I	NA	Communication	follows 3 directions that are unrelated to one another	70.3570921985501
+acom61	ASQ-I	NA	Communication	says both her first and last names	70.6454137422871
+af15	ASQ-I	FM17	Fine Motor	tries to pick up crumb using thumb and fingers in raking motion	35.9051112193251
+af25	ASQ-I	FM31	Fine Motor	stacks a block or toy on top of another one	53.1720119368344
+af33	ASQ-I	FM43	Fine Motor	copies caregiver by drawing a circle	69.6607103240288
+ag12	ASQ-I	NA	Gross Motor	leans on hands while sitting	35.8421866371142
+ag17	ASQ-I	NA	Gross Motor	gets into crawling position by getting up on hands and knees	40.5607548229316
+ag18	ASQ-I	NA	Gross Motor	holds onto crib rail without leaning his chest for support	41.2009783715911
+ag20	ASQ-I	NA	Gross Motor	lowers with control while holding onto furniture	44.3878334729774
+ag21	ASQ-I	NA	Gross Motor	bends down picks up toy and returns to standing position	43.2843294692623
+ag22	ASQ-I	NA	Gross Motor	walks beside furniture while holding on with one hand	46.7901308086539
+ag23	ASQ-I	NA	Gross Motor	takes several steps forwards when held with one hand	46.5653142282094
+ag24	ASQ-I	NA	Gross Motor	bends over to pick up object and stands up without support	50.0692403714546
+ag25	ASQ-I	NA	Gross Motor	climbs onto furniture or other large objects  	50.135321903698
+ag26	ASQ-I	NA	Gross Motor	stands up in middle of floor and takes steps forward	50.7724258273122
+ag27	ASQ-I	NA	Gross Motor	moves around by walking rather than crawling	50.6211004701494
+ag29	ASQ-I	NA	Gross Motor	climbs on object such as chair to reach something	52.7332861405613
+apbs21	ASQ-I	COG135	Problem Solving	drops 2 toys one after another into container	46.9500810162201
+apbs23	ASQ-I	COG137	Problem Solving	copies caregiver by scribbling	50.1936762393382
+apbs37	ASQ-I	FM52	Problem Solving	copies caregiver by making bridge with blocks boxes or cans	67.8017325080839
+apbs38	ASQ-I	COG147	Problem Solving	repeats just 2 numbers in the same order	69.4798634354269
+apbs43	ASQ-I	COG151	Problem Solving	tells caregiver what she drew	66.5159498600929
+b1m39	Bayley1	NA	NA	Fingers hand in play	36.2891030942417
+b1m44	Bayley1	COG17	Cognitive	Carries ring to mouth	36.8103990608857
+b1m46	Bayley1	NA	NA	Closes on dangling ring (check hand preference)	34.6779880098004
+b1m47	Bayley1	REC6	Receptive	turns head to sound of bell	30.9034135848916
+b1m51	Bayley1	NA	NA	eye-hand coordination in reaching	33.6629268132561
+b1m54	Bayley1	NA	NA	picks up cube (check hand preference)	35.1625215441973
+b1m56	Bayley1	COG30	Cognitive	retains 2 cubes	36.9048002944929
+b1m57	Bayley1	NA	NA	exploitive paper play	34.2876402386497
+b1m58	Bayley1	NA	NA	Discriminates strangers	36.1602906235497
+b1m60	Bayley1	NA	NA	reaches persistently	37.9260868794968
+b1m62	Bayley1	NA	NA	turns head after fallen spoon	37.7495485961283
+b1m63	Bayley1	NA	NA	lifts inverted cup	35.9767749779707
+b1m64	Bayley1	COG27	Cognitive	reaches for second cube	36.2722016966791
+b1m65	Bayley1	COG93	Cognitive	smiles at mirror (5.4 months)	38.476000975598
+b1m66	Bayley1	COG24	Cognitive	bangs in play	35.2846786606311
+b1m67	Bayley1	COG95	Cognitive	sustained inspection of ring	37.5399171076187
+b1m68	Bayley1	COG23	Cognitive	exploitive string play	36.0106676981402
+b1m69	Bayley1	FM21	Fine Motor	transfers objects hand to hand	36.5260372401551
+b1m70	Bayley1	FM67	Fine Motor	picks up cube deftly and directly	38.6716436995934
+b1m71	Bayley1	COG96	Cognitive	pulls string: secures ring	37.0590619069245
+b1m72	Bayley1	REC51	Receptive	interest in sound production	36.0706491805981
+b1m73	Bayley1	FM25	Fine Motor	lifts cup with handle	38.600056245409
+b1m78	Bayley1	COG26	Cognitive	manipulates bell: insterest in details	38.9205109023654
+b1m79	Bayley1	EXP49	Expressive	vocalizes 4 different syllables	41.4987752675422
+b1m80	Bayley1	COG29	Cognitive	pulls string adaptively: secures ring	39.9610696078516
+b1m82	Bayley1	COG37	Cognitive	attempts to secure 3 cubes	43.6326971791102
+b1m83	Bayley1	COG31	Cognitive	rings bell purposely	40.8557834096566
+b1m85	Bayley1	EXP10	Expressive	says "da-da" or equivalent	42.3130834169387
+b1m86	Bayley1	COG28	Cognitive	Uncovers toy (check manual if by pulling cloth	43.579967588554
+b1m87	Bayley1	COG38	Cognitive	fingers holes in pegboard	42.7925933217207
+b1m88	Bayley1	COG100	Cognitive	picks up cup, secures cube	42.8248827659625
+b1m89	Bayley1	REC14	Receptive	responds to verbal request	46.5860708674889
+b1m90	Bayley1	COG36	Cognitive	puts cube in cup on command	44.5286386424398
+b1m91	Bayley1	COG101	Cognitive	looks for content of box	43.4054479058087
+b1m94	Bayley1	REC12	Receptive	inhibits on command	46.3789721542824
+b1m95	Bayley1	FM69	Fine Motor	attempting to imitate scribble	47.4729586969438
+b1m96	Bayley1	COG102	Cognitive	unwraps cube	49.2135337471222
+b1m97	Bayley1	NA	NA	repeats performance laughed at	46.6325457289203
+b1m98	Bayley1	FM28	Fine Motor	holds crayon adaptively	47.7957296773184
+b1m99	Bayley1	COG39	Cognitive	pushes car along	46.1972920709436
+b1m100	Bayley1	COG103	Cognitive	puts 3 or more cubes in cup	47.1198965236164
+b1m101	Bayley1	EXP12	Expressive	jabbers expressively	48.719674801126
+b1m102	Bayley1	COG104	Cognitive	uncovers blue box	46.5758022871287
+b1m103	Bayley1	FM27	Fine Motor	turns pages of books	46.2307852068883
+b1m104	Bayley1	COG44	Cognitive	Pats toy (whistle doll) in imitation	49.0015471133412
+b1m105	Bayley1	COG41	Cognitive	dangles ring by string	48.8126741398447
+b1m106	Bayley1	EXP16	Expressive	imitates words	51.0268860598189
+b1m107	Bayley1	FM70	Fine Motor	puts beads in box (6 of 8)	47.861334066354
+b1m108	Bayley1	COG47	Cognitive	places 1 peg repeateadly	49.6641527319046
+b1m111	Bayley1	FM31	Fine Motor	builds tower of 2 cubes	53.1720119368344
+b1m112	Bayley1	FM30	Fine Motor	scribbles sponstaneously	51.699929440531
+b1m113	Bayley1	EXP18	Expressive	says 2 words	52.7710818939108
+b1m115	Bayley1	FM71	Fine Motor	closes round box	51.7270686186411
+b1m116	Bayley1	EXP9	Expressive	uses gestures to  make wants known	50.6012140501218
+b1m117	Bayley1	REC16	Receptive	shows shoes or other clothing, or own toy	52.9168175670412
+b1m118	Bayley1	COG55	Cognitive	pegs placed in 70 seconds	54.0800376130999
+b1m119	Bayley1	FM72	Fine Motor	builds tower of 3 cubes	57.0675934979672
+b1m124	Bayley1	EXP20	Expressive	names 1 object	57.2379625108548
+b1m131	Bayley1	COG105	Cognitive	finds 2 objects	57.3181115152232
+b1m134	Bayley1	COG113	Cognitive	pegs placed in 30 seconds	57.7414248228149
+b1m136	Bayley1	EXP26	Expressive	sentence of 2 words	59.1543368199936
+b1m143	Bayley1	FM38	Fine Motor	builds tower of 6 cubes	60.8744634627712
+b1p20	Bayley1	GM81	Gross Motor	Lifts head, dorsal position	38.5092323294615
+b1p23	Bayley1	GM22	Gross Motor	Sits momentarily	33.9358114959889
+b1p25	Bayley1	NA	NA	Attempts to secure pellet	35.790440432917
+b1p27	Bayley1	GM26	Gross Motor	Sits alone 30 seconds	36.5003602509026
+b1p28	Bayley1	GM25	Gross Motor	Rolls from back to stomach	36.4286091348799
+b1p29	Bayley1	GM82	Gross Motor	Sits steadily	37.7397478235559
+b1p30	Bayley1	NA	NA	Scoops pellet	37.7135468751032
+b1p31	Bayley1	GM27	Gross Motor	Sits good coordination	38.0308187430561
+b1p33	Bayley1	GM30	Gross Motor	Prewalking	42.8283999090757
+b1p34	Bayley1	GM29	Gross Motor	Early stepping movements	37.3477653063971
+b1p37	Bayley1	GM84	Gross Motor	Raise self to sitting	43.0360785961546
+b1p38	Bayley1	NA	Gross Motor	Stands up by furniture	32.2065906888413
+b1p40	Bayley1	GM85	Gross Motor	Stepping movements	40.9453190225638
+b1p41	Bayley1	NA	NA	Fine prehension	44.5802988428654
+b1p43	Bayley1	GM39	Gross Motor	Sits down	48.3515815137977
+b1p45	Bayley1	GM40	Gross Motor	Stands alone	48.0736593668717
+b1p46	Bayley1	GM42	Gross Motor	Walks alone	49.8600719529814
+b1p47	Bayley1	GM41	Gross Motor	Stands up	47.2572372622915
+b1p48	Bayley1	GM44	Gross Motor	Throws ball	48.4866872536346
+b1p49	Bayley1	GM38	Gross Motor	Walsk sideways	51.8354794861279
+b1p50	Bayley1	GM48	Gross Motor	Walks backwards	52.9681899842885
+b1p51	Bayley1	GM51	Gross Motor	Stands on right foot with help	51.6345426018537
+b1p52	Bayley1	GM52	Gross Motor	Stands on left foot with help	51.6323520480386
+b2m94	Bayley2	NA	NA	Imitates word	53.8464901391243
+b2m97	Bayley2	FM31	Fine Motor	Tower of 2 cubes	53.1720119368344
+b2m98	Bayley2	COG55	Cognitive	Places pegs in 70 sec	54.0800376130999
+b2m99	Bayley2	NA	NA	Points to two pictures	55.2982555835916
+b2m110	Bayley2	EXP20	Expressive	Names Object Series: 1 Object	61.4255021682763
+b2m114	Bayley2	EXP26	Expressive	Uses a two-word utterance	59.1543368199936
+b2m122	Bayley2	NA	NA	Points to Five Pictures	66.5956469459205
+b2m123	Bayley2	FM38	Fine Motor	Tower of 6 cubes	60.8744634627712
+b2m125	Bayley2	COG64	Cognitive	Matches pictures	67.79184144664
+b2m126	Bayley2	EXP27	Expressive	Names Object Series: 3 Object	69.5875927134127
+b2m127	Bayley2	EXP29	Expressive	Uses 3 word sentence	66.9315220962166
+b2p62	Bayley2	GM42	Gross Motor	Walks alone	49.8600719529814
+b2p63	Bayley2	GM43	Gross Motor	Walks alone with good coordination	47.5637541368589
+b2p66	Bayley2	GM47	Gross Motor	Walks up stairs with help	50.9444992918416
+b2p67	Bayley2	GM48	Gross Motor	Walks backwards	51.4024035957634
+b2p78	Bayley2	NA	NA	Jumps off floor (both feet)	66.0999644178594
+b3c34	Bayley3	COG34	Cognitive	Searches for missing objects	42.4038046274445
+b3c36	Bayley3	COG36	Cognitive	Block Series: 1 Block	44.5286386424398
+b3c39	Bayley3	COG39	Cognitive	Pushes car	51.415943459684
+b3c42	Bayley3	COG42	Cognitive	Removes pellet	49.5055711491399
+b3c44	Bayley3	COG44	Cognitive	Squeezes object	53.0081177550961
+b3c46	Bayley3	COG46	Cognitive	Removes lid from bottle	56.2005676860344
+b3c47	Bayley3	COG47	Cognitive	Pegboard Series: 2 holes	51.0881395138248
+b3c49	Bayley3	COG49	Cognitive	Pink Board Series: 1 piece	56.2055256378926
+b3c51	Bayley3	COG51	Cognitive	Blue Board Series: 1 piece	55.1075340216055
+b3c55	Bayley3	COG55	Cognitive	Pegboard Series: 6 Pegs	54.0800376130999
+b3c56	Bayley3	COG56	Cognitive	Pink Board Series: Completes	60.7733381623533
+b3c58	Bayley3	COG58	Cognitive	Blue Board Series: 4 Pieces	59.5021481914206
+b3c59	Bayley3	COG59	Cognitive	Attends to story	60.0401843992527
+b3c60	Bayley3	COG60	Cognitive	Rotated pink board	63.5908284488597
+b3c61	Bayley3	COG61	Cognitive	Object assembly (Ball)	61.9789328441408
+b3c62	Bayley3	COG62	Cognitive	Completes Pegboard: 25 Seconds	60.4459395877492
+b3c63	Bayley3	COG63	Cognitive	Object assembly (Ice Cream Cone)	63.6640596977766
+b3c64	Bayley3	COG64	Cognitive	Matches pictures	64.7010991871487
+b3c65	Bayley3	COG65	Cognitive	Representational play	65.253654632932
+b3c66	Bayley3	COG66	Cognitive	Blue Board Series: Completes (75 seconds)	65.3449487845021
+b3c67	Bayley3	COG67	Cognitive	Imitates a two-step action.	65.8109929934393
+b3c68	Bayley3	COG68	Cognitive	Matches 3 colors	71.6577317719197
+b3c73	Bayley3	COG73	Cognitive	Concept Grouping: Size	69.7123181920255
+b3c74	Bayley3	COG74	Cognitive	Compares masses	69.7219991276049
+b3f26	Bayley3	FM26	Fine Motor	Food Pellet Series: Thumb-fingertip grasp	42.9310276394221
+b3f27	Bayley3	FM27	Fine Motor	Turns pages of books	48.7408609980304
+b3f28	Bayley3	FM28	Fine Motor	Grasp series: Palmar grasp	47.0168698985542
+b3f29	Bayley3	FM29	Fine Motor	Isolates extended ring finger	49.2708052896278
+b3f30	Bayley3	FM30	Fine Motor	Scribbles spontaneously	48.92072469311
+b3f31	Bayley3	FM31	Fine Motor	Block Stacking Series: 2 blocks	53.1720119368344
+b3f32	Bayley3	FM32	Fine Motor	Imitates Stroke Series: Random	53.3503578273076
+b3f33	Bayley3	FM33	Fine Motor	Places 10 pellets in bottle (60 seconds)	57.0789785268902
+b3f35	Bayley3	FM35	Fine Motor	Coins in slot	52.8332012109889
+b3f36	Bayley3	FM36	Fine Motor	Connecting Blocks: Apart 	56.1421542117412
+b3f38	Bayley3	FM38	Fine Motor	Block stacking Series: 6 blocks	60.8744634627712
+b3f40	Bayley3	FM40	Fine Motor	Imitates Strokes Series: Horizontal	65.1579444950263
+b3f41	Bayley3	FM41	Fine Motor	Imitates Strokes Series: Vertical	66.0983246877583
+b3f42	Bayley3	FM42	Fine Motor	Connecting Blocks: Together	65.6557861158531
+b3f43	Bayley3	FM43	Fine Motor	Imitates Strokes Series: Circular	69.6607103240288
+b3f44	Bayley3	FM44	Fine Motor	Builds train of blocks	66.0890577915622
+b3f45	Bayley3	FM45	Fine Motor	Strings 3 blocks	65.3238759967747
+b3f49	Bayley3	FM49	Fine Motor	Tactilely discriminates shapes	70.1123197620683
+b3f50	Bayley3	FM50	Fine Motor	Builds wall	69.3087287767421
+b3f52	Bayley3	FM52	Fine Motor	Builds bridge	67.8017325080839
+b3f61	Bayley3	FM61	Fine Motor	Copies plus sign	72.5588976057685
+b3g21	Bayley3	GM21	Gross Motor	Elevates Trunk while Prone Series: Extended arms	32.1120737235114
+b3g25	Bayley3	GM25	Gross Motor	Rolls from back to stomach	36.4286091348799
+b3g30	Bayley3	GM30	Gross Motor	Crawls Series: On stomach	42.4374781398479
+b3g31	Bayley3	GM31	Gross Motor	Crawls Series: Crawl position	42.5011171067236
+b3g32	Bayley3	GM32	Gross Motor	Moves from sitting to hands and knees	43.2624065641822
+b3g33	Bayley3	GM33	Gross Motor	Supports weight	45.0658082182813
+b3g35	Bayley3	GM35	Gross Motor	Raises self to standing position	44.0095358333739
+b3g37	Bayley3	GM37	Gross Motor	Walks Series: With support	45.1899874113373
+b3g38	Bayley3	GM38	Gross Motor	Walks sideways with support	46.3046405034599
+b3g39	Bayley3	GM39	Gross Motor	Sits down with control	46.6015362103243
+b3g40	Bayley3	GM40	Gross Motor	Stands alone	48.2363378648883
+b3g41	Bayley3	GM41	Gross Motor	Stands up Series: Alone	50.6529642481492
+b3g42	Bayley3	GM42	Gross Motor	Walks Series: Alone	49.8600719529814
+b3g43	Bayley3	GM43	Gross Motor	Walks Series: Alone with coordination	51.7011406684949
+b3g44	Bayley3	GM44	Gross Motor	Throws ball	50.9680826643447
+b3g45	Bayley3	GM45	Gross Motor	Squats without support	50.8301282863648
+b3g46	Bayley3	GM46	Gross Motor	Stands up Series: Mature	51.3286157541333
+b3g48	Bayley3	GM48	Gross Motor	Walks backward 2 steps	57.0356861950857
+b3g50	Bayley3	GM50	Gross Motor	Runs with coordination	55.8654624887995
+b3g51	Bayley3	GM51	Gross Motor	Balances on Right Foot Series: With support	58.2730680446693
+b3g52	Bayley3	GM52	Gross Motor	Balances on Left Foot Series: With support	58.8823640236408
+b3g53	Bayley3	GM53	Gross Motor	Walks sideways without support	60.8477119503898
+b3g59	Bayley3	GM59	Gross Motor	Jumps Forward Series: 4 inches	66.5790723638385
+b3g60	Bayley3	NA	Gross Motor	Balances on right Foot Series: 2 seconds, alone	67.0310768855494
+b3g62	Bayley3	GM62	Gross Motor	Walks on tiptoes 4 steps	68.2656484094311
+b3g63	Bayley3	GM63	Gross Motor	Walks backward close to path	66.7454296320532
+b3r15	Bayley3	REC15	Receptive	Identifies Object Series: 1 correct	49.70085498825
+b3r16	Bayley3	REC16	Receptive	Identifies object in the environment	55.0771810774964
+b3r17	Bayley3	REC17	Receptive	Identifies Picture Series: 1 correct	52.6247901861567
+b3r19	Bayley3	REC19	Receptive	Identifies Object Series: 3 correct	55.2517575974857
+b3r20	Bayley3	REC20	Receptive	Follows one-part directions	56.393952564219
+b3r21	Bayley3	REC21	Receptive	Identifies Picture Series: 3 Correct	56.1600761452197
+b3r22	Bayley3	REC22	Receptive	Identifies 3 clothing items	59.0632280246691
+b3r23	Bayley3	REC23	Receptive	Identifies Action Picture Series: 1 correct	59.4056221494496
+b3r24	Bayley3	REC24	Receptive	Identifies 5 parts of the body	59.5842960702776
+b3r25	Bayley3	REC25	Receptive	Follows two-part directions	61.6871154060659
+b3r26	Bayley3	REC26	Receptive	Identifies Action Picture Series: 3 correct	63.1786872321077
+b3r27	Bayley3	REC27	Receptive	Understands use of objects	66.4842928773465
+b3r28	Bayley3	REC28	Receptive	Understands part/whole relationships	66.4991051052847
+b3r29	Bayley3	REC29	Receptive	Identifies Action Picture Series: 5 correct	66.3223700577196
+b3r31	Bayley3	REC31	Receptive	Understands labels for sizes	67.8018568636128
+b3r40	Bayley3	REC40	Receptive	Understands more	71.0433804977938
+b3e14	Bayley3	EXP14	Expressive	Uses one-word approximations	50.3435436899096
+b3e15	Bayley3	EXP15	Expressive	Directs attention of other	47.7463037482782
+b3e20	Bayley3	EXP20	Expressive	Names Object Series: 1 Object	58.2093291909289
+b3e21	Bayley3	EXP21	Expressive	Combines word and gesture	57.5869387149395
+b3e22	Bayley3	EXP22	Expressive	Names Picture Series: 1 Picture	58.1931439597408
+b3e23	Bayley3	EXP23	Expressive	Uses Words Appropriately Series: 8 words	61.8774145594258
+b3e24	Bayley3	EXP24	Expressive	Answers yes or no verbally in response to questions	60.1466198335361
+b3e25	Bayley3	EXP25	Expressive	Imitates a two-word utterance	63.4216171074672
+b3e26	Bayley3	NA	Expressive	Uses a two-word utterance	64.0091787082836
+b3e27	Bayley3	EXP27	Expressive	Names Object Series: 3 Object	63.0554963122024
+b3e29	Bayley3	EXP29	Expressive	Uses multiple-word utterances	66.3637575145179
+b3e31	Bayley3	EXP31	Expressive	Names Action Picture Series: 1 Picture	66.5133012913704
+b3e34	Bayley3	EXP34	Expressive	Uses verb +ing	69.4954589714913
+b3e35	Bayley3	EXP35	Expressive	Names Action Picture Series: 3 Pictures	69.5041024144012
+b3e37	Bayley3	EXP37	Expressive	Names Action Picture Series: 5 Pictures	71.8496404263404
+b3e39	Bayley3	EXP39	Expressive	Answers what or where questions	70.7865914150077
+b3e42	Bayley3	EXP42	Expressive	Answers questions logically (Related to functions)	72.5075119516882
+b3e43	Bayley3	EXP43	Expressive	Tells how an object is used	73.624202273861
+bm1	Barrera	EXP2	Expressive	Smiles in response to an adult or his/her voice	11.438132038147
+bm2	Barrera	EXP5	Expressive	Makes sounds spontaneously or in response to a stimulus	10.0019963738018
+bm5	Barrera	GM25	Gross Motor	Rolls from back to stomach	36.4286091348799
+bm6	Barrera	GM26	Gross Motor	Sits without support for some time	40.1559311378158
+bm7	Barrera	GM31	Gross Motor	Starting to crawl	44.9507679906197
+bm8	Barrera	FM26	Fine Motor	Grasps with fingertip to to take small objects	42.9310276394221
+bm9	Barrera	GM35	Gross Motor	Stands up when being pulled	44.0095358333739
+bm10	Barrera	GM37	Gross Motor	Walks with support, holding on to a railing, furniture or adult	48.8357847657565
+bm11	Barrera	GM40	Gross Motor	Stands for "some moments"	49.8847465387287
+bm12	Barrera	GM42	Gross Motor	Walks alone with "some steps"	49.8600719529814
+bm14	Barrera	EXP23	Expressive	Says more than 5 words	60.9245131819631
+bm15	Barrera	GM54	Gross Motor	Jumps in place	63.5766935576809
+bm17	Barrera	NA	NA	Says his full name	71.2922684612971
+bm18	Barrera	FM43	Fine Motor	Copies a circle	69.6607103240288
+bm19	Barrera	GM60	Gross Motor	Balances on one foot for more than 5 seconds	70.0876573737176
+df2	Denver	FM76	Fine Motor	Follow Past Midline	35.2558574087139
+df3	Denver	FM77	Fine Motor	Hold Rattle	31.3269035080631
+df4	Denver	FM78	Fine Motor	Hands Together	33.0024382239631
+df5	Denver	FM79	Fine Motor	Follow 180 Degrees	34.4950665497421
+df6	Denver	FM80	Fine Motor	Regard raisin	32.7477086369629
+df7	Denver	COG174	Cognitive	Reaches	32.3686717763289
+df8	Denver	COG25	Cognitive	Look for Yarn	31.1769188611877
+df9	Denver	FM20	Fine Motor	Rake Raisin	35.7141802855013
+df10	Denver	FM21	Fine Motor	Pass Block	37.1066822213357
+df11	Denver	COG27	Cognitive	Take 2 Blocks	35.5095534748759
+df12	Denver	FM24	Fine Motor	Thumb-Finger Grip	41.6707762109122
+df13	Denver	COG24	Cognitive	Bang 2 Blocks 	44.9753433290453
+df14	Denver	COG36	Cognitive	Put Block in Cup	44.5286386424398
+df15	Denver	FM30	Fine Motor	Scribbles	49.7407118588294
+df16	Denver	COG42	Cognitive	Drop Raisin	55.3943566592571
+df17	Denver	FM31	Fine Motor	2 Blocks	53.1720119368344
+df18	Denver	FM81	Fine Motor	4 Blocks	57.3250739639102
+df19	Denver	FM38	Fine Motor	6 Blocks	60.8744634627712
+df20	Denver	FM41	Fine Motor	Imitate Vertical Line	63.5432083896143
+df21	Denver	FM54	Fine Motor	8 Blocks	64.2981570393492
+df22	Denver	FM82	Fine Motor	Wiggle Thumb	69.1570974366878
+df23	Denver	FM43	Fine Motor	Copy a Circle	69.6607103240288
+df24	Denver	FM83	Fine Motor	Draws 3 or more body parts	73.3184125053985
+df25	Denver	FM61	Fine Motor	Copy +  (2 lines that intersect near the midpoint using only 2 strokes)	72.5588976057685
+dg8	Denver	GM25	Gross Motor	Roll Over/from back to side	36.4286091348799
+dg9	Denver	GM23	Gross Motor	Pull to Sit, No Head Lag	31.7369194133519
+dg10	Denver	GM26	Gross Motor	Sit No Support	38.5109133217176
+dg11	Denver	GM77	Gross Motor	Stand, Holding On	34.1292906792232
+dg12	Denver	GM35	Gross Motor	Pull to Stand	44.0095358333739
+dg13	Denver	GM78	Gross Motor	Get To Sitting 	43.7454878350597
+dg14	Denver	GM33	Gross Motor	Stand 2 Seconds	49.1244568287682
+dg15	Denver	GM40	Gross Motor	Stand 10 seconds	47.0686002260893
+dg16	Denver	GM79	Gross Motor	Stoop and Recover	51.3809295079189
+dg17	Denver	GM43	Gross Motor	Walk Well	53.7394187734287
+dg18	Denver	GM48	Gross Motor	Walk Backwards 	53.5144434780606
+dg19	Denver	GM50	Gross Motor	Runs	56.5441836421412
+dg21	Denver	GM55	Gross Motor	Kick Ball Forward	56.7559759842684
+dg22	Denver	GM59	Gross Motor	Jump Up	62.0170779667395
+dg23	Denver	GM44	Gross Motor	Throw Ball Overhand	60.7728640224386
+dg24	Denver	GM72	Gross Motor	Long Jump	67.6496471375896
+dg25	Denver	NA	Gross Motor	Balance each foot 1 second	65.9737603193833
+dg26	Denver	GM61	Gross Motor	Balance each foot 2 seconds	69.3651957035307
+dl6	Denver	REC6	Receptive	Turn to Rattle Sound	30.9034135848916
+dl7	Denver	REC9	Receptive	Turn to Voice	32.0388961890647
+dl8	Denver	EXP8	Expressive	Single Syllables 	39.2863148738206
+dl9	Denver	EXP55	Expressive	Imitate Speech Sounds 	34.5342582096868
+dl12	Denver	EXP56	Expressive	Babbles 	39.9669525072773
+dl14	Denver	EXP14	Expressive	Say 1 Word 	46.8959125989782
+dl15	Denver	EXP18	Expressive	Say 2 Words 	49.2666504827506
+dl16	Denver	NA	NA	Say 3 Words 	51.4520847844242
+dl17	Denver	EXP23	Expressive	Say 6 Words 	56.6198793893149
+dl18	Denver	REC17	Receptive	Point to Pictures (2) 	59.7957560503175
+dl19	Denver	EXP26	Expressive	Combine Words 	59.1543368199936
+dl20	Denver	EXP22	Expressive	Name Pictures (1)	62.3164841269733
+dl21	Denver	REC24	Receptive	Body Parts	60.6096322130259
+dl22	Denver	REC21	Receptive	Point to Pictures (4) 	63.7801114306025
+dl23	Denver	EXP57	Expressive	Speech Half Understandable	64.8526267589428
+dl24	Denver	NA	NA	Name 4 pictures	67.8848777872799
+dl25	Denver	REC23	Receptive	Know Actions (2)	68.2395535326554
+dl28	Denver	REC27	Receptive	Use of two objects	71.3991497450166
+dl30	Denver	REC27	Receptive	Use of four objects	72.1276400325165
+dl33	Denver	REC42	Receptive	Understand 4 Prepositions	73.7195293850005
+dl36	Denver	NA	NA	Knows adjectives (3)	74.2398382960718
+dp7	Denver	EXP11	Expressive	Clapping game "pat a cake"	44.2206602380552
+dp9	Denver	NA	NA	wave bye-bye	45.6761116438614
+dp10	Denver	COG53	Cognitive	Play Ball with You 	46.4582586006802
+dp11	Denver	COG65	Cognitive	Imitate Activities 	43.6492006729065
+gc2_1	Griffiths	NA	NA	Remove both cubes from box (shown)	49.55726475494
+gc2_2	Griffiths	NA	NA	Unwraps and finds toy	51.7689729621836
+gc2_6	Griffiths	NA	NA	Puts 2 cubes back into one box when encouraged to do so	50.250534246311
+gc2_7	Griffiths	NA	NA	Two circle board - one in	52.1566381716067
+gc2_9	Griffiths	NA	NA	Two circle board - two in	55.7856787981975
+gc2_13	Griffiths	NA	NA	Circle and square board together	61.4681316943202
+gc2_15	Griffiths	COG56	Cognitive	(Performance) Three-hole board - three in. 	63.8921874970433
+gc2_21	Griffiths	NA	NA	Can open screw toy 	62.3647940351612
+gc2_22	Griffiths	COG46	Cognitive	(Performance) Can open screw toy (credit as two items)	62.2574262874381
+gc3_4	Griffiths	NA	NA	Six-hole board completed within one minute - 2 trials	74.2325706400029
+gc3_6	Griffiths	NA	NA	Six-hole board: (40 secs).	76.0916963252856
+gc4_2	Griffiths	NA	Fine Motor	(Performance) Builds bridge with 3 boxes - inferior model but still stands.	72.7436290561481
+gc6	Griffiths	NA	NA	Plays with own fingers	36.2891030942417
+gc7	Griffiths	NA	NA	Resists withdrawal of rod	35.9908481597532
+gc9	Griffiths	NA	NA	Reaches to Paper III - Pulls it away	35.2977307428996
+gc12	Griffiths	FM15	Fine Motor	(Performance) Takes cube or toy from table	35.3034016981861
+gc13	Griffiths	FM21	Fine Motor	(Performance) Passes toy from hand to hand	36.7718751644452
+gc15	Griffiths	NA	NA	Manipulates 2 objects at once	37.0404892230855
+gc17	Griffiths	NA	NA	Lifts inverted cup in search of toy	45.0040144786899
+gc20	Griffiths	FM23	Fine Motor	(Performance) Clicks 2 bricks together	47.8118901080458
+gc22	Griffiths	NA	NA	Finds toy under cup	45.2629492668736
+gc23	Griffiths	COG37	Cognitive	(Performance) Accepts 3rd cube without dropping	51.3327973960883
+ge2_1	Griffiths	NA	NA	Uses pencil on paper a little 	47.455459948644
+ge2_7	Griffiths	FM31	Fine Motor	(Eye and Hand Co-ordination)  Tower of 2 bricks - imitation..	53.1720119368344
+ge2_9	Griffiths	FM30	Fine Motor	(Eye and Hand Co-ordination) Scribbles more freely, and deliberately.	51.782550185143
+ge2_12	Griffiths	NA	NA	Builds tower of 3 bricks	56.5301146440328
+ge2_14	Griffiths	GM44	Gross Motor	(Eye and hand) Can throw a ball	51.7860897065114
+ge2_15	Griffiths	NA	NA	Tower of 4+ bricks	57.6028686730283
+ge2_17	Griffiths	NA	NA	Can pour water from one cup to another 	60.3118687705128
+ge2_18	Griffiths	NA	NA	Tower of 5+ bricks 	59.4442940309012
+ge2_19	Griffiths	NA	Fine Motor	(Eye and Hand Co-ordination) Circular scribble in imitation	61.7488506241416
+ge2_20	Griffiths	NA	NA	Makes train of 3+ bricks 	65.3454632767771
+ge2_21	Griffiths	NA	NA	(Credit as 2 items)	65.3749885849982
+ge2_23	Griffiths	FM38	Fine Motor	(Eye and Hand Co-ordination) Tower of 6 or 7 bricks.	60.8744634627712
+ge3_1	Griffiths	FM40	Fine Motor	(Eye and Hand Co-ordination) Draws a horizontal stroke in imitation	68.2028392463196
+ge3_2	Griffiths	NA	NA	Threads 6 beads	69.8544570651138
+ge3_5	Griffiths	NA	NA	Copies a circle - primitive model. Stage I.	74.4909806229137
+ge3_6	Griffiths	FM61	Fine Motor	(Eye and Hand Co-ordination) Copies a cross -recognisable. Stage I	72.5588976057685
+ge4_2	Griffiths	NA	NA	Threads 12+ beads (not by pattern)	69.6583651508925
+ge4_4	Griffiths	NA	NA	Folds a four-inch square twice	79.7015362092338
+ge4_5	Griffiths	NA	NA	Copies a 'ladder'. Stage I.	81.2326385900558
+ge10	Griffiths	NA	NA	Secures dangling ring	34.8014188818335
+ge11	Griffiths	NA	NA	Hands explore table surface	34.0782359879533
+ge14	Griffiths	NA	NA	Strikes one object with another	40.2339990370641
+ge16	Griffiths	COG29	Cognitive	(Eye and Hand Co-ordination)  Secures ring by means of string on table surface	39.995686241466
+ge18	Griffiths	COG41	Cognitive	(Eye and Hand Co-ordination) Dangles ring by the string	48.4834589055461
+ge24	Griffiths	NA	NA	Likes holding little toys 	48.7470644707748
+gg2_2	Griffiths	GM40	Gross Motor	(Locomotor) Stands alone 	47.7277935812544
+gg2_3	Griffiths	GM42	Gross Motor	(Locomotor) Takes a few steps alone	49.8600719529814
+gg2_5	Griffiths	NA	NA	Climbs - stairs (up)	46.5192953213478
+gg2_6	Griffiths	NA	NA	Likes pushing pram, toy horse, etc.	49.8887885683393
+gg2_7	Griffiths	GM43	Gross Motor	(Locomotor) Walks alone well	50.3783624093362
+gg2_8	Griffiths	GM45	Gross Motor	(Locomotor) Stoops.	49.8787794752476
+gg2_11	Griffiths	GM48	Gross Motor	(Locomotor) Can walk backwards a few steps	52.6643797399443
+gg2_12	Griffiths	NA	NA	Walks pulling toy on a string	53.5924625957647
+gg2_14	Griffiths	GM50	Gross Motor	(Locomotor) Runs	61.5313047713505
+gg2_15	Griffiths	NA	NA	Jumps (on the level floor)	63.2143519768499
+gg2_16	Griffiths	NA	NA	Climbs to stand on a chair	55.4896649516341
+gg2_17	Griffiths	GM47	Gross Motor	(Locomotor) Walks upstairs- holding adult's hand	56.4450167284919
+gg2_18	Griffiths	NA	NA	Can seat self at table	54.2533173614841
+gg3_4	Griffiths	NA	NA	Can cross both feet and knees when seated	69.4565307975607
+gg3_5	Griffiths	GM62	Gross Motor	(Locomotor) Can stand and walk tip-toe (6+ steps)	65.6629443307017
+gg4_1	Griffiths	NA	NA	Can run fast (indoors)	71.0884371425994
+gg4_3	Griffiths	NA	NA	Marches in time to music	79.6810616327759
+gg4_4	Griffiths	NA	NA	Walks a chalkline - 4 ft	76.6469607346248
+gg4_5	Griffiths	GM68	Gross Motor	(Locomotor) Can hop on one foot - 3+ steps	75.5140797927902
+gg8_2	Griffiths	NA	NA	Can jump off 4+ stairs	80.0603783983441
+gg10	Griffiths	NA	NA	Can roll from side to side	36.4664567820945
+gg11	Griffiths	NA	NA	Crawling Reaction I: Draws up knee	35.3165615115475
+gg13	Griffiths	GM25	Gross Motor	(Locomotor) Can roll from back to stomach, etc.	36.4286091348799
+gg14	Griffiths	NA	NA	Crawling Reaction II: Tries vigorously to crawl	37.5113308264481
+gg15	Griffiths	GM22	Gross Motor	(Locomotor) Sits alone for a short time	37.7395096367061
+gg16	Griffiths	GM29	Gross Motor	(Locomotor) Stepping reaction - one foot in front of the other	40.9441708694842
+gg17	Griffiths	GM27	Gross Motor	(Locomotor) Can be left sitting on the floor.	37.9795663299894
+gh2_7	Griffiths	REC15	Receptive	(Hearing and Speech) One object in box identified	52.0054120643435
+gh2_8	Griffiths	NA	NA	Uses 5 clear words	51.9071950739425
+gh2_13	Griffiths	EXP23	Expressive	9+  clear words	54.7155480285083
+gh2_14	Griffiths	REC19	Receptive	(Hearing and Speech)  Four objects in box identified	57.1729741027385
+gh2_15	Griffiths	EXP22	Expressive	(Hearing and Speech) Picture vocabulary (1)	63.3812198795458
+gh2_16	Griffiths	NA	NA	Uses 12+ clear words	56.3872708865149
+gh2_17	Griffiths	EXP26	Expressive	Uses word combinations	59.1543368199936
+gh2_18	Griffiths	NA	NA	Picture vocabulary (2)	64.8562236031467
+gh2_19	Griffiths	NA	NA	Uses 20+ clear words	58.8687362631767
+gh2_20	Griffiths	NA	NA	Eight objects in box identified	60.2295420670006
+gh2_22	Griffiths	EXP27	Expressive	(Hearing and Speech) Names 4 objects in box	62.9748033065226
+gh2_23	Griffiths	EXP28	Expressive	(Hearing and Speech) Picture vocabulary (4)	66.1612628056306
+gh2_24	Griffiths	EXP29	Expressive	(Hearing and Speech) Uses sentences of 4+ syllables	63.7059402844139
+gh3_1	Griffiths	NA	NA	Names 12 of 18 objects in box	68.7471619581119
+gh3_2	Griffiths	NA	NA	Picture vocabulary (12)	73.9631187207393
+gh3_3	Griffiths	NA	NA	Defines by use (2+) - cup, knife, chair, coat, car, house, pencil, watch, key	70.5849529165072
+gh5_1	Griffiths	EXP43	Expressive	(Hearing and Speech) Defines by use: 6+.	72.6671480386486
+gh11	Griffiths	EXP12	Expressive	Talks (babbles) to person	38.1951039433037
+gh12	Griffiths	NA	NA	Makes 4+ different sounds.	41.326819083208
+gh13	Griffiths	NA	NA	Responds when called	35.3263912920886
+gh16	Griffiths	EXP13	Expressive	(Hearing and Speech) Babbled phrases: 4 + syllables	44.7339695802744
+gh17	Griffiths	EXP14	Expressive	(Hearing and Speech) Says Mama or Dada, etc. (one word clear)	46.294984424038
+gh18	Griffiths	NA	NA	Listens to stop watch	47.1814947103319
+gh23	Griffiths	NA	NA	Babbled monologue when alone	47.3719334016354
+gh24	Griffiths	NA	NA	Says three clear words	48.4163354672429
+gp3_4	Griffiths	NA	NA	Compares 2 insets for size "which one is bigger?"	76.3594165763078
+gp3_6	Griffiths	COG73	Cognitive	practical reasoning (PR) knows big and little	77.4158082230848
+gp4_1	Griffiths	NA	NA	Compares 2 towers: 'Which one is higher?' (5;3 bricks)	78.4734766302031
+gp4_2	Griffiths	NA	NA	Compares 2 lines for length	78.6952892292002
+gp6_4	Griffiths	NA	NA	Repeats 5 digits - 61384; 59271; 92786	79.2773419754326
+j2b	Tepsi	FM52	Fine Motor	Child constructs a bridge with 3 blocks.	67.8017325080839
+j5b	Tepsi	FM57	Fine Motor	Child can button 1 large button	67.2247605609542
+j6b	Tepsi	FM131	Fine Motor	Child can thread a needle	69.0614156513517
+j9b	Tepsi	FM43	Fine Motor	Child copies a circle	69.6607103240288
+j10b	Tepsi	FM61	Fine Motor	Child draws 2 perpendicular lines	72.5588976057685
+j13b__3	Tepsi	NA	NA	NA	69.7909593399509
+j18b	Tepsi	REC40	Receptive	Child understands difference between more and less	71.0433804977938
+j20b	Tepsi	NA	NA	Child names 5 out of 8 objects	68.713995048701
+j22b	Tepsi	NA	NA	Child names 3 out of 4 actions	69.6129854578718
+j23b	Tepsi	NA	NA	Child describes use of objects (minimum 4)	67.7467419867853
+j25b	Tepsi	NA	NA	Child can say own name	67.733211055527
+j28b__1	Tepsi	NA	NA	Child gives logical response to what to do if "hungry"	68.612615785861
+j28b__2	Tepsi	NA	NA	NA	71.1630615101626
+j28b__3	Tepsi	NA	NA	NA	70.6157890889205
+j29b__1	Tepsi	NA	NA	Child correctly uses preposition "behind"	69.9246918920014
+j29b__3	Tepsi	NA	NA	NA	68.2182414634909
+j30b__1	Tepsi	NA	NA	Child can describe "ice"	71.0678620562717
+j30b__2	Tepsi	NA	NA	Child can describe "mouse"	70.3677775662503
+j30b__3	Tepsi	NA	NA	Child can describe "mother"	71.4077218092017
+j31b	Tepsi	NA	NA	Child can name at least 2 colors	70.9998221472665
+j32b	Tepsi	REC67	Receptive	Child can point to and identify at least 2 colors	69.8307393878659
+j34b	Tepsi	REC68	Receptive	Child can point to and identify at least 2 shapes	70.9914245174706
+j35b	Tepsi	NA	NA	Child describes a picture	69.4666947343151
+j36b	Tepsi	NA	NA	Child can describe an absurd picture	69.2309582774042
+j39b__1	Tepsi	NA	NA	Define "apple"	70.8999043187466
+j39b__2	Tepsi	NA	NA	Define "ball"	70.5365631212817
+j39b__3	Tepsi	NA	NA	Define "show" 	71.0357064554884
+j39b__4	Tepsi	NA	NA	Define "coat"	72.3487166279452
+j40b	Tepsi	NA	NA	Describe at least 2 characteristics of "ball", "balloon", and "bag"	72.8263612720301
+j43b	Tepsi	NA	NA	Child throws ball forward	63.8769336168257
+j44b__2	Tepsi	GM60	NA	Child balances on one foot for 5-8 seconds	70.0876573737176
+j49b	Tepsi	NA	NA	Child hops on one foot without help	70.5803735771344
+j52b	Tepsi	NA	NA	Child walks backwards unassisted >4 steps in a stright line	75.2969219659753
+mg2	McCarthy	GM63	Gross Motor	Walks backwards for 5 steps	68.6644042588715
+mg3	McCarthy	GM62	Gross Motor	Walks on tiptoes for 5 steps or more	71.5299840971016
+mg4a	McCarthy	GM60	Gross Motor	Balances on either foot for 3-9 secs	70.0876573737176
+n1	DDI	COG3	Cognitive	Eyes fixate	5.51905331918182
+n2	DDI	REC50	Receptive	Reacts when spoken to	2.43246394895093
+n6	DDI	EXP2	NA	Smiles in response (M; can ask parents)	11.438132038147
+n7	DDI	NA	NA	Follows with eyes and head 30d  < 0 > 30d 	14.5932363730279
+n9	DDI	COG18	Cognitive	Watches own hands	20.7583086485158
+n10	DDI	EXP5	Expressive	vocalizes in response	14.5465661977576
+n11	DDI	NA	NA	Stays suspended when lifted under the armpits	15.9259881680545
+n12	DDI	GM12	Gross Motor	Lifts head to 45 degrees on prone position	20
+n14	DDI	FM12	Fine Motor	Grasps object within reach	30.1682068420598
+n15	DDI	GM23	Gross Motor	No head lag if pulled to sitting	26.1374852710764
+n16	DDI	REC6	Receptive	Turn head to sound	30.9034135848916
+n18	DDI	NA	NA	Looks around to side with angle face-table 90 	28.0192976481738
+n19	DDI	FM19	Fine Motor	Passes cube from hand to hand	36.7087106088918
+n20	DDI	COG30	Cognitive	Holds cube, grasps another one with other hand	37.1647694684048
+n21	DDI	GM24	Gross Motor	Plays with both feet	33.9153776369646
+n22	DDI	GM25	Gross Motor	Rolls over back to front	36.4286091348799
+n23	DDI	NA	NA	Balances head well while sitting	33.2046519957164
+n24	DDI	NA	NA	Sits on buttocks while legs stretched	35.6976523641625
+n25	DDI	EXP10	Expressive	Says dada, baba, gaga	36.6503761062606
+n26	DDI	GM26	Gross Motor	Sits in stable position without support	40
+n27	DDI	FM26	Fine Motor	Picks up pellet between thumb and index finger	42.9310276394221
+n28	DDI	GM30	Gross Motor	Crawls forward, abdomen on the floor	42.8211232350804
+n29	DDI	GM35	Gross Motor	Pulls up to standing position	44.0095358333739
+n30	DDI	NA	NA	Waves 'bye-bye' (M; can ask parents)	42.7949537640953
+n31	DDI	EXP12	Expressive	Babbles while playing	40.8015525746356
+n32	DDI	COG36	Cognitive	Puts cube in and out of a box	44.5286386424398
+n33	DDI	NA	NA	Plays 'give and take' (M; can ask parents)	45.5241243037673
+n34	DDI	NA	NA	Crawls, abdomen off the floor (M; can ask parents)	45.0994558367456
+n35	DDI	GM38	Gross Motor	Walks while holding onto play-pen or furniture	45.1013657008065
+n36	DDI	NA	NA	Reacts to verbal request (M; can ask parents)	44.8411098403036
+n37	DDI	EXP18	Expressive	Uses two words with comprehension	48.7765736215945
+n38	DDI	FM31	Fine Motor	Tower of 2 cubes	53.1720119368344
+n39	DDI	NA	NA	Explores environment energetically (M; can ask parents)	45.3672318879163
+n40	DDI	NA	NA	Says three 'words'	51.103538222373
+n41	DDI	NA	NA	Identifies two named objects	53.2201657482059
+n42	DDI	GM42	Gross Motor	Walks alone	49.8600719529814
+n43	DDI	GM44	Gross Motor	Throws ball without falling	53.9198028959226
+n44	DDI	FM72	Fine Motor	Builds tower of 3 cubes	57.0675934979672
+n45	DDI	NA	NA	Imitates everyday activities (M; can ask parents)	50.4903603737427
+n47	DDI	EXP26	Expressive	Says sentences with 2 words	59.1543368199936
+n48	DDI	NA	NA	Understands 'play' orders	55.8761742181246
+n49	DDI	GM45	Gross Motor	Squats or bends to pick things up	53.423203127997
+n50	DDI	NA	NA	Walks well	53.7308492480432
+n51	DDI	FM38	Fine Motor	Tower of 6 cubes	60.8744634627712
+n52	DDI	COG49	Cognitive	Places round block in board	59.3849565394626
+n55	DDI	NA	NA	Refers to self using 'me' or 'I' (M; can ask parents)	60.7051656104963
+n56	DDI	NA	NA	Points at 5 pictures in the book	60.6100822283521
+peg2	Pegboard	COG62	Cognitive	Places  6 or more pegs in 30 sec with either hand	72.4562448021153
+sa2v4	Vineland	NA	NA	transfer objects	59.0608379915155
+sa2v6	Vineland	NA	NA	fetch something	52.0989163606758
+sa2v7	Vineland	NA	NA	drink from  cup / glass	52.121898467348
+sa2v8	Vineland	GM43	Gross Motor	walk by his / herself	53.0398529922574
+sa2v13	Vineland	EXP20	Expressive	use names of objects - shoe	56.6145616569108
+sa2v15	Vineland	NA	NA	unwrap sweet	59.8368587900589
+sa2v16	Vineland	EXP26	Expressive	use a short sentence	59.1543368199936
+sa2v19	Vineland	NA	NA	take off dress / shirt if buttons / zip undone	61.0965828964489
+sa2v21	Vineland	NA	NA	dry hands after you have washed them	58.0684828531568
+sa2v24	Vineland	EXP45	Expressive	tell you things / simple story	60.1050381967728
+sa2v29	Vineland	NA	NA	perform for others stunts / rhymes	57.0754843504311
+sa2v30	Vineland	SA1	NA	wash hands and dry	60.0809145735227
+sage12	SA_Griffiths	COG17	Cognitive	Carries ring to mouth	36.8103990608857
+saghs10	SA_Griffiths	NA	NA	Laughs aloud	36.7328030831447
+saghs15	SA_Griffiths	NA	NA	Manipulates bell	38.464182263948
+sagl18	SA_Griffiths	NA	NA	Stepping movements	37.2226319649223
+sagl22	SA_Griffiths	NA	NA	Can turn on floor	39.3395330530769
+sagp16	SA_Griffiths	NA	NA	 Grasps box.	34.8817866827488
+sagp17	SA_Griffiths	NA	NA	 Manipulates cube	35.577226986395
+sagps6	SA_Griffiths	NA	NA	Vocalises when spoken to	35.4190721061561
+sagps8	SA_Griffiths	NA	NA	Coos and smiles	36.1884238335635
+sagps9	SA_Griffiths	NA	NA	Friendly to strangers	35.1665203443987
+sagps10	SA_Griffiths	NA	NA	Resist ring being taken away	35.9908481597532
+sagps16	SA_Griffiths	NA	NA	Stretches to be taken	35.4980657739726
+sagps18	SA_Griffiths	NA	NA	Manipulates cup or spoon in play	33.5569831414986
+sagps25	SA_Griffiths	NA	NA	Smiles, plays mirror	48.2063405335499
+sagps30	SA_Griffiths	NA	NA	Obeys simple requests	48.3924284785067
+sagps32	SA_Griffiths	NA	NA	Puts block in and out of cup	48.2939468723198
+sagps35	SA_Griffiths	NA	NA	Uses spoon	50.4609240980247
+sagps36	SA_Griffiths	NA	NA	Shoes shoes	50.0519895671661
+sagps41	SA_Griffiths	NA	NA	Like book showing	51.4815495605595
+savine4dryhands	Vineland	NA	NA	Dy hands without help	60.5173957180958
+savine4eatfood	Vineland	NA	NA	Eat food with an implement	60.2043750854681
+savine4narrates	Vineland	NA	NA	Tell things that happen or simple stories	61.8473831952124
+savine4takeoff	Vineland	NA	NA	Take off jacket or dress without help except for zip or buttons	61.7162080808528
+savine4washhands	Vineland	SA1	NA	Wash hands without help	60.0809145735227
+sbf06	Stanford	NA	NA	Identify missing object: Stick with 2 units (series)	70.3038215327541
+sbv03	Stanford	COG56	Cognitive	Places 3 pieces: circle, square, triangle in form board in 15 sec	65.1049777018279
+sbw07	Stanford	NA	NA	Repeats sequence of tapping 2 blocks	73.4306590494451
+sbw08	Stanford	NA	NA	Repeats sequence of tapping 2 blocks	72.2057799147379
+sbw09	Stanford	NA	NA	Repeats sequence of tapping 2 blocks	73.3092015596656
+sbw10	Stanford	COG118	Cognitive	Increasingly difficult sequences of tapping blocks v1	75.4570692100756
+v20	DDI	FM44	Fine Motor	Imitates building a truck	66.9818777087726
+v21	DDI	COG56	Cognitive	Places 3 forms in form-box	64.1837469905387
+v22	DDI	FM41	Fine Motor	Imitates drawing vertical line	65.6362932220368
+v23	DDI	FM52	Fine Motor	Imitates building a bridge	67.8017325080839
+v24	DDI	COG58	Cognitive	Places 4 forms in form-box	68.3429421282943
+v26	DDI	FM37	Fine Motor	Holds pencil with fingers	68.4874061547647
+v27	DDI	FM43	Fine Motor	Copies a circle	69.6607103240288
+v42	DDI	REC24	Receptive	Points at 6 parts of body of a doll.	56.9688623250533
+v45	DDI	EXP36	Expressive	Says "sentences" of 3 or more words	62.4861423843825
+v46	DDI	NA	NA	Can be understood by family (M; can ask parents)	60.9341470893578
+v47	DDI	NA	NA	Talks spontaneously on daily events (M; can ask parents)	66.4221213245822
+v48	DDI	EXP32	Expressive	Asks questions about "who", "what", Asks questions beginning by who, what, where and "how"	65.6958292122121
+v49	DDI	NA	NA	Can be understood by tester	66.2045815199813
+v50	DDI	NA	NA	Asks questions:how many, when, why (M; can ask parents)	68.9997569605898
+v72	DDI	GM28	Gross Motor	Can rotace fluently in sitting position	59.1175953517118
+v73	DDI	GM43	Gross Motor	Walks well alone/walks smoothly	60.9378247026808
+v74	DDI	NA	NA	Rides on tricycle (M; can ask parents)	66.4092565677288
+v75	DDI	GM54	Gross Motor	Jumps with both feet simultaneously	66.0722687993469

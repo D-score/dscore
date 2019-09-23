@@ -33,7 +33,8 @@ The default (\code{"decimal"}) means decimal age in years.}
 \item{key}{A string that sets the key, the set of difficulty 
 estimates from a fitted Rasch model.
 The built-in keys are: \code{"gsed"} (default), \code{"gcdg"}, 
-and \code{"dutch"}. See details.}
+and \code{"dutch"}. One should \code{key = ""} only if the itembank
+has no duplicate itemnames, e.g., when manually specified. See details.}
 
 \item{itembank}{A \code{data.frame} with columns
 \code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain}, 

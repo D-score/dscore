@@ -15,8 +15,8 @@
 #' 
 #' @export
 get_tau <- function(items, 
-                   key = "gsed", 
-                   itembank = dscore::builtin_itembank) {
+                    key = "gsed", 
+                    itembank = dscore::builtin_itembank) {
   
   # no itembank, no items, no tau
   ibname <- deparse(substitute(itembank))
@@ -24,9 +24,13 @@ get_tau <- function(items,
   ibname <- ibname[length(ibname)]
   if (!exists(ibname)) return(numeric(0))
   
-  # no lexixon, no items
-  mib <- itembank[itembank$key == key, c("key", "item", "tau")]
-
+  # key = "", then use all rows
+  if (key == "") 
+    mib <- data.frame(key = "", 
+                      itembank[, c("item", "tau")])
+  else 
+    mib <- itembank[itembank$key == key, c("key", "item", "tau")]
+  
   # find exact matching items rows
   p <- match(tolower(items), tolower(mib$item))
   r <- mib[p, "tau"]

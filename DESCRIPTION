@@ -13,6 +13,7 @@ Imports:
     dplyr,
     rlang,
     stats,
+    stringr,
     tidyr,
     Rcpp
 LinkingTo: Rcpp, RcppArmadillo

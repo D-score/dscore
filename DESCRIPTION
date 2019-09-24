@@ -29,3 +29,6 @@ License: GPL-3
 LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
+NeedsCompilation: yes
+URL: https://github.com/stefvanbuuren/dscore, https://stefvanbuuren.name/dbook1/
+BugReports: https://github.com/stefvanbuuren/dscore/issues 

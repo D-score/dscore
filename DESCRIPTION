@@ -10,11 +10,11 @@ Description: The dscore package provides a set of tools for calculating the
 Depends:
     R (>= 2.10)
 Imports:
-    dplyr,
+    dplyr (>= 0.8.2),
     rlang,
     stats,
     stringr,
-    tidyr,
+    tidyr (>= 1.0.0),
     Rcpp
 LinkingTo: Rcpp, RcppArmadillo
 Suggests:

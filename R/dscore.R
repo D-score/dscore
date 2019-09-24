@@ -211,7 +211,8 @@ dscore <- function(data,
            sd = sd,
            .rownum = 1L:n()) %>%
     select(.data$.rownum, .data$a, .data$mu, .data$sd, items) %>% 
-    gather(key = "item", value = "score", items, na.rm = TRUE) %>%
+    pivot_longer(cols = items, names_to = "item", 
+                 values_to = "score", values_drop_na = TRUE) %>% 
     arrange(.data$.rownum, .data$item) %>%
     left_join(ib, by = "item")
   

@@ -6,7 +6,10 @@ Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
 Description: The dscore package provides a set of tools for calculating the
-    D-score, a quantitative measure of child development.
+    D-score, a quantitative measure of child development. The package can convert
+    milestone PASS/FAIL score from 19 instruments into the D-score and DAZ (D-score
+    adjusted for age). The package also contains some to that help to translate
+    item names into the 9-position GSED convention for child development milestones.
 Depends:
     R (>= 2.10)
 Imports:

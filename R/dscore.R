@@ -227,7 +227,7 @@ dscore <- function(data,
                                    qp  = qp,
                                    mu  = (.data$mu)[1],
                                    sd  = (.data$sd)[1])$posterior)) %>% 
-    unnest() %>%
+    unnest(cols = c("x", "w")) %>%
     group_by(.data$.rownum, .data$a, .data$n, .data$p) %>% 
     summarise(
       d = weighted.mean(x = .data$x, w = .data$w),

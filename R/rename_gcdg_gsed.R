@@ -396,7 +396,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   y <- convert(x, y, 1, c("g"), gri)
   y <- convert(x, y, 2, c("mg"), mac)
   y <- convert(x, y, 3, c("mil"), mds)
-  y <- convert(x, y, 3, c("mul"), mds)
+  y <- convert(x, y, 3, c("mul"), mul)
   y <- convert(x, y, 3, c("peg"), peg)
   y <- convert(x, y, 3, c("sag"), sgr)
   y <- convert(x, y, 2, c("sb"), sbi)

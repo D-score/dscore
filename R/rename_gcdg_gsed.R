@@ -15,7 +15,7 @@
 #' The function currently support ASQ-I (aqi), Barrera-Moncade (bar),
 #' Batelle (bat), Bayley I (by1), Bayley II (by2), Bayley III (by3),
 #' Dutch Development Instrument (ddi), Denver (den), Griffith (gri),
-#' MacArthur (mac), WHO milestones (mds), pegboard (peg),
+#' MacArthur (mac), WHO milestones (mds), Mullen (mul), pegboard (peg),
 #' South African Griffith (sgr), Stanford Binet (sbi), Tepsi (tep),
 #' Vineland (vin).
 #'
@@ -268,7 +268,30 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     instr <- "mds"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
   }
-
+  
+  mul <- function(x) {
+    domo <- substr(x, 4, 4)
+    domn <- NA
+    domn <- ifelse(domo == "v", "cg", domn)
+    domn <- ifelse(domo == "f", "fm", domn)
+    domn <- ifelse(domo == "r", "re", domn)
+    domn <- ifelse(domo == "g", "gm", domn)
+    domn <- ifelse(domo == "e", "ex", domn)
+    domn <- ifelse(domo == "s", "se", domn)
+    nr <- gsub("[a-z]", "", x)
+    tr <- substr(x, nchar(x), nchar(x))
+    ad <- rep("", length(x))
+    ad <- ifelse(tr == "a", "1", ad)
+    ad <- ifelse(tr == "b", "2", ad)
+    ad <- ifelse(tr == "c", "3", ad)
+    ad <- ifelse(tr == "d", "4", ad)
+    nr <- paste0(nr, ad)
+    nr <- str_pad(nr, 3, pad = "0")
+    rep <- "d"
+    instr <- "mul"
+    cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
+  }
+  
   peg <- function(x) {
     domn <- "fm"
     nr <- gsub("peg", "", x)
@@ -373,6 +396,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   y <- convert(x, y, 1, c("g"), gri)
   y <- convert(x, y, 2, c("mg"), mac)
   y <- convert(x, y, 3, c("mil"), mds)
+  y <- convert(x, y, 3, c("mul"), mds)
   y <- convert(x, y, 3, c("peg"), peg)
   y <- convert(x, y, 3, c("sag"), sgr)
   y <- convert(x, y, 2, c("sb"), sbi)

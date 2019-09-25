@@ -28,7 +28,7 @@ direct/caregiver/message, positions 7-9 is a item sequence number.
 The function currently support ASQ-I (aqi), Barrera-Moncade (bar),
 Batelle (bat), Bayley I (by1), Bayley II (by2), Bayley III (by3),
 Dutch Development Instrument (ddi), Denver (den), Griffith (gri),
-MacArthur (mac), WHO milestones (mds), pegboard (peg),
+MacArthur (mac), WHO milestones (mds), Mullen (mul), pegboard (peg),
 South African Griffith (sgr), Stanford Binet (sbi), Tepsi (tep),
 Vineland (vin).
 

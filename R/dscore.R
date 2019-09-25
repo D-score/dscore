@@ -154,7 +154,7 @@ dscore <- function(data,
   metric  <- match.arg(metric)
   
   # get decimal age
-  if (!xname %in% names(data)) stop("Variable", xname, "not found")
+  if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
   a <- switch(xunit,
               decimal = round(data[[xname]], 3L),
               months  = round(data[[xname]] / 12, 3L),

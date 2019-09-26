@@ -55,6 +55,7 @@ get_itemnames <- function(x, instrument = NULL, domain = NULL,
                           mode = NULL, number = NULL, strict = FALSE,
                           itemtable = NULL) {
   if (is.null(itemtable)) builtin <- dscore::builtin_itemtable$item
+  else builtin <- itemtable$item
   if (missing(x)) x <- builtin
   if (is.data.frame(x)) x <- names(x)
   if (inherits(x, "lean")) x <- unique(x[["itm"]]$item)

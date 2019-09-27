@@ -280,7 +280,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "s", "se", domn)
     nr <- gsub("[a-z]", "", x)
     tr <- substr(x, nchar(x), nchar(x))
-    ad <- rep("", length(x))
+    ad <- rep("0", length(x))
     ad <- ifelse(tr == "a", "0", ad)
     ad <- ifelse(tr == "b", "1", ad)
     ad <- ifelse(tr == "c", "2", ad)

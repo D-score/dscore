@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-0.38-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
+[![](https://img.shields.io/badge/github%20version-0.39-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
 <!-- badges: end -->
 
 The D-score is a numerical score that measures generic development 
@@ -190,8 +190,12 @@ defined in the package:
 | `sgr`  | Griffiths for South Africa                              |   58  |       |   19  |   19  |
 | `tep`  | Test de Desarrollo Psicomotor (TEPSI)                   |   61  |       |   33  |   31  |
 | `vin`  | Vineland Social Maturity Scale                          |   50  |       |   17  |   17  |
+|        |                                                         | 2275  |   76  |  565  |  807  |
+|        | Extensions                                              |       |       |       |       |
+| `rap`  | Global Scale of Early Development - RAPID SF            |  139  |       |       |       |
+| `mul`  | Mullen Scales of Early Learning                         |  232  |       |       |       |
 | `hyp`  | [special codes, hypothetical instrument]                |    5  |       |       |       |
-|        |                                                         | 2280  |   76  |  565  |  807  |
+|        |                                                         | 2651  |       |       |       |
 
 If your instrument is not here, you cannot calculate the D-score. But 
 even if your instrument is in the table, there is no garantee that it

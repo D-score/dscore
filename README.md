@@ -216,9 +216,9 @@ package:
 |       |                                                         |  2275 |    76 |  565 |  807 |
 |       | Extensions                                              |       |       |      |      |
 | `rap` | Global Scale of Early Development - RAPID SF            |   139 |       |      |      |
-| `mul` | Mullen Scales of Early Learning                         |   232 |       |      |      |
+| `mul` | Mullen Scales of Early Learning                         |   232 |       |      |   85 |
 | `hyp` | \[special codes, hypothetical instrument\]              |     5 |       |      |      |
-|       |                                                         |  2651 |       |      |      |
+|       |                                                         |  2651 |    76 |  565 |  892 |
 
 If your instrument is not here, you cannot calculate the D-score. But
 even if your instrument is in the table, there is no garantee that it

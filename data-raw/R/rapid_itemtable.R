@@ -15,7 +15,7 @@ rename_sf <- function(x, match_table){
   deco <- decompose_itemnames(match_y)
   instr <- "rap"
   domn <- deco$domain
-  #if(is.na(match_y)) domn <- "xx"
+  domn[is.na(match_y)] <- "xx"
   rep <- "c"
   nr <- gsub("Ra_SF", "", x)
   nr <- str_pad(nr, 3, pad = "0")

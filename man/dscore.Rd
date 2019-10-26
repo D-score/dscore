@@ -128,9 +128,9 @@ valid items, and unformative for large number of items (say >10 items).
 \examples{
 \dontrun{
 data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
-data$age <- data$age/12    
-items <- dmetric::prepare_items(study="Netherlands 1")$items
-dscore(data=data, items=items, itembank=gcdg_itembank)
+data$age <- data$age/12  
+names(data)[6:62] <- dscore::rename_gcdg_gsed(names(data)[6:62])
+result <- dscore(data)
 }
 }
 \references{

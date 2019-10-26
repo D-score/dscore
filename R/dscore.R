@@ -130,10 +130,10 @@
 #' \code{\link{builtin_references}}
 #' @examples 
 #' \dontrun{
-#'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
-#'data$age <- data$age/12    
-#'items <- dmetric::prepare_items(study="Netherlands 1")$items
-#'dscore(data=data, items=items, itembank=gcdg_itembank)
+#' data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
+#' data$age <- data$age/12  
+#' names(data)[6:62] <- dscore::rename_gcdg_gsed(names(data)[6:62])
+#' result <- dscore(data)
 #'}
 #' @export
 dscore <- function(data, 
@@ -227,17 +227,18 @@ dscore <- function(data,
                                    tau = .data$tau, 
                                    qp  = qp,
                                    mu  = (.data$mu)[1],
-                                   sd  = (.data$sd)[1])$posterior)) %>% 
-    unnest(cols = c("x", "w")) %>%
+                                   sd  = (.data$sd)[1])$posterior))
+  
+  data4 <- data3 %>% 
     group_by(.data$.rownum, .data$a, .data$n, .data$p) %>% 
     summarise(
-      d = weighted.mean(x = .data$x, w = .data$w),
-      sem = sqrt(sum(.data$w * (.data$x - .data$d)^2))
+      d = weighted.mean(x = unlist(.data$x), w = unlist(.data$w)),
+      sem = sqrt(sum(unlist(.data$w) * (unlist(.data$x) - unlist(.data$d))^2))
     )
   
   # add daz, shape end result
   data.frame(.rownum = 1L:nrow(data)) %>%
-    left_join(data3, by = ".rownum") %>%
+    left_join(data4, by = ".rownum") %>%
     mutate(n = recode(.data$n, .missing = 0L),
            daz = daz(d = .data$d, x = .data$a, 
                      reference = get_reference(population),

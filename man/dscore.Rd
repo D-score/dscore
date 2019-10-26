@@ -2,6 +2,7 @@
 % Please edit documentation in R/dscore.R
 \name{dscore}
 \alias{dscore}
+\alias{dscore_posterior}
 \title{D-score estimation}
 \usage{
 dscore(data, items = names(data), xname = "age", xunit = c("decimal",
@@ -9,6 +10,12 @@ dscore(data, items = names(data), xname = "age", xunit = c("decimal",
   metric = c("dscore", "logit"), prior_mean = ".gcdg",
   prior_sd = NULL, transform = NULL, qp = -10:100,
   population = key, dec = 3L)
+
+dscore_posterior(data, items = names(data), xname = "age",
+  xunit = c("decimal", "days", "months"), key = "gsed",
+  itembank = dscore::builtin_itembank, metric = c("dscore", "logit"),
+  prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
+  qp = -10:100, population = key, dec = 3L)
 }
 \arguments{
 \item{data}{A \code{data.frame} with the data. 
@@ -76,8 +83,8 @@ rounding the ability estimates and the DAZ. The default is
 \code{dec = 3}.}
 }
 \value{
-A \code{data.frame} with \code{nrow(data)} rows and the following 
-columns:
+The \code{dscore()} function returns a \code{data.frame} with 
+\code{nrow(data)} rows and the following columns:
 \describe{
 \item{\code{a}}{Decimal age}
 \item{\code{n}}{Number of items with valid (0/1) data}
@@ -86,10 +93,15 @@ columns:
 \item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
 \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 }
+
+The \code{dscore_posterior()} function returns a numeric matrix with 
+\code{nrow(data)} rows and \code{length(qp)} columns with the 
+density at each quadrature point.
 }
 \description{
-This function estimates the D-score, a numeric score that measures
-child development, from PASS/FAIL observations on milestones.
+The function \code{dscore()} function estimates the D-score, 
+a numeric score that measures child development, from PASS/FAIL 
+observations on milestones.
 }
 \details{
 The algorithm is based on the method by Bock and Mislevy (1982). The 
@@ -126,12 +138,24 @@ starting prior is thus somewhat informative for low numbers of
 valid items, and unformative for large number of items (say >10 items).
 }
 \examples{
-\dontrun{
-data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
-data$age <- data$age/12  
-names(data)[6:62] <- dscore::rename_gcdg_gsed(names(data)[6:62])
-result <- dscore(data)
-}
+data <- data.frame(
+  age = rep(round(21/365.25, 4), 10),
+  ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+  ddigmd053 = c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
+items <- names(data)[2:4]
+
+# third item is not part of default key
+get_tau(items)
+
+# calculate D-score
+dscore(data)
+
+# calculate full posterior
+p <- dscore_posterior(data)
+
+# plot posterior for row 7
+plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score", ylab = "Density", xlim = c(0, 30))
 }
 \references{
 Bock DD, Mislevy RJ (1982).  

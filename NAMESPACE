@@ -3,6 +3,7 @@
 export(daz)
 export(decompose_itemnames)
 export(dscore)
+export(dscore_posterior)
 export(get_itemnames)
 export(get_itemtable)
 export(get_labels)

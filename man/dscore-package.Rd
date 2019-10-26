@@ -19,6 +19,7 @@ program of the Bill & Melinda Gates Foundation.
 The available functions are:
 \tabular{ll}{
   \code{\link{dscore}}  \tab Estimate D-score and DAZ\cr
+  \code{\link{dscore_posterior}}  \tab Calculate full posterior\cr
   \code{\link{daz}}     \tab Transform to age-adjusted standardized D-score\cr
   \code{\link{zad}}     \tab Inverse of \code{\link{daz}}\cr
   \code{\link{get_tau}}         \tab Get difficulty parameters from item bank\cr

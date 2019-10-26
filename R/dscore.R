@@ -1,8 +1,10 @@
 #' D-score estimation
 #' 
-#' This function estimates the D-score, a numeric score that measures
-#' child development, from PASS/FAIL observations on milestones. 
+#' The function \code{dscore()} function estimates the D-score, 
+#' a numeric score that measures child development, from PASS/FAIL 
+#' observations on milestones. 
 #' 
+#' @rdname dscore
 #' @param data  A \code{data.frame} with the data. 
 #' A row collects all observations made on a child on a set of 
 #' milestones administered at a given age. The function calculates 
@@ -55,8 +57,8 @@
 #' rounding the ability estimates and the DAZ. The default is 
 #' \code{dec = 3}.
 #' @return 
-#' A \code{data.frame} with \code{nrow(data)} rows and the following 
-#' columns:
+#' The \code{dscore()} function returns a \code{data.frame} with 
+#' \code{nrow(data)} rows and the following columns:
 #' \describe{
 #' \item{\code{a}}{Decimal age}
 #' \item{\code{n}}{Number of items with valid (0/1) data}
@@ -66,6 +68,9 @@
 #' \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 #' }
 #' 
+#' The \code{dscore_posterior()} function returns a numeric matrix with 
+#' \code{nrow(data)} rows and \code{length(qp)} columns with the 
+#' density at each quadrature point.
 #' @details
 #' The algorithm is based on the method by Bock and Mislevy (1982). The 
 #' method uses Bayes rule to update a prior ability into a posterior
@@ -128,13 +133,25 @@
 #' @seealso \code{\link{get_tau}}, 
 #' \code{\link{builtin_itembank}}, \code{\link{posterior}},
 #' \code{\link{builtin_references}}
-#' @examples 
-#' \dontrun{
-#'data <- ddata::get_gcdg(study="Netherlands 1", adm=TRUE)  
-#'data$age <- data$age/12    
-#'items <- dmetric::prepare_items(study="Netherlands 1")$items
-#'dscore(data=data, items=items, itembank=gcdg_itembank)
-#'}
+#' @examples
+#' data <- data.frame(
+#'   age = rep(round(21/365.25, 4), 10),
+#'   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+#'   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+#'   ddigmd053 = c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
+#' items <- names(data)[2:4]
+#' 
+#' # third item is not part of default key
+#' get_tau(items)
+#' 
+#' # calculate D-score
+#' dscore(data)
+#' 
+#' # calculate full posterior
+#' p <- dscore_posterior(data)
+#' 
+#' # plot posterior for row 7
+#' plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score", ylab = "Density", xlim = c(0, 30))
 #' @export
 dscore <- function(data, 
                    items = names(data),
@@ -148,10 +165,50 @@ dscore <- function(data,
                    transform = NULL,
                    qp = -10:100,
                    population = key,
-                   dec = 3L) {
-  
+                   dec = 3L) { 
   xunit   <- match.arg(xunit)
   metric  <- match.arg(metric)
+  calc_dscore(data = data, items = items, xname = xname, xunit = xunit, 
+              key = key, itembank = itembank, metric = metric,
+              prior_mean = prior_mean, prior_sd = prior_sd,
+              transform = transform, qp = qp,
+              population = population, dec = dec, 
+              posterior = FALSE)
+}
+
+#' The \code{dscore_posterior()} function returns the full posterior 
+#' distribution of the D-score.
+#' @rdname dscore
+#' @export
+dscore_posterior <- function(data, 
+                             items = names(data),
+                             xname = "age", 
+                             xunit = c("decimal", "days", "months"),
+                             key = "gsed",
+                             itembank = dscore::builtin_itembank,
+                             metric = c("dscore", "logit"),
+                             prior_mean = ".gcdg",
+                             prior_sd = NULL,
+                             transform = NULL,
+                             qp = -10:100,
+                             population = key,
+                             dec = 3L) {
+  xunit   <- match.arg(xunit)
+  metric  <- match.arg(metric)
+  calc_dscore(data = data, items = items, xname = xname, xunit = xunit, 
+              key = key, itembank = itembank, metric = metric,
+              prior_mean = prior_mean, prior_sd = prior_sd,
+              transform = transform, qp = qp,
+              population = population, dec = dec, 
+              posterior = TRUE)
+}
+
+calc_dscore <- function(data, items, xname, xunit,
+                        key, itembank, metric,
+                        prior_mean, prior_sd,
+                        transform, qp,
+                        population, dec, 
+                        posterior) {
   
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
@@ -216,33 +273,51 @@ dscore <- function(data,
     arrange(.data$.rownum, .data$item) %>%
     left_join(ib, by = "item")
   
-  # summarise n, p, d and sem
-  data3 <- data2 %>%
-    group_by(.data$.rownum, .data$a) %>%
-    summarise(
-      n = n(),
-      p = round(mean(.data$score), digits = dec),
-      x = list(qp),
-      w = list(calculate_posterior(scores = .data$score, 
-                                   tau = .data$tau, 
-                                   qp  = qp,
-                                   mu  = (.data$mu)[1],
-                                   sd  = (.data$sd)[1])$posterior)) %>% 
-    unnest(cols = c("x", "w")) %>%
-    group_by(.data$.rownum, .data$a, .data$n, .data$p) %>% 
-    summarise(
-      d = weighted.mean(x = .data$x, w = .data$w),
-      sem = sqrt(sum(.data$w * (.data$x - .data$d)^2))
-    )
+  # if dscore_posterior() was called
+  if (posterior) {
+    data3 <- data2 %>%
+      group_by(.data$.rownum) %>%
+      summarise(
+        w = list(calculate_posterior(scores = .data$score, 
+                                     tau = .data$tau, 
+                                     qp  = qp,
+                                     mu  = (.data$mu)[1L],
+                                     sd  = (.data$sd)[1L])$posterior))
+    return(matrix(unlist(data3$w), nrow = length(data3$w), byrow = TRUE))
+  }
   
-  # add daz, shape end result
-  data.frame(.rownum = 1L:nrow(data)) %>%
-    left_join(data3, by = ".rownum") %>%
-    mutate(n = recode(.data$n, .missing = 0L),
-           daz = daz(d = .data$d, x = .data$a, 
-                     reference = get_reference(population),
-                     dec = dec),
-           daz = ifelse(is.nan(.data$daz), NA, .data$daz),
-           d = round(.data$d, digits = dec)) %>% 
-    select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
+  # if dscore() was called
+  if (!posterior) {
+    # summarise n, p, d and sem
+    data3 <- data2 %>%
+      group_by(.data$.rownum, .data$a) %>%
+      summarise(
+        n = n(),
+        p = round(mean(.data$score), digits = dec),
+        x = list(qp),
+        w = list(calculate_posterior(scores = .data$score, 
+                                     tau = .data$tau, 
+                                     qp  = qp,
+                                     mu  = (.data$mu)[1L],
+                                     sd  = (.data$sd)[1L])$posterior))
+    
+    data4 <- data3 %>% 
+      group_by(.data$.rownum, .data$a, .data$n, .data$p) %>% 
+      summarise(
+        d = weighted.mean(x = unlist(.data$x), w = unlist(.data$w)),
+        sem = sqrt(sum(unlist(.data$w) * (unlist(.data$x) - unlist(.data$d))^2))
+      )
+    
+    # add daz, shape end result
+    data5 <- data.frame(.rownum = 1L:nrow(data)) %>%
+      left_join(data4, by = ".rownum") %>%
+      mutate(n = recode(.data$n, .missing = 0L),
+             daz = daz(d = .data$d, x = .data$a, 
+                       reference = get_reference(population),
+                       dec = dec),
+             daz = ifelse(is.nan(.data$daz), NA, .data$daz),
+             d = round(.data$d, digits = dec)) %>% 
+      select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
+    return(data5)
+  }
 }

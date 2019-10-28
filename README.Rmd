@@ -56,6 +56,11 @@ of 27 preterm children measured at various age between birth and 2.5
 years on the Dutch Development Instrument (DDI). The dataset looks 
 like:
 
+```{r echo=FALSE}
+suppressPackageStartupMessages(library(dplyr))
+
+```
+
 ```{r milestones}
 library(dscore)
 head(milestones[, c(1, 3, 4, 9:15)])
@@ -114,6 +119,7 @@ The individual developmental curves of 27 children can be plotted.
 
 ```{r graphD, dpi = 144}
 library(ggplot2)
+library(dplyr)
 ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 
   xlab("Age (in years)") + 
   ylab("D-score") +
@@ -205,7 +211,7 @@ means of a *measurement model*. The measurement model provides the
 
 The `dscore` package currently support three keys: `dutch`, 
 `gcdg` and `gsed`. Although there is much overlap, different keys 
-cover different instrument. The table below displays the number of items 
+cover different instrument. The table above displays the number of items 
 per instrument under each of the three keys. If the entry is blank, 
 the key does not cover the instrument.
 
@@ -220,6 +226,29 @@ comparisons to other instruments. The differences between the D-scores
 calculated under different keys are small, but these are not identical.
 If you don't specify `key`, the `dscore()` function will use `key = "gsed"` 
 for maximum instrument coverage.
+
+```{r graphkey, dpi = 144, echo = FALSE, warning=FALSE}
+ib <- dscore::builtin_itembank %>% 
+  filter(key == "gsed")
+
+model <- dmetric::load_model("807_17", "GSED")
+aeq <- dmetric::calculate_age_equivalents(model = model)
+
+ib$A50 <- approx(x = aeq$D50, y = aeq$A50, xout = ib$tau)$y
+
+ggplot(ib, aes(x = A50, y = instrument, group = instrument)) +
+  geom_point(pch = 3, size = 1, colour = "blue") + 
+  scale_y_discrete(limits = rev(unique(ib$instrument)), name = "") +
+  scale_x_continuous(breaks = seq(0, 60, 12), name = "Age (months)") +
+  theme_light() +
+  theme(axis.text.y = element_text(hjust = 0, family = "Courier"))
+```
+
+The actual age coverage for an instrument is determined by the age 
+design of the original cohorts used to create the key. The figure 
+above indicates the age range currenytly supported by the GSED
+key. Some instruments contain many items for the first two years (e.g., 
+`by1`, `dmc`) whereas others cover primarly upper ages (e.g., `tep`, `mul`)
 
 The `dscore` package will recognize `r length(get_itemnames())` item 
 names. Call the `get_itemnames()` function with any arguments to see

@@ -124,6 +124,7 @@ The individual developmental curves of 27 children can be plotted.
 
 ``` r
 library(ggplot2)
+library(dplyr)
 ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 
   xlab("Age (in years)") + 
   ylab("D-score") +
@@ -228,7 +229,7 @@ for converting the item responses to the D-score.
 
 The `dscore` package currently support three keys: `dutch`, `gcdg` and
 `gsed`. Although there is much overlap, different keys cover different
-instrument. The table below displays the number of items per instrument
+instrument. The table above displays the number of items per instrument
 under each of the three keys. If the entry is blank, the key does not
 cover the instrument.
 
@@ -242,6 +243,14 @@ comparisons to other instruments. The differences between the D-scores
 calculated under different keys are small, but these are not identical.
 If you don’t specify `key`, the `dscore()` function will use `key =
 "gsed"` for maximum instrument coverage.
+
+<img src="man/figures/README-graphkey-1.png" width="100%" />
+
+The actual age coverage for an instrument is determined by the age
+design of the original cohorts used to create the key. The figure above
+indicates the age range currenytly supported by the GSED key. Some
+instruments contain many items for the first two years (e.g., `by1`,
+`dmc`) whereas others cover primarly upper ages (e.g., `tep`, `mul`)
 
 The `dscore` package will recognize 2651 item names. Call the
 `get_itemnames()` function with any arguments to see them all. If you

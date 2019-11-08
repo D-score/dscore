@@ -96,7 +96,9 @@ The \code{dscore()} function returns a \code{data.frame} with
 
 The \code{dscore_posterior()} function returns a numeric matrix with 
 \code{nrow(data)} rows and \code{length(qp)} columns with the 
-density at each quadrature point.
+density at each quadrature point. The vector represents the full 
+posterior ability distribution. If no valid responses were obtained, 
+\code{dscore_posterior()} returns the prior.
 }
 \description{
 The function \code{dscore()} function estimates the D-score, 

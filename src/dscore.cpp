@@ -105,15 +105,19 @@ List calculate_posterior(NumericVector scores,
                           double mu, double sd){
   
   List fullpost = List::create(Named("eap",NumericVector({NA_REAL})),
-                               Named("start",R_NilValue),
                                Named("qp",qp),
                                Named("posterior",R_NilValue));
   int m = scores.length();
-  int k = 0; // valid item score counter
   int score;
   double tauj;
   NumericVector prior;
   NumericVector post;
+  
+  // initialize prior and posterior
+  prior = dnorm(qp, mu, sd);
+  prior = normalize(prior, qp);
+  post = prior;
+  fullpost["posterior"] = post;
   
   for(int j = 0; j < m; j++){ // loop over item scores
     score = scores[j];
@@ -121,21 +125,13 @@ List calculate_posterior(NumericVector scores,
     if (!arma::is_finite(score) | !arma::is_finite(tauj)){
       continue;
     }
-    k += 1;
-    
-    // For the first item, get age-dependent prior, else old prior
-    if(k == 1){
-      prior = dnorm(qp, mu, sd);
-      prior = normalize(prior, qp);
-      fullpost["start"] = prior;
-    } else
-      prior = post;
-    
+
     // calculate posterior
+    prior = post;
     post = posterior(score, tauj, prior, qp);
-    fullpost["posterior"] = post;
     
-    // overwrite old eap estimate
+    // store posterior and eap estimate
+    fullpost["posterior"] = post;
     fullpost["eap"] = wmean(qp, post);
     
   } // end for loop

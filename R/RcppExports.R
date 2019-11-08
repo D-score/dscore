@@ -46,9 +46,16 @@ posterior <- function(score, tau, prior, qp) {
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. 
 #' @param tau A vector containing the item difficulties for the item scores in \code{scores}
 #' estimated from the Rasch model in the prefferred metric/scale.
+#' @param qp Numeric vector of equally spaced quadrature points.
 #' @param mu Numeric scalar. The mean of the prior.
-#' @author Stef van Buuren, Arjan Huizing, 2019
 #' @param sd Numeric scalar. Standard deviation of the prior.
+#' @author Stef van Buuren, Arjan Huizing, 2019
+#' @return A list with three components: 
+#' \code{eap} (mean of the posterior), 
+#' \code{gp} (vector of quadrature points), and 
+#' \code{posterior} (vector with posterior distribution). 
+#' Since dscore 40.1 the function does not return the 
+#' \code{"start"} element anymore. 
 calculate_posterior <- function(scores, tau, qp, mu, sd) {
     .Call('_dscore_calculate_posterior', PACKAGE = 'dscore', scores, tau, qp, mu, sd)
 }

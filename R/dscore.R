@@ -70,7 +70,9 @@
 #' 
 #' The \code{dscore_posterior()} function returns a numeric matrix with 
 #' \code{nrow(data)} rows and \code{length(qp)} columns with the 
-#' density at each quadrature point.
+#' density at each quadrature point. The vector represents the full 
+#' posterior ability distribution. If no valid responses were obtained, 
+#' \code{dscore_posterior()} returns the prior.
 #' @details
 #' The algorithm is based on the method by Bock and Mislevy (1982). The 
 #' method uses Bayes rule to update a prior ability into a posterior
@@ -282,8 +284,21 @@ calc_dscore <- function(data, items, xname, xunit,
                                      tau = .data$tau, 
                                      qp  = qp,
                                      mu  = (.data$mu)[1L],
-                                     sd  = (.data$sd)[1L])$posterior))
-    return(matrix(unlist(data3$w), nrow = length(data3$w), byrow = TRUE))
+                                     sd  = (.data$sd)[1L])$posterior)
+        )
+    
+    # unlist the posterior and store in proper row
+    # return prior if calculate_posterior returned NULL
+    data4 <- matrix(NA, nrow = nrow(data), ncol = length(qp))
+    for (i in 1L:nrow(data4)) {
+      idx <- data3[, ".rownum"] == i
+      f <- unlist(data3[idx, "w"])
+      if (!is.null(f)) data4[i, ] <- f
+      else data4[i, ] <- dnorm(qp, 
+                               mean = as.double(data2[i, "mu"]), 
+                               sd = as.double(data2[i, "sd"]))
+    }
+    return(data4)
   }
   
   # if dscore() was called

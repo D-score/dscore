@@ -271,7 +271,7 @@ Alternatively, use `decompose_itemnames()` to break down the item names
 into its components.
 
 Using these functions, it should be relatively easy to map and rename
-your item names into the GSED-convention.
+your item names to the GSED-convention.
 
 ## Resources
 

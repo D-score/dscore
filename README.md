@@ -283,7 +283,7 @@ Alternatively, use `decompose_itemnames()` to break down the item names
 into its components.
 
 Using these functions, it should be relatively easy to map and rename
-your item names into the GSED-convention.
+your item names to the GSED-convention.
 
 ## Resources
 
@@ -371,7 +371,8 @@ Methods in Medical Research* 23 (4): 346–68.
 Weber, A.M., M. Rubio-Codina, S.P. Walker, S. van Buuren, I. Eekhout, S.
 Grantham-McGregor, M.C. Araujo, et al. 2019. “The D-Score: A Metric for
 Interpreting the Early Development of Infants and Toddlers Across Global
-Settings.” *BMJ Global Health* to appear.
+Settings.” *BMJ Global Health* 4: e001724.
+<https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
 
 </div>
 

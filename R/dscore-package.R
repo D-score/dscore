@@ -55,13 +55,3 @@ NULL
 ## usethis namespace: start
 ## usethis namespace: end
 NULL
-
-## usethis namespace: start
-#' @useDynLib dscore
-## usethis namespace: end
-NULL
-
-## usethis namespace: start
-#' @importFrom Rcpp sourceCpp
-## usethis namespace: end
-NULL

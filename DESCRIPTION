@@ -18,8 +18,6 @@ Imports:
     stats,
     stringr,
     tidyr (>= 1.0.0),
-    Rcpp
-LinkingTo: Rcpp, RcppArmadillo
 Suggests:
     knitr,
     testthat,

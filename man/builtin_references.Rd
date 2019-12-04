@@ -37,9 +37,9 @@ known as DAZ.
 }
 \details{
 The \code{"dutch"} references were calculated from the SMOCC data, and cover 
-age range 0-2.5 years.
+age range 0-2.5 years (van Buuren, 2014).
 The \code{"gcdg"} references were calculated from the 15 cohorts of the GCDG-study,
-and cover age range 0-5 years.
+and cover age range 0-5 years (Weber, 2019).
 }
 \examples{
 head(builtin_references)
@@ -52,6 +52,14 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
+
+Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I, 
+Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH, 
+Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L, 
+Richter L, Black MM (2019). The D-score: a metric for interpreting 
+the early development of infants and toddlers across global settings. 
+BMJ Global Health, BMJ Global Health 4: e001724. 
+\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 }
 \seealso{
 \code{\link{dscore}}

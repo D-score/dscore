@@ -129,7 +129,8 @@
 #' Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L, 
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting 
 #' the early development of infants and toddlers across global settings. 
-#' BMJ Global Health, accepted for publication.
+#' BMJ Global Health, BMJ Global Health 4: e001724. 
+#' \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 #' 
 #' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
 #' @seealso \code{\link{get_tau}}, 

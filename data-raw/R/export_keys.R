@@ -6,13 +6,12 @@ library(openxlsx)
 project <- path.expand("~/Package/dscore/dscore")
 
 # ------------- export dutch key
-fn <- file.path(project, "data-raw/data/itembankVWO1.txt")  # May 27, 2019
-ib_dutch <- read.delim(file = fn, stringsAsFactors = FALSE) %>% 
+fn <- file.path(project, "data-raw/data/bds_edited.csv")  # May 27, 2019
+ib_dutch <- read.csv2(file = fn, stringsAsFactors = FALSE) %>% 
   mutate(key = "dutch") %>% 
   select(one_of(c("key", "lex_gsed", "tau"))) %>% 
-  filter(!is.na(tau)) %>% 
+  filter(tau != "") %>% 
   rename(item = lex_gsed)
-ib_dutch <- ib_dutch[order_itemnames(ib_dutch$item), ]
 fo <- file.path(project, "data-raw/data/keys/dutch.txt")
 write.table(ib_dutch, file = fo, quote = FALSE, sep = "\t",
             na = "", row.names = FALSE)

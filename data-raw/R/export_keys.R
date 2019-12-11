@@ -6,7 +6,7 @@ library(openxlsx)
 project <- path.expand("~/Package/dscore/dscore")
 
 # ------------- export dutch key
-fn <- file.path(project, "data-raw/data/bds_edited.csv")  # May 27, 2019
+fn <- file.path(project, "data-raw/data/bds_edited.csv")
 ib_dutch <- read.csv2(file = fn, stringsAsFactors = FALSE) %>% 
   mutate(key = "dutch") %>% 
   select(one_of(c("key", "lex_gsed", "tau"))) %>% 

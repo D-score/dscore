@@ -52,3 +52,10 @@ test_that("produces expected D-scores", {
 })
 
 
+# --- test zero rows
+data <- data.frame(age = numeric(0))
+test_that("handles zero rows", {
+  expect_identical(nrow(dscore(data)), 0L)
+})
+
+

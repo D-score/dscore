@@ -212,6 +212,14 @@ calc_dscore <- function(data, items, xname, xunit,
                         transform, qp,
                         population, dec, 
                         posterior) {
+  # handle zero rows
+  if (nrow(data) == 0L) return(
+    data.frame(a = numeric(0),
+               n = integer(0),
+               p = numeric(0),
+               d = numeric(0),
+               sem = numeric(0),
+               daz = numeric(0)))
   
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")

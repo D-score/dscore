@@ -9,9 +9,9 @@
 #' \tabular{ll}{
 #'   \code{\link{dscore}}  \tab Estimate D-score and DAZ\cr
 #'   \code{\link{dscore_posterior}}  \tab Calculate full posterior\cr
-#'   \code{\link{daz}}     \tab Transform to age-adjusted standardized D-score\cr
-#'   \code{\link{zad}}     \tab Inverse of \code{\link{daz}}\cr
-#'   \code{\link{get_tau}}         \tab Get difficulty parameters from item bank\cr
+#'   \code{\link{daz}} \tab Transform to age-adjusted standardized D-score\cr
+#'   \code{\link{zad}} \tab Inverse of \code{\link{daz}}\cr
+#'   \code{\link{get_tau}} \tab Get difficulty parameters from item bank\cr
 #'   \code{\link{get_reference}}   \tab Get D-score reference\cr
 #'   \code{\link{get_itemnames}}   \tab Extract item names \cr
 #'   \code{\link{get_itemtable}}   \tab Get a subset from the itemtable\cr
@@ -41,7 +41,27 @@
 #' Stat Methods Med Res, 23(4), 346-368.
 #'
 #' @note
-#' This study was supported by the Bill & Melinda Gates Foundation. The contents are the sole responsibility of the authors and may not necessarily represent the official views of the Bill & Melinda Gates Foundation or other agencies that may have supported the primary data studies used in the present study. The authors wish to recognize the principal investigators and their study team members for their generous contribution of the data that made this tool possible and the members of the Ki team who directly or indirectly contributed to the study: Amina Abubakar, Claudia R. Lindgren Alves, Orazio Attanasio, Maureen M. Black, Maria Caridad Araujo, Susan M. Chang-Lopez, Gary L. Darmstadt, Bernice M. Doove, Wafaie Fawzi, Lia C.H. Fernald, Günther Fink, Emanuela Galasso, Melissa Gladstone, Sally M. Grantham-McGregor, Cristina Gutierrez de Pineres, Pamela Jervis, Jena Derakhshani Hamadani, Charlotte Hanlon, Simone M. Karam, Gillian Lancaster, Betzy Lozoff, Gareth McCray, Jeffrey R Measelle, Girmay Medhin, Ana M. B. Menezes, Lauren Pisani, Helen Pitchik, Muneera Rasheed, Lisy Ratsifandrihamanana, Sarah Reynolds, Linda Richter, Marta Rubio-Codina, Norbert Schady, Limbika Sengani, Chris Sudfeld, Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K. Yousafzai.
+#' This study was supported by the Bill & Melinda Gates Foundation.
+#' The contents are the sole responsibility of the authors and may not
+#' necessarily represent the official views of the Bill & Melinda
+#' Gates Foundation or other agencies that may have supported the
+#' primary data studies used in the present study. The authors wish to
+#' recognize the principal investigators and their study team members
+#' for their generous contribution of the data that made this tool
+#' possible and the members of the Ki team who directly or indirectly
+#' contributed to the study: Amina Abubakar, Claudia R. Lindgren
+#' Alves, Orazio Attanasio, Maureen M. Black, Maria Caridad Araujo,
+#' Susan M. Chang-Lopez, Gary L. Darmstadt, Bernice M. Doove, Wafaie
+#' Fawzi, Lia C.H. Fernald, Günther Fink, Emanuela Galasso, Melissa
+#' Gladstone, Sally M. Grantham-McGregor, Cristina Gutierrez de
+#' Pineres, Pamela Jervis, Jena Derakhshani Hamadani, Charlotte
+#' Hanlon, Simone M. Karam, Gillian Lancaster, Betzy Lozoff, Gareth
+#' McCray, Jeffrey R Measelle, Girmay Medhin, Ana M. B. Menezes,
+#' Lauren Pisani, Helen Pitchik, Muneera Rasheed, Lisy
+#' Ratsifandrihamanana, Sarah Reynolds, Linda Richter, Marta
+#' Rubio-Codina, Norbert Schady, Limbika Sengani, Chris Sudfeld,
+#' Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K.
+#' Yousafzai.
 #'
 #' @name dscore-package
 #' @docType package

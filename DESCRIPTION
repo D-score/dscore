@@ -7,23 +7,24 @@ Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role 
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
 Description: The dscore package provides a set of tools for calculating the
     D-score, a quantitative measure of child development. The package can convert
-    milestone PASS/FAIL score from 19 instruments into the D-score and DAZ (D-score
-    adjusted for age). The package also contains some to that help to translate
-    item names into the 9-position GSED convention for child development milestones.
+    milestone PASS/FAIL scores from 19 instruments into the D-score and the DAZ 
+    (D-score adjusted for age). The package also contains some to that help to 
+    translate item names into the 9-position GSED convention for child development
+    milestones.
 Depends:
     R (>= 2.10)
 Imports:
     dplyr (>= 0.8.2),
+    Rcpp,
     rlang,
     stats,
     stringr,
-    tidyr (>= 1.0.0),
-    Rcpp
+    tidyr (>= 1.0.0)
 LinkingTo: Rcpp, RcppArmadillo
 Suggests:
     knitr,
-    testthat,
-    rmarkdown
+    rmarkdown,
+    testthat
 Encoding: UTF-8
 License: GPL-3
 LazyData: TRUE

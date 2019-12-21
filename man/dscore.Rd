@@ -110,8 +110,10 @@ The \code{dscore()} function returns a \code{data.frame} with
 \item{\code{n}}{Number of items with valid (0/1) data}
 \item{\code{p}}{Percentage of passed milestones}
 \item{\code{d}}{Ability estimate, mean of posterior}
-\item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
-\item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
+\item{\code{sem}}{Standard error of measurement, standard
+deviation of the posterior}
+\item{\code{daz}}{D-score corrected for age, calculated
+in D-score metric}
 }
 
 The \code{dscore_posterior()} function returns a numeric matrix with
@@ -178,7 +180,8 @@ dscore(data)
 p <- dscore_posterior(data)
 
 # plot posterior for row 7
-plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score", ylab = "Density", xlim = c(0, 30))
+plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score",
+ ylab = "Density", xlim = c(0, 30))
 }
 \references{
 Bock DD, Mislevy RJ (1982).

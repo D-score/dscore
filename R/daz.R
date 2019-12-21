@@ -37,14 +37,14 @@ daz <- function(d, x = as.numeric(names(d)),
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
 
   # interpolate to proper ages
-  L <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
-  M <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
-  S <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
+  l <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
+  m <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
+  s <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
 
   # LMS formula
-  z <- ifelse(L > 0.01 | L < (-0.01),
-    (((d / M)^L) - 1) / (L * S),
-    log(d / M) / S
+  z <- ifelse(l > 0.01 | l < (-0.01),
+    (((d / m)^l) - 1) / (l * s),
+    log(d / m) / s
   )
   names(z) <- as.character(x)
   return(round(z, dec))
@@ -80,7 +80,7 @@ zad <- function(z, x = as.numeric(names(z)),
 
   # centile formula
   d <- ifelse(nu > 0.01 | nu < (-0.01),
-    mu * ((nu * sigma * z + 1)^(1 / nu)),
+    mu * ((nu * sigma * z + 1) ^ (1 / nu)),
     mu * exp(sigma * z)
   )
   names(d) <- as.character(x)

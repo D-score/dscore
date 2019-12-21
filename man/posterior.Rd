@@ -22,12 +22,12 @@ A vector of length \code{length(prior)}
 Calculate posterior for one item given score, difficulty and prior
 }
 \details{
-This function assumes that the difficulties have been estimated by 
-a binary Rasch model (e.g. by 
+This function assumes that the difficulties have been estimated by
+a binary Rasch model (e.g. by
 \code{sirt::rasch.pairwise.itemcluster()}).
 }
 \seealso{
-\code{\link{dscore}}, 
+\code{\link{dscore}},
 \code{\link[sirt]{rasch.pairwise.itemcluster}}
 }
 \author{

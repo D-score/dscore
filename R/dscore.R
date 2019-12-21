@@ -64,8 +64,10 @@
 #' \item{\code{n}}{Number of items with valid (0/1) data}
 #' \item{\code{p}}{Percentage of passed milestones}
 #' \item{\code{d}}{Ability estimate, mean of posterior}
-#' \item{\code{sem}}{Standard error of measurement, standard deviation of the posterior}
-#' \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
+#' \item{\code{sem}}{Standard error of measurement, standard
+#' deviation of the posterior}
+#' \item{\code{daz}}{D-score corrected for age, calculated
+#' in D-score metric}
 #' }
 #'
 #' The \code{dscore_posterior()} function returns a numeric matrix with
@@ -155,7 +157,8 @@
 #' p <- dscore_posterior(data)
 #'
 #' # plot posterior for row 7
-#' plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score", ylab = "Density", xlim = c(0, 30))
+#' plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score",
+#'  ylab = "Density", xlim = c(0, 30))
 #' @export
 dscore <- function(data,
                    items = names(data),
@@ -275,7 +278,8 @@ calc_dscore <- function(data, items, xname, xunit,
 
   # determine sd for the prior
   sd <- rep(5, nrow(data))
-  if (is.character(prior_sd) && prior_sd %in% names(data)) sd <- data[, prior_sd]
+  if (is.character(prior_sd) && prior_sd %in% names(data))
+    sd <- data[, prior_sd]
 
   # determine transform if needed
   if (is.null(transform) && metric == "logit") {
@@ -324,7 +328,7 @@ calc_dscore <- function(data, items, xname, xunit,
     # unlist the posterior and store in proper row
     # return prior if calculate_posterior returned NULL
     data4 <- matrix(NA, nrow = nrow(data), ncol = length(qp))
-    for (i in 1L:nrow(data4)) {
+    for (i in seq_len(nrow(data4))) {
       idx <- data3[, ".rownum"] == i
       f <- unlist(data3[idx, "w"])
       if (!is.null(f)) {
@@ -365,7 +369,7 @@ calc_dscore <- function(data, items, xname, xunit,
       )
 
     # add daz, shape end result
-    data5 <- data.frame(.rownum = 1L:nrow(data)) %>%
+    data5 <- data.frame(.rownum = seq_len(nrow(data))) %>%
       left_join(data4, by = ".rownum") %>%
       mutate(
         n = recode(.data$n, .missing = 0L),

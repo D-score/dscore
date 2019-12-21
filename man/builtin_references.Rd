@@ -38,8 +38,8 @@ known as DAZ.
 \details{
 The \code{"dutch"} references were calculated from the SMOCC data, and cover
 age range 0-2.5 years (van Buuren, 2014).
-The \code{"gcdg"} references were calculated from the 15 cohorts of the GCDG-study,
-and cover age range 0-5 years (Weber, 2019).
+The \code{"gcdg"} references were calculated from the 15 cohorts of the
+GCDG-study, and cover age range 0-5 years (Weber, 2019).
 }
 \examples{
 head(builtin_references)

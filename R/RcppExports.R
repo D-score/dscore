@@ -8,11 +8,11 @@
 #' @param d A vector with \code{length(qp)} elements representing
 #' the unscaled density at each quadrature point.
 #' @param qp Vector of equally spaced quadrature points.
-#' @return A \code{vector} of \code{length(d)} elements with 
+#' @return A \code{vector} of \code{length(d)} elements with
 #' the prior density estimate at each quadature point.
-#' @examples 
+#' @examples
 #' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
-#' 
+#'
 #' sum(dscore:::normalize(rnorm(5), qp = 1:5))
 normalize <- function(d, qp) {
     .Call('_dscore_normalize', PACKAGE = 'dscore', d, qp)
@@ -21,10 +21,10 @@ normalize <- function(d, qp) {
 #' Calculate posterior for one item given score, difficulty and prior
 #'
 #' @details
-#' This function assumes that the difficulties have been estimated by 
-#' a binary Rasch model (e.g. by 
-#' \code{sirt::rasch.pairwise.itemcluster()}). 
-#' 
+#' This function assumes that the difficulties have been estimated by
+#' a binary Rasch model (e.g. by
+#' \code{sirt::rasch.pairwise.itemcluster()}).
+#'
 #' @aliases posterior
 #' @param score Integer, either 0 (fail) and 1 (pass)
 #' @param tau Numeric, difficulty parameter
@@ -32,29 +32,30 @@ normalize <- function(d, qp) {
 #' @param qp vector of equally spaced quadrature points
 #' @return A vector of length \code{length(prior)}
 #' @author Stef van Buuren, Arjan Huizing, 2019
-#' @seealso \code{\link{dscore}}, 
+#' @seealso \code{\link{dscore}},
 #' \code{\link[sirt]{rasch.pairwise.itemcluster}}
 posterior <- function(score, tau, prior, qp) {
     .Call('_dscore_posterior', PACKAGE = 'dscore', score, tau, prior, qp)
 }
 
 #' Calculate posterior of ability
-#' 
-#' @param scores A vector with PASS/FAIL observations. 
-#' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
-#' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. 
-#' @param tau A vector containing the item difficulties for the item scores in \code{scores}
-#' estimated from the Rasch model in the prefferred metric/scale.
+#'
+#' @param scores A vector with PASS/FAIL observations.
+#' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}.
+#' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.
+#' @param tau A vector containing the item difficulties for the item
+#' scores in \code{scores} estimated from the Rasch model in the
+#' preferred metric/scale.
 #' @param qp Numeric vector of equally spaced quadrature points.
 #' @param mu Numeric scalar. The mean of the prior.
 #' @param sd Numeric scalar. Standard deviation of the prior.
 #' @author Stef van Buuren, Arjan Huizing, 2019
-#' @return A list with three components: 
-#' \code{eap} (mean of the posterior), 
-#' \code{gp} (vector of quadrature points), and 
-#' \code{posterior} (vector with posterior distribution). 
-#' Since dscore 40.1 the function does not return the 
-#' \code{"start"} element anymore. 
+#' @return A list with three components:
+#' \code{eap} (mean of the posterior),
+#' \code{gp} (vector of quadrature points), and
+#' \code{posterior} (vector with posterior distribution).
+#' Since dscore 40.1 the function does not return the
+#' \code{"start"} element anymore.
 calculate_posterior <- function(scores, tau, qp, mu, sd) {
     .Call('_dscore_calculate_posterior', PACKAGE = 'dscore', scores, tau, qp, mu, sd)
 }

@@ -1,6 +1,6 @@
 #' Extract item names
 #'
-#' The \code{get_itemnames()} function matches names against the 9-code 
+#' The \code{get_itemnames()} function matches names against the 9-code
 #' template. This is useful for quickly selecting names of items from a larger
 #' set of names.
 #' @param x A character vector, \code{data.frame} or an object of
@@ -20,7 +20,7 @@
 #' @param strict A logical specifying whether the resulting item
 #' names must conform to one of the built-in names. The default is
 #' \code{strict = FALSE}.
-#' @param itemtable A \code{data.frame} set up according to the 
+#' @param itemtable A \code{data.frame} set up according to the
 #' same structure as \code{\link{builtin_itemtable}}. If not specified,
 #' the \code{builtin_itemtable} is used.
 #' @return A vector with names of items
@@ -54,13 +54,19 @@
 get_itemnames <- function(x, instrument = NULL, domain = NULL,
                           mode = NULL, number = NULL, strict = FALSE,
                           itemtable = NULL) {
-  if (is.null(itemtable)) builtin <- dscore::builtin_itemtable$item
-  else builtin <- itemtable$item
+  if (is.null(itemtable)) {
+    builtin <- dscore::builtin_itemtable$item
+  } else {
+    builtin <- itemtable$item
+  }
   if (missing(x)) x <- builtin
   if (is.data.frame(x)) x <- names(x)
   if (inherits(x, "lean")) x <- unique(x[["itm"]]$item)
-  if (strict) z <- builtin[builtin %in% x]
-  else z <- x[grep("^......\\d\\d\\d$", x)]
+  if (strict) {
+    z <- builtin[builtin %in% x]
+  } else {
+    z <- x[grep("^......\\d\\d\\d$", x)]
+  }
   if (!is.null(instrument)) z <- z[substr(z, 1, 3) %in% instrument]
   if (!is.null(domain)) z <- z[substr(z, 4, 5) %in% domain]
   if (!is.null(mode)) z <- z[substr(z, 6, 6) %in% mode]

@@ -7,7 +7,7 @@ age <- rep(1, 4)
 # d <- dscore_vector(scores = scores, items = items, ages = age,
 #                    itembank = gcdg_itembank, lexicon = "gcdg")
 # rm(d)
-# 
+#
 # # no tau found
 # items <- c("b3c1", "b3c2", "b3c3", "b3c4")
 # d <- dscore_vector(scores = scores, items = items, ages = age,

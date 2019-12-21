@@ -5,7 +5,7 @@
 \alias{dscore-package}
 \title{dscore: D-score for Child Development}
 \description{
-The \code{dscore} package implements several tools needed to 
+The \code{dscore} package implements several tools needed to
 calculate the D-score, a numerical score that measures
 generic development in children.
 }
@@ -35,15 +35,15 @@ The available functions are:
 
 The package contains the following built-in data:
 \tabular{ll}{
-\code{\link{builtin_itembank}} \tab A \code{data.frame} containing 
+\code{\link{builtin_itembank}} \tab A \code{data.frame} containing
 the difficulty estimates of items according to final Rasch models.\cr
-\code{\link{builtin_itemtable}} \tab A \code{data.frame} containing 
+\code{\link{builtin_itemtable}} \tab A \code{data.frame} containing
 names and descriptions of items from 22 instruments.\cr
-\code{\link{builtin_references}} \tab A \code{data.frame} with LMS 
-reference values used to transform from D-score to DAZ, 
+\code{\link{builtin_references}} \tab A \code{data.frame} with LMS
+reference values used to transform from D-score to DAZ,
 DAZ to D-score, and to calculate reference charts of normal development.\cr
-\code{\link{milestones}} \tab A small demo dataset with PASS/FAIL 
-responses from 27 preterms, measured at various ages between birth 
+\code{\link{milestones}} \tab A small demo dataset with PASS/FAIL
+responses from 27 preterms, measured at various ages between birth
 and 2.5 years.\cr
 }
 }

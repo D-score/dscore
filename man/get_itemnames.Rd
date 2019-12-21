@@ -38,7 +38,7 @@ The default \code{number = NULL} allows for all numbers.}
 names must conform to one of the built-in names. The default is
 \code{strict = FALSE}.}
 
-\item{itemtable}{A \code{data.frame} set up according to the 
+\item{itemtable}{A \code{data.frame} set up according to the
 same structure as \code{\link{builtin_itemtable}}. If not specified,
 the \code{builtin_itemtable} is used.}
 }
@@ -46,7 +46,7 @@ the \code{builtin_itemtable} is used.}
 A vector with names of items
 }
 \description{
-The \code{get_itemnames()} function matches names against the 9-code 
+The \code{get_itemnames()} function matches names against the 9-code
 template. This is useful for quickly selecting names of items from a larger
 set of names.
 }

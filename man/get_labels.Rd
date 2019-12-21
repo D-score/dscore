@@ -13,7 +13,7 @@ default (\code{NULL}) returns the labels of all items.}
 \item{trim}{The maximum number of characters in the label. The
 default \code{trim = NULL} does not trim labels.}
 
-\item{itemtable}{A \code{data.frame} set up according to the 
+\item{itemtable}{A \code{data.frame} set up according to the
 same structure as \code{\link{builtin_itemtable}}. If not specified,
 the \code{builtin_itemtable} is used.}
 }
@@ -21,7 +21,7 @@ the \code{builtin_itemtable} is used.}
 A named character vector with item labels.
 }
 \description{
-The \code{get_labels()} function obtains the item labels for a 
+The \code{get_labels()} function obtains the item labels for a
 specified set of items.
 }
 \examples{

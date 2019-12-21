@@ -38,72 +38,72 @@ dscore_posterior(
 )
 }
 \arguments{
-\item{data}{A \code{data.frame} with the data. 
-A row collects all observations made on a child on a set of 
-milestones administered at a given age. The function calculates 
+\item{data}{A \code{data.frame} with the data.
+A row collects all observations made on a child on a set of
+milestones administered at a given age. The function calculates
 a D-score for each row. Different rows correspond to different
 children or different ages.}
 
-\item{items}{A character vector containing names of items to be 
-included into the D-score calculation. Milestone scores are coded 
-numerically as \code{1} (pass) and \code{0} (fail). By default, 
-D-score calculation is done on all items found in the data 
+\item{items}{A character vector containing names of items to be
+included into the D-score calculation. Milestone scores are coded
+numerically as \code{1} (pass) and \code{0} (fail). By default,
+D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified \code{key}.}
 
-\item{xname}{A string with the name of the age variable in 
+\item{xname}{A string with the name of the age variable in
 \code{data}. The default is \code{"age"}.}
 
-\item{xunit}{A string specifying the unit in which age is measured 
+\item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
 
-\item{key}{A string that sets the key, the set of difficulty 
+\item{key}{A string that sets the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed"} (default), \code{"gcdg"}, 
-and \code{"dutch"}. Use \code{key = ""} to use all item names, 
+The built-in keys are: \code{"gsed"} (default), \code{"gcdg"},
+and \code{"dutch"}. Use \code{key = ""} to use all item names,
 which should only be done if there are no duplicate itemnames.}
 
 \item{itembank}{A \code{data.frame} with columns
-\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain}, 
+\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
 \code{mode}, \code{number} and \code{label}. Only columns \code{item}
-and \code{tau} are required. 
-The function uses \code{dscore::builtin_itembank} by 
+and \code{tau} are required.
+The function uses \code{dscore::builtin_itembank} by
 default.}
 
-\item{metric}{A string, either \code{"dscore"} (default) or 
+\item{metric}{A string, either \code{"dscore"} (default) or
 \code{"logit"}, signalling the metric in which ability is estimated.}
 
-\item{prior_mean}{A string specifying a column name in \code{data} 
-with the mean of the prior for the D-score calculation. 
-The default \code{prior_mean = ".gcdg"} calculates an age-dependent 
-prior mean internally according to function 
+\item{prior_mean}{A string specifying a column name in \code{data}
+with the mean of the prior for the D-score calculation.
+The default \code{prior_mean = ".gcdg"} calculates an age-dependent
+prior mean internally according to function
 \code{dscore:::count_mu_gcdg()}.
-The choice \code{prior_mean = ".dutch"} 
-calculates \code{prior_mean} from the Count model coded in 
+The choice \code{prior_mean = ".dutch"}
+calculates \code{prior_mean} from the Count model coded in
 \code{dscore:::count_mu_dutch()}).}
 
-\item{prior_sd}{A string specifying a column name in \code{data} 
-with the standard deviation of the prior for the D-score calculation. 
+\item{prior_sd}{A string specifying a column name in \code{data}
+with the standard deviation of the prior for the D-score calculation.
 If not specified, the standard deviation is taken as 5.}
 
-\item{transform}{Vector of length 2, signalling the intercept 
-and slope respectively of the linear transform that converts an 
-observation in the logit scale to the the D-score scale. Only 
+\item{transform}{Vector of length 2, signalling the intercept
+and slope respectively of the linear transform that converts an
+observation in the logit scale to the the D-score scale. Only
 needed if \code{metric == "logit"}.}
 
 \item{qp}{Numeric vector of equally spaced quadrature points.
 This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
-\item{population}{A string describing the population. Currently 
+\item{population}{A string describing the population. Currently
 supported are \code{"dutch"} and \code{"gcdg"} (default).}
 
-\item{dec}{Integer specifying the number of decimals for 
-rounding the ability estimates and the DAZ. The default is 
+\item{dec}{Integer specifying the number of decimals for
+rounding the ability estimates and the DAZ. The default is
 \code{dec = 3}.}
 }
 \value{
-The \code{dscore()} function returns a \code{data.frame} with 
+The \code{dscore()} function returns a \code{data.frame} with
 \code{nrow(data)} rows and the following columns:
 \describe{
 \item{\code{a}}{Decimal age}
@@ -114,26 +114,26 @@ The \code{dscore()} function returns a \code{data.frame} with
 \item{\code{daz}}{D-score corrected for age, calculated in D-score metric}
 }
 
-The \code{dscore_posterior()} function returns a numeric matrix with 
-\code{nrow(data)} rows and \code{length(qp)} columns with the 
-density at each quadrature point. The vector represents the full 
-posterior ability distribution. If no valid responses were obtained, 
+The \code{dscore_posterior()} function returns a numeric matrix with
+\code{nrow(data)} rows and \code{length(qp)} columns with the
+density at each quadrature point. The vector represents the full
+posterior ability distribution. If no valid responses were obtained,
 \code{dscore_posterior()} returns the prior.
 }
 \description{
-The function \code{dscore()} function estimates the D-score, 
-a numeric score that measures child development, from PASS/FAIL 
+The function \code{dscore()} function estimates the D-score,
+a numeric score that measures child development, from PASS/FAIL
 observations on milestones.
 }
 \details{
-The algorithm is based on the method by Bock and Mislevy (1982). The 
+The algorithm is based on the method by Bock and Mislevy (1982). The
 method uses Bayes rule to update a prior ability into a posterior
-ability. 
+ability.
 
 The item names should correspond to the \code{"gsed"} lexicon.
 
-The built-in itembank (object \code{builtin_keys}) supports 
-keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}. 
+The built-in itembank (object \code{builtin_keys}) supports
+keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
 A key is defined by the set of estimated item difficulties.
 
 \tabular{llcccl}{
@@ -144,27 +144,28 @@ A key is defined by the set of estimated item difficulties.
   dutch \tab \code{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
 }
 
-As a general rule, one should only compare D-scores 
+As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
-set of quadrature points. For calculating D-scores on new data, 
+set of quadrature points. For calculating D-scores on new data,
 the advice is to use the most general key: (\code{gsed}).
 
-The default starting prior is a mean calculated from a so-called 
+The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
-Count models are stored as internal functions 
-\code{dscore:::count_mu_gcdg()} (default) and 
+Count models are stored as internal functions
+\code{dscore:::count_mu_gcdg()} (default) and
 \code{dscore:::count_mu_dutch()}. The spread of the starting prior
-is 5 D-score points around this mean D-score, which corresponds to 
+is 5 D-score points around this mean D-score, which corresponds to
 approximately twice the normal spread of child of a given age. The
-starting prior is thus somewhat informative for low numbers of 
+starting prior is thus somewhat informative for low numbers of
 valid items, and unformative for large number of items (say >10 items).
 }
 \examples{
 data <- data.frame(
-  age = rep(round(21/365.25, 4), 10),
+  age = rep(round(21 / 365.25, 4), 10),
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
-  ddigmd053 = c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
 items <- names(data)[2:4]
 
 # third item is not part of default key
@@ -180,12 +181,12 @@ p <- dscore_posterior(data)
 plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score", ylab = "Density", xlim = c(0, 30))
 }
 \references{
-Bock DD, Mislevy RJ (1982).  
+Bock DD, Mislevy RJ (1982).
 Adaptive EAP Estimation of Ability in a Microcomputer Environment.
 Applied Psychological Measurement, 6(4), 431-444.
 
 GSED Team (2019).
-\href{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019}{The Global Scale for Early Development (GSED)}. 
+\href{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019}{The Global Scale for Early Development (GSED)}.
 Early Childhood Matters 2019-14, 80-84.
 
 Van Buuren S (2014).
@@ -193,19 +194,19 @@ Van Buuren S (2014).
 Stat Methods Med Res, 23(4), 346-368.
 
 Van Buuren S, Dusseldorp E, Doove B (2017).
-D-scores and references for ages 2-4 years. The Netherlands. 
+D-scores and references for ages 2-4 years. The Netherlands.
 In preparation, 2017-11-27.
 
-Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I, 
-Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH, 
-Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L, 
-Richter L, Black MM (2019). The D-score: a metric for interpreting 
-the early development of infants and toddlers across global settings. 
-BMJ Global Health, BMJ Global Health 4: e001724. 
+Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
+Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
+Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
+Richter L, Black MM (2019). The D-score: a metric for interpreting
+the early development of infants and toddlers across global settings.
+BMJ Global Health, BMJ Global Health 4: e001724.
 \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 }
 \seealso{
-\code{\link{get_tau}}, 
+\code{\link{get_tau}},
 \code{\link{builtin_itembank}}, \code{\link{posterior}},
 \code{\link{builtin_references}}
 }

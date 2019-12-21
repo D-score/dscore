@@ -2,10 +2,11 @@ context("dscore")
 
 # dscore, gsed lexicon
 data <- data.frame(
-  age = rep(round(21/365.25, 4), 10),
+  age = rep(round(21 / 365.25, 4), 10),
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
-  ddigmd053 = c(NA,  0, 0, 1, 0, 0, 1, 1, 0, 1))
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
 
 z1 <- dscore(data, key = "dutch")
 expected_d1 <- c(NA, -1.971, -2.030, 1.203, 1.203, 1.203, 4.569, 4.569, 4.569, 11.785)
@@ -57,5 +58,3 @@ data <- data.frame(age = numeric(0))
 test_that("handles zero rows", {
   expect_identical(nrow(dscore(data)), 0L)
 })
-
-

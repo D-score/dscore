@@ -25,5 +25,6 @@ decompose_itemnames <- function(x) {
   mode <- substr(x, 6, 6)
   number <- substr(x, 7, 9)
   data.frame(instrument, domain, mode, number,
-             stringsAsFactors = FALSE)
+    stringsAsFactors = FALSE
+  )
 }

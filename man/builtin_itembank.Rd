@@ -19,14 +19,13 @@
 builtin_itembank
 }
 \description{
-A data frame with administrative information per item. Includes 
+A data frame with administrative information per item. Includes
 only items that are part of a Rasch model.
-See \code{\link{builtin_itemtable}} for an overview of all currently 
+See \code{\link{builtin_itemtable}} for an overview of all currently
 defined items.
 }
 \examples{
 head(builtin_itembank)
-
 }
 \seealso{
 \code{\link{dscore}}, \code{\link{get_tau}}, \code{\link{builtin_itemtable}}

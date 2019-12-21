@@ -17,7 +17,7 @@ A character vector of length \code{length(x)} with gcdg
 item names replaced by gsed item name.
 }
 \description{
-Function \code{rename_gcdg_gsed()} translates item names in the 
+Function \code{rename_gcdg_gsed()} translates item names in the
 gcdg lexicon to item names in the gsed lexicon.
 }
 \details{
@@ -36,8 +36,10 @@ In cases where the domain of the items isn't clear (vin, bar),
 the domain is coded as 'xx'.
 }
 \examples{
-from <- c("ag28", "gh2_19", "a14ps4", "b1m157", "mil6",
-          "bm19", "a16fm4", "n22", "ag9", "gh6_5")
+from <- c(
+  "ag28", "gh2_19", "a14ps4", "b1m157", "mil6",
+  "bm19", "a16fm4", "n22", "ag9", "gh6_5"
+)
 to <- rename_gcdg_gsed(from, copy = FALSE)
 to
 }

@@ -1,6 +1,6 @@
 #' Get labels for items
 #'
-#' The \code{get_labels()} function obtains the item labels for a 
+#' The \code{get_labels()} function obtains the item labels for a
 #' specified set of items.
 #' @inheritParams get_itemnames
 #' @param items A character vector of item names to return. The

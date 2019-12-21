@@ -26,9 +26,10 @@ sort_itemnames <- function(x, order = "idnm") {
 #' @export
 order_itemnames <- function(x, order = "idnm") {
   din <- decompose_itemnames(x)
-  order(din[, pmatch(substr(order, 1, 1), names(din))],
-        din[, pmatch(substr(order, 2, 2), names(din))],
-        din[, pmatch(substr(order, 3, 3), names(din))],
-        din[, pmatch(substr(order, 4, 4), names(din))])
-
+  order(
+    din[, pmatch(substr(order, 1, 1), names(din))],
+    din[, pmatch(substr(order, 2, 2), names(din))],
+    din[, pmatch(substr(order, 3, 3), names(din))],
+    din[, pmatch(substr(order, 4, 4), names(din))]
+  )
 }

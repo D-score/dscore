@@ -10,7 +10,7 @@ get_itemtable(items = NULL, itemtable = NULL)
 \item{items}{A logical or character vector of item names to return. The
 default (\code{NULL}) returns all items.}
 
-\item{itemtable}{A \code{data.frame} set up according to the 
+\item{itemtable}{A \code{data.frame} set up according to the
 same structure as \code{\link{builtin_itemtable}}. If not specified,
 the \code{builtin_itemtable} is used.}
 }
@@ -18,10 +18,10 @@ the \code{builtin_itemtable} is used.}
 A \code{data.frame} with seven columns.
 }
 \description{
-The \code{builtin_itemtable} object in the \code{dscore} package 
-contains basic meta-information about items: a name, the equate group, 
-the instrument, the domain and the item label. 
-The \code{get_itemtable()} function returns a subset of \code{items} 
+The \code{builtin_itemtable} object in the \code{dscore} package
+contains basic meta-information about items: a name, the equate group,
+the instrument, the domain and the item label.
+The \code{get_itemtable()} function returns a subset of \code{items}
 in the itemtable.
 }
 \seealso{

@@ -18,12 +18,11 @@
 milestones
 }
 \description{
-A demo dataset with developmental scores at the item level for 
+A demo dataset with developmental scores at the item level for
 a set of 27 preterm children.
 }
 \examples{
 head(milestones)
-
 }
 \seealso{
 \code{\link{dscore}}

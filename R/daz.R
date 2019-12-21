@@ -8,7 +8,6 @@
 #' the Z-score, it finds the raw D-score.
 #' 
 #' @rdname daz
-#' @inheritParams dscore
 #' @param d Vector of D-scores
 #' @param z Vector of standard deviation scores (DAZ)
 #' @param x Vector of ages (decimal age)

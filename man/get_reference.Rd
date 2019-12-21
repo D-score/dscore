@@ -4,8 +4,7 @@
 \alias{get_reference}
 \title{Get D-score reference}
 \usage{
-get_reference(population = "gcdg",
-  references = dscore::builtin_references)
+get_reference(population = "gcdg", references = dscore::builtin_references)
 }
 \arguments{
 \item{population}{A string describing the population. Currently supported

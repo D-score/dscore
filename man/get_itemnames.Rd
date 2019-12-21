@@ -4,8 +4,15 @@
 \alias{get_itemnames}
 \title{Extract item names}
 \usage{
-get_itemnames(x, instrument = NULL, domain = NULL, mode = NULL,
-  number = NULL, strict = FALSE, itemtable = NULL)
+get_itemnames(
+  x,
+  instrument = NULL,
+  domain = NULL,
+  mode = NULL,
+  number = NULL,
+  strict = FALSE,
+  itemtable = NULL
+)
 }
 \arguments{
 \item{x}{A character vector, \code{data.frame} or an object of

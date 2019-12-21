@@ -5,17 +5,37 @@
 \alias{dscore_posterior}
 \title{D-score estimation}
 \usage{
-dscore(data, items = names(data), xname = "age", xunit = c("decimal",
-  "days", "months"), key = "gsed", itembank = dscore::builtin_itembank,
-  metric = c("dscore", "logit"), prior_mean = ".gcdg",
-  prior_sd = NULL, transform = NULL, qp = -10:100,
-  population = key, dec = 3L)
+dscore(
+  data,
+  items = names(data),
+  xname = "age",
+  xunit = c("decimal", "days", "months"),
+  key = "gsed",
+  itembank = dscore::builtin_itembank,
+  metric = c("dscore", "logit"),
+  prior_mean = ".gcdg",
+  prior_sd = NULL,
+  transform = NULL,
+  qp = -10:100,
+  population = key,
+  dec = 3L
+)
 
-dscore_posterior(data, items = names(data), xname = "age",
-  xunit = c("decimal", "days", "months"), key = "gsed",
-  itembank = dscore::builtin_itembank, metric = c("dscore", "logit"),
-  prior_mean = ".gcdg", prior_sd = NULL, transform = NULL,
-  qp = -10:100, population = key, dec = 3L)
+dscore_posterior(
+  data,
+  items = names(data),
+  xname = "age",
+  xunit = c("decimal", "days", "months"),
+  key = "gsed",
+  itembank = dscore::builtin_itembank,
+  metric = c("dscore", "logit"),
+  prior_mean = ".gcdg",
+  prior_sd = NULL,
+  transform = NULL,
+  qp = -10:100,
+  population = key,
+  dec = 3L
+)
 }
 \arguments{
 \item{data}{A \code{data.frame} with the data. 

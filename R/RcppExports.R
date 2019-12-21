@@ -40,7 +40,6 @@ posterior <- function(score, tau, prior, qp) {
 
 #' Calculate posterior of ability
 #' 
-#' @inheritParams dscore
 #' @param scores A vector with PASS/FAIL observations. 
 #' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}. 
 #' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used. 

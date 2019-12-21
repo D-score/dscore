@@ -5,11 +5,9 @@
 \alias{zad}
 \title{D-score standard deviation score: DAZ}
 \usage{
-daz(d, x = as.numeric(names(d)), reference = get_reference(),
-  dec = 3)
+daz(d, x = as.numeric(names(d)), reference = get_reference(), dec = 3)
 
-zad(z, x = as.numeric(names(z)), reference = get_reference(),
-  dec = 2)
+zad(z, x = as.numeric(names(z)), reference = get_reference(), dec = 2)
 }
 \arguments{
 \item{d}{Vector of D-scores}

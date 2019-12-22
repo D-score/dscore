@@ -3,5 +3,5 @@
 #' @importFrom rlang     .data
 #' @importFrom stats     approx dnorm plogis weighted.mean
 #' @importFrom stringr   str_pad
-#' @importFrom tidyr     pivot_longer unnest
+#' @importFrom tidyr     pivot_longer
 NULL

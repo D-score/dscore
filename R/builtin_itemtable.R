@@ -4,16 +4,18 @@
 #' contains descriptions of all items found in the `gsed`
 #' data.
 #' @docType data
-#' @format A `data.frame` with five columns:
-#' \describe{
-#' \item{`item`}{Item name, in GSED lexicon}
-#' \item{`instrument`}{Instrument name (3-letter code)}
-#' \item{`domain`}{Developmental domain (2-letter code)}
-#' \item{`mode`}{Mode of administration (1-letter code)}
-#' \item{`number`}{Item number (3-number code)}
-#' \item{`equate`}{Equate group}
-#' \item{`label`}{Item label}
-#' }
+#' @format A `data.frame` with variables:
+#'
+#' | Name | Label |
+#' | --- | --------- |
+#' | `item` | Item name, gsed lexicon |
+#' | `instrument` | Instrument code, 3 letters |
+#' | `domain` | Domain code, 2 letter |
+#' | `mode` | Mode code, 1 letter |
+#' | `number` | Item number, 3 numbers |
+#' | `equate` | Equate group |
+#' | `label` | Label (English) |
+#'
 #' @details
 #' Data are collected by the members of the Global Scale for Early
 #' Development (GSED) group.

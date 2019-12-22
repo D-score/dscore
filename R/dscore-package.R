@@ -6,46 +6,67 @@
 #'
 #' @section User functions:
 #' The available functions are:
-#' \tabular{ll}{
-#'   [dscore()]  \tab Estimate D-score and DAZ\cr
-#'   [dscore_posterior()]  \tab Calculate full posterior\cr
-#'   [daz()] \tab Transform to age-adjusted standardized D-score\cr
-#'   [zad()] \tab Inverse of [daz()]\cr
-#'   [get_tau()] \tab Get difficulty parameters from item bank\cr
-#'   [get_reference()]   \tab Get D-score reference\cr
-#'   [get_itemnames()]   \tab Extract item names \cr
-#'   [get_itemtable()]   \tab Get a subset from the itemtable\cr
-#'   [get_labels()]      \tab Get labels for items \cr
-#'   [order_itemnames()] \tab Sort item names  \cr
-#'   [sort_itemnames()]  \tab Sort item names  \cr
-#'   [rename_gcdg_gsed()]\tab Rename gcdg lexicon to gsed lexicon\cr
-#'   }
+#'
+#'   Function | Description
+#'   -------- | ---------
+#'   [dscore()]  | Estimate D-score and DAZ
+#'   [dscore_posterior()]  | Calculate full posterior
+#'   [daz()] | Transform to age-adjusted standardized D-score
+#'   [zad()] | Inverse of [daz()]
+#'   [get_tau()] | Get difficulty parameters from item bank
+#'   [get_reference()]   | Get D-score reference
+#'   [get_itemnames()]   | Extract item names
+#'   [get_itemtable()]   | Get a subset from the itemtable
+#'   [get_labels()]      | Get labels for items
+#'   [order_itemnames()] | Sort item names
+#'   [sort_itemnames()]  | Sort item names
+#'   [rename_gcdg_gsed()]| Rename gcdg lexicon to gsed lexicon
 #'
 #' @section Built-in data:
 #' The package contains the following built-in data:
-#' \tabular{ll}{
-#' [builtin_itembank()] \tab A `data.frame` containing
-#' the difficulty estimates of items according to final Rasch models.\cr
-#' [builtin_itemtable()] \tab A `data.frame` containing
-#' names and descriptions of items from 22 instruments.\cr
-#' [builtin_references()] \tab A `data.frame` with LMS
-#' reference values used to transform from D-score to DAZ,
-#' DAZ to D-score, and to calculate reference charts of normal development.\cr
-#' [milestones()] \tab A small demo dataset with PASS/FAIL
-#' responses from 27 preterms, measured at various ages between birth
-#' and 2.5 years.\cr
-#' }
+#'
+#'   Data     | Description
+#'   -------- | ---------
+#' [builtin_itembank()] | A `data.frame` containing the difficulty estimates of items according to final Rasch models.
+#' [builtin_itemtable()] | A `data.frame` containing names and descriptions of items from 22 instruments.
+#' [builtin_references()] | A `data.frame` with LMS reference values used to transform from D-score to DAZ, DAZ to D-score, and to calculate reference charts of normal development.
+#' [milestones()] | A small demo dataset with PASS/FAIL responses from 27 preterms, measured at various ages between birth
+#' and 2.5 years.
 #'
 #' @references
+#' Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale
+#' for Development of Children Aged 0-2 Years.” *Statistics in Medicine* 25 (13):
+#' 2272–83. [pdf](https://stefvanbuuren.name/publications/Interval\%20scale\%20-\%20Stat\%20Med\%202006.pdf)
+#'
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
+#' [pdf](https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf)
+#'
+#' Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
+#' Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
+#' Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
+#' Richter L, Black MM (2019). The D-score: a metric for interpreting
+#' the early development of infants and toddlers across global settings.
+#' BMJ Global Health, BMJ Global Health 4: e001724.
+#' [pdf](https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf).
+#'
+#' GSED team (Maureen Black, Kieran Bromley, Vanessa Cavallera
+#' (lead author), Jorge Cuartas, Tarun Dua (corresponding author),
+#' Iris Eekhout, Günther Fink, Melissa Gladstone, Katelyn Hepworth,
+#'  Magdalena Janus, Patricia Kariger, Gillian Lancaster, Dana McCoy,
+#'  Gareth McCray, Abbie Raikes, Marta Rubio-Codina, Stef van Buuren,
+#'  Marcus Waldman, Susan Walker and Ann Weber). 2019. “The Global Scale
+#'  for Early Development (GSED).” *Early Childhood Matters*.
+#'  [link](https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/)
 #'
 #' @note
 #' This study was supported by the Bill & Melinda Gates Foundation.
 #' The contents are the sole responsibility of the authors and may not
 #' necessarily represent the official views of the Bill & Melinda
 #' Gates Foundation or other agencies that may have supported the
-#' primary data studies used in the present study. The authors wish to
+#' primary data studies used in the present study.
+#'
+#' The authors wish to
 #' recognize the principal investigators and their study team members
 #' for their generous contribution of the data that made this tool
 #' possible and the members of the Ki team who directly or indirectly

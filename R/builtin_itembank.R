@@ -7,17 +7,17 @@
 #'
 #' @docType data
 #' @format A `data.frame` with variables:
-#' \describe{
-#' \item{key}{String indicating a specific Rasch model, either `"gsed"`,
-#'  `"gcdg"` or `"dutch"`}
-#' \item{item}{Item name, gsed lexicon}
-#' \item{tau}{Difficulty estimate}
-#' \item{instrument}{Instrument code, 3 letters}
-#' \item{domain}{Domain code, 2 letter}
-#' \item{mode}{Mode code, 1 letter}
-#' \item{number}{Item number}
-#' \item{label}{Label (English)}
-#' }
+#'
+#' | Name | Label |
+#' | --- | --------- |
+#' | `key` | String indicating a specific Rasch model, either `"gsed"`, `"gcdg"` or `"dutch"`|
+#' | `item` | Item name, gsed lexicon |
+#' | `tau`  | Difficulty estimate |
+#' | `instrument` | Instrument code, 3 letters |
+#' | `domain` | Domain code, 2 letter |
+#' | `mode` | Mode code, 1 letter |
+#' | `number` | Item number, 3 numbers |
+#' | `label` | Label (English) |
 #'
 #' @examples
 #' head(builtin_itembank)

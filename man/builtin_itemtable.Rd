@@ -4,15 +4,15 @@
 \name{builtin_itemtable}
 \alias{builtin_itemtable}
 \title{Global Scale for Early Development - itemtable}
-\format{A \code{data.frame} with five columns:
-\describe{
-\item{\code{item}}{Item name, in GSED lexicon}
-\item{\code{instrument}}{Instrument name (3-letter code)}
-\item{\code{domain}}{Developmental domain (2-letter code)}
-\item{\code{mode}}{Mode of administration (1-letter code)}
-\item{\code{number}}{Item number (3-number code)}
-\item{\code{equate}}{Equate group}
-\item{\code{label}}{Item label}
+\format{A \code{data.frame} with variables:\tabular{ll}{
+   Name \tab Label \cr
+   \code{item} \tab Item name, gsed lexicon \cr
+   \code{instrument} \tab Instrument code, 3 letters \cr
+   \code{domain} \tab Domain code, 2 letter \cr
+   \code{mode} \tab Mode code, 1 letter \cr
+   \code{number} \tab Item number, 3 numbers \cr
+   \code{equate} \tab Equate group \cr
+   \code{label} \tab Label (English) \cr
 }}
 \usage{
 builtin_itemtable

@@ -59,22 +59,22 @@
 #' @return
 #' The `dscore()` function returns a `data.frame` with
 #' `nrow(data)` rows and the following columns:
-#' \describe{
-#' \item{`a`}{Decimal age}
-#' \item{`n`}{Number of items with valid (0/1) data}
-#' \item{`p`}{Percentage of passed milestones}
-#' \item{`d`}{Ability estimate, mean of posterior}
-#' \item{`sem`}{Standard error of measurement, standard
-#' deviation of the posterior}
-#' \item{`daz`}{D-score corrected for age, calculated
-#' in D-score metric}
-#' }
+#'
+#' Name | Label
+#' ---  | ---------
+#' `a`  | Decimal age
+#' `n`  | Number of items with valid (0/1) data
+#' `p`  | Percentage of passed milestones
+#' `d`  | Ability estimate, mean of posterior
+#' `sem` | Standard error of measurement, standard deviation of the posterior
+#' `daz` | D-score corrected for age, calculated in Z-scale
 #'
 #' The `dscore_posterior()` function returns a numeric matrix with
 #' `nrow(data)` rows and `length(qp)` columns with the
 #' density at each quadrature point. The vector represents the full
 #' posterior ability distribution. If no valid responses were obtained,
 #' `dscore_posterior()` returns the prior.
+#'
 #' @details
 #' The algorithm is based on the method by Bock and Mislevy (1982). The
 #' method uses Bayes rule to update a prior ability into a posterior
@@ -82,22 +82,20 @@
 #'
 #' The item names should correspond to the `"gsed"` lexicon.
 #'
-#' The built-in itembank (object `builtin_keys`) supports
+#' The built-in itembank (object [builtin_itembank()]) supports
 #' keys `"gsed"` (default), `"gcdg"` and `"dutch"`.
 #' A key is defined by the set of estimated item difficulties.
 #'
-#' \tabular{llcccl}{
-#'   Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
-#'   \cr
-#'   gsed  \tab `807_17` \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
-#'   gcdg  \tab `565_18` \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
-#'   dutch \tab `75_0`   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
-#' }
+#' Key | Model | Quadrature | Instruments | Direct/Caregiver | Reference
+#' --- | -----:| ----------:| ----------: |:----------------:|:---------
+#' `"dutch"` | `75_0`   | `-10:80`  | 1   | direct | Van Buuren, 2014/2019
+#' `"gcdg"`  | `565_18` | `-10:100` | 14  | direct | Weber, 2019
+#' `"gsed"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
-#' the advice is to use the most general key: (`gsed`).
+#' the advice is to use the most general key, `"gsed"`.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
@@ -114,13 +112,9 @@
 #' Adaptive EAP Estimation of Ability in a Microcomputer Environment.
 #' Applied Psychological Measurement, 6(4), 431-444.
 #'
-#' GSED Team (2019).
-#' [The Global Scale for Early Development (GSED)](https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019).
-#' Early Childhood Matters 2019-14, 80-84.
-#'
-#' Van Buuren S (2014).
-#' [Growth charts of human development](https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/).
+#' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
+#' [pdf](https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf)
 #'
 #' Van Buuren S, Dusseldorp E, Doove B (2017).
 #' D-scores and references for ages 2-4 years. The Netherlands.
@@ -132,7 +126,7 @@
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
-#' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
+#' [pdf](https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf).
 #'
 #' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
 #' @seealso [get_tau()],

@@ -4,25 +4,25 @@
 \name{builtin_references}
 \alias{builtin_references}
 \title{Age-conditional reference distribution of D-score}
-\format{A \code{data.frame} with 144 rows and 19 variables:
-\describe{
-\item{pop}{Population, either \code{dutch} or \code{gcdg}}
-\item{age}{Decimal age in years}
-\item{mu}{M-curve, median D-score, P50}
-\item{sigma}{S-curve, spread expressed as coefficient of variation}
-\item{nu}{L-curve, the lambda coefficient of the LMS model for skewness}
-\item{P3}{P3 percentile}
-\item{P10}{P10 percentile}
-\item{P25}{P25 percentile}
-\item{P50}{P50 percentile}
-\item{P75}{P75 percentile}
-\item{P90}{P90 percentile}
-\item{P97}{P97 percentile}
-\item{SDM2}{-2SD centile}
-\item{SDM1}{-1SD centile}
-\item{SD0}{0SD centile, median}
-\item{SDP1}{+1SD centile}
-\item{SDP2}{+2SD centile}
+\format{A \code{data.frame} with 265 rows and 17 variables:\tabular{ll}{
+   Name \tab Label \cr
+   \code{pop} \tab Population, either \code{"dutch"} or \code{"gcdg"} \cr
+   \code{age} \tab Decimal age in years \cr
+   \code{mu} \tab M-curve, median D-score, P50 \cr
+   \code{sigma} \tab S-curve, spread expressed as coefficient of variation \cr
+   \code{nu} \tab L-curve, the lambda coefficient of the LMS model for skewness \cr
+   \code{P3} \tab P3 percentile \cr
+   \code{P10} \tab P10 percentile \cr
+   \code{P25} \tab P25 percentile \cr
+   \code{P50} \tab P50 percentile \cr
+   \code{P75} \tab P75 percentile \cr
+   \code{P90} \tab P90 percentile \cr
+   \code{P97} \tab P97 percentile \cr
+   \code{SDM2} \tab -2SD centile \cr
+   \code{SDM1} \tab -1SD centile \cr
+   \code{SD0} \tab 0SD centile, median \cr
+   \code{SDP1} \tab +1SD centile \cr
+   \code{SDP2} \tab +2SD centile \cr
 }}
 \usage{
 builtin_references
@@ -51,6 +51,7 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
+\href{https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf}{pdf}
 
 Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -58,7 +59,7 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
+\href{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}{pdf}.
 }
 \seealso{
 \code{\link[=dscore]{dscore()}}

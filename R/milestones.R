@@ -4,7 +4,7 @@
 #' a set of 27 preterm children.
 #'
 #' @docType data
-#' @format A \code{data.frame} with 100 rows and 61 variables:
+#' @format A `data.frame` with 100 rows and 61 variables:
 #' \describe{
 #' \item{id}{Integer, child ID}
 #' \item{agedays}{Integer, age in days}
@@ -17,5 +17,5 @@
 #'
 #' @examples
 #' head(milestones)
-#' @seealso \code{\link{dscore}}
+#' @seealso [dscore()]
 "milestones"

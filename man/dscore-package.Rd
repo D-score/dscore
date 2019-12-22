@@ -36,33 +36,33 @@ Yousafzai.
 
 The available functions are:
 \tabular{ll}{
-  \code{\link{dscore}}  \tab Estimate D-score and DAZ\cr
-  \code{\link{dscore_posterior}}  \tab Calculate full posterior\cr
-  \code{\link{daz}} \tab Transform to age-adjusted standardized D-score\cr
-  \code{\link{zad}} \tab Inverse of \code{\link{daz}}\cr
-  \code{\link{get_tau}} \tab Get difficulty parameters from item bank\cr
-  \code{\link{get_reference}}   \tab Get D-score reference\cr
-  \code{\link{get_itemnames}}   \tab Extract item names \cr
-  \code{\link{get_itemtable}}   \tab Get a subset from the itemtable\cr
-  \code{\link{get_labels}}      \tab Get labels for items \cr
-  \code{\link{order_itemnames}} \tab Sort item names  \cr
-  \code{\link{sort_itemnames}}  \tab Sort item names  \cr
-  \code{\link{rename_gcdg_gsed}}\tab Rename gcdg lexicon to gsed lexicon\cr
-  }
+\code{\link[=dscore]{dscore()}}  \tab Estimate D-score and DAZ\cr
+\code{\link[=dscore_posterior]{dscore_posterior()}}  \tab Calculate full posterior\cr
+\code{\link[=daz]{daz()}} \tab Transform to age-adjusted standardized D-score\cr
+\code{\link[=zad]{zad()}} \tab Inverse of \code{\link[=daz]{daz()}}\cr
+\code{\link[=get_tau]{get_tau()}} \tab Get difficulty parameters from item bank\cr
+\code{\link[=get_reference]{get_reference()}}   \tab Get D-score reference\cr
+\code{\link[=get_itemnames]{get_itemnames()}}   \tab Extract item names \cr
+\code{\link[=get_itemtable]{get_itemtable()}}   \tab Get a subset from the itemtable\cr
+\code{\link[=get_labels]{get_labels()}}      \tab Get labels for items \cr
+\code{\link[=order_itemnames]{order_itemnames()}} \tab Sort item names  \cr
+\code{\link[=sort_itemnames]{sort_itemnames()}}  \tab Sort item names  \cr
+\code{\link[=rename_gcdg_gsed]{rename_gcdg_gsed()}}\tab Rename gcdg lexicon to gsed lexicon\cr
+}
 }
 
 \section{Built-in data}{
 
 The package contains the following built-in data:
 \tabular{ll}{
-\code{\link{builtin_itembank}} \tab A \code{data.frame} containing
+\code{\link[=builtin_itembank]{builtin_itembank()}} \tab A \code{data.frame} containing
 the difficulty estimates of items according to final Rasch models.\cr
-\code{\link{builtin_itemtable}} \tab A \code{data.frame} containing
+\code{\link[=builtin_itemtable]{builtin_itemtable()}} \tab A \code{data.frame} containing
 names and descriptions of items from 22 instruments.\cr
-\code{\link{builtin_references}} \tab A \code{data.frame} with LMS
+\code{\link[=builtin_references]{builtin_references()}} \tab A \code{data.frame} with LMS
 reference values used to transform from D-score to DAZ,
 DAZ to D-score, and to calculate reference charts of normal development.\cr
-\code{\link{milestones}} \tab A small demo dataset with PASS/FAIL
+\code{\link[=milestones]{milestones()}} \tab A small demo dataset with PASS/FAIL
 responses from 27 preterms, measured at various ages between birth
 and 2.5 years.\cr
 }

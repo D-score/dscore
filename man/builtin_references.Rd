@@ -61,6 +61,6 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 }
 \seealso{
-\code{\link{dscore}}
+\code{\link[=dscore]{dscore()}}
 }
 \keyword{datasets}

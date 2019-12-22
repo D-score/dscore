@@ -14,7 +14,7 @@ default (\code{NULL}) returns the labels of all items.}
 default \code{trim = NULL} does not trim labels.}
 
 \item{itemtable}{A \code{data.frame} set up according to the
-same structure as \code{\link{builtin_itemtable}}. If not specified,
+same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not specified,
 the \code{builtin_itemtable} is used.}
 }
 \value{
@@ -29,5 +29,5 @@ specified set of items.
 get_labels(get_itemnames(instrument = "mac", number = 1:2), trim = 40)
 }
 \seealso{
-\code{\link{builtin_itemtable}}, \code{\link{get_itemnames}}
+\code{\link[=builtin_itemtable]{builtin_itemtable()}}, \code{\link[=get_itemnames]{get_itemnames()}}
 }

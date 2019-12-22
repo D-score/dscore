@@ -5,14 +5,14 @@
 #' order.
 #' @param x A character vector containing item names (gsed lexicon)
 #' @param order A four-letter string specifying the sorting order.
-#' The four letters are: \code{i} for instrument, \code{d} for domain,
-#' \code{m} for mode and \code{n} for number. The default is
-#' \code{"idnm"}.
-#' @return \code{sort_itemnames()} return a character vector with
-#' \code{length(x)} sorted elements. \code{order_itemnames()} return
-#' an integer vector of length \code{length(x)} with positions of
+#' The four letters are: `i` for instrument, `d` for domain,
+#' `m` for mode and `n` for number. The default is
+#' `"idnm"`.
+#' @return `sort_itemnames()` return a character vector with
+#' `length(x)` sorted elements. `order_itemnames()` return
+#' an integer vector of length `length(x)` with positions of
 #' the sorted elements.
-#' @seealso \code{\link{decompose_itemnames}}
+#' @seealso [decompose_itemnames()]
 #' @author Stef van Buuren
 #' @examples
 #' itemnames <- c("aqigmc028", "grihsd219", "", "by1mdd157", "mdsgmd006")

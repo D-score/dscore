@@ -40,7 +40,7 @@ are done in lower case.
 get_tau(items = c("ddifmd001", "DDigmd052", "xyz"))
 }
 \seealso{
-\code{\link{builtin_itembank}}, \code{\link{dscore}}
+\code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=dscore]{dscore()}}
 }
 \author{
 Stef van Buuren 2019

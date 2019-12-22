@@ -1,21 +1,21 @@
 #' Get D-score reference
 #'
-#' The \code{get_reference()} function selects the D-score reference
+#' The `get_reference()` function selects the D-score reference
 #' distribution.
 #'
 #' @param population A string describing the population. Currently supported
-#' are \code{"dutch"} and \code{"gcdg"} (default).
-#' @param references A \code{data.frame} with the same structure
-#' as \code{builtin_references}. The default is to use
-#' \code{builtin_references}.
-#' @return A \code{data.frame} with the LMS reference values.
-#' @note No references for population \code{"gsed"} exist.
-#' The function will silently rewrite \code{population = "gsed"}
-#' into to the \code{population = "gsed"}.
+#' are `"dutch"` and `"gcdg"` (default).
+#' @param references A `data.frame` with the same structure
+#' as `builtin_references`. The default is to use
+#' `builtin_references`.
+#' @return A `data.frame` with the LMS reference values.
+#' @note No references for population `"gsed"` exist.
+#' The function will silently rewrite `population = "gsed"`
+#' into to the `population = "gsed"`.
 #'
-#' The \code{"dutch"} reference was published in Van Buuren (2014)
+#' The `"dutch"` reference was published in Van Buuren (2014)
 #'
-#' The \code{"gcdg"} was calculated from 15 cohorts with direct
+#' The `"gcdg"` was calculated from 15 cohorts with direct
 #' observations (Weber, 2019).
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
@@ -27,9 +27,9 @@
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
-#' \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
+#' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
 #'
-#' @seealso \code{\link{builtin_references}}
+#' @seealso [builtin_references()]
 #' @export
 get_reference <- function(population = "gcdg",
                           references = dscore::builtin_references) {

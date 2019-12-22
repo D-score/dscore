@@ -39,7 +39,7 @@ names must conform to one of the built-in names. The default is
 \code{strict = FALSE}.}
 
 \item{itemtable}{A \code{data.frame} set up according to the
-same structure as \code{\link{builtin_itemtable}}. If not specified,
+same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not specified,
 the \code{builtin_itemtable} is used.}
 }
 \value{
@@ -76,7 +76,7 @@ get_itemnames(domain = "se", mode = "d")
 get_itemnames(number = c(70, 73), domain = "gm")
 }
 \seealso{
-\code{\link{sort_itemnames}}
+\code{\link[=sort_itemnames]{sort_itemnames()}}
 }
 \author{
 Stef van Buuren 2019

@@ -31,7 +31,7 @@ decompose_itemnames(itemnames)
 \url{https://docs.google.com/spreadsheets/d/1zLsSW9CzqshL8ubb7K5R9987jF4YGDVAW_NBw1hR2aQ/edit#gid=0}
 }
 \seealso{
-\code{\link{sort_itemnames}}
+\code{\link[=sort_itemnames]{sort_itemnames()}}
 }
 \author{
 Stef van Buuren

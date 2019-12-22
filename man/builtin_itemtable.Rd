@@ -25,7 +25,7 @@ data.
 \details{
 Data are collected by the members of the Global Scale for Early
 Development (GSED) group.
-The \code{itemtable} is created by \code{\\data-raw\\R\\import_itemtable.R}.
+The \code{itemtable} is created by \verb{\\\\data-raw\\\\R\\\\import_itemtable.R}.
 }
 \author{
 Compiled by Stef van Buuren

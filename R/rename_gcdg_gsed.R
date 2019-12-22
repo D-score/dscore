@@ -1,11 +1,11 @@
 #' Rename items from gcdg into gsed lexicon
 #'
-#' Function \code{rename_gcdg_gsed()} translates item names in the
+#' Function `rename_gcdg_gsed()` translates item names in the
 #' gcdg lexicon to item names in the gsed lexicon.
 #' @param x A character vector containing item names in the gcdg lexicon
 #' @param copy A logical indicating whether any unmatches names should
-#' be copied (\code{copy = TRUE}) or set to an empty string.
-#' @return A character vector of length \code{length(x)} with gcdg
+#' be copied (`copy = TRUE`) or set to an empty string.
+#' @return A character vector of length `length(x)` with gcdg
 #' item names replaced by gsed item name.
 #' @details
 #' The gsed-naming convention is as follows. Position 1-3 codes the
@@ -22,7 +22,7 @@
 #' In cases where the domain of the items isn't clear (vin, bar),
 #' the domain is coded as 'xx'.
 #' @references
-#' \url{https://docs.google.com/spreadsheets/d/1zLsSW9CzqshL8ubb7K5R9987jF4YGDVAW_NBw1hR2aQ/edit#gid=0}
+#' <https://docs.google.com/spreadsheets/d/1zLsSW9CzqshL8ubb7K5R9987jF4YGDVAW_NBw1hR2aQ/edit#gid=0>
 #' @author Iris Eekhout, Stef van Buuren
 #' @examples
 #' from <- c(

@@ -1,109 +1,109 @@
 #' D-score estimation
 #'
-#' The function \code{dscore()} function estimates the D-score,
+#' The function `dscore()` function estimates the D-score,
 #' a numeric score that measures child development, from PASS/FAIL
 #' observations on milestones.
 #'
 #' @rdname dscore
-#' @param data  A \code{data.frame} with the data.
+#' @param data  A `data.frame` with the data.
 #' A row collects all observations made on a child on a set of
 #' milestones administered at a given age. The function calculates
 #' a D-score for each row. Different rows correspond to different
 #' children or different ages.
 #' @param items A character vector containing names of items to be
 #' included into the D-score calculation. Milestone scores are coded
-#' numerically as \code{1} (pass) and \code{0} (fail). By default,
+#' numerically as `1` (pass) and `0` (fail). By default,
 #' D-score calculation is done on all items found in the data
-#' that have a difficulty parameter under the specified \code{key}.
+#' that have a difficulty parameter under the specified `key`.
 #' @param xname A string with the name of the age variable in
-#' \code{data}. The default is \code{"age"}.
+#' `data`. The default is `"age"`.
 #' @param xunit A string specifying the unit in which age is measured
-#' (either \code{"decimal"}, \code{"days"} or \code{"months"}).
-#' The default (\code{"decimal"}) means decimal age in years.
+#' (either `"decimal"`, `"days"` or `"months"`).
+#' The default (`"decimal"`) means decimal age in years.
 #' @param key A string that sets the key, the set of difficulty
 #' estimates from a fitted Rasch model.
-#' The built-in keys are: \code{"gsed"} (default), \code{"gcdg"},
-#' and \code{"dutch"}. Use \code{key = ""} to use all item names,
+#' The built-in keys are: `"gsed"` (default), `"gcdg"`,
+#' and `"dutch"`. Use `key = ""` to use all item names,
 #' which should only be done if there are no duplicate itemnames.
-#' @param itembank A \code{data.frame} with columns
-#' \code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
-#' \code{mode}, \code{number} and \code{label}. Only columns \code{item}
-#' and \code{tau} are required.
-#' The function uses \code{dscore::builtin_itembank} by
+#' @param itembank A `data.frame` with columns
+#' `key`, `item`, `tau`, `instrument`, `domain`,
+#' `mode`, `number` and `label`. Only columns `item`
+#' and `tau` are required.
+#' The function uses `dscore::builtin_itembank` by
 #' default.
-#' @param metric A string, either \code{"dscore"} (default) or
-#' \code{"logit"}, signalling the metric in which ability is estimated.
-#' @param prior_mean A string specifying a column name in \code{data}
+#' @param metric A string, either `"dscore"` (default) or
+#' `"logit"`, signalling the metric in which ability is estimated.
+#' @param prior_mean A string specifying a column name in `data`
 #' with the mean of the prior for the D-score calculation.
-#' The default \code{prior_mean = ".gcdg"} calculates an age-dependent
+#' The default `prior_mean = ".gcdg"` calculates an age-dependent
 #' prior mean internally according to function
-#' \code{dscore:::count_mu_gcdg()}.
-#' The choice \code{prior_mean = ".dutch"}
-#' calculates \code{prior_mean} from the Count model coded in
-#' \code{dscore:::count_mu_dutch()}).
-#' @param prior_sd A string specifying a column name in \code{data}
+#' `dscore:::count_mu_gcdg()`.
+#' The choice `prior_mean = ".dutch"`
+#' calculates `prior_mean` from the Count model coded in
+#' `dscore:::count_mu_dutch()`).
+#' @param prior_sd A string specifying a column name in `data`
 #' with the standard deviation of the prior for the D-score calculation.
 #' If not specified, the standard deviation is taken as 5.
 #' @param transform Vector of length 2, signalling the intercept
 #' and slope respectively of the linear transform that converts an
 #' observation in the logit scale to the the D-score scale. Only
-#' needed if \code{metric == "logit"}.
+#' needed if `metric == "logit"`.
 #' @param qp Numeric vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values. The default
-#' (\code{qp = -10:100}) is suitable for age range 0-4 years.
+#' (`qp = -10:100`) is suitable for age range 0-4 years.
 #' @param population A string describing the population. Currently
-#' supported are \code{"dutch"} and \code{"gcdg"} (default).
+#' supported are `"dutch"` and `"gcdg"` (default).
 #' @param dec Integer specifying the number of decimals for
 #' rounding the ability estimates and the DAZ. The default is
-#' \code{dec = 3}.
+#' `dec = 3`.
 #' @return
-#' The \code{dscore()} function returns a \code{data.frame} with
-#' \code{nrow(data)} rows and the following columns:
+#' The `dscore()` function returns a `data.frame` with
+#' `nrow(data)` rows and the following columns:
 #' \describe{
-#' \item{\code{a}}{Decimal age}
-#' \item{\code{n}}{Number of items with valid (0/1) data}
-#' \item{\code{p}}{Percentage of passed milestones}
-#' \item{\code{d}}{Ability estimate, mean of posterior}
-#' \item{\code{sem}}{Standard error of measurement, standard
+#' \item{`a`}{Decimal age}
+#' \item{`n`}{Number of items with valid (0/1) data}
+#' \item{`p`}{Percentage of passed milestones}
+#' \item{`d`}{Ability estimate, mean of posterior}
+#' \item{`sem`}{Standard error of measurement, standard
 #' deviation of the posterior}
-#' \item{\code{daz}}{D-score corrected for age, calculated
+#' \item{`daz`}{D-score corrected for age, calculated
 #' in D-score metric}
 #' }
 #'
-#' The \code{dscore_posterior()} function returns a numeric matrix with
-#' \code{nrow(data)} rows and \code{length(qp)} columns with the
+#' The `dscore_posterior()` function returns a numeric matrix with
+#' `nrow(data)` rows and `length(qp)` columns with the
 #' density at each quadrature point. The vector represents the full
 #' posterior ability distribution. If no valid responses were obtained,
-#' \code{dscore_posterior()} returns the prior.
+#' `dscore_posterior()` returns the prior.
 #' @details
 #' The algorithm is based on the method by Bock and Mislevy (1982). The
 #' method uses Bayes rule to update a prior ability into a posterior
 #' ability.
 #'
-#' The item names should correspond to the \code{"gsed"} lexicon.
+#' The item names should correspond to the `"gsed"` lexicon.
 #'
-#' The built-in itembank (object \code{builtin_keys}) supports
-#' keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
+#' The built-in itembank (object `builtin_keys`) supports
+#' keys `"gsed"` (default), `"gcdg"` and `"dutch"`.
 #' A key is defined by the set of estimated item difficulties.
 #'
 #' \tabular{llcccl}{
 #'   Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
 #'   \cr
-#'   gsed  \tab \code{807_17} \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
-#'   gcdg  \tab \code{565_18} \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
-#'   dutch \tab \code{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
+#'   gsed  \tab `807_17` \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
+#'   gcdg  \tab `565_18` \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
+#'   dutch \tab `75_0`   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
 #' }
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
-#' the advice is to use the most general key: (\code{gsed}).
+#' the advice is to use the most general key: (`gsed`).
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
 #' Count models are stored as internal functions
-#' \code{dscore:::count_mu_gcdg()} (default) and
-#' \code{dscore:::count_mu_dutch()}. The spread of the starting prior
+#' `dscore:::count_mu_gcdg()` (default) and
+#' `dscore:::count_mu_dutch()`. The spread of the starting prior
 #' is 5 D-score points around this mean D-score, which corresponds to
 #' approximately twice the normal spread of child of a given age. The
 #' starting prior is thus somewhat informative for low numbers of
@@ -115,11 +115,11 @@
 #' Applied Psychological Measurement, 6(4), 431-444.
 #'
 #' GSED Team (2019).
-#' \href{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019}{The Global Scale for Early Development (GSED)}.
+#' [The Global Scale for Early Development (GSED)](https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019).
 #' Early Childhood Matters 2019-14, 80-84.
 #'
 #' Van Buuren S (2014).
-#' \href{https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/}{Growth charts of human development}.
+#' [Growth charts of human development](https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/).
 #' Stat Methods Med Res, 23(4), 346-368.
 #'
 #' Van Buuren S, Dusseldorp E, Doove B (2017).
@@ -132,12 +132,12 @@
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
-#' \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
+#' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
 #'
 #' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
-#' @seealso \code{\link{get_tau}},
-#' \code{\link{builtin_itembank}}, \code{\link{posterior}},
-#' \code{\link{builtin_references}}
+#' @seealso [get_tau()],
+#' [builtin_itembank()], [posterior()],
+#' [builtin_references()]
 #' @examples
 #' data <- data.frame(
 #'   age = rep(round(21 / 365.25, 4), 10),
@@ -185,7 +185,7 @@ dscore <- function(data,
   )
 }
 
-#' The \code{dscore_posterior()} function returns the full posterior
+#' The `dscore_posterior()` function returns the full posterior
 #' distribution of the D-score.
 #' @rdname dscore
 #' @export

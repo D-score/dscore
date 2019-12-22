@@ -139,11 +139,11 @@ keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
 A key is defined by the set of estimated item difficulties.
 
 \tabular{llcccl}{
-  Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
-  \cr
-  gsed  \tab \code{807_17} \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
-  gcdg  \tab \code{565_18} \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
-  dutch \tab \code{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
+Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
+\cr
+gsed  \tab \verb{807_17} \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
+gcdg  \tab \verb{565_18} \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
+dutch \tab \verb{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
 }
 
 As a general rule, one should only compare D-scores
@@ -209,9 +209,9 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 }
 \seealso{
-\code{\link{get_tau}},
-\code{\link{builtin_itembank}}, \code{\link{posterior}},
-\code{\link{builtin_references}}
+\code{\link[=get_tau]{get_tau()}},
+\code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=posterior]{posterior()}},
+\code{\link[=builtin_references]{builtin_references()}}
 }
 \author{
 Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)

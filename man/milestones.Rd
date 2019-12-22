@@ -25,6 +25,6 @@ a set of 27 preterm children.
 head(milestones)
 }
 \seealso{
-\code{\link{dscore}}
+\code{\link[=dscore]{dscore()}}
 }
 \keyword{datasets}

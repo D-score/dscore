@@ -8,9 +8,9 @@
 #' known as DAZ.
 #'
 #' @docType data
-#' @format A \code{data.frame} with 144 rows and 19 variables:
+#' @format A `data.frame` with 144 rows and 19 variables:
 #' \describe{
-#' \item{pop}{Population, either \code{dutch} or \code{gcdg}}
+#' \item{pop}{Population, either `dutch` or `gcdg`}
 #' \item{age}{Decimal age in years}
 #' \item{mu}{M-curve, median D-score, P50}
 #' \item{sigma}{S-curve, spread expressed as coefficient of variation}
@@ -29,9 +29,9 @@
 #' \item{SDP2}{+2SD centile}
 #' }
 #' @details
-#' The \code{"dutch"} references were calculated from the SMOCC data, and cover
+#' The `"dutch"` references were calculated from the SMOCC data, and cover
 #' age range 0-2.5 years (van Buuren, 2014).
-#' The \code{"gcdg"} references were calculated from the 15 cohorts of the
+#' The `"gcdg"` references were calculated from the 15 cohorts of the
 #' GCDG-study, and cover age range 0-5 years (Weber, 2019).
 #' @examples
 #' head(builtin_references)
@@ -49,7 +49,7 @@
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
-#' \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
+#' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
 #'
-#' @seealso \code{\link{dscore}}
+#' @seealso [dscore()]
 "builtin_references"

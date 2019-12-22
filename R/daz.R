@@ -1,28 +1,28 @@
 #' D-score standard deviation score: DAZ
 #'
-#' The \code{daz()} function calculated the
+#' The `daz()` function calculated the
 #' "Development for Age Z-score".
 #' The DAZ represents a child's D-score after adjusting
 #' for age by an external age-conditional reference.
-#' The \code{zad()} is the inverse of \code{daz()}: Given age and
+#' The `zad()` is the inverse of `daz()`: Given age and
 #' the Z-score, it finds the raw D-score.
 #'
 #' @rdname daz
 #' @param d Vector of D-scores
 #' @param z Vector of standard deviation scores (DAZ)
 #' @param x Vector of ages (decimal age)
-#' @param reference A \code{data.frame} with the LMS reference values.
-#' The default uses the \code{get_reference()} function. This selects
-#' a subset of rows from the \code{builtin_references} using its
-#' default \code{pop} argument.
-#' @param dec The number of decimals (default \code{dec = 3}).
-#' @return The \code{daz()} function return a named vector with
-#' Z-scores with \code{length(d)} elements
+#' @param reference A `data.frame` with the LMS reference values.
+#' The default uses the `get_reference()` function. This selects
+#' a subset of rows from the `builtin_references` using its
+#' default `pop` argument.
+#' @param dec The number of decimals (default `dec = 3`).
+#' @return The `daz()` function return a named vector with
+#' Z-scores with `length(d)` elements
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
 #' method and penalized likelihood. Statistics in Medicine, 11(10),
 #' 1305-1319.
-#' @seealso \code{\link{dscore}}
+#' @seealso [dscore()]
 #' @author Stef van Buuren 2019
 #' @examples
 #' # using gcdg-reference
@@ -50,8 +50,8 @@ daz <- function(d, x = as.numeric(names(d)),
   return(round(z, dec))
 }
 
-#' @return The \code{zad()} function returns a vector with D-scores
-#' with \code{length(z)} elements.
+#' @return The `zad()` function returns a vector with D-scores
+#' with `length(z)` elements.
 #' @rdname daz
 #' @examples
 #' # population median at ages 0.5, 1 and 2 years, gcdg reference

@@ -44,5 +44,5 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 }
 \seealso{
-\code{\link{builtin_references}}
+\code{\link[=builtin_references]{builtin_references()}}
 }

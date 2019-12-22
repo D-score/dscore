@@ -13,7 +13,7 @@ the unscaled density at each quadrature point.}
 \item{qp}{Vector of equally spaced quadrature points.}
 }
 \value{
-A \code{vector} of \code{length(d)} elements with
+A vector of \code{length(d)} elements with
 the prior density estimate at each quadature point.
 }
 \description{

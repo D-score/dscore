@@ -38,18 +38,21 @@ Yousafzai.
 
 The available functions are:\tabular{ll}{
    Function \tab Description \cr
-   \code{\link[=dscore]{dscore()}} \tab Estimate D-score and DAZ \cr
-   \code{\link[=dscore_posterior]{dscore_posterior()}} \tab Calculate full posterior \cr
-   \code{\link[=daz]{daz()}} \tab Transform to age-adjusted standardized D-score \cr
-   \code{\link[=zad]{zad()}} \tab Inverse of \code{\link[=daz]{daz()}} \cr
-   \code{\link[=get_tau]{get_tau()}} \tab Get difficulty parameters from item bank \cr
-   \code{\link[=get_reference]{get_reference()}} \tab Get D-score reference \cr
-   \code{\link[=get_itemnames]{get_itemnames()}} \tab Extract item names \cr
+   \code{\link[=get_itemnames]{get_itemnames()}} \tab Extract item names from an itemtable \cr
+   \code{\link[=order_itemnames]{order_itemnames()}} \tab Order item names \cr
+   \code{\link[=sort_itemnames]{sort_itemnames()}} \tab Sort item names \cr
+     \tab  \cr
    \code{\link[=get_itemtable]{get_itemtable()}} \tab Get a subset from the itemtable \cr
    \code{\link[=get_labels]{get_labels()}} \tab Get labels for items \cr
-   \code{\link[=order_itemnames]{order_itemnames()}} \tab Sort item names \cr
-   \code{\link[=sort_itemnames]{sort_itemnames()}} \tab Sort item names \cr
-   \code{\link[=rename_gcdg_gsed]{rename_gcdg_gsed()}} \tab Rename gcdg lexicon to gsed lexicon \cr
+   \code{\link[=rename_gcdg_gsed]{rename_gcdg_gsed()}} \tab Rename gcdg into gsed lexicon \cr
+     \tab  \cr
+   \code{\link[=dscore]{dscore()}} \tab Estimate D-score and DAZ \cr
+   \code{\link[=dscore_posterior]{dscore_posterior()}} \tab Calculate full posterior of D-score \cr
+   \code{\link[=get_tau]{get_tau()}} \tab Get difficulty parameters from item bank \cr
+     \tab  \cr
+   \code{\link[=daz]{daz()}} \tab Transform to age-adjusted standardized D-score \cr
+   \code{\link[=zad]{zad()}} \tab Inverse of \code{\link[=daz]{daz()}} \cr
+   \code{\link[=get_reference]{get_reference()}} \tab Get D-score age-reference \cr
 }
 }
 

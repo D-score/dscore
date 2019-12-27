@@ -7,20 +7,23 @@
 #' @section User functions:
 #' The available functions are:
 #'
-#'   Function | Description
-#'   -------- | ---------
-#'   [dscore()]  | Estimate D-score and DAZ
-#'   [dscore_posterior()]  | Calculate full posterior
-#'   [daz()] | Transform to age-adjusted standardized D-score
-#'   [zad()] | Inverse of [daz()]
-#'   [get_tau()] | Get difficulty parameters from item bank
-#'   [get_reference()]   | Get D-score reference
-#'   [get_itemnames()]   | Extract item names
-#'   [get_itemtable()]   | Get a subset from the itemtable
-#'   [get_labels()]      | Get labels for items
-#'   [order_itemnames()] | Sort item names
-#'   [sort_itemnames()]  | Sort item names
-#'   [rename_gcdg_gsed()]| Rename gcdg lexicon to gsed lexicon
+#'   | Function | Description |
+#'   | -------- | ----------- |
+#'   | [get_itemnames()]   | Extract item names from an itemtable |
+#'   | [order_itemnames()] | Order item names |
+#'   | [sort_itemnames()]  | Sort item names |
+#'   &nbsp;| | |
+#'   | [get_itemtable()]   | Get a subset from the itemtable |
+#'   | [get_labels()]      | Get labels for items |
+#'   | [rename_gcdg_gsed()]| Rename gcdg into gsed lexicon |
+#'   &nbsp;| | |
+#'   | [dscore()]  | Estimate D-score and DAZ |
+#'   | [dscore_posterior()]  | Calculate full posterior of D-score |
+#'   | [get_tau()] | Get difficulty parameters from item bank |
+#'   &nbsp;| | |
+#'   | [daz()] | Transform to age-adjusted standardized D-score |
+#'   | [zad()] | Inverse of [daz()] |
+#'   | [get_reference()]   | Get D-score age-reference |
 #'
 #' @section Built-in data:
 #' The package contains the following built-in data:

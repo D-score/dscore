@@ -23,7 +23,11 @@ Imports:
     tidyr (>= 1.0.0)
 LinkingTo: Rcpp, RcppArmadillo
 Suggests:
+    dmetric,
+    ggplot2,
+    kableExtra,
     knitr,
+    lme4,
     rmarkdown,
     testthat
 Encoding: UTF-8

@@ -59,7 +59,7 @@ You may estimate the *D*-score and the *D*-score age-adjusted Z-score (DAZ) from
 3. Calculate *D*-score and DAZ;
 4. Summarise your results.
 
-The `dscore` package provides various function that support these steps. See [Getting started](https://stefvanbuuren.name/dscore/articles/dscore.html) for more details.
+The `dscore` package provides various function that support these steps. See [Getting started](https://stefvanbuuren.name/dscore/articles/gettingstarted.html) for more details.
 
 
 ## Resources

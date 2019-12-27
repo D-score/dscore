@@ -104,17 +104,16 @@ rounding the ability estimates and the DAZ. The default is
 }
 \value{
 The \code{dscore()} function returns a \code{data.frame} with
-\code{nrow(data)} rows and the following columns:
-\describe{
-\item{\code{a}}{Decimal age}
-\item{\code{n}}{Number of items with valid (0/1) data}
-\item{\code{p}}{Percentage of passed milestones}
-\item{\code{d}}{Ability estimate, mean of posterior}
-\item{\code{sem}}{Standard error of measurement, standard
-deviation of the posterior}
-\item{\code{daz}}{D-score corrected for age, calculated
-in D-score metric}
+\code{nrow(data)} rows and the following columns:\tabular{ll}{
+   Name \tab Label \cr
+   \code{a} \tab Decimal age \cr
+   \code{n} \tab Number of items with valid (0/1) data \cr
+   \code{p} \tab Percentage of passed milestones \cr
+   \code{d} \tab Ability estimate, mean of posterior \cr
+   \code{sem} \tab Standard error of measurement, standard deviation of the posterior \cr
+   \code{daz} \tab D-score corrected for age, calculated in Z-scale \cr
 }
+
 
 The \code{dscore_posterior()} function returns a numeric matrix with
 \code{nrow(data)} rows and \code{length(qp)} columns with the
@@ -134,22 +133,20 @@ ability.
 
 The item names should correspond to the \code{"gsed"} lexicon.
 
-The built-in itembank (object \code{builtin_keys}) supports
+The built-in itembank (object \code{\link[=builtin_itembank]{builtin_itembank()}}) supports
 keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
-A key is defined by the set of estimated item difficulties.
-
-\tabular{llcccl}{
-  Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference\cr
-  \cr
-  gsed  \tab \code{807_17} \tab -10:100 \tab 20  \tab mixed  \tab GSED Team, 2019\cr
-  gcdg  \tab \code{565_18} \tab -10:100 \tab 14  \tab direct \tab Weber, 2019\cr
-  dutch \tab \code{75_0}   \tab -10:80  \tab 1   \tab direct \tab Van Buuren, 2014/2019
+A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
+   Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference \cr
+   \code{"dutch"} \tab \verb{75_0} \tab \code{-10:80} \tab 1 \tab direct \tab Van Buuren, 2014/2019 \cr
+   \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 14 \tab direct \tab Weber, 2019 \cr
+   \code{"gsed"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
 }
+
 
 As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
-the advice is to use the most general key: (\code{gsed}).
+the advice is to use the most general key, \code{"gsed"}.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
@@ -188,13 +185,9 @@ Bock DD, Mislevy RJ (1982).
 Adaptive EAP Estimation of Ability in a Microcomputer Environment.
 Applied Psychological Measurement, 6(4), 431-444.
 
-GSED Team (2019).
-\href{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/?ecm2019}{The Global Scale for Early Development (GSED)}.
-Early Childhood Matters 2019-14, 80-84.
-
-Van Buuren S (2014).
-\href{https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/}{Growth charts of human development}.
+Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
+\href{https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf}{pdf}
 
 Van Buuren S, Dusseldorp E, Doove B (2017).
 D-scores and references for ages 2-4 years. The Netherlands.
@@ -206,12 +199,12 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
+\href{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}{pdf}.
 }
 \seealso{
-\code{\link{get_tau}},
-\code{\link{builtin_itembank}}, \code{\link{posterior}},
-\code{\link{builtin_references}}
+\code{\link[=get_tau]{get_tau()}},
+\code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=posterior]{posterior()}},
+\code{\link[=builtin_references]{builtin_references()}}
 }
 \author{
 Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)

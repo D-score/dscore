@@ -33,7 +33,7 @@ itemnames <- c("aqigmc028", "grihsd219", "", "by1mdd157", "mdsgmd006")
 decompose_itemnames(itemnames)
 }
 \seealso{
-\code{\link{decompose_itemnames}}
+\code{\link[=decompose_itemnames]{decompose_itemnames()}}
 }
 \author{
 Stef van Buuren

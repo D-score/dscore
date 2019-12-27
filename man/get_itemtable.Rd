@@ -11,7 +11,7 @@ get_itemtable(items = NULL, itemtable = NULL)
 default (\code{NULL}) returns all items.}
 
 \item{itemtable}{A \code{data.frame} set up according to the
-same structure as \code{\link{builtin_itemtable}}. If not specified,
+same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not specified,
 the \code{builtin_itemtable} is used.}
 }
 \value{
@@ -25,5 +25,5 @@ The \code{get_itemtable()} function returns a subset of \code{items}
 in the itemtable.
 }
 \seealso{
-\code{\link{get_labels}}, \code{\link{get_itemnames}}
+\code{\link[=get_labels]{get_labels()}}, \code{\link[=get_itemnames]{get_itemnames()}}
 }

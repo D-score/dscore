@@ -1,16 +1,17 @@
 Package: dscore
 Type: Package
 Title: D-score for Child Development
-Version: 0.41.3
+Version: 0.42.0
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
-Description: The dscore package provides a set of tools for calculating the
-    D-score, a quantitative measure of child development. The package can convert
-    milestone PASS/FAIL scores from 19 instruments into the D-score and the DAZ 
-    (D-score adjusted for age). The package also contains some to that help to 
-    translate item names into the 9-position GSED convention for child development
-    milestones.
+Description: The dscore package provides tools for calculating the
+    D-score, a quantitative measure of child development. The main 
+    function converts milestone scores from various instruments into 
+    the D-score and the DAZ (D-score adjusted for age). The user needs
+    to map the variable names of each milestone into the 9-position 
+    GSED convention. The packages contains tools that assist in this 
+    translation.
 Depends:
     R (>= 2.10)
 Imports:
@@ -22,14 +23,19 @@ Imports:
     tidyr (>= 1.0.0)
 LinkingTo: Rcpp, RcppArmadillo
 Suggests:
+    dmetric,
+    ggplot2,
+    kableExtra,
     knitr,
+    lme4,
     rmarkdown,
     testthat
 Encoding: UTF-8
-License: GPL-3
+License: GPL-3 + file LICENSE
 LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 7.0.2
 NeedsCompilation: yes
 URL: https://github.com/stefvanbuuren/dscore, https://stefvanbuuren.name/dbook1/
 BugReports: https://github.com/stefvanbuuren/dscore/issues
+Roxygen: list(markdown = TRUE)

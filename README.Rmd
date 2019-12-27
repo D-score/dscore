@@ -1,7 +1,7 @@
 ---
 output: github_document
 always_allow_html: yes
-bibliography: [references.bib]
+bibliography: [vignettes/references.bib]
 biblio-style: apalike
 link-citations: yes
 ---
@@ -12,28 +12,31 @@ link-citations: yes
 options(width = 130)
 knitr::opts_chunk$set(
   collapse = TRUE,
+  fig.retina = 2,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
-)
+  out.width = "100%")
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
 ```
+
 # dscore
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-0.40.2-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
+[![](https://img.shields.io/badge/github%20version-0.42.0-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
 <!-- badges: end -->
 
-The D-score is a numerical score that measures generic development 
-in children. The D-score can be used to analyze and predict 
+The *D*-score is a numerical score that measures generic development 
+in children. The *D*-score can be used to analyze and predict 
 development of children using tools developed for numerical 
 measures, like height and weight.
 
 The `dscore` package contains tools to
 
-- Calculate D-score from item level responses
-- Transform the D-scores into DAZ, age-standardised Z-scores
 - Map your item names to the GSED convention
+- Calculate *D*-score from item level responses
+- Transform the *D*-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones
 from widely used instruments for measuring child development.
@@ -47,130 +50,33 @@ install.packages("remotes")
 remotes::install_github("stefvanbuuren/dscore")
 ```
 
-## Example
 
-### Inspect the data
+## Overview
 
-The `milestones` dataset in the `dscore` package contain responses
-of 27 preterm children measured at various age between birth and 2.5 
-years on the Dutch Development Instrument (DDI). The dataset looks 
-like:
+This overview shows how to estimate the *D*-score and the *D*-score age-adjusted Z-score (DAZ) from child data on developmental milestones. The overview covers some typical actions needed when estimating the *D*-score and DAZ:
 
-```{r echo=FALSE}
-suppressPackageStartupMessages(library(dplyr))
+1. Identify whether the `dscore` package covers your measurement instrument;
+2. Map your variable names to the GSED 9-position schema;
+3. Calculate *D*-score and DAZ;
+4. Summarise your results.
 
-```
 
-```{r milestones}
-library(dscore)
-head(milestones[, c(1, 3, 4, 9:15)])
-```
+### Is your measurement instrument covered?
 
-Each row corresponds to a visit. Most children have three or four visits.
-Columns starting with `ddi` hold the responses on DDI-items. A 
-`1` means a PASS, a `0` means a FAIL, and `NA` means that the item was 
-not administered.
+The `dscore` package covers a subset of all possible assessment instruments. Moreover, it may have a restricted age range for a given instrument. Your first tasks are
 
-The `get_labels()` function obtains the labels of the milestones, e.g.,
+- to evaluate whether the current `dscore` package can convert your measurements into *D*-scores;
+- to choose a `key` that best suits your objectives.
 
-```{r}
-items <- names(milestones)[9:15]
-labels <- get_labels(items)
-print(data.frame(items, labels), right = FALSE, row.names = FALSE)
-```
+The inventory by @fernald2017 identified [147 instruments](http://pubdocs.worldbank.org/en/685691512577486773/ECD-Measurement-Inventory-children-0-8-years-WorldBank.xlsx) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The *D*-score is defined by and calculated from, subsets of milestones from such instruments.
 
-### Calculate the D-score and DAZ
+Assessment instruments connect to the *D*-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports three keys:
 
-The `milestones` dataset has properly named columns that identifies each
-item. Calculating the D-score and DAZ is then done by:
+1. `dutch`, a model developed for the *Dutch development instrument*; 
+2. `gcdg`, a model covering 14 instruments using *direct* measurements; 
+3. `gsed`, a model covering 20 instruments using a mix of *direct* and *caregiver-reported* measurements;
 
-```{r}
-ds <- dscore(milestones)
-dim(ds)
-```
-
-where `ds` is a `data.frame` with the same number of rows than the input 
-data. The first six rows are
-
-```{r}
-head(ds)
-```
-
-The table below provides the interpretation of each column: 
-
-Name | Interpretation
----- | -------------
-a    | Decimal age
-n    | Number of items used to calculate D-score
-p    | Percentage of passed milestones
-d    | D-score estimate, mean of posterior
-sem  | Standard error of measurement, standard deviation of the posterior
-daz  | D-score corrected for age
-
-### Graphs of D-score and DAZ
-
-The `milestones` data and the result can be combined as
-
-```{r}
-md <- cbind(milestones, ds)
-```
-
-The individual developmental curves of 27 children can be plotted.
-
-```{r graphD, dpi = 144}
-library(ggplot2)
-library(dplyr)
-ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 
-  xlab("Age (in years)") + 
-  ylab("D-score") +
-  geom_line(lwd = 0.1) +
-  geom_point(size = 1) +
-  scale_colour_hue(l = 45) +
-  theme_light()
-```
-
-The DAZ is an age-standardized D-score with a standard normal distribution
-with mean 0 and variance 1. The individual DAZ curves are plotted as
-
-```{r graphDAZ, dpi = 144}
-ggplot(md, aes(x = a, y = daz, group = id, color = sex)) + 
-  theme_light() +
-  geom_rect(xmin = 0, xmax = 3, ymin = -2, ymax = 2, 
-            fill = "grey97", linetype = 0, show.legend = FALSE) +
-  geom_hline(yintercept = -1:1, colour = "white", lwd = 0.5) +
-  coord_cartesian(ylim = c(-4, 4)) +
-  geom_line(lwd = 0.1) +
-  geom_point(size = 1) +
-  scale_colour_hue(l = 45) +
-  xlab("Age (in years)") +
-  ylab("DAZ")
-```
-
-Note that the D-scores and DAZ are a little lower than average. The 
-explanation here is that these all children are born preterm.
-
-### Mapping items names
-
-The `dscore()` function assumes that the item names in your data follow 
-the GSED naming convention. This convention is a nine-position word that 
-identifies the instrument, the domain, the administration mode and the 
-item number. You may decompose an item names into these components, 
-as follows:
-
-```{r}
-decompose_itemnames(items)
-```
-
-which gives four components of the seven items. 
-
-In practice, you will need to spend some time in renaming your own 
-item names according to the GSED convention. In order to ease this 
-process, the `dscore` package offers several functions that can help.
-
-First of all, the measurement instrument in your data needs to be one 
-of the instruments supported by the `dscore` package. Here's the 
-table of instrument names and number of items that are currently 
-defined in the package:
+Although the differences between *D*-scores calculated under different keys are generally small, the results are not identical. Hence, we may compare only *D*-scores that are calculated under the same key. The table given below displays the number of items per instrument under each key. If the entry is blank, the key does not cover the instrument.
 
 | Code   | Instrument                                              | Items | dutch |  gcdg |  gsed |
 | ------ | ------------------------------------------------------- | -----:|------:|------:|------:|
@@ -200,34 +106,15 @@ defined in the package:
 |        | Extensions                                              |       |       |       |       |
 | `rap`  | Global Scale of Early Development - RAPID SF            |  139  |       |       |       |
 | `mul`  | Mullen Scales of Early Learning                         |  232  |       |       |   85  |
-| `hyp`  | [special codes, hypothetical instrument]                |    5  |       |       |       |
+| `hyp`  | Demonstration items                                     |    5  |       |       |       |
 |        |                                                         | 2651  |   76  |  565  |  892  |
 
-If your instrument is not here, you cannot calculate the D-score. But 
-even if your instrument is in the table, there is no garantee that it
-can be used for the D-score. Instruments are tied to the D-score by 
-means of a *measurement model*. The measurement model provides the
-*key* for converting the item responses to the D-score. 
+Unfortunately, it is not possible to calculate the *D*-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
 
-The `dscore` package currently support three keys: `dutch`, 
-`gcdg` and `gsed`. Although there is much overlap, different keys 
-cover different instrument. The table above displays the number of items 
-per instrument under each of the three keys. If the entry is blank, 
-the key does not cover the instrument.
+For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed"`. Your choice may depend on the goal of your analysis. If you want to compare to other *D*-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`.
 
-For some instruments, e.g., for `cro` only one choice is possible (only 
-key `gsed`). For `gri`, we may choose between `gcdg` and `gsed`. 
-The actual choice will depend on the goals of your analysis. If you 
-want to compare to other D-scores calculated under 
-key `gcdg`, or reproduce an analysis made under key, then pick `gcdg`. 
-If that is not the case, then
-`gsed` is the better choice since it account for a wider variety of 
-comparisons to other instruments. The differences between the D-scores
-calculated under different keys are small, but these are not identical.
-If you don't specify `key`, the `dscore()` function will use `key = "gsed"` 
-for maximum instrument coverage.
 
-```{r graphkey, dpi = 144, echo = FALSE, warning=FALSE}
+```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE, warning=FALSE}
 ib <- dscore::builtin_itembank %>% 
   filter(key == "gsed")
 
@@ -236,6 +123,7 @@ aeq <- dmetric::calculate_age_equivalents(model = model)
 
 ib$A50 <- approx(x = aeq$D50, y = aeq$A50, xout = ib$tau)$y
 
+op <- par(bty = "n")
 ggplot(ib, aes(x = A50, y = instrument, group = instrument)) +
   geom_point(pch = 3, size = 1, colour = "blue") + 
   scale_y_discrete(limits = rev(unique(ib$instrument)), name = "") +
@@ -244,40 +132,202 @@ ggplot(ib, aes(x = A50, y = instrument, group = instrument)) +
   theme(axis.text.y = element_text(hjust = 0, family = "Courier"))
 ```
 
-The actual age coverage for an instrument is determined by the age 
-design of the original cohorts used to create the key. The figure 
-above indicates the age range currenytly supported by the GSED
-key. Some instruments contain many items for the first two years (e.g., 
-`by1`, `dmc`) whereas others cover primarly upper ages (e.g., `tep`, `mul`)
+The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `mul`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.
 
-The `dscore` package will recognize `r length(get_itemnames())` item 
-names. Call the `get_itemnames()` function with any arguments to see
-them all. If you want to see all names of a particular 
-instrument and a particul domain, then use 
 
-```{r}
-# find all item name in mdt (MDAT), domain gm (gross motor)
-items <- get_itemnames(instrument = "mdt", domain = "gm")
-items
+### Map variable names to the GSED 9-position schema
+
+The `dscore()` function accepts item names that follow the GSED 9-position schema. A name with a length of nine characters identifies every milestone. The following table shows the construction of names.
+
+Position   | Description          | Example
+----------:|:-------------------- |:-------------
+1-3        | instrument           | `by3`
+4-5        | developmental domain | `cg`
+6          | administration mode  | `d`
+7-9        | item number          | `018`
+
+Thus, item `by3cgd018` refers to the 18th item in the cognitive scale of the Bayley-III. The label of the item can be obtained by 
+
+```{r getlabels}
+library(dscore)
+get_labels("by3cgd018")
 ```
 
-The labels for this set of items can be found by 
+You may decompose item names into components as follows:
 
-```{r}
-head(get_labels(items))
+```{r decompose_itemnames}
+decompose_itemnames(c("by3cgd018", "denfmd014"))
 ```
 
-Alternatively, use `decompose_itemnames()` to break down the item names 
-into its components.
+This function returns a `data.frame` with four character vectors.
 
-Using these functions, it should be relatively easy to map and rename
-your item names to the GSED-convention.
+The `dscore` package can recognise `r nrow(dscore::builtin_itemtable)` item names. The expression `get_itemnames()` returns a (long) vector of all known item names. Let us construct a table of instruments by domains:
+
+```{r table}
+items <- get_itemnames()
+din <- decompose_itemnames(items)
+knitr::kable(with(din, table(instrument, domain)), format = "html") %>% 
+  kableExtra::column_spec(1, monospace = TRUE)
+```
+
+We obtain the first three item names and labels from the `mdt` domain `gm` as
+
+```{r ddigm}
+items <- head(get_itemnames(instrument = "mdt", domain = "gm"), 3)
+get_labels(items)
+```
+
+In practice, you need to spend some time to figure out how item names in your data map to those in the `dscore` package. Once you've completed this mapping, rename the items into the GSED 9-position schema. For example, suppose that your first three gross motor MDAT items are called `mot1`, `mot2`, and `mot3`. 
+
+```{r smalldataset}
+data <- data.frame(id = c(1, 1, 2), age = c(1, 1.6, 0.9), mot1 = c(1, NA, NA), 
+                   mot2 = c(0, 1, 1), mot3 = c(NA, 0, 1))
+data
+```
+
+Renaming is easy to do by changing the names attribute.
+
+```{r rename}
+old_names <- names(data)[3:5]
+new_names <- get_itemnames(instrument = "mdt", domain = "gm")[1:3]
+names(data)[3:5] <- new_names
+data
+```
+
+There may be different versions and revision of the same instrument. Therefore, carefully check whether the item labels match up with the labels in version of the instrument that you administered.
+
+The `dscore` package assumes that response to milestones are dichotomous (1 = PASS, 0 = FAIL). If necessary, recode your data to match these response categories.
+
+### Calculate the *D*-score and DAZ
+
+
+Once the data are in proper shape, calculation of the *D*-score and DAZ is easy.
+
+The `milestones` dataset in the `dscore` package contains responses of 27 preterm children measured at various age between birth and 2.5 years on the Dutch Development Instrument (`ddi`). The dataset looks like:
+
+```{r milestones}
+head(milestones[, c(1, 3, 4, 9:14)])
+```
+
+Each row corresponds to a visit. Most children have three or four visits. Columns starting with `ddi` hold the responses on DDI-items. A  `1` means a PASS, a `0` means a FAIL, and `NA` means that the item was not administered.
+
+The `milestones` dataset has properly named columns that identify each item. Calculating the *D*-score and DAZ is then done by:
+
+```{r}
+ds <- dscore(milestones)
+dim(ds)
+```
+
+Where `ds` is a `data.frame` with the same number of rows as the input data. The first six rows are
+
+```{r}
+head(ds)
+```
+
+The table below provides the interpretation of the output: 
+
+Name | Interpretation
+---- | -------------
+`a`    | Decimal age
+`n`    | number of items used to calculate *D*-score
+`p`    | Percentage of passed milestones
+`d`    | *D*-score estimate, mean of posterior
+`sem`  | Standard error of measurement, standard deviation of the posterior
+`daz`  | *D*-score corrected for age
+
+### Summarise *D*-score and DAZ
+
+Combine the `milestones` data and the result by
+
+```{r bind}
+md <- cbind(milestones, ds)
+```
+
+We may plot the 27 individual developmental curves by
+
+```{r graphD, fig.width = 7, fig.height = 7}
+library(ggplot2)
+library(dplyr)
+
+r <- builtin_references %>% 
+  filter(pop == "dutch") %>% 
+  select(age, SDM2, SD0, SDP2)
+
+ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 
+  theme_light() + 
+  theme(legend.position = c(.85, .15)) +
+  theme(legend.background = element_blank()) +
+  theme(legend.key = element_blank()) +
+  annotate("polygon", x = c(r$age, rev(r$age)), 
+           y = c(r$SDM2, rev(r$SDP2)), alpha = 0.1, fill = "green") +
+  annotate("line", x = r$age, y = r$SDM2, lwd = 0.3, alpha = 0.2, color = "green") +
+  annotate("line", x = r$age, y = r$SDP2, lwd = 0.3, alpha = 0.2, color = "green") +
+  annotate("line", x = r$age, y = r$SD0, lwd = 0.5, alpha = 0.2, color = "green") +
+  coord_cartesian(xlim = c(0, 2.5)) +
+  ylab(expression(paste(italic(D), "-score", sep = ""))) +
+  xlab("Age (in years)") +
+  scale_color_brewer(palette = "Set1") +
+  geom_line(lwd = 0.1) +
+  geom_point(size = 1)
+```
+
+Note that similarity of these curves to growth curves for body height and weight.
+
+The DAZ is an age-standardized *D*-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by
+
+```{r graphDAZ, fig.width = 7, fig.height = 5}
+ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) + 
+  theme_light() + 
+  theme(legend.position = c(.85, .15)) +
+  theme(legend.background = element_blank()) +
+  theme(legend.key = element_blank()) +
+  scale_color_brewer(palette = "Set1") +
+  annotate("rect", xmin = -Inf, xmax = Inf, ymin = -2, ymax = 2, alpha = 0.1,
+            fill = "green") +
+  coord_cartesian(xlim = c(0, 2.5), 
+                  ylim = c(-4, 4)) +
+  geom_line(lwd = 0.1) +
+  geom_point(size = 1) +
+  xlab("Age (in years)") +
+  ylab("DAZ") 
+```
+
+Note that the *D*-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can [account for prematurity](https://stefvanbuuren.name/dbook1/sec-pops.html#age-adjustment) by correcting for gestational age.
+
+The distributions of DAZ for boys and girls show that a large overlap:
+
+```{r density, fig.width = 7, fig.height = 4}
+ggplot(md) + 
+  theme_light() +
+  scale_fill_brewer(palette = "Set1") +
+  geom_density(aes(x = daz, group = sex, fill = sex), alpha = 0.4, 
+               adjust = 1.5, color = "transparent") +
+  xlab("DAZ")
+```
+
+Under the assumption of independence, we may test whether sex differences are constant in age by a linear regression that includes the interaction between age and sex:
+
+```{r independence}
+summary(lm(daz ~  age * sex, data = md))
+```
+
+This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.
+
+We may account for the clustering effect by including random intercept and age effects, and rerun as
+
+```{r multilevel}
+library(lme4)
+lmer(daz ~  1 + age + sex + sex * age + (1 + age | id), data = md)
+```
+
+This analysis yields the same substantive conclusions as before.
+
 
 ## Resources
 
 ### Books and reports
 
-1. [Introduction into the D-score](https://stefvanbuuren.name/dbook1/)
+1. [Introduction into the *D*-score](https://stefvanbuuren.name/dbook1/)
 2. [Inventory of 147 instruments for measuring early child development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries): @fernald2017
 
 ### Keys

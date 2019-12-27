@@ -1,23 +1,25 @@
 #' Global Scale for Early Development - itemtable
 #'
-#' The built-in variable named \code{itemtable}
-#' contains descriptions of all items found in the \code{gsed}
+#' The built-in variable named `itemtable`
+#' contains descriptions of all items found in the `gsed`
 #' data.
 #' @docType data
-#' @format A \code{data.frame} with five columns:
-#' \describe{
-#' \item{\code{item}}{Item name, in GSED lexicon}
-#' \item{\code{instrument}}{Instrument name (3-letter code)}
-#' \item{\code{domain}}{Developmental domain (2-letter code)}
-#' \item{\code{mode}}{Mode of administration (1-letter code)}
-#' \item{\code{number}}{Item number (3-number code)}
-#' \item{\code{equate}}{Equate group}
-#' \item{\code{label}}{Item label}
-#' }
+#' @format A `data.frame` with variables:
+#'
+#' | Name | Label |
+#' | --- | --------- |
+#' | `item` | Item name, gsed lexicon |
+#' | `instrument` | Instrument code, 3 letters |
+#' | `domain` | Domain code, 2 letter |
+#' | `mode` | Mode code, 1 letter |
+#' | `number` | Item number, 3 numbers |
+#' | `equate` | Equate group |
+#' | `label` | Label (English) |
+#'
 #' @details
 #' Data are collected by the members of the Global Scale for Early
 #' Development (GSED) group.
-#' The \code{itemtable} is created by \code{\\data-raw\\R\\import_itemtable.R}.
+#' The `itemtable` is created by `\\data-raw\\R\\import_itemtable.R`.
 #' @author Compiled by Stef van Buuren
 #' @keywords datasets
 "builtin_itemtable"

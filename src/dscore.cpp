@@ -10,10 +10,10 @@ using namespace Rcpp;
 //'
 //' Normalizes the distribution so that the total mass equals 1.
 //' @aliases normalize
-//' @param d A vector with \code{length(qp)} elements representing
+//' @param d A vector with `length(qp)` elements representing
 //' the unscaled density at each quadrature point.
 //' @param qp Vector of equally spaced quadrature points.
-//' @return A \code{vector} of \code{length(d)} elements with
+//' @return A vector of `length(d)` elements with
 //' the prior density estimate at each quadature point.
 //' @examples
 //' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
@@ -33,17 +33,16 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 //' @details
 //' This function assumes that the difficulties have been estimated by
 //' a binary Rasch model (e.g. by
-//' \code{sirt::rasch.pairwise.itemcluster()}).
+//' [sirt::rasch.pairwise.itemcluster()]).
 //'
 //' @aliases posterior
 //' @param score Integer, either 0 (fail) and 1 (pass)
 //' @param tau Numeric, difficulty parameter
-//' @param prior Vector of prior values on quadrature points \code{qp}
+//' @param prior Vector of prior values on quadrature points `qp`
 //' @param qp vector of equally spaced quadrature points
-//' @return A vector of length \code{length(prior)}
+//' @return A vector of length `length(prior)`
 //' @author Stef van Buuren, Arjan Huizing, 2019
-//' @seealso \code{\link{dscore}},
-//' \code{\link[sirt]{rasch.pairwise.itemcluster}}
+//' @seealso [dscore()], [sirt::rasch.pairwise.itemcluster()]
 // [[Rcpp::export]]
 NumericVector posterior(int score, double tau,
                         NumericVector prior,
@@ -90,21 +89,23 @@ double wmean(NumericVector x, NumericVector w) {
 //' Calculate posterior of ability
 //'
 //' @param scores A vector with PASS/FAIL observations.
-//' Scores are coded numerically as \code{pass = 1} and \code{fail = 0}.
-//' Alternatively, \code{pass = TRUE} and \code{fail = FALSE} may be used.
+//' Scores are coded numerically as `pass = 1` and `fail = 0`.
 //' @param tau A vector containing the item difficulties for the item
-//' scores in \code{scores} estimated from the Rasch model in the
+//' scores in `scores` estimated from the Rasch model in the
 //' preferred metric/scale.
 //' @param qp Numeric vector of equally spaced quadrature points.
 //' @param mu Numeric scalar. The mean of the prior.
 //' @param sd Numeric scalar. Standard deviation of the prior.
 //' @author Stef van Buuren, Arjan Huizing, 2019
-//' @return A list with three components:
-//' \code{eap} (mean of the posterior),
-//' \code{gp} (vector of quadrature points), and
-//' \code{posterior} (vector with posterior distribution).
-//' Since dscore 40.1 the function does not return the
-//' \code{"start"} element anymore.
+//' @return A `list` with three elements:
+//'
+//' | Name | Label |
+//' | --- | --------- |
+//' `eap` | Mean of the posterior
+//' `gp`  | Vcetor of quadrature points
+//' `posterior` | Vector with posterior distribution.
+//'
+//' Since `dscore V40.1` the function does not return the `"start"` element.
 // [[Rcpp::export]]
 List calculate_posterior(NumericVector scores,
                           NumericVector tau,

@@ -4,18 +4,19 @@
 #' a set of 27 preterm children.
 #'
 #' @docType data
-#' @format A \code{data.frame} with 100 rows and 61 variables:
-#' \describe{
-#' \item{id}{Integer, child ID}
-#' \item{agedays}{Integer, age in days}
-#' \item{age}{Numeric, decimal age in years}
-#' \item{sex}{Character, "male", "female"}
-#' \item{gagebrth}{Integer, gestational age in days}
-#' \item{ddifmd001}{Integer, Fixates eyes: 1 = yes, 0 = no}
-#' \item{\dots}{and so on..}
-#' }
+#' @format A `data.frame` with 100 rows and 62 variables:
+#'
+#' Name       | Label
+#' ---------- | ---------
+#' `id`       | Integer, child ID
+#' `agedays`  | Integer, age in days
+#' `age`      | Numeric, decimal age in years
+#' `sex`      | Character, "male", "female"
+#' `gagebrth` | Integer, gestational age in days
+#' `ddifmd001`| Integer, Fixates eyes: 1 = yes, 0 = no
+#' `...`      | and so on..
 #'
 #' @examples
 #' head(milestones)
-#' @seealso \code{\link{dscore}}
+#' @seealso [dscore()]
 "milestones"

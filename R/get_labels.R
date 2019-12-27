@@ -1,14 +1,14 @@
 #' Get labels for items
 #'
-#' The \code{get_labels()} function obtains the item labels for a
+#' The `get_labels()` function obtains the item labels for a
 #' specified set of items.
 #' @inheritParams get_itemnames
 #' @param items A character vector of item names to return. The
-#' default (\code{NULL}) returns the labels of all items.
+#' default (`NULL`) returns the labels of all items.
 #' @param trim The maximum number of characters in the label. The
-#' default \code{trim = NULL} does not trim labels.
+#' default `trim = NULL` does not trim labels.
 #' @return A named character vector with item labels.
-#' @seealso \code{\link{builtin_itemtable}}, \code{\link{get_itemnames}}
+#' @seealso [builtin_itemtable()], [get_itemnames()]
 #' @examples
 #' # get labels of first two Macarthur items
 #' get_labels(get_itemnames(instrument = "mac", number = 1:2), trim = 40)

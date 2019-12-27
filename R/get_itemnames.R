@@ -1,35 +1,35 @@
 #' Extract item names
 #'
-#' The \code{get_itemnames()} function matches names against the 9-code
+#' The `get_itemnames()` function matches names against the 9-code
 #' template. This is useful for quickly selecting names of items from a larger
 #' set of names.
-#' @param x A character vector, \code{data.frame} or an object of
-#' class \code{lean}. If not specified,
-#' the function will return all item names in \code{itemtable}.
+#' @param x A character vector, `data.frame` or an object of
+#' class `lean`. If not specified,
+#' the function will return all item names in `itemtable`.
 #' @param instrument A character vector with 3-position codes of instruments
-#' that should match. The default \code{instrument = NULL} allows for
+#' that should match. The default `instrument = NULL` allows for
 #' all instruments.
 #' @param domain A character vector with 2-position codes of domains
-#' that should match. The default \code{instrument = NULL} allows for
+#' that should match. The default `instrument = NULL` allows for
 #' all domains.
 #' @param mode A character vector with 1-position codes of the mode
-#' of administration. The default \code{mode = NULL} allows for all
+#' of administration. The default `mode = NULL` allows for all
 #' modes.
 #' @param number A numeric or character vector with item numbers.
-#' The default \code{number = NULL} allows for all numbers.
+#' The default `number = NULL` allows for all numbers.
 #' @param strict A logical specifying whether the resulting item
 #' names must conform to one of the built-in names. The default is
-#' \code{strict = FALSE}.
-#' @param itemtable A \code{data.frame} set up according to the
-#' same structure as \code{\link{builtin_itemtable}}. If not specified,
-#' the \code{builtin_itemtable} is used.
+#' `strict = FALSE`.
+#' @param itemtable A `data.frame` set up according to the
+#' same structure as [builtin_itemtable()]. If not specified,
+#' the `builtin_itemtable` is used.
 #' @return A vector with names of items
 #' @details
 #' The gsed-naming convention is as follows. Position 1-3 codes the
 #' instrument, position 4-5 codes the domain, position 6 codes
 #' direct/caregiver/message, positions 7-9 is a item sequence number.
 #'
-#' @seealso \code{\link{sort_itemnames}}
+#' @seealso [sort_itemnames()]
 #' @author Stef van Buuren 2019
 #' @examples
 #' itemnames <- c("aqigmc028", "grihsd219", "", "age", "mdsgmd999")

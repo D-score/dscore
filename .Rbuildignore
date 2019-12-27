@@ -7,3 +7,6 @@
 ^references.bib$
 ^LICENSE\.md$
 ^doc$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

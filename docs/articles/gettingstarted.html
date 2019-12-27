@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculate D-score and DAZ • dscore</title>
+<title>Getting started • dscore</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Calculate D-score and DAZ">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Getting started">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -44,10 +44,19 @@
   </a>
 </li>
 <li>
-  <a href="../articles/dscore.html">Get started</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/gettingstarted.html">Getting started</a>
+    </li>
+  </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -67,15 +76,15 @@
 
       
 
-      </header><script src="dscore_files/kePrint-0.0.1/kePrint.js"></script><div class="row">
+      </header><script src="gettingstarted_files/kePrint-0.0.1/kePrint.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Calculate D-score and DAZ</h1>
+      <h1>Getting started</h1>
                         <h4 class="author">Stef van Buuren</h4>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/stefvanbuuren/dscore/blob/master/vignettes/dscore.Rmd"><code>vignettes/dscore.Rmd</code></a></small>
-      <div class="hidden name"><code>dscore.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/stefvanbuuren/dscore/blob/master/vignettes/gettingstarted.Rmd"><code>vignettes/gettingstarted.Rmd</code></a></small>
+      <div class="hidden name"><code>gettingstarted.Rmd</code></div>
 
     </div>
 
@@ -350,7 +359,7 @@
 </table>
 <p>Unfortunately, it is not possible to calculate the <span class="math inline">\(D\)</span>-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the <code>dscore</code> package. It remains an empirical question, however, whether the requested extension is possible.</p>
 <p>For some instruments, e.g., for <code>cro</code> only one choice is possible (<code>"gsed"</code>). For <code>gri</code>, we may choose between <code>"gcdg"</code> and <code>"gsed"</code>. Your choice may depend on the goal of your analysis. If you want to compare to other <span class="math inline">\(D\)</span>-scores calculated under key <code>"gcdg"</code>, or reproduce an analysis made under that key, then pick <code>"gcdg"</code>. If that is not the case, then <code>"gsed"</code> is probably a better choice because of its broader generalizability. The default key is <code>"gsed"</code>.</p>
-<p><img src="dscore_files/figure-html/graphkey-1.png" width="672"></p>
+<p><img src="gettingstarted_files/figure-html/graphkey-1.png" width="672"></p>
 <p>The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the <code>"gsed"</code> key. Some instruments contain many items for the first two years (e.g., <code>by1</code>, <code>dmc</code>), whereas others cover primarily upper ages (e.g., <code>tep</code>, <code>mul</code>). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the <code>dscore</code> package.</p>
 </div>
 <div id="map-variable-names-to-the-gsed-9-position-schema" class="section level2">
@@ -2534,7 +2543,7 @@ vin
 <a class="sourceLine" id="cb19-21" data-line-number="21"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer</a></span>(<span class="dt">palette =</span> <span class="st">"Set1"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb19-22" data-line-number="22"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>(<span class="dt">lwd =</span> <span class="fl">0.1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb19-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="dt">size =</span> <span class="dv">1</span>)</a></code></pre></div>
-<p><img src="dscore_files/figure-html/graphD-1.png" width="672"></p>
+<p><img src="gettingstarted_files/figure-html/graphD-1.png" width="672"></p>
 <p>Note that similarity of these curves to growth curves for body height and weight.</p>
 <p>The DAZ is an age-standardized <span class="math inline">\(D\)</span>-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(md, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> a, <span class="dt">y =</span> daz, <span class="dt">group =</span> id, <span class="dt">color =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(sex))) <span class="op">+</span><span class="st"> </span></a>
@@ -2551,7 +2560,7 @@ vin
 <a class="sourceLine" id="cb20-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb20-13" data-line-number="13"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="st">"Age (in years)"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb20-14" data-line-number="14"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span>(<span class="st">"DAZ"</span>) </a></code></pre></div>
-<p><img src="dscore_files/figure-html/graphDAZ-1.png" width="672"></p>
+<p><img src="gettingstarted_files/figure-html/graphDAZ-1.png" width="672"></p>
 <p>Note that the <span class="math inline">\(D\)</span>-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can <a href="https://stefvanbuuren.name/dbook1/sec-pops.html#age-adjustment">account for prematurity</a> by correcting for gestational age.</p>
 <p>The distributions of DAZ for boys and girls show that a large overlap:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(md) <span class="op">+</span><span class="st"> </span></a>
@@ -2560,7 +2569,7 @@ vin
 <a class="sourceLine" id="cb21-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> daz, <span class="dt">group =</span> sex, <span class="dt">fill =</span> sex), <span class="dt">alpha =</span> <span class="fl">0.4</span>, </a>
 <a class="sourceLine" id="cb21-5" data-line-number="5">               <span class="dt">adjust =</span> <span class="fl">1.5</span>, <span class="dt">color =</span> <span class="st">"transparent"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb21-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="st">"DAZ"</span>)</a></code></pre></div>
-<p><img src="dscore_files/figure-html/density-1.png" width="672"></p>
+<p><img src="gettingstarted_files/figure-html/density-1.png" width="672"></p>
 <p>Under the assumption of independence, we may test whether sex differences are constant in age by a linear regression that includes the interaction between age and sex:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="kw"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span>(daz <span class="op">~</span><span class="st">  </span>age <span class="op">*</span><span class="st"> </span>sex, <span class="dt">data =</span> md))</a></code></pre></div>
 <pre><code>## 

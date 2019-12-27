@@ -1,5 +1,5 @@
 ---
-title: "Calculate D-score and DAZ"
+title: "Getting started"
 author: "Stef van Buuren"
 output: 
   rmarkdown::html_vignette:
@@ -8,7 +8,7 @@ bibliography: [references.bib]
 biblio-style: apalike
 link-citations: yes
 vignette: >
-  %\VignetteIndexEntry{Calculate D-score and DAZ}
+  %\VignetteIndexEntry{Getting started}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

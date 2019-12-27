@@ -48,8 +48,8 @@ needed:
 
 The `dscore` package provides various function that support these steps.
 See [Getting
-started](https://stefvanbuuren.name/dscore/articles/gettingstarted.html)
-for more details.
+started](https://stefvanbuuren.name/dscore/articles/start.html) for more
+details.
 
 ## Resources
 

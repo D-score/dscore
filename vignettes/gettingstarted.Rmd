@@ -205,7 +205,7 @@ Name | Interpretation
 `sem`  | Standard error of measurement, standard deviation of the posterior
 `daz`  | $D$-score corrected for age
 
-### Summarise $D$-score and DAZ
+## Summarise $D$-score and DAZ
 
 Combine the `milestones` data and the result by
 

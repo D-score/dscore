@@ -1,6 +1,5 @@
 ---
 title: "Getting started"
-author: "Stef van Buuren"
 output: 
   rmarkdown::html_vignette:
     css: vignette.css

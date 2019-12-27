@@ -55,8 +55,8 @@ for more details.
 
 ### Books and reports
 
-1.  [Introduction into the
-    *D*-score](https://stefvanbuuren.name/dbook1/)
+1.  [*D*-score: Turning milestones into
+    measurement](https://stefvanbuuren.name/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
     development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
     Fernald et al. ([2017](#ref-fernald2017))

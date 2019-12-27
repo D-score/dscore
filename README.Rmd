@@ -66,7 +66,7 @@ The `dscore` package provides various function that support these steps. See [Ge
 
 ### Books and reports
 
-1. [Introduction into the *D*-score](https://stefvanbuuren.name/dbook1/)
+1. [*D*-score: Turning milestones into measurement](https://stefvanbuuren.name/dbook1/)
 2. [Inventory of 147 instruments for measuring early child development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries): @fernald2017
 
 ### Keys

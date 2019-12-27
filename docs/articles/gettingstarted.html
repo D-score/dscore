@@ -80,7 +80,6 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Getting started</h1>
-                        <h4 class="author">Stef van Buuren</h4>
             
       
       <small class="dont-index">Source: <a href="https://github.com/stefvanbuuren/dscore/blob/master/vignettes/gettingstarted.Rmd"><code>vignettes/gettingstarted.Rmd</code></a></small>
@@ -2595,9 +2594,8 @@ vin
 ## F-statistic: 8.036 on 3 and 96 DF,  p-value: 7.83e-05</code></pre>
 <p>This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.</p>
 <p>We may account for the clustering effect by including random intercept and age effects, and rerun as</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lme4)</a></code></pre></div>
-<pre><code>## Loading required package: Matrix</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span>(daz <span class="op">~</span><span class="st">  </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>sex <span class="op">+</span><span class="st"> </span>sex <span class="op">*</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>age <span class="op">|</span><span class="st"> </span>id), <span class="dt">data =</span> md)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lme4)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span>(daz <span class="op">~</span><span class="st">  </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>sex <span class="op">+</span><span class="st"> </span>sex <span class="op">*</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>age <span class="op">|</span><span class="st"> </span>id), <span class="dt">data =</span> md)</a></code></pre></div>
 <pre><code>## Linear mixed model fit by REML ['lmerMod']
 ## Formula: daz ~ 1 + age + sex + sex * age + (1 + age | id)
 ##    Data: md

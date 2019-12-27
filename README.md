@@ -7,19 +7,19 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-0.40.2-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
+[![](https://img.shields.io/badge/github%20version-0.42.0-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
 <!-- badges: end -->
 
-The D-score is a numerical score that measures generic development in
-children. The D-score can be used to analyze and predict development of
-children using tools developed for numerical measures, like height and
-weight.
+The \(D\)-score is a numerical score that measures generic development
+in children. The \(D\)-score can be used to analyze and predict
+development of children using tools developed for numerical measures,
+like height and weight.
 
 The `dscore` package contains tools to
 
-  - Calculate D-score from item level responses
-  - Transform the D-scores into DAZ, age-standardised Z-scores
   - Map your item names to the GSED convention
+  - Calculate \(D\)-score from item level responses
+  - Transform the \(D\)-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones from
 widely used instruments for measuring child development.
@@ -75,10 +75,10 @@ print(data.frame(items, labels), right = FALSE, row.names = FALSE)
 #>  ddicmm031 Lifts chin off table for a moment
 ```
 
-### Calculate the D-score and DAZ
+### Calculate the \(D\)-score and DAZ
 
 The `milestones` dataset has properly named columns that identifies each
-item. Calculating the D-score and DAZ is then done by:
+item. Calculating the \(D\)-score and DAZ is then done by:
 
 ``` r
 ds <- dscore(milestones)
@@ -106,13 +106,13 @@ column:
 | Name | Interpretation                                                     |
 | ---- | ------------------------------------------------------------------ |
 | a    | Decimal age                                                        |
-| n    | Number of items used to calculate D-score                          |
+| n    | Number of items used to calculate \(D\)-score                      |
 | p    | Percentage of passed milestones                                    |
-| d    | D-score estimate, mean of posterior                                |
+| d    | \(D\)-score estimate, mean of posterior                            |
 | sem  | Standard error of measurement, standard deviation of the posterior |
-| daz  | D-score corrected for age                                          |
+| daz  | \(D\)-score corrected for age                                      |
 
-### Graphs of D-score and DAZ
+### Graphs of \(D\)-score and DAZ
 
 The `milestones` data and the result can be combined as
 
@@ -136,7 +136,7 @@ ggplot(md, aes(x = a, y = d, group = id, color = sex)) +
 
 <img src="man/figures/README-graphD-1.png" width="100%" />
 
-The DAZ is an age-standardized D-score with a standard normal
+The DAZ is an age-standardized \(D\)-score with a standard normal
 distribution with mean 0 and variance 1. The individual DAZ curves are
 plotted as
 
@@ -156,7 +156,7 @@ ggplot(md, aes(x = a, y = daz, group = id, color = sex)) +
 
 <img src="man/figures/README-graphDAZ-1.png" width="100%" />
 
-Note that the D-scores and DAZ are a little lower than average. The
+Note that the \(D\)-scores and DAZ are a little lower than average. The
 explanation here is that these all children are born preterm.
 
 ### Mapping items names
@@ -221,11 +221,11 @@ package:
 | `hyp` | \[special codes, hypothetical instrument\]              |     5 |       |      |      |
 |       |                                                         |  2651 |    76 |  565 |  892 |
 
-If your instrument is not here, you cannot calculate the D-score. But
-even if your instrument is in the table, there is no garantee that it
-can be used for the D-score. Instruments are tied to the D-score by
-means of a *measurement model*. The measurement model provides the *key*
-for converting the item responses to the D-score.
+If your instrument is not here, you cannot calculate the \(D\)-score.
+But even if your instrument is in the table, there is no garantee that
+it can be used for the \(D\)-score. Instruments are tied to the
+\(D\)-score by means of a *measurement model*. The measurement model
+provides the *key* for converting the item responses to the \(D\)-score.
 
 The `dscore` package currently support three keys: `dutch`, `gcdg` and
 `gsed`. Although there is much overlap, different keys cover different
@@ -236,13 +236,13 @@ cover the instrument.
 For some instruments, e.g., for `cro` only one choice is possible (only
 key `gsed`). For `gri`, we may choose between `gcdg` and `gsed`. The
 actual choice will depend on the goals of your analysis. If you want to
-compare to other D-scores calculated under key `gcdg`, or reproduce an
-analysis made under key, then pick `gcdg`. If that is not the case, then
-`gsed` is the better choice since it account for a wider variety of
-comparisons to other instruments. The differences between the D-scores
-calculated under different keys are small, but these are not identical.
-If you don’t specify `key`, the `dscore()` function will use `key =
-"gsed"` for maximum instrument coverage.
+compare to other \(D\)-scores calculated under key `gcdg`, or reproduce
+an analysis made under key, then pick `gcdg`. If that is not the case,
+then `gsed` is the better choice since it account for a wider variety of
+comparisons to other instruments. The differences between the
+\(D\)-scores calculated under different keys are small, but these are
+not identical. If you don’t specify `key`, the `dscore()` function will
+use `key = "gsed"` for maximum instrument coverage.
 
 <img src="man/figures/README-graphkey-1.png" width="100%" />
 
@@ -289,7 +289,8 @@ your item names to the GSED-convention.
 
 ### Books and reports
 
-1.  [Introduction into the D-score](https://stefvanbuuren.name/dbook1/)
+1.  [Introduction into the
+    \(D\)-score](https://stefvanbuuren.name/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
     development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
     Fernald et al. ([2017](#ref-fernald2017))

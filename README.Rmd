@@ -1,7 +1,7 @@
 ---
 output: github_document
 always_allow_html: yes
-bibliography: [references.bib]
+bibliography: [vignettes/references.bib]
 biblio-style: apalike
 link-citations: yes
 ---
@@ -21,19 +21,19 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-0.40.2-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
+[![](https://img.shields.io/badge/github%20version-0.42.0-orange.svg)](https://github.com/stefvanbuuren/dscore/rename)
 <!-- badges: end -->
 
-The D-score is a numerical score that measures generic development 
-in children. The D-score can be used to analyze and predict 
+The $D$-score is a numerical score that measures generic development 
+in children. The $D$-score can be used to analyze and predict 
 development of children using tools developed for numerical 
 measures, like height and weight.
 
 The `dscore` package contains tools to
 
-- Calculate D-score from item level responses
-- Transform the D-scores into DAZ, age-standardised Z-scores
 - Map your item names to the GSED convention
+- Calculate $D$-score from item level responses
+- Transform the $D$-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones
 from widely used instruments for measuring child development.
@@ -79,10 +79,10 @@ labels <- get_labels(items)
 print(data.frame(items, labels), right = FALSE, row.names = FALSE)
 ```
 
-### Calculate the D-score and DAZ
+### Calculate the $D$-score and DAZ
 
 The `milestones` dataset has properly named columns that identifies each
-item. Calculating the D-score and DAZ is then done by:
+item. Calculating the $D$-score and DAZ is then done by:
 
 ```{r}
 ds <- dscore(milestones)
@@ -101,13 +101,13 @@ The table below provides the interpretation of each column:
 Name | Interpretation
 ---- | -------------
 a    | Decimal age
-n    | Number of items used to calculate D-score
+n    | Number of items used to calculate $D$-score
 p    | Percentage of passed milestones
-d    | D-score estimate, mean of posterior
+d    | $D$-score estimate, mean of posterior
 sem  | Standard error of measurement, standard deviation of the posterior
-daz  | D-score corrected for age
+daz  | $D$-score corrected for age
 
-### Graphs of D-score and DAZ
+### Graphs of $D$-score and DAZ
 
 The `milestones` data and the result can be combined as
 
@@ -129,7 +129,7 @@ ggplot(md, aes(x = a, y = d, group = id, color = sex)) +
   theme_light()
 ```
 
-The DAZ is an age-standardized D-score with a standard normal distribution
+The DAZ is an age-standardized $D$-score with a standard normal distribution
 with mean 0 and variance 1. The individual DAZ curves are plotted as
 
 ```{r graphDAZ, dpi = 144}
@@ -146,7 +146,7 @@ ggplot(md, aes(x = a, y = daz, group = id, color = sex)) +
   ylab("DAZ")
 ```
 
-Note that the D-scores and DAZ are a little lower than average. The 
+Note that the $D$-scores and DAZ are a little lower than average. The 
 explanation here is that these all children are born preterm.
 
 ### Mapping items names
@@ -203,11 +203,11 @@ defined in the package:
 | `hyp`  | [special codes, hypothetical instrument]                |    5  |       |       |       |
 |        |                                                         | 2651  |   76  |  565  |  892  |
 
-If your instrument is not here, you cannot calculate the D-score. But 
+If your instrument is not here, you cannot calculate the $D$-score. But 
 even if your instrument is in the table, there is no garantee that it
-can be used for the D-score. Instruments are tied to the D-score by 
+can be used for the $D$-score. Instruments are tied to the $D$-score by 
 means of a *measurement model*. The measurement model provides the
-*key* for converting the item responses to the D-score. 
+*key* for converting the item responses to the $D$-score. 
 
 The `dscore` package currently support three keys: `dutch`, 
 `gcdg` and `gsed`. Although there is much overlap, different keys 
@@ -218,11 +218,11 @@ the key does not cover the instrument.
 For some instruments, e.g., for `cro` only one choice is possible (only 
 key `gsed`). For `gri`, we may choose between `gcdg` and `gsed`. 
 The actual choice will depend on the goals of your analysis. If you 
-want to compare to other D-scores calculated under 
+want to compare to other $D$-scores calculated under 
 key `gcdg`, or reproduce an analysis made under key, then pick `gcdg`. 
 If that is not the case, then
 `gsed` is the better choice since it account for a wider variety of 
-comparisons to other instruments. The differences between the D-scores
+comparisons to other instruments. The differences between the $D$-scores
 calculated under different keys are small, but these are not identical.
 If you don't specify `key`, the `dscore()` function will use `key = "gsed"` 
 for maximum instrument coverage.
@@ -277,7 +277,7 @@ your item names to the GSED-convention.
 
 ### Books and reports
 
-1. [Introduction into the D-score](https://stefvanbuuren.name/dbook1/)
+1. [Introduction into the $D$-score](https://stefvanbuuren.name/dbook1/)
 2. [Inventory of 147 instruments for measuring early child development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries): @fernald2017
 
 ### Keys

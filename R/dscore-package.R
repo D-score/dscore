@@ -56,7 +56,7 @@
 #'
 #' GSED team (Maureen Black, Kieran Bromley, Vanessa Cavallera
 #' (lead author), Jorge Cuartas, Tarun Dua (corresponding author),
-#' Iris Eekhout, Günther Fink, Melissa Gladstone, Katelyn Hepworth,
+#' Iris Eekhout, Gunther Fink, Melissa Gladstone, Katelyn Hepworth,
 #'  Magdalena Janus, Patricia Kariger, Gillian Lancaster, Dana McCoy,
 #'  Gareth McCray, Abbie Raikes, Marta Rubio-Codina, Stef van Buuren,
 #'  Marcus Waldman, Susan Walker and Ann Weber). 2019. “The Global Scale

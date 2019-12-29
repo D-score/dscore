@@ -13,7 +13,7 @@ vignette: >
 ---
 
 ```{r setup, include=FALSE}
-  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2, cache = TRUE)
+  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
   # options(width = 80)
   suppressPackageStartupMessages(library(dplyr))
   suppressPackageStartupMessages(library(ggplot2))

@@ -23,7 +23,7 @@
 #' method and penalized likelihood. Statistics in Medicine, 11(10),
 #' 1305-1319.
 #' @seealso [dscore()]
-#' @author Stef van Buuren 2019
+#' @author Stef van Buuren 2020
 #' @examples
 #' # using gcdg-reference
 #' daz(d = c(35, 50), x = c(0.5, 1.0))

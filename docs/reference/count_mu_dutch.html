@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate posterior for one item given score, difficulty and prior — posterior • dscore</title>
+<title>Median of Dutch references — count_mu_dutch • dscore</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="Calculate posterior for one item given score, difficulty and prior — posterior" />
-<meta property="og:description" content="Calculate posterior for one item given score, difficulty and prior" />
+<meta property="og:title" content="Median of Dutch references — count_mu_dutch" />
+<meta property="og:description" content="Returns the age-interpolated median of the Dutch references. Thw
+working range is 0-3 years." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -117,66 +118,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate posterior for one item given score, difficulty and prior</h1>
-    <small class="dont-index">Source: <a href='https://github.com/stefvanbuuren/dscore/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a></small>
-    <div class="hidden name"><code>posterior.Rd</code></div>
+    <h1>Median of Dutch references</h1>
+    <small class="dont-index">Source: <a href='https://github.com/stefvanbuuren/dscore/blob/master/R/count_mu.R'><code>R/count_mu.R</code></a></small>
+    <div class="hidden name"><code>count_mu_dutch.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculate posterior for one item given score, difficulty and prior</p>
+    <p>Returns the age-interpolated median of the Dutch references. Thw
+working range is 0-3 years.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>posterior</span>(<span class='no'>score</span>, <span class='no'>tau</span>, <span class='no'>prior</span>, <span class='no'>qp</span>)</pre>
+    <pre class="usage"><span class='fu'>count_mu_dutch</span>(<span class='no'>t</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>score</th>
-      <td><p>Integer, either 0 (fail) and 1 (pass)</p></td>
-    </tr>
-    <tr>
-      <th>tau</th>
-      <td><p>Numeric, difficulty parameter</p></td>
-    </tr>
-    <tr>
-      <th>prior</th>
-      <td><p>Vector of prior values on quadrature points <code>qp</code></p></td>
-    </tr>
-    <tr>
-      <th>qp</th>
-      <td><p>vector of equally spaced quadrature points</p></td>
+      <th>t</th>
+      <td><p>Decimal age, numeric vector</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of length <code><a href='https://rdrr.io/r/base/length.html'>length(prior)</a></code></p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This function assumes that the difficulties have been estimated by
-a binary Rasch model (e.g. by
-<code><a href='https://rdrr.io/pkg/sirt/man/rasch.pairwise.itemcluster.html'>sirt::rasch.pairwise.itemcluster()</a></code>).</p>
+    <p>A vector of length <code><a href='https://rdrr.io/r/base/length.html'>length(t)</a></code> with the median of the dutch references.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>: Internal function</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p>Interal function. Called by <code><a href='dscore.html'>dscore()</a></code></p>
 
-    <div class='dont-index'><p><code><a href='dscore.html'>dscore()</a></code>, <code><a href='https://rdrr.io/pkg/sirt/man/rasch.pairwise.itemcluster.html'>sirt::rasch.pairwise.itemcluster()</a></code></p></div>
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw pkg'>dscore</span><span class='kw ns'>:::</span><span class='fu'><a href='https://rdrr.io/pkg/dscore/man/count_mu_dutch.html'>count_mu_dutch</a></span>(<span class='fl'>0</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1]  4.88220 48.90290 63.83718</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
       <li><a href="#note">Note</a></li>
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
-    <h2>Author</h2>
-    <p>Stef van Buuren, Arjan Huizing, 2020</p>
   </div>
 </div>
 

@@ -35,5 +35,5 @@ Since \verb{dscore V40.1} the function does not return the \code{"start"} elemen
 Calculate posterior of ability
 }
 \author{
-Stef van Buuren, Arjan Huizing, 2019
+Stef van Buuren, Arjan Huizing, 2020
 }

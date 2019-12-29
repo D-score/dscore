@@ -30,7 +30,7 @@
 #' direct/caregiver/message, positions 7-9 is a item sequence number.
 #'
 #' @seealso [sort_itemnames()]
-#' @author Stef van Buuren 2019
+#' @author Stef van Buuren 2020
 #' @examples
 #' itemnames <- c("aqigmc028", "grihsd219", "", "age", "mdsgmd999")
 #'

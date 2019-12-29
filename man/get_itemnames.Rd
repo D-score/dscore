@@ -79,5 +79,5 @@ get_itemnames(number = c(70, 73), domain = "gm")
 \code{\link[=sort_itemnames]{sort_itemnames()}}
 }
 \author{
-Stef van Buuren 2019
+Stef van Buuren 2020
 }

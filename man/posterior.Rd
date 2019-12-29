@@ -26,9 +26,12 @@ This function assumes that the difficulties have been estimated by
 a binary Rasch model (e.g. by
 \code{\link[sirt:rasch.pairwise.itemcluster]{sirt::rasch.pairwise.itemcluster()}}).
 }
+\note{
+: Internal function
+}
 \seealso{
 \code{\link[=dscore]{dscore()}}, \code{\link[sirt:rasch.pairwise.itemcluster]{sirt::rasch.pairwise.itemcluster()}}
 }
 \author{
-Stef van Buuren, Arjan Huizing, 2019
+Stef van Buuren, Arjan Huizing, 2020
 }

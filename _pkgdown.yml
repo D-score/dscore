@@ -1,1 +1,62 @@
 destination: docs
+title: dscore
+url: https://stefvanbuuren.github.io/dscore
+template:
+  params:
+    bootswatch: flatly
+reference:
+  - title: "Package documentation"
+    desc: >
+      Overview of functions in the dscore package.
+    contents:
+      - dscore-package
+  - title: "Identify whether your milestones are supported"
+    desc: >
+      Functions to identify supported milestones and instruments.
+    contents:
+      - get_itemnames
+      - get_itemtable
+      - get_labels
+      - decompose_itemnames
+  - title: "Get your data into shape"
+    desc: >
+      Functions for mapping and recoding your data in a format
+      that the dscore() function can understand.
+    contents:
+      - rename_gcdg_gsed
+      - order_itemnames
+      - sort_itemnames
+  - title: "Calculate D-score and DAZ"
+    desc: >
+      The main workhorse implements the algorithms to calculate the
+      D-score and the DAZ from 1) the child's milestone scores,
+      2) the itembank, 3) the prior and 4) the reference.
+    contents:
+      - dscore
+      - calculate_posterior
+      - get_tau
+  - title: "Working with references"
+    desc: >
+      Specification of the imputation models can be made more
+      convenient using the following set of helpers.
+    contents:
+      - daz
+      - get_reference
+  - title: "Internal functions"
+    desc: >
+      While documented, these internal functions should not be
+      called directly.
+    contents:
+      - count_mu_dutch
+      - count_mu_gcdg
+      - posterior
+      - normalize
+  - title: "Datasets"
+    desc: "Built-in datasets"
+    contents:
+      - milestones
+      - builtin_itembank
+      - builtin_itemtable
+      - builtin_references
+navbar:
+  type: inverse

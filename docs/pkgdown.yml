@@ -3,4 +3,7 @@ pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
   start: start.html
+urls:
+  reference: https://stefvanbuuren.github.io/dscore/reference
+  article: https://stefvanbuuren.github.io/dscore/articles
 

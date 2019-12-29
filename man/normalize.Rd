@@ -19,6 +19,9 @@ the prior density estimate at each quadature point.
 \description{
 Normalizes the distribution so that the total mass equals 1.
 }
+\note{
+: Internal function
+}
 \examples{
 dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
 

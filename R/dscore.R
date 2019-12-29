@@ -88,7 +88,7 @@
 #'
 #' Key | Model | Quadrature | Instruments | Direct/Caregiver | Reference
 #' --- | -----:| ----------:| ----------: |:----------------:|:---------
-#' `"dutch"` | `75_0`   | `-10:80`  | 1   | direct | Van Buuren, 2014/2019
+#' `"dutch"` | `75_0`   | `-10:80`  | 1   | direct | Van Buuren, 2014/2020
 #' `"gcdg"`  | `565_18` | `-10:100` | 14  | direct | Weber, 2019
 #' `"gsed"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
 #'
@@ -128,7 +128,7 @@
 #' BMJ Global Health, BMJ Global Health 4: e001724.
 #' [pdf](https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf).
 #'
-#' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
+#' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)
 #' @seealso [get_tau()],
 #' [builtin_itembank()], [posterior()],
 #' [builtin_references()]

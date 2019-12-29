@@ -32,7 +32,7 @@ normalize <- function(d, qp) {
 #' @param prior Vector of prior values on quadrature points `qp`
 #' @param qp vector of equally spaced quadrature points
 #' @return A vector of length `length(prior)`
-#' @author Stef van Buuren, Arjan Huizing, 2019
+#' @author Stef van Buuren, Arjan Huizing, 2020
 #' @note: Internal function
 #' @seealso [dscore()], [sirt::rasch.pairwise.itemcluster()]
 posterior <- function(score, tau, prior, qp) {
@@ -49,7 +49,7 @@ posterior <- function(score, tau, prior, qp) {
 #' @param qp Numeric vector of equally spaced quadrature points.
 #' @param mu Numeric scalar. The mean of the prior.
 #' @param sd Numeric scalar. Standard deviation of the prior.
-#' @author Stef van Buuren, Arjan Huizing, 2019
+#' @author Stef van Buuren, Arjan Huizing, 2020
 #' @return A `list` with three elements:
 #'
 #' | Name | Label |

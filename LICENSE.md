@@ -1,5 +1,5 @@
     dscore - Calculate the D-score, a one-number summary of child development
-    Copyright (C) 2019 Stef van Buuren; Iris Eekhout; Arjan Huizing
+    Copyright (C) 2020 Stef van Buuren; Iris Eekhout; Arjan Huizing
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

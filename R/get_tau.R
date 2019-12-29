@@ -7,7 +7,7 @@
 #' @inheritParams dscore
 #' @return A named vector with the difficulty estimate per item with
 #' `length(items)` elements.
-#' @author Stef van Buuren 2019
+#' @author Stef van Buuren 2020
 #' @seealso [builtin_itembank()], [dscore()]
 #' @examples
 #' # difficulty levels in the GHAP lexicon

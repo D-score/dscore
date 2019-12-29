@@ -137,7 +137,7 @@ The built-in itembank (object \code{\link[=builtin_itembank]{builtin_itembank()}
 keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
 A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference \cr
-   \code{"dutch"} \tab \verb{75_0} \tab \code{-10:80} \tab 1 \tab direct \tab Van Buuren, 2014/2019 \cr
+   \code{"dutch"} \tab \verb{75_0} \tab \code{-10:80} \tab 1 \tab direct \tab Van Buuren, 2014/2020 \cr
    \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 14 \tab direct \tab Weber, 2019 \cr
    \code{"gsed"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
 }
@@ -207,5 +207,5 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 \code{\link[=builtin_references]{builtin_references()}}
 }
 \author{
-Stef van Buuren, Iris Eekhout, Arjan Huizing (2019)
+Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)
 }

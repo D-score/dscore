@@ -67,5 +67,5 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 \code{\link[=dscore]{dscore()}}
 }
 \author{
-Stef van Buuren 2019
+Stef van Buuren 2020
 }

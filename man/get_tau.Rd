@@ -43,5 +43,5 @@ get_tau(items = c("ddifmd001", "DDigmd052", "xyz"))
 \code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=dscore]{dscore()}}
 }
 \author{
-Stef van Buuren 2019
+Stef van Buuren 2020
 }

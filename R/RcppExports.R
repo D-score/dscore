@@ -10,6 +10,7 @@
 #' @param qp Vector of equally spaced quadrature points.
 #' @return A vector of `length(d)` elements with
 #' the prior density estimate at each quadature point.
+#' @note: Internal function
 #' @examples
 #' dscore:::normalize(c(5, 10, 5), qp = c(0, 1, 2))
 #'
@@ -32,6 +33,7 @@ normalize <- function(d, qp) {
 #' @param qp vector of equally spaced quadrature points
 #' @return A vector of length `length(prior)`
 #' @author Stef van Buuren, Arjan Huizing, 2019
+#' @note: Internal function
 #' @seealso [dscore()], [sirt::rasch.pairwise.itemcluster()]
 posterior <- function(score, tau, prior, qp) {
     .Call('_dscore_posterior', PACKAGE = 'dscore', score, tau, prior, qp)

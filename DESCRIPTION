@@ -36,6 +36,6 @@ LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 7.0.2
 NeedsCompilation: yes
-URL: https://github.com/stefvanbuuren/dscore, https://stefvanbuuren.name/dbook1/
+URL: https://github.com/stefvanbuuren/dscore, https://stefvanbuuren.name/dscore/, https://stefvanbuuren.name/dbook1/
 BugReports: https://github.com/stefvanbuuren/dscore/issues
 Roxygen: list(markdown = TRUE)

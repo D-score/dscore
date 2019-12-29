@@ -41,6 +41,7 @@ The available functions are:\tabular{ll}{
    \code{\link[=get_itemnames]{get_itemnames()}} \tab Extract item names from an itemtable \cr
    \code{\link[=order_itemnames]{order_itemnames()}} \tab Order item names \cr
    \code{\link[=sort_itemnames]{sort_itemnames()}} \tab Sort item names \cr
+   \code{\link[=decompose_itemnames]{decompose_itemnames()}} \tab Get four components from itemname \cr
      \tab  \cr
    \code{\link[=get_itemtable]{get_itemtable()}} \tab Get a subset from the itemtable \cr
    \code{\link[=get_labels]{get_labels()}} \tab Get labels for items \cr

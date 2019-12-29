@@ -12,6 +12,7 @@
 #'   | [get_itemnames()]   | Extract item names from an itemtable |
 #'   | [order_itemnames()] | Order item names |
 #'   | [sort_itemnames()]  | Sort item names |
+#'   | [decompose_itemnames()] | Get four components from itemname |
 #'   &nbsp;| | |
 #'   | [get_itemtable()]   | Get a subset from the itemtable |
 #'   | [get_labels()]      | Get labels for items |

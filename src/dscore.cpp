@@ -52,7 +52,7 @@ NumericVector posterior(int score, double tau,
 
   NumericVector cpc;
   score += 1;
-  if(score < 1 | score > 2){stop("score out-of-range.");}
+  if((score < 1) | (score > 2)){stop("score out-of-range.");}
 
   // compute category respones probability under 1PL model
   NumericVector p = plogis(qp, tau);

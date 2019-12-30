@@ -42,6 +42,7 @@ reference:
     contents:
       - daz
       - get_reference
+      - get_age_equivalent
   - title: "Internal functions"
     desc: >
       While documented, these internal functions should not be

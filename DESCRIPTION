@@ -1,7 +1,7 @@
 Package: dscore
 Type: Package
 Title: D-score for Child Development
-Version: 0.42.0
+Version: 1.0.0
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
@@ -17,7 +17,6 @@ Depends:
 Imports:
     dplyr (>= 0.8.2),
     Rcpp,
-    rlang,
     stats,
     stringr,
     tidyr (>= 1.0.0)

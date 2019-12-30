@@ -84,16 +84,12 @@ For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). Fo
 
 
 ```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE, warning=FALSE}
-ib <- dscore::builtin_itembank %>% 
-  filter(key == "gsed")
+library(dscore)
+ib <- builtin_itembank %>% 
+  filter(key == "gsed") %>% 
+  mutate(a = get_age_equivalent(items = item, pct = 50)$a)
 
-model <- dmetric::load_model("807_17", "GSED")
-aeq <- dmetric::calculate_age_equivalents(model = model)
-
-ib$A50 <- approx(x = aeq$D50, y = aeq$A50, xout = ib$tau)$y
-
-op <- par(bty = "n")
-ggplot(ib, aes(x = A50, y = instrument, group = instrument)) +
+ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
   geom_point(pch = 3, size = 1, colour = "blue") + 
   scale_y_discrete(limits = rev(unique(ib$instrument)), name = "") +
   scale_x_continuous(breaks = seq(0, 60, 12), name = "Age (months)") +

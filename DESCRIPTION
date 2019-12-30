@@ -27,6 +27,7 @@ Suggests:
     knitr,
     lme4,
     rmarkdown,
+    sirt,
     testthat
 Encoding: UTF-8
 License: GPL-3 + file LICENSE

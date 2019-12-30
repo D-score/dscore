@@ -54,6 +54,7 @@ The available functions are:\tabular{ll}{
    \code{\link[=daz]{daz()}} \tab Transform to age-adjusted standardized D-score \cr
    \code{\link[=zad]{zad()}} \tab Inverse of \code{\link[=daz]{daz()}} \cr
    \code{\link[=get_reference]{get_reference()}} \tab Get D-score age-reference \cr
+   \code{\link[=get_age_equivalent]{get_age_equivalent()}} \tab Translate difficulty to age \cr
 }
 }
 
@@ -63,7 +64,7 @@ The package contains the following built-in data:\tabular{ll}{
    Data \tab Description \cr
    \code{\link[=builtin_itembank]{builtin_itembank()}} \tab A \code{data.frame} containing the difficulty estimates of items according to final Rasch models. \cr
    \code{\link[=builtin_itemtable]{builtin_itemtable()}} \tab A \code{data.frame} containing names and descriptions of items from 22 instruments. \cr
-   \code{\link[=builtin_references]{builtin_references()}} \tab A \code{data.frame} with LMS reference values used to transform from D-score to DAZ, DAZ to D-score, and to calculate reference charts of normal development. \cr
+   \code{\link[=builtin_references]{builtin_references()}} \tab A \code{data.frame} with LMS reference values used to transform from D-score to DAZ, DAZ to D-score. \cr
    \code{\link[=milestones]{milestones()}} \tab A small demo dataset with PASS/FAIL responses from 27 preterms, measured at various ages between birth \cr
    and 2.5 years. \tab  \cr
 }

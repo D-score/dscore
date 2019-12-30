@@ -25,6 +25,7 @@
 #'   | [daz()] | Transform to age-adjusted standardized D-score |
 #'   | [zad()] | Inverse of [daz()] |
 #'   | [get_reference()]   | Get D-score age-reference |
+#'   | [get_age_equivalent()] | Translate difficulty to age |
 #'
 #' @section Built-in data:
 #' The package contains the following built-in data:
@@ -33,7 +34,7 @@
 #'   -------- | ---------
 #' [builtin_itembank()] | A `data.frame` containing the difficulty estimates of items according to final Rasch models.
 #' [builtin_itemtable()] | A `data.frame` containing names and descriptions of items from 22 instruments.
-#' [builtin_references()] | A `data.frame` with LMS reference values used to transform from D-score to DAZ, DAZ to D-score, and to calculate reference charts of normal development.
+#' [builtin_references()] | A `data.frame` with LMS reference values used to transform from D-score to DAZ, DAZ to D-score.
 #' [milestones()] | A small demo dataset with PASS/FAIL responses from 27 preterms, measured at various ages between birth
 #' and 2.5 years.
 #'

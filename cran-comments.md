@@ -8,19 +8,25 @@ This is a resubmission. In this version I have
   - Rewritten the `Description:` field according to the suggestions.
     Thanks.
   - Removed the `LICENSE` and `LICENSE.md` files from the package root,
-    and added `Year:` and `Copyright:` entries to the DESCRIPTION file.
-    My impression was that I needed to the `LICENSE.md` to make it valid
+    and added a `Copyright:` field to the DESCRIPTION file. My
+    impression was that I needed to the `LICENSE.md` to make it valid
     GPL-3, but I am happy to live without it.
 
-I did not alter the package title to convert it title case. The
-submitted title `D-score for Child Development` *is* title case. The
-expression `D-score` is a single word, like `F-test`, `P-value`,
-`K-means` or `Q-technique`, all spelled according to the Cambridge
-Dictionary of Statistics. I believe the correct spelling is `D-score`,
-not `D-Score`. I have consistently used `D-score` in all publications on
-the topic, so changing the word to `D-Score` would create confusion. My
-suggestion is to add `D-score` to the exceptions list of the function
-that scans for title case.
+<!-- end list -->
+
+    The Title field should be in title case. Current version is:
+    'D-score for Child Development'
+    In title case that is:
+    'D-Score for Child Development'
+
+I did not alter the package title. The submitted title `D-score for
+Child Development` *is* title case. The expression `D-score` is a single
+word, like `F-test`, `P-value`, `K-means` or `Q-technique`, all spelled
+according to the Cambridge Dictionary of Statistics. I believe the
+correct spelling is `D-score`, not `D-Score`. I have consistently used
+`D-score` in all publications on the topic, so changing the word to
+`D-Score` would create confusion. My suggestion is to add `D-score` to
+the exceptions list of the function that scans for title case.
 
 ## Reason
 

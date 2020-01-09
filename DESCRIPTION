@@ -5,13 +5,17 @@ Version: 1.0.0
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
-Description: The dscore package provides tools for calculating the
-    D-score, a quantitative measure of child development. The main 
-    function converts milestone scores from various instruments into 
-    the D-score and the DAZ (D-score adjusted for age). The user needs
-    to map the variable names of each milestone into the 9-position 
-    GSED convention. The packages contains tools that assist in this 
-    translation.
+Description: Tools for calculating the D-score, a quantitative measure 
+    of child development based on the Rasch model as proposed by
+    Jacobusse, van Buuren and Verkerk (2006) <doi:10.1002/sim.2351>. 
+    The user can convert milestone scores from 19 assessment instruments 
+    into the D-score and the DAZ (D-score adjusted for age). Several 
+    tools assist in mapping milestone names into the 9-position GSED 
+    convention. Supports calculation of the D-score using
+    'dutch' <doi:10.1177/0962280212473300>, 
+    'gcdg' <doi:10.1136/bmjgh-2019-001724> and 'gsed' conversion keys.
+    Supports calculation of DAZ using 'dutch' and 'gcdg' age-conditional 
+    references.
 Depends:
     R (>= 3.5)
 Imports:
@@ -30,11 +34,13 @@ Suggests:
     sirt,
     testthat
 Encoding: UTF-8
-License: GPL-3 + file LICENSE
+License: GPL-3
 LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 7.0.2
 NeedsCompilation: yes
 URL: https://github.com/stefvanbuuren/dscore, https://stefvanbuuren.name/dscore/, https://stefvanbuuren.name/dbook1/
 BugReports: https://github.com/stefvanbuuren/dscore/issues
+Year: 2020
+Copyright: Stef van Buuren, Iris Eekhout, Arjan Huizing
 Roxygen: list(markdown = TRUE)

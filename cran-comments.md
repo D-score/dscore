@@ -1,6 +1,14 @@
 cran-comments
 ================
 
+## Resubmission 2
+
+In this version I have
+
+  - changed the title to CRAN-suggested title case (I gave up..);
+  - explained the GSED acronym;
+  - removed “Tools for ..” in Description field.
+
 ## Resubmission
 
 This is a resubmission. In this version I have

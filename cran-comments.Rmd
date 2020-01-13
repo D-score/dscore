@@ -3,6 +3,30 @@ title: "cran-comments"
 output: github_document
 ---
 
+## Resubmission 3
+
+In this version I have 
+
+* repaired a `ggplot` warning from vignette `start.Rmd`
+* changed the font specification from `Courier` to `mono`
+* rerun `check_win_devel()`
+
+This produced the following:
+
+```
+Maintainer: 'Stef van Buuren <stef.vanbuuren@tno.nl>'
+
+New submission
+
+Possibly mis-spelled words in DESCRIPTION:
+  Buuren (9:61)
+  DAZ (12:13, 17:28)
+  GSED (14:18)
+  Jacobusse (9:46)
+  Rasch (9:29)
+  Verkerk (10:5)
+```
+
 ## Resubmission 2
 
 In this version I have

@@ -83,18 +83,21 @@ Unfortunately, it is not possible to calculate the $D$-score if your instrument 
 For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed"`. Your choice may depend on the goal of your analysis. If you want to compare to other $D$-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`.
 
 
-```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE, warning=FALSE}
+```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE}
 library(dscore)
 ib <- builtin_itembank %>% 
   filter(key == "gsed") %>% 
-  mutate(a = get_age_equivalent(items = item, pct = 50)$a)
-
+  mutate(a = get_age_equivalent(items = item, pct = 50)$a * 12) %>% 
+  select(a, instrument, label) %>% 
+  na.omit()
+  
 ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
-  geom_point(pch = 3, size = 1, colour = "blue") + 
   scale_y_discrete(limits = rev(unique(ib$instrument)), name = "") +
-  scale_x_continuous(breaks = seq(0, 60, 12), name = "Age (months)") +
+  scale_x_continuous(limits = c(0, 60), 
+                     breaks = seq(0, 60, 12), name = "Age (months)") +
+  geom_point(pch = 3, size = 1, colour = "blue") + 
   theme_light() +
-  theme(axis.text.y = element_text(hjust = 0, family = "Courier"))
+  theme(axis.text.y = element_text(hjust = 0, family = "mono"))
 ```
 
 The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `mul`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.

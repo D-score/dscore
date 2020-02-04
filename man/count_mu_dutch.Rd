@@ -10,14 +10,15 @@ count_mu_dutch(t)
 \item{t}{Decimal age, numeric vector}
 }
 \value{
-A vector of length \code{length(t)} with the median of the dutch references.
+A vector of length \code{length(t)} with the median of the Dutch references.
 }
 \description{
-Returns the age-interpolated median of the Dutch references. Thw
-working range is 0-3 years.
+Returns the age-interpolated median of the Dutch references (van Buuren 2014).
+The working range is 0-3 years. This function should
+be called when the \code{key = "dutch"}.
 }
 \note{
-Interal function. Called by \code{dscore()}
+Internal function. Called by \code{dscore()}
 }
 \examples{
 dscore:::count_mu_dutch(0:2)

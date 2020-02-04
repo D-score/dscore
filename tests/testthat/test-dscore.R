@@ -62,3 +62,15 @@ data <- data.frame(age = numeric(0))
 test_that("handles zero rows", {
   expect_identical(nrow(dscore(data)), 0L)
 })
+
+# --- test negative ages
+# dscore, gsed lexicon
+data <- data.frame(
+  age = rep(-0.26, 10),
+  ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
+test_that("silently handles negative ages", {
+  expect_silent(dscore(data, key = "dutch"))
+})

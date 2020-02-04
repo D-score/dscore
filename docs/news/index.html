@@ -67,7 +67,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -122,9 +122,19 @@
       <small>Source: <a href='https://github.com/stefvanbuuren/dscore/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="dscore-1-0-2" class="section level1">
+<h1 class="page-header">
+<a href="#dscore-1-0-2" class="anchor"></a>dscore 1.0.2<small> Unreleased </small>
+</h1>
+<ul>
+<li>The <code><a href="../reference/dscore.html">dscore()</a></code> function now automatically select the <code>prior_mean = ".dutch"</code> option when the user specifies <code>key == "dutch"</code>. This change repair an error in the D-score calculation that occurs when only <code>key == "dutch"</code> was given.</li>
+<li>The <code><a href="../reference/dscore.html">dscore()</a></code> function now silently handles warnings that may result from taking the log of negative ages.</li>
+</ul>
+</div>
     <div id="dscore-1-0-0" class="section level1">
 <h1 class="page-header">
-<a href="#dscore-1-0-0" class="anchor"></a>dscore 1.0.0</h1>
+<a href="#dscore-1-0-0" class="anchor"></a>dscore 1.0.0<small> 2020-01-18 </small>
+</h1>
 <ul>
 <li>Hi, welcome to <code>dscore 1.0.0</code>! For the development history, see <a href="https://github.com/stefvanbuuren/dscore" class="uri">https://github.com/stefvanbuuren/dscore</a>
 </li>
@@ -137,6 +147,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#dscore-1-0-2">1.0.2</a></li>
         <li><a href="#dscore-1-0-0">1.0.0</a></li>
       </ul>
     </div>

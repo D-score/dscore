@@ -7,7 +7,9 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-1.0.0-orange.svg)](https://github.com/stefvanbuuren/dscore)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
+[![](https://img.shields.io/badge/github%20version-1.0.2-orange.svg)](https://github.com/stefvanbuuren/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in

@@ -71,7 +71,7 @@ observations on milestones." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -141,7 +141,7 @@ observations on milestones.</p>
   <span class='kw'>key</span> <span class='kw'>=</span> <span class='st'>"gsed"</span>,
   <span class='kw'>itembank</span> <span class='kw'>=</span> <span class='kw pkg'>dscore</span><span class='kw ns'>::</span><span class='no'><a href='https://stefvanbuuren.github.io/dscore/reference/builtin_itembank.html'>builtin_itembank</a></span>,
   <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dscore"</span>, <span class='st'>"logit"</span>),
-  <span class='kw'>prior_mean</span> <span class='kw'>=</span> <span class='st'>".gcdg"</span>,
+  <span class='kw'>prior_mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span>(<span class='no'>key</span> <span class='kw'>==</span> <span class='st'>"dutch"</span>, <span class='st'>".dutch"</span>, <span class='st'>".gcdg"</span>),
   <span class='kw'>prior_sd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>transform</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>qp</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>,
@@ -157,7 +157,7 @@ observations on milestones.</p>
   <span class='kw'>key</span> <span class='kw'>=</span> <span class='st'>"gsed"</span>,
   <span class='kw'>itembank</span> <span class='kw'>=</span> <span class='kw pkg'>dscore</span><span class='kw ns'>::</span><span class='no'><a href='https://stefvanbuuren.github.io/dscore/reference/builtin_itembank.html'>builtin_itembank</a></span>,
   <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dscore"</span>, <span class='st'>"logit"</span>),
-  <span class='kw'>prior_mean</span> <span class='kw'>=</span> <span class='st'>".gcdg"</span>,
+  <span class='kw'>prior_mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span>(<span class='no'>key</span> <span class='kw'>==</span> <span class='st'>"dutch"</span>, <span class='st'>".dutch"</span>, <span class='st'>".gcdg"</span>),
   <span class='kw'>prior_sd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>transform</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>qp</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>,
@@ -221,8 +221,9 @@ default.</p></td>
       <th>prior_mean</th>
       <td><p>A string specifying a column name in <code>data</code>
 with the mean of the prior for the D-score calculation.
-The default <code>prior_mean = ".gcdg"</code> calculates an age-dependent
-prior mean internally according to function
+The default depends on the <code>key</code>. If <code>key == "dutch"</code> then
+<code>prior_mean = "dutch"</code>, else it is <code>".gcdg"</code>. These settings
+calculate an age-dependent prior mean internally according to function
 <code>dscore:::count_mu_gcdg()</code>.
 The choice <code>prior_mean = ".dutch"</code>
 calculates <code>prior_mean</code> from the Count model coded in

@@ -36,8 +36,9 @@
 
 
 <meta property="og:title" content="Median of Dutch references — count_mu_dutch" />
-<meta property="og:description" content="Returns the age-interpolated median of the Dutch references. Thw
-working range is 0-3 years." />
+<meta property="og:description" content="Returns the age-interpolated median of the Dutch references (van Buuren 2014).
+The working range is 0-3 years. This function should
+be called when the key = &quot;dutch&quot;." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -70,7 +71,7 @@ working range is 0-3 years." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -127,8 +128,9 @@ working range is 0-3 years." />
     </div>
 
     <div class="ref-description">
-    <p>Returns the age-interpolated median of the Dutch references. Thw
-working range is 0-3 years.</p>
+    <p>Returns the age-interpolated median of the Dutch references (van Buuren 2014).
+The working range is 0-3 years. This function should
+be called when the <code>key = "dutch"</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>count_mu_dutch</span>(<span class='no'>t</span>)</pre>
@@ -144,10 +146,10 @@ working range is 0-3 years.</p>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of length <code><a href='https://rdrr.io/r/base/length.html'>length(t)</a></code> with the median of the dutch references.</p>
+    <p>A vector of length <code><a href='https://rdrr.io/r/base/length.html'>length(t)</a></code> with the median of the Dutch references.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Interal function. Called by <code><a href='dscore.html'>dscore()</a></code></p>
+    <p>Internal function. Called by <code><a href='dscore.html'>dscore()</a></code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw pkg'>dscore</span><span class='kw ns'>:::</span><span class='fu'><a href='https://stefvanbuuren.github.io/dscore/reference/count_mu_dutch.html'>count_mu_dutch</a></span>(<span class='fl'>0</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1]  4.88220 48.90290 63.83718</div></pre>

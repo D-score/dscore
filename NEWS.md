@@ -1,8 +1,10 @@
-# dscore 1.0.1
+# dscore 1.0.2
 
 * The `dscore()` function now automatically select the `prior_mean = ".dutch"` 
 option when the user specifies `key == "dutch"`. This change repair an error
 in the D-score calculation that occurs when only `key == "dutch"` was given.
+* The `dscore()` function now silently handles warnings that may result 
+from taking the log of negative ages.
 
 # dscore 1.0.0
 

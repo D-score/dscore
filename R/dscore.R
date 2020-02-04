@@ -35,8 +35,9 @@
 #' `"logit"`, signalling the metric in which ability is estimated.
 #' @param prior_mean A string specifying a column name in `data`
 #' with the mean of the prior for the D-score calculation.
-#' The default `prior_mean = ".gcdg"` calculates an age-dependent
-#' prior mean internally according to function
+#' The default depends on the `key`. If `key == "dutch"` then
+#' `prior_mean = "dutch"`, else it is `".gcdg"`. These settings
+#' calculate an age-dependent prior mean internally according to function
 #' `dscore:::count_mu_gcdg()`.
 #' The choice `prior_mean = ".dutch"`
 #' calculates `prior_mean` from the Count model coded in
@@ -161,7 +162,7 @@ dscore <- function(data,
                    key = "gsed",
                    itembank = dscore::builtin_itembank,
                    metric = c("dscore", "logit"),
-                   prior_mean = ".gcdg",
+                   prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
                    prior_sd = NULL,
                    transform = NULL,
                    qp = -10:100,
@@ -190,7 +191,7 @@ dscore_posterior <- function(data,
                              key = "gsed",
                              itembank = dscore::builtin_itembank,
                              metric = c("dscore", "logit"),
-                             prior_mean = ".gcdg",
+                             prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
                              prior_sd = NULL,
                              transform = NULL,
                              qp = -10:100,

@@ -13,7 +13,7 @@ dscore(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
-  prior_mean = ".gcdg",
+  prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
@@ -29,7 +29,7 @@ dscore_posterior(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
-  prior_mean = ".gcdg",
+  prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
@@ -75,8 +75,9 @@ default.}
 
 \item{prior_mean}{A string specifying a column name in \code{data}
 with the mean of the prior for the D-score calculation.
-The default \code{prior_mean = ".gcdg"} calculates an age-dependent
-prior mean internally according to function
+The default depends on the \code{key}. If \code{key == "dutch"} then
+\code{prior_mean = "dutch"}, else it is \code{".gcdg"}. These settings
+calculate an age-dependent prior mean internally according to function
 \code{dscore:::count_mu_gcdg()}.
 The choice \code{prior_mean = ".dutch"}
 calculates \code{prior_mean} from the Count model coded in

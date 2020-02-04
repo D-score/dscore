@@ -9,8 +9,8 @@ data <- data.frame(
 )
 
 z1 <- dscore(data, key = "dutch")
-expected_d1 <- c(NA, -1.971, -2.030, 1.203, 1.203, 1.203, 4.569, 4.569,
-                 4.569, 11.785)
+expected_d1 <- c(NA, -1.860, -1.926, 1.265, 1.265, 1.265, 4.640, 4.640,
+                 4.640, 12.094)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z1$d, expected_d1)
 })
@@ -38,8 +38,8 @@ test_that("produces expected D-scores - key dutch", {
 })
 
 z5 <- dscore(data, items = items[1:2], key = "dutch")
-expected_d5 <- c(NA, NA, 3.403, 0.492, 4.540, 4.540, 4.540,
-                 4.540, 11.784, 11.784)
+expected_d5 <- c(NA, NA, 3.545, 0.596, 4.613, 4.613, 4.613, 4.613,
+                 12.093, 12.093)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z5$d, expected_d5)
 })

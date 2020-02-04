@@ -9,6 +9,7 @@
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
+[![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
 [![](https://img.shields.io/badge/github%20version-1.0.2-orange.svg)](https://github.com/stefvanbuuren/dscore)
 <!-- badges: end -->
 

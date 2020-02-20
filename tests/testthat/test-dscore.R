@@ -9,22 +9,22 @@ data <- data.frame(
 )
 
 z1 <- dscore(data, key = "dutch")
-expected_d1 <- c(NA, -1.860, -1.926, 1.265, 1.265, 1.265, 4.640, 4.640,
-                 4.640, 12.094)
+expected_d1 <- c(NA, -1.86, -1.93, 1.26, 1.26, 1.26, 4.64, 4.64,
+                 4.64, 12.09)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z1$d, expected_d1)
 })
 
 z2 <- dscore(data, key = "gcdg")
-expected_d2 <- c(NA, NA, 3.487, 0.971, 4.836, 4.836, 4.836, 4.836,
-                 11.846, 11.846)
+expected_d2 <- c(NA, NA, 3.49, 0.97, 4.84, 4.84, 4.84, 4.84,
+                 11.85, 11.85)
 test_that("produces expected D-scores - key gcdg", {
   expect_identical(z2$d, expected_d2)
 })
 
 z3 <- dscore(data, key = "gsed")
-expected_d3 <- c(NA, NA, 3.480, 0.969, 4.830, 4.830, 4.830, 4.830,
-                 11.842, 11.842)
+expected_d3 <- c(NA, NA, 3.48, 0.97, 4.83, 4.83, 4.83, 4.83,
+                 11.84, 11.84)
 test_that("produces expected D-scores - key gsed", {
   expect_identical(z3$d, expected_d3)
 })
@@ -38,8 +38,8 @@ test_that("produces expected D-scores - key dutch", {
 })
 
 z5 <- dscore(data, items = items[1:2], key = "dutch")
-expected_d5 <- c(NA, NA, 3.545, 0.596, 4.613, 4.613, 4.613, 4.613,
-                 12.093, 12.093)
+expected_d5 <- c(NA, NA, 3.55, 0.60, 4.61, 4.61, 4.61, 4.61,
+                 12.09, 12.09)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z5$d, expected_d5)
 })
@@ -74,3 +74,4 @@ data <- data.frame(
 test_that("silently handles negative ages", {
   expect_silent(dscore(data, key = "dutch"))
 })
+

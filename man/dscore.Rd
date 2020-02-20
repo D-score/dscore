@@ -18,7 +18,7 @@ dscore(
   transform = NULL,
   qp = -10:100,
   population = key,
-  dec = 3L
+  dec = c(2L, 3L)
 )
 
 dscore_posterior(
@@ -34,7 +34,7 @@ dscore_posterior(
   transform = NULL,
   qp = -10:100,
   population = key,
-  dec = 3L
+  dec = c(2L, 3L)
 )
 }
 \arguments{
@@ -99,9 +99,9 @@ This vector should span the range of all D-score values. The default
 \item{population}{A string describing the population. Currently
 supported are \code{"dutch"} and \code{"gcdg"} (default).}
 
-\item{dec}{Integer specifying the number of decimals for
-rounding the ability estimates and the DAZ. The default is
-\code{dec = 3}.}
+\item{dec}{A vector of two integers specifying the number of
+decimals for rounding the D-score and DAZ, respectively.
+The default is \code{dec = c(2L, 3L)}.}
 }
 \value{
 The \code{dscore()} function returns a \code{data.frame} with

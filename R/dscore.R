@@ -54,9 +54,9 @@
 #' (`qp = -10:100`) is suitable for age range 0-4 years.
 #' @param population A string describing the population. Currently
 #' supported are `"dutch"` and `"gcdg"` (default).
-#' @param dec Integer specifying the number of decimals for
-#' rounding the ability estimates and the DAZ. The default is
-#' `dec = 3`.
+#' @param dec A vector of two integers specifying the number of
+#' decimals for rounding the D-score and DAZ, respectively.
+#' The default is `dec = c(2L, 3L)`.
 #' @return
 #' The `dscore()` function returns a `data.frame` with
 #' `nrow(data)` rows and the following columns:
@@ -167,7 +167,7 @@ dscore <- function(data,
                    transform = NULL,
                    qp = -10:100,
                    population = key,
-                   dec = 3L) {
+                   dec = c(2L, 3L)) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   calc_dscore(
@@ -196,7 +196,7 @@ dscore_posterior <- function(data,
                              transform = NULL,
                              qp = -10:100,
                              population = key,
-                             dec = 3L) {
+                             dec = c(2L, 3L)) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   calc_dscore(
@@ -345,7 +345,7 @@ calc_dscore <- function(data, items, xname, xunit,
       group_by(.data$.rownum, .data$a) %>%
       summarise(
         n = n(),
-        p = round(mean(.data$score), digits = dec),
+        p = round(mean(.data$score), digits = 3L),
         x = list(qp),
         w = list(calculate_posterior(
           scores = .data$score,
@@ -368,11 +368,11 @@ calc_dscore <- function(data, items, xname, xunit,
       left_join(data4, by = ".rownum") %>%
       mutate(
         n = recode(.data$n, .missing = 0L),
-        d = round(.data$d, digits = dec),
+        d = round(.data$d, digits = dec[1L]),
         daz = daz(
           d = .data$d, x = .data$a,
           reference = get_reference(population),
-          dec = dec
+          dec = dec[2L]
         ),
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) %>%

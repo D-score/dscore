@@ -22,8 +22,7 @@ get_age_equivalent <- function(items,
                                key = "gsed",
                                itembank = dscore::builtin_itembank,
                                population = key,
-                               xunit = c("decimal", "days", "months"),
-                               dec = 3L) {
+                               xunit = c("decimal", "days", "months")) {
   xunit <- match.arg(xunit)
 
   # obtain difficulty estimates
@@ -45,7 +44,7 @@ get_age_equivalent <- function(items,
 
   # convert to requested age unit
   if (xunit == "days") ib$a <- round(ib$a * 365.25)
-  if (xunit == "months") ib$a <- round(ib$a * 12, dec)
+  if (xunit == "months") ib$a <- round(ib$a * 12, 4L)
 
   ib
 }

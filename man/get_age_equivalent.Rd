@@ -10,8 +10,7 @@ get_age_equivalent(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   population = key,
-  xunit = c("decimal", "days", "months"),
-  dec = 3L
+  xunit = c("decimal", "days", "months")
 )
 }
 \arguments{
@@ -39,10 +38,6 @@ supported are \code{"dutch"} and \code{"gcdg"} (default).}
 \item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
-
-\item{dec}{Integer specifying the number of decimals for
-rounding the ability estimates and the DAZ. The default is
-\code{dec = 3}.}
 }
 \value{
 Tibble with four columns: \code{item}, \code{d} (\emph{D}-score),

@@ -368,13 +368,13 @@ calc_dscore <- function(data, items, xname, xunit,
       left_join(data4, by = ".rownum") %>%
       mutate(
         n = recode(.data$n, .missing = 0L),
+        d = round(.data$d, digits = dec),
         daz = daz(
           d = .data$d, x = .data$a,
           reference = get_reference(population),
           dec = dec
         ),
-        daz = ifelse(is.nan(.data$daz), NA, .data$daz),
-        d = round(.data$d, digits = dec)
+        daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) %>%
       select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
     return(data5)

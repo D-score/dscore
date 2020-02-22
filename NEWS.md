@@ -3,7 +3,8 @@
 * There was a slight discrepancy in the calculation of DAZ between the
 `dscore` and `clopus` packages. The `dscore` package now first rounds
 the D-score and then calculate DAZ.
-* The default rounding is now 2 (D-score), 3 (DAZ) and 4 (age) decimals.
+* The default rounding is now 2 (D-score), 3 (DAZ). Fixed rounding are now
+4 (age) and 4 (p) decimals.
 
 # dscore 1.0.2
 

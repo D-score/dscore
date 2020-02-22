@@ -232,10 +232,10 @@ calc_dscore <- function(data, items, xname, xunit,
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
   a <- switch(xunit,
-    decimal = round(data[[xname]], 3L),
-    months  = round(data[[xname]] / 12, 3L),
-    days    = round(data[[xname]] / 365.25, 3L),
-    rep(NA, nrow(data))
+              decimal = round(data[[xname]], 4L),
+              months  = round(data[[xname]] / 12, 4L),
+              days    = round(data[[xname]] / 365.25, 4L),
+              rep(NA, nrow(data))
   )
 
   # obtain difficulty estimates
@@ -330,8 +330,8 @@ calc_dscore <- function(data, items, xname, xunit,
         data4[i, ] <- f
       } else {
         data4[i, ] <- dnorm(qp,
-          mean = as.double(data2[i, "mu"]),
-          sd = as.double(data2[i, "sd"])
+                            mean = as.double(data2[i, "mu"]),
+                            sd = as.double(data2[i, "sd"])
         )
       }
     }
@@ -345,7 +345,7 @@ calc_dscore <- function(data, items, xname, xunit,
       group_by(.data$.rownum, .data$a) %>%
       summarise(
         n = n(),
-        p = round(mean(.data$score), digits = 3L),
+        p = round(mean(.data$score), digits = 4L),
         x = list(qp),
         w = list(calculate_posterior(
           scores = .data$score,
@@ -372,8 +372,7 @@ calc_dscore <- function(data, items, xname, xunit,
         daz = daz(
           d = .data$d, x = .data$a,
           reference = get_reference(population),
-          dec = dec[2L]
-        ),
+          dec = dec[2L]),
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) %>%
       select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)

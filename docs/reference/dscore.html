@@ -71,7 +71,7 @@ observations on milestones." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -146,7 +146,7 @@ observations on milestones.</p>
   <span class='kw'>transform</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>qp</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>,
   <span class='kw'>population</span> <span class='kw'>=</span> <span class='no'>key</span>,
-  <span class='kw'>dec</span> <span class='kw'>=</span> <span class='fl'>3L</span>
+  <span class='kw'>dec</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2L</span>, <span class='fl'>3L</span>)
 )
 
 <span class='fu'>dscore_posterior</span>(
@@ -162,7 +162,7 @@ observations on milestones.</p>
   <span class='kw'>transform</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>qp</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>,
   <span class='kw'>population</span> <span class='kw'>=</span> <span class='no'>key</span>,
-  <span class='kw'>dec</span> <span class='kw'>=</span> <span class='fl'>3L</span>
+  <span class='kw'>dec</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2L</span>, <span class='fl'>3L</span>)
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -255,9 +255,9 @@ supported are <code>"dutch"</code> and <code>"gcdg"</code> (default).</p></td>
     </tr>
     <tr>
       <th>dec</th>
-      <td><p>Integer specifying the number of decimals for
-rounding the ability estimates and the DAZ. The default is
-<code>dec = 3</code>.</p></td>
+      <td><p>A vector of two integers specifying the number of
+decimals for rounding the D-score and DAZ, respectively.
+The default is <code>dec = c(2L, 3L)</code>.</p></td>
     </tr>
     </table>
 
@@ -348,17 +348,17 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class='fu'><a href='get_tau.html'>get_tau</a></span>(<span class='no'>items</span>)</div><div class='output co'>#&gt; ddifmd001 ddicmm029 ddigmd053 
 #&gt;      5.51      2.43        NA </div><div class='input'>
 <span class='co'># calculate D-score</span>
-<span class='fu'>dscore</span>(<span class='no'>data</span>)</div><div class='output co'>#&gt;        a n   p      d      sem    daz
-#&gt; 1     NA 0  NA     NA       NA     NA
-#&gt; 2     NA 0  NA     NA       NA     NA
-#&gt; 3  0.058 1 0.0  3.480 2.768018 -2.144
-#&gt; 4  0.058 2 0.0  0.969 2.371505 -2.853
-#&gt; 5  0.058 2 0.5  4.830 1.882182 -1.763
-#&gt; 6  0.058 2 0.5  4.830 1.882182 -1.763
-#&gt; 7  0.058 2 0.5  4.830 1.882182 -1.763
-#&gt; 8  0.058 2 0.5  4.830 1.882182 -1.763
-#&gt; 9  0.058 2 1.0 11.842 3.978551  0.216
-#&gt; 10 0.058 2 1.0 11.842 3.978551  0.216</div><div class='input'>
+<span class='fu'>dscore</span>(<span class='no'>data</span>)</div><div class='output co'>#&gt;         a n   p     d      sem    daz
+#&gt; 1      NA 0  NA    NA       NA     NA
+#&gt; 2      NA 0  NA    NA       NA     NA
+#&gt; 3  0.0575 1 0.0  3.46 2.772368 -2.138
+#&gt; 4  0.0575 2 0.0  0.96 2.375263 -2.843
+#&gt; 5  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 6  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 7  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 8  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 9  0.0575 2 1.0 11.81 3.970219  0.219
+#&gt; 10 0.0575 2 1.0 11.81 3.970219  0.219</div><div class='input'>
 <span class='co'># calculate full posterior</span>
 <span class='no'>p</span> <span class='kw'>&lt;-</span> <span class='fu'>dscore_posterior</span>(<span class='no'>data</span>)
 

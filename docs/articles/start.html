@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -2474,13 +2474,13 @@ vin
 <pre><code>## [1] 100   6</code></pre>
 <p>Where <code>ds</code> is a <code>data.frame</code> with the same number of rows as the input data. The first six rows are</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(ds)</a></code></pre></div>
-<pre><code>##       a  n     p      d       sem    daz
-## 1 0.487 11 0.909 31.334 1.5844020 -1.442
-## 2 0.657 14 0.643 34.673 0.9808939 -2.176
-## 3 1.180 19 0.947 48.697 1.5514105 -1.191
-## 4 1.906 13 0.846 59.960 1.1765347 -0.627
-## 5 0.550 11 0.818 29.506 1.3336129 -2.767
-## 6 0.767 14 0.786 36.508 0.9196542 -2.533</code></pre>
+<pre><code>##        a  n      p     d       sem    daz
+## 1 0.4873 11 0.9091 31.33 1.5846981 -1.447
+## 2 0.6571 14 0.6429 34.67 0.9808856 -2.177
+## 3 1.1800 19 0.9474 48.70 1.5514105 -1.190
+## 4 1.9055 13 0.8462 59.96 1.1765263 -0.625
+## 5 0.5503 11 0.8182 29.51 1.3336306 -2.769
+## 6 0.7666 14 0.7857 36.51 0.9196387 -2.529</code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -2581,20 +2581,20 @@ vin
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2.5844 -0.8321 -0.2201  0.5830  3.3248 
+## -2.5804 -0.8315 -0.2210  0.5849  3.3244 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -2.40987    0.33615  -7.169 1.56e-10 ***
-## age          0.98934    0.28131   3.517 0.000669 ***
-## sexmale      0.06211    0.46586   0.133 0.894218    
-## age:sexmale -0.14625    0.37378  -0.391 0.696469    
+## (Intercept) -2.40958    0.33607  -7.170 1.55e-10 ***
+## age          0.98879    0.28125   3.516 0.000671 ***
+## sexmale      0.06309    0.46575   0.135 0.892536    
+## age:sexmale -0.14624    0.37369  -0.391 0.696413    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 1.176 on 96 degrees of freedom
-## Multiple R-squared:  0.2007, Adjusted R-squared:  0.1758 
-## F-statistic: 8.036 on 3 and 96 DF,  p-value: 7.83e-05</code></pre>
+## Multiple R-squared:  0.2006, Adjusted R-squared:  0.1756 
+## F-statistic:  8.03 on 3 and 96 DF,  p-value: 7.884e-05</code></pre>
 <p>This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.</p>
 <p>We may account for the clustering effect by including random intercept and age effects, and rerun as</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lme4)</a></code></pre></div>
@@ -2603,16 +2603,16 @@ vin
 <pre><code>## Linear mixed model fit by REML ['lmerMod']
 ## Formula: daz ~ 1 + age + sex + sex * age + (1 + age | id)
 ##    Data: md
-## REML criterion at convergence: 311.2184
+## REML criterion at convergence: 311.1536
 ## Random effects:
 ##  Groups   Name        Std.Dev. Corr 
 ##  id       (Intercept) 1.0478        
-##           age         0.6676   -0.88
-##  Residual             0.9679        
+##           age         0.6678   -0.88
+##  Residual             0.9673        
 ## Number of obs: 100, groups:  id, 27
 ## Fixed Effects:
 ## (Intercept)          age      sexmale  age:sexmale  
-##    -2.42999      1.03479      0.08639     -0.18778</code></pre>
+##    -2.42981      1.03441      0.08745     -0.18787</code></pre>
 <p>This analysis yields the same substantive conclusions as before.</p>
 </div>
 <div id="references" class="section level2 unnumbered">

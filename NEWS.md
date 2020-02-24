@@ -1,3 +1,5 @@
+# dscore 1.1.0.9000
+
 # dscore 1.1.0
 
 * The default rounding is now 2 (D-score), 3 (DAZ). Fixed rounding are now

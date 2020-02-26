@@ -1,4 +1,7 @@
-# dscore 1.1.0.9000
+# dscore 1.1.1
+
+* Adds a facility to create a dynamic (on-the-fly) itemtable from 
+specified item names in `get_itemtable()`.
 
 # dscore 1.1.0
 

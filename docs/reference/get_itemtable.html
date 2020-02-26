@@ -73,7 +73,7 @@ in the itemtable." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.1</span>
       </span>
     </div>
 
@@ -151,7 +151,8 @@ default (<code>NULL</code>) returns all items.</p></td>
       <th>itemtable</th>
       <td><p>A <code>data.frame</code> set up according to the
 same structure as <code><a href='builtin_itemtable.html'>builtin_itemtable()</a></code>. If not specified,
-the <code>builtin_itemtable</code> is used.</p></td>
+the <code>builtin_itemtable</code> is used. If <code>itemtable = ""</code>, then
+a dynamic item table is created from any specified item names.</p></td>
     </tr>
     </table>
 
@@ -162,6 +163,18 @@ the <code>builtin_itemtable</code> is used.</p></td>
 
     <div class='dont-index'><p><code><a href='get_labels.html'>get_labels()</a></code>, <code><a href='get_itemnames.html'>get_itemnames()</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>get_itemtable</span>(), <span class='fl'>3</span>)</div><div class='output co'>#&gt;        item instrument domain mode number equate
+#&gt; 1 aqicmc001        aqi     cm    c    001   &lt;NA&gt;
+#&gt; 2 aqicmc002        aqi     cm    c    002   &lt;NA&gt;
+#&gt; 3 aqicmc003        aqi     cm    c    003   &lt;NA&gt;
+#&gt;                                                                                      label
+#&gt; 1                                Does your baby sometimes make throaty or gurgling sounds?
+#&gt; 2 After you have been out of sight, does your baby smile or get excited when she sees you?
+#&gt; 3                       Does your baby make cooing sounds such as "ooo", "gah," and  "ah"?</div><div class='input'><span class='fu'>get_itemtable</span>(<span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>3</span>], <span class='st'>""</span>)</div><div class='output co'>#&gt;   item instrument domain mode number equate       label
+#&gt; 1    A       &lt;NA&gt;   &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt; Label for A
+#&gt; 2    B       &lt;NA&gt;   &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt; Label for B
+#&gt; 3    C       &lt;NA&gt;   &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt; Label for C</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -169,6 +182,7 @@ the <code>builtin_itemtable</code> is used.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#see-also">See also</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

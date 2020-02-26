@@ -23,8 +23,10 @@ get_itemtable <- function(items = NULL, itemtable = NULL) {
   else if (itemtable == "" && length(items))
     return(data.frame(item = items,
                       instrument = NA_character_,
-                      equate = NA_character_,
                       domain = NA_character_,
+                      mode = NA_character_,
+                      number = NA_character_,
+                      equate = NA_character_,
                       label = paste("Label for", items),
                       stringsAsFactors = FALSE))
   if (is.null(items)) return(itemtable)

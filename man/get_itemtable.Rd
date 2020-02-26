@@ -12,7 +12,8 @@ default (\code{NULL}) returns all items.}
 
 \item{itemtable}{A \code{data.frame} set up according to the
 same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not specified,
-the \code{builtin_itemtable} is used.}
+the \code{builtin_itemtable} is used. If \code{itemtable = ""}, then
+a dynamic item table is created from any specified item names.}
 }
 \value{
 A \code{data.frame} with seven columns.
@@ -23,6 +24,10 @@ contains basic meta-information about items: a name, the equate group,
 the instrument, the domain and the item label.
 The \code{get_itemtable()} function returns a subset of \code{items}
 in the itemtable.
+}
+\examples{
+head(get_itemtable(), 3)
+get_itemtable(LETTERS[1:3], "")
 }
 \seealso{
 \code{\link[=get_labels]{get_labels()}}, \code{\link[=get_itemnames]{get_itemnames()}}

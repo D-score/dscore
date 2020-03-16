@@ -83,6 +83,13 @@ details.
 2.  Adaptive testing: Jacobusse and van Buuren
     ([2007](#ref-jacobusse2007))
 
+### Shiny app
+
+If you want to calculate the D-score on your own data, and you’re not an
+`R` user, you might wish to check out our interactive Shiny
+[dcalculator](https://tnochildhealthstatistics.shinyapps.io/dcalculator/)
+app.
+
 ## Acknowledgement
 
 This study was supported by the Bill & Melinda Gates Foundation. The

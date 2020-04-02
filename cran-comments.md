@@ -3,11 +3,11 @@ cran-comments
 
 ## Reason
 
-Release 1.1.0 contains a few bug fixes.
+Request from CRAN because of breaking change in `tibble 3.0.0`
 
 ## Test environments
 
-  - local OS X install, 10.15.3, R 3.6.2
+  - local OS X install, 10.15.4, R 3.6.2
   - win-builder, using `devtools::check_win_devel()`
   - rhub
 
@@ -21,7 +21,7 @@ build(manual = TRUE)
 ```
 
 ``` bash
-R CMD CHECK /Users/buurensv/Package/dscore/dscore_1.1.0.tar.gz
+R CMD CHECK /Users/buurensv/Package/dscore/dscore_1.2.0.tar.gz
 
 ...
 * checking data for non-ASCII characters ... NOTE
@@ -47,31 +47,38 @@ check_rhub()
 
 The result is:
 
-    Platform:   Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-    Status: 1 NOTE
+    ── dscore 1.2.0: NOTE
     
-    Found the following files/directories:
-      'dscore-Ex_i386.Rout' 'dscore-Ex_x64.Rout' 'examples_i386'
-      'examples_x64' 'tests_i386' 'tests_x64'
-    * checking for detritus in the temp directory ... OK
-    * DONE
-
-    Platform:   Ubuntu Linux 16.04 LTS, R-release, GCC
-    Status: OK
-
-    Platform:   Fedora Linux, R-devel, clang, gfortran
-    Status: OK
-
-    Platform:   Debian Linux, R-devel, GCC ASAN/UBSAN
-    dscore 1.1.0: PREPERROR
+      Build ID:   dscore_1.2.0.tar.gz-ace2b0cbcddd4eb980f5659a20a2c170
+      Platform:   Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+      Submitted:  7m 50s ago
+      Build time: 7m 32s
     
-    SSH: Transferred 93 file(s)
-    Build step 'Send files or execute commands over SSH' changed build result to SUCCESS
-    Pinging https://builder.r-hub.io/build/SUCCESS/dscore_1.1.0.tar.gz-9cc3cabcaec042f3945b1f48cc7c0044/2020-02-23T15:31:45Z
-    {"status":"ok"}
-    Finished: SUCCESS
+    > checking for non-standard things in the check directory ... NOTE
+      Found the following files/directories:
+        'dscore-Ex_i386.Rout' 'dscore-Ex_x64.Rout' 'examples_i386'
+        'examples_x64' 'tests_i386' 'tests_x64'
+    
+    0 errors ✓ | 0 warnings ✓ | 1 note x
 
-I believe these are benign messages, unrelated to the `dscore` package.
+    ── dscore 1.2.0: OK
+    
+      Build ID:   dscore_1.2.0.tar.gz-b23ec143969242e49a6f750f640a28f4
+      Platform:   Ubuntu Linux 16.04 LTS, R-release, GCC
+
+    ── dscore 1.2.0: OK
+    
+      Build ID:   dscore_1.2.0.tar.gz-e8125f39d6dd48ea8c54610080f7c200
+      Platform:   Fedora Linux, R-devel, clang, gfortran
+
+    ── dscore 1.2.0: PREPERROR
+    
+    STATUS: success
+    
+      Build ID:   dscore_1.2.0.tar.gz-12c76df788da4dc7a782826f051d749c
+      Platform:   Debian Linux, R-devel, GCC ASAN/UBSAN
+
+I believe none of the messages is caused by the `dscore` package.
 
 ## Downstream dependencies
 

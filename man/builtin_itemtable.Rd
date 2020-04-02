@@ -4,7 +4,8 @@
 \name{builtin_itemtable}
 \alias{builtin_itemtable}
 \title{Global Scale for Early Development - itemtable}
-\format{A \code{data.frame} with variables:\tabular{ll}{
+\format{
+A \code{data.frame} with variables:\tabular{ll}{
    Name \tab Label \cr
    \code{item} \tab Item name, gsed lexicon \cr
    \code{instrument} \tab Instrument code, 3 letters \cr
@@ -13,7 +14,8 @@
    \code{number} \tab Item number, 3 numbers \cr
    \code{equate} \tab Equate group \cr
    \code{label} \tab Label (English) \cr
-}}
+}
+}
 \usage{
 builtin_itemtable
 }

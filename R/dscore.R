@@ -324,7 +324,7 @@ calc_dscore <- function(data, items, xname, xunit,
     # return prior if calculate_posterior returned NULL
     data4 <- matrix(NA, nrow = nrow(data), ncol = length(qp))
     for (i in seq_len(nrow(data4))) {
-      idx <- data3[, ".rownum"] == i
+      idx <- data3[, ".rownum", drop = TRUE] == i
       f <- unlist(data3[idx, "w"])
       if (!is.null(f)) {
         data4[i, ] <- f

@@ -4,8 +4,7 @@
 \name{builtin_itembank}
 \alias{builtin_itembank}
 \title{Built-in itembank}
-\format{
-A \code{data.frame} with variables:\tabular{ll}{
+\format{A \code{data.frame} with variables:\tabular{ll}{
    Name \tab Label \cr
    \code{key} \tab String indicating a specific Rasch model, either \code{"gsed"}, \code{"gcdg"} or \code{"dutch"} \cr
    \code{item} \tab Item name, gsed lexicon \cr
@@ -15,8 +14,7 @@ A \code{data.frame} with variables:\tabular{ll}{
    \code{mode} \tab Mode code, 1 letter \cr
    \code{number} \tab Item number, 3 numbers \cr
    \code{label} \tab Label (English) \cr
-}
-}
+}}
 \usage{
 builtin_itembank
 }

@@ -42,7 +42,7 @@
 <meta property="og:title" content="Get a subset of items from the itemtable — get_itemtable" />
 <meta property="og:description" content="The builtin_itemtable object in the dscore package
 contains basic meta-information about items: a name, the equate group,
-the instrument, the domain and the item label.
+and the item label.
 The get_itemtable() function returns a subset of items
 in the itemtable." />
 
@@ -76,7 +76,7 @@ in the itemtable." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
       </span>
     </div>
 
@@ -135,12 +135,12 @@ in the itemtable." />
     <div class="ref-description">
     <p>The <code>builtin_itemtable</code> object in the <code>dscore</code> package
 contains basic meta-information about items: a name, the equate group,
-the instrument, the domain and the item label.
+and the item label.
 The <code>get_itemtable()</code> function returns a subset of <code>items</code>
 in the itemtable.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_itemtable</span>(<span class='kw'>items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>itemtable</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_itemtable</span>(<span class='kw'>items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>itemtable</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>decompose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,6 +157,11 @@ same structure as <code><a href='builtin_itemtable.html'>builtin_itemtable()</a>
 the <code>builtin_itemtable</code> is used. If <code>itemtable = ""</code>, then
 a dynamic item table is created from any specified item names.</p></td>
     </tr>
+    <tr>
+      <th>decompose</th>
+      <td><p>If <code>TRUE</code>, the function adds four columns:
+<code>instrument</code>, <code>domain</code>, <code>mode</code> and <code>number</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -167,17 +172,17 @@ a dynamic item table is created from any specified item names.</p></td>
     <div class='dont-index'><p><code><a href='get_labels.html'>get_labels()</a></code>, <code><a href='get_itemnames.html'>get_itemnames()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>get_itemtable</span>(), <span class='fl'>3</span>)</div><div class='output co'>#&gt;        item instrument domain mode number equate
-#&gt; 1 aqicmc001        aqi     cm    c    001   &lt;NA&gt;
-#&gt; 2 aqicmc002        aqi     cm    c    002   &lt;NA&gt;
-#&gt; 3 aqicmc003        aqi     cm    c    003   &lt;NA&gt;
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>get_itemtable</span>(), <span class='fl'>3</span>)</div><div class='output co'>#&gt;        item equate
+#&gt; 1 aqicmc001   &lt;NA&gt;
+#&gt; 2 aqicmc002   &lt;NA&gt;
+#&gt; 3 aqicmc003   &lt;NA&gt;
 #&gt;                                                                                      label
 #&gt; 1                                Does your baby sometimes make throaty or gurgling sounds?
 #&gt; 2 After you have been out of sight, does your baby smile or get excited when she sees you?
-#&gt; 3                       Does your baby make cooing sounds such as "ooo", "gah," and  "ah"?</div><div class='input'><span class='fu'>get_itemtable</span>(<span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>3</span>], <span class='st'>""</span>)</div><div class='output co'>#&gt;   item instrument domain mode number equate       label
-#&gt; 1    A       &lt;NA&gt;   &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt; Label for A
-#&gt; 2    B       &lt;NA&gt;   &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt; Label for B
-#&gt; 3    C       &lt;NA&gt;   &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt; Label for C</div></pre>
+#&gt; 3                       Does your baby make cooing sounds such as "ooo", "gah," and  "ah"?</div><div class='input'><span class='fu'>get_itemtable</span>(<span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>3</span>], <span class='st'>""</span>)</div><div class='output co'>#&gt;   item equate       label
+#&gt; 1    A   &lt;NA&gt; Label for A
+#&gt; 2    B   &lt;NA&gt; Label for B
+#&gt; 3    C   &lt;NA&gt; Label for C</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -193,7 +198,7 @@ a dynamic item table is created from any specified item names.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

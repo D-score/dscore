@@ -1,3 +1,12 @@
+# dscore 1.2.1
+
+* Adds equate groups translated from the `ddata` package to `builtin_itemtable`
+* Adds new `itemtable_20200424.txt` with minimal item definitions
+* Adds 522 missing items that were defined in the `ddata` package
+* Minimizes the data stored in `builtin_itemtable`
+* The `get_itemtable()` function gets a new argument `decompose`
+ for adding info from decomposed item names
+ 
 # dscore 1.2.0
 
 * Uses explicit `drop = TRUE` to account for new behavior in `tibble 3.0.0`

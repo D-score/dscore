@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
       </span>
     </div>
 
@@ -408,7 +408,7 @@
 ## 1        by3     cg    d    018
 ## 2        den     fm    d    014</code></pre>
 <p>This function returns a <code>data.frame</code> with four character vectors.</p>
-<p>The <code>dscore</code> package can recognise 2651 item names. The expression <code><a href="../reference/get_itemnames.html">get_itemnames()</a></code> returns a (long) vector of all known item names. Let us construct a table of instruments by domains:</p>
+<p>The <code>dscore</code> package can recognise 3173 item names. The expression <code><a href="../reference/get_itemnames.html">get_itemnames()</a></code> returns a (long) vector of all known item names. Let us construct a table of instruments by domains:</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">items</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span>()
 <span class="no">din</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/decompose_itemnames.html">decompose_itemnames</a></span>(<span class="no">items</span>)
 <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">din</span>, <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span>(<span class="no">instrument</span>, <span class="no">domain</span>)), <span class="kw">format</span> <span class="kw">=</span> <span class="st">"html"</span>) <span class="kw">%&gt;%</span>
@@ -466,6 +466,9 @@ md
 mo
 </th>
 <th style="text-align:right;">
+NA
+</th>
+<th style="text-align:right;">
 pd
 </th>
 <th style="text-align:right;">
@@ -505,7 +508,7 @@ aqi
 0
 </td>
 <td style="text-align:right;">
-48
+63
 </td>
 <td style="text-align:right;">
 0
@@ -520,19 +523,13 @@ aqi
 0
 </td>
 <td style="text-align:right;">
-45
+61
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-47
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
+62
 </td>
 <td style="text-align:right;">
 0
@@ -547,7 +544,16 @@ aqi
 0
 </td>
 <td style="text-align:right;">
-51
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+68
 </td>
 <td style="text-align:right;">
 0
@@ -556,7 +562,7 @@ aqi
 0
 </td>
 <td style="text-align:right;">
-39
+67
 </td>
 <td style="text-align:right;">
 0
@@ -642,7 +648,10 @@ bar
 0
 </td>
 <td style="text-align:right;">
-22
+0
+</td>
+<td style="text-align:right;">
+66
 </td>
 </tr>
 <tr>
@@ -696,6 +705,9 @@ bat
 </td>
 <td style="text-align:right;">
 30
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -769,13 +781,16 @@ by1
 0
 </td>
 <td style="text-align:right;">
-117
+134
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-39
+0
+</td>
+<td style="text-align:right;">
+66
 </td>
 <td style="text-align:right;">
 0
@@ -846,13 +861,16 @@ by2
 0
 </td>
 <td style="text-align:right;">
-78
+165
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-43
+0
+</td>
+<td style="text-align:right;">
+109
 </td>
 <td style="text-align:right;">
 0
@@ -884,7 +902,7 @@ by3
 0
 </td>
 <td style="text-align:right;">
-89
+91
 </td>
 <td style="text-align:right;">
 0
@@ -911,7 +929,10 @@ by3
 0
 </td>
 <td style="text-align:right;">
-68
+72
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -1015,6 +1036,9 @@ cro
 0
 </td>
 <td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
 59
 </td>
 <td style="text-align:right;">
@@ -1044,7 +1068,7 @@ ddi
 0
 </td>
 <td style="text-align:right;">
-23
+27
 </td>
 <td style="text-align:right;">
 0
@@ -1066,6 +1090,9 @@ ddi
 </td>
 <td style="text-align:right;">
 27
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -1136,28 +1163,22 @@ den
 0
 </td>
 <td style="text-align:right;">
-28
+29
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-35
+32
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
 0
+</td>
+<td style="text-align:right;">
+39
 </td>
 <td style="text-align:right;">
 0
@@ -1172,7 +1193,16 @@ den
 0
 </td>
 <td style="text-align:right;">
-22
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+25
 </td>
 <td style="text-align:right;">
 0
@@ -1249,6 +1279,9 @@ dmc
 0
 </td>
 <td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
 27
 </td>
 <td style="text-align:right;">
@@ -1269,7 +1302,7 @@ gri
 0
 </td>
 <td style="text-align:right;">
-66
+86
 </td>
 <td style="text-align:right;">
 0
@@ -1281,28 +1314,7 @@ gri
 0
 </td>
 <td style="text-align:right;">
-64
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-82
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-77
+86
 </td>
 <td style="text-align:right;">
 0
@@ -1317,10 +1329,34 @@ gri
 0
 </td>
 <td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-23
+86
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+38
 </td>
 <td style="text-align:right;">
 0
@@ -1374,6 +1410,9 @@ hyp
 </td>
 <td style="text-align:right;">
 5
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -1477,6 +1516,9 @@ iyo
 0
 </td>
 <td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
 20
 </td>
 <td style="text-align:right;">
@@ -1568,6 +1610,9 @@ kdi
 <td style="text-align:right;">
 0
 </td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
 <tr>
 <td style="text-align:left;font-family: monospace;">
@@ -1604,7 +1649,10 @@ mac
 0
 </td>
 <td style="text-align:right;">
-6
+7
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -1722,6 +1770,9 @@ mds
 <td style="text-align:right;">
 0
 </td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
 <tr>
 <td style="text-align:left;font-family: monospace;">
@@ -1768,6 +1819,9 @@ mdt
 </td>
 <td style="text-align:right;">
 34
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -1836,6 +1890,9 @@ mul
 </td>
 <td style="text-align:right;">
 36
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -1953,6 +2010,9 @@ peg
 <td style="text-align:right;">
 0
 </td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
 <tr>
 <td style="text-align:left;font-family: monospace;">
@@ -1993,6 +2053,9 @@ pri
 </td>
 <td style="text-align:right;">
 13
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -2093,6 +2156,9 @@ rap
 0
 </td>
 <td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
 28
 </td>
 <td style="text-align:right;">
@@ -2140,46 +2206,49 @@ sbi
 0
 </td>
 <td style="text-align:right;">
-11
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
 12
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+29
 </td>
 <td style="text-align:right;">
 0
@@ -2205,7 +2274,7 @@ sgr
 0
 </td>
 <td style="text-align:right;">
-6
+22
 </td>
 <td style="text-align:right;">
 0
@@ -2214,19 +2283,22 @@ sgr
 0
 </td>
 <td style="text-align:right;">
-5
+13
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-6
+27
 </td>
 <td style="text-align:right;">
 0
 </td>
 <td style="text-align:right;">
-5
+22
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -2279,7 +2351,7 @@ tep
 0
 </td>
 <td style="text-align:right;">
-8
+11
 </td>
 <td style="text-align:right;">
 0
@@ -2338,10 +2410,16 @@ tep
 <td style="text-align:right;">
 0
 </td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
 <tr>
 <td style="text-align:left;font-family: monospace;">
 vin
+</td>
+<td style="text-align:right;">
+0
 </td>
 <td style="text-align:right;">
 0
@@ -2475,12 +2553,12 @@ vin
 <p>Where <code>ds</code> is a <code>data.frame</code> with the same number of rows as the input data. The first six rows are</p>
 <div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">ds</span>)</pre></body></html></div>
 <pre><code>##        a  n      p     d       sem    daz
-## 1 0.4873 11 0.9091 31.33 1.5846981 -1.447
-## 2 0.6571 14 0.6429 34.67 0.9808856 -2.177
-## 3 1.1800 19 0.9474 48.70 1.5514105 -1.190
+## 1 0.4873 11 0.9091 31.33 1.5843896 -1.447
+## 2 0.6571 14 0.6429 34.67 0.9808200 -2.177
+## 3 1.1800 19 0.9474 48.70 1.5513237 -1.190
 ## 4 1.9055 13 0.8462 59.96 1.1765263 -0.625
-## 5 0.5503 11 0.8182 29.51 1.3336306 -2.769
-## 6 0.7666 14 0.7857 36.51 0.9196387 -2.529</code></pre>
+## 5 0.5503 11 0.8182 29.50 1.3330131 -2.772
+## 6 0.7666 14 0.7857 36.51 0.9196041 -2.529</code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -2581,20 +2659,20 @@ vin
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2.5804 -0.8315 -0.2210  0.5849  3.3244 
+## -2.5797 -0.8312 -0.2225  0.5853  3.3244 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -2.40958    0.33607  -7.170 1.55e-10 ***
-## age          0.98879    0.28125   3.516 0.000671 ***
-## sexmale      0.06309    0.46575   0.135 0.892536    
-## age:sexmale -0.14624    0.37369  -0.391 0.696413    
+## (Intercept) -2.41064    0.33608  -7.173 1.53e-10 ***
+## age          0.98945    0.28126   3.518 0.000666 ***
+## sexmale      0.06339    0.46577   0.136 0.892026    
+## age:sexmale -0.14652    0.37371  -0.392 0.695865    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 1.176 on 96 degrees of freedom
-## Multiple R-squared:  0.2006, Adjusted R-squared:  0.1756 
-## F-statistic:  8.03 on 3 and 96 DF,  p-value: 7.884e-05</code></pre>
+## Multiple R-squared:  0.2008, Adjusted R-squared:  0.1758 
+## F-statistic: 8.039 on 3 and 96 DF,  p-value: 7.81e-05</code></pre>
 <p>This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.</p>
 <p>We may account for the clustering effect by including random intercept and age effects, and rerun as</p>
 <div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">lme4</span>)</pre></body></html></div>
@@ -2603,16 +2681,16 @@ vin
 <pre><code>## Linear mixed model fit by REML ['lmerMod']
 ## Formula: daz ~ 1 + age + sex + sex * age + (1 + age | id)
 ##    Data: md
-## REML criterion at convergence: 311.1536
+## REML criterion at convergence: 311.1656
 ## Random effects:
 ##  Groups   Name        Std.Dev. Corr 
-##  id       (Intercept) 1.0478        
-##           age         0.6678   -0.88
-##  Residual             0.9673        
+##  id       (Intercept) 1.0480        
+##           age         0.6680   -0.88
+##  Residual             0.9674        
 ## Number of obs: 100, groups:  id, 27
 ## Fixed Effects:
 ## (Intercept)          age      sexmale  age:sexmale  
-##    -2.42981      1.03441      0.08745     -0.18787</code></pre>
+##    -2.43083      1.03502      0.08776     -0.18815</code></pre>
 <p>This analysis yields the same substantive conclusions as before.</p>
 </div>
 <div id="references" class="section level2 unnumbered">
@@ -2641,7 +2719,7 @@ vin
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

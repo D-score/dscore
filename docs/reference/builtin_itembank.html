@@ -42,7 +42,7 @@
 <meta property="og:title" content="Built-in itembank — builtin_itembank" />
 <meta property="og:description" content="A data frame with administrative information per item. Includes
 only items that are part of a Rasch model.
-See builtin_itemtable() for an overview of all currently
+See dscore::builtin_itemtable for an overview of all currently
 defined items." />
 
 
@@ -75,7 +75,7 @@ defined items." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@ defined items." />
     <div class="ref-description">
     <p>A data frame with administrative information per item. Includes
 only items that are part of a Rasch model.
-See <code><a href='builtin_itemtable.html'>builtin_itemtable()</a></code> for an overview of all currently
+See <a href='builtin_itemtable.html'>dscore::builtin_itemtable</a> for an overview of all currently
 defined items.</p>
     </div>
 
@@ -148,11 +148,11 @@ defined items.</p>
 <tr><td><code>key</code></td><td>String indicating a specific Rasch model, either <code>"gsed"</code>, <code>"gcdg"</code> or <code>"dutch"</code></td></tr>
 <tr><td><code>item</code></td><td>Item name, gsed lexicon</td></tr>
 <tr><td><code>tau</code></td><td>Difficulty estimate</td></tr>
-<tr><td><code>instrument</code></td><td>Instrument code, 3 letters</td></tr>
-<tr><td><code>domain</code></td><td>Domain code, 2 letter</td></tr>
-<tr><td><code>mode</code></td><td>Mode code, 1 letter</td></tr>
-<tr><td><code>number</code></td><td>Item number, 3 numbers</td></tr>
 <tr><td><code>label</code></td><td>Label (English)</td></tr>
+<tr><td><code>instrument</code></td><td>Instrument code</td></tr>
+<tr><td><code>domain</code></td><td>Domain code</td></tr>
+<tr><td><code>mode</code></td><td>Administration mode</td></tr>
+<tr><td><code>number</code></td><td>Item number</td></tr>
 </table>
 
 
@@ -162,20 +162,20 @@ defined items.</p>
 <code><a href='builtin_itemtable.html'>builtin_itemtable()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>builtin_itembank</span>)</div><div class='output co'>#&gt;     key      item  tau instrument domain mode number
-#&gt; 1 dutch ddicmm029  1.7        ddi     cm    m    029
-#&gt; 2 dutch ddicmm030 11.3        ddi     cm    m    030
-#&gt; 3 dutch ddicmm031 14.5        ddi     cm    m    031
-#&gt; 4 dutch ddicmm033 36.0        ddi     cm    m    033
-#&gt; 5 dutch ddicmm034 40.9        ddi     cm    m    034
-#&gt; 6 dutch ddicmm036 43.1        ddi     cm    m    036
-#&gt;                                     label
-#&gt; 1                   Reacts when spoken to
-#&gt; 2 Smiles in response (M; can ask parents)
-#&gt; 3                   vocalizes in response
-#&gt; 4                   Says dada, baba, gaga
-#&gt; 5                   Babbles while playing
-#&gt; 6    Waves 'bye-bye' (M; can ask parents)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>builtin_itembank</span>)</div><div class='output co'>#&gt;     key      item  tau                                   label instrument
+#&gt; 1 dutch ddicmm029  1.7                   Reacts when spoken to        ddi
+#&gt; 2 dutch ddicmm030 11.3 Smiles in response (M; can ask parents)        ddi
+#&gt; 3 dutch ddicmm031 14.5                   vocalizes in response        ddi
+#&gt; 4 dutch ddicmm033 36.0                   Says dada, baba, gaga        ddi
+#&gt; 5 dutch ddicmm034 40.9                   Babbles while playing        ddi
+#&gt; 6 dutch ddicmm036 43.1    Waves 'bye-bye' (M; can ask parents)        ddi
+#&gt;   domain mode number
+#&gt; 1     cm    m    029
+#&gt; 2     cm    m    030
+#&gt; 3     cm    m    031
+#&gt; 4     cm    m    033
+#&gt; 5     cm    m    034
+#&gt; 6     cm    m    036</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -191,7 +191,7 @@ defined items.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

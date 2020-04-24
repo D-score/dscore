@@ -1,9 +1,9 @@
 pandoc: 2.3.1
-pkgdown: 1.5.0
+pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
   start: start.html
-last_built: 2020-04-02T06:59Z
+last_built: 2020-04-24T13:54Z
 urls:
   reference: https://stefvanbuuren.github.io/dscore/reference
   article: https://stefvanbuuren.github.io/dscore/articles

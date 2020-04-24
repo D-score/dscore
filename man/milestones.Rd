@@ -4,7 +4,8 @@
 \name{milestones}
 \alias{milestones}
 \title{Outcomes on developmental milestones for preterm-born children}
-\format{A \code{data.frame} with 100 rows and 62 variables:\tabular{ll}{
+\format{
+A \code{data.frame} with 100 rows and 62 variables:\tabular{ll}{
    Name \tab Label \cr
    \code{id} \tab Integer, child ID \cr
    \code{agedays} \tab Integer, age in days \cr
@@ -13,7 +14,8 @@
    \code{gagebrth} \tab Integer, gestational age in days \cr
    \code{ddifmd001} \tab Integer, Fixates eyes: 1 = yes, 0 = no \cr
    \code{...} \tab and so on.. \cr
-}}
+}
+}
 \usage{
 milestones
 }

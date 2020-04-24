@@ -4,7 +4,8 @@
 \name{builtin_references}
 \alias{builtin_references}
 \title{Age-conditional reference distribution of D-score}
-\format{A \code{data.frame} with 265 rows and 17 variables:\tabular{ll}{
+\format{
+A \code{data.frame} with 265 rows and 17 variables:\tabular{ll}{
    Name \tab Label \cr
    \code{pop} \tab Population, either \code{"dutch"} or \code{"gcdg"} \cr
    \code{age} \tab Decimal age in years \cr
@@ -23,7 +24,8 @@
    \code{SD0} \tab 0SD centile, median \cr
    \code{SDP1} \tab +1SD centile \cr
    \code{SDP2} \tab +2SD centile \cr
-}}
+}
+}
 \usage{
 builtin_references
 }

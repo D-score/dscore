@@ -47,6 +47,19 @@ it <- it[, c("item", "equate", "label")]
 it <- it[gtools::mixedorder(it$item), ]
 rownames(it) <- NULL
 
+# remove gremlins
+it[121, 3] <- "Draw a 4-inch circle on a piece of paper. Does your child use child-safe scissors to cut it out staying within a 1/4 inch of the lines? (Carefully watch your child's use of scissors for safety reasons.)"
+it[251, 3] <- "Can your child count past '40'?"
+it[252, 3] <- "Does your child correctly spell 3-letter words? For example, 'cat', 'dog',  'pen'."
+it[253, 3] <- "Can your child tell you all 12 months of the year? Mark 'Sometimes' if your child can tell you more than 6 months of the year."
+it[255, 3] <- "Can your child count to 100 by 10's?"
+it[2781, 3] <- "Does your child stop what he/she is doing when you say 'Stop!' even if just for a second?"
+it[2782, 3] <- "Does your child make a gesture to indicate 'No'?"
+it[2853, 3] <- "Can your child greet people either by giving his/her hand or saying 'hello'?"
+it[2972, 3] <- "Three-hole board - one in, two trials."
+it[2973, 3] <- "Three-hole board - three in."
+
 write.table(x = it, file = "data-raw/data/itemtable_20200424.txt",
-           quote = FALSE, sep = "\t", na = "", row.names = FALSE)
+           quote = FALSE, sep = "\t", na = "", row.names = FALSE,
+           fileEncoding = "UTF-8")
 

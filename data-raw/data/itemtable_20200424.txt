@@ -119,7 +119,7 @@ aqifmc056	FM122	Does your child cut up soft food such as banana or mango into sm
 aqifmc057	FM123	Give your child an 8 1/2 by 11inch piece of paper and ask him to fold the short sides together. Does your child fold the paper so that the sides match up within a half inch?
 aqifmc058	FM124	Does your child button most buttons on her clothing, including small buttons less than 1/2 inch?
 aqifmc059	FM125	Using the letters below to look at, does your child copy the letters without tracing? Cover up all of the letters except the letter being copied. Mark "yes" if your child copies four of the letters, and you can read them. Mark "sometimes" if your child copies two or three letters, and you can read them. V H T C A  (Copy letters here.)
-aqifmc060	FM126	Draw a 4-inch circle on a piece of paper. Does your child use child-safe scissors to cut it out staying within a 1/4 inch of the lines? (Carefully watch your child’s use of scissors for safety reasons.)
+aqifmc060	FM126	Draw a 4-inch circle on a piece of paper. Does your child use child-safe scissors to cut it out staying within a 1/4 inch of the lines? (Carefully watch your child's use of scissors for safety reasons.)
 aqifmc061	FM127	Does your child cut up soft food such as banana or mango into smaller pieces using a dull knife in one hand and a fork in the other?
 aqifmc062	FM128	Does your child successfully use a key to unlock the door?
 aqifmc063	FM129	Can your child tie shoelaces making a bow?
@@ -249,11 +249,11 @@ aqipxc060	COG165	Does your child say the days of the seven week in the correct o
 aqipxc061	COG166	Ask your child what day comes before and after Friday, does your child answer correctly? Mark "sometimes" if your child can name one of the days.
 aqipxc062	COG167	Ask your child what is 6 minus (or take away) 1, 4 minus 2, and 8 minus 3. Does your child correctly subtract one number from another? They can use their fingers to count.
 aqipxc063	COG168	Does your child tell you if a spoken or printed word has the same or different beginning and ending sounds? For example, CAR and CAKE have the same beginning sounds. BEG and DOG have the same end sounds. MAMA and LLAMA have different beginning sounds. TOP and TOY have different ending sounds.
-aqipxc064	COG169	Can your child count past “40”?
-aqipxc065	COG170	Does your child correctly spell 3-letter words? For example, “cat,” “dog,”  “pen”.
-aqipxc066	COG171	Can your child tell you all 12 months of the year? Mark “Sometimes” if your child can tell you more than 6 months of the year.
+aqipxc064	COG169	Can your child count past '40'?
+aqipxc065	COG170	Does your child correctly spell 3-letter words? For example, 'cat', 'dog',  'pen'.
+aqipxc066	COG171	Can your child tell you all 12 months of the year? Mark 'Sometimes' if your child can tell you more than 6 months of the year.
 aqipxc067	COG172	Ask your child what is 4 plus 2, 3 plus 5, 7 plus 1. Does your child correctly add the numbers? They can use their fingers to count.
-aqipxc068	COG173	Can your child count to 100 by 10’s?
+aqipxc068	COG173	Can your child count to 100 by 10's?
 aqislc001		Does your baby cry when she is hungry, wet, tired, or wants to be held?
 aqislc002		Does your baby sometimes try to suck, even when he's not feeding?
 aqislc003		Does your baby smile at you?
@@ -2779,8 +2779,8 @@ raplgc022		Does your child turn his/her head towards your voice or some noise?
 raplgc023		Does your child make sounds other than crying when LOOKING at toys or people?
 raplgc028		Does your child make single sounds like "buh" or "duh" or "muh"?
 raplgc056		Does your child make two similar sounds together like baba, mumu, pepe, didi?
-raplgc060		Does your child stop what he/she is doing when you say “Stop!” even if just for a second?
-raplgc068		Does your child make a gesture to indicate “No”?
+raplgc060		Does your child stop what he/she is doing when you say 'Stop!' even if just for a second?
+raplgc068		Does your child make a gesture to indicate 'No'?
 raplgc072		Can your child follow a simple spoken command or direction without you making a gesture? 
 raplgc081		Can your child follow directions with more than one step?
 raplgc097		When looking at pictures, if you say to your child "what is this?", can they say the name of the object that you point to?
@@ -2851,7 +2851,7 @@ rapsec048		Is your child interested when he/she sees other children playing? Doe
 rapsec064		Can your child pick up small bits of food and feed him/her-self using his/her hand?
 rapsec077		Does your child put his/her hands out to have them washed?
 rapsec082		Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?
-rapsec085		Can your child greet people either by giving his/her hand or saying “hello”?
+rapsec085		Can your child greet people either by giving his/her hand or saying 'hello'?
 rapsec086		Does your child share with others?
 rapsec090		Is your child able to go poo or pee without having accidents?
 rapsec094		Can your child break off pieces of food and feed them to him/her-self?
@@ -2970,8 +2970,8 @@ sgrfmd018		Takes paper
 sgrfmd019	FM21	Passes toy from hand to  hand.
 sgrfmd025	FM23	Clicks  two  bricks  together (Imitation).
 sgrfmd029	COG37	Accepts 3rd cube without  dropping.
-sgrfmd041	COG49	Three-hole board—one in, two trials.
-sgrfmd045	COG56	Three-hole board—  three in.
+sgrfmd041	COG49	Three-hole board - one in, two trials.
+sgrfmd045	COG56	Three-hole board - three in.
 sgrfmd052	COG46	Can open screw toy (Credit two points). Sagp51 is one point
 sgrgmd003	GM4	Holds head erect for a fewseconds.
 sgrgmd006		Active in bath

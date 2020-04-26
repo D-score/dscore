@@ -25,17 +25,18 @@ get_itemtable <- function(items = NULL, itemtable = NULL,
   if (is.null(itemtable)) itemtable <- dscore::builtin_itemtable
 
   # itemtable == "" is a special case for creating new items
-  else if (itemtable == "") {
-    if (length(items))
-      itemtable <- data.frame(item = items,
-                              equate = NA_character_,
-                              label = paste("Label for", items),
-                              stringsAsFactors = FALSE)
-    else
-      itemtable <- data.frame(item = "",
-                              equate = NA_character_,
-                              label = paste("Label for", items),
-                              stringsAsFactors = FALSE)
+  else if (is.character(itemtable)) {
+    if (itemtable == "")
+      if (length(items))
+        itemtable <- data.frame(item = items,
+                                equate = NA_character_,
+                                label = paste("Label for", items),
+                                stringsAsFactors = FALSE)
+      else
+        itemtable <- data.frame(item = "",
+                                equate = NA_character_,
+                                label = paste("Label for", items),
+                                stringsAsFactors = FALSE)
   }
 
   if (length(items))

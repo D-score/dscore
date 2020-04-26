@@ -1,3 +1,7 @@
+# dscore 1.2.2
+
+* Solves warning from `get_itemtable()` when `itemtable` argument is specified
+
 # dscore 1.2.1
 
 * Adds equate groups translated from the `ddata` package to `builtin_itemtable`

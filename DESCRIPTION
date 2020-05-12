@@ -1,7 +1,7 @@
 Package: dscore
 Type: Package
 Title: D-Score for Child Development
-Version: 1.3.0
+Version: 1.3.0.9000
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))

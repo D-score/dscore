@@ -1,3 +1,5 @@
+# dscore 1.3.0.9000
+
 # dscore 1.3.0
 
 * Adds equate groups translated from the `ddata` package to `builtin_itemtable`

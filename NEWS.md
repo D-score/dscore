@@ -1,15 +1,11 @@
-# dscore 1.2.2
-
-* Solves warning from `get_itemtable()` when `itemtable` argument is specified
-
-# dscore 1.2.1
+# dscore 1.3.0
 
 * Adds equate groups translated from the `ddata` package to `builtin_itemtable`
 * Adds new `itemtable_20200424.txt` with minimal item definitions
 * Adds 522 missing items that were defined in the `ddata` package
 * Minimizes the data stored in `builtin_itemtable`
-* The `get_itemtable()` function gets a new argument `decompose`
- for adding info from decomposed item names
+* The `get_itemtable()` function gets a new argument `decompose` for adding info from decomposed item names
+* Solves warning from `get_itemtable()` when `itemtable` argument is specified
  
 # dscore 1.2.0
 

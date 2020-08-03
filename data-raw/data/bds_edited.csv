@@ -16,7 +16,7 @@ v14;v14;v39;v1514;GSEXPLR;n39;ddifmm014;8;Gaat op onderzoek uit (M);14. Explores
 v15;v15;v44;v1520;GSMK3CB;n44;ddifmd015;9;Stapelt 3 blokjes;15. Builds tower of 3 cubes;15. Stapelt 3 blokjes;;906;907;9;9;g2;1;59.2;1;1;A. Fijne motoriek;13
 v16;v16;v45;v1522;GSIMITAT;n45;ddifmm016;9;Doet anderen na (M);16. Imitates others (M);16. Doet anderen na (M);909;;;9;9;m1;0;52.3;1;1;A. Fijne motoriek;13
 v17;v17;v51;v1528;GSMKTW6;n51;ddifmd017;10;Stapelt 6 blokjes;17. Builds tower of 6 cubes;17. Stapelt 6 blokjes;910;;;10;10;g1;0;62.6;1;1;A. Fijne motoriek;14
-v18;v18;v52;v1529;GSPUTFIG;n52;ddifmd018;10;Plaatst ronde vorm in stoof;18. Places round form in form-box;18. Plaatst ronde vorm in stoof;911;;;10;;g1;0;60.3;1;1;A. Fijne motoriek;14
+v18;v18;v52;v1529;GSPUTFIG;n52;ddifmd018;10;Plaatst ronde vorm in stoof;18. Places round form in form-box;18. Plaatst ronde vorm in stoof;912;;;10;;g1;0;60.3;1;1;A. Fijne motoriek;14
 v19;v19;v53;v1530;GSTKCLO;n53;ddifmm019;10;Trekt kledingstuk uit (M);19. Undresses himself (M);19. Trekt kledingstuk uit (M);913;;;10;;m1;0;60.6;1;1;A. Fijne motoriek;14
 v20;v20;;;;v20;ddifmd020;11;Bouwt vrachtauto na;20. Imitates building a truck;20. Bouwt vrachtauto na;914;;;11;;g1;0;67.6;1;0;A. Fijne motoriek;15
 v21;v21;;;;v21;ddifmd021;11;Plaatst 3 vormen in stoof;21. Places 3 forms in form-box;21. Plaatst 3 vormen in stoof;916;;;11;;g1;0;65;1;0;A. Fijne motoriek;15
@@ -41,8 +41,8 @@ v39;v39;v40;v1515;GSTHRWRD;n40;ddicmm039;8;Zegt 3 woorden (M);"39. Says 3 ""word
 v40;v40;;;;v40;ddicmm040;8;Begrijpt spelopdrachtjes (M);"40. Understand ""play"" orders (M)";40. Begrijpt spelopdrachtjes (M);939;;;8;8;m1;0;;1;0;B. Communicatie;11
 v41;v41;v47;v1524;GSTWOSEN;n47;ddicmm041;9;Zegt zinnen van 2 woorden (M);"41. Says ""sentences"" of 2 words (M)";"41. Zegt ""zinnen"" van 2 woorden (M)";940;;;9;9;m1;0;60.2;1;1;B. Communicatie;13
 v42;v42;;;;v42;ddicmm042;9;Wijst 6 lichaamsdelen aan bij pop (M);42. Points at 6 parts of body of a doll (M);42. Wijst 6 lichaamsdelen aan bij pop (M);941;;;9;9;m1;0;58.2;1;0;B. Communicatie;13
-v43;v43;v55;v1532;GSREFER;n55;ddicmm043;10;Noemt zichzelf mij of ik  (M);"43. Refers to self using ""me"" or ""I"" (M)";"43. Noemt zichzelf ""mij"" of ""ik""  (M)";942;;;10;;m1;0;61.7;1;1;B. Communicatie;14
-v44;v44;v56;v1533;GSID5OBJ;n56;ddicmd044;10;Wijst 5 plaatjes aan in boek;44. Points at 5 pictures in the book;44. Wijst 5 plaatjes aan in boek;944;;;10;;g1;0;62.2;0;1;B. Communicatie;14
+v43;v43;v55;v1532;GSREFER;n55;ddicmm043;10;Noemt zichzelf mij of ik  (M);"43. Refers to self using ""me"" or ""I"" (M)";"43. Noemt zichzelf ""mij"" of ""ik""  (M)";943;;;10;;m1;0;61.7;1;1;B. Communicatie;14
+v44;v44;v56;v1533;GSID5OBJ;n56;ddicmd044;10;Wijst 5 plaatjes aan in boek;44. Points at 5 pictures in the book;44. Wijst 5 plaatjes aan in boek;945;;;10;;g1;0;62.2;0;1;B. Communicatie;14
 v45;v45;;;;v45;ddicmm045;11;Zegt zinnen van 3 of meer woorden (M);"45. Says ""sentences"" of 3 or more words (M)";"45. Zegt ""zinnen"" van 3 of meer woorden (M)";947;;;11;;m1;0;63.3;1;0;B. Communicatie;15
 v46;v46;;;;v46;ddicmm046;11;Is verstaanbaar voor bekenden (M);46. Speech is understood by acquaintances (M);46. Is verstaanbaar voor bekenden (M);948;;;11;;m1;0;61.8;1;0;B. Communicatie;15
 v47;v47;;;;v47;ddicmm047;12;Praat spontaan over gebeurtenissen thuis (M);47. Talks spontaneously about events at home/playgroup (M);47. Praat spontaan over gebeurtenissen thuis/speelzaal (M);949;;;12;;m1;0;66.9;1;0;B. Communicatie;16
@@ -52,13 +52,13 @@ v50;v50;;;;v50;ddicmm050;13;Stelt vragen naar hoeveel, wanneer, waarom (M);"50. 
 v51;na8;;;;na8;ddicmm051;14;Begrijpt analogien en tegenstellingen (M);51. Understands analogies and oppositions;51. Begrijpt analogieën en tegenstellingen (M);954;;;14;;m1;0;;1;0;B. Communicatie;18
 v52;v51;v3;v1432;GSMARM;n3;ddigmd052;1;Beweegt armen evenveel;52. Moves arms equally well (M);52. Beweegt armen goed;;955;956;1;1;g2;1;-2.2;1;0;C. Grove motoriek;1
 v53;v52;v4;v1434;GSMLEG;n4;ddigmd053;1;Beweegt benen evenveel;53. Moves legs equally well;53. Beweegt benen goed;;958;959;1;1;g2;1;-1.9;1;0;C. Grove motoriek;1
-v54;v53;v11;v1444;GSRP;n11;ddigmd054;3;Blijft hangen bij optillen onder de oksels;54. Stays suspended when lifted under armpits;54. Blijft hangen bij optillen onder de oksels;960;;;3;1;g1;0;15.8;1;0;C. Grove motoriek;1
+v54;v53;v11;v1444;GSRP;n11;ddigmd054;3;Blijft hangen bij optillen onder de oksels;54. Stays suspended when lifted under armpits;54. Blijft hangen bij optillen onder de oksels;961;;;3;1;g1;0;15.8;1;0;C. Grove motoriek;1
 v55;v54;v15;v1449;GSNOHLAG;n15;ddigmd055;4;Reacties bij optrekken tot zit (alleen occasion 4!);55. Reactions if pulled to sitting;55. Reacties bij optrekken tot zit;962;;;4;1;g1;0;26;1;1;C. Grove motoriek;1
 v56;v55;v5;v1436;GSLFCHIN;n5;ddigmd056;1;Heft kin even van onderlaag;56. Lifts chin off table for a moment;56. Heft kin even van onderlaag;964;;;1;1;g1;0;5.2;1;1;C. Grove motoriek;1
-v57;v56;v12;v1445;GSHH45;n12;ddigmd057;3;Heft in buikligging hoofd tot 45;57. Lifts head to 45° in prone position;57. Heft in buikligging hoofd tot 45°;965;;;3;3;g1;0;20;1;1;C. Grove motoriek;3
+v57;v56;v12;v1445;GSHH45;n12;ddigmd057;3;Heft in buikligging hoofd tot 45;57. Lifts head to 45° in prone position;57. Heft in buikligging hoofd tot 45°;966;;;3;3;g1;0;20;1;1;C. Grove motoriek;3
 v58;v57;v18;v1454;GSHH90;n18;ddigmd058;4;Kijkt rond met 90 graden geheven hoofd;58. Looks around to side with angle face-table 90°;58. Kijkt rond met 90° geheven hoofd;968;;;4;4;g1;0;27.8;1;1;C. Grove motoriek;5
 v59;v58;v17;v1452;GSLBEND;n17;ddigmd059;4;Benen gebogen of trappelen bij verticaal zwaaien;59. Flexes or stomps legs while being swung;59. Benen gebogen of trappelen bij verticaal zwaaien;;970;971;4;4;g2;1;25.7;1;1;C. Grove motoriek;5
-v60;v59;v22;v1459;GSROLLS;n22;ddigmm060;5;Rolt zich om van rug naar buik en omgekeerd (M);60. Rolls over, back and forth (M);60. Rolt zich om van rug naar buik en omgekeerd (M);972;;;5;5;m1;0;34.7;1;1;C. Grove motoriek;7
+v60;v59;v22;v1459;GSROLLS;n22;ddigmm060;5;Rolt zich om van rug naar buik en omgekeerd (M);60. Rolls over, back and forth (M);60. Rolt zich om van rug naar buik en omgekeerd (M);973;;;5;5;m1;0;34.7;1;1;C. Grove motoriek;7
 v61;v60;v23;v1460;GSHHSIT;n23;ddigmd061;5;Kan hoofd goed ophouden in zit;61. Balances head well while sitting;61. Kan hoofd goed ophouden in zit;975;;;5;5;g1;0;32.5;1;1;C. Grove motoriek;7
 v62;v61;v24;v1461;GSSITST;n24;ddigmd062;5;Zit op billen met gestrekte benen;62. Sits on buttocks while legs stretched;62. Zit op billen met gestrekte benen;977;;;5;5;g1;0;34.9;1;1;C. Grove motoriek;7
 v63;v62;v26;v1463;GSSITWS;n26;ddigmd063;6;Zit stabiel los;63. Sits in stable position, without support;63. Zit stabiel los;978;;;6;6;g1;0;40;1;1;C. Grove motoriek;8

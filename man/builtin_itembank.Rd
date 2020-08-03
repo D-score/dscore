@@ -23,7 +23,7 @@ builtin_itembank
 \description{
 A data frame with administrative information per item. Includes
 only items that are part of a Rasch model.
-See \link[dscore:builtin_itemtable]{dscore::builtin_itemtable} for an overview of all currently
+See \link{builtin_itemtable} for an overview of all currently
 defined items.
 }
 \examples{

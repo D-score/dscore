@@ -1,4 +1,6 @@
-# dscore 1.3.0.9000
+# dscore 1.3.1
+
+* Repairs six incorrect BDS numbers in `data-raw/data/bds)edited.csv`
 
 # dscore 1.3.0
 

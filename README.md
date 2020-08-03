@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.3.0-orange.svg)](https://github.com/stefvanbuuren/dscore)
+[![](https://img.shields.io/badge/github%20version-1.3.1-orange.svg)](https://github.com/stefvanbuuren/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -118,7 +118,7 @@ Weber and Aisha K. Yousafzai.
 
 <div id="ref-fernald2017">
 
-Fernald, L.C.H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
+Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
 for Measuring Early Childhood Development in Low and Middle-Income
 Countries.”
 <http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
@@ -149,9 +149,9 @@ for Measuring Development of Young Children.” *Statistics in Medicine*
 
 <div id="ref-jacobusse2006">
 
-Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale
-for Development of Children Aged 0-2 Years.” *Statistics in Medicine* 25
-(13): 2272–83.
+Jacobusse, G., S. van Buuren, and P. H. Verkerk. 2006. “An Interval
+Scale for Development of Children Aged 0-2 Years.” *Statistics in
+Medicine* 25 (13): 2272–83.
 <https://stefvanbuuren.name/publication/2006-01-01_jacobusse2006/>.
 
 </div>
@@ -166,10 +166,10 @@ Methods in Medical Research* 23 (4): 346–68.
 
 <div id="ref-weber2019">
 
-Weber, A.M., M. Rubio-Codina, S.P. Walker, S. van Buuren, I. Eekhout, S.
-Grantham-McGregor, M.C. Araujo, et al. 2019. “The D-Score: A Metric for
-Interpreting the Early Development of Infants and Toddlers Across Global
-Settings.” *BMJ Global Health* 4: e001724.
+Weber, A. M., M. Rubio-Codina, S. P. Walker, S. van Buuren, I. Eekhout,
+S. Grantham-McGregor, M. C. Araujo, et al. 2019. “The D-Score: A Metric
+for Interpreting the Early Development of Infants and Toddlers Across
+Global Settings.” *BMJ Global Health* 4: e001724.
 <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
 
 </div>

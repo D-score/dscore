@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.3.1-orange.svg)](https://github.com/stefvanbuuren/dscore)
+[![](https://img.shields.io/badge/github%20version-1.3.1-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -33,7 +33,7 @@ You can install the development version from
 
 ``` r
 install.packages("remotes")
-remotes::install_github("stefvanbuuren/dscore")
+remotes::install_github("d-score/dscore")
 ```
 
 ## Overview
@@ -49,9 +49,8 @@ needed:
 4.  Summarise your results.
 
 The `dscore` package provides various function that support these steps.
-See [Getting
-started](https://stefvanbuuren.name/dscore/articles/start.html) for more
-details.
+See [Getting started](https://d-score.org/dscore/articles/start.html)
+for more details.
 
 ## Resources
 

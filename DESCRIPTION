@@ -1,7 +1,7 @@
 Package: dscore
 Type: Package
 Title: D-Score for Child Development
-Version: 1.3.1
+Version: 1.3.2
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
@@ -35,12 +35,12 @@ Suggests:
     sirt,
     testthat
 Encoding: UTF-8
-License: GPL-3
+License: AGPL-3
 LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
 NeedsCompilation: yes
-URL: https://github.com/stefvanbuuren/dscore, https://stefvanbuuren.name/dscore/, https://stefvanbuuren.name/dbook1/
-BugReports: https://github.com/stefvanbuuren/dscore/issues
+URL: https://github.com/d-score/dscore, https://d-score.org/dscore/, https://stefvanbuuren.name/dbook1/
+BugReports: https://github.com/d-score/dscore/issues
 Copyright: Stef van Buuren, Iris Eekhout, Arjan Huizing
 Roxygen: list(markdown = TRUE)

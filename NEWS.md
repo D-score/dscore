@@ -1,3 +1,7 @@
+# dscore 1.3.2
+
+* Moves source to organisation repository `D-score/dscore`
+
 # dscore 1.3.1
 
 * Repairs six incorrect BDS numbers in `data-raw/data/bds)edited.csv`
@@ -33,5 +37,5 @@ from taking the log of negative ages.
 # dscore 1.0.0
 
 * Hi, welcome to `dscore 1.0.0`! For the development history, see
-<https://github.com/stefvanbuuren/dscore>
+<https://github.com/D-score/dscore>
 * Added a `NEWS.md` file to track changes to the package.

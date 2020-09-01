@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/index.html</loc>
+    <loc>https://d-score.github.io/dscore/index.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/builtin_itembank.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/builtin_itembank.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/builtin_itemtable.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/builtin_itemtable.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/builtin_references.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/builtin_references.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/calculate_posterior.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/calculate_posterior.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/count_mu_dutch.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/count_mu_dutch.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/count_mu_gcdg.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/count_mu_gcdg.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/daz.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/daz.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/decompose_itemnames.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/decompose_itemnames.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/dscore-package.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/dscore-package.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/dscore.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/dscore.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/get_age_equivalent.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/get_age_equivalent.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/get_itemnames.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/get_itemnames.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/get_itemtable.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/get_itemtable.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/get_labels.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/get_labels.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/get_reference.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/get_reference.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/get_tau.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/get_tau.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/milestones.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/milestones.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/normalize.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/normalize.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/posterior.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/posterior.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/rename_gcdg_gsed.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/rename_gcdg_gsed.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/reference/sort_itemnames.html</loc>
+    <loc>https://d-score.github.io/dscore/reference/sort_itemnames.html</loc>
   </url>
   <url>
-    <loc>https://stefvanbuuren.github.io/dscore/articles/start.html</loc>
+    <loc>https://d-score.github.io/dscore/articles/start.html</loc>
   </url>
 </urlset>

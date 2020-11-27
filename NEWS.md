@@ -1,3 +1,8 @@
+# dscore 1.3.3
+
+* Update tau estimates for Mullen items in itembank: 65 out of the 85 Mullen items from previous itembank version have new tau estimates; 20 items are removed. 
+* Update itembank with new Mullen items. There are 73 new Mullen items added to the new itembank. In total there are now 139 Mullen items in the itembank, estimates are based on provide and bambam data.
+
 # dscore 1.3.2
 
 * Moves source to organisation repository `D-score/dscore`

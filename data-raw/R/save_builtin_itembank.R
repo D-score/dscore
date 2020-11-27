@@ -4,6 +4,7 @@ library(dscore)
 library(dplyr)
 
 # define project
+#project <- path.expand("~/Documents/Github/dscore")
 project <- path.expand("~/Package/dscore/dscore")
 
 f1 <- file.path(project, "data-raw/data/keys/dutch.txt")

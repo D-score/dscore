@@ -74,7 +74,7 @@ observations on milestones." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
       </span>
     </div>
 
@@ -136,37 +136,37 @@ a numeric score that measures child development, from PASS/FAIL
 observations on milestones.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dscore</span>(
-  <span class='no'>data</span>,
-  <span class='kw'>items</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>data</span>),
-  <span class='kw'>xname</span> <span class='kw'>=</span> <span class='st'>"age"</span>,
-  <span class='kw'>xunit</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"decimal"</span>, <span class='st'>"days"</span>, <span class='st'>"months"</span>),
-  <span class='kw'>key</span> <span class='kw'>=</span> <span class='st'>"gsed"</span>,
-  <span class='kw'>itembank</span> <span class='kw'>=</span> <span class='kw pkg'>dscore</span><span class='kw ns'>::</span><span class='no'><a href='builtin_itembank.html'>builtin_itembank</a></span>,
-  <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dscore"</span>, <span class='st'>"logit"</span>),
-  <span class='kw'>prior_mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span>(<span class='no'>key</span> <span class='kw'>==</span> <span class='st'>"dutch"</span>, <span class='st'>".dutch"</span>, <span class='st'>".gcdg"</span>),
-  <span class='kw'>prior_sd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>transform</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>qp</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>,
-  <span class='kw'>population</span> <span class='kw'>=</span> <span class='no'>key</span>,
-  <span class='kw'>dec</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2L</span>, <span class='fl'>3L</span>)
-)
+    <pre class="usage"><span class='fu'>dscore</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  items <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>,
+  xname <span class='op'>=</span> <span class='st'>"age"</span>,
+  xunit <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"decimal"</span>, <span class='st'>"days"</span>, <span class='st'>"months"</span><span class='op'>)</span>,
+  key <span class='op'>=</span> <span class='st'>"gsed"</span>,
+  itembank <span class='op'>=</span> <span class='fu'>dscore</span><span class='fu'>::</span><span class='va'><a href='builtin_itembank.html'>builtin_itembank</a></span>,
+  metric <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"dscore"</span>, <span class='st'>"logit"</span><span class='op'>)</span>,
+  prior_mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>key</span> <span class='op'>==</span> <span class='st'>"dutch"</span>, <span class='st'>".dutch"</span>, <span class='st'>".gcdg"</span><span class='op'>)</span>,
+  prior_sd <span class='op'>=</span> <span class='cn'>NULL</span>,
+  transform <span class='op'>=</span> <span class='cn'>NULL</span>,
+  qp <span class='op'>=</span> <span class='op'>-</span><span class='fl'>10</span><span class='op'>:</span><span class='fl'>100</span>,
+  population <span class='op'>=</span> <span class='va'>key</span>,
+  dec <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2L</span>, <span class='fl'>3L</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>dscore_posterior</span>(
-  <span class='no'>data</span>,
-  <span class='kw'>items</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>data</span>),
-  <span class='kw'>xname</span> <span class='kw'>=</span> <span class='st'>"age"</span>,
-  <span class='kw'>xunit</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"decimal"</span>, <span class='st'>"days"</span>, <span class='st'>"months"</span>),
-  <span class='kw'>key</span> <span class='kw'>=</span> <span class='st'>"gsed"</span>,
-  <span class='kw'>itembank</span> <span class='kw'>=</span> <span class='kw pkg'>dscore</span><span class='kw ns'>::</span><span class='no'><a href='builtin_itembank.html'>builtin_itembank</a></span>,
-  <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dscore"</span>, <span class='st'>"logit"</span>),
-  <span class='kw'>prior_mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span>(<span class='no'>key</span> <span class='kw'>==</span> <span class='st'>"dutch"</span>, <span class='st'>".dutch"</span>, <span class='st'>".gcdg"</span>),
-  <span class='kw'>prior_sd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>transform</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>qp</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>,
-  <span class='kw'>population</span> <span class='kw'>=</span> <span class='no'>key</span>,
-  <span class='kw'>dec</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2L</span>, <span class='fl'>3L</span>)
-)</pre>
+<span class='fu'>dscore_posterior</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  items <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>,
+  xname <span class='op'>=</span> <span class='st'>"age"</span>,
+  xunit <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"decimal"</span>, <span class='st'>"days"</span>, <span class='st'>"months"</span><span class='op'>)</span>,
+  key <span class='op'>=</span> <span class='st'>"gsed"</span>,
+  itembank <span class='op'>=</span> <span class='fu'>dscore</span><span class='fu'>::</span><span class='va'><a href='builtin_itembank.html'>builtin_itembank</a></span>,
+  metric <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"dscore"</span>, <span class='st'>"logit"</span><span class='op'>)</span>,
+  prior_mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>key</span> <span class='op'>==</span> <span class='st'>"dutch"</span>, <span class='st'>".dutch"</span>, <span class='st'>".gcdg"</span><span class='op'>)</span>,
+  prior_sd <span class='op'>=</span> <span class='cn'>NULL</span>,
+  transform <span class='op'>=</span> <span class='cn'>NULL</span>,
+  qp <span class='op'>=</span> <span class='op'>-</span><span class='fl'>10</span><span class='op'>:</span><span class='fl'>100</span>,
+  population <span class='op'>=</span> <span class='va'>key</span>,
+  dec <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2L</span>, <span class='fl'>3L</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -337,21 +337,26 @@ BMJ Global Health, BMJ Global Health 4: e001724.
     <div class='dont-index'><p><code><a href='get_tau.html'>get_tau()</a></code>,
 <code><a href='builtin_itembank.html'>builtin_itembank()</a></code>, <code><a href='posterior.html'>posterior()</a></code>,
 <code><a href='builtin_references.html'>builtin_references()</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-  <span class='kw'>age</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span>(<span class='fl'>21</span> / <span class='fl'>365.25</span>, <span class='fl'>4</span>), <span class='fl'>10</span>),
-  <span class='kw'>ddifmd001</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>NA</span>, <span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>),
-  <span class='kw'>ddicmm029</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>NA</span>, <span class='fl'>NA</span>, <span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>1</span>),
-  <span class='kw'>ddigmd053</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>)
-)
-<span class='no'>items</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>data</span>)[<span class='fl'>2</span>:<span class='fl'>4</span>]
+    <pre class="examples"><div class='input'><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
+  age <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='fl'>21</span> <span class='op'>/</span> <span class='fl'>365.25</span>, <span class='fl'>4</span><span class='op'>)</span>, <span class='fl'>10</span><span class='op'>)</span>,
+  ddifmd001 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>)</span>,
+  ddicmm029 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='cn'>NA</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>)</span>,
+  ddigmd053 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span><span class='op'>)</span>
+<span class='op'>)</span>
+<span class='va'>items</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>]</span>
 
 <span class='co'># third item is not part of default key</span>
-<span class='fu'><a href='get_tau.html'>get_tau</a></span>(<span class='no'>items</span>)</div><div class='output co'>#&gt; ddifmd001 ddicmm029 ddigmd053 
+<span class='fu'><a href='get_tau.html'>get_tau</a></span><span class='op'>(</span><span class='va'>items</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; ddifmd001 ddicmm029 ddigmd053 
 #&gt;      5.51      2.43        NA </div><div class='input'>
 <span class='co'># calculate D-score</span>
-<span class='fu'>dscore</span>(<span class='no'>data</span>)</div><div class='output co'>#&gt;         a n   p     d      sem    daz
+<span class='fu'>dscore</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;         a n   p     d      sem    daz
 #&gt; 1      NA 0  NA    NA       NA     NA
 #&gt; 2      NA 0  NA    NA       NA     NA
 #&gt; 3  0.0575 1 0.0  3.46 2.772368 -2.138
@@ -363,11 +368,12 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 #&gt; 9  0.0575 2 1.0 11.81 3.970219  0.219
 #&gt; 10 0.0575 2 1.0 11.81 3.970219  0.219</div><div class='input'>
 <span class='co'># calculate full posterior</span>
-<span class='no'>p</span> <span class='kw'>&lt;-</span> <span class='fu'>dscore_posterior</span>(<span class='no'>data</span>)
+<span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'>dscore_posterior</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
 
 <span class='co'># plot posterior for row 7</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> -<span class='fl'>10</span>:<span class='fl'>100</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>p</span>[<span class='fl'>7</span>, ], <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"l"</span>, <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>"D-score"</span>,
- <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>"Density"</span>, <span class='kw'>xlim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>30</span>))</div><div class='img'><img src='dscore-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='op'>-</span><span class='fl'>10</span><span class='op'>:</span><span class='fl'>100</span>, y <span class='op'>=</span> <span class='va'>p</span><span class='op'>[</span><span class='fl'>7</span>, <span class='op'>]</span>, type <span class='op'>=</span> <span class='st'>"l"</span>, xlab <span class='op'>=</span> <span class='st'>"D-score"</span>,
+ ylab <span class='op'>=</span> <span class='st'>"Density"</span>, xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>30</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='dscore-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -383,7 +389,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

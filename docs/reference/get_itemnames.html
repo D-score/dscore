@@ -74,7 +74,7 @@ set of names." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
       </span>
     </div>
 
@@ -136,15 +136,15 @@ template. This is useful for quickly selecting names of items from a larger
 set of names.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_itemnames</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>instrument</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>domain</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>mode</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>number</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>itemtable</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>get_itemnames</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  instrument <span class='op'>=</span> <span class='cn'>NULL</span>,
+  domain <span class='op'>=</span> <span class='cn'>NULL</span>,
+  mode <span class='op'>=</span> <span class='cn'>NULL</span>,
+  number <span class='op'>=</span> <span class='cn'>NULL</span>,
+  strict <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  itemtable <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -203,21 +203,30 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='sort_itemnames.html'>sort_itemnames()</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Stef van Buuren 2020</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>itemnames</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"aqigmc028"</span>, <span class='st'>"grihsd219"</span>, <span class='st'>""</span>, <span class='st'>"age"</span>, <span class='st'>"mdsgmd999"</span>)
+    <pre class="examples"><div class='input'><span class='va'>itemnames</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"aqigmc028"</span>, <span class='st'>"grihsd219"</span>, <span class='st'>""</span>, <span class='st'>"age"</span>, <span class='st'>"mdsgmd999"</span><span class='op'>)</span>
 
 <span class='co'># filter out impossible names</span>
-<span class='fu'>get_itemnames</span>(<span class='no'>itemnames</span>)</div><div class='output co'>#&gt; [1] "aqigmc028" "grihsd219" "mdsgmd999"</div><div class='input'><span class='fu'>get_itemnames</span>(<span class='no'>itemnames</span>, <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "aqigmc028" "grihsd219"</div><div class='input'>
+<span class='fu'>get_itemnames</span><span class='op'>(</span><span class='va'>itemnames</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "aqigmc028" "grihsd219" "mdsgmd999"</div><div class='input'><span class='fu'>get_itemnames</span><span class='op'>(</span><span class='va'>itemnames</span>, strict <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "aqigmc028" "grihsd219"</div><div class='input'>
 <span class='co'># only items from specific instruments</span>
-<span class='fu'>get_itemnames</span>(<span class='no'>itemnames</span>, <span class='kw'>instrument</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"aqi"</span>, <span class='st'>"mds"</span>))</div><div class='output co'>#&gt; [1] "aqigmc028" "mdsgmd999"</div><div class='input'><span class='fu'>get_itemnames</span>(<span class='no'>itemnames</span>, <span class='kw'>instrument</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"aqi"</span>, <span class='st'>"mds"</span>), <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "aqigmc028"</div><div class='input'>
+<span class='fu'>get_itemnames</span><span class='op'>(</span><span class='va'>itemnames</span>, instrument <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"aqi"</span>, <span class='st'>"mds"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "aqigmc028" "mdsgmd999"</div><div class='input'><span class='fu'>get_itemnames</span><span class='op'>(</span><span class='va'>itemnames</span>, instrument <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"aqi"</span>, <span class='st'>"mds"</span><span class='op'>)</span>, strict <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "aqigmc028"</div><div class='input'>
 <span class='co'># get all items from the se domain of iyo instrument</span>
-<span class='fu'>get_itemnames</span>(<span class='kw'>domain</span> <span class='kw'>=</span> <span class='st'>"se"</span>, <span class='kw'>instrument</span> <span class='kw'>=</span> <span class='st'>"iyo"</span>)</div><div class='output co'>#&gt;  [1] "iyosec001" "iyosec002" "iyosec003" "iyosec004" "iyosec005" "iyosec006"
+<span class='fu'>get_itemnames</span><span class='op'>(</span>domain <span class='op'>=</span> <span class='st'>"se"</span>, instrument <span class='op'>=</span> <span class='st'>"iyo"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "iyosec001" "iyosec002" "iyosec003" "iyosec004" "iyosec005" "iyosec006"
 #&gt;  [7] "iyosec007" "iyosec008" "iyosec009" "iyosec010" "iyosec011" "iyosec012"
 #&gt; [13] "iyosec013" "iyosec014" "iyosec015" "iyosec016" "iyosec017" "iyosec018"
 #&gt; [19] "iyosec019" "iyosec020"</div><div class='input'>
 <span class='co'># get all item from the se domain with direct assessment mode</span>
-<span class='fu'>get_itemnames</span>(<span class='kw'>domain</span> <span class='kw'>=</span> <span class='st'>"se"</span>, <span class='kw'>mode</span> <span class='kw'>=</span> <span class='st'>"d"</span>)</div><div class='output co'>#&gt;  [1] "mdtsed001" "mdtsed002" "mdtsed003" "mdtsed004" "mdtsed005" "mdtsed006"
+<span class='fu'>get_itemnames</span><span class='op'>(</span>domain <span class='op'>=</span> <span class='st'>"se"</span>, mode <span class='op'>=</span> <span class='st'>"d"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "mdtsed001" "mdtsed002" "mdtsed003" "mdtsed004" "mdtsed005" "mdtsed006"
 #&gt;  [7] "mdtsed007" "mdtsed008" "mdtsed009" "mdtsed010" "mdtsed011" "mdtsed012"
 #&gt; [13] "mdtsed013" "mdtsed014" "mdtsed015" "mdtsed016" "mdtsed017" "mdtsed018"
 #&gt; [19] "mdtsed019" "mdtsed020" "mdtsed021" "mdtsed022" "mdtsed023" "mdtsed024"
@@ -227,7 +236,8 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
 #&gt; [43] "prised009" "prised010" "prised011" "prised012" "prised013" "prised014"
 #&gt; [49] "prised015" "prised016"</div><div class='input'>
 <span class='co'># get all item numbers 70 and 73 from gm domain</span>
-<span class='fu'>get_itemnames</span>(<span class='kw'>number</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>70</span>, <span class='fl'>73</span>), <span class='kw'>domain</span> <span class='kw'>=</span> <span class='st'>"gm"</span>)</div><div class='output co'>#&gt; [1] "by3gmd070" "ddigmd070" "ddigmm073" "mulgmd070"</div></pre>
+<span class='fu'>get_itemnames</span><span class='op'>(</span>number <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>70</span>, <span class='fl'>73</span><span class='op'>)</span>, domain <span class='op'>=</span> <span class='st'>"gm"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "by3gmd070" "ddigmd070" "ddigmm073" "mulgmd070"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -243,7 +253,7 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

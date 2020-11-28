@@ -73,7 +73,7 @@ specified set of items." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@ specified set of items." />
 specified set of items.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_labels</span>(<span class='kw'>items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>trim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>itemtable</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_labels</span><span class='op'>(</span>items <span class='op'>=</span> <span class='cn'>NULL</span>, trim <span class='op'>=</span> <span class='cn'>NULL</span>, itemtable <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,7 +166,8 @@ the <code>builtin_itemtable</code> is used.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># get labels of first two Macarthur items</span>
-<span class='fu'>get_labels</span>(<span class='fu'><a href='get_itemnames.html'>get_itemnames</a></span>(<span class='kw'>instrument</span> <span class='kw'>=</span> <span class='st'>"mac"</span>, <span class='kw'>number</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>), <span class='kw'>trim</span> <span class='kw'>=</span> <span class='fl'>40</span>)</div><div class='output co'>#&gt;                        macgmd001                        macgmd002 
+<span class='fu'>get_labels</span><span class='op'>(</span><span class='fu'><a href='get_itemnames.html'>get_itemnames</a></span><span class='op'>(</span>instrument <span class='op'>=</span> <span class='st'>"mac"</span>, number <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span><span class='op'>)</span>, trim <span class='op'>=</span> <span class='fl'>40</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;                        macgmd001                        macgmd002 
 #&gt; "Child walks in a straight line"    "Walks backwards for 5 steps" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -183,7 +184,7 @@ the <code>builtin_itemtable</code> is used.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

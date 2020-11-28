@@ -1,14 +1,14 @@
-# dscore 1.3.3
+# dscore 1.4.0
 
-* Update tau estimates for Mullen items in itembank: 65 out of the 85 Mullen items from previous itembank version have new tau estimates; 20 items are removed. 
-* Update itembank with new Mullen items. There are 73 new Mullen items added to the new itembank. In total there are now 139 Mullen items in the itembank, estimates are based on provide and bambam data.
+### Major changes
 
-# dscore 1.3.2
+* Updates tau estimates for Mullen items in itembank covering a much wider age range: 65 out of the 85 Mullen items from previous itembank version have new tau estimates; 20 items are removed. 
+* Updates itembank with new Mullen items. There are 73 new Mullen items added to the new itembank. In total there are now 139 Mullen items in the itembank, estimates are based on PROVIDE and BAMBAM data.
+* Moves sources to organisation repository `D-score/dscore` for increased visibility
 
-* Moves source to organisation repository `D-score/dscore`
+### Minor changes
 
-# dscore 1.3.1
-
+* Update external links
 * Repairs six incorrect BDS numbers in `data-raw/data/bds)edited.csv`
 
 # dscore 1.3.0

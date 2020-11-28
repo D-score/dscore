@@ -3,13 +3,13 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.3.0` introduces new functionality and solves some problems
+`dscore 1.4.0` extends the itembank and resolves some problems
 
 ## Test environments
 
-  - local OS X install, 10.15.4, R 4.0.0
-  - win-builder, using `devtools::check_win_devel()`
-  - rhub
+-   local OS X install, 11.0.1, R 4.0.3
+-   win-builder, using `devtools::check_win_devel()`
+-   rhub
 
 ### Local build
 
@@ -21,7 +21,7 @@ build(manual = TRUE)
 ```
 
 ``` bash
-R CMD CHECK /Users/buurensv/Package/dscore/dscore_1.3.0.tar.gz
+R CMD CHECK /Users/buurensv/Package/dscore/dscore_1.4.0.tar.gz
 
 Status: OK
 ```
@@ -40,60 +40,49 @@ check_rhub()
 
 The result is:
 
-    ── dscore 1.3.0: ERROR
-    
-      Build ID:   dscore_1.3.0.tar.gz-6c32ff0b664f45338fe9902216505e74
-      Platform:   Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-      Submitted:  6m 29.3s ago
-      Build time: 6m 26s
-    
-    checking examples ...
-      ** running examples for arch 'i386' ... ERROR
-      Running examples in 'dscore-Ex.R' failed
-      
-      The error most likely occurred in:
-      > ### Name: get_age_equivalent
-      > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-      > ### Title: Get age equivalents of items that have a difficulty estimate
-      > 
-      > ### ** Examples
-      > ### Aliases: get_age_equivalent
-      > 
-      Error in loadNamespace(name) : there is no package called 'utf8'
+    ── dscore 1.4.0: ERROR
 
-The solution of this problem is outside my reach.
+    Build ID:   dscore_1.4.0.tar.gz-97d617cf0f4d458aae592e265a2f8872
+    Platform:   Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+    Submitted:  6 minutes 59.9 seconds ago
+    Build time: 6 minutes 57.7 seconds
 
-    ── dscore 1.3.0: OK
-    
-    Build ID:   dscore_1.3.0.tar.gz-56b28c78bf1045d386e3fda917897383
+    * checking examples ...
+    ** running examples for arch 'i386' ... ERROR
+    Running examples in 'dscore-Ex.R' failed
+    The error most likely occurred in:
+
+    > ### Name: get_age_equivalent
+    > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+    > ### Aliases: get_age_equivalent
+    > 
+    Error in loadNamespace(x) : there is no package called 'utf8'
+
+SvB: The problem with the `utf8` package is outside my reach.
+
+    dscore 1.4.0: OK
+    Build ID:   dscore_1.4.0.tar.gz-b7c485c90af2483588faae90192af7d9
     Platform:   Ubuntu Linux 16.04 LTS, R-release, GCC
-    Submitted:  28 minutes 49.8 seconds ago
-    Build time: 28 minutes 48.9 seconds
+    Submitted:  47 minutes 33.8 seconds ago
+    Build time: 47 minutes 31.6 seconds
 
-OK
-
-    ── dscore 1.3.0: OK
-    
-    Build ID:   dscore_1.3.0.tar.gz-b47f1ead4d784a42b7c747eae6e66f7c
+    dscore 1.4.0: OK
+    Build ID:   dscore_1.4.0.tar.gz-07cb0e7218cb4fc2920b459722c0dd79
     Platform:   Fedora Linux, R-devel, clang, gfortran
-    Submitted:  34 minutes 23.5 seconds ago
-    Build time: 34 minutes 22.8 seconds
+    Submitted:  54 minutes 40.1 seconds ago
+    Build time: 54 minutes 38.3 seconds
 
-OK
-
-    ── dscore 1.3.0: PREPERROR
-    Build ID:   dscore_1.3.0.tar.gz-4557c74d8e6c4c36a2635e6d04f75f8b
+    dscore 1.4.0: PREPERROR
+    Build ID:   dscore_1.4.0.tar.gz-bd4ae33d5a6b4b8caaff07a0d493a465
     Platform:   Debian Linux, R-devel, GCC ASAN/UBSAN
-    Submitted:  59 minutes 50.4 seconds ago
-    Build time: 59 minutes 48.4 seconds
-    
-    ...
-    Build step 'Send files or execute commands over SSH' changed build result to SUCCESS
-    Pinging https://builder.r-hub.io/build/SUCCESS/dscore_1.3.0.tar.gz-4557c74d8e6c4c36a2635e6d04f75f8b/2020-05-12T14:53:59Z
-    {"status":"ok"}
-    Finished: SUCCESS
+    Submitted:  1 hour 14 minutes 53.8 seconds ago
+    Build time: 1 hour 14 minutes 42.8 seconds
 
-The banner says `PREPERROR` but the logs say `SUCCESS`
+    > ERROR: dependencies ‘xml2’, ‘rvest’ are not available for package ‘kableExtra’
+    > ERROR: dependencies ‘CDM’, ‘TAM’, ‘pbv’ are not available for package ‘sirt’```
+
+SvB: Test environment Debian Linux is incomplete. Unlikely to be related
+to the `dscore` package.
 
 ## Downstream dependencies
 

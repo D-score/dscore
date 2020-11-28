@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.3.3-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.4.0-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -59,7 +59,7 @@ for more details.
 1.  [*D*-score: Turning milestones into
     measurement](https://d-score.org/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
-    development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
+    development](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
     [Fernald et al.](#ref-fernald2017) ([2017](#ref-fernald2017))
 
 ### Keys
@@ -121,7 +121,7 @@ Weber and Aisha K. Yousafzai.
 Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
 for Measuring Early Childhood Development in Low and Middle-Income
 Countries.”
-<http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
+<https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
 
 </div>
 

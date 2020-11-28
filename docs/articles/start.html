@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -401,24 +401,24 @@
 </tbody>
 </table>
 <p>Thus, item <code>by3cgd018</code> refers to the 18th item in the cognitive scale of the Bayley-III. The label of the item can be obtained by</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/d-score/dscore">dscore</a></span><span class="op">)</span>
-<span class="fu"><a href="../reference/get_labels.html">get_labels</a></span><span class="op">(</span><span class="st">"by3cgd018"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/d-score/dscore">dscore</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/get_labels.html">get_labels</a></span><span class="op">(</span><span class="st">"by3cgd018"</span><span class="op">)</span></pre></div>
 <pre><code>##           by3cgd018 
 ## "Inspects own hand"</code></pre>
 <p>You may decompose item names into components as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/decompose_itemnames.html">decompose_itemnames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"by3cgd018"</span>, <span class="st">"denfmd014"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="../reference/decompose_itemnames.html">decompose_itemnames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"by3cgd018"</span>, <span class="st">"denfmd014"</span><span class="op">)</span><span class="op">)</span></pre></div>
 <pre><code>##   instrument domain mode number
 ## 1        by3     cg    d    018
 ## 2        den     fm    d    014</code></pre>
 <p>This function returns a <code>data.frame</code> with four character vectors.</p>
 <p>The <code>dscore</code> package can recognise 3173 item names. The expression <code><a href="../reference/get_itemnames.html">get_itemnames()</a></code> returns a (long) vector of all known item names. Let us construct a table of instruments by domains:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">din</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/decompose_itemnames.html">decompose_itemnames</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">din</span>, <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">instrument</span>, <span class="va">domain</span><span class="op">)</span><span class="op">)</span>, format <span class="op">=</span> <span class="st">"html"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/column_spec.html">column_spec</a></span><span class="op">(</span><span class="fl">1</span>, monospace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/column_spec.html">column_spec</a></span><span class="op">(</span><span class="fl">1</span>, monospace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -2503,9 +2503,9 @@ vin
 </tbody>
 </table>
 <p>We obtain the first three item names and labels from the <code>mdt</code> domain <code>gm</code> as</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"mdt"</span>, domain <span class="op">=</span> <span class="st">"gm"</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span>
-<span class="fu"><a href="../reference/get_labels.html">get_labels</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"mdt"</span>, domain <span class="op">=</span> <span class="st">"gm"</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="fu"><a href="../reference/get_labels.html">get_labels</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></pre></div>
 <pre><code>##                                          mdtgmd001 
 ##                             "Lifts chin off floor" 
 ##                                          mdtgmd002 
@@ -2513,20 +2513,20 @@ vin
 ##                                          mdtgmd003 
 ##             "Holds head upright for a few seconds"</code></pre>
 <p>In practice, you need to spend some time to figure out how item names in your data map to those in the <code>dscore</code> package. Once you’ve completed this mapping, rename the items into the GSED 9-position schema. For example, suppose that your first three gross motor MDAT items are called <code>mot1</code>, <code>mot2</code>, and <code>mot3</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1.6</span>, <span class="fl">0.9</span><span class="op">)</span>, mot1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>, 
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1.6</span>, <span class="fl">0.9</span><span class="op">)</span>, mot1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>, 
                    mot2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, mot3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span></code></pre></div>
+<span class="va">data</span></pre></div>
 <pre><code>##   id age mot1 mot2 mot3
 ## 1  1 1.0    1    0   NA
 ## 2  1 1.6   NA    1    0
 ## 3  2 0.9   NA    1    1</code></pre>
 <p>Renaming is easy to do by changing the names attribute.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">old_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="va">old_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>
 <span class="va">new_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"mdt"</span>, domain <span class="op">=</span> <span class="st">"gm"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">new_names</span>
-<span class="va">data</span></code></pre></div>
+<span class="va">data</span></pre></div>
 <pre><code>##   id age mdtgmd001 mdtgmd002 mdtgmd003
 ## 1  1 1.0         1         0        NA
 ## 2  1 1.6        NA         1         0
@@ -2539,8 +2539,8 @@ vin
 <a href="#calculate-the-d-score-and-daz" class="anchor"></a>Calculate the <span class="math inline">\(D\)</span>-score and DAZ</h2>
 <p>Once the data are in proper shape, calculation of the <span class="math inline">\(D\)</span>-score and DAZ is easy.</p>
 <p>The <code>milestones</code> dataset in the <code>dscore</code> package contains responses of 27 preterm children measured at various age between birth and 2.5 years on the Dutch Development Instrument (<code>ddi</code>). The dataset looks like:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">milestones</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">9</span><span class="op">:</span><span class="fl">14</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">milestones</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">9</span><span class="op">:</span><span class="fl">14</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></pre></div>
 <pre><code>##    id       age    sex ddigmd053 ddigmd056 ddicmm030 ddifmd002 ddifmd003
 ## 1 111 0.4873374   male         1         1         1         1         1
 ## 2 111 0.6570842   male        NA        NA        NA        NA         1
@@ -2557,13 +2557,13 @@ vin
 ## 6         1</code></pre>
 <p>Each row corresponds to a visit. Most children have three or four visits. Columns starting with <code>ddi</code> hold the responses on DDI-items. A <code>1</code> means a PASS, a <code>0</code> means a FAIL, and <code>NA</code> means that the item was not administered.</p>
 <p>The <code>milestones</code> dataset has properly named columns that identify each item. Calculating the <span class="math inline">\(D\)</span>-score and DAZ is then done by:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">milestones</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit">
+<span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">milestones</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></pre></div>
 <pre><code>## [1] 100   6</code></pre>
 <p>Where <code>ds</code> is a <code>data.frame</code> with the same number of rows as the input data. The first six rows are</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></pre></div>
 <pre><code>##        a  n      p     d       sem    daz
 ## 1 0.4873 11 0.9091 31.33 1.5843896 -1.447
 ## 2 0.6571 14 0.6429 34.67 0.9808200 -2.177
@@ -2611,11 +2611,11 @@ vin
 <h2 class="hasAnchor">
 <a href="#summarise-d-score-and-daz" class="anchor"></a>Summarise <span class="math inline">\(D\)</span>-score and DAZ</h2>
 <p>Combine the <code>milestones</code> data and the result by</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">md</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">milestones</span>, <span class="va">ds</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit">
+<span class="va">md</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">milestones</span>, <span class="va">ds</span><span class="op">)</span></pre></div>
 <p>We may plot the 27 individual developmental curves by</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb19"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 
 <span class="va">r</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">%&gt;%</span> 
@@ -2637,12 +2637,12 @@ vin
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Age (in years)"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></pre></div>
 <p><img src="start_files/figure-html/graphD-1.png" width="672"></p>
 <p>Note that similarity of these curves to growth curves for body height and weight.</p>
 <p>The DAZ is an age-standardized <span class="math inline">\(D\)</span>-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">md</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">a</span>, y <span class="op">=</span> <span class="va">daz</span>, group <span class="op">=</span> <span class="va">id</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">sex</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+<div class="sourceCode" id="cb20"><pre class="downlit">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">md</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">a</span>, y <span class="op">=</span> <span class="va">daz</span>, group <span class="op">=</span> <span class="va">id</span>, color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">sex</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_light</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.85</span>, <span class="fl">.15</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -2655,21 +2655,21 @@ vin
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Age (in years)"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"DAZ"</span><span class="op">)</span> </code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"DAZ"</span><span class="op">)</span> </pre></div>
 <p><img src="start_files/figure-html/graphDAZ-1.png" width="672"></p>
 <p>Note that the <span class="math inline">\(D\)</span>-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can <a href="https://d-score.org/dbook1/sec-pops.html#age-adjustment">account for prematurity</a> by correcting for gestational age.</p>
 <p>The distributions of DAZ for boys and girls show that a large overlap:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">md</span><span class="op">)</span> <span class="op">+</span> 
+<div class="sourceCode" id="cb21"><pre class="downlit">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">md</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_light</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">daz</span>, group <span class="op">=</span> <span class="va">sex</span>, fill <span class="op">=</span> <span class="va">sex</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.4</span>, 
                adjust <span class="op">=</span> <span class="fl">1.5</span>, color <span class="op">=</span> <span class="st">"transparent"</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"DAZ"</span><span class="op">)</span></code></pre></div>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"DAZ"</span><span class="op">)</span></pre></div>
 <p><img src="start_files/figure-html/density-1.png" width="672"></p>
 <p>Under the assumption of independence, we may test whether sex differences are constant in age by a linear regression that includes the interaction between age and sex:</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">daz</span> <span class="op">~</span>  <span class="va">age</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">md</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">daz</span> <span class="op">~</span>  <span class="va">age</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">md</span><span class="op">)</span><span class="op">)</span></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = daz ~ age * sex, data = md)
@@ -2692,11 +2692,11 @@ vin
 ## F-statistic: 8.039 on 3 and 96 DF,  p-value: 7.81e-05</code></pre>
 <p>This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.</p>
 <p>We may account for the clustering effect by including random intercept and age effects, and rerun as</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span></pre></div>
 <pre><code>## Loading required package: Matrix</code></pre>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">daz</span> <span class="op">~</span>  <span class="fl">1</span> <span class="op">+</span> <span class="va">age</span> <span class="op">+</span> <span class="va">sex</span> <span class="op">+</span> <span class="va">sex</span> <span class="op">*</span> <span class="va">age</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="va">age</span> <span class="op">|</span> <span class="va">id</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">md</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">daz</span> <span class="op">~</span>  <span class="fl">1</span> <span class="op">+</span> <span class="va">age</span> <span class="op">+</span> <span class="va">sex</span> <span class="op">+</span> <span class="va">sex</span> <span class="op">*</span> <span class="va">age</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="va">age</span> <span class="op">|</span> <span class="va">id</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">md</span><span class="op">)</span></pre></div>
 <pre><code>## Linear mixed model fit by REML ['lmerMod']
 ## Formula: daz ~ 1 + age + sex + sex * age + (1 + age | id)
 ##    Data: md
@@ -2720,7 +2720,7 @@ vin
 Deoni, S. <span>“Resilience and Early Brain Development.”</span> Providence, USA.
 </div>
 <div id="ref-fernald2017" class="csl-entry">
-Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. <span>“A Toolkit for Measuring Early Childhood Development in Low and Middle-Income Countries.”</span> <a href="http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries">http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries</a>.
+Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. <span>“A Toolkit for Measuring Early Childhood Development in Low and Middle-Income Countries.”</span> <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries">https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries</a>.
 </div>
 <div id="ref-provide" class="csl-entry">
 Nelson, C. <span>“Bangladesh Early Adversity Neuroimaging Project.”</span> Bangladesh.

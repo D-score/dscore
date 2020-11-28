@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.3.1-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.3.3-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -19,9 +19,9 @@ of children similar to measures like height and weight.
 
 The `dscore` package contains tools to
 
-  - Map your item names to the GSED convention
-  - Calculate *D*-score from item level responses
-  - Transform the *D*-scores into DAZ, age-standardised Z-scores
+-   Map your item names to the GSED convention
+-   Calculate *D*-score from item level responses
+-   Transform the *D*-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones from
 widely used instruments for measuring child development.
@@ -57,29 +57,30 @@ for more details.
 ### Books and reports
 
 1.  [*D*-score: Turning milestones into
-    measurement](https://stefvanbuuren.name/dbook1/)
+    measurement](https://d-score.org/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
     development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
-    Fernald et al. ([2017](#ref-fernald2017))
+    [Fernald et al.](#ref-fernald2017) ([2017](#ref-fernald2017))
 
 ### Keys
 
-1.  Project with `dutch` key, 0-2 years: van Buuren
-    ([2014](#ref-vanbuuren2014))
-2.  Project with `gcdg` key: Weber et al. ([2019](#ref-weber2019))
-3.  Project with `gsed` key: GSED team (Maureen Black, Kieran Bromley,
+1.  Project with `dutch` key, 0-2 years: [van
+    Buuren](#ref-vanbuuren2014) ([2014](#ref-vanbuuren2014))
+2.  Project with `gcdg` key: [Weber et al.](#ref-weber2019)
+    ([2019](#ref-weber2019))
+3.  Project with `gsed` key: [GSED team (Maureen Black, Kieran Bromley,
     Vanessa Cavallera (lead author), Jorge Cuartas, Tarun Dua
     (corresponding author), Iris Eekhout, Günther Fink, Melissa
     Gladstone, Katelyn Hepworth, Magdalena Janus, Patricia Kariger,
     Gillian Lancaster, Dana McCoy, Gareth McCray, Abbie Raikes, Marta
     Rubio-Codina, Stef van Buuren, Marcus Waldman, Susan Walker and Ann
-    Weber) ([2019](#ref-gsedteam2019))
+    Weber)](#ref-gsedteam2019) ([2019](#ref-gsedteam2019))
 
 ### Methodology
 
-1.  Interval scale: Jacobusse, van Buuren, and Verkerk
-    ([2006](#ref-jacobusse2006))
-2.  Adaptive testing: Jacobusse and van Buuren
+1.  Interval scale: [Jacobusse, van Buuren, and
+    Verkerk](#ref-jacobusse2006) ([2006](#ref-jacobusse2006))
+2.  Adaptive testing: [Jacobusse and van Buuren](#ref-jacobusse2007)
     ([2007](#ref-jacobusse2007))
 
 ### Shiny app
@@ -113,9 +114,9 @@ Weber and Aisha K. Yousafzai.
 
 ### Literature
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-fernald2017">
+<div id="ref-fernald2017" class="csl-entry">
 
 Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
 for Measuring Early Childhood Development in Low and Middle-Income
@@ -124,7 +125,7 @@ Countries.”
 
 </div>
 
-<div id="ref-gsedteam2019">
+<div id="ref-gsedteam2019" class="csl-entry">
 
 GSED team (Maureen Black, Kieran Bromley, Vanessa Cavallera (lead
 author), Jorge Cuartas, Tarun Dua (corresponding author), Iris Eekhout,
@@ -132,38 +133,38 @@ Günther Fink, Melissa Gladstone, Katelyn Hepworth, Magdalena Janus,
 Patricia Kariger, Gillian Lancaster, Dana McCoy, Gareth McCray, Abbie
 Raikes, Marta Rubio-Codina, Stef van Buuren, Marcus Waldman, Susan
 Walker and Ann Weber). 2019. “The Global Scale for Early Development
-(Gsed).” *Early Childhood Matters*.
+(GSED).” *Early Childhood Matters*.
 <https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/>.
 
 </div>
 
-<div id="ref-jacobusse2007">
+<div id="ref-jacobusse2007" class="csl-entry">
 
 Jacobusse, G., and S. van Buuren. 2007. “Computerized Adaptive Testing
 for Measuring Development of Young Children.” *Statistics in Medicine*
 26 (13): 2629–38.
-<https://stefvanbuuren.name/publication/2007-01-01_jacobusse2007/>.
+<https://stefvanbuuren.name/publication/jacobusse-2007/>.
 
 </div>
 
-<div id="ref-jacobusse2006">
+<div id="ref-jacobusse2006" class="csl-entry">
 
 Jacobusse, G., S. van Buuren, and P. H. Verkerk. 2006. “An Interval
 Scale for Development of Children Aged 0-2 Years.” *Statistics in
 Medicine* 25 (13): 2272–83.
-<https://stefvanbuuren.name/publication/2006-01-01_jacobusse2006/>.
+<https://stefvanbuuren.name/publication/jacobusse-2006/>.
 
 </div>
 
-<div id="ref-vanbuuren2014">
+<div id="ref-vanbuuren2014" class="csl-entry">
 
 van Buuren, S. 2014. “Growth Charts of Human Development.” *Statistical
 Methods in Medical Research* 23 (4): 346–68.
-<https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/>.
+<https://stefvanbuuren.name/publication/van-buuren-2014-gc/>.
 
 </div>
 
-<div id="ref-weber2019">
+<div id="ref-weber2019" class="csl-entry">
 
 Weber, A. M., M. Rubio-Codina, S. P. Walker, S. van Buuren, I. Eekhout,
 S. Grantham-McGregor, M. C. Araujo, et al. 2019. “The D-Score: A Metric

@@ -21,7 +21,7 @@ vignette: >
 
 ## Overview
 
-The $D$-score is a one-number summary measure of early child development. The $D$-score has a fixed unit. We may use the $D$-score to [answer questions on the individual, group and population level](https://stefvanbuuren.name/dbook1/sec-questions.html). For more background, see the introductory booklet [D-score: Turning milestones into measurement](https://stefvanbuuren.name/dbook1/).
+The $D$-score is a one-number summary measure of early child development. The $D$-score has a fixed unit. We may use the $D$-score to [answer questions on the individual, group and population level](https://d-score.org/dbook1/sec-questions.html). For more background, see the introductory booklet [D-score: Turning milestones into measurement](https://d-score.org/dbook1/).
 
 This vignette shows how to estimate the $D$-score and the $D$-score age-adjusted Z-score (DAZ) from child data on developmental milestones. The vignette covers some typical actions needed when estimating the $D$-score and DAZ:
 
@@ -261,7 +261,7 @@ ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) +
   ylab("DAZ") 
 ```
 
-Note that the $D$-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can [account for prematurity](https://stefvanbuuren.name/dbook1/sec-pops.html#age-adjustment) by correcting for gestational age.
+Note that the $D$-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can [account for prematurity](https://d-score.org/dbook1/sec-pops.html#age-adjustment) by correcting for gestational age.
 
 The distributions of DAZ for boys and girls show that a large overlap:
 

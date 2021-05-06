@@ -25,7 +25,7 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
   if(d.size() != qp.size()){
     Rcpp::stop("Arguments `d` and  `qp` of different length");
   }
-  NumericVector normalized = (d/sum(d)) / (qp(1) - qp(0));
+  NumericVector normalized = d/sum(d);
   return(normalized);
 }
 
@@ -55,7 +55,8 @@ NumericVector posterior(int score, double tau,
   if((score < 1) | (score > 2)){stop("score out-of-range.");}
 
   // compute category respones probability under 1PL model
-  NumericVector p = plogis(qp, tau);
+  double scale = qp(1) - qp(0);
+  NumericVector p = plogis(qp, tau, scale);
 
   if(score == 1){
     cpc = 1.0 - p;
@@ -73,7 +74,6 @@ NumericVector posterior(int score, double tau,
 
   // calc posterior per category
   NumericVector postcat = cpc * prior;
-  postcat = normalize(postcat, qp);
 
   return(postcat);
 }

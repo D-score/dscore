@@ -75,3 +75,28 @@ test_that("silently handles negative ages", {
   expect_silent(dscore(data, key = "dutch"))
 })
 
+
+## D-score - test equivalence of dscore and logit metric
+data <- data.frame(
+  age = rep(round(21 / 365.25, 4), 10),
+  ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
+
+transform <- c(0, 2)
+keyd <- data.frame(key = "temp",
+                   item = items,
+                   tau = get_tau(items = items))
+
+zd <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch")
+
+zl <- dscore(data, items = items, dec = 4, metric = "logit", transform = transform,
+             itembank = keyd, key = "temp", population = "dutch")
+
+test_that("logit and dscore are identical", {
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2])
+  expect_equal(zl$d*transform[2] + transform[1], zd$d)
+})
+

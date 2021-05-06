@@ -1,9 +1,9 @@
-pandoc: 2.11.1.1
+pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   start: start.html
-last_built: 2020-11-28T16:07Z
+last_built: 2021-05-06T22:06Z
 urls:
   reference: https://d-score.github.io/dscore/reference
   article: https://d-score.github.io/dscore/articles

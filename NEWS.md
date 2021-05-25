@@ -1,3 +1,7 @@
+# dscore 1.4.2
+
+* Repairs an error in the sem calculation that `dscore 1.4.1` introduced.
+
 # dscore 1.4.1
 
 * Solves a long-standing issue #29 that gave different D-score under different transformation. This change affects solutions calculated with the `metric = "logit"` and `transform` parameters specified. The D-scores calculated under different transforms are now linear transformations of each other.

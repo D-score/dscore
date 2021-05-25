@@ -74,6 +74,7 @@ NumericVector posterior(int score, double tau,
 
   // calc posterior per category
   NumericVector postcat = cpc * prior;
+  postcat = normalize(postcat, qp);
 
   return(postcat);
 }

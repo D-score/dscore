@@ -74,7 +74,7 @@ observations on milestones." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.2</span>
       </span>
     </div>
 
@@ -356,17 +356,17 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 #&gt;      5.51      2.43        NA </div><div class='input'>
 <span class='co'># calculate D-score</span>
 <span class='fu'>dscore</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;         a n   p     d         sem    daz
-#&gt; 1      NA 0  NA    NA          NA     NA
-#&gt; 2      NA 0  NA    NA          NA     NA
-#&gt; 3  0.0575 1 0.0  3.46 0.301218728 -2.138
-#&gt; 4  0.0575 2 0.0  0.96 0.042560033 -2.843
-#&gt; 5  0.0575 2 0.5  4.82 0.016620553 -1.754
-#&gt; 6  0.0575 2 0.5  4.82 0.004028631 -1.754
-#&gt; 7  0.0575 2 0.5  4.82 0.016620553 -1.754
-#&gt; 8  0.0575 2 0.5  4.82 0.004028631 -1.754
-#&gt; 9  0.0575 2 1.0 11.81 0.036915244  0.219
-#&gt; 10 0.0575 2 1.0 11.81 0.036915244  0.219</div><div class='input'>
+</div><div class='output co'>#&gt;         a n   p     d      sem    daz
+#&gt; 1      NA 0  NA    NA       NA     NA
+#&gt; 2      NA 0  NA    NA       NA     NA
+#&gt; 3  0.0575 1 0.0  3.46 2.772368 -2.138
+#&gt; 4  0.0575 2 0.0  0.96 2.375263 -2.843
+#&gt; 5  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 6  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 7  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 8  0.0575 2 0.5  4.82 1.881393 -1.754
+#&gt; 9  0.0575 2 1.0 11.81 3.970219  0.219
+#&gt; 10 0.0575 2 1.0 11.81 3.970219  0.219</div><div class='input'>
 <span class='co'># calculate full posterior</span>
 <span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'>dscore_posterior</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
 

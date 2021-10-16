@@ -38,9 +38,9 @@ Encoding: UTF-8
 License: AGPL-3
 LazyData: TRUE
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1
 NeedsCompilation: yes
 URL: https://github.com/d-score/dscore, https://d-score.org/dscore/, https://d-score.org/dbook1/
 BugReports: https://github.com/d-score/dscore/issues
 Copyright: Stef van Buuren, Iris Eekhout, Arjan Huizing
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2

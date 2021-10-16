@@ -1,3 +1,7 @@
+# dscore 1.4.3
+
+* Repairs a few problematic outward URLs
+
 # dscore 1.4.2
 
 * Repairs an error in the sem calculation that `dscore 1.4.1` introduced.

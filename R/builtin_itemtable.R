@@ -17,7 +17,7 @@
 #' Development (GSED) group.
 #' The `itemtable` is created by `\\data-raw\\R\\save_builtin_itemtable.R`.
 #'
-#' Last update: April 24, 2020
+#' Last update: May 30, 2022 - added gto (LF) and gpa (SF) items
 #' @author Compiled by Stef van Buuren
 #' @keywords datasets
 "builtin_itemtable"

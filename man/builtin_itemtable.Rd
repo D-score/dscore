@@ -25,7 +25,7 @@ Data are collected by the members of the Global Scale for Early
 Development (GSED) group.
 The \code{itemtable} is created by \verb{\\\\data-raw\\\\R\\\\save_builtin_itemtable.R}.
 
-Last update: April 24, 2020
+Last update: May 30, 2022 - added gto (LF) and gpa (SF) items
 }
 \author{
 Compiled by Stef van Buuren

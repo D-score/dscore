@@ -1,3 +1,7 @@
+# dscore 1.4.4
+
+* Extends `builtin_itemtable` with names and labels for gpa (SF) and gto (LF) items
+
 # dscore 1.4.3
 
 * Repairs a few problematic outward URLs

@@ -1,3 +1,7 @@
+# dscore 1.4.5
+
+* Extends `builtin_itemtable` with seven items with prefix gsd
+
 # dscore 1.4.4
 
 * Extends `builtin_itemtable` with names and labels for gpa (SF) and gto (LF) items

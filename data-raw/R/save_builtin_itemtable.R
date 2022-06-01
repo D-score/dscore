@@ -1,7 +1,7 @@
 # Save built-in itemtable
 # Fields: item, equate, label
 
-fn <- file.path("data-raw/data/itemtable_20220530.txt")
+fn <- file.path("data-raw/data/itemtable_20220601.txt")
 builtin_itemtable <- read.delim(file = fn, quote = "",
                                 stringsAsFactors = FALSE, na = "",
                                 fileEncoding = "UTF-8",

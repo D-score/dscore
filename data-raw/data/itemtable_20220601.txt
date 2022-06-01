@@ -58,9 +58,9 @@ aqicmc058		uses words that connect other words such as and
 aqicmc059		asks caregiver to explain words she does not understand
 aqicmc060		"Does your child repeat the sentences shown below back to you, without any mistakes?(Read the sentences one at a time. You may repeat each sentence one time. Mark ""yes"" if your child repeats both sentences without mistakes or ""sometimes"" if your child repeats one sentence without mistakes. Jane hides her shoes for Maria to find. Al read the blue book under his bed."
 aqicmc061		"When you ask, ""What is your name?"" does your child say both her first and last names?"
-aqicmc062
-aqicmc063
-aqicmc064
+aqicmc062		
+aqicmc063		
+aqicmc064		
 aqicmc065		"Does your child use comparison words, such as ""heavier,"" ""stronger"", or ""shorter""? Ask your child questions, such as ""A car is big, but a bus is _____"" (bigger); ""A cat is heavy, but a man is _____"" (heavier); ""A TV is small, but a book is _____"" (smaller). Please write an example:"
 aqifmc001	FM13	Does your baby touch her face with her hands?
 aqifmc002	FM88	Does your baby grasp your finger if you touch the palm of her hand?
@@ -179,12 +179,12 @@ aqigmc056		does all 3 movement patterns at least 2 times
 aqigmc057		jumps forward 3 feet from standing position
 aqigmc058		walks 10 ore more steps backward
 aqigmc059		Does your child skip using alternating feet? You may show her how to do this?
-aqigmc060
-aqigmc061
+aqigmc060		
+aqigmc061		
 aqigmc062		"Does your child hop forward on one foot for a distance of 46 feet without putting down the other foot? You may give him two tries on each foot. Mark ""sometimes"" if he can hop on one foot only."
-aqigmc063
-aqigmc064
-aqigmc065
+aqigmc063		
+aqigmc064		
+aqigmc065		
 aqiNAc005	FM97	Does your baby pick up a crumb or Cheerio with the tips of his thumb and a finger? He may rest his arm or hand on the table while doing it.
 aqipxc001	COG120	Does your baby look at objects that are 8-10 inches away?
 aqipxc002	FM4	When you move a small toy up and down slowly in front of her face (about 10 inches away), does your baby follow the toy with her eyes?
@@ -311,16 +311,16 @@ aqislc054		stays away from dangerous things
 aqislc055		tells at least 4 of first name age city last name boy or girl and telephone number
 aqislc056		begins playing with toys and finishes activity without being told
 aqislc057		brushs teeth by putting toothpaste on toothbrush and brushing all her teeth without help
-aqislc058
-aqislc059
-aqislc060
-aqislc061
+aqislc058		
+aqislc059		
+aqislc060		
+aqislc061		
 aqislc062		dresses and undresses himself including buttoning and zipping
-aqislc063
-aqislc064
-aqislc065
-aqislc066
-aqislc067
+aqislc063		
+aqislc064		
+aqislc065		
+aqislc066		
+aqislc067		
 barxxc001		Smiles in response to an adult or his/her voice (mom report)
 barxxc002		Makes sounds spontaneously or in response to a stimulus (mom report)
 barxxc003		Has head control while being pulled to sit upright (mom report)
@@ -1476,20 +1476,20 @@ crosec059		Can the child tell you when others are happy, angry, or sad?
 ddicmd044		Points at 5 pictures in the book
 ddicmd049		Can be understood by tester
 ddicmd116	REC6	Turn head to sound
-ddicmd132
+ddicmd132		
 ddicmd136		"Reacts to verbal request (M; can ask parents)"
 ddicmd141		Identifies two named objects
 ddicmd148		Understands 'play' orders
 ddicmm029	REC50	Reacts when spoken to
 ddicmm030		"Smiles in response (M; can ask parents)"
 ddicmm031	EXP5	vocalizes in response
-ddicmm032
+ddicmm032		
 ddicmm033	EXP10	Says dada, baba, gaga
 ddicmm034	EXP12	Babbles while playing
 ddicmm035	REC14	Reacts to verbal request
 ddicmm036		"Waves 'bye-bye' (M; can ask parents)"
 ddicmm037	EXP18	Uses two words with comprehension
-ddicmm038
+ddicmm038		
 ddicmm039		Says three 'words'
 ddicmm040	REC25	"Understands 'play' orders.  For example, ""Give the dolly a little bite of your cookie"""
 ddicmm041	EXP26	Says sentences with 2 words
@@ -1884,6 +1884,13 @@ gpaxxc073		Can your child fetch something when asked?
 gpaxxc074		Can your child drink from an open  cup without help?
 gpaxxc087		Does your child dry hands by herself/himself after you have washed them?
 gpaxxc092		Can your child wash hands by him/herself?
+gsdcgc002		Does your child look at and focus on objects in front of him/her?
+gsdfmc003		Does your child grasp your finger if you touch her hand?
+gsdgmc005		When your child is on his/her stomach, can he/she turn his/her head to the side?
+gsdgmc006		When your child is on his/her stomach, can he/she hold his/her head up off the ground?
+gsdgmc007		Can your child roll from his/her back to stomach or stomach to his/her side? 
+gsdlac001		Does your child cry when he/she is hungry, wet, tired, or wants to be held?
+gsdlac004		Does your child make sounds other than crying?
 gricgd001		Reacts to Paper I - Generalized physical movements
 gricgd002		Hand goes to mouth
 gricgd003		Shows energetic arm movements

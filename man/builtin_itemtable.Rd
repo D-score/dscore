@@ -21,11 +21,15 @@ contains descriptions of all items found in the \code{gsed}
 data.
 }
 \details{
-Data are collected by the members of the Global Scale for Early
+Data are collected by the members of the Global Scales for Early
 Development (GSED) group.
 The \code{itemtable} is created by \verb{\\\\data-raw\\\\R\\\\save_builtin_itemtable.R}.
 
-Last update: May 30, 2022 - added gto (LF) and gpa (SF) items
+Last update:
+\itemize{
+\item May 30, 2022 - added gto (LF) and gpa (SF) items
+\item June 1, 2022 - added seven gsd items
+}
 }
 \author{
 Compiled by Stef van Buuren

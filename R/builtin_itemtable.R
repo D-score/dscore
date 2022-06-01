@@ -13,11 +13,13 @@
 #' | `label` | Label (English) |
 #'
 #' @details
-#' Data are collected by the members of the Global Scale for Early
+#' Data are collected by the members of the Global Scales for Early
 #' Development (GSED) group.
 #' The `itemtable` is created by `\\data-raw\\R\\save_builtin_itemtable.R`.
 #'
-#' Last update: May 30, 2022 - added gto (LF) and gpa (SF) items
+#' Last update:
+#'  - May 30, 2022 - added gto (LF) and gpa (SF) items
+#'  - June 1, 2022 - added seven gsd items
 #' @author Compiled by Stef van Buuren
 #' @keywords datasets
 "builtin_itemtable"

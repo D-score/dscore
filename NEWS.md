@@ -1,22 +1,15 @@
-# dscore 1.4.5
+# dscore 1.5.0
 
-* Extends `builtin_itemtable` with seven items with prefix gsd
+### Major changes
 
-# dscore 1.4.4
-
-* Extends `builtin_itemtable` with names and labels for gpa (SF) and gto (LF) items
-
-# dscore 1.4.3
-
-* Repairs a few problematic outward URLs
-
-# dscore 1.4.2
-
-* Repairs an error in the sem calculation that `dscore 1.4.1` introduced.
-
-# dscore 1.4.1
-
+* Adds three new keys (`gsed2206`, `lf2206` and `sf2206`) that incorporate Phase 1 validation data for the GSED SF, GSED LF and BSID.
+* **Changes the default key to `gsed2206`**. If you want the old behavior, specify `key = "gsed1912"` to functions that accept the `key` argument (`dscore()`, `dscore_posterior()`, `get_age_equivalent()`, `get_tau()`).
+* Extends `builtin_itemtable` with names and labels for `gpa` (SF), `gto` (LF) and `gsd` (novel SF) items.
 * Solves a long-standing issue #29 that gave different D-score under different transformation. This change affects solutions calculated with the `metric = "logit"` and `transform` parameters specified. The D-scores calculated under different transforms are now linear transformations of each other.
+
+### Minor changes
+
+* Repairs a few problematic outbound URLs
 
 # dscore 1.4.0
 

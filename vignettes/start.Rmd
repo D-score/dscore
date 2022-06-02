@@ -39,56 +39,64 @@ The `dscore` package covers a subset of all possible assessment instruments. Mor
 
 The inventory by @fernald2017 identified [147 instruments](http://pubdocs.worldbank.org/en/685691512577486773/ECD-Measurement-Inventory-children-0-8-years-WorldBank.xlsx) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The $D$-score is defined by and calculated from, subsets of milestones from such instruments.
 
-Assessment instruments connect to the $D$-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports three keys:
+Assessment instruments connect to the $D$-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports the following keys:
 
 1. `dutch`, a model developed for the *Dutch development instrument*; 
 2. `gcdg`, a model covering 14 instruments using *direct* measurements; 
-3. `gsed`, a model covering 20 instruments using a mix of *direct* and *caregiver-reported* measurements;
+3. `gsed1912`, covers 20 instruments using a mix of *direct* and *caregiver-reported* measurements (dec 2019);
+4. `gsed2206`, covers 22 instruments using a mix of *direct* and *caregiver-reported* measurements (jun 2022);
+5. `lf2206`, isolated key that covers the GSED LF only;
+6. `sf2206`, isolated key that covers the GSED SF only.
 
-Although the differences between $D$-scores calculated under different keys are generally small, the results are not identical. Hence, we may compare only $D$-scores that are calculated under the same key. The table given below displays the number of items per instrument under each key. If the entry is blank, the key does not cover the instrument.
+Although the differences between $D$-scores calculated under different keys are generally small, the results are not identical. Hence, we may compare only $D$-scores that are calculated under the same key. The table given below displays the number of items per instrument for four keys. If the entry is blank, the key does not cover the instrument.
 
-| Code   | Instrument                                              | Items | dutch |  gcdg |  gsed |
-| ------ | ------------------------------------------------------- | -----:|------:|------:|------:|
-| `aqi`  | Ages & Stages Questionnaires-3                          |  230  |       |   29  |   17  |
-| `bar`  | Barrera Moncada                                         |   22  |       |   15  |   13  |
-| `bat`  | Battelle Development Inventory and Screener-2           |  137  |       |       |       |
-| `by1`  | Bayley Scales for Infant and Toddler Development-1      |  156  |       |   85  |   76  |
-| `by2`  | Bayley Scales for Infant and Toddler Development-2      |  121  |       |   16  |   16  |
-| `by3`  | Bayley Scales for Infant and Toddler Development-3      |  320  |       |  105  |   67  |
-| `cro`  | Caregiver Reported Early Development Instrument (CREDI) |  149  |       |       |   62  |
-| `ddi`  | Dutch Development Instrument (Van Wiechenschema)        |   77  |   76  |   65  |   64  |
-| `den`  | Denver-2                                                |  111  |       |   67  |   50  |
-| `dmc`  | Developmental Milestones Checklist                      |   66  |       |       |   43  |
-| `gri`  | Griffiths Mental Development Scales                     |  312  |       |  104  |   93  |
-| `iyo`  | Infant and Young Child Development (IYCD)               |   90  |       |       |   55  |
-| `kdi`  | Kilifi Developmental Inventory                          |   69  |       |       |       |
-| `mac`  | MacArthur Communicative Development Inventory           |    6  |       |    3  |    3  |
-| `mds`  | WHO Motor Development Milestones                        |    6  |       |       |    1  |
-| `mdt`  | Malawi Developmental Assessment Tool (MDAT)             |  136  |       |       |  126  |
-| `peg`  | Pegboard                                                |    2  |       |    1  |    1  |
-| `pri`  | Project on Child Development Indicators (PRIDI)         |   63  |       |       |       |
-| `sbi`  | Stanford Binet Intelligence Scales-4/5                  |   33  |       |    6  |    1  |
-| `sgr`  | Griffiths for South Africa                              |   58  |       |   19  |   19  |
-| `tep`  | Test de Desarrollo Psicomotor (TEPSI)                   |   61  |       |   33  |   31  |
-| `vin`  | Vineland Social Maturity Scale                          |   50  |       |   17  |   17  |
-|        |                                                         | 2275  |   76  |  565  |  807  |
-|        | Extensions                                              |       |       |       |       |
-| `rap`  | Global Scale of Early Development - RAPID SF            |  139  |       |       |       |
-| `mul`  | Mullen Scales of Early Learning                         |  232  |       |       |  139  |
-| `hyp`  | Demonstration items                                     |    5  |       |       |       |
-|        |                                                         | 2651  |   76  |  565  |  892  |
+| Code   | Instrument                                              | Items | dutch |  gcdg |gsed1912|gsed2206|
+| ------ | ------------------------------------------------------- | -----:|------:|------:|------:|------:|
+| `aqi`  | Ages & Stages Questionnaires-3                          |  230  |       |   29  |   17  |   17  |
+| `bar`  | Barrera Moncada                                         |   22  |       |   15  |   13  |   13  |
+| `bat`  | Battelle Development Inventory and Screener-2           |  137  |       |       |       |       |
+| `by1`  | Bayley Scales for Infant and Toddler Development-1      |  156  |       |   85  |   76  |   76  |
+| `by2`  | Bayley Scales for Infant and Toddler Development-2      |  121  |       |   16  |   16  |   16  |
+| `by3`  | Bayley Scales for Infant and Toddler Development-3      |  320  |       |  105  |   67  |   67  |
+| `cro`  | Caregiver Reported Early Development Instrument (CREDI) |  149  |       |       |   62  |   64  |
+| `ddi`  | Dutch Development Instrument (Van Wiechenschema)        |   77  |   76  |   65  |   64  |   64  | 
+| `den`  | Denver-2                                                |  111  |       |   67  |   50  |   50  |
+| `dmc`  | Developmental Milestones Checklist                      |   66  |       |       |   43  |   43  |
+| `gri`  | Griffiths Mental Development Scales                     |  312  |       |  104  |   93  |   93  |
+| `iyo`  | Infant and Young Child Development (IYCD)               |   90  |       |       |   55  |   57  |
+| `kdi`  | Kilifi Developmental Inventory                          |   69  |       |       |   48  |   48  |
+| `mac`  | MacArthur Communicative Development Inventory           |    6  |       |    3  |    3  |    3  |
+| `mds`  | WHO Motor Development Milestones                        |    6  |       |       |    1  |    1  |
+| `mdt`  | Malawi Developmental Assessment Tool (MDAT)             |  136  |       |       |  126  |  126  |
+| `peg`  | Pegboard                                                |    2  |       |    1  |    1  |    1  |
+| `pri`  | Project on Child Development Indicators (PRIDI)         |   63  |       |       |       |       |
+| `sbi`  | Stanford Binet Intelligence Scales-4/5                  |   33  |       |    6  |    5  |    5  |
+| `sgr`  | Griffiths for South Africa                              |   58  |       |   19  |   19  |   19  |
+| `tep`  | Test de Desarrollo Psicomotor (TEPSI)                   |   61  |       |   33  |   31  |   31  |
+| `vin`  | Vineland Social Maturity Scale                          |   50  |       |   17  |   17  |   17  |
+|        |                                                         | 2275  |   76  |  565  |  807  |  818  |
+|        | Extensions                                              |       |       |       |       |       |
+| `rap`  | Global Scale of Early Development - RAPID SF            |  139  |       |       |       |       |
+| `gpa`  | GSED SF (parent version)                                |  139  |       |       |       |  139  |
+| `gsd`  | GSED novel items                                        |    7  |       |       |       |    7  |
+| `gto`  | GSED LF (trained observer)                              |  155  |       |       |       |  155  |
+| `mul`  | Mullen Scales of Early Learning                         |  232  |       |       |  139  |       |
+| `hyp`  | Demonstration items                                     |    5  |       |       |       |       |
+|        |                                                         | 2651  |   76  |  565  |  892  | 1112  |
 
 Unfortunately, it is not possible to calculate the $D$-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
 
-For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed"`. Your choice may depend on the goal of your analysis. If you want to compare to other $D$-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`.
+For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed1912"` or `"gsed2206"`. Your choice may depend on the goal of your analysis. If you want to compare to other $D$-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed2206"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`. Before version 1.5.0 the default linked to `"gsed1912"`. Since version 1.5.0 the default selects `"gsed2206"`.
 
-The extensions for Mullen were added to the gsed key. The extension was made based on two datasets, the Provide dataset [@provide] and the Bambam dataset [@bambam]. The Mullen items were matched to existing items and two well fitting items were selected as anchors in a new model on the combined Provide and Bambam data. 
+The extensions for Mullen were added to the "`"gsed1912"` key. The extension was made based on two datasets, the Provide dataset [@provide] and the Bambam dataset [@bambam]. The Mullen items were matched to existing items and two well fitting items were selected as anchors in a new model on the combined Provide and Bambam data. 
 
 ```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE}
 library(dscore)
 ib <- builtin_itembank %>% 
-  filter(key == "gsed") %>% 
-  mutate(a = get_age_equivalent(items = item, pct = 50, itembank = builtin_itembank)$a * 12) %>% 
+  filter(key == "gsed2206") %>% 
+  mutate(a = get_age_equivalent(items = item, pct = 50, 
+                                itembank = builtin_itembank)$a,
+         a = a * 12) %>% 
   select(a, instrument, label) %>% 
   na.omit()
   
@@ -101,7 +109,7 @@ ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
   theme(axis.text.y = element_text(hjust = 0, family = "mono"))
 ```
 
-The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `mul`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.
+The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed1912"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `mul`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.
 
 
 ## Map variable names to the GSED 9-position schema
@@ -234,7 +242,7 @@ ggplot(md, aes(x = a, y = d, group = id, color = sex)) +
   annotate("line", x = r$age, y = r$SD0, lwd = 0.5, alpha = 0.2, color = "green") +
   coord_cartesian(xlim = c(0, 2.5)) +
   ylab(expression(paste(italic(D), "-score", sep = ""))) +
-  xlab("Age (in years)") +
+  xlab("Age (in years)")+
   scale_color_brewer(palette = "Set1") +
   geom_line(lwd = 0.1) +
   geom_point(size = 1)

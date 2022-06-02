@@ -20,7 +20,7 @@ defined items."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
       </span>
     </div>
 
@@ -74,7 +74,7 @@ defined items.</p>
 
     <div id="format">
     <h2>Format</h2>
-    <p>A <code>data.frame</code> with variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>key</code></td><td>String indicating a specific Rasch model, either <code>"gsed"</code>, <code>"gcdg"</code> or <code>"dutch"</code></td></tr><tr><td><code>item</code></td><td>Item name, gsed lexicon</td></tr><tr><td><code>tau</code></td><td>Difficulty estimate</td></tr><tr><td><code>label</code></td><td>Label (English)</td></tr><tr><td><code>instrument</code></td><td>Instrument code</td></tr><tr><td><code>domain</code></td><td>Domain code</td></tr><tr><td><code>mode</code></td><td>Administration mode</td></tr><tr><td><code>number</code></td><td>Item number</td></tr></table></div>
+    <p>A <code>data.frame</code> with variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>key</code></td><td>String indicating a specific Rasch model (the key)</td></tr><tr><td><code>item</code></td><td>Item name, gsed lexicon</td></tr><tr><td><code>tau</code></td><td>Difficulty estimate</td></tr><tr><td><code>label</code></td><td>Label (English)</td></tr><tr><td><code>instrument</code></td><td>Instrument code</td></tr><tr><td><code>domain</code></td><td>Domain code</td></tr><tr><td><code>mode</code></td><td>Administration mode</td></tr><tr><td><code>number</code></td><td>Item number</td></tr></table></div>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="dscore.html">dscore()</a></code>, <code><a href="get_tau.html">get_tau()</a></code>,
@@ -84,20 +84,27 @@ defined items.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">builtin_itembank</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     key      item  tau                                   label instrument</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 dutch ddicmm029  1.7                   Reacts when spoken to        ddi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 dutch ddicmm030 11.3 Smiles in response (M; can ask parents)        ddi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 dutch ddicmm031 14.5                   vocalizes in response        ddi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 dutch ddicmm033 36.0                   Says dada, baba, gaga        ddi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 dutch ddicmm034 40.9                   Babbles while playing        ddi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 dutch ddicmm036 43.1    Waves 'bye-bye' (M; can ask parents)        ddi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   domain mode number</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     cm    m    029</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     cm    m    030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     cm    m    031</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     cm    m    033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     cm    m    034</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     cm    m    036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        key      item   tau</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 gsed2206 aqicmc033 58.74</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 gsed2206 aqicmc038 65.81</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 gsed2206 aqicmc040 65.66</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 gsed2206 aqicmc061 70.63</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 gsed2206 aqifmc025 53.17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 gsed2206 aqifmc033 69.64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                     label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                            "Does your child say 15 or more words in addition to ""Mama"" and ""Dada""?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                  "When you ask, ""What is your name?"" does your child say her first name or nickname?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                               Does your child make sentences that are three or four words long? Please give an example:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                               "When you ask, ""What is your name?"" does your child say both her first and last names?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       Does your baby/child stack a small block or toy on top of another one? (You could also use spools of thread, small boxes, or toys that are about 1 inch in size.)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 After your child watches you draw a single circle, ask him to make a circle like yours. Do not let him trace your circle. Does your child copy you by drawing a circle?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   instrument domain mode number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        aqi     cm    c    033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        aqi     cm    c    038</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        aqi     cm    c    040</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        aqi     cm    c    061</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        aqi     fm    c    025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        aqi     fm    c    033</span>
 </code></pre></div>
     </div>
   </div>

@@ -19,7 +19,7 @@ are done in lower case."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
       </span>
     </div>
 
@@ -79,11 +79,16 @@ numerically as <code>1</code> (pass) and <code>0</code> (fail). By default,
 D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified <code>key</code>.</p></dd>
 <dt>key</dt>
-<dd><p>A string that sets the key, the set of difficulty
+<dd><p>A string that selects a subset in the itembank that
+makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: <code>"gsed"</code> (default), <code>"gcdg"</code>,
-and <code>"dutch"</code>. Use <code>key = ""</code> to use all item names,
-which should only be done if there are no duplicate itemnames.</p></dd>
+The built-in keys are: <code>"gsed2206"</code> (default), <code>"gsed1912"</code>,
+<code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
+and <code>"dutch"</code>. Since version 1.5.0, the default <code>key = "gsed"</code>
+selects the latest key starting with the string "gsed".
+Use <code>key = ""</code> to use all item names,
+which should only be done if there are no duplicate itemnames
+in the itembank.</p></dd>
 <dt>itembank</dt>
 <dd><p>A <code>data.frame</code> with columns
 <code>key</code>, <code>item</code>, <code>tau</code>, <code>instrument</code>, <code>domain</code>,

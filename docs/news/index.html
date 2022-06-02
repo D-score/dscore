@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
       </span>
     </div>
 
@@ -58,20 +58,19 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.4.5" id="dscore-145">dscore 1.4.5<a class="anchor" aria-label="anchor" href="#dscore-145"></a></h2>
-<ul><li>Extends <code>builtin_itemtable</code> with seven items with prefix gsd</li></ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.4.4" id="dscore-144">dscore 1.4.4<a class="anchor" aria-label="anchor" href="#dscore-144"></a></h2>
-<ul><li>Extends <code>builtin_itemtable</code> with names and labels for gpa (SF) and gto (LF) items</li></ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.4.3" id="dscore-143">dscore 1.4.3<a class="anchor" aria-label="anchor" href="#dscore-143"></a></h2>
-<ul><li>Repairs a few problematic outward URLs</li></ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.4.2" id="dscore-142">dscore 1.4.2<a class="anchor" aria-label="anchor" href="#dscore-142"></a></h2>
-<ul><li>Repairs an error in the sem calculation that <code>dscore 1.4.1</code> introduced.</li></ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.4.1" id="dscore-141">dscore 1.4.1<a class="anchor" aria-label="anchor" href="#dscore-141"></a></h2>
-<ul><li>Solves a long-standing issue <a href="https://github.com/d-score/dscore/issues/29" class="external-link">#29</a> that gave different D-score under different transformation. This change affects solutions calculated with the <code>metric = "logit"</code> and <code>transform</code> parameters specified. The D-scores calculated under different transforms are now linear transformations of each other.</li></ul></div>
+<h2 class="page-header" data-toc-text="1.5.0" id="dscore-150">dscore 1.5.0<a class="anchor" aria-label="anchor" href="#dscore-150"></a></h2>
+<div class="section level4">
+<h4 id="major-changes-1-5-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-1-5-0"></a></h4>
+<ul><li>Adds three new keys (<code>gsed2206</code>, <code>lf2206</code> and <code>sf2206</code>) that incorporate Phase 1 validation data for the GSED SF, GSED LF and BSID.</li>
+<li>
+<strong>Changes the default key to <code>gsed2206</code></strong>. If you want the old behavior, specify <code>key = "gsed1912"</code> to functions that accept the <code>key</code> argument (<code><a href="../reference/dscore.html">dscore()</a></code>, <code><a href="../reference/dscore.html">dscore_posterior()</a></code>, <code><a href="../reference/get_age_equivalent.html">get_age_equivalent()</a></code>, <code><a href="../reference/get_tau.html">get_tau()</a></code>).</li>
+<li>Extends <code>builtin_itemtable</code> with names and labels for <code>gpa</code> (SF), <code>gto</code> (LF) and <code>gsd</code> (novel SF) items.</li>
+<li>Solves a long-standing issue <a href="https://github.com/d-score/dscore/issues/29" class="external-link">#29</a> that gave different D-score under different transformation. This change affects solutions calculated with the <code>metric = "logit"</code> and <code>transform</code> parameters specified. The D-scores calculated under different transforms are now linear transformations of each other.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="minor-changes-1-5-0">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-1-5-0"></a></h4>
+<ul><li>Repairs a few problematic outbound URLs</li></ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.4.0" id="dscore-140">dscore 1.4.0<small>2020-11-29</small><a class="anchor" aria-label="anchor" href="#dscore-140"></a></h2>
 <div class="section level4">

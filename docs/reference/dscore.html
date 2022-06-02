@@ -19,7 +19,7 @@ observations on milestones."><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
       </span>
     </div>
 
@@ -122,11 +122,16 @@ that have a difficulty parameter under the specified <code>key</code>.</p></dd>
 (either <code>"decimal"</code>, <code>"days"</code> or <code>"months"</code>).
 The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
 <dt>key</dt>
-<dd><p>A string that sets the key, the set of difficulty
+<dd><p>A string that selects a subset in the itembank that
+makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: <code>"gsed"</code> (default), <code>"gcdg"</code>,
-and <code>"dutch"</code>. Use <code>key = ""</code> to use all item names,
-which should only be done if there are no duplicate itemnames.</p></dd>
+The built-in keys are: <code>"gsed2206"</code> (default), <code>"gsed1912"</code>,
+<code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
+and <code>"dutch"</code>. Since version 1.5.0, the default <code>key = "gsed"</code>
+selects the latest key starting with the string "gsed".
+Use <code>key = ""</code> to use all item names,
+which should only be done if there are no duplicate itemnames
+in the itembank.</p></dd>
 <dt>itembank</dt>
 <dd><p>A <code>data.frame</code> with columns
 <code>key</code>, <code>item</code>, <code>tau</code>, <code>instrument</code>, <code>domain</code>,
@@ -183,9 +188,7 @@ posterior ability distribution. If no valid responses were obtained,
 method uses Bayes rule to update a prior ability into a posterior
 ability.</p>
 <p>The item names should correspond to the <code>"gsed"</code> lexicon.</p>
-<p>The built-in itembank (object <code><a href="builtin_itembank.html">builtin_itembank()</a></code>) supports
-keys <code>"gsed"</code> (default), <code>"gcdg"</code> and <code>"dutch"</code>.
-A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>14</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>20</td><td>mixed</td><td>GSED Team, 2019</td></tr></table><p>As a general rule, one should only compare D-scores
+<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>14</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>20</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"gsed2206"</code></td><td><code>818_17</code></td><td><code>-10:100</code></td><td>22</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"lf2206"</code></td><td><code>155_0</code></td><td><code>-10:100</code></td><td>1</td><td>direct</td><td>GSED Team, 2022</td></tr><tr><td><code>"sf2206"</code></td><td><code>139_0</code></td><td><code>-10:100</code></td><td>1</td><td>caregiver</td><td>GSED Team, 2022</td></tr></table><p>As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
 the advice is to use the most general key, <code>"gsed"</code>.</p>

@@ -7,7 +7,7 @@
 \format{
 A \code{data.frame} with variables:\tabular{ll}{
    Name \tab Label \cr
-   \code{key} \tab String indicating a specific Rasch model, either \code{"gsed"}, \code{"gcdg"} or \code{"dutch"} \cr
+   \code{key} \tab String indicating a specific Rasch model (the key) \cr
    \code{item} \tab Item name, gsed lexicon \cr
    \code{tau} \tab Difficulty estimate \cr
    \code{label} \tab Label (English) \cr

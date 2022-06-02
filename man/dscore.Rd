@@ -57,11 +57,16 @@ that have a difficulty parameter under the specified \code{key}.}
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
 
-\item{key}{A string that sets the key, the set of difficulty
+\item{key}{A string that selects a subset in the itembank that
+makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed"} (default), \code{"gcdg"},
-and \code{"dutch"}. Use \code{key = ""} to use all item names,
-which should only be done if there are no duplicate itemnames.}
+The built-in keys are: \code{"gsed2206"} (default), \code{"gsed1912"},
+\code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+and \code{"dutch"}. Since version 1.5.0, the default \code{key = "gsed"}
+selects the latest key starting with the string "gsed".
+Use \code{key = ""} to use all item names,
+which should only be done if there are no duplicate itemnames
+in the itembank.}
 
 \item{itembank}{A \code{data.frame} with columns
 \code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
@@ -134,13 +139,14 @@ ability.
 
 The item names should correspond to the \code{"gsed"} lexicon.
 
-The built-in itembank (object \code{\link[=builtin_itembank]{builtin_itembank()}}) supports
-keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
 A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference \cr
    \code{"dutch"} \tab \verb{75_0} \tab \code{-10:80} \tab 1 \tab direct \tab Van Buuren, 2014/2020 \cr
    \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 14 \tab direct \tab Weber, 2019 \cr
-   \code{"gsed"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
+   \code{"gsed1912"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
+   \code{"gsed2206"} \tab \verb{818_17} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
+   \code{"lf2206"} \tab \verb{155_0} \tab \code{-10:100} \tab 1 \tab direct \tab GSED Team, 2022 \cr
+   \code{"sf2206"} \tab \verb{139_0} \tab \code{-10:100} \tab 1 \tab caregiver \tab GSED Team, 2022 \cr
 }
 
 

@@ -20,11 +20,16 @@
 #' @param xunit A string specifying the unit in which age is measured
 #' (either `"decimal"`, `"days"` or `"months"`).
 #' The default (`"decimal"`) means decimal age in years.
-#' @param key A string that sets the key, the set of difficulty
+#' @param key A string that selects a subset in the itembank that
+#' makes up the key, the set of difficulty
 #' estimates from a fitted Rasch model.
-#' The built-in keys are: `"gsed"` (default), `"gcdg"`,
-#' and `"dutch"`. Use `key = ""` to use all item names,
-#' which should only be done if there are no duplicate itemnames.
+#' The built-in keys are: `"gsed2206"` (default), `"gsed1912"`,
+#' `"lf2206"`, `"sf2206"`, `"gcdg"`,
+#' and `"dutch"`. Since version 1.5.0, the default `key = "gsed"`
+#' selects the latest key starting with the string "gsed".
+#' Use `key = ""` to use all item names,
+#' which should only be done if there are no duplicate itemnames
+#' in the itembank.
 #' @param itembank A `data.frame` with columns
 #' `key`, `item`, `tau`, `instrument`, `domain`,
 #' `mode`, `number` and `label`. Only columns `item`
@@ -83,15 +88,16 @@
 #'
 #' The item names should correspond to the `"gsed"` lexicon.
 #'
-#' The built-in itembank (object [builtin_itembank()]) supports
-#' keys `"gsed"` (default), `"gcdg"` and `"dutch"`.
 #' A key is defined by the set of estimated item difficulties.
 #'
 #' Key | Model | Quadrature | Instruments | Direct/Caregiver | Reference
 #' --- | -----:| ----------:| ----------: |:----------------:|:---------
 #' `"dutch"` | `75_0`   | `-10:80`  | 1   | direct | Van Buuren, 2014/2020
 #' `"gcdg"`  | `565_18` | `-10:100` | 14  | direct | Weber, 2019
-#' `"gsed"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
+#' `"gsed1912"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
+#' `"gsed2206"`  | `818_17` | `-10:100` | 22  | mixed  | GSED Team, 2022
+#' `"lf2206"`    | `155_0` | `-10:100`  | 1   | direct | GSED Team, 2022
+#' `"sf2206"`    | `139_0` | `-10:100`  | 1   | caregiver | GSED Team, 2022
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
@@ -166,6 +172,16 @@ dscore <- function(data,
                    dec = c(2L, 3L)) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
+  if (key == "gsed") {
+    key <- "gsed2206"
+    population <- "gcdg"
+  } else if (substr(key, 1, 4) == "gsed") {
+    population <- "gcdg"
+  }
+  if (substr(key, 1, 2) %in% c("lf", "sf")) {
+    population <- "gcdg"
+  }
+
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
     key = key, itembank = itembank, metric = metric,
@@ -193,8 +209,20 @@ dscore_posterior <- function(data,
                              qp = -10:100,
                              population = key,
                              dec = c(2L, 3L)) {
+
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
+
+  if (key == "gsed") {
+    key <- "gsed2206"
+    population <- "gcdg"
+  } else if (substr(key, 1, 4) == "gsed") {
+    population <- "gcdg"
+  }
+  if (substr(key, 1, 2) %in% c("lf", "sf")) {
+    population <- "gcdg"
+  }
+
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
     key = key, itembank = itembank, metric = metric,

@@ -17,6 +17,7 @@ get_tau <- function(items,
                     key = "gsed",
                     itembank = dscore::builtin_itembank) {
   # if key = "", then search in all rows
+  if (key == "gsed") key <- "gsed2206"
   if (key == "") {
     mib <- data.frame(
       key = "",

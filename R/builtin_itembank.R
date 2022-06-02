@@ -10,7 +10,7 @@
 #'
 #' | Name | Label |
 #' | --- | --------- |
-#' | `key` | String indicating a specific Rasch model, either `"gsed"`, `"gcdg"` or `"dutch"`|
+#' | `key` | String indicating a specific Rasch model (the key) |
 #' | `item` | Item name, gsed lexicon |
 #' | `tau`  | Difficulty estimate |
 #' | `label` | Label (English) |

@@ -13,11 +13,16 @@ numerically as \code{1} (pass) and \code{0} (fail). By default,
 D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified \code{key}.}
 
-\item{key}{A string that sets the key, the set of difficulty
+\item{key}{A string that selects a subset in the itembank that
+makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed"} (default), \code{"gcdg"},
-and \code{"dutch"}. Use \code{key = ""} to use all item names,
-which should only be done if there are no duplicate itemnames.}
+The built-in keys are: \code{"gsed2206"} (default), \code{"gsed1912"},
+\code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+and \code{"dutch"}. Since version 1.5.0, the default \code{key = "gsed"}
+selects the latest key starting with the string "gsed".
+Use \code{key = ""} to use all item names,
+which should only be done if there are no duplicate itemnames
+in the itembank.}
 
 \item{itembank}{A \code{data.frame} with columns
 \code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},

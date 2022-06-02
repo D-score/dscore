@@ -24,6 +24,15 @@ get_age_equivalent <- function(items,
                                population = key,
                                xunit = c("decimal", "days", "months")) {
   xunit <- match.arg(xunit)
+  if (key == "gsed") {
+    key <- "gsed2206"
+    population <- "gcdg"
+  } else if (substr(key, 1, 4) == "gsed") {
+    population <- "gcdg"
+  }
+  if (substr(key, 1, 2) %in% c("lf", "sf")) {
+    population <- "gcdg"
+  }
 
   # obtain difficulty estimates
   ib <- tibble(

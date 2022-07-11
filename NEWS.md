@@ -1,3 +1,7 @@
+# dscore 1.5.1
+
+* Repairs a bug in `get_age_equivalent()` that resulted in age interval estimates that were too narrow on the D-score scale.
+
 # dscore 1.5.0
 
 ### Major changes

@@ -2,6 +2,9 @@
 #'
 #' This function calculates the ages at which a certain percent
 #' in the reference population passes the items.
+#'
+#' The function internally defines a scale factor given the key.
+#'
 #' @inheritParams dscore
 #' @param pct Numeric vector with requested percentiles (0-100). The
 #' default is `pct = c(10, 50, 90)`.
@@ -34,6 +37,15 @@ get_age_equivalent <- function(items,
     population <- "gcdg"
   }
 
+  # set scalefactor depending on key
+  scalefactor <- switch(key,
+                        dutch = 2.1044,
+                        gcdg = 2.075044,
+                        gsed = 2.075044,
+                        gsed2206 = 2.075044,
+                        gsed1912 = 2.075044,
+                        1.0)
+
   # obtain difficulty estimates
   ib <- tibble(
     item = items,
@@ -47,7 +59,7 @@ get_age_equivalent <- function(items,
     slice(rep(seq_along(items), each = length(pct))) %>%
     mutate(
       pct = rep(pct, length(items)),
-      d = .data$d + qlogis(.data$pct / 100),
+      d = .data$d + scalefactor * qlogis(.data$pct / 100),
       a = approx(x = reference$mu, y = reference$age, xout = .data$d)$y
     )
 

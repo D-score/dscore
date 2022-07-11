@@ -47,6 +47,9 @@ Tibble with four columns: \code{item}, \code{d} (\emph{D}-score),
 This function calculates the ages at which a certain percent
 in the reference population passes the items.
 }
+\details{
+The function internally defines a scale factor given the key.
+}
 \examples{
 get_age_equivalent(c("ddicmm030", "ddicmm050"), key = "dutch")
 }

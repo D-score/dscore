@@ -18,7 +18,7 @@ in the reference population passes the items."><!-- mathjax --><script src="http
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
       </span>
     </div>
 
@@ -108,6 +108,10 @@ The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
     <p>Tibble with four columns: <code>item</code>, <code>d</code> (<em>D</em>-score),
 <code>pct</code> (percentile), and <code>a</code> (age-equivalent, in <code>xunit</code> units).</p>
     </div>
+    <div id="details">
+    <h2>Details</h2>
+    <p>The function internally defines a scale factor given the key.</p>
+    </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
@@ -115,12 +119,12 @@ The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   item          d   pct       a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> ddicmm030  9.10    10  0.041<span style="text-decoration: underline;">5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> ddicmm030  6.68    10 <span style="color: #BB0000;">NA</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> ddicmm030 11.3     50  0.065<span style="text-decoration: underline;">6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> ddicmm030 13.5     90  0.091<span style="text-decoration: underline;">3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> ddicmm050 67.3     10  2.35  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> ddicmm030 15.9     90  0.122 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> ddicmm050 64.9     10  2.10  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> ddicmm050 69.5     50  2.60  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> ddicmm050 71.7     90 <span style="color: #BB0000;">NA</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> ddicmm050 74.1     90 <span style="color: #BB0000;">NA</span>     </span>
 </code></pre></div>
     </div>
   </div>

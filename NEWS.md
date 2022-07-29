@@ -1,3 +1,7 @@
+# dscore 1.5.2
+
+* Repairs bug in `builtin_itembank` that inherits old (gsed1912) tau's into new key (gsed2206) for instruments `gto` and `gpa`. As a consequence, D-score were incorrectly calculated when `gto` and `gpa` item names were used.
+
 # dscore 1.5.1
 
 * Repairs a bug in `get_age_equivalent()` that resulted in age interval estimates that were too narrow on the D-score scale.

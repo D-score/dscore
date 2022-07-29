@@ -40,8 +40,8 @@ key_sf2206 <- key_sf2206[order_itemnames(key_sf2206$item, order = "indm"), ]
 # Extend gsed2206 with gsed2 item names
 lf_gsed <- gsedread::rename_vector(key_lf2206$item, lexin = "gsed2", lexout = "gsed")
 sf_gsed <- gsedread::rename_vector(key_sf2206$item, lexin = "gsed2", lexout = "gsed")
-lf_tau <- dscore::get_tau(lf_gsed)
-sf_tau <- dscore::get_tau(sf_gsed)
+lf_tau <- dscore::get_tau(lf_gsed, itembank = key_gsed2206)
+sf_tau <- dscore::get_tau(sf_gsed, itembank = key_gsed2206)
 key_gsed2206 <- bind_rows(key_gsed2206,
                           data.frame(key = "gsed2206", item = key_lf2206$item, tau = lf_tau),
                           data.frame(key = "gsed2206", item = key_sf2206$item, tau = sf_tau))

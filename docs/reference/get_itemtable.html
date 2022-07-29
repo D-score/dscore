@@ -21,7 +21,7 @@ in the itemtable."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.2</span>
       </span>
     </div>
 
@@ -71,7 +71,7 @@ in the itemtable.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_itemtable</span><span class="op">(</span>items <span class="op">=</span> <span class="cn">NULL</span>, itemtable <span class="op">=</span> <span class="cn">NULL</span>, decompose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_itemtable</span><span class="op">(</span>items <span class="op">=</span> <span class="cn">NULL</span>, itemtable <span class="op">=</span> <span class="cn">NULL</span>, decompose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -79,18 +79,25 @@ in the itemtable.</p>
     <dl><dt>items</dt>
 <dd><p>A logical or character vector of item names to return. The
 default (<code>NULL</code>) returns all items.</p></dd>
+
+
 <dt>itemtable</dt>
 <dd><p>A <code>data.frame</code> set up according to the
 same structure as <code><a href="builtin_itemtable.html">builtin_itemtable()</a></code>. If not specified,
 the <code>builtin_itemtable</code> is used. If <code>itemtable = ""</code>, then
 a dynamic item table is created from any specified item names.</p></dd>
+
+
 <dt>decompose</dt>
 <dd><p>If <code>TRUE</code>, the function adds four columns:
 <code>instrument</code>, <code>domain</code>, <code>mode</code> and <code>number</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code>data.frame</code> with seven columns.</p>
+    
+
+<p>A <code>data.frame</code> with seven columns.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -99,7 +106,7 @@ a dynamic item table is created from any specified item names.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">get_itemtable</span><span class="op">(</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">get_itemtable</span><span class="op">(</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        item equate</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 aqicmc001   &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 aqicmc002   &lt;NA&gt;</span>
@@ -108,7 +115,7 @@ a dynamic item table is created from any specified item names.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                Does your baby sometimes make throaty or gurgling sounds?</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 After you have been out of sight, does your baby smile or get excited when she sees you?</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3               "Does your baby make cooing sounds such as ""ooo"", ""gah,"" and  ""ah""?"</span>
-<span class="r-in"><span class="fu">get_itemtable</span><span class="op">(</span><span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, <span class="st">""</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_itemtable</span><span class="op">(</span><span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, <span class="st">""</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   item equate       label</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    A   &lt;NA&gt; Label for A</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    B   &lt;NA&gt; Label for B</span>
@@ -127,7 +134,7 @@ a dynamic item table is created from any specified item names.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

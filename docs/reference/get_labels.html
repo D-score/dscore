@@ -18,7 +18,7 @@ specified set of items."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.2</span>
       </span>
     </div>
 
@@ -65,7 +65,7 @@ specified set of items.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_labels</span><span class="op">(</span>items <span class="op">=</span> <span class="cn">NULL</span>, trim <span class="op">=</span> <span class="cn">NULL</span>, itemtable <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_labels</span><span class="op">(</span>items <span class="op">=</span> <span class="cn">NULL</span>, trim <span class="op">=</span> <span class="cn">NULL</span>, itemtable <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -73,17 +73,24 @@ specified set of items.</p>
     <dl><dt>items</dt>
 <dd><p>A character vector of item names to return. The
 default (<code>NULL</code>) returns the labels of all items.</p></dd>
+
+
 <dt>trim</dt>
 <dd><p>The maximum number of characters in the label. The
 default <code>trim = NULL</code> does not trim labels.</p></dd>
+
+
 <dt>itemtable</dt>
 <dd><p>A <code>data.frame</code> set up according to the
 same structure as <code><a href="builtin_itemtable.html">builtin_itemtable()</a></code>. If not specified,
 the <code>builtin_itemtable</code> is used.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A named character vector with item labels.</p>
+    
+
+<p>A named character vector with item labels.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -92,8 +99,8 @@ the <code>builtin_itemtable</code> is used.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># get labels of first two Macarthur items</span></span>
-<span class="r-in"><span class="fu">get_labels</span><span class="op">(</span><span class="fu"><a href="get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"mac"</span>, number <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span>, trim <span class="op">=</span> <span class="fl">40</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># get labels of first two Macarthur items</span></span></span>
+<span class="r-in"><span><span class="fu">get_labels</span><span class="op">(</span><span class="fu"><a href="get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"mac"</span>, number <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span>, trim <span class="op">=</span> <span class="fl">40</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        macgmd001                        macgmd002 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "Child walks in a straight line"    "Walks backwards for 5 steps" </span>
 </code></pre></div>
@@ -110,7 +117,7 @@ the <code>builtin_itemtable</code> is used.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

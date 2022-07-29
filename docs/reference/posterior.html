@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.2</span>
       </span>
     </div>
 
@@ -63,23 +63,34 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">posterior</span><span class="op">(</span><span class="va">score</span>, <span class="va">tau</span>, <span class="va">prior</span>, <span class="va">qp</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">posterior</span><span class="op">(</span><span class="va">score</span>, <span class="va">tau</span>, <span class="va">prior</span>, <span class="va">qp</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>score</dt>
 <dd><p>Integer, either 0 (fail) and 1 (pass)</p></dd>
+
+
 <dt>tau</dt>
 <dd><p>Numeric, difficulty parameter</p></dd>
+
+
 <dt>prior</dt>
 <dd><p>Vector of prior values on quadrature points <code>qp</code></p></dd>
+
+
 <dt>qp</dt>
 <dd><p>vector of equally spaced quadrature points</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A vector of length <code>length(prior)</code></p>
+    
+
+<p>A vector of length <code>length(prior)</code></p>
+
+
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -112,7 +123,7 @@ a binary Rasch model (e.g. by
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

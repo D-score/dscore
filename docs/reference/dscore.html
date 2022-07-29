@@ -19,7 +19,7 @@ observations on milestones."><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.2</span>
       </span>
     </div>
 
@@ -67,37 +67,37 @@ observations on milestones.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">dscore</span><span class="op">(</span>
-  <span class="va">data</span>,
-  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,
-  xname <span class="op">=</span> <span class="st">"age"</span>,
-  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,
-  key <span class="op">=</span> <span class="st">"gsed"</span>,
-  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,
-  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,
-  prior_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">key</span> <span class="op">==</span> <span class="st">"dutch"</span>, <span class="st">".dutch"</span>, <span class="st">".gcdg"</span><span class="op">)</span>,
-  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,
-  transform <span class="op">=</span> <span class="cn">NULL</span>,
-  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,
-  population <span class="op">=</span> <span class="va">key</span>,
-  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="fu">dscore_posterior</span><span class="op">(</span>
-  <span class="va">data</span>,
-  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,
-  xname <span class="op">=</span> <span class="st">"age"</span>,
-  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,
-  key <span class="op">=</span> <span class="st">"gsed"</span>,
-  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,
-  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,
-  prior_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">key</span> <span class="op">==</span> <span class="st">"dutch"</span>, <span class="st">".dutch"</span>, <span class="st">".gcdg"</span><span class="op">)</span>,
-  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,
-  transform <span class="op">=</span> <span class="cn">NULL</span>,
-  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,
-  population <span class="op">=</span> <span class="va">key</span>,
-  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dscore</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
+<span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
+<span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
+<span>  key <span class="op">=</span> <span class="st">"gsed"</span>,</span>
+<span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
+<span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
+<span>  prior_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">key</span> <span class="op">==</span> <span class="st">"dutch"</span>, <span class="st">".dutch"</span>, <span class="st">".gcdg"</span><span class="op">)</span>,</span>
+<span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,</span>
+<span>  population <span class="op">=</span> <span class="va">key</span>,</span>
+<span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">dscore_posterior</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
+<span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
+<span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
+<span>  key <span class="op">=</span> <span class="st">"gsed"</span>,</span>
+<span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
+<span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
+<span>  prior_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">key</span> <span class="op">==</span> <span class="st">"dutch"</span>, <span class="st">".dutch"</span>, <span class="st">".gcdg"</span><span class="op">)</span>,</span>
+<span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,</span>
+<span>  population <span class="op">=</span> <span class="va">key</span>,</span>
+<span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -108,19 +108,27 @@ A row collects all observations made on a child on a set of
 milestones administered at a given age. The function calculates
 a D-score for each row. Different rows correspond to different
 children or different ages.</p></dd>
+
+
 <dt>items</dt>
 <dd><p>A character vector containing names of items to be
 included into the D-score calculation. Milestone scores are coded
 numerically as <code>1</code> (pass) and <code>0</code> (fail). By default,
 D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified <code>key</code>.</p></dd>
+
+
 <dt>xname</dt>
 <dd><p>A string with the name of the age variable in
 <code>data</code>. The default is <code>"age"</code>.</p></dd>
+
+
 <dt>xunit</dt>
 <dd><p>A string specifying the unit in which age is measured
 (either <code>"decimal"</code>, <code>"days"</code> or <code>"months"</code>).
 The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
+
+
 <dt>key</dt>
 <dd><p>A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
@@ -132,6 +140,8 @@ selects the latest key starting with the string "gsed".
 Use <code>key = ""</code> to use all item names,
 which should only be done if there are no duplicate itemnames
 in the itembank.</p></dd>
+
+
 <dt>itembank</dt>
 <dd><p>A <code>data.frame</code> with columns
 <code>key</code>, <code>item</code>, <code>tau</code>, <code>instrument</code>, <code>domain</code>,
@@ -139,9 +149,13 @@ in the itembank.</p></dd>
 and <code>tau</code> are required.
 The function uses <code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code> by
 default.</p></dd>
+
+
 <dt>metric</dt>
 <dd><p>A string, either <code>"dscore"</code> (default) or
 <code>"logit"</code>, signalling the metric in which ability is estimated.</p></dd>
+
+
 <dt>prior_mean</dt>
 <dd><p>A string specifying a column name in <code>data</code>
 with the mean of the prior for the D-score calculation.
@@ -152,30 +166,43 @@ calculate an age-dependent prior mean internally according to function
 The choice <code>prior_mean = ".dutch"</code>
 calculates <code>prior_mean</code> from the Count model coded in
 <code>dscore:::count_mu_dutch()</code>).</p></dd>
+
+
 <dt>prior_sd</dt>
 <dd><p>A string specifying a column name in <code>data</code>
 with the standard deviation of the prior for the D-score calculation.
 If not specified, the standard deviation is taken as 5.</p></dd>
+
+
 <dt>transform</dt>
 <dd><p>Vector of length 2, signalling the intercept
 and slope respectively of the linear transform that converts an
 observation in the logit scale to the the D-score scale. Only
 needed if <code>metric == "logit"</code>.</p></dd>
+
+
 <dt>qp</dt>
 <dd><p>Numeric vector of equally spaced quadrature points.
 This vector should span the range of all D-score values. The default
 (<code>qp = -10:100</code>) is suitable for age range 0-4 years.</p></dd>
+
+
 <dt>population</dt>
 <dd><p>A string describing the population. Currently
 supported are <code>"dutch"</code> and <code>"gcdg"</code> (default).</p></dd>
+
+
 <dt>dec</dt>
 <dd><p>A vector of two integers specifying the number of
 decimals for rounding the D-score and DAZ, respectively.
 The default is <code>dec = c(2L, 3L)</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The <code>dscore()</code> function returns a <code>data.frame</code> with
+    
+
+<p>The <code>dscore()</code> function returns a <code>data.frame</code> with
 <code>nrow(data)</code> rows and the following columns:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>a</code></td><td>Decimal age</td></tr><tr><td><code>n</code></td><td>Number of items with valid (0/1) data</td></tr><tr><td><code>p</code></td><td>Percentage of passed milestones</td></tr><tr><td><code>d</code></td><td>Ability estimate, mean of posterior</td></tr><tr><td><code>sem</code></td><td>Standard error of measurement, standard deviation of the posterior</td></tr><tr><td><code>daz</code></td><td>D-score corrected for age, calculated in Z-scale</td></tr></table><p>The <code>dscore_posterior()</code> function returns a numeric matrix with
 <code>nrow(data)</code> rows and <code>length(qp)</code> columns with the
 density at each quadrature point. The vector represents the full
@@ -231,21 +258,21 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
-<span class="r-in">  age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fl">21</span> <span class="op">/</span> <span class="fl">365.25</span>, <span class="fl">4</span><span class="op">)</span>, <span class="fl">10</span><span class="op">)</span>,</span>
-<span class="r-in">  ddifmd001 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
-<span class="r-in">  ddicmm029 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
-<span class="r-in">  ddigmd053 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># third item is not part of default key</span></span>
-<span class="r-in"><span class="fu"><a href="get_tau.html">get_tau</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fl">21</span> <span class="op">/</span> <span class="fl">365.25</span>, <span class="fl">4</span><span class="op">)</span>, <span class="fl">10</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  ddifmd001 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  ddicmm029 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  ddigmd053 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># third item is not part of default key</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="get_tau.html">get_tau</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ddifmd001 ddicmm029 ddigmd053 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      5.51      2.43        NA </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># calculate D-score</span></span>
-<span class="r-in"><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># calculate D-score</span></span></span>
+<span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         a n   p     d      sem    daz</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1      NA 0  NA    NA       NA     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2      NA 0  NA    NA       NA     NA</span>
@@ -257,13 +284,13 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.0575 2 0.5  4.82 1.881393 -1.754</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.0575 2 1.0 11.81 3.970219  0.219</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.0575 2 1.0 11.81 3.970219  0.219</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># calculate full posterior</span></span>
-<span class="r-in"><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">dscore_posterior</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># plot posterior for row 7</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>, y <span class="op">=</span> <span class="va">p</span><span class="op">[</span><span class="fl">7</span>, <span class="op">]</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"D-score"</span>,</span>
-<span class="r-in"> ylab <span class="op">=</span> <span class="st">"Density"</span>, xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">30</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># calculate full posterior</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">dscore_posterior</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># plot posterior for row 7</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>, y <span class="op">=</span> <span class="va">p</span><span class="op">[</span><span class="fl">7</span>, <span class="op">]</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"D-score"</span>,</span></span>
+<span class="r-in"><span> ylab <span class="op">=</span> <span class="st">"Density"</span>, xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">30</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="dscore-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -279,7 +306,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

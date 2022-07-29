@@ -1,9 +1,9 @@
-pandoc: 2.14.0.3
-pkgdown: 2.0.3
+pandoc: '2.18'
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   start: start.html
-last_built: 2022-07-11T20:23Z
+last_built: 2022-07-29T10:20Z
 urls:
   reference: https://d-score.github.io/dscore/reference
   article: https://d-score.github.io/dscore/articles

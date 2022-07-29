@@ -19,7 +19,7 @@ set of names."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.2</span>
       </span>
     </div>
 
@@ -67,15 +67,15 @@ set of names.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_itemnames</span><span class="op">(</span>
-  <span class="va">x</span>,
-  instrument <span class="op">=</span> <span class="cn">NULL</span>,
-  domain <span class="op">=</span> <span class="cn">NULL</span>,
-  mode <span class="op">=</span> <span class="cn">NULL</span>,
-  number <span class="op">=</span> <span class="cn">NULL</span>,
-  strict <span class="op">=</span> <span class="cn">FALSE</span>,
-  itemtable <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_itemnames</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  instrument <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  domain <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  mode <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  number <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  strict <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  itemtable <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -84,33 +84,48 @@ set of names.</p>
 <dd><p>A character vector, <code>data.frame</code> or an object of
 class <code>lean</code>. If not specified,
 the function will return all item names in <code>itemtable</code>.</p></dd>
+
+
 <dt>instrument</dt>
 <dd><p>A character vector with 3-position codes of instruments
 that should match. The default <code>instrument = NULL</code> allows for
 all instruments.</p></dd>
+
+
 <dt>domain</dt>
 <dd><p>A character vector with 2-position codes of domains
 that should match. The default <code>instrument = NULL</code> allows for
 all domains.</p></dd>
+
+
 <dt>mode</dt>
 <dd><p>A character vector with 1-position codes of the mode
 of administration. The default <code>mode = NULL</code> allows for all
 modes.</p></dd>
+
+
 <dt>number</dt>
 <dd><p>A numeric or character vector with item numbers.
 The default <code>number = NULL</code> allows for all numbers.</p></dd>
+
+
 <dt>strict</dt>
 <dd><p>A logical specifying whether the resulting item
 names must conform to one of the built-in names. The default is
 <code>strict = FALSE</code>.</p></dd>
+
+
 <dt>itemtable</dt>
 <dd><p>A <code>data.frame</code> set up according to the
 same structure as <code><a href="builtin_itemtable.html">builtin_itemtable()</a></code>. If not specified,
 the <code>builtin_itemtable</code> is used.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A vector with names of items</p>
+    
+
+<p>A vector with names of items</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -129,29 +144,29 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">itemnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aqigmc028"</span>, <span class="st">"grihsd219"</span>, <span class="st">""</span>, <span class="st">"age"</span>, <span class="st">"mdsgmd999"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># filter out impossible names</span></span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">itemnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aqigmc028"</span>, <span class="st">"grihsd219"</span>, <span class="st">""</span>, <span class="st">"age"</span>, <span class="st">"mdsgmd999"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># filter out impossible names</span></span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aqigmc028" "grihsd219" "mdsgmd999"</span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span>, strict <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span>, strict <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aqigmc028" "grihsd219"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># only items from specific instruments</span></span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span>, instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aqi"</span>, <span class="st">"mds"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># only items from specific instruments</span></span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span>, instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aqi"</span>, <span class="st">"mds"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aqigmc028" "mdsgmd999"</span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span>, instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aqi"</span>, <span class="st">"mds"</span><span class="op">)</span>, strict <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span><span class="va">itemnames</span>, instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"aqi"</span>, <span class="st">"mds"</span><span class="op">)</span>, strict <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aqigmc028"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># get all items from the se domain of iyo instrument</span></span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span>domain <span class="op">=</span> <span class="st">"se"</span>, instrument <span class="op">=</span> <span class="st">"iyo"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get all items from the se domain of iyo instrument</span></span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span>domain <span class="op">=</span> <span class="st">"se"</span>, instrument <span class="op">=</span> <span class="st">"iyo"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "iyosec001" "iyosec002" "iyosec003" "iyosec004" "iyosec005" "iyosec006"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "iyosec007" "iyosec008" "iyosec009" "iyosec010" "iyosec011" "iyosec012"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [13] "iyosec013" "iyosec014" "iyosec015" "iyosec016" "iyosec017" "iyosec018"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [19] "iyosec019" "iyosec020"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># get all item from the se domain with direct assessment mode</span></span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span>domain <span class="op">=</span> <span class="st">"se"</span>, mode <span class="op">=</span> <span class="st">"d"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get all item from the se domain with direct assessment mode</span></span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span>domain <span class="op">=</span> <span class="st">"se"</span>, mode <span class="op">=</span> <span class="st">"d"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "mdtsed001" "mdtsed002" "mdtsed003" "mdtsed004" "mdtsed005" "mdtsed006"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "mdtsed007" "mdtsed008" "mdtsed009" "mdtsed010" "mdtsed011" "mdtsed012"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [13] "mdtsed013" "mdtsed014" "mdtsed015" "mdtsed016" "mdtsed017" "mdtsed018"</span>
@@ -161,9 +176,9 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [37] "prised003" "prised004" "prised005" "prised006" "prised007" "prised008"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [43] "prised009" "prised010" "prised011" "prised012" "prised013" "prised014"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [49] "prised015" "prised016"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># get all item numbers 70 and 73 from gm domain</span></span>
-<span class="r-in"><span class="fu">get_itemnames</span><span class="op">(</span>number <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">70</span>, <span class="fl">73</span><span class="op">)</span>, domain <span class="op">=</span> <span class="st">"gm"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get all item numbers 70 and 73 from gm domain</span></span></span>
+<span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span>number <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">70</span>, <span class="fl">73</span><span class="op">)</span>, domain <span class="op">=</span> <span class="st">"gm"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "by3gmd070" "ddigmd070" "ddigmm073" "mulgmd070"</span>
 </code></pre></div>
     </div>
@@ -179,7 +194,7 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.5.1-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.5.2-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -60,27 +60,26 @@ for more details.
     measurement](https://d-score.org/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
     development](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
-    [Fernald et al.](#ref-fernald2017) ([2017](#ref-fernald2017))
+    Fernald et al. ([2017](#ref-fernald2017))
 
 ### Keys
 
-1.  Project with `dutch` key, 0-2 years: [van
-    Buuren](#ref-vanbuuren2014) ([2014](#ref-vanbuuren2014))
-2.  Project with `gcdg` key: [Weber et al.](#ref-weber2019)
-    ([2019](#ref-weber2019))
-3.  Project with `gsed` key: [GSED team (Maureen Black, Kieran Bromley,
+1.  Project with `dutch` key, 0-2 years: van Buuren
+    ([2014](#ref-vanbuuren2014))
+2.  Project with `gcdg` key: Weber et al. ([2019](#ref-weber2019))
+3.  Project with `gsed` key: GSED team (Maureen Black, Kieran Bromley,
     Vanessa Cavallera (lead author), Jorge Cuartas, Tarun Dua
     (corresponding author), Iris Eekhout, Günther Fink, Melissa
     Gladstone, Katelyn Hepworth, Magdalena Janus, Patricia Kariger,
     Gillian Lancaster, Dana McCoy, Gareth McCray, Abbie Raikes, Marta
     Rubio-Codina, Stef van Buuren, Marcus Waldman, Susan Walker and Ann
-    Weber)](#ref-gsedteam2019) ([2019](#ref-gsedteam2019))
+    Weber) ([2019](#ref-gsedteam2019))
 
 ### Methodology
 
-1.  Interval scale: [Jacobusse, van Buuren, and
-    Verkerk](#ref-jacobusse2006) ([2006](#ref-jacobusse2006))
-2.  Adaptive testing: [Jacobusse and van Buuren](#ref-jacobusse2007)
+1.  Interval scale: Jacobusse, van Buuren, and Verkerk
+    ([2006](#ref-jacobusse2006))
+2.  Adaptive testing: Jacobusse and van Buuren
     ([2007](#ref-jacobusse2007))
 
 ### Shiny app

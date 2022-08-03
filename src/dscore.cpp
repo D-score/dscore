@@ -105,7 +105,7 @@ double wmean(NumericVector x, NumericVector w) {
 //' | Name | Label |
 //' | --- | --------- |
 //' `eap` | Mean of the posterior
-//' `gp`  | Vcetor of quadrature points
+//' `gp`  | Vector of quadrature points
 //' `posterior` | Vector with posterior distribution.
 //'
 //' Since `dscore V40.1` the function does not return the `"start"` element.
@@ -121,19 +121,26 @@ List calculate_posterior(NumericVector scores,
   int m = scores.length();
   int score;
   double tauj;
+  double relevance = 10;
+  double eap;
   NumericVector prior;
   NumericVector post;
 
-  // initialize prior and posterior
+  // initialize prior, posterior and EAP
   prior = dnorm(qp, mu, sd);
   prior = normalize(prior, qp);
   post = prior;
   fullpost["posterior"] = post;
+  fullpost["eap"] = wmean(qp, post);
 
   for(int j = 0; j < m; j++){ // loop over item scores
     score = scores[j];
     tauj = tau[j];
+    eap = fullpost["eap"];
     if (!arma::is_finite(score) | !arma::is_finite(tauj)){
+      continue;
+    }
+    if (abs(tauj - eap) > relevance) {
       continue;
     }
 

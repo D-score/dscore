@@ -24,7 +24,7 @@ preferred metric/scale.}
 A \code{list} with three elements:\tabular{ll}{
    Name \tab Label \cr
    \code{eap} \tab Mean of the posterior \cr
-   \code{gp} \tab Vcetor of quadrature points \cr
+   \code{gp} \tab Vector of quadrature points \cr
    \code{posterior} \tab Vector with posterior distribution. \cr
 }
 

@@ -55,7 +55,7 @@ posterior <- function(score, tau, prior, qp) {
 #' | Name | Label |
 #' | --- | --------- |
 #' `eap` | Mean of the posterior
-#' `gp`  | Vcetor of quadrature points
+#' `gp`  | Vector of quadrature points
 #' `posterior` | Vector with posterior distribution.
 #'
 #' Since `dscore V40.1` the function does not return the `"start"` element.

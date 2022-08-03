@@ -19,7 +19,7 @@ observations on milestones."><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.3</span>
       </span>
     </div>
 
@@ -80,7 +80,8 @@ observations on milestones.</p>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,</span>
 <span>  population <span class="op">=</span> <span class="va">key</span>,</span>
-<span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span></span>
+<span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
+<span>  relevance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">dscore_posterior</span><span class="op">(</span></span>
@@ -96,7 +97,8 @@ observations on milestones.</p>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,</span>
 <span>  population <span class="op">=</span> <span class="va">key</span>,</span>
-<span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span></span>
+<span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
+<span>  relevance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -196,6 +198,15 @@ supported are <code>"dutch"</code> and <code>"gcdg"</code> (default).</p></dd>
 <dd><p>A vector of two integers specifying the number of
 decimals for rounding the D-score and DAZ, respectively.
 The default is <code>dec = c(2L, 3L)</code>.</p></dd>
+
+
+<dt>relevance</dt>
+<dd><p>A numeric vector of length with the lower and
+upper bounds of the relevance interval. The procedure calculates
+a dynamic EAP for each item. If the difficulty level (tau) of the
+next item is outside the relevance interval around EAP, the procedure
+ignore the score on the item. The default is <code>c(-Inf, +Inf)</code> does not
+ignore scores.</p></dd>
 
 </dl></div>
     <div id="value">

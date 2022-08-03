@@ -18,7 +18,8 @@ dscore(
   transform = NULL,
   qp = -10:100,
   population = key,
-  dec = c(2L, 3L)
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf)
 )
 
 dscore_posterior(
@@ -34,7 +35,8 @@ dscore_posterior(
   transform = NULL,
   qp = -10:100,
   population = key,
-  dec = c(2L, 3L)
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf)
 )
 }
 \arguments{
@@ -107,6 +109,13 @@ supported are \code{"dutch"} and \code{"gcdg"} (default).}
 \item{dec}{A vector of two integers specifying the number of
 decimals for rounding the D-score and DAZ, respectively.
 The default is \code{dec = c(2L, 3L)}.}
+
+\item{relevance}{A numeric vector of length with the lower and
+upper bounds of the relevance interval. The procedure calculates
+a dynamic EAP for each item. If the difficulty level (tau) of the
+next item is outside the relevance interval around EAP, the procedure
+ignore the score on the item. The default is \code{c(-Inf, +Inf)} does not
+ignore scores.}
 }
 \value{
 The \code{dscore()} function returns a \code{data.frame} with

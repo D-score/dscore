@@ -91,6 +91,8 @@ double wmean(NumericVector x, NumericVector w) {
 
 //' Calculate posterior of ability
 //'
+//' If the tauj is not within the range rello - relhi from the
+//' dynamic EAP, the procedure ignores the score of item j.
 //' @param scores A vector with PASS/FAIL observations.
 //' Scores are coded numerically as `pass = 1` and `fail = 0`.
 //' @param tau A vector containing the item difficulties for the item
@@ -99,6 +101,8 @@ double wmean(NumericVector x, NumericVector w) {
 //' @param qp Numeric vector of equally spaced quadrature points.
 //' @param mu Numeric scalar. The mean of the prior.
 //' @param sd Numeric scalar. Standard deviation of the prior.
+//' @param relhi Positive numeric scalar. Upper end of the relevance interval
+//' @param rello Negative numeric scalar. Lower end of the relevance interval
 //' @author Stef van Buuren, Arjan Huizing, 2020
 //' @return A `list` with three elements:
 //'
@@ -113,7 +117,8 @@ double wmean(NumericVector x, NumericVector w) {
 List calculate_posterior(NumericVector scores,
                           NumericVector tau,
                           NumericVector qp,
-                          double mu, double sd){
+                          double mu, double sd,
+                          double relhi, double rello){
 
   List fullpost = List::create(Named("eap",NumericVector({NA_REAL})),
                                Named("qp",qp),
@@ -121,7 +126,6 @@ List calculate_posterior(NumericVector scores,
   int m = scores.length();
   int score;
   double tauj;
-  double relevance = 10;
   double eap;
   NumericVector prior;
   NumericVector post;
@@ -140,7 +144,7 @@ List calculate_posterior(NumericVector scores,
     if (!arma::is_finite(score) | !arma::is_finite(tauj)){
       continue;
     }
-    if (abs(tauj - eap) > relevance) {
+    if (((tauj - eap) > relhi) | ((tauj - eap) < rello)) {
       continue;
     }
 

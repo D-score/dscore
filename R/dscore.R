@@ -62,6 +62,12 @@
 #' @param dec A vector of two integers specifying the number of
 #' decimals for rounding the D-score and DAZ, respectively.
 #' The default is `dec = c(2L, 3L)`.
+#' @param relevance A numeric vector of length with the lower and
+#' upper bounds of the relevance interval. The procedure calculates
+#' a dynamic EAP for each item. If the difficulty level (tau) of the
+#' next item is outside the relevance interval around EAP, the procedure
+#' ignore the score on the item. The default is `c(-Inf, +Inf)` does not
+#' ignore scores.
 #' @return
 #' The `dscore()` function returns a `data.frame` with
 #' `nrow(data)` rows and the following columns:
@@ -169,7 +175,8 @@ dscore <- function(data,
                    transform = NULL,
                    qp = -10:100,
                    population = key,
-                   dec = c(2L, 3L)) {
+                   dec = c(2L, 3L),
+                   relevance = c(-Inf, Inf)) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   if (key == "gsed") {
@@ -188,7 +195,8 @@ dscore <- function(data,
     prior_mean = prior_mean, prior_sd = prior_sd,
     transform = transform, qp = qp,
     population = population, dec = dec,
-    posterior = FALSE
+    posterior = FALSE,
+    relevance = relevance
   )
 }
 
@@ -208,7 +216,8 @@ dscore_posterior <- function(data,
                              transform = NULL,
                              qp = -10:100,
                              population = key,
-                             dec = c(2L, 3L)) {
+                             dec = c(2L, 3L),
+                             relevance = c(-Inf, Inf)) {
 
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
@@ -229,7 +238,8 @@ dscore_posterior <- function(data,
     prior_mean = prior_mean, prior_sd = prior_sd,
     transform = transform, qp = qp,
     population = population, dec = dec,
-    posterior = TRUE
+    posterior = TRUE,
+    relevance = relevance
   )
 }
 
@@ -238,7 +248,10 @@ calc_dscore <- function(data, items, xname, xunit,
                         prior_mean, prior_sd,
                         transform, qp,
                         population, dec,
-                        posterior) {
+                        posterior,
+                        relevance) {
+  stopifnot(length(relevance) == 2L)
+
   # handle zero rows
   if (nrow(data) == 0L) {
     return(
@@ -340,7 +353,9 @@ calc_dscore <- function(data, items, xname, xunit,
           tau = .data$tau,
           qp = qp,
           mu = (.data$mu)[1L],
-          sd = (.data$sd)[1L]
+          sd = (.data$sd)[1L],
+          relhi = relevance[2L],
+          rello = relevance[1L]
         )$posterior)
       )
 
@@ -376,7 +391,9 @@ calc_dscore <- function(data, items, xname, xunit,
           tau = .data$tau,
           qp = qp,
           mu = (.data$mu)[1L],
-          sd = (.data$sd)[1L]
+          sd = (.data$sd)[1L],
+          relhi = relevance[2L],
+          rello = relevance[1L]
         )$posterior)
       )
 

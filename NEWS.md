@@ -1,3 +1,7 @@
+# dscore 1.5.3
+
+* Adds a `relevance` argument to `dscore()` and `dscore_posterior()` to restrict calculation of D-scores to those items that have their `tau` within this relevance interval around the dynamic EAP estimate.
+
 # dscore 1.5.2
 
 * Repairs bug in `builtin_itembank` that inherits old (gsed1912) tau's into new key (gsed2206) for instruments `gto` and `gpa`. As a consequence, D-score were incorrectly calculated when `gto` and `gpa` item names were used.

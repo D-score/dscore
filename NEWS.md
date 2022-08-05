@@ -1,3 +1,7 @@
+# dscore 1.5.4
+
+* Adds experimental key `294_0` to the `builtin_itembank`.
+
 # dscore 1.5.3
 
 * Adds a `relevance` argument to `dscore()` and `dscore_posterior()` to restrict calculation of D-scores to those items that have their `tau` within this relevance interval around the dynamic EAP estimate.

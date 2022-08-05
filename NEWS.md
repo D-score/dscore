@@ -1,3 +1,7 @@
+# dscore 1.5.5
+
+* Initialise proper default `population` when key is `294_0`.
+
 # dscore 1.5.4
 
 * Adds experimental key `294_0` to the `builtin_itembank`.

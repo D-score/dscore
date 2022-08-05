@@ -20,11 +20,16 @@
 #' @param xunit A string specifying the unit in which age is measured
 #' (either `"decimal"`, `"days"` or `"months"`).
 #' The default (`"decimal"`) means decimal age in years.
-#' @param key A string that sets the key, the set of difficulty
+#' @param key A string that selects a subset in the itembank that
+#' makes up the key, the set of difficulty
 #' estimates from a fitted Rasch model.
-#' The built-in keys are: `"gsed"` (default), `"gcdg"`,
-#' and `"dutch"`. Use `key = ""` to use all item names,
-#' which should only be done if there are no duplicate itemnames.
+#' The built-in keys are: `"gsed2206"` (default), `"gsed1912"`,
+#' `"lf2206"`, `"sf2206"`, `"gcdg"`,
+#' and `"dutch"`. Since version 1.5.0, the default `key = "gsed"`
+#' selects the latest key starting with the string "gsed".
+#' Use `key = ""` to use all item names,
+#' which should only be done if there are no duplicate itemnames
+#' in the itembank.
 #' @param itembank A `data.frame` with columns
 #' `key`, `item`, `tau`, `instrument`, `domain`,
 #' `mode`, `number` and `label`. Only columns `item`
@@ -35,8 +40,9 @@
 #' `"logit"`, signalling the metric in which ability is estimated.
 #' @param prior_mean A string specifying a column name in `data`
 #' with the mean of the prior for the D-score calculation.
-#' The default `prior_mean = ".gcdg"` calculates an age-dependent
-#' prior mean internally according to function
+#' The default depends on the `key`. If `key == "dutch"` then
+#' `prior_mean = "dutch"`, else it is `".gcdg"`. These settings
+#' calculate an age-dependent prior mean internally according to function
 #' `dscore:::count_mu_gcdg()`.
 #' The choice `prior_mean = ".dutch"`
 #' calculates `prior_mean` from the Count model coded in
@@ -53,9 +59,15 @@
 #' (`qp = -10:100`) is suitable for age range 0-4 years.
 #' @param population A string describing the population. Currently
 #' supported are `"dutch"` and `"gcdg"` (default).
-#' @param dec Integer specifying the number of decimals for
-#' rounding the ability estimates and the DAZ. The default is
-#' `dec = 3`.
+#' @param dec A vector of two integers specifying the number of
+#' decimals for rounding the D-score and DAZ, respectively.
+#' The default is `dec = c(2L, 3L)`.
+#' @param relevance A numeric vector of length with the lower and
+#' upper bounds of the relevance interval. The procedure calculates
+#' a dynamic EAP for each item. If the difficulty level (tau) of the
+#' next item is outside the relevance interval around EAP, the procedure
+#' ignore the score on the item. The default is `c(-Inf, +Inf)` does not
+#' ignore scores.
 #' @return
 #' The `dscore()` function returns a `data.frame` with
 #' `nrow(data)` rows and the following columns:
@@ -82,15 +94,16 @@
 #'
 #' The item names should correspond to the `"gsed"` lexicon.
 #'
-#' The built-in itembank (object [builtin_itembank()]) supports
-#' keys `"gsed"` (default), `"gcdg"` and `"dutch"`.
 #' A key is defined by the set of estimated item difficulties.
 #'
 #' Key | Model | Quadrature | Instruments | Direct/Caregiver | Reference
 #' --- | -----:| ----------:| ----------: |:----------------:|:---------
 #' `"dutch"` | `75_0`   | `-10:80`  | 1   | direct | Van Buuren, 2014/2020
 #' `"gcdg"`  | `565_18` | `-10:100` | 14  | direct | Weber, 2019
-#' `"gsed"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
+#' `"gsed1912"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
+#' `"gsed2206"`  | `818_17` | `-10:100` | 22  | mixed  | GSED Team, 2022
+#' `"lf2206"`    | `155_0` | `-10:100`  | 1   | direct | GSED Team, 2022
+#' `"sf2206"`    | `139_0` | `-10:100`  | 1   | caregiver | GSED Team, 2022
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
@@ -114,11 +127,7 @@
 #'
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
-#' [pdf](https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf)
-#'
-#' Van Buuren S, Dusseldorp E, Doove B (2017).
-#' D-scores and references for ages 2-4 years. The Netherlands.
-#' In preparation, 2017-11-27.
+#' <https://stefvanbuuren.name/publication/van-buuren-2014-gc/>
 #'
 #' Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 #' Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -126,7 +135,7 @@
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
-#' [pdf](https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf).
+#' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>
 #'
 #' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)
 #' @seealso [get_tau()],
@@ -161,21 +170,34 @@ dscore <- function(data,
                    key = "gsed",
                    itembank = dscore::builtin_itembank,
                    metric = c("dscore", "logit"),
-                   prior_mean = ".gcdg",
+                   prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
                    prior_sd = NULL,
                    transform = NULL,
                    qp = -10:100,
                    population = key,
-                   dec = 3L) {
+                   dec = c(2L, 3L),
+                   relevance = c(-Inf, Inf)) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
+  if (key == "gsed") {
+    key <- "gsed2206"
+    population <- "gcdg"
+  } else if (substr(key, 1, 4) == "gsed") {
+    population <- "gcdg"
+  }
+  if (substr(key, 1, 2) %in% c("lf", "sf")) {
+    population <- "gcdg"
+  }
+  if (key == "294_0") population <- "gcdg"
+
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
     key = key, itembank = itembank, metric = metric,
     prior_mean = prior_mean, prior_sd = prior_sd,
     transform = transform, qp = qp,
     population = population, dec = dec,
-    posterior = FALSE
+    posterior = FALSE,
+    relevance = relevance
   )
 }
 
@@ -190,21 +212,36 @@ dscore_posterior <- function(data,
                              key = "gsed",
                              itembank = dscore::builtin_itembank,
                              metric = c("dscore", "logit"),
-                             prior_mean = ".gcdg",
+                             prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
                              prior_sd = NULL,
                              transform = NULL,
                              qp = -10:100,
                              population = key,
-                             dec = 3L) {
+                             dec = c(2L, 3L),
+                             relevance = c(-Inf, Inf)) {
+
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
+
+  if (key == "gsed") {
+    key <- "gsed2206"
+    population <- "gcdg"
+  } else if (substr(key, 1, 4) == "gsed") {
+    population <- "gcdg"
+  }
+  if (substr(key, 1, 2) %in% c("lf", "sf")) {
+    population <- "gcdg"
+  }
+  if (key == "294_0") population <- "gcdg"
+
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
     key = key, itembank = itembank, metric = metric,
     prior_mean = prior_mean, prior_sd = prior_sd,
     transform = transform, qp = qp,
     population = population, dec = dec,
-    posterior = TRUE
+    posterior = TRUE,
+    relevance = relevance
   )
 }
 
@@ -213,7 +250,10 @@ calc_dscore <- function(data, items, xname, xunit,
                         prior_mean, prior_sd,
                         transform, qp,
                         population, dec,
-                        posterior) {
+                        posterior,
+                        relevance) {
+  stopifnot(length(relevance) == 2L)
+
   # handle zero rows
   if (nrow(data) == 0L) {
     return(
@@ -231,10 +271,10 @@ calc_dscore <- function(data, items, xname, xunit,
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
   a <- switch(xunit,
-    decimal = round(data[[xname]], 3L),
-    months  = round(data[[xname]] / 12, 3L),
-    days    = round(data[[xname]] / 365.25, 3L),
-    rep(NA, nrow(data))
+              decimal = round(data[[xname]], 4L),
+              months  = round(data[[xname]] / 12, 4L),
+              days    = round(data[[xname]] / 365.25, 4L),
+              rep(NA, nrow(data))
   )
 
   # obtain difficulty estimates
@@ -315,7 +355,9 @@ calc_dscore <- function(data, items, xname, xunit,
           tau = .data$tau,
           qp = qp,
           mu = (.data$mu)[1L],
-          sd = (.data$sd)[1L]
+          sd = (.data$sd)[1L],
+          relhi = relevance[2L],
+          rello = relevance[1L]
         )$posterior)
       )
 
@@ -323,14 +365,14 @@ calc_dscore <- function(data, items, xname, xunit,
     # return prior if calculate_posterior returned NULL
     data4 <- matrix(NA, nrow = nrow(data), ncol = length(qp))
     for (i in seq_len(nrow(data4))) {
-      idx <- data3[, ".rownum"] == i
+      idx <- data3[, ".rownum", drop = TRUE] == i
       f <- unlist(data3[idx, "w"])
       if (!is.null(f)) {
         data4[i, ] <- f
       } else {
         data4[i, ] <- dnorm(qp,
-          mean = as.double(data2[i, "mu"]),
-          sd = as.double(data2[i, "sd"])
+                            mean = as.double(data2[i, "mu"]),
+                            sd = as.double(data2[i, "sd"])
         )
       }
     }
@@ -344,14 +386,16 @@ calc_dscore <- function(data, items, xname, xunit,
       group_by(.data$.rownum, .data$a) %>%
       summarise(
         n = n(),
-        p = round(mean(.data$score), digits = dec),
+        p = round(mean(.data$score), digits = 4L),
         x = list(qp),
         w = list(calculate_posterior(
           scores = .data$score,
           tau = .data$tau,
           qp = qp,
           mu = (.data$mu)[1L],
-          sd = (.data$sd)[1L]
+          sd = (.data$sd)[1L],
+          relhi = relevance[2L],
+          rello = relevance[1L]
         )$posterior)
       )
 
@@ -367,13 +411,12 @@ calc_dscore <- function(data, items, xname, xunit,
       left_join(data4, by = ".rownum") %>%
       mutate(
         n = recode(.data$n, .missing = 0L),
+        d = round(.data$d, digits = dec[1L]),
         daz = daz(
           d = .data$d, x = .data$a,
           reference = get_reference(population),
-          dec = dec
-        ),
-        daz = ifelse(is.nan(.data$daz), NA, .data$daz),
-        d = round(.data$d, digits = dec)
+          dec = dec[2L]),
+        daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) %>%
       select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
     return(data5)

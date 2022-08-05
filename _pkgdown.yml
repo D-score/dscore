@@ -1,6 +1,6 @@
 destination: docs
 title: dscore
-url: https://stefvanbuuren.github.io/dscore
+url: https://d-score.github.io/dscore
 template:
   params:
     bootswatch: flatly

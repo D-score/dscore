@@ -4,28 +4,32 @@
 \name{builtin_itemtable}
 \alias{builtin_itemtable}
 \title{Global Scale for Early Development - itemtable}
-\format{A \code{data.frame} with variables:\tabular{ll}{
+\format{
+A \code{data.frame} with variables:\tabular{ll}{
    Name \tab Label \cr
    \code{item} \tab Item name, gsed lexicon \cr
-   \code{instrument} \tab Instrument code, 3 letters \cr
-   \code{domain} \tab Domain code, 2 letter \cr
-   \code{mode} \tab Mode code, 1 letter \cr
-   \code{number} \tab Item number, 3 numbers \cr
    \code{equate} \tab Equate group \cr
    \code{label} \tab Label (English) \cr
-}}
+}
+}
 \usage{
 builtin_itemtable
 }
 \description{
-The built-in variable named \code{itemtable}
+The built-in variable named \code{builtin_itemtable}
 contains descriptions of all items found in the \code{gsed}
 data.
 }
 \details{
-Data are collected by the members of the Global Scale for Early
+Data are collected by the members of the Global Scales for Early
 Development (GSED) group.
-The \code{itemtable} is created by \verb{\\\\data-raw\\\\R\\\\import_itemtable.R}.
+The \code{itemtable} is created by \verb{\\\\data-raw\\\\R\\\\save_builtin_itemtable.R}.
+
+Last update:
+\itemize{
+\item May 30, 2022 - added gto (LF) and gpa (SF) items
+\item June 1, 2022 - added seven gsd items
+}
 }
 \author{
 Compiled by Stef van Buuren

@@ -34,19 +34,62 @@ write.table(ib_gcdg,
   na = "", row.names = FALSE
 )
 
-# ------------- export gsed key
+# ------------- export gsed1912 key
 fn <- path.expand("~/Project/GSED/dmetric/models/807_17/model.Rds")
 gsed_model_807_17 <- readRDS(file = fn)
 ib_gsed <- gsed_model_807_17$itembank %>%
   mutate(
-    key = "gsed",
+    key = "gsed1912",
     tau = round(tau, 2)
   ) %>%
   select(one_of("key", "item", "tau"))
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
-fo <- file.path(project, "data-raw/data/keys/gsed.txt")
+fo <- file.path(project, "data-raw/data/keys/gsed1912.txt")
 write.table(ib_gsed,
   file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
-)
+  na = "", row.names = FALSE)
 
+# ------------- export gsed2206 key
+fn <- path.expand("~/Project/GSED/phase1/joint/818_17_joint_fixed/model.Rds")
+gsed_model_818_17 <- readRDS(file = fn)
+ib_gsed <- gsed_model_818_17$itembank %>%
+  mutate(
+    key = "gsed2206",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
+fo <- file.path(project, "data-raw/data/keys/gsed2206.txt")
+write.table(ib_gsed,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+# ------------- export lf2206 key
+fn <- path.expand("~/Project/GSED/phase1/lf/155_0/model.Rds")
+gsed_model <- readRDS(file = fn)
+ib_gsed <- gsed_model$itembank %>%
+  mutate(
+    key = "lf2206",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
+fo <- file.path(project, "data-raw/data/keys/lf2206.txt")
+write.table(ib_gsed,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+# ------------- export sf2206 key
+fn <- path.expand("~/Project/GSED/phase1/sf/139_0/model.Rds")
+gsed_model <- readRDS(file = fn)
+ib_gsed <- gsed_model$itembank %>%
+  mutate(
+    key = "sf2206",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item, order = "indm"), ]
+fo <- file.path(project, "data-raw/data/keys/sf2206.txt")
+write.table(ib_gsed,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)

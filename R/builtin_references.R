@@ -44,7 +44,7 @@
 #'
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.
-#' [pdf](https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf)
+#' <https://stefvanbuuren.name/publication/van-buuren-2014-gc/>
 #'
 #' Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 #' Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -52,7 +52,7 @@
 #' Richter L, Black MM (2019). The D-score: a metric for interpreting
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
-#' [pdf](https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf).
+#' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>
 #'
 #' @seealso [dscore()]
 "builtin_references"

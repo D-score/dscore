@@ -25,7 +25,7 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
   if(d.size() != qp.size()){
     Rcpp::stop("Arguments `d` and  `qp` of different length");
   }
-  NumericVector normalized = (d/sum(d)) / (qp(1) - qp(0));
+  NumericVector normalized = d/sum(d);
   return(normalized);
 }
 
@@ -55,7 +55,8 @@ NumericVector posterior(int score, double tau,
   if((score < 1) | (score > 2)){stop("score out-of-range.");}
 
   // compute category respones probability under 1PL model
-  NumericVector p = plogis(qp, tau);
+  double scale = qp(1) - qp(0);
+  NumericVector p = plogis(qp, tau, scale);
 
   if(score == 1){
     cpc = 1.0 - p;
@@ -90,6 +91,8 @@ double wmean(NumericVector x, NumericVector w) {
 
 //' Calculate posterior of ability
 //'
+//' If the tauj is not within the range rello - relhi from the
+//' dynamic EAP, the procedure ignores the score of item j.
 //' @param scores A vector with PASS/FAIL observations.
 //' Scores are coded numerically as `pass = 1` and `fail = 0`.
 //' @param tau A vector containing the item difficulties for the item
@@ -98,13 +101,15 @@ double wmean(NumericVector x, NumericVector w) {
 //' @param qp Numeric vector of equally spaced quadrature points.
 //' @param mu Numeric scalar. The mean of the prior.
 //' @param sd Numeric scalar. Standard deviation of the prior.
+//' @param relhi Positive numeric scalar. Upper end of the relevance interval
+//' @param rello Negative numeric scalar. Lower end of the relevance interval
 //' @author Stef van Buuren, Arjan Huizing, 2020
 //' @return A `list` with three elements:
 //'
 //' | Name | Label |
 //' | --- | --------- |
 //' `eap` | Mean of the posterior
-//' `gp`  | Vcetor of quadrature points
+//' `gp`  | Vector of quadrature points
 //' `posterior` | Vector with posterior distribution.
 //'
 //' Since `dscore V40.1` the function does not return the `"start"` element.
@@ -112,7 +117,8 @@ double wmean(NumericVector x, NumericVector w) {
 List calculate_posterior(NumericVector scores,
                           NumericVector tau,
                           NumericVector qp,
-                          double mu, double sd){
+                          double mu, double sd,
+                          double relhi, double rello){
 
   List fullpost = List::create(Named("eap",NumericVector({NA_REAL})),
                                Named("qp",qp),
@@ -120,19 +126,25 @@ List calculate_posterior(NumericVector scores,
   int m = scores.length();
   int score;
   double tauj;
+  double eap;
   NumericVector prior;
   NumericVector post;
 
-  // initialize prior and posterior
+  // initialize prior, posterior and EAP
   prior = dnorm(qp, mu, sd);
   prior = normalize(prior, qp);
   post = prior;
   fullpost["posterior"] = post;
+  fullpost["eap"] = wmean(qp, post);
 
   for(int j = 0; j < m; j++){ // loop over item scores
     score = scores[j];
     tauj = tau[j];
+    eap = fullpost["eap"];
     if (!arma::is_finite(score) | !arma::is_finite(tauj)){
+      continue;
+    }
+    if (((tauj - eap) > relhi) | ((tauj - eap) < rello)) {
       continue;
     }
 

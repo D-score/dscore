@@ -4,7 +4,8 @@
 \name{builtin_references}
 \alias{builtin_references}
 \title{Age-conditional reference distribution of D-score}
-\format{A \code{data.frame} with 265 rows and 17 variables:\tabular{ll}{
+\format{
+A \code{data.frame} with 265 rows and 17 variables:\tabular{ll}{
    Name \tab Label \cr
    \code{pop} \tab Population, either \code{"dutch"} or \code{"gcdg"} \cr
    \code{age} \tab Decimal age in years \cr
@@ -23,7 +24,8 @@
    \code{SD0} \tab 0SD centile, median \cr
    \code{SDP1} \tab +1SD centile \cr
    \code{SDP2} \tab +2SD centile \cr
-}}
+}
+}
 \usage{
 builtin_references
 }
@@ -51,7 +53,7 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
-\href{https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf}{pdf}
+\url{https://stefvanbuuren.name/publication/van-buuren-2014-gc/}
 
 Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -59,7 +61,7 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\href{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}{pdf}.
+\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}
 }
 \seealso{
 \code{\link[=dscore]{dscore()}}

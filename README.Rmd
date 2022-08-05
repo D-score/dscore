@@ -24,13 +24,14 @@ suppressPackageStartupMessages(library(ggplot2))
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-1.0.0-orange.svg)](https://github.com/stefvanbuuren/dscore)
+[![CRAN status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
+[![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
+[![](https://img.shields.io/badge/github%20version-1.5.5-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development 
-in children. The *D*-score can be used to analyze and predict 
-development of children using tools developed for numerical 
-measures, like height and weight.
+in children. You may use the *D*-score to analyze and predict 
+development of children similar to measures like height and weight.
 
 The `dscore` package contains tools to
 
@@ -47,7 +48,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 install.packages("remotes")
-remotes::install_github("stefvanbuuren/dscore")
+remotes::install_github("d-score/dscore")
 ```
 
 ## Overview
@@ -59,15 +60,15 @@ You may estimate the *D*-score and the *D*-score age-adjusted Z-score (DAZ) from
 3. Calculate *D*-score and DAZ;
 4. Summarise your results.
 
-The `dscore` package provides various function that support these steps. See [Getting started](https://stefvanbuuren.name/dscore/articles/start.html) for more details.
+The `dscore` package provides various function that support these steps. See [Getting started](https://d-score.org/dscore/articles/start.html) for more details.
 
 
 ## Resources
 
 ### Books and reports
 
-1. [*D*-score: Turning milestones into measurement](https://stefvanbuuren.name/dbook1/)
-2. [Inventory of 147 instruments for measuring early child development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries): @fernald2017
+1. [*D*-score: Turning milestones into measurement](https://d-score.org/dbook1/)
+2. [Inventory of 147 instruments for measuring early child development](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries): @fernald2017
 
 ### Keys
 
@@ -79,6 +80,10 @@ The `dscore` package provides various function that support these steps. See [Ge
 
 1. Interval scale: @jacobusse2006
 2. Adaptive testing: @jacobusse2007 
+
+### Shiny app
+
+If you want to calculate the D-score on your own data, and you're not an `R` user, you might wish to check out our interactive Shiny [dcalculator](https://tnochildhealthstatistics.shinyapps.io/dcalculator/) app.
 
 ## Acknowledgement
 

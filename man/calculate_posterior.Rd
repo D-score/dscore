@@ -4,7 +4,7 @@
 \alias{calculate_posterior}
 \title{Calculate posterior of ability}
 \usage{
-calculate_posterior(scores, tau, qp, mu, sd)
+calculate_posterior(scores, tau, qp, mu, sd, relhi, rello)
 }
 \arguments{
 \item{scores}{A vector with PASS/FAIL observations.
@@ -19,12 +19,16 @@ preferred metric/scale.}
 \item{mu}{Numeric scalar. The mean of the prior.}
 
 \item{sd}{Numeric scalar. Standard deviation of the prior.}
+
+\item{relhi}{Positive numeric scalar. Upper end of the relevance interval}
+
+\item{rello}{Negative numeric scalar. Lower end of the relevance interval}
 }
 \value{
 A \code{list} with three elements:\tabular{ll}{
    Name \tab Label \cr
    \code{eap} \tab Mean of the posterior \cr
-   \code{gp} \tab Vcetor of quadrature points \cr
+   \code{gp} \tab Vector of quadrature points \cr
    \code{posterior} \tab Vector with posterior distribution. \cr
 }
 
@@ -32,7 +36,8 @@ A \code{list} with three elements:\tabular{ll}{
 Since \verb{dscore V40.1} the function does not return the \code{"start"} element.
 }
 \description{
-Calculate posterior of ability
+If the tauj is not within the range rello - relhi from the
+dynamic EAP, the procedure ignores the score of item j.
 }
 \author{
 Stef van Buuren, Arjan Huizing, 2020

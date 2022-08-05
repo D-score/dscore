@@ -9,22 +9,22 @@ data <- data.frame(
 )
 
 z1 <- dscore(data, key = "dutch")
-expected_d1 <- c(NA, -1.971, -2.030, 1.203, 1.203, 1.203, 4.569, 4.569,
-                 4.569, 11.785)
+expected_d1 <- c(NA, -1.87, -1.94, 1.26, 1.26, 1.26, 4.63, 4.63,
+                 4.63, 12.06)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z1$d, expected_d1)
 })
 
 z2 <- dscore(data, key = "gcdg")
-expected_d2 <- c(NA, NA, 3.487, 0.971, 4.836, 4.836, 4.836, 4.836,
-                 11.846, 11.846)
+expected_d2 <- c(NA, NA, 3.47, 0.96, 4.83, 4.83, 4.83, 4.83,
+                 11.81, 11.81)
 test_that("produces expected D-scores - key gcdg", {
   expect_identical(z2$d, expected_d2)
 })
 
 z3 <- dscore(data, key = "gsed")
-expected_d3 <- c(NA, NA, 3.480, 0.969, 4.830, 4.830, 4.830, 4.830,
-                 11.842, 11.842)
+expected_d3 <- c(NA, NA, 3.46, 0.96, 4.82, 4.82, 4.82, 4.82,
+                 11.81, 11.81)
 test_that("produces expected D-scores - key gsed", {
   expect_identical(z3$d, expected_d3)
 })
@@ -38,8 +38,8 @@ test_that("produces expected D-scores - key dutch", {
 })
 
 z5 <- dscore(data, items = items[1:2], key = "dutch")
-expected_d5 <- c(NA, NA, 3.403, 0.492, 4.540, 4.540, 4.540,
-                 4.540, 11.784, 11.784)
+expected_d5 <- c(NA, NA, 3.53, 0.59, 4.61, 4.61, 4.61, 4.61,
+                 12.06, 12.06)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z5$d, expected_d5)
 })
@@ -62,3 +62,41 @@ data <- data.frame(age = numeric(0))
 test_that("handles zero rows", {
   expect_identical(nrow(dscore(data)), 0L)
 })
+
+# --- test negative ages
+# dscore, gsed lexicon
+data <- data.frame(
+  age = rep(-0.26, 10),
+  ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
+test_that("silently handles negative ages", {
+  expect_silent(dscore(data, key = "dutch"))
+})
+
+
+## D-score - test equivalence of dscore and logit metric
+data <- data.frame(
+  age = rep(round(21 / 365.25, 4), 10),
+  ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
+
+transform <- c(0, 2)
+keyd <- data.frame(key = "temp",
+                   item = items,
+                   tau = get_tau(items = items))
+
+zd <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch")
+
+zl <- dscore(data, items = items, dec = 4, metric = "logit", transform = transform,
+             itembank = keyd, key = "temp", population = "dutch")
+
+test_that("logit and dscore are identical", {
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2])
+  expect_equal(zl$d*transform[2] + transform[1], zd$d)
+})
+

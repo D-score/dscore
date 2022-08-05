@@ -4,7 +4,7 @@
 \alias{get_itemtable}
 \title{Get a subset of items from the itemtable}
 \usage{
-get_itemtable(items = NULL, itemtable = NULL)
+get_itemtable(items = NULL, itemtable = NULL, decompose = FALSE)
 }
 \arguments{
 \item{items}{A logical or character vector of item names to return. The
@@ -12,7 +12,11 @@ default (\code{NULL}) returns all items.}
 
 \item{itemtable}{A \code{data.frame} set up according to the
 same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not specified,
-the \code{builtin_itemtable} is used.}
+the \code{builtin_itemtable} is used. If \code{itemtable = ""}, then
+a dynamic item table is created from any specified item names.}
+
+\item{decompose}{If \code{TRUE}, the function adds four columns:
+\code{instrument}, \code{domain}, \code{mode} and \code{number}.}
 }
 \value{
 A \code{data.frame} with seven columns.
@@ -20,9 +24,13 @@ A \code{data.frame} with seven columns.
 \description{
 The \code{builtin_itemtable} object in the \code{dscore} package
 contains basic meta-information about items: a name, the equate group,
-the instrument, the domain and the item label.
+and the item label.
 The \code{get_itemtable()} function returns a subset of \code{items}
 in the itemtable.
+}
+\examples{
+head(get_itemtable(), 3)
+get_itemtable(LETTERS[1:3], "")
 }
 \seealso{
 \code{\link[=get_labels]{get_labels()}}, \code{\link[=get_itemnames]{get_itemnames()}}

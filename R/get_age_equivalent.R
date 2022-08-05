@@ -2,6 +2,9 @@
 #'
 #' This function calculates the ages at which a certain percent
 #' in the reference population passes the items.
+#'
+#' The function internally defines a scale factor given the key.
+#'
 #' @inheritParams dscore
 #' @param pct Numeric vector with requested percentiles (0-100). The
 #' default is `pct = c(10, 50, 90)`.
@@ -22,9 +25,26 @@ get_age_equivalent <- function(items,
                                key = "gsed",
                                itembank = dscore::builtin_itembank,
                                population = key,
-                               xunit = c("decimal", "days", "months"),
-                               dec = 3L) {
+                               xunit = c("decimal", "days", "months")) {
   xunit <- match.arg(xunit)
+  if (key == "gsed") {
+    key <- "gsed2206"
+    population <- "gcdg"
+  } else if (substr(key, 1, 4) == "gsed") {
+    population <- "gcdg"
+  }
+  if (substr(key, 1, 2) %in% c("lf", "sf")) {
+    population <- "gcdg"
+  }
+
+  # set scalefactor depending on key
+  scalefactor <- switch(key,
+                        dutch = 2.1044,
+                        gcdg = 2.075044,
+                        gsed = 2.075044,
+                        gsed2206 = 2.075044,
+                        gsed1912 = 2.075044,
+                        1.0)
 
   # obtain difficulty estimates
   ib <- tibble(
@@ -39,13 +59,13 @@ get_age_equivalent <- function(items,
     slice(rep(seq_along(items), each = length(pct))) %>%
     mutate(
       pct = rep(pct, length(items)),
-      d = .data$d + qlogis(.data$pct / 100),
+      d = .data$d + scalefactor * qlogis(.data$pct / 100),
       a = approx(x = reference$mu, y = reference$age, xout = .data$d)$y
     )
 
   # convert to requested age unit
   if (xunit == "days") ib$a <- round(ib$a * 365.25)
-  if (xunit == "months") ib$a <- round(ib$a * 12, dec)
+  if (xunit == "months") ib$a <- round(ib$a * 12, 4L)
 
   ib
 }

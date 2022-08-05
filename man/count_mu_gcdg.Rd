@@ -2,7 +2,7 @@
 % Please edit documentation in R/count_mu.R
 \name{count_mu_gcdg}
 \alias{count_mu_gcdg}
-\title{Median of gcdg references}
+\title{Median of GCDG references}
 \usage{
 count_mu_gcdg(t)
 }
@@ -10,14 +10,15 @@ count_mu_gcdg(t)
 \item{t}{Decimal age, numeric vector}
 }
 \value{
-A vector of length \code{length(t)} with the median of the dutch references.
+A vector of length \code{length(t)} with the median of the GCDG references.
 }
 \description{
 Returns the age-interpolated median of the GCDG references (Weber
-et al, 2019). The working range is 0-4 years.
+et al, 2019). The working range is 0-4 years. This function should
+be called when the \code{key = "gsed"} or \code{key = "gcdg"}.
 }
 \note{
-Interal function. Called by \code{dscore()}
+Internal function. Called by \code{dscore()}
 }
 \examples{
 dscore:::count_mu_gcdg(0:2)

@@ -13,12 +13,13 @@ dscore(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
-  prior_mean = ".gcdg",
+  prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
   population = key,
-  dec = 3L
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf)
 )
 
 dscore_posterior(
@@ -29,12 +30,13 @@ dscore_posterior(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
-  prior_mean = ".gcdg",
+  prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
   population = key,
-  dec = 3L
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf)
 )
 }
 \arguments{
@@ -57,11 +59,16 @@ that have a difficulty parameter under the specified \code{key}.}
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
 
-\item{key}{A string that sets the key, the set of difficulty
+\item{key}{A string that selects a subset in the itembank that
+makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed"} (default), \code{"gcdg"},
-and \code{"dutch"}. Use \code{key = ""} to use all item names,
-which should only be done if there are no duplicate itemnames.}
+The built-in keys are: \code{"gsed2206"} (default), \code{"gsed1912"},
+\code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+and \code{"dutch"}. Since version 1.5.0, the default \code{key = "gsed"}
+selects the latest key starting with the string "gsed".
+Use \code{key = ""} to use all item names,
+which should only be done if there are no duplicate itemnames
+in the itembank.}
 
 \item{itembank}{A \code{data.frame} with columns
 \code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
@@ -75,8 +82,9 @@ default.}
 
 \item{prior_mean}{A string specifying a column name in \code{data}
 with the mean of the prior for the D-score calculation.
-The default \code{prior_mean = ".gcdg"} calculates an age-dependent
-prior mean internally according to function
+The default depends on the \code{key}. If \code{key == "dutch"} then
+\code{prior_mean = "dutch"}, else it is \code{".gcdg"}. These settings
+calculate an age-dependent prior mean internally according to function
 \code{dscore:::count_mu_gcdg()}.
 The choice \code{prior_mean = ".dutch"}
 calculates \code{prior_mean} from the Count model coded in
@@ -98,9 +106,16 @@ This vector should span the range of all D-score values. The default
 \item{population}{A string describing the population. Currently
 supported are \code{"dutch"} and \code{"gcdg"} (default).}
 
-\item{dec}{Integer specifying the number of decimals for
-rounding the ability estimates and the DAZ. The default is
-\code{dec = 3}.}
+\item{dec}{A vector of two integers specifying the number of
+decimals for rounding the D-score and DAZ, respectively.
+The default is \code{dec = c(2L, 3L)}.}
+
+\item{relevance}{A numeric vector of length with the lower and
+upper bounds of the relevance interval. The procedure calculates
+a dynamic EAP for each item. If the difficulty level (tau) of the
+next item is outside the relevance interval around EAP, the procedure
+ignore the score on the item. The default is \code{c(-Inf, +Inf)} does not
+ignore scores.}
 }
 \value{
 The \code{dscore()} function returns a \code{data.frame} with
@@ -133,13 +148,14 @@ ability.
 
 The item names should correspond to the \code{"gsed"} lexicon.
 
-The built-in itembank (object \code{\link[=builtin_itembank]{builtin_itembank()}}) supports
-keys \code{"gsed"} (default), \code{"gcdg"} and \code{"dutch"}.
 A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference \cr
    \code{"dutch"} \tab \verb{75_0} \tab \code{-10:80} \tab 1 \tab direct \tab Van Buuren, 2014/2020 \cr
    \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 14 \tab direct \tab Weber, 2019 \cr
-   \code{"gsed"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
+   \code{"gsed1912"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
+   \code{"gsed2206"} \tab \verb{818_17} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
+   \code{"lf2206"} \tab \verb{155_0} \tab \code{-10:100} \tab 1 \tab direct \tab GSED Team, 2022 \cr
+   \code{"sf2206"} \tab \verb{139_0} \tab \code{-10:100} \tab 1 \tab caregiver \tab GSED Team, 2022 \cr
 }
 
 
@@ -187,11 +203,7 @@ Applied Psychological Measurement, 6(4), 431-444.
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
-\href{https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf}{pdf}
-
-Van Buuren S, Dusseldorp E, Doove B (2017).
-D-scores and references for ages 2-4 years. The Netherlands.
-In preparation, 2017-11-27.
+\url{https://stefvanbuuren.name/publication/van-buuren-2014-gc/}
 
 Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -199,7 +211,7 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\href{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}{pdf}.
+\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}
 }
 \seealso{
 \code{\link[=get_tau]{get_tau()}},

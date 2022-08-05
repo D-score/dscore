@@ -7,19 +7,21 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/github%20version-1.0.0-orange.svg)](https://github.com/stefvanbuuren/dscore)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
+[![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
+[![](https://img.shields.io/badge/github%20version-1.5.5-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
-children. The *D*-score can be used to analyze and predict development
-of children using tools developed for numerical measures, like height
-and weight.
+children. You may use the *D*-score to analyze and predict development
+of children similar to measures like height and weight.
 
 The `dscore` package contains tools to
 
-  - Map your item names to the GSED convention
-  - Calculate *D*-score from item level responses
-  - Transform the *D*-scores into DAZ, age-standardised Z-scores
+-   Map your item names to the GSED convention
+-   Calculate *D*-score from item level responses
+-   Transform the *D*-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones from
 widely used instruments for measuring child development.
@@ -31,7 +33,7 @@ You can install the development version from
 
 ``` r
 install.packages("remotes")
-remotes::install_github("stefvanbuuren/dscore")
+remotes::install_github("d-score/dscore")
 ```
 
 ## Overview
@@ -47,18 +49,17 @@ needed:
 4.  Summarise your results.
 
 The `dscore` package provides various function that support these steps.
-See [Getting
-started](https://stefvanbuuren.name/dscore/articles/start.html) for more
-details.
+See [Getting started](https://d-score.org/dscore/articles/start.html)
+for more details.
 
 ## Resources
 
 ### Books and reports
 
 1.  [*D*-score: Turning milestones into
-    measurement](https://stefvanbuuren.name/dbook1/)
+    measurement](https://d-score.org/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
-    development](http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
+    development](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):
     Fernald et al. ([2017](#ref-fernald2017))
 
 ### Keys
@@ -80,6 +81,13 @@ details.
     ([2006](#ref-jacobusse2006))
 2.  Adaptive testing: Jacobusse and van Buuren
     ([2007](#ref-jacobusse2007))
+
+### Shiny app
+
+If you want to calculate the D-score on your own data, and you’re not an
+`R` user, you might wish to check out our interactive Shiny
+[dcalculator](https://tnochildhealthstatistics.shinyapps.io/dcalculator/)
+app.
 
 ## Acknowledgement
 
@@ -105,18 +113,18 @@ Weber and Aisha K. Yousafzai.
 
 ### Literature
 
-<div id="refs" class="references">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-fernald2017">
+<div id="ref-fernald2017" class="csl-entry">
 
-Fernald, L.C.H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
+Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
 for Measuring Early Childhood Development in Low and Middle-Income
 Countries.”
-<http://documents.worldbank.org/curated/en/384681513101293811/A-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
+<https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
 
 </div>
 
-<div id="ref-gsedteam2019">
+<div id="ref-gsedteam2019" class="csl-entry">
 
 GSED team (Maureen Black, Kieran Bromley, Vanessa Cavallera (lead
 author), Jorge Cuartas, Tarun Dua (corresponding author), Iris Eekhout,
@@ -124,43 +132,43 @@ Günther Fink, Melissa Gladstone, Katelyn Hepworth, Magdalena Janus,
 Patricia Kariger, Gillian Lancaster, Dana McCoy, Gareth McCray, Abbie
 Raikes, Marta Rubio-Codina, Stef van Buuren, Marcus Waldman, Susan
 Walker and Ann Weber). 2019. “The Global Scale for Early Development
-(Gsed).” *Early Childhood Matters*.
+(GSED).” *Early Childhood Matters*.
 <https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/>.
 
 </div>
 
-<div id="ref-jacobusse2007">
+<div id="ref-jacobusse2007" class="csl-entry">
 
 Jacobusse, G., and S. van Buuren. 2007. “Computerized Adaptive Testing
 for Measuring Development of Young Children.” *Statistics in Medicine*
 26 (13): 2629–38.
-<https://stefvanbuuren.name/publication/2007-01-01_jacobusse2007/>.
+<https://stefvanbuuren.name/publication/jacobusse-2007/>.
 
 </div>
 
-<div id="ref-jacobusse2006">
+<div id="ref-jacobusse2006" class="csl-entry">
 
-Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale
-for Development of Children Aged 0-2 Years.” *Statistics in Medicine* 25
-(13): 2272–83.
-<https://stefvanbuuren.name/publication/2006-01-01_jacobusse2006/>.
+Jacobusse, G., S. van Buuren, and P. H. Verkerk. 2006. “An Interval
+Scale for Development of Children Aged 0-2 Years.” *Statistics in
+Medicine* 25 (13): 2272–83.
+<https://stefvanbuuren.name/publication/jacobusse-2006/>.
 
 </div>
 
-<div id="ref-vanbuuren2014">
+<div id="ref-vanbuuren2014" class="csl-entry">
 
 van Buuren, S. 2014. “Growth Charts of Human Development.” *Statistical
 Methods in Medical Research* 23 (4): 346–68.
-<https://stefvanbuuren.name/publication/2014-01-01_vanbuuren2014gc/>.
+<https://stefvanbuuren.name/publication/van-buuren-2014-gc/>.
 
 </div>
 
-<div id="ref-weber2019">
+<div id="ref-weber2019" class="csl-entry">
 
-Weber, A.M., M. Rubio-Codina, S.P. Walker, S. van Buuren, I. Eekhout, S.
-Grantham-McGregor, M.C. Araujo, et al. 2019. “The D-Score: A Metric for
-Interpreting the Early Development of Infants and Toddlers Across Global
-Settings.” *BMJ Global Health* 4: e001724.
+Weber, A. M., M. Rubio-Codina, S. P. Walker, S. van Buuren, I. Eekhout,
+S. Grantham-McGregor, M. C. Araujo, et al. 2019. “The D-Score: A Metric
+for Interpreting the Early Development of Infants and Toddlers Across
+Global Settings.” *BMJ Global Health* 4: e001724.
 <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
 
 </div>

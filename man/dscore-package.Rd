@@ -73,11 +73,11 @@ The package contains the following built-in data:\tabular{ll}{
 \references{
 Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale
 for Development of Children Aged 0-2 Years.” \emph{Statistics in Medicine} 25 (13):
-2272–83. \href{https://stefvanbuuren.name/publications/Interval\%20scale\%20-\%20Stat\%20Med\%202006.pdf}{pdf}
+2272–83. \url{https://stefvanbuuren.name/publication/jacobusse-2006/}
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
-\href{https://stefvanbuuren.name/publications/2014\%20Growth\%20charts\%20for\%20development\%20-\%20SMMR.pdf}{pdf}
+\url{https://stefvanbuuren.name/publication/van-buuren-2014-gc/}
 
 Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -85,7 +85,7 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\href{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}{pdf}.
+\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
 
 GSED team (Maureen Black, Kieran Bromley, Vanessa Cavallera
 (lead author), Jorge Cuartas, Tarun Dua (corresponding author),
@@ -94,5 +94,5 @@ Magdalena Janus, Patricia Kariger, Gillian Lancaster, Dana McCoy,
 Gareth McCray, Abbie Raikes, Marta Rubio-Codina, Stef van Buuren,
 Marcus Waldman, Susan Walker and Ann Weber). 2019. “The Global Scale
 for Early Development (GSED).” \emph{Early Childhood Matters}.
-\href{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/}{link}
+\url{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/}
 }

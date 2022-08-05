@@ -188,6 +188,7 @@ dscore <- function(data,
   if (substr(key, 1, 2) %in% c("lf", "sf")) {
     population <- "gcdg"
   }
+  if (key == "294_0") population <- "gcdg"
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
@@ -231,6 +232,7 @@ dscore_posterior <- function(data,
   if (substr(key, 1, 2) %in% c("lf", "sf")) {
     population <- "gcdg"
   }
+  if (key == "294_0") population <- "gcdg"
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,

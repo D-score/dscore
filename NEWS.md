@@ -1,3 +1,7 @@
+# dscore 1.5.6
+
+* Adds 18 ECDI items to keys `gsed2206` and `294_0`
+
 # dscore 1.5.5
 
 * Initialise proper default `population` when key is `294_0`.

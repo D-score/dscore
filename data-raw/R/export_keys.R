@@ -4,6 +4,7 @@ library(openxlsx)
 
 # define project
 project <- path.expand("~/Package/dscore/dscore")
+#project <- path.expand("~/OneDrive - TNO/Documents/GitHub/dscore")
 
 # ------------- export dutch key
 fn <- file.path(project, "data-raw/data/bds_edited.csv")
@@ -93,3 +94,44 @@ fo <- file.path(project, "data-raw/data/keys/sf2206.txt")
 write.table(ib_gsed,
             file = fo, quote = FALSE, sep = "\t",
             na = "", row.names = FALSE)
+
+
+
+# ---------- export ecdi keys
+
+## model gsed2206 extended with ecdi items
+fn <- path.expand("~/OneDrive - TNO/Documents/GitHub/decdi/models/gsed2206/ECDI_142_6_fixed/model.Rds")
+ecdi_model <- readRDS(file = fn)
+ib_ecdi <- ecdi_model$itembank %>%
+  filter(stringr::str_detect(item, "^ecd")) %>%
+  mutate(
+    key = "gsed2206",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
+fo <- file.path(project, "data-raw/data/keys/ecd2206.txt")
+write.table(ib_ecdi,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+
+## model 294_0 extende with ecdi items
+fn <- path.expand("~/OneDrive - TNO/Documents/GitHub/decdi/models/294_0/ECDI_142_7_fixed/model.Rds")
+ecdi_model <- readRDS(file = fn)
+ib_ecdi <- ecdi_model$itembank %>%
+  filter(stringr::str_detect(item, "^ecd")) %>%
+  mutate(
+    key = "294_0",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
+fo <- file.path(project, "data-raw/data/keys/ecd294_0.txt")
+write.table(ib_ecdi,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+
+
+

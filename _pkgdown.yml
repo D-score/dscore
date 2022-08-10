@@ -50,6 +50,7 @@ reference:
     contents:
       - count_mu_dutch
       - count_mu_gcdg
+      - count_mu_gsed
       - posterior
       - normalize
   - title: "Datasets"

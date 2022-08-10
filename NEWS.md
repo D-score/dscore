@@ -1,3 +1,7 @@
+# dscore 1.5.7
+
+* Adds `count_mean_gsed()` for setting prior mean equal to the GSED Phase 1 reference
+
 # dscore 1.5.6
 
 * Adds 18 ECDI items to keys `gsed2206` and `294_0`

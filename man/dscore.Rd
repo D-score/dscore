@@ -13,11 +13,11 @@ dscore(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
-  prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
+  prior_mean = NULL,
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
-  population = key,
+  population = "gcdg",
   dec = c(2L, 3L),
   relevance = c(-Inf, Inf)
 )
@@ -30,11 +30,11 @@ dscore_posterior(
   key = "gsed",
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
-  prior_mean = ifelse(key == "dutch", ".dutch", ".gcdg"),
+  prior_mean = NULL,
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
-  population = key,
+  population = "gcdg",
   dec = c(2L, 3L),
   relevance = c(-Inf, Inf)
 )
@@ -80,19 +80,25 @@ default.}
 \item{metric}{A string, either \code{"dscore"} (default) or
 \code{"logit"}, signalling the metric in which ability is estimated.}
 
-\item{prior_mean}{A string specifying a column name in \code{data}
-with the mean of the prior for the D-score calculation.
+\item{prior_mean}{A string specifying where the mean of the
+prior for the D-score calculation should come from. It could be
+a column name in \code{data} (when you want your own prior for every row),
+but normally this is one of the keywords \code{".dutch"}, \code{".gcdg"} or \code{".phase1"}.
 The default depends on the \code{key}. If \code{key == "dutch"} then
-\code{prior_mean = "dutch"}, else it is \code{".gcdg"}. These settings
-calculate an age-dependent prior mean internally according to function
-\code{dscore:::count_mu_gcdg()}.
-The choice \code{prior_mean = ".dutch"}
+\code{prior_mean = ".dutch"}. The choice \code{prior_mean = ".dutch"}
 calculates \code{prior_mean} from the Count model coded in
-\code{dscore:::count_mu_dutch()}).}
+\code{dscore:::count_mu_dutch()}).
+If \code{key} is #' \code{"gcdg"}, \code{"gsed1912"},
+\code{"gsed2206"}, \code{"lf2206"} or \code{"sf2206"} then \code{prior_mean = ".gcdg"}.
+This setting calculates an age-dependent prior mean internally according
+to function \code{dscore:::count_mu_gcdg()}. In other cases, \code{prior_mean = ".phase1"}
+which uses the function \code{dscore:::count_mu_phase1()}.
+Normally, you should not touch this parameter, but feel free to use
+\code{prior_mean} to override the automatic choices.}
 
 \item{prior_sd}{A string specifying a column name in \code{data}
 with the standard deviation of the prior for the D-score calculation.
-If not specified, the standard deviation is taken as 5.}
+If not specified, the standard deviation is taken as 5 for every row.}
 
 \item{transform}{Vector of length 2, signalling the intercept
 and slope respectively of the linear transform that converts an

@@ -96,7 +96,14 @@ zl <- dscore(data, items = items, dec = 4, metric = "logit", transform = transfo
              itembank = keyd, key = "temp", population = "dutch")
 
 test_that("logit and dscore are identical", {
-  expect_equal(zl$d, (zd$d - transform[1])/transform[2])
-  expect_equal(zl$d*transform[2] + transform[1], zd$d)
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2], tolerance = 0.001)
+  expect_equal(zl$d*transform[2] + transform[1], zd$d, tolerance = 0.001)
 })
 
+# check prior mean
+data <- cbind(data, start = rep(c(0, 10), times = 5))
+zp0 <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch")
+zp1 <- dscore(data, items = items, dec = 4, metric = "dscore",
+              itembank = keyd, key = "temp", population = "dutch",
+              prior_mean = "start")

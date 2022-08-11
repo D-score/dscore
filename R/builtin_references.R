@@ -2,8 +2,9 @@
 #'
 #' A data frame containing the age-dependent distribution of the
 #' D-score for children aged 0-5 years. The distribution is modelled
-#' after the LMS distribution (Cole & Green, 1992), and is equal for
-#' both boys and girls. The LMS values can be used to graph
+#' after the LMS distribution (Cole & Green, 1992) or BCT model
+#' (Stasinopoulos & Rigby, 2022) and is equal for
+#' both boys and girls. The LMS/BCT values can be used to graph
 #' reference charts and to calculate age-conditonal Z-scores, also
 #' known as DAZ.
 #'
@@ -12,11 +13,12 @@
 #'
 #' | Name | Label |
 #' | --- | --------- |
-#' | `pop` | Population, either `"dutch"` or `"gcdg"` |
+#' | `pop` | Population, either `"dutch"`, `"gcdg"` or `"phase1"`|
 #' | `age` | Decimal age in years |
 #' | `mu`  | M-curve, median D-score, P50 |
 #' | `sigma` | S-curve, spread expressed as coefficient of variation |
-#' | `nu`    | L-curve, the lambda coefficient of the LMS model for skewness |
+#' | `nu`    | L-curve, the lambda coefficient of the LMS/BCT model for skewness |
+#' | `tau`   | Kurtosis parameter in the BCT model |
 #' | `P3`    | P3 percentile |
 #' | `P10`   | P10 percentile |
 #' | `P25`   | P25 percentile |
@@ -35,6 +37,9 @@
 #' age range 0-2.5 years (van Buuren, 2014).
 #' The `"gcdg"` references were calculated from the 15 cohorts of the
 #' GCDG-study, and cover age range 0-5 years (Weber, 2019).
+#' The `"phase1"` references were calculated from the GSED Phase 1 validation
+#' data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
+#' age range 3.5-5 yrs is linearly extrapolated and are only indicative.
 #' @examples
 #' head(builtin_references)
 #' @references
@@ -54,5 +59,9 @@
 #' BMJ Global Health, BMJ Global Health 4: e001724.
 #' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>
 #'
+#' Stasinopoulos M, Rigby R (2022). gamlss.dist: Distributions for
+#' Generalized Additive Models for Location Scale and Shape,
+#' R package version 6.0-3,
+#' <https://CRAN.R-project.org/package=gamlss.dist>
 #' @seealso [dscore()]
 "builtin_references"

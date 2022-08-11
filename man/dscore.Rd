@@ -110,7 +110,7 @@ This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
 \item{population}{A string describing the population. Currently
-supported are \code{"dutch"} and \code{"gcdg"} (default).}
+supported are \code{"dutch"}, \code{"gcdg"} (default) and \code{"phase1"}.}
 
 \item{dec}{A vector of two integers specifying the number of
 decimals for rounding the D-score and DAZ, respectively.

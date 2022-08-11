@@ -3,6 +3,7 @@
 #'                         mutate n recode select slice summarise
 #'                         tibble ungroup %>% .data
 #' @importFrom stats       approx dnorm plogis qlogis weighted.mean qt pt
+#'                         pnorm qnorm
 #' @importFrom stringr     str_pad
 #' @importFrom tidyr       pivot_longer
 #' @importFrom tidyselect  all_of

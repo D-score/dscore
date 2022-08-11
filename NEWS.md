@@ -1,7 +1,12 @@
+
+* Adds reference `phase1` to `builtin_references`
+* Adds support for `phase1` reference  to `get_reference()`
+* Adds support for BCT references in `zad()` and `daz()`
+
 # dscore 1.5.8
 
 * Adds `count_mean_phase1()` for setting prior mean equal to the GSED Phase 1 reference
-# Adds round 2 estimates to `count_mean_phase1()`
+* Adds round 2 estimates to `count_mean_phase1()`
 * Prepares `dscore()` prior_mean functionality to deal with the to-be-implemented new reference as "phase1"
 
 # dscore 1.5.7

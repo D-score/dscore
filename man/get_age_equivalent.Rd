@@ -33,7 +33,7 @@ and \code{tau}. The function uses \code{dscore::builtin_itembank} by
 default.}
 
 \item{population}{A string describing the population. Currently
-supported are \code{"dutch"}, \code{"gcdg"} (default) and \code{"phase1"}.}
+supported are \code{"phase1"} (default), \code{"dutch"}, \code{"gcdg"}.}
 
 \item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).

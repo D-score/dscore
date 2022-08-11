@@ -23,9 +23,9 @@
 #' @param key A string that selects a subset in the itembank that
 #' makes up the key, the set of difficulty
 #' estimates from a fitted Rasch model.
-#' The built-in keys are: `"gsed2206"` (default), `"gsed1912"`,
-#' `"lf2206"`, `"sf2206"`, `"gcdg"`,
-#' and `"dutch"`. Since version 1.5.0, the default `key = "gsed"`
+#' The built-in keys are:  `"gsed2208"` (default), `"gsed2206"`,
+#' `"gsed1912"`, `"lf2206"`, `"sf2206"`, `"gcdg"`,
+#' and `"dutch"`. Since version 1.5.0, the `key = "gsed"`
 #' selects the latest key starting with the string "gsed".
 #' Use `key = ""` to use all item names,
 #' which should only be done if there are no duplicate itemnames
@@ -64,7 +64,7 @@
 #' This vector should span the range of all D-score values. The default
 #' (`qp = -10:100`) is suitable for age range 0-4 years.
 #' @param population A string describing the population. Currently
-#' supported are `"dutch"` and `"gcdg"` (default).
+#' supported are `"phase1"` (default), `"dutch"`, `"gcdg"`.
 #' @param dec A vector of two integers specifying the number of
 #' decimals for rounding the D-score and DAZ, respectively.
 #' The default is `dec = c(2L, 3L)`.
@@ -114,17 +114,17 @@
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
-#' the advice is to use the most general key, `"gsed"`.
+#' the advice is to use the default.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
 #' Count models are stored as internal functions
-#' `dscore:::count_mu_gcdg()` (default) and
+#' `dscore:::count_mu_phase1()`, `dscore:::count_mu_gcdg()` and
 #' `dscore:::count_mu_dutch()`. The spread of the starting prior
 #' is 5 D-score points around this mean D-score, which corresponds to
-#' approximately twice the normal spread of child of a given age. The
+#' approximately 1.5 to 2 times the normal spread of child of a given age. The
 #' starting prior is thus somewhat informative for low numbers of
-#' valid items, and unformative for large number of items (say >10 items).
+#' valid items, and uninformative for large number of items (say >10 items).
 #'
 #' @references
 #' Bock DD, Mislevy RJ (1982).
@@ -143,7 +143,7 @@
 #' BMJ Global Health, BMJ Global Health 4: e001724.
 #' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>
 #'
-#' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)
+#' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2022)
 #' @seealso [get_tau()],
 #' [builtin_itembank()], [posterior()],
 #' [builtin_references()]
@@ -173,29 +173,18 @@ dscore <- function(data,
                    items = names(data),
                    xname = "age",
                    xunit = c("decimal", "days", "months"),
-                   key = "gsed",
+                   key = NULL,
                    itembank = dscore::builtin_itembank,
                    metric = c("dscore", "logit"),
                    prior_mean = NULL,
                    prior_sd = NULL,
                    transform = NULL,
                    qp = -10:100,
-                   population = "gcdg",
+                   population = NULL,
                    dec = c(2L, 3L),
                    relevance = c(-Inf, Inf)) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
-
-  if (key == "gsed") {
-    key <- "gsed2206"
-    population <- "gcdg"
-  } else if (substr(key, 1, 4) == "gsed") {
-    population <- "gcdg"
-  }
-  if (substr(key, 1, 2) %in% c("lf", "sf")) {
-    population <- "gcdg"
-  }
-  if (key == "294_0") population <- "gcdg"
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
@@ -216,30 +205,19 @@ dscore_posterior <- function(data,
                              items = names(data),
                              xname = "age",
                              xunit = c("decimal", "days", "months"),
-                             key = "gsed",
+                             key = NULL,
                              itembank = dscore::builtin_itembank,
                              metric = c("dscore", "logit"),
                              prior_mean = NULL,
                              prior_sd = NULL,
                              transform = NULL,
                              qp = -10:100,
-                             population = "gcdg",
+                             population = NULL,
                              dec = c(2L, 3L),
                              relevance = c(-Inf, Inf)) {
 
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
-
-  if (key == "gsed") {
-    key <- "gsed2206"
-    population <- "gcdg"
-  } else if (substr(key, 1, 4) == "gsed") {
-    population <- "gcdg"
-  }
-  if (substr(key, 1, 2) %in% c("lf", "sf")) {
-    population <- "gcdg"
-  }
-  if (key == "294_0") population <- "gcdg"
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
@@ -261,16 +239,34 @@ calc_dscore <- function(data, items, xname, xunit,
                         relevance) {
   stopifnot(length(relevance) == 2L)
 
+  # set default key
+  if (is.null(key) || key == "gsed") {
+    key <- "gsed2206"
+  }
+
+  # set default reference population for DAZ
+  if (is.null(population)) {
+    population <- "phase1"
+    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
+      population <- "gcdg"
+    if (key %in% c("dutch"))
+      population <- "dutch"
+  }
+
   # set default column name of prior_mean
   if (is.null(prior_mean)) {
-    prior_mean = switch(key,
-                        dutch = ".dutch",
-                        gcdg = ".gcdg",
-                        gsed1912 = ".gcdg",
-                        gsed2206 = ".gcdg",
-                        lf2206 = ".gcdg",
-                        sf2206 = ".gcdg",
-                        ".gcdg")
+    prior_mean <- ".phase1"
+    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
+      prior_mean <- ".gcdg"
+    if (key %in% c("dutch"))
+      prior_mean <- ".dutch"
+  }
+
+  # set default transform if needed
+  if (is.null(transform) && metric == "logit") {
+    if (prior_mean == ".phase1") transform <- c(54.939147, 4.064264)
+    if (prior_mean == ".gcdg") transform <- c(66.174355, 2.073871)
+    if (prior_mean == ".dutch") transform <- c(38.906, 2.1044) # van buuren 2014
   }
 
   # handle zero rows
@@ -338,13 +334,6 @@ calc_dscore <- function(data, items, xname, xunit,
   sd <- rep(5, nrow(data))
   if (is.character(prior_sd) && prior_sd %in% names(data))
     sd <- data[[prior_sd]]
-
-  # determine transform if needed
-  if (is.null(transform) && metric == "logit") {
-    if (prior_mean == ".phase1") transform <- c(54.939147, 4.064264)
-    if (prior_mean == ".gcdg") transform <- c(66.174355, 2.073871)
-    if (prior_mean == ".dutch") transform <- c(38.906, 2.1044) # van buuren 2014
-  }
 
   # setup for logit scale
   if (metric == "logit") {

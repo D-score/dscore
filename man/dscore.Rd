@@ -10,14 +10,14 @@ dscore(
   items = names(data),
   xname = "age",
   xunit = c("decimal", "days", "months"),
-  key = "gsed",
+  key = NULL,
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
-  population = "gcdg",
+  population = NULL,
   dec = c(2L, 3L),
   relevance = c(-Inf, Inf)
 )
@@ -27,14 +27,14 @@ dscore_posterior(
   items = names(data),
   xname = "age",
   xunit = c("decimal", "days", "months"),
-  key = "gsed",
+  key = NULL,
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
   prior_sd = NULL,
   transform = NULL,
   qp = -10:100,
-  population = "gcdg",
+  population = NULL,
   dec = c(2L, 3L),
   relevance = c(-Inf, Inf)
 )
@@ -62,9 +62,9 @@ The default (\code{"decimal"}) means decimal age in years.}
 \item{key}{A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed2206"} (default), \code{"gsed1912"},
-\code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
-and \code{"dutch"}. Since version 1.5.0, the default \code{key = "gsed"}
+The built-in keys are:  \code{"gsed2208"} (default), \code{"gsed2206"},
+\code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
 selects the latest key starting with the string "gsed".
 Use \code{key = ""} to use all item names,
 which should only be done if there are no duplicate itemnames
@@ -110,7 +110,7 @@ This vector should span the range of all D-score values. The default
 (\code{qp = -10:100}) is suitable for age range 0-4 years.}
 
 \item{population}{A string describing the population. Currently
-supported are \code{"dutch"}, \code{"gcdg"} (default) and \code{"phase1"}.}
+supported are \code{"phase1"} (default), \code{"dutch"}, \code{"gcdg"}.}
 
 \item{dec}{A vector of two integers specifying the number of
 decimals for rounding the D-score and DAZ, respectively.
@@ -168,17 +168,17 @@ A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
 As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
-the advice is to use the most general key, \code{"gsed"}.
+the advice is to use the default.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
 Count models are stored as internal functions
-\code{dscore:::count_mu_gcdg()} (default) and
+\code{dscore:::count_mu_phase1()}, \code{dscore:::count_mu_gcdg()} and
 \code{dscore:::count_mu_dutch()}. The spread of the starting prior
 is 5 D-score points around this mean D-score, which corresponds to
-approximately twice the normal spread of child of a given age. The
+approximately 1.5 to 2 times the normal spread of child of a given age. The
 starting prior is thus somewhat informative for low numbers of
-valid items, and unformative for large number of items (say >10 items).
+valid items, and uninformative for large number of items (say >10 items).
 }
 \examples{
 data <- data.frame(
@@ -225,5 +225,5 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 \code{\link[=builtin_references]{builtin_references()}}
 }
 \author{
-Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)
+Stef van Buuren, Iris Eekhout, Arjan Huizing (2022)
 }

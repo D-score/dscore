@@ -7,9 +7,9 @@
 get_age_equivalent(
   items,
   pct = c(10, 50, 90),
-  key = "gsed",
+  key = NULL,
   itembank = dscore::builtin_itembank,
-  population = key,
+  population = NULL,
   xunit = c("decimal", "days", "months")
 )
 }
@@ -23,13 +23,22 @@ that have a difficulty parameter under the specified \code{key}.}
 \item{pct}{Numeric vector with requested percentiles (0-100). The
 default is \code{pct = c(10, 50, 90)}.}
 
-\item{key}{A string that sets the key, the set of difficulty
+\item{key}{A string that selects a subset in the itembank that
+makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed"} (default), \code{"gcdg"},
-and \code{"dutch"}.}
+The built-in keys are:  \code{"gsed2208"} (default), \code{"gsed2206"},
+\code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
+selects the latest key starting with the string "gsed".
+Use \code{key = ""} to use all item names,
+which should only be done if there are no duplicate itemnames
+in the itembank.}
 
-\item{itembank}{A \code{data.frame} with columns named \code{key}, \code{item}
-and \code{tau}. The function uses \code{dscore::builtin_itembank} by
+\item{itembank}{A \code{data.frame} with columns
+\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
+\code{mode}, \code{number} and \code{label}. Only columns \code{item}
+and \code{tau} are required.
+The function uses \code{dscore::builtin_itembank} by
 default.}
 
 \item{population}{A string describing the population. Currently
@@ -51,5 +60,5 @@ in the reference population passes the items.
 The function internally defines a scale factor given the key.
 }
 \examples{
-get_age_equivalent(c("ddicmm030", "ddicmm050"), key = "dutch")
+get_age_equivalent(c("gpagmc018", "ddicmm050"))
 }

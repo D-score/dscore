@@ -65,6 +65,39 @@ write.table(ib_gsed,
             file = fo, quote = FALSE, sep = "\t",
             na = "", row.names = FALSE)
 
+# ------------- export 293_0 key
+fn <- path.expand("~/Project/GSED/phase1/remodel/293_0/model.Rds")
+gsed_model_293_0 <- readRDS(file = fn)
+ib_gsed <- gsed_model_293_0$itembank %>%
+  mutate(
+    key = "293_0",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+gpa <- ib_gsed[1:138, ]
+gpa <- gpa[order_itemnames(gpa$item, order = "imnd"), ]
+ib_gsed <- bind_rows(gpa, ib_gsed[139:293, ])
+fo <- file.path(project, "data-raw/data/keys/293_0.txt")
+write.table(ib_gsed,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+# ------------- export gsed2208 key
+fn <- path.expand("~/Project/GSED/phase1/remodel/818_6/model.Rds")
+gsed_model_818_6 <- readRDS(file = fn)
+ib_gsed <- gsed_model_818_6$itembank %>%
+  mutate(
+    key = "gsed2208",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
+fo <- file.path(project, "data-raw/data/keys/gsed2208.txt")
+write.table(ib_gsed,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+
 # ------------- export lf2206 key
 fn <- path.expand("~/Project/GSED/phase1/lf/155_0/model.Rds")
 gsed_model <- readRDS(file = fn)

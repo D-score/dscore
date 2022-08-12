@@ -108,13 +108,15 @@
 #' `"gcdg"`  | `565_18` | `-10:100` | 14  | direct | Weber, 2019
 #' `"gsed1912"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
 #' `"gsed2206"`  | `818_17` | `-10:100` | 22  | mixed  | GSED Team, 2022
+#' `"gsed2208"`  | `818_6` | `-10:100` | 22  | mixed  | GSED Team, 2022
 #' `"lf2206"`    | `155_0` | `-10:100`  | 1   | direct | GSED Team, 2022
 #' `"sf2206"`    | `139_0` | `-10:100`  | 1   | caregiver | GSED Team, 2022
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
-#' the advice is to use the default.
+#' the advice is to use the default, which currently links to
+#' `"gsed2208"`.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
@@ -241,32 +243,49 @@ calc_dscore <- function(data, items, xname, xunit,
 
   # set default key
   if (is.null(key) || key == "gsed") {
-    key <- "gsed2206"
+    key <- "gsed2208"
   }
 
   # set default reference population for DAZ
   if (is.null(population)) {
-    population <- "phase1"
-    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
+    if (key %in% c("gsed2208", "293_0"))
+      population <- "phase1"
+    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0"))
       population <- "gcdg"
     if (key %in% c("dutch"))
       population <- "dutch"
+    if (is.null(population)) {
+      population <- "phase1"
+      warning("Could not set 'population' argument. Uses phase1.")
+    }
   }
 
   # set default column name of prior_mean
   if (is.null(prior_mean)) {
-    prior_mean <- ".phase1"
-    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
-      prior_mean <- ".gcdg"
-    if (key %in% c("dutch"))
-      prior_mean <- ".dutch"
+    prior_mean <- switch(population,
+                         phase1 = ".phase1",
+                         gcdg = ".gcdg",
+                         dutch = ".dutch",
+                         "other")
+    if (prior_mean == "other") {
+      prior_mean <- ".phase1"
+      warning("Inherits prior mean from population phase1. Set prior_mean = '.phase1' to silence this warning.")
+    }
   }
 
   # set default transform if needed
   if (is.null(transform) && metric == "logit") {
-    if (prior_mean == ".phase1") transform <- c(54.939147, 4.064264)
-    if (prior_mean == ".gcdg") transform <- c(66.174355, 2.073871)
-    if (prior_mean == ".dutch") transform <- c(38.906, 2.1044) # van buuren 2014
+    transform <- switch(population,
+                        phase1 = c(54.939147, 4.064264),
+                        gcdg = c(66.174355, 2.073871),
+                        dutch = c(38.906, 2.1044))
+    # if (key %in% c("gsed2208", "293_0"))
+    #   transform <- c(54.939147, 4.064264)
+    # if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
+    #   transform <- c(66.174355, 2.073871)
+    # if (key %in% c("dutch"))
+    #   transform <- c(38.906, 2.1044) # van buuren 2014
+    if (is.null(transform)) stop("Could not set 'transform' argument.")
   }
 
   # handle zero rows

@@ -160,6 +160,7 @@ A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 14 \tab direct \tab Weber, 2019 \cr
    \code{"gsed1912"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
    \code{"gsed2206"} \tab \verb{818_17} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
+   \code{"gsed2208"} \tab \verb{818_6} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
    \code{"lf2206"} \tab \verb{155_0} \tab \code{-10:100} \tab 1 \tab direct \tab GSED Team, 2022 \cr
    \code{"sf2206"} \tab \verb{139_0} \tab \code{-10:100} \tab 1 \tab caregiver \tab GSED Team, 2022 \cr
 }
@@ -168,7 +169,8 @@ A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
 As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
-the advice is to use the default.
+the advice is to use the default, which currently links to
+\code{"gsed2208"}.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The

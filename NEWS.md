@@ -1,3 +1,9 @@
+# dscore 1.5.11
+
+* MAJOR change: Sets the package defaults to `key = "gsed2208"` and `population = "phase1"`.
+* Adds keys `gsed2208` and `293_0` to `builtin_itembank`. Note that `293_0` is a subset 
+* Make arguments of `get_age_equivalent()` and `get_tau()` consistent with `dscore()`
+
 # dscore 1.5.10
 
 * Adapts BCT functions to work with missing and out-of-range data

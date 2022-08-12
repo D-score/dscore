@@ -4,7 +4,7 @@
 \alias{get_tau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-get_tau(items, key = "gsed2206", itembank = dscore::builtin_itembank)
+get_tau(items, key = NULL, itembank = dscore::builtin_itembank)
 }
 \arguments{
 \item{items}{A character vector containing names of items to be

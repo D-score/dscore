@@ -60,5 +60,5 @@ in the reference population passes the items.
 The function internally defines a scale factor given the key.
 }
 \examples{
-get_age_equivalent(c("gpagmc018", "ddicmm050"))
+get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"))
 }

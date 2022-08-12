@@ -2,7 +2,7 @@
 % Please edit documentation in R/count_mu.R
 \name{count_mu_phase1}
 \alias{count_mu_phase1}
-\title{Median of GSED references}
+\title{Median of phase1 references}
 \usage{
 count_mu_phase1(t)
 }
@@ -35,8 +35,8 @@ Linear model: > 3.5 YRS: 61.37967 + 3.83513 t
 
 The working range is 0-3.5 years. After the age of 3.5 years, the function
 will increase at an arbitrary rate of 3.8 D-score points per year.
-This function should be called for remodelled \code{key = "gsed2208"} created
-in August 2022.
+This function is intended to be called when \code{key = "gsed2208"} or
+\code{key = "293_0"}.
 }
 \note{
 Internal function. Called by \code{dscore()}

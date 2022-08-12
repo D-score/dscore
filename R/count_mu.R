@@ -29,7 +29,7 @@ count_mu_gcdg <- function(t) {
 }
 
 
-#' Median of GSED references
+#' Median of phase1 references
 #'
 #' Returns the age-interpolated median of the phase1 references
 #' based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA.
@@ -52,8 +52,8 @@ count_mu_gcdg <- function(t) {
 #'
 #' The working range is 0-3.5 years. After the age of 3.5 years, the function
 #' will increase at an arbitrary rate of 3.8 D-score points per year.
-#' This function should be called for remodelled `key = "gsed2208"` created
-#' in August 2022.
+#' This function is intended to be called when `key = "gsed2208"` or
+#' `key = "293_0"`.
 #' @param t Decimal age, numeric vector
 #' @return
 #' A vector of length `length(t)` with the median of the GCDG references.

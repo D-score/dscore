@@ -1,3 +1,8 @@
+# dscore 1.5.10
+
+* Adapts BCT functions to work with missing and out-of-range data
+
+# dscore 1.5.9
 
 * Adds reference `phase1` to `builtin_references`
 * Adds support for `phase1` reference  to `get_reference()`

@@ -1,3 +1,7 @@
+# dscore 1.6.1 
+
+* Extends `gsed2208` with 18 ECDI items using Phase 1 data
+
 # dscore 1.6.0
 
 ### Major changes

@@ -15,6 +15,7 @@ f9 <- "data-raw/data/keys/ecd2206.txt"
 f10 <- "data-raw/data/keys/ecd294_0.txt"
 f11 <- "data-raw/data/keys/293_0.txt"
 f12 <- "data-raw/data/keys/gsed2208.txt"
+f13 <- "data-raw/data/keys/ecd2208.txt"
 
 
 key_dutch <- read.delim(file = f1, stringsAsFactors = FALSE)
@@ -60,6 +61,10 @@ key_293_0 <- read.delim(file = f11, stringsAsFactors = FALSE)
 key_gsed2208 <- read.delim(file = f12, stringsAsFactors = FALSE)
 key_gsed2208 <- key_gsed2208[order_itemnames(key_gsed2208$item), ]
 
+
+key_ecd2208 <- read.delim(file = f13, stringsAsFactors = FALSE)
+key_ecd2208 <- key_ecd2208[order_itemnames(key_ecd2208$item), ]
+
 # Extend gsed2206 with gsed2 item names
 lf_gsed <- gsedread::rename_vector(key_lf2206$item, lexin = "gsed2", lexout = "gsed")
 sf_gsed <- gsedread::rename_vector(key_sf2206$item, lexin = "gsed2", lexout = "gsed")
@@ -87,7 +92,7 @@ key_sf2206 <- bind_rows(key_sf2206,
 key_294_0 <- bind_rows(key_294_0,
                        data.frame(key = "294_0", item = lfsf_gsed, tau = key_294_0$tau))
 
-builtin_itembank <- bind_rows(key_gsed2208, key_gsed2206,
+builtin_itembank <- bind_rows(key_gsed2208, key_ecd2208, key_gsed2206,
                               key_ecd2206, key_gsed1912,
                               key_lf2206, key_sf2206,
                               key_294_0, key_ecd294_0,

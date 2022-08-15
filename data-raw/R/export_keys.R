@@ -167,4 +167,21 @@ write.table(ib_ecdi,
 
 
 
+## model gsed2208 extended with ecdi items
+fn <- path.expand("~/OneDrive - TNO/Documents/GitHub/decdi/models/gsed2208/ECDI_142_7_fixed/model.Rds")
+ecdi_model <- readRDS(file = fn)
+ib_ecdi <- ecdi_model$itembank %>%
+  filter(stringr::str_detect(item, "^ecd")) %>%
+  mutate(
+    key = "gsed2208",
+    tau = round(tau, 2)
+  ) %>%
+  select(one_of("key", "item", "tau"))
+ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
+fo <- file.path(project, "data-raw/data/keys/ecd2208.txt")
+write.table(ib_ecdi,
+            file = fo, quote = FALSE, sep = "\t",
+            na = "", row.names = FALSE)
+
+
 

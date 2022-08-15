@@ -8,7 +8,7 @@ get_reference(population = "gcdg", references = dscore::builtin_references)
 }
 \arguments{
 \item{population}{A string describing the population. Currently supported
-are \code{"dutch"} and \code{"gcdg"} (default).}
+are \code{"dutch"}, \code{"gcdg"} and \code{"phase1"}.}
 
 \item{references}{A \code{data.frame} with the same structure
 as \code{builtin_references}. The default is to use
@@ -27,9 +27,11 @@ The function will silently rewrite \code{population = "gsed"}
 into to the \code{population = "gsed"}.
 
 The \code{"dutch"} reference was published in Van Buuren (2014)
-
 The \code{"gcdg"} was calculated from 15 cohorts with direct
 observations (Weber, 2019).
+The \code{"phase1"} references were calculated from the GSED Phase 1 validation
+data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
+age range 3.5-5 yrs is linearly extrapolated and are only indicative.
 }
 \references{
 Van Buuren S (2014). Growth charts of human development.

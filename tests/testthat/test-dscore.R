@@ -22,7 +22,7 @@ test_that("produces expected D-scores - key gcdg", {
   expect_identical(z2$d, expected_d2)
 })
 
-z3 <- dscore(data, key = "gsed")
+z3 <- dscore(data, key = "gsed2206")
 expected_d3 <- c(NA, NA, 3.46, 0.96, 4.82, 4.82, 4.82, 4.82,
                  11.81, 11.81)
 test_that("produces expected D-scores - key gsed", {
@@ -44,13 +44,13 @@ test_that("produces expected D-scores - key dutch", {
   expect_identical(z5$d, expected_d5)
 })
 
-z6 <- dscore(data, items = items[1:2])
+z6 <- dscore(data, items = items[1:2], key = "gsed2206")
 expected_d6 <- expected_d3
 test_that("produces expected D-scores", {
   expect_identical(z6$d, expected_d6)
 })
 
-z7 <- dscore(data, items = c(items[1:2], "junk"))
+z7 <- dscore(data, items = c(items[1:2], "junk"), key = "gsed2206")
 expected_d7 <- expected_d3
 test_that("produces expected D-scores", {
   expect_identical(z7$d, expected_d7)
@@ -87,16 +87,25 @@ data <- data.frame(
 transform <- c(0, 2)
 keyd <- data.frame(key = "temp",
                    item = items,
-                   tau = get_tau(items = items))
+                   tau = get_tau(items = items, key = "dutch"))
 
 zd <- dscore(data, items = items, dec = 4, metric = "dscore",
              itembank = keyd, key = "temp", population = "dutch")
 
-zl <- dscore(data, items = items, dec = 4, metric = "logit", transform = transform,
+zl <- dscore(data, items = items, dec = 4, metric = "logit",
+             transform = transform,
              itembank = keyd, key = "temp", population = "dutch")
 
 test_that("logit and dscore are identical", {
-  expect_equal(zl$d, (zd$d - transform[1])/transform[2])
-  expect_equal(zl$d*transform[2] + transform[1], zd$d)
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2], tolerance = 0.001)
+  expect_equal(zl$d*transform[2] + transform[1], zd$d, tolerance = 0.001)
 })
+
+# check prior mean
+data <- cbind(data, start = rep(c(0, 10), times = 5))
+zp0 <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch")
+zp1 <- dscore(data, items = items, dec = 4, metric = "dscore",
+              itembank = keyd, key = "temp", population = "dutch",
+              prior_mean = "start")
 

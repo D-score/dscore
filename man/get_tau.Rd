@@ -4,7 +4,7 @@
 \alias{get_tau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-get_tau(items, key = "gsed", itembank = dscore::builtin_itembank)
+get_tau(items, key = NULL, itembank = dscore::builtin_itembank)
 }
 \arguments{
 \item{items}{A character vector containing names of items to be
@@ -16,9 +16,9 @@ that have a difficulty parameter under the specified \code{key}.}
 \item{key}{A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: \code{"gsed2206"} (default), \code{"gsed1912"},
-\code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
-and \code{"dutch"}. Since version 1.5.0, the default \code{key = "gsed"}
+The built-in keys are:  \code{"gsed2208"} (default), \code{"gsed2206"},
+\code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
 selects the latest key starting with the string "gsed".
 Use \code{key = ""} to use all item names,
 which should only be done if there are no duplicate itemnames

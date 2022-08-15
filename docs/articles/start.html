@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
       </span>
     </div>
 
@@ -131,7 +131,7 @@ instruments.</p>
 <p>Assessment instruments connect to the <span class="math inline">\(D\)</span>-score through a <em>measurement
 model</em>. We use the term <em>key</em> to refer to a particular
 instance of a measurement model. The <code>dscore</code> package
-currently supports the following keys:</p>
+currently supports the following keys (in historic order):</p>
 <ol style="list-style-type: decimal">
 <li>
 <code>dutch</code>, a model developed for the <em>Dutch development
@@ -141,32 +141,48 @@ instrument</em>;</li>
 <em>direct</em> measurements;</li>
 <li>
 <code>gsed1912</code>, covers 20 instruments using a mix of
-<em>direct</em> and <em>caregiver-reported</em> measurements (dec
+<em>direct</em> and <em>caregiver-reported</em> measurements (Dec
 2019);</li>
 <li>
 <code>gsed2206</code>, covers 22 instruments using a mix of
-<em>direct</em> and <em>caregiver-reported</em> measurements (jun
-2022);</li>
+<em>direct</em> and <em>caregiver-reported</em> measurements.
+Superseeded. (Jun 2022);</li>
 <li>
-<code>lf2206</code>, isolated key that covers the GSED LF only;</li>
+<code>293_0</code>, covers only GSED SF (138 items) and GSED LF (155
+items). GSED core model. (Aug 2022)</li>
 <li>
-<code>sf2206</code>, isolated key that covers the GSED SF only.</li>
+<code>gsed2208</code>, covers 22 instruments using a mix of
+<em>direct</em> and <em>caregiver-reported</em> measurements. Extends
+the GSED core model. (Aug 2022).</li>
 </ol>
-<p>Although the differences between <span class="math inline">\(D\)</span>-scores calculated under different keys
-are generally small, the results are not identical. Hence, we may
-compare only <span class="math inline">\(D\)</span>-scores that are
-calculated under the same key. The table given below displays the number
-of items per instrument for four keys. If the entry is blank, the key
-does not cover the instrument.</p>
-<table class="table">
+<p>Different keys lead to different <span class="math inline">\(D\)</span>-scores. Hence, we may compare only
+<span class="math inline">\(D\)</span>-scores that are calculated under
+the same key. Our advice to set the key is:</p>
+<ul>
+<li>For new data, use the generic <code>key = "gsed"</code>. This choice
+will automatically fetch the latest GSED key;</li>
+<li>To explicitly set the most recent key use
+<code>key = "gsed2208"</code>. The ignores later keys.</li>
+<li>Use older keys <code>dutch</code>, <code>gcdg</code> or
+<code>gsed1912</code> to regenerate old results. These are unlikely to
+be useful for new data;</li>
+<li>Do not use superseeded keys. These are available for research
+purposes and likely to be removed in future versions.</li>
+</ul>
+<p>The table given below displays the number of items per instrument for
+four keys. If the entry is blank, the key does not cover the
+instrument.</p>
+<table style="width:100%;" class="table">
 <colgroup>
+<col width="5%">
+<col width="50%">
+<col width="5%">
 <col width="6%">
-<col width="57%">
 <col width="6%">
-<col width="7%">
-<col width="7%">
-<col width="7%">
-<col width="7%">
+<col width="6%">
+<col width="6%">
+<col width="6%">
+<col width="6%">
 </colgroup>
 <thead><tr class="header">
 <th>Code</th>
@@ -176,6 +192,8 @@ does not cover the instrument.</p>
 <th align="right">gcdg</th>
 <th align="right">gsed1912</th>
 <th align="right">gsed2206</th>
+<th align="right">gsed2208</th>
+<th align="right">293_0</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -186,6 +204,8 @@ does not cover the instrument.</p>
 <td align="right">29</td>
 <td align="right">17</td>
 <td align="right">17</td>
+<td align="right">17</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>bar</code></td>
@@ -195,11 +215,15 @@ does not cover the instrument.</p>
 <td align="right">15</td>
 <td align="right">13</td>
 <td align="right">13</td>
+<td align="right">13</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>bat</code></td>
 <td>Battelle Development Inventory and Screener-2</td>
 <td align="right">137</td>
+<td align="right"></td>
+<td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
@@ -213,6 +237,8 @@ does not cover the instrument.</p>
 <td align="right">85</td>
 <td align="right">76</td>
 <td align="right">76</td>
+<td align="right">76</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>by2</code></td>
@@ -222,6 +248,8 @@ does not cover the instrument.</p>
 <td align="right">16</td>
 <td align="right">16</td>
 <td align="right">16</td>
+<td align="right">16</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>by3</code></td>
@@ -231,6 +259,8 @@ does not cover the instrument.</p>
 <td align="right">105</td>
 <td align="right">67</td>
 <td align="right">67</td>
+<td align="right">67</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>cro</code></td>
@@ -240,6 +270,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">62</td>
 <td align="right">64</td>
+<td align="right">64</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>ddi</code></td>
@@ -249,6 +281,8 @@ does not cover the instrument.</p>
 <td align="right">65</td>
 <td align="right">64</td>
 <td align="right">64</td>
+<td align="right">64</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>den</code></td>
@@ -258,6 +292,8 @@ does not cover the instrument.</p>
 <td align="right">67</td>
 <td align="right">50</td>
 <td align="right">50</td>
+<td align="right">50</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>dmc</code></td>
@@ -267,6 +303,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">43</td>
 <td align="right">43</td>
+<td align="right">43</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>gri</code></td>
@@ -276,6 +314,30 @@ does not cover the instrument.</p>
 <td align="right">104</td>
 <td align="right">93</td>
 <td align="right">93</td>
+<td align="right">18</td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td><code>gpa</code></td>
+<td>GSED SF (parent version)</td>
+<td align="right">139</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right">139</td>
+<td align="right">138</td>
+<td align="right">138</td>
+</tr>
+<tr class="odd">
+<td><code>gto</code></td>
+<td>GSED LF (trained observer)</td>
+<td align="right">155</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right">155</td>
+<td align="right">155</td>
+<td align="right">155</td>
 </tr>
 <tr class="even">
 <td><code>iyo</code></td>
@@ -285,6 +347,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">55</td>
 <td align="right">57</td>
+<td align="right">57</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>kdi</code></td>
@@ -294,6 +358,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">48</td>
 <td align="right">48</td>
+<td align="right">48</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>mac</code></td>
@@ -303,6 +369,8 @@ does not cover the instrument.</p>
 <td align="right">3</td>
 <td align="right">3</td>
 <td align="right">3</td>
+<td align="right">3</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>mds</code></td>
@@ -312,6 +380,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="right">1</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>mdt</code></td>
@@ -321,6 +391,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">126</td>
 <td align="right">126</td>
+<td align="right">126</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>peg</code></td>
@@ -330,11 +402,15 @@ does not cover the instrument.</p>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="right">1</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>pri</code></td>
 <td>Project on Child Development Indicators (PRIDI)</td>
 <td align="right">63</td>
+<td align="right"></td>
+<td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
@@ -348,6 +424,8 @@ does not cover the instrument.</p>
 <td align="right">6</td>
 <td align="right">5</td>
 <td align="right">5</td>
+<td align="right">5</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>sgr</code></td>
@@ -357,6 +435,8 @@ does not cover the instrument.</p>
 <td align="right">19</td>
 <td align="right">19</td>
 <td align="right">19</td>
+<td align="right">19</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td><code>tep</code></td>
@@ -366,6 +446,8 @@ does not cover the instrument.</p>
 <td align="right">33</td>
 <td align="right">31</td>
 <td align="right">31</td>
+<td align="right">31</td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>vin</code></td>
@@ -375,6 +457,8 @@ does not cover the instrument.</p>
 <td align="right">17</td>
 <td align="right">17</td>
 <td align="right">17</td>
+<td align="right">17</td>
+<td align="right"></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -384,10 +468,14 @@ does not cover the instrument.</p>
 <td align="right">565</td>
 <td align="right">807</td>
 <td align="right">818</td>
+<td align="right">818</td>
+<td align="right">293</td>
 </tr>
 <tr class="even">
 <td></td>
 <td>Extensions</td>
+<td align="right"></td>
+<td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
@@ -402,17 +490,10 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
 </tr>
 <tr class="even">
-<td><code>gpa</code></td>
-<td>GSED SF (parent version)</td>
-<td align="right">139</td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right">139</td>
-</tr>
-<tr class="odd">
 <td><code>gsd</code></td>
 <td>GSED novel items</td>
 <td align="right">7</td>
@@ -420,15 +501,8 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right"></td>
 <td align="right">7</td>
-</tr>
-<tr class="even">
-<td><code>gto</code></td>
-<td>GSED LF (trained observer)</td>
-<td align="right">155</td>
 <td align="right"></td>
 <td align="right"></td>
-<td align="right"></td>
-<td align="right">155</td>
 </tr>
 <tr class="odd">
 <td><code>mul</code></td>
@@ -438,11 +512,15 @@ does not cover the instrument.</p>
 <td align="right"></td>
 <td align="right">139</td>
 <td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
 </tr>
 <tr class="even">
 <td><code>hyp</code></td>
 <td>Demonstration items</td>
 <td align="right">5</td>
+<td align="right"></td>
+<td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
@@ -456,6 +534,8 @@ does not cover the instrument.</p>
 <td align="right">565</td>
 <td align="right">892</td>
 <td align="right">1112</td>
+<td align="right">818</td>
+<td align="right"></td>
 </tr>
 </tbody>
 </table>
@@ -544,7 +624,7 @@ by</p>
 <span><span class="co">## 2        den     fm    d    014</span></span></code></pre>
 <p>This function returns a <code>data.frame</code> with four character
 vectors.</p>
-<p>The <code>dscore</code> package can recognise 3474 item names. The
+<p>The <code>dscore</code> package can recognise 3494 item names. The
 expression <code><a href="../reference/get_itemnames.html">get_itemnames()</a></code> returns a (long) vector of all
 known item names. Let us construct a table of instruments by
 domains:</p>
@@ -1465,6 +1545,89 @@ dmc
 </td>
 <td style="text-align:right;">
 0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+ecd
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+20
 </td>
 </tr>
 <tr>
@@ -3044,13 +3207,13 @@ identify each item. Calculating the <span class="math inline">\(D\)</span>-score
 number of rows as the input data. The first six rows are</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##        a  n      p     d       sem    daz</span></span>
-<span><span class="co">## 1 0.4873 11 0.9091 31.32 1.5831887 -1.451</span></span>
-<span><span class="co">## 2 0.6571 14 0.6429 34.67 0.9818996 -2.177</span></span>
-<span><span class="co">## 3 1.1800 19 0.9474 48.70 1.5518006 -1.190</span></span>
-<span><span class="co">## 4 1.9055 13 0.8462 60.00 1.1725364 -0.611</span></span>
-<span><span class="co">## 5 0.5503 11 0.8182 29.49 1.3305649 -2.775</span></span>
-<span><span class="co">## 6 0.7666 14 0.7857 36.51 0.9197842 -2.529</span></span></code></pre>
+<pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
+<span><span class="co">## 1 0.4873 11 0.9091 25.75 1.688651 -1.534</span></span>
+<span><span class="co">## 2 0.6571 14 0.6429 27.89 1.121046 -2.386</span></span>
+<span><span class="co">## 3 1.1800 19 0.9474 49.46 1.659354 -0.652</span></span>
+<span><span class="co">## 4 1.9055 13 0.8462 60.98 1.315545 -0.601</span></span>
+<span><span class="co">## 5 0.5503 11 0.8182 23.71 1.384954 -2.439</span></span>
+<span><span class="co">## 6 0.7666 14 0.7857 30.35 1.037592 -2.550</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <colgroup>
@@ -3171,20 +3334,20 @@ interaction between age and sex:</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## Residuals:</span></span>
 <span><span class="co">##     Min      1Q  Median      3Q     Max </span></span>
-<span><span class="co">## -2.5784 -0.8323 -0.2204  0.5850  3.3278 </span></span>
+<span><span class="co">## -1.5056 -0.6067 -0.2428  0.4560  2.9515 </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Coefficients:</span></span>
 <span><span class="co">##             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
-<span><span class="co">## (Intercept) -2.41367    0.33600  -7.184 1.45e-10 ***</span></span>
-<span><span class="co">## age          0.99366    0.28119   3.534 0.000632 ***</span></span>
-<span><span class="co">## sexmale      0.06287    0.46566   0.135 0.892887    </span></span>
-<span><span class="co">## age:sexmale -0.14630    0.37362  -0.392 0.696232    </span></span>
+<span><span class="co">## (Intercept) -2.20824    0.27959  -7.898 4.67e-12 ***</span></span>
+<span><span class="co">## age          0.94259    0.23399   4.028 0.000112 ***</span></span>
+<span><span class="co">## sexmale      0.03872    0.38748   0.100 0.920604    </span></span>
+<span><span class="co">## age:sexmale -0.13047    0.31089  -0.420 0.675670    </span></span>
 <span><span class="co">## ---</span></span>
 <span><span class="co">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Residual standard error: 1.176 on 96 degrees of freedom</span></span>
-<span><span class="co">## Multiple R-squared:  0.2024, Adjusted R-squared:  0.1774 </span></span>
-<span><span class="co">## F-statistic: 8.119 on 3 and 96 DF,  p-value: 7.12e-05</span></span></code></pre>
+<span><span class="co">## Residual standard error: 0.9783 on 96 degrees of freedom</span></span>
+<span><span class="co">## Multiple R-squared:  0.2499, Adjusted R-squared:  0.2265 </span></span>
+<span><span class="co">## F-statistic: 10.66 on 3 and 96 DF,  p-value: 4.103e-06</span></span></code></pre>
 <p>This group of very preterms starts around -2.5 SD, followed by a
 catch-up in child development of approximately 1.0 SD per year. The size
 of the catch-up is equal for boys and girls.</p>
@@ -3198,16 +3361,16 @@ intercept and age effects, and rerun as</p>
 <pre><code><span><span class="co">## Linear mixed model fit by REML ['lmerMod']</span></span>
 <span><span class="co">## Formula: daz ~ 1 + age + sex + sex * age + (1 + age | id)</span></span>
 <span><span class="co">##    Data: md</span></span>
-<span><span class="co">## REML criterion at convergence: 311.1036</span></span>
+<span><span class="co">## REML criterion at convergence: 280.3131</span></span>
 <span><span class="co">## Random effects:</span></span>
 <span><span class="co">##  Groups   Name        Std.Dev. Corr </span></span>
-<span><span class="co">##  id       (Intercept) 1.0486        </span></span>
-<span><span class="co">##           age         0.6684   -0.88</span></span>
-<span><span class="co">##  Residual             0.9668        </span></span>
+<span><span class="co">##  id       (Intercept) 0.5192        </span></span>
+<span><span class="co">##           age         0.3237   -0.74</span></span>
+<span><span class="co">##  Residual             0.8945        </span></span>
 <span><span class="co">## Number of obs: 100, groups:  id, 27</span></span>
 <span><span class="co">## Fixed Effects:</span></span>
 <span><span class="co">## (Intercept)          age      sexmale  age:sexmale  </span></span>
-<span><span class="co">##    -2.43389      1.03933      0.08707     -0.18784</span></span></code></pre>
+<span><span class="co">##    -2.24067      0.98051      0.06331     -0.15732</span></span></code></pre>
 <p>This analysis yields the same substantive conclusions as before.</p>
 </div>
 <div class="section level2 unnumbered">

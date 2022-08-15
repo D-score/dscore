@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
       </span>
     </div>
 
@@ -58,25 +58,39 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.5.5" id="dscore-155">dscore 1.5.5<a class="anchor" aria-label="anchor" href="#dscore-155"></a></h2>
-<ul><li>Initialise proper default <code>population</code> when key is <code>294_0</code>.</li>
+<h2 class="page-header" data-toc-text="1.6.0" id="dscore-160">dscore 1.6.0<a class="anchor" aria-label="anchor" href="#dscore-160"></a></h2>
+<div class="section level4">
+<h4 id="major-changes-1-6-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-1-6-0"></a></h4>
+<ul><li>Solves a long-standing issue that led to severe incongruences between LF and SF at the earliest ages (&lt;6M).</li>
+<li>Adds two new keys (<code>gsed2208</code> and <code>293_0</code>) using the Phase 1 validation data for the GSED SF and GSED LF.</li>
+<li>Sets <code>293_0</code> as the <strong>GSED core model</strong> and extended it to include the 818 items that fitted the previous model (“gsed2206”).</li>
+<li>Adds a new reference (named <code>phase1</code>), based on LF and SF data from cohorts GSED-BGD, GSED-PAK and GSED-TZA studies.</li>
+<li>**Changes the default key to <code>gsed2208</code> and default <code>population</code> to “phase1”<code>.**. If you want the old behavior, specify</code>key = “gsed1912”<code>or</code>key = “gsed2206”<code>to functions that accept the</code>key<code>argument (</code>dscore()<code>,</code>dscore_posterior()<code>,</code>get_age_equivalent()<code>,</code>get_tau()`).</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.5.4" id="dscore-154">dscore 1.5.4<a class="anchor" aria-label="anchor" href="#dscore-154"></a></h2>
-<ul><li>Adds experimental key <code>294_0</code> to the <code>builtin_itembank</code>.</li>
+<div class="section level4">
+<h4 id="minor-changes-1-6-0">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-1-6-0"></a></h4>
+<ul><li>Many simplications and update to increase legibility and consistency.</li>
+<li>Makes arguments of <code><a href="../reference/get_age_equivalent.html">get_age_equivalent()</a></code> and <code><a href="../reference/get_tau.html">get_tau()</a></code> consistent with <code><a href="../reference/dscore.html">dscore()</a></code>
+</li>
+<li>Adapts BCT functions to work with missing and out-of-range data</li>
+<li>Adds support for <code>phase1</code> reference to <code><a href="../reference/get_reference.html">get_reference()</a></code>
+</li>
+<li>Adds support for BCT references in <code><a href="../reference/daz.html">zad()</a></code> and <code><a href="../reference/daz.html">daz()</a></code>
+</li>
+<li>Adds <code>count_mean_phase1()</code> for setting prior mean equal to the GSED Phase 1 reference</li>
+<li>Adds round 2 estimates to <code>count_mean_phase1()</code>
+</li>
+<li>Prepares <code><a href="../reference/dscore.html">dscore()</a></code> prior_mean functionality to deal with the to-be-implemented new reference as “phase1”</li>
+<li>Adds <code>count_mean_phase1()</code> function</li>
+<li>Adds 18 ECDI items to keys <code>gsed2206</code> and <code>294_0</code>
+</li>
+<li>Initialise proper default <code>population</code> when key is <code>294_0</code>.</li>
+<li>Adds experimental key <code>294_0</code> to the <code>builtin_itembank</code>.</li>
+<li>Adds a <code>relevance</code> argument to <code><a href="../reference/dscore.html">dscore()</a></code> and <code><a href="../reference/dscore.html">dscore_posterior()</a></code> to restrict calculation of D-scores to those items that have their <code>tau</code> within this relevance interval around the dynamic EAP estimate.</li>
+<li>Repairs bug in <code>builtin_itembank</code> that inherits old (gsed1912) tau’s into new key (gsed2206) for instruments <code>gto</code> and <code>gpa</code>. As a consequence, D-score were incorrectly calculated when <code>gto</code> and <code>gpa</code> item names were used.</li>
+<li>Repairs a bug in <code><a href="../reference/get_age_equivalent.html">get_age_equivalent()</a></code> that resulted in age interval estimates that were too narrow on the D-score scale.</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.5.3" id="dscore-153">dscore 1.5.3<a class="anchor" aria-label="anchor" href="#dscore-153"></a></h2>
-<ul><li>Adds a <code>relevance</code> argument to <code><a href="../reference/dscore.html">dscore()</a></code> and <code><a href="../reference/dscore.html">dscore_posterior()</a></code> to restrict calculation of D-scores to those items that have their <code>tau</code> within this relevance interval around the dynamic EAP estimate.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.5.2" id="dscore-152">dscore 1.5.2<a class="anchor" aria-label="anchor" href="#dscore-152"></a></h2>
-<ul><li>Repairs bug in <code>builtin_itembank</code> that inherits old (gsed1912) tau’s into new key (gsed2206) for instruments <code>gto</code> and <code>gpa</code>. As a consequence, D-score were incorrectly calculated when <code>gto</code> and <code>gpa</code> item names were used.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.5.1" id="dscore-151">dscore 1.5.1<a class="anchor" aria-label="anchor" href="#dscore-151"></a></h2>
-<ul><li>Repairs a bug in <code><a href="../reference/get_age_equivalent.html">get_age_equivalent()</a></code> that resulted in age interval estimates that were too narrow on the D-score scale.</li>
-</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.5.0" id="dscore-150">dscore 1.5.0<a class="anchor" aria-label="anchor" href="#dscore-150"></a></h2>
 <div class="section level4">

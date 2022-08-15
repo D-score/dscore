@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
       </span>
     </div>
 
@@ -72,7 +72,7 @@ distribution.</p>
     <h2>Arguments</h2>
     <dl><dt>population</dt>
 <dd><p>A string describing the population. Currently supported
-are <code>"dutch"</code> and <code>"gcdg"</code> (default).</p></dd>
+are <code>"dutch"</code>, <code>"gcdg"</code> and <code>"phase1"</code>.</p></dd>
 
 
 <dt>references</dt>
@@ -92,9 +92,12 @@ as <code>builtin_references</code>. The default is to use
     <p>No references for population <code>"gsed"</code> exist.
 The function will silently rewrite <code>population = "gsed"</code>
 into to the <code>population = "gsed"</code>.</p>
-<p>The <code>"dutch"</code> reference was published in Van Buuren (2014)</p>
-<p>The <code>"gcdg"</code> was calculated from 15 cohorts with direct
-observations (Weber, 2019).</p>
+<p>The <code>"dutch"</code> reference was published in Van Buuren (2014)
+The <code>"gcdg"</code> was calculated from 15 cohorts with direct
+observations (Weber, 2019).
+The <code>"phase1"</code> references were calculated from the GSED Phase 1 validation
+data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
+age range 3.5-5 yrs is linearly extrapolated and are only indicative.</p>
     </div>
     <div id="references">
     <h2>References</h2>

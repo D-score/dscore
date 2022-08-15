@@ -19,7 +19,7 @@ are done in lower case."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
       </span>
     </div>
 
@@ -67,7 +67,7 @@ are done in lower case.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_tau</span><span class="op">(</span><span class="va">items</span>, key <span class="op">=</span> <span class="st">"gsed"</span>, itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_tau</span><span class="op">(</span><span class="va">items</span>, key <span class="op">=</span> <span class="cn">NULL</span>, itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -84,9 +84,9 @@ that have a difficulty parameter under the specified <code>key</code>.</p></dd>
 <dd><p>A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: <code>"gsed2206"</code> (default), <code>"gsed1912"</code>,
-<code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
-and <code>"dutch"</code>. Since version 1.5.0, the default <code>key = "gsed"</code>
+The built-in keys are:  <code>"gsed2208"</code> (default), <code>"gsed2206"</code>,
+<code>"gsed1912"</code>, <code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
+and <code>"dutch"</code>. Since version 1.5.0, the <code>key = "gsed"</code>
 selects the latest key starting with the string "gsed".
 Use <code>key = ""</code> to use all item names,
 which should only be done if there are no duplicate itemnames
@@ -123,7 +123,7 @@ default.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># difficulty levels in the GHAP lexicon</span></span></span>
 <span class="r-in"><span><span class="fu">get_tau</span><span class="op">(</span>items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ddifmd001"</span>, <span class="st">"DDigmd052"</span>, <span class="st">"xyz"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ddifmd001 DDigmd052       xyz </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      5.51        NA        NA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      8.61        NA        NA </span>
 </code></pre></div>
     </div>
   </div>

@@ -35,17 +35,28 @@ daz <- function(d, x = as.numeric(names(d)),
                 reference = get_reference(),
                 dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
+  pop <- reference$pop[1]
 
-  # interpolate to proper ages
-  l <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
-  m <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
-  s <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
+  if (pop %in% c("gcdg", "dutch")) {
+    # LMS reference
+    l <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
+    m <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
+    s <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
+    z <- ifelse(l > 0.01 | l < (-0.01),
+                (((d / m)^l) - 1) / (l * s),
+                log(d / m) / s
+    )
+  }
 
-  # LMS formula
-  z <- ifelse(l > 0.01 | l < (-0.01),
-    (((d / m)^l) - 1) / (l * s),
-    log(d / m) / s
-  )
+  if (pop %in% c("phase1")) {
+    # BCT reference
+    mu <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
+    sigma <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
+    nu <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
+    tau <- approx(x = reference[, "age"], y = reference[, "tau"], xout = x)$y
+    z <- qnorm(pBCT(d, mu, sigma, nu, tau))
+  }
+
   names(z) <- as.character(x)
   return(round(z, dec))
 }
@@ -72,17 +83,27 @@ zad <- function(z, x = as.numeric(names(z)),
                 reference = get_reference(),
                 dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
+  pop <- reference$pop[1]
 
-  # interpolate to proper ages
-  mu <- approx(reference[, "age"], reference[, "mu"], xout = x)$y
-  sigma <- approx(reference[, "age"], reference[, "sigma"], xout = x)$y
-  nu <- approx(reference[, "age"], reference[, "nu"], xout = x)$y
+  if (pop %in% c("gcdg", "dutch")) {
+    # LMS reference
+    mu <- approx(reference[, "age"], reference[, "mu"], xout = x)$y
+    sigma <- approx(reference[, "age"], reference[, "sigma"], xout = x)$y
+    nu <- approx(reference[, "age"], reference[, "nu"], xout = x)$y
+    d <- ifelse(nu > 0.01 | nu < (-0.01),
+                mu * ((nu * sigma * z + 1) ^ (1 / nu)),
+                mu * exp(sigma * z))
+  }
 
-  # centile formula
-  d <- ifelse(nu > 0.01 | nu < (-0.01),
-    mu * ((nu * sigma * z + 1) ^ (1 / nu)),
-    mu * exp(sigma * z)
-  )
+  if (pop %in% c("phase1")) {
+    # BCT reference
+    mu <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
+    sigma <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
+    nu <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
+    tau <- approx(x = reference[, "age"], y = reference[, "tau"], xout = x)$y
+    d <- qBCT(pnorm(z), mu, sigma, nu, tau)
+  }
+
   names(d) <- as.character(x)
   return(round(d, dec))
 }

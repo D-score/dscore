@@ -19,7 +19,7 @@ observations on milestones."><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
       </span>
     </div>
 
@@ -72,14 +72,14 @@ observations on milestones.</p>
 <span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
-<span>  key <span class="op">=</span> <span class="st">"gsed"</span>,</span>
+<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
 <span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
-<span>  prior_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">key</span> <span class="op">==</span> <span class="st">"dutch"</span>, <span class="st">".dutch"</span>, <span class="st">".gcdg"</span><span class="op">)</span>,</span>
+<span>  prior_mean <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,</span>
-<span>  population <span class="op">=</span> <span class="va">key</span>,</span>
+<span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
 <span>  relevance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
@@ -89,14 +89,14 @@ observations on milestones.</p>
 <span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
-<span>  key <span class="op">=</span> <span class="st">"gsed"</span>,</span>
+<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
 <span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
-<span>  prior_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">key</span> <span class="op">==</span> <span class="st">"dutch"</span>, <span class="st">".dutch"</span>, <span class="st">".gcdg"</span><span class="op">)</span>,</span>
+<span>  prior_mean <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>,</span>
-<span>  population <span class="op">=</span> <span class="va">key</span>,</span>
+<span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
 <span>  relevance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -135,9 +135,9 @@ The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
 <dd><p>A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are: <code>"gsed2206"</code> (default), <code>"gsed1912"</code>,
-<code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
-and <code>"dutch"</code>. Since version 1.5.0, the default <code>key = "gsed"</code>
+The built-in keys are:  <code>"gsed2208"</code> (default), <code>"gsed2206"</code>,
+<code>"gsed1912"</code>, <code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
+and <code>"dutch"</code>. Since version 1.5.0, the <code>key = "gsed"</code>
 selects the latest key starting with the string "gsed".
 Use <code>key = ""</code> to use all item names,
 which should only be done if there are no duplicate itemnames
@@ -159,21 +159,27 @@ default.</p></dd>
 
 
 <dt>prior_mean</dt>
-<dd><p>A string specifying a column name in <code>data</code>
-with the mean of the prior for the D-score calculation.
+<dd><p>A string specifying where the mean of the
+prior for the D-score calculation should come from. It could be
+a column name in <code>data</code> (when you want your own prior for every row),
+but normally this is one of the keywords <code>".dutch"</code>, <code>".gcdg"</code> or <code>".phase1"</code>.
 The default depends on the <code>key</code>. If <code>key == "dutch"</code> then
-<code>prior_mean = "dutch"</code>, else it is <code>".gcdg"</code>. These settings
-calculate an age-dependent prior mean internally according to function
-<code>dscore:::count_mu_gcdg()</code>.
-The choice <code>prior_mean = ".dutch"</code>
+<code>prior_mean = ".dutch"</code>. The choice <code>prior_mean = ".dutch"</code>
 calculates <code>prior_mean</code> from the Count model coded in
-<code>dscore:::count_mu_dutch()</code>).</p></dd>
+<code>dscore:::count_mu_dutch()</code>).
+If <code>key</code> is #' <code>"gcdg"</code>, <code>"gsed1912"</code>,
+<code>"gsed2206"</code>, <code>"lf2206"</code> or <code>"sf2206"</code> then <code>prior_mean = ".gcdg"</code>.
+This setting calculates an age-dependent prior mean internally according
+to function <code>dscore:::count_mu_gcdg()</code>. In other cases, <code>prior_mean = ".phase1"</code>
+which uses the function <code>dscore:::count_mu_phase1()</code>.
+Normally, you should not touch this parameter, but feel free to use
+<code>prior_mean</code> to override the automatic choices.</p></dd>
 
 
 <dt>prior_sd</dt>
 <dd><p>A string specifying a column name in <code>data</code>
 with the standard deviation of the prior for the D-score calculation.
-If not specified, the standard deviation is taken as 5.</p></dd>
+If not specified, the standard deviation is taken as 5 for every row.</p></dd>
 
 
 <dt>transform</dt>
@@ -191,7 +197,7 @@ This vector should span the range of all D-score values. The default
 
 <dt>population</dt>
 <dd><p>A string describing the population. Currently
-supported are <code>"dutch"</code> and <code>"gcdg"</code> (default).</p></dd>
+supported are <code>"phase1"</code> (default), <code>"dutch"</code>, <code>"gcdg"</code>.</p></dd>
 
 
 <dt>dec</dt>
@@ -226,19 +232,20 @@ posterior ability distribution. If no valid responses were obtained,
 method uses Bayes rule to update a prior ability into a posterior
 ability.</p>
 <p>The item names should correspond to the <code>"gsed"</code> lexicon.</p>
-<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>14</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>20</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"gsed2206"</code></td><td><code>818_17</code></td><td><code>-10:100</code></td><td>22</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"lf2206"</code></td><td><code>155_0</code></td><td><code>-10:100</code></td><td>1</td><td>direct</td><td>GSED Team, 2022</td></tr><tr><td><code>"sf2206"</code></td><td><code>139_0</code></td><td><code>-10:100</code></td><td>1</td><td>caregiver</td><td>GSED Team, 2022</td></tr></table><p>As a general rule, one should only compare D-scores
+<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>14</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>20</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"gsed2206"</code></td><td><code>818_17</code></td><td><code>-10:100</code></td><td>22</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2208"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>22</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"lf2206"</code></td><td><code>155_0</code></td><td><code>-10:100</code></td><td>1</td><td>direct</td><td>GSED Team, 2022</td></tr><tr><td><code>"sf2206"</code></td><td><code>139_0</code></td><td><code>-10:100</code></td><td>1</td><td>caregiver</td><td>GSED Team, 2022</td></tr></table><p>As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
-the advice is to use the most general key, <code>"gsed"</code>.</p>
+the advice is to use the default, which currently links to
+<code>"gsed2208"</code>.</p>
 <p>The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
 Count models are stored as internal functions
-<code>dscore:::count_mu_gcdg()</code> (default) and
+<code>dscore:::count_mu_phase1()</code>, <code>dscore:::count_mu_gcdg()</code> and
 <code>dscore:::count_mu_dutch()</code>. The spread of the starting prior
 is 5 D-score points around this mean D-score, which corresponds to
-approximately twice the normal spread of child of a given age. The
+approximately 1.5 to 2 times the normal spread of child of a given age. The
 starting prior is thus somewhat informative for low numbers of
-valid items, and unformative for large number of items (say &gt;10 items).</p>
+valid items, and uninformative for large number of items (say &gt;10 items).</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -264,7 +271,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Stef van Buuren, Iris Eekhout, Arjan Huizing (2020)</p>
+    <p>Stef van Buuren, Iris Eekhout, Arjan Huizing (2022)</p>
     </div>
 
     <div id="ref-examples">
@@ -280,21 +287,21 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span><span class="co"># third item is not part of default key</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="get_tau.html">get_tau</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ddifmd001 ddicmm029 ddigmd053 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      5.51      2.43        NA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      8.61      8.47        NA </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># calculate D-score</span></span></span>
 <span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         a n   p     d      sem    daz</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1      NA 0  NA    NA       NA     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2      NA 0  NA    NA       NA     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.0575 1 0.0  3.46 2.772368 -2.138</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.0575 2 0.0  0.96 2.375263 -2.843</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.0575 2 0.5  4.82 1.881393 -1.754</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.0575 2 0.5  4.82 1.881393 -1.754</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.0575 2 0.5  4.82 1.881393 -1.754</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.0575 2 0.5  4.82 1.881393 -1.754</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.0575 2 1.0 11.81 3.970219  0.219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.0575 2 1.0 11.81 3.970219  0.219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.0575 1 0.0  6.61 2.763004 -2.019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.0575 2 0.0  5.60 2.459750 -2.235</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.0575 2 1.0 15.30 3.851173  0.277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.0575 2 1.0 15.30 3.851173  0.277</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># calculate full posterior</span></span></span>
 <span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">dscore_posterior</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>

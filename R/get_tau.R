@@ -14,10 +14,14 @@
 #' get_tau(items = c("ddifmd001", "DDigmd052", "xyz"))
 #' @export
 get_tau <- function(items,
-                    key = "gsed",
+                    key = NULL,
                     itembank = dscore::builtin_itembank) {
+  # set default key
+  if (is.null(key) || key == "gsed") {
+    key <- "gsed2208"
+  }
+
   # if key = "", then search in all rows
-  if (key == "gsed") key <- "gsed2206"
   if (key == "") {
     mib <- data.frame(
       key = "",

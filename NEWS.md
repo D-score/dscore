@@ -1,21 +1,29 @@
-# dscore 1.5.5
+# dscore 1.6.0
 
+### Major changes
+
+* Solves a long-standing issue that led to severe incongruences between LF and SF at the earliest ages (<6M).
+* Adds two new keys (`gsed2208` and `293_0`) using the Phase 1 validation data for the GSED SF and GSED LF.
+* Sets `293_0` as the **GSED core model** and extended it to include the 818 items that fitted the previous model ("gsed2206").
+* Adds a new reference (named `phase1`), based on LF and SF data from cohorts GSED-BGD, GSED-PAK and GSED-TZA studies. 
+* **Changes the default key to `gsed2208` and default `population` to "phase1"`.**. If you want the old behavior, specify `key = "gsed1912"` or `key = "gsed2206"` to functions that accept the `key` argument (`dscore()`, `dscore_posterior()`, `get_age_equivalent()`, `get_tau()`).
+
+### Minor changes
+
+* Many simplications and update to increase legibility and consistency.
+* Makes arguments of `get_age_equivalent()` and `get_tau()` consistent with `dscore()`
+* Adapts BCT functions to work with missing and out-of-range data
+* Adds support for `phase1` reference  to `get_reference()`
+* Adds support for BCT references in `zad()` and `daz()`
+* Adds `count_mean_phase1()` for setting prior mean equal to the GSED Phase 1 reference
+* Adds round 2 estimates to `count_mean_phase1()`
+* Prepares `dscore()` prior_mean functionality to deal with the to-be-implemented new reference as "phase1"
+* Adds `count_mean_phase1()` function
+* Adds 18 ECDI items to keys `gsed2206` and `294_0`
 * Initialise proper default `population` when key is `294_0`.
-
-# dscore 1.5.4
-
 * Adds experimental key `294_0` to the `builtin_itembank`.
-
-# dscore 1.5.3
-
 * Adds a `relevance` argument to `dscore()` and `dscore_posterior()` to restrict calculation of D-scores to those items that have their `tau` within this relevance interval around the dynamic EAP estimate.
-
-# dscore 1.5.2
-
 * Repairs bug in `builtin_itembank` that inherits old (gsed1912) tau's into new key (gsed2206) for instruments `gto` and `gpa`. As a consequence, D-score were incorrectly calculated when `gto` and `gpa` item names were used.
-
-# dscore 1.5.1
-
 * Repairs a bug in `get_age_equivalent()` that resulted in age interval estimates that were too narrow on the D-score scale.
 
 # dscore 1.5.0

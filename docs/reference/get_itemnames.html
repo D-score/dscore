@@ -19,7 +19,7 @@ set of names."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.3</span>
       </span>
     </div>
 
@@ -74,7 +74,8 @@ set of names.</p>
 <span>  mode <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  number <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  strict <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  itemtable <span class="op">=</span> <span class="cn">NULL</span></span>
+<span>  itemtable <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  order <span class="op">=</span> <span class="st">"idnm"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -119,6 +120,13 @@ names must conform to one of the built-in names. The default is
 <dd><p>A <code>data.frame</code> set up according to the
 same structure as <code><a href="builtin_itemtable.html">builtin_itemtable()</a></code>. If not specified,
 the <code>builtin_itemtable</code> is used.</p></dd>
+
+
+<dt>order</dt>
+<dd><p>A four-letter string specifying the sorting order.
+The four letters are: <code>i</code> for instrument, <code>d</code> for domain,
+<code>m</code> for mode and <code>n</code> for number. The default is
+<code>"idnm"</code>.</p></dd>
 
 </dl></div>
     <div id="value">

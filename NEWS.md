@@ -1,3 +1,8 @@
+# dscore 1.6.3
+
+* Adds `order` argument to `get_itemnames()`
+* Repair an error in the `sort_itemnames()` example
+
 # dscore 1.6.2
 
 * `get_labels()` now returns the labels in the same order as `items`

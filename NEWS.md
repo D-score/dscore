@@ -1,3 +1,7 @@
+# dscore 1.6.2
+
+* `get_labels()` now returns the labels in the same order as `items`
+
 # dscore 1.6.1 
 
 * Extends `gsed2208` with 18 ECDI items using Phase 1 data

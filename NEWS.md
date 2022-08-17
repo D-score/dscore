@@ -1,3 +1,7 @@
+# dscore 1.6.4
+
+* Adds example data set `gsample` with 10 cases with SF and LF scores
+
 # dscore 1.6.3
 
 * Adds `order` argument to `get_itemnames()`

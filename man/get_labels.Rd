@@ -18,7 +18,8 @@ same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not 
 the \code{builtin_itemtable} is used.}
 }
 \value{
-A named character vector with item labels.
+A named character vector with \code{length(items)} elements with
+item labels, in the same order as in \code{items}.
 }
 \description{
 The \code{get_labels()} function obtains the item labels for a

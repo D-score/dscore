@@ -7,7 +7,8 @@
 #' default (`NULL`) returns the labels of all items.
 #' @param trim The maximum number of characters in the label. The
 #' default `trim = NULL` does not trim labels.
-#' @return A named character vector with item labels.
+#' @return A named character vector with `length(items)` elements with
+#' item labels, in the same order as in `items`.
 #' @seealso [builtin_itemtable()], [get_itemnames()]
 #' @examples
 #' # get labels of first two Macarthur items
@@ -22,5 +23,5 @@ get_labels <- function(items = NULL, trim = NULL, itemtable = NULL) {
   label <- get_itemtable(items = items, itemtable = itemtable)$label
   if (!is.null(trim)) label <- substr(label, 1L, trim)
   names(label) <- get_itemtable(items = items, itemtable = itemtable)$item
-  label
+  label[items]
 }

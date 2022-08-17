@@ -16,7 +16,7 @@
 #' @author Stef van Buuren
 #' @examples
 #' itemnames <- c("aqigmc028", "grihsd219", "", "by1mdd157", "mdsgmd006")
-#' decompose_itemnames(itemnames)
+#' sort_itemnames(itemnames)
 #' @export
 sort_itemnames <- function(x, order = "idnm") {
   x[order_itemnames(x, order)]

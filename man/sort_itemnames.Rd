@@ -30,7 +30,7 @@ order.
 }
 \examples{
 itemnames <- c("aqigmc028", "grihsd219", "", "by1mdd157", "mdsgmd006")
-decompose_itemnames(itemnames)
+sort_itemnames(itemnames)
 }
 \seealso{
 \code{\link[=decompose_itemnames]{decompose_itemnames()}}

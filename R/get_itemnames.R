@@ -23,6 +23,7 @@
 #' @param itemtable A `data.frame` set up according to the
 #' same structure as [builtin_itemtable()]. If not specified,
 #' the `builtin_itemtable` is used.
+#' @inheritParams sort_itemnames
 #' @return A vector with names of items
 #' @details
 #' The gsed-naming convention is as follows. Position 1-3 codes the
@@ -53,7 +54,8 @@
 #' @export
 get_itemnames <- function(x, instrument = NULL, domain = NULL,
                           mode = NULL, number = NULL, strict = FALSE,
-                          itemtable = NULL) {
+                          itemtable = NULL,
+                          order = "idnm") {
   if (is.null(itemtable)) {
     builtin <- dscore::builtin_itemtable$item
   } else {
@@ -71,5 +73,5 @@ get_itemnames <- function(x, instrument = NULL, domain = NULL,
   if (!is.null(domain)) z <- z[substr(z, 4, 5) %in% domain]
   if (!is.null(mode)) z <- z[substr(z, 6, 6) %in% mode]
   if (!is.null(number)) z <- z[as.numeric(substr(z, 7, 9)) %in% number]
-  z
+  sort_itemnames(z, order = order)
 }

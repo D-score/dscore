@@ -11,7 +11,8 @@ get_itemnames(
   mode = NULL,
   number = NULL,
   strict = FALSE,
-  itemtable = NULL
+  itemtable = NULL,
+  order = "idnm"
 )
 }
 \arguments{
@@ -41,6 +42,11 @@ names must conform to one of the built-in names. The default is
 \item{itemtable}{A \code{data.frame} set up according to the
 same structure as \code{\link[=builtin_itemtable]{builtin_itemtable()}}. If not specified,
 the \code{builtin_itemtable} is used.}
+
+\item{order}{A four-letter string specifying the sorting order.
+The four letters are: \code{i} for instrument, \code{d} for domain,
+\code{m} for mode and \code{n} for number. The default is
+\code{"idnm"}.}
 }
 \value{
 A vector with names of items

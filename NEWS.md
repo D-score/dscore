@@ -1,3 +1,7 @@
+# dscore 1.6.5
+
+* Solves bug that crashed `dscore::count_mu_phase1(t)` when `t` is a vector containing `NA`s
+
 # dscore 1.6.4
 
 * Adds example data set `gsample` with 10 cases with SF and LF scores

@@ -109,3 +109,7 @@ zp1 <- dscore(data, items = items, dec = 4, metric = "dscore",
               itembank = keyd, key = "temp", population = "dutch",
               prior_mean = "start")
 
+test_that("count_mu_phase() handles missing ages", {
+  expect_silent(dscore:::count_mu_phase1(t = c(NA, NA)))
+  expect_silent(dscore:::count_mu_phase1(t = c(NA, -3, 1:3, NA)))
+})

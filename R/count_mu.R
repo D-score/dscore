@@ -62,9 +62,11 @@ count_mu_gcdg <- function(t) {
 #' @examples
 #' dscore:::count_mu_phase1(0:5)
 count_mu_phase1 <- function(t) {
-  t1 <- t <= 0.75
-  t2 <- t > 0.75 & t <= 3.5
-  t3 <- t > 3.5
+
+  to <- !is.na(t)
+  t1 <- to & t <= 0.75
+  t2 <- to & t > 0.75 & t <= 3.5
+  t3 <- to & t > 3.5
 
   # Round 1 model
   # t[t1] <- suppressWarnings(21.3449 + 26.4916 * t[t1] + 7.0251 * log(t[t1] + 0.2))

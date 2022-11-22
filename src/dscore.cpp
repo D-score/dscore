@@ -141,10 +141,10 @@ List calculate_posterior(NumericVector scores,
     score = scores[j];
     tauj = tau[j];
     eap = fullpost["eap"];
-    if (!arma::is_finite(score) | !arma::is_finite(tauj)){
+    if (!arma::is_finite(score) || !arma::is_finite(tauj)){
       continue;
     }
-    if (((tauj - eap) > relhi) | ((tauj - eap) < rello)) {
+    if (((tauj - eap) > relhi) || ((tauj - eap) < rello)) {
       continue;
     }
 

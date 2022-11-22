@@ -32,7 +32,6 @@ Suggests:
     knitr,
     lme4,
     rmarkdown,
-    sirt,
     testthat
 Encoding: UTF-8
 License: AGPL-3
@@ -43,4 +42,3 @@ URL: https://github.com/d-score/dscore, https://d-score.org/dscore/, https://d-s
 BugReports: https://github.com/d-score/dscore/issues
 Copyright: Stef van Buuren, Iris Eekhout, Arjan Huizing
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1

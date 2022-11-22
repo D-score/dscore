@@ -33,8 +33,8 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 //'
 //' @details
 //' This function assumes that the difficulties have been estimated by
-//' a binary Rasch model (e.g. by
-//' [sirt::rasch.pairwise.itemcluster()]).
+//' a binary Rasch model, e.g. by `rasch.pairwise.itemcluster()` of
+//' the `sirt` package.
 //'
 //' @aliases posterior
 //' @param score Integer, either 0 (fail) and 1 (pass)
@@ -44,7 +44,7 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 //' @return A vector of length `length(prior)`
 //' @author Stef van Buuren, Arjan Huizing, 2020
 //' @note: Internal function
-//' @seealso [dscore()], [sirt::rasch.pairwise.itemcluster()]
+//' @seealso [dscore()]
 // [[Rcpp::export]]
 NumericVector posterior(int score, double tau,
                         NumericVector prior,

@@ -7,17 +7,24 @@ builtin_itemtable <- read.delim(file = fn, quote = "",
                                 fileEncoding = "UTF-8",
                                 header = TRUE)
 
-## add ecdi items to itemtable
-ecdi_itemtable <- read.xlsx("data-raw/data/ecdi_itemtable.xlsx", sheet = "ecdi")
-
-ecdi_itemtable <-
-ecdi_itemtable %>% select(item, label) %>%
-  mutate(equate = NA) %>%
+## add GSED SF itemtable: gs1, gs2
+gsx_itemtable <- read.delim("data-raw/data/keys/items_sf.txt",
+                            stringsAsFactors = FALSE, na = "",
+                            fileEncoding = "UTF-8",
+                            header = TRUE) %>%
+  mutate(equate = NA_character_) %>%
   select(item, equate, label)
 
-builtin_itemtable <-
-bind_rows(builtin_itemtable,
-          ecdi_itemtable) %>%
+## add ecdi items to itemtable
+ecdi_itemtable <- read.delim("data-raw/data/ecdi_itemtable.txt")
+ecdi_itemtable <- ecdi_itemtable %>%
+  select(item, label) %>%
+  mutate(equate = NA_character_) %>%
+  select(item, equate, label)
+
+builtin_itemtable <- bind_rows(gsx_itemtable,
+                               builtin_itemtable,
+                               ecdi_itemtable) %>%
   mutate(equate = ifelse(item %in% c("ecdxxc001", "gpamoc097"), "ECD1", NA),
          equate = ifelse(item %in% c("ecdxxc002", "gpamoc106"), "ECD2", equate),
          equate = ifelse(item %in% c("ecdxxc003", "gpamoc129"), "ECD3", equate),
@@ -27,6 +34,5 @@ bind_rows(builtin_itemtable,
          equate = ifelse(item %in% c("ecdxxc008", "gpaclc113"), "ECD8", equate),
          equate = ifelse(item %in% c("ecdxxc009", "gpaclc101"), "ECD9", equate),
          equate = ifelse(item %in% c("ecdxxc013", "gpaclc126"), "ECD13", equate))
-
 
 usethis::use_data(builtin_itemtable, overwrite = TRUE)

@@ -1,0 +1,140 @@
+Start Item?	Phase 2 order	Phase 1 order	tau	label	Domain	gsed2 variable name	old gsed variable name
+0-2 months	SF001	SF4	5,4	Does your child smile?	sem	gpasec004	mdtsed001
+	SF002	SF6	7,43	When lying on his/her back, does your child move his/her arms and legs?	motor	gpamoc006	cromoc008
+	SF003	SF15	7,83	Does your child look at your face when you speak to him/her?	sem	gpasec015	crosec002
+	SF004	SF1	8,68	Does your child cry when he/she is hungry, wet, tired, or wants to be held?	lang	gpalac001	gsdlac001
+	SF005	SF3	9,93	Does your child grasp your finger if you touch her hand?	motor	gpafmc003	gsdfmc003
+	SF006	SF2	11,06	Does your child look at and focus on objects in front of him/her?	cog	gpacgc002	gsdcgc002
+	SF007	SF11	11,61	Does your child bring his/her hand to his/her mouth?	motor	gpamoc011	cromoc007
+	SF008	SF5	12,26	Does your child try to move his/her head (or eyes) to follow an object or person?	motor	gpamoc005	iyomoc001
+	SF009	SF10	12,4	Does your child smile when you smile or talk with him/her?	sem	gpasec010	iyosec004
+	SF010	SF7	12,44	Does your child look at a person when that person starts talking or making noise?	lang	gpaclc007	croclc001
+	SF011	SF16	12,94	Does your child stop crying or calm down when you come to the room after being out of sight, or when you pick him or her up?	sem	gpasec016	iyosec001
+	SF012	SF12	13,39	When you talk to your child, does he/she smile, make noises, or move arms, legs or trunk in response?	lang	gpalgc012	iyolgc002
+	SF013	SF14	14,91	When you are about to pick up your child, does he/she act happy or excited?	sem	gpasec014	iyosec002
+	SF014	SF21	16,6	Does your child turn his/her head towards your voice or some noise?	lang	gpalgc021	iyolgc001
+	SF015	SF26	17,15	Does your child grasp onto a small object (e.g., your finger, a spoon) when put in his/her hand?	motor	gpamoc026	cromoc006
+	SF016	SF9	19,11	Does your child make sounds other than crying?	lang	gpalac009	gsdlac004
+	SF017	SF20	19,27	Does your child sometimes suck his/her thumb or fingers?	sem	gpasec020	crosec004
+3 - 5 months	SF018	SF17	19,49	While your child is on his/her back, can he/she bring his/her hands together?	motor	gpamoc017	iyomoc002
+	SF019	SF25	19,81	Does your child move excitedly, kick legs, move arms or trunk, or make coo noises when a known person enters the room or speaks to them?	sem	gpasec025	iyosec005
+	SF020	SF19	19,88	Does your child make noise or gesture to get your attention?	lang	gpalgc019	iyolgc005
+	SF021	SF31	20,69	If you play a game with your child, does he/she respond with interest? For example, if you play peek-a-boo, pat-a-cake, wave bye-bye, etc. does your child smile, widen their eyes, kick or move arms or vocalize?	sem	gpasec031	iyosec003
+	SF022	SF33	21,08	Does your child recognize you or other family members (e.g., smile when they enter a room or move toward them)?	sem	gpaclc033	croclc014
+	SF023	SF23	21,14	Does your child laugh?	lang	gpaclc023	croclc006
+	SF024	SF32	21,48	Does your child smile or become excited when seeing someone familiar?	sem	gpasec032	crosec003
+	SF025	SF13	22,39	When your child is on his/her stomach, can he/she turn his/her head to the side?	motor	gpagmc013	gsdgmc005
+	SF026	SF22	22,5	Does your child make sounds when LOOKING at toys or people (not crying)?	lang	gpalgc022	iyolgc003
+	SF027	SF45	23,2	Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?	sem	gpasec045	iyosec006
+	SF028	SF8	24,26	Does your child hold his/her hands in fists all the time?	motor	gpamoc008	cromoc001
+	SF029	SF24	24,49	Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?	motor	gpamoc024	iyomoc004
+	SF030	SF37	26,3	When held in a sitting position, can the child hold his/her head steady and straight?	motor	gpamoc037	cromoc002
+	SF031	SF18	26,85	When your child is on his/her stomach, can he/she hold his/her head up off the ground?	motor	gpagmc018	gsdgmc006
+6-8 months	SF032	SF34	28,62	Does your child show interest in new objects that are put in front of him/her by reaching out for them?	cog	gpaclc034	croclc004
+	SF033	SF29	29,55	When he/she is on his/her tummy, can your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.	motor	gpamoc029	iyomoc005
+	SF034	SF30	30,29	Can your child roll from his/her back to stomach or stomach to his/her side?	motor	gpagmc030	gsdgmc007
+	SF035	SF35	31,02	Can your child reach for AND HOLD an object, at least for a few seconds?	motor	gpamoc035	iyomoc007
+	SF036	SF39	31,08	Can your child eat food from your fingers or off a spoon you hold?	life	gpasec039	mdtsed006
+	SF037	SF27	31,1	Does your child make single sounds like 'buh' or 'duh' or 'muh'?	lang	gpalgc027	iyolgc004
+	SF038	SF44	31,29	Can your child sit with support, either leaning against something (furniture or person), or by leaning forward on his or her hands?	motor	gpamoc044	iyomoc008
+	SF039	SF28	31,3	Does your child try to reach for objects that are in front of him/her by extending one or both arms?	motor	gpamoc028	iyomoc006
+	SF040	SF40	31,4	Can your child pick up a small object (e.g., a small toy or small stone) using just one hand?	motor	gpamoc040	cromoc012
+	SF041	SF42	31,84	When lying on his/her stomach, can your child hold his/her head and chest off the ground using only his/her hands and arms for support?	motor	gpamoc042	cromoc005
+	SF042	SF41	31,98	If an object falls to the ground out of view, does your child look for it?	cog	gpamoc041	iyomoc009
+	SF043	SF43	32,38	When lying on his/her back, does the child grab his/her feet?	motor	gpamoc043	cromoc009
+	SF044	SF38	32,59	Can your child roll from his/her back to stomach, or stomach to back, on his/her own?	motor	gpamoc038	cromoc010
+	SF045	SF47	33,39	Does your child play by tapping an object on the ground or a table?	motor	gpaclc047	croclc007
+	SF046	SF46	33,46	Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)?	cog	gpaclc046	croclc008
+	SF047	SF49	33,6	Can your child hold him/herself in a sitting position without help or support for longer than a few seconds?	motor	gpamoc049	cromoc011
+	SF048	SF48	34,47	Does your child intentionally move or change his/her position to get objects that are out of reach?	motor	gpaclc048	croclc011
+9-11 months	SF049	SF51	34,56	Does your child make two similar sounds together like baba, mumu, pepe, didi (single consonant vowel combinations)?	lang	gpalgc051	iyolgc006
+	SF050	SF36	34,73	When you put your child on the floor, can she lean on her hands while sitting? (If she already sits up straight without leaning on her hands, mark 'yes' for this item.).	motor	gpagmc036	aqigmc012
+	SF051	SF52	36,38	Can your child pass a small object from one hand to the other?	motor	gpamoc052	iyomoc012
+	SF052	SF50	38,15	Can your child bang objects together, or bang an object on the table or on the ground?	motor	gpamoc050	iyomoc011
+	SF053	SF64	36,6	Can your child pick up small bits of food and feed him/her-self using his/her hand?	life	gpasec064	mdtsed012
+	SF054	SF58	38,67	Can your child pick up and drop a small object (e.g., a small toy or small stone) into a bucket or bowl while sitting?	motor	gpamoc058	cromoc022
+	SF055	SF54	38,84	Can your child maintain a standing position while holding on to a person or object (e.g., wall or furniture)?	motor	gpamoc054	cromoc015
+	SF056	SF53	39,66	Can your child pick up a small object (e.g., a piece of food, small toy or small stone) with just his/her thumb and one finger?	motor	gpamoc053	cromoc019
+	SF057	SF56	41,26	Can your child pull themselves up from the floor while holding onto something? For example, can they pull themselves up using a chair, a person, or some other object?	motor	gpamoc056	iyomoc016
+12-14 months	SF058	SF59	41,85	Does your child stop what he/she is doing when you say 'Stop!' even if just for a second?	lang	gpalgc059	mdtlgd008
+	SF059	SF60	42,97	Can your child walk several steps while holding on to a person or object (e.g., wall or furniture)?	motor	gpamoc060	cromoc018
+	SF060	SF55	44,09	While holding onto furniture, does your child bend down and pick up a small object from the floor and then return to a standing position?	motor	gpagmc055	aqigmc021
+	SF061	SF57	44,33	While holding onto furniture, does your child squat with control (without falling or flopping down)?	motor	gpagmc057	aqigmc020
+	SF062	SF68	45,1	Does your child make a gesture to indicate 'No' (e.g., shaking head)?	lang	gpalgc068	mdtlgd009
+	SF063	SF82	45,57	Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?	sem	gpasec082	mdtsed016
+	SF064	SF61	46,67	Can your child stand up without holding onto anything, even if just for a few seconds?	motor	gpamoc061	iyomoc020
+15-17 months	SF065	SF75	47,18	Does your child put his/her hands out to have them washed?	life	gpasec075	mdtsed013
+	SF066	SF62	47,83	Can your child maintain a standing position on his/her own, without holding on or receiving support?	motor	gpamoc062	cromoc017
+	SF067	SF74	48,09	Can your child drink from an open  cup without help?	life	gpaxxc074	vinxxc007
+	SF068	SF65	48,21	Can your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?	motor	gpamoc065	iyomoc022
+	SF069	SF63	48,91	Can your child make any light marks on paper or in dirt with a crayon or a stick?	motor	gpamoc063	iyomoc021
+	SF070	SF70	49,1	Can your child bend down or squat to pick up an object from the floor and then stand up again, without help from a person or object?	motor	gpamoc070	iyomoc023
+	SF071	SF72	49,45	Can your child follow a simple spoken command or direction without you making a gesture?	lang	gpalgc072	iyolgc013
+	SF072	SF73	49,45	Can your child fetch something when asked?	lang	gpaxxc073	vinxxc006
+	SF073	SF86	49,62	Does your child share with others (e.g., food)?	sem	gpasec086	mdtsed018
+	SF074	SF66	49,71	Can your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately afterward?	motor	gpamoc066	iyomoc024
+	SF075	SF76	49,76	While standing, can your child purposefully throw the ball and not just drop it?	motor	gpamoc076	iyomoc028
+	SF076	SF69	50,25	Can your child stand up from sitting by himself and take several steps forward?	motor	gpagmc069	aqigmc026
+	SF077	SF94	49,68	Can your child break off pieces of food and feed them to him/her-self?	life	gpasec094	mdtsed021
+	SF078	SF71	50,26	Can your child make a scribble on paper, or in dirt, in a back and forth manner? For example, can he or she move the pen or pencil or stick back and forth?	motor	gpamoc071	iyomoc025
+	SF079	SF67	50,64	Can your child move around by walking, rather than by crawling on his hands and knees?	motor	gpagmc067	aqigmc027
+	SF080	SF77	51,33	Can your child walk well, with coordination, without falling down often? With one foot in front of the other (rather than shifting weight side to side, stiff- legged)?	motor	gpamoc077	iyomoc027
+18-20 months	SF081	SF78	51,44	Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?	motor	gpamoc078	iyomoc030
+	SF082	SF85	52,51	Can your child greet people either by giving his/her hand or saying Hello?	sem	gpasec085	mdtsed017
+	SF083	SF79	52,82	Can your child kick a ball or other round object forward using his/her foot?	motor	gpamoc079	cromoc025
+	SF084	SF88	53,7	Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?	lang	gpaclc088	croclc023
+21-23 months	SF085	SF81	54,64	Can your child follow directions with more than one step? For example, 'Go to the kitchen and bring me a spoon'?	cog	gpalgc081	iyolgc017
+	SF086	SF96	55,69	Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)?	lang	gpaclc096	croclc028
+	SF087	SF99	55,74	Can your child identify at least seven objects? For example, when you ask 'where is the ball/spoon/cup/cloth/door/plate/bucket etc.' does your child look at or point to (or even name) the objects?	lang	gpalgc099	iyolgc022
+	SF088	SF93	55,77	Can your child ask for something (e.g., food, water) by name when he/she wants it?	lang	gpaclc093	croclc025
+	SF089	SF84	56,35	Can your child run well, without falling or bumping into objects?	motor	gpamoc084	iyomoc032
+	SF090	SF92	56,36	Can your child wash hands by him/herself?	life	gpaxxc092	vinxxc048
+	SF091	SF80	56,75	While standing, can your child kick a ball by swinging his/her leg forward?	motor	gpamoc080	iyomoc031
+	SF092	SF87	56,81	Does your child dry hands by herself/himself after you have washed them?	life	gpaxxc087	vinxxc021
+	SF093	SF95	56,85	Does your child show independence (e.g., wants to go and visit a friends house)?	sem	gpasec095	mdtsed023
+	SF094	SF101	57,12	If you show your child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it?	lang	gpaclc101	croclc034
+24-26 months	SF095	SF83	57,61	Can your child stack three or more small objects (e.g., blocks, cups, bottle caps) on top of each other?	motor	gpamoc083	cromoc029
+	SF096	SF97	58,91	Can your child walk on an uneven surface (e.g., a bumpy or steep road) without falling?	motor	gpamoc097	cromoc031
+	SF097	SF102	59,48	Does your child usually communicate with words what he/she wants in a way that is understandable to others?	lang	gpalgc102	iyolgc023
+	SF098	SF90	59,82	Can your child say ten or more words in addition to 'Mama' and 'Dada'?	lang	gpacmc090	aqicmc033
+	SF099	SF98	60,13	When looking at pictures, if you say to your child 'what is this?', can they say the name of the object that you point to?	lang	gpalgc098	iyolgc021
+27-29 months	SF100	SF91	60,45	Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?	lang	gpaclc091	croclc024
+	SF101	SF110	60,6	Can your child unscrew the lid from a bottle or jar?	motor	gpamoc110	cromoc033
+	SF102	SF130	61,82	Does your child help out around the house with simple chores, even if he/she doesn't do them well?	sem	gpasec130	mdtsed029
+	SF103	SF89	62,7	Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?	life	gpasec089	mdtsed019
+30-32 months	SF104	SF112	62,71	Can your child speak using sentences of three or more words that go together (e.g., 'I want water' or 'The house is big')?	lang	gpaclc112	croclc029
+	SF105	SF100	62,74	Can your child name at least two body parts (e.g., arm, eye, or nose)?	lang	gpaclc100	croclc038
+	SF106	SF104	63,04	Can your child remove an item of clothing (e.g., take off his/her shirt)?	life	gpamoc104	cromoc035
+	SF107	SF105	63,1	Can your child say 15 or more separate words (e.g., names like 'Mama' or objects like 'ball')?	lang	gpaclc105	croclc027
+	SF108	SF106	63,65	Can your child jump with both feet leaving the ground?	motor	gpamoc106	cromoc034
+	SF109	SF108	63,86	Can your child tell you or someone familiar his/her own name [nickname] when asked to?	lang	gpaclc108	croclc032
+33-36 months	SF110	SF115	64,32	Can your child correctly ask questions using any of the words 'what,' 'which,' 'where,' or 'who'?	lang	gpaclc115	croclc042
+	SF111	SF137	65,03	Does your child show respect around elders?	sem	gpasec137	mdtsed032
+	SF112	SF113	65,21	Can your child correctly use any of the words 'I,' 'you,' 'she,' or 'he' (e.g., 'I go to store,' or 'He eats rice')?	lang	gpaclc113	croclc031
+	SF113	SF107	65,29	Can your child sing a short song or repeat parts of a rhyme from memory by him/herself?	lang	gpaclc107	croclc037
+	SF114	SF111	65,45	Does your child know the difference between the words 'big' and 'small'? For example, if you ask, 'Give me the big spoon' can your child understand which one to give if there are two different sizes?	cog	gpalgc111	iyolgc026
+	SF115	SF116	65,57	Does your child pronounce most of his/her words correctly?	lang	gpaclc116	croclc046
+	SF116	SF134	65,64	Can your child go to the toilet by him/her-self?	life	gpasec134	mdtsed033
+	SF117	SF120	67,14	If you point to an object, can your child correctly use the words 'on,' 'in,' or 'under' to describe where it is (e.g., 'The cup is on the table' instead of 'The cup is in the table.')	lang	gpaclc120	croclc049
+	SF118	SF109	67,15	Can your child  put on at least one piece of clothing by himself?	life	gpasec109	mdtsed026
+	SF119	SF119	67,2	Can your child explain in words what common objects like a cup or chair are used for?	lang	gpaclc119	croclc039
+	SF120	SF103	67,8	Can your child draw a straight line?	motor	gpamoc103	iyomoc037
+	SF121	SF114	68,91	Can your child say what he/she likes or dislikes (e.g., 'I like sweets')?	lang	gpasec114	crosec042
+	SF122	SF117	68,98	If you show your child two objects or people of different size, can he/she tell you which one is the big one and which is the small one?	cog	gpaclc117	croclc035
+	SF123	SF121	69,14	Does your child regularly use describing words such as 'fast,' 'short,' 'hot,' 'fat,' or 'beautiful' correctly?	lang	gpaclc121	croclc050
+	SF124	SF123	69,95	Does your child know to keep quiet when the situation requires it? (e.g., at ceremonies, when someone is asleep)	sem	gpasec123	mdtsed028
+	SF125	SF124	71,33	Does your child ask 'why' questions (e.g., 'Why are you tall?')?	lang	gpaclc124	croclc051
+	SF126	SF135	71,61	Can your child stand on one foot WITHOUT any support for at least a few seconds?	motor	gpamoc135	iyomoc039
+	SF127	SF126	71,62	If you ask your child to give you three objects (e.g., stones, beans), does the child give you the correct amount?	cog	gpaclc126	croclc043
+	SF128	SF131	71,86	Does your child understand the term 'longest'? For example, if you ask him/her to choose 'which is the longest of 3 objects?' (e.g. 3 spoons or sticks), would he/she be able to choose the longest?	cog	gpalgc131	iyolgc029
+	SF129	SF138	72,01	Can your child talk about things that have happened in the past using correct language (e.g., 'Yesterday I played with my friend' or 'Last week she went to the market')?	lang	gpaclc138	croclc045
+	SF130	SF127	73,39	Can your child tell a story?	lang	gpalgc127	iyolgc030
+	SF131	SF125	73,46	Can your child tell you when he/she is happy, angry, or sad?	sem	gpasec125	crosec049
+	SF132	SF122	73,77	Can the child name at least one color (e.g., red, blue, yellow)?	cog	gpaclc122	croclc044
+	SF133	SF118	73,92	Can your child count objects up to five  (e.g., fingers, people)?	cog	gpaclc118	croclc041
+	SF134	SF133	74,02	If you draw a circle can your child do it, just as you did?	motor	gpamoc133	iyomoc038
+	SF135	SF128	74,1	Can your child tell you when others are happy, angry, or sad?	sem	gpasec128	crosec059
+	SF136	SF139	74,26	Can your child talk about things that will happen in the future using correct language (e.g., 'Tomorrow he will attend school' or 'Next week we will go to the market')?	lang	gpaclc139	croclc048
+	SF137	SF132	75,21	Can the child fasten and unfasten buttons without help?	motor	gpamoc132	cromoc039
+	SF138	SF129	75,92	Can your child dress him/herself completely (except for shoelaces, buttons and zippers)?	life	gpamoc129	iyomoc040
+	SF139	SF136	78,54	Can your child say what others like or dislike (e.g., 'Mama doesn't like fruit,' Papa likes football)?	sem	gpasec136	crosec051

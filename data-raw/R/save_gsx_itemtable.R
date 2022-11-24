@@ -2,7 +2,7 @@
 library(dplyr)
 library(dscore)
 
-fn <- file.path("data-raw/data/SF_LF_Phase 2_Item Ordering.txt")
+fn <- file.path("data-raw/data/SF_LF_Phase_2_Item_Ordering.txt")
 io <- read.delim(file = fn, quote = "",
                  stringsAsFactors = FALSE, na = "",
                  fileEncoding = "UTF-8",

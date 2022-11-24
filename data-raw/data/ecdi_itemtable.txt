@@ -6,19 +6,19 @@ without falling?
 Ma_ECDI_ECD02	ECD2	Can (name) jump up with both feet leaving the ground?	ecdxxc002	gpamoc106
 Ma_ECDI_ECD03	ECD3	Can (name) dress (him/herself), that is, put on pants and a shirt, without help?	ecdxxc003	gpamoc129
 Ma_ECDI_ECD04	ECD4	Can (name) fasten and unfasten buttons without help?	ecdxxc004	gpamoc132
-Ma_ECDI_ECD05	ECD5	Can (name) say 10 or more words, like ‘mama’ or ‘ball’?	ecdxxc005	gpacmc090
-Ma_ECDI_ECD06	ECD6	Can (name) speak using sentences of 3 or more words that go together, for example, “I want water” or “The house is big”?	ecdxxc006	gpaclc112
-Ma_ECDI_ECD07	ECD7	Can (name) speak using sentences of 5 or more words that go together, for example, “The house is very big”?	ecdxxc007	
-Ma_ECDI_ECD08	ECD8	Can (name) correctly use any of the words ‘I,’ ‘you,’ ‘she,’ or ‘he,’ for example, “I want water” or “He eats rice”?	ecdxxc008	gpaclc113
+Ma_ECDI_ECD05	ECD5	Can (name) say 10 or more words, like 'mama' or 'ball'?	ecdxxc005	gpacmc090
+Ma_ECDI_ECD06	ECD6	Can (name) speak using sentences of 3 or more words that go together, for example, 'I want water' or 'The house is big'?	ecdxxc006	gpaclc112
+Ma_ECDI_ECD07	ECD7	Can (name) speak using sentences of 5 or more words that go together, for example, 'The house is very big'?	ecdxxc007
+Ma_ECDI_ECD08	ECD8	Can (name) correctly use any of the words 'I', 'you', 'she', or 'he', for example, 'I want water' or 'He eats rice'?	ecdxxc008	gpaclc113
 Ma_ECDI_ECD09	ECD9	If you show (name) an object (he/she) knows well, such as a cup or animal, can (he/she) consistently name it? By consistently we mean that (he/she) uses the same word to refer to the same object, even if the word used is not fully correct	ecdxxc009	gpaclc101
-Ma_ECDI_ECD10	ECD10	Can (name) recognize at least 5 letters of the alphabet?	ecdxxc010	
-Ma_ECDI_ECD11	ECD11	Can (name) write (his/her) name?	ecdxxc011	
-Ma_ECDI_ECD12	ECD12	Can (name) recognize all numbers from 1 to 5?	ecdxxc012	
+Ma_ECDI_ECD10	ECD10	Can (name) recognize at least 5 letters of the alphabet?	ecdxxc010
+Ma_ECDI_ECD11	ECD11	Can (name) write (his/her) name?	ecdxxc011
+Ma_ECDI_ECD12	ECD12	Can (name) recognize all numbers from 1 to 5?	ecdxxc012
 Ma_ECDI_ECD13	ECD13	If you ask (name) to give you 3 objects, such as 3 stones or 3 beans, does (he/she) give you the correct amount?	ecdxxc013	gpaclc126
-Ma_ECDI_ECD14	ECD14	Can (name) count 10 objects, for example 10 fingers or 10 blocks, without mistakes?	ecdxxc014	
-Ma_ECDI_ECD15	ECD15	Can (name) do an activity, such as colouring or playing with building blocks, without repeatedly asking for help or giving up too quickly?	ecdxxc015	
-Ma_ECDI_ECD16	ECD16	Does (name) ask about familiar people other than parents when they are not there, for example, “Where is Grandma?”?	ecdxxc016	
-Ma_ECDI_ECD17	ECD17	Does (name) offer to help someone who seems to need help?	ecdxxc017	
-Ma_ECDI_ECD18	ECD18	Does (name) get along well with other children?	ecdxxc018	
-Ma_ECDI_ECD19	ECD19	How often does (name) seem to be very sad or depressed? Would you say: daily, weekly, monthly, a few times a year, or never?	ecdxxc019	
-Ma_ECDI_ECD20	ECD20	Compared with children of the same age, how much does (name) kick, bite, or hit other children or adults? Would you say: not at all, the same or less, more, or a lot more?	ecdxxc020	
+Ma_ECDI_ECD14	ECD14	Can (name) count 10 objects, for example 10 fingers or 10 blocks, without mistakes?	ecdxxc014
+Ma_ECDI_ECD15	ECD15	Can (name) do an activity, such as colouring or playing with building blocks, without repeatedly asking for help or giving up too quickly?	ecdxxc015
+Ma_ECDI_ECD16	ECD16	Does (name) ask about familiar people other than parents when they are not there, for example, 'Where is Grandma?'?	ecdxxc016
+Ma_ECDI_ECD17	ECD17	Does (name) offer to help someone who seems to need help?	ecdxxc017
+Ma_ECDI_ECD18	ECD18	Does (name) get along well with other children?	ecdxxc018
+Ma_ECDI_ECD19	ECD19	How often does (name) seem to be very sad or depressed? Would you say: daily, weekly, monthly, a few times a year, or never?	ecdxxc019
+Ma_ECDI_ECD20	ECD20	Compared with children of the same age, how much does (name) kick, bite, or hit other children or adults? Would you say: not at all, the same or less, more, or a lot more?	ecdxxc020

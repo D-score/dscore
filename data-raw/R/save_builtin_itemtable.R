@@ -35,4 +35,13 @@ builtin_itemtable <- bind_rows(gsx_itemtable,
          equate = ifelse(item %in% c("ecdxxc009", "gpaclc101"), "ECD9", equate),
          equate = ifelse(item %in% c("ecdxxc013", "gpaclc126"), "ECD13", equate))
 
+info <- dscore::decompose_itemnames(builtin_itemtable$item)
+builtin_itemtable <- builtin_itemtable %>%
+  bind_cols(info) %>%
+  arrange(instrument, domain, mode, number) %>%
+  select(item, equate, label)
+
+# check
+if (any(duplicated(builtin_itemtable$item))) cat("Duplicated items found.")
+
 usethis::use_data(builtin_itemtable, overwrite = TRUE)

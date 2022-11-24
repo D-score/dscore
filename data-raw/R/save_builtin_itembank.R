@@ -1,7 +1,13 @@
 # Save built-in itembank for items in the model
 # Fields: key, item, tau, instrument, domain, mode, number, label
-library(dscore)
 library(dplyr)
+library(dscore)
+
+check_single_key <- function(x) {
+  if (any(duplicated(x$item))) stop("Duplicated items found.")
+  if (unique(x$key)) stop("Only one key allowed.")
+  return()
+}
 
 f1 <- "data-raw/data/keys/dutch.txt"
 f2 <- "data-raw/data/keys/gcdg.txt"
@@ -16,7 +22,7 @@ f10 <- "data-raw/data/keys/ecd294_0.txt"
 f11 <- "data-raw/data/keys/293_0.txt"
 f12 <- "data-raw/data/keys/gsed2208.txt"
 f13 <- "data-raw/data/keys/ecd2208.txt"
-
+f14 <- "data-raw/data/keys/items_sf.txt"
 
 key_dutch <- read.delim(file = f1, stringsAsFactors = FALSE)
 key_dutch <- key_dutch[order_itemnames(key_dutch$item), ]
@@ -61,24 +67,30 @@ key_293_0 <- read.delim(file = f11, stringsAsFactors = FALSE)
 key_gsed2208 <- read.delim(file = f12, stringsAsFactors = FALSE)
 key_gsed2208 <- key_gsed2208[order_itemnames(key_gsed2208$item), ]
 
-
 key_ecd2208 <- read.delim(file = f13, stringsAsFactors = FALSE)
 key_ecd2208 <- key_ecd2208[order_itemnames(key_ecd2208$item), ]
+
+key_sf12 <- read.delim(file = f14, stringsAsFactors = FALSE)
+key_sf12 <- key_sf12[order_itemnames(key_sf12$item, order = "imnd"), ]
 
 # Extend gsed2206 with gsed2 item names
 lf_gsed <- gsedread::rename_vector(key_lf2206$item, lexin = "gsed2", lexout = "gsed")
 sf_gsed <- gsedread::rename_vector(key_sf2206$item, lexin = "gsed2", lexout = "gsed")
 lfsf_gsed <- gsedread::rename_vector(key_294_0$item, lexin = "gsed2", lexout = "gsed")
-lf_tau <- dscore::get_tau(lf_gsed, itembank = key_gsed2206)
-sf_tau <- dscore::get_tau(sf_gsed, itembank = key_gsed2206)
+lf_tau <- dscore::get_tau(lf_gsed, key = "gsed2206", itembank = key_gsed2206)
+sf_tau <- dscore::get_tau(sf_gsed, key = "gsed2206", itembank = key_gsed2206)
 
 key_gsed2206 <- bind_rows(key_gsed2206,
                           data.frame(key = "gsed2206", item = key_lf2206$item, tau = lf_tau),
-                          data.frame(key = "gsed2206", item = key_sf2206$item, tau = sf_tau))
+                          data.frame(key = "gsed2206", item = key_sf2206$item, tau = sf_tau),
+                          key_ecd2206)
+check_single_key(key_gsed2206)
 
 # Extend 293_0 key with 818 items from the previous model 818_17
+# Add gs1 and gs2 instrument names (gpa=gs1)
+# Add ecdi
 # Save as gsed2208
-key_gsed2208 <- bind_rows(key_293_0, key_gsed2208) %>%
+key_gsed2208 <- bind_rows(key_sf12, key_293_0, key_gsed2208, key_ecd2208) %>%
   mutate(key = "gsed2208")
 
 # Extend lf2206 with gsed item names
@@ -90,14 +102,19 @@ key_sf2206 <- bind_rows(key_sf2206,
 
 # Extend 294_0 with gsed item names
 key_294_0 <- bind_rows(key_294_0,
-                       data.frame(key = "294_0", item = lfsf_gsed, tau = key_294_0$tau))
+                       data.frame(key = "294_0", item = lfsf_gsed, tau = key_294_0$tau),
+                       key_ecd294_0)
 
-builtin_itembank <- bind_rows(key_gsed2208, key_ecd2208, key_gsed2206,
-                              key_ecd2206, key_gsed1912,
-                              key_lf2206, key_sf2206,
-                              key_294_0, key_ecd294_0,
+builtin_itembank <- bind_rows(key_gsed2208,
+                              key_gsed2206,
+                              key_gsed1912,
+                              key_lf2206,
+                              key_sf2206,
+                              key_294_0,
                               key_293_0,
-                              key_mullen, key_gcdg, key_dutch) %>%
+                              key_mullen,
+                              key_gcdg,
+                              key_dutch) %>%
   left_join(get_itemtable(decompose = TRUE), by = "item") %>%
   select(-equate)
 

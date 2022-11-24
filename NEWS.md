@@ -1,3 +1,11 @@
+# dscore 1.6.6
+
+* Extends `builtin_itemtable` with `gs1` and `gs2` instruments
+* Replaces ECDI Excel file by txt file, removes non-ascii characters
+* Adds txt file with item order for GSED SF (Phase 2 validation version)
+* Replaces bitwise by more elegant elementwise comparison in `dscore.cpp`
+* Removes the dependency on the `sirt` package
+
 # dscore 1.6.5
 
 * Solves bug that crashed `dscore::count_mu_phase1(t)` when `t` is a vector containing `NA`s

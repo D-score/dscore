@@ -23,14 +23,14 @@ Calculate posterior for one item given score, difficulty and prior
 }
 \details{
 This function assumes that the difficulties have been estimated by
-a binary Rasch model (e.g. by
-\code{\link[sirt:rasch.pairwise.itemcluster]{sirt::rasch.pairwise.itemcluster()}}).
+a binary Rasch model, e.g. by \code{rasch.pairwise.itemcluster()} of
+the \code{sirt} package.
 }
 \note{
 : Internal function
 }
 \seealso{
-\code{\link[=dscore]{dscore()}}, \code{\link[sirt:rasch.pairwise.itemcluster]{sirt::rasch.pairwise.itemcluster()}}
+\code{\link[=dscore]{dscore()}}
 }
 \author{
 Stef van Buuren, Arjan Huizing, 2020

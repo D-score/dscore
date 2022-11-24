@@ -5,6 +5,10 @@
 #' See [dscore::builtin_itemtable] for an overview of all currently
 #' defined items.
 #'
+#' In general, one can only compare D-score calculated with the same
+#' key. The current recommendation for new projects is to choose
+#' key `gsed2208`.
+#'
 #' @docType data
 #' @format A `data.frame` with variables:
 #'

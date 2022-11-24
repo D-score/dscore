@@ -29,6 +29,7 @@ Last update:
 \itemize{
 \item May 30, 2022 - added gto (LF) and gpa (SF) items
 \item June 1, 2022 - added seven gsd items
+\item Nov 24, 2022 - Added instruments gs1, gs2
 }
 }
 \author{

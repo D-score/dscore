@@ -20,6 +20,7 @@
 #' Last update:
 #'  - May 30, 2022 - added gto (LF) and gpa (SF) items
 #'  - June 1, 2022 - added seven gsd items
+#'  - Nov 24, 2022 - Added instruments gs1, gs2
 #' @author Compiled by Stef van Buuren
 #' @keywords datasets
 "builtin_itemtable"

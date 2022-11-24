@@ -26,6 +26,11 @@ only items that are part of a Rasch model.
 See \link{builtin_itemtable} for an overview of all currently
 defined items.
 }
+\details{
+In general, one can only compare D-score calculated with the same
+key. The current recommendation for new projects is to choose
+key \code{gsed2208}.
+}
 \examples{
 head(builtin_itembank)
 }

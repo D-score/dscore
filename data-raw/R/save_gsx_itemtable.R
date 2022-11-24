@@ -36,6 +36,7 @@ gs2 <- data.frame(
   tau = gs2$tau,
   label = gs2$label,
   decompose_itemnames(gs2$gs2_names))
+gs2[28, "label"] <- "Does your child hold his/her hands in fists all the time?"
 
 # create gs1 itembank part
 info <- dscore::decompose_itemnames(io$gsed2)
@@ -50,6 +51,7 @@ gs1 <- data.frame(
   tau = gs1$tau,
   label = gs1$label,
   decompose_itemnames(gs1$gs1_names))
+gs1[8, "label"] <- "Does your child hold his/her hands in fists all the time?"
 
 gsx <- bind_rows(gs1, gs2)
 

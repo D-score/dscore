@@ -6,7 +6,7 @@ gsed2208	gs1sec004	1.1	Does your child smile?	gs1	se	c	004
 gsed2208	gs1moc005	8.14	Does your child try to move his/her head (or eyes) to follow an object or person?	gs1	mo	c	005
 gsed2208	gs1moc006	3.22	When lying on his/her back, does your child move his/her arms and legs?	gs1	mo	c	006
 gsed2208	gs1lgc007	8.32	Does your child look at a person when that person starts talking or making noise?	gs1	lg	c	007
-gsed2208	gs1moc008	NA	NA	gs1	mo	c	008
+gsed2208	gs1moc008	NA	Does your child hold his/her hands in fists all the time?	gs1	mo	c	008
 gsed2208	gs1lgc009	15.25	Does your child make sounds other than crying?	gs1	lg	c	009
 gsed2208	gs1sec010	8.26	Does your child smile when you smile or talk with him/her?	gs1	se	c	010
 gsed2208	gs1moc011	7.47	Does your child bring his/her hand to his/her mouth?	gs1	mo	c	011
@@ -165,7 +165,7 @@ gsed2208	gs2sec024	17.81	Does your child smile or become excited when seeing som
 gsed2208	gs2moc025	18.65	When your child is on his/her stomach, can he/she turn his/her head to the side?	gs2	mo	c	025
 gsed2208	gs2lgc026	18.79	Does your child make sounds when LOOKING at toys or people (not crying)?	gs2	lg	c	026
 gsed2208	gs2sec027	20.2	Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?	gs2	se	c	027
-gsed2208	gs2moc028	NA	NA	gs2	mo	c	028
+gsed2208	gs2moc028	NA	Does your child hold his/her hands in fists all the time?	gs2	mo	c	028
 gsed2208	gs2moc029	21.12	Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?	gs2	mo	c	029
 gsed2208	gs2moc030	23.05	When held in a sitting position, can the child hold his/her head steady and straight?	gs2	mo	c	030
 gsed2208	gs2moc031	23.41	When your child is on his/her stomach, can he/she hold his/her head up off the ground?	gs2	mo	c	031

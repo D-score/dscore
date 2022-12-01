@@ -1,5 +1,6 @@
 # dscore 1.6.6
 
+* Provides snapshot of analyses based on incorrect LF1 item ordering
 * Extends `builtin_itemtable` with `gs1` and `gs2` instruments
 * Replaces ECDI Excel file by txt file, removes non-ascii characters
 * Adds txt file with item order for GSED SF (Phase 2 validation version)

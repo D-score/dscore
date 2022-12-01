@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.6.5-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.6.6-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -19,9 +19,9 @@ of children similar to measures like height and weight.
 
 The `dscore` package contains tools to
 
--   Map your item names to the GSED convention
--   Calculate *D*-score from item level responses
--   Transform the *D*-scores into DAZ, age-standardised Z-scores
+- Map your item names to the GSED convention
+- Calculate *D*-score from item level responses
+- Transform the *D*-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones from
 widely used instruments for measuring child development.

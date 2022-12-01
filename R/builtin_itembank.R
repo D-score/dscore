@@ -23,6 +23,10 @@
 #' | `mode`       | Administration mode |
 #' | `number`     | Item number |
 #'
+#' @note
+#' Last update:
+#'  - Dec 01, 2022 - Overwrite labels of gto by correct item order.
+#'
 #' @examples
 #' head(builtin_itembank)
 #' @seealso [dscore()], [get_tau()],

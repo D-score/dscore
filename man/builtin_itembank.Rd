@@ -31,6 +31,12 @@ In general, one can only compare D-score calculated with the same
 key. The current recommendation for new projects is to choose
 key \code{gsed2208}.
 }
+\note{
+Last update:
+\itemize{
+\item Dec 01, 2022 - Overwrite labels of gto by correct item order.
+}
+}
 \examples{
 head(builtin_itembank)
 }

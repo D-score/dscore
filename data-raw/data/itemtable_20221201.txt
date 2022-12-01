@@ -58,9 +58,9 @@ aqicmc058		uses words that connect other words such as and
 aqicmc059		asks caregiver to explain words she does not understand
 aqicmc060		"Does your child repeat the sentences shown below back to you, without any mistakes?(Read the sentences one at a time. You may repeat each sentence one time. Mark ""yes"" if your child repeats both sentences without mistakes or ""sometimes"" if your child repeats one sentence without mistakes. Jane hides her shoes for Maria to find. Al read the blue book under his bed."
 aqicmc061		"When you ask, ""What is your name?"" does your child say both her first and last names?"
-aqicmc062		
-aqicmc063		
-aqicmc064		
+aqicmc062
+aqicmc063
+aqicmc064
 aqicmc065		"Does your child use comparison words, such as ""heavier,"" ""stronger"", or ""shorter""? Ask your child questions, such as ""A car is big, but a bus is _____"" (bigger); ""A cat is heavy, but a man is _____"" (heavier); ""A TV is small, but a book is _____"" (smaller). Please write an example:"
 aqifmc001	FM13	Does your baby touch her face with her hands?
 aqifmc002	FM88	Does your baby grasp your finger if you touch the palm of her hand?
@@ -179,12 +179,12 @@ aqigmc056		does all 3 movement patterns at least 2 times
 aqigmc057		jumps forward 3 feet from standing position
 aqigmc058		walks 10 ore more steps backward
 aqigmc059		Does your child skip using alternating feet? You may show her how to do this?
-aqigmc060		
-aqigmc061		
+aqigmc060
+aqigmc061
 aqigmc062		"Does your child hop forward on one foot for a distance of 46 feet without putting down the other foot? You may give him two tries on each foot. Mark ""sometimes"" if he can hop on one foot only."
-aqigmc063		
-aqigmc064		
-aqigmc065		
+aqigmc063
+aqigmc064
+aqigmc065
 aqiNAc005	FM97	Does your baby pick up a crumb or Cheerio with the tips of his thumb and a finger? He may rest his arm or hand on the table while doing it.
 aqipxc001	COG120	Does your baby look at objects that are 8-10 inches away?
 aqipxc002	FM4	When you move a small toy up and down slowly in front of her face (about 10 inches away), does your baby follow the toy with her eyes?
@@ -311,16 +311,16 @@ aqislc054		stays away from dangerous things
 aqislc055		tells at least 4 of first name age city last name boy or girl and telephone number
 aqislc056		begins playing with toys and finishes activity without being told
 aqislc057		brushs teeth by putting toothpaste on toothbrush and brushing all her teeth without help
-aqislc058		
-aqislc059		
-aqislc060		
-aqislc061		
+aqislc058
+aqislc059
+aqislc060
+aqislc061
 aqislc062		dresses and undresses himself including buttoning and zipping
-aqislc063		
-aqislc064		
-aqislc065		
-aqislc066		
-aqislc067		
+aqislc063
+aqislc064
+aqislc065
+aqislc066
+aqislc067
 barxxc001		Smiles in response to an adult or his/her voice (mom report)
 barxxc002		Makes sounds spontaneously or in response to a stimulus (mom report)
 barxxc003		Has head control while being pulled to sit upright (mom report)
@@ -1476,20 +1476,20 @@ crosec059		Can the child tell you when others are happy, angry, or sad?
 ddicmd044		Points at 5 pictures in the book
 ddicmd049		Can be understood by tester
 ddicmd116	REC6	Turn head to sound
-ddicmd132		
+ddicmd132
 ddicmd136		"Reacts to verbal request (M; can ask parents)"
 ddicmd141		Identifies two named objects
 ddicmd148		Understands 'play' orders
 ddicmm029	REC50	Reacts when spoken to
 ddicmm030		"Smiles in response (M; can ask parents)"
 ddicmm031	EXP5	vocalizes in response
-ddicmm032		
+ddicmm032
 ddicmm033	EXP10	Says dada, baba, gaga
 ddicmm034	EXP12	Babbles while playing
 ddicmm035	REC14	Reacts to verbal request
 ddicmm036		"Waves 'bye-bye' (M; can ask parents)"
 ddicmm037	EXP18	Uses two words with comprehension
-ddicmm038		
+ddicmm038
 ddicmm039		Says three 'words'
 ddicmm040	REC25	"Understands 'play' orders.  For example, ""Give the dolly a little bite of your cookie"""
 ddicmm041	EXP26	Says sentences with 2 words
@@ -1888,7 +1888,7 @@ gsdcgc002		Does your child look at and focus on objects in front of him/her?
 gsdfmc003		Does your child grasp your finger if you touch her hand?
 gsdgmc005		When your child is on his/her stomach, can he/she turn his/her head to the side?
 gsdgmc006		When your child is on his/her stomach, can he/she hold his/her head up off the ground?
-gsdgmc007		Can your child roll from his/her back to stomach or stomach to his/her side? 
+gsdgmc007		Can your child roll from his/her back to stomach or stomach to his/her side?
 gsdlac001		Does your child cry when he/she is hungry, wet, tired, or wants to be held?
 gsdlac004		Does your child make sounds other than crying?
 gricgd001		Reacts to Paper I - Generalized physical movements
@@ -2273,8 +2273,8 @@ grired805		Can count backwards from 20
 grired806		Knows 7 coins
 grired807		Tells the time - half hours (from clock face test)
 grired808		Tells the time - quarter hours
-gtofmd001		C1. Eyes fixate       
-gtofmd002		C2. Responds to sound     
+gtofmd001		C1. Eyes fixate
+gtofmd002		C2. Responds to sound
 gtofmd003		C3. Fixes and follows - 180 degrees
 gtofmd004		C4. Interest in making a sound
 gtofmd005		C5. Discriminates strangers
@@ -2293,20 +2293,20 @@ gtofmd017		C17. Makes marks with crayon
 gtofmd018		C18. Can manage a cup well
 gtofmd019		C19. Holds crayon with fingers not fist
 gtofmd020		C20. Scribbles in any way
-gtofmd021		C21. Puts 1 peg in again      
+gtofmd021		C21. Puts 1 peg in again
 gtofmd022		C22. Accepts third block without dropping
-gtofmd023		C23. Puts blocks in jar       
+gtofmd023		C23. Puts blocks in jar
 gtofmd024		C24. Builds tower of 2 blocks
-gtofmd025		C25. Dumps blocks out of jar purposefully.
+gtofmd025		C25. Dumps blocks out of jar purposefully
 gtofmd026		C26. Finds object under 2 alternating cups
 gtofmd027		C27. Uses objects in play by themselves
 gtofmd028		C28. Builds tower of 3 blocks
-gtofmd029		"C29. Understands the concept of ""one"""
+gtofmd029		C29. Understands the concept of "one"
 gtofmd030		C30. Scribbles on paper (circular scribble)
 gtofmd031		C31. Uses objects in play with someone
 gtofmd032		C32. Puts pegs in board <= 2 minutes.
 gtofmd033		C33. 2 shapes in board complete
-gtofmd034		"C34. Understands ""more"""
+gtofmd034		C34. Understands "more"
 gtofmd035		C35. 3 shapes in board complete 2 minutes
 gtofmd036		C36. 3 shape board 2 minutes rotated
 gtofmd037		C37. Builds tower of 6 blocks.
@@ -2328,7 +2328,7 @@ gtofmd052		C52. Draws 3 or more body parts
 gtofmd053		C53. Copies a square
 gtofmd054		C54. Can count 3 + objects
 gtogmd001		A1. Lifts head in prone 45 degrees
-gtogmd002		A2. Frolics alone - moving body, kicking legs.
+gtogmd002		A2. Frolics alone - moving body, kicking legs
 gtogmd003		A3. Frolics with mother or caregiver responsively
 gtogmd004		A4. Hands together in front of face
 gtogmd005		A5. Balances head well while suppported
@@ -2342,7 +2342,7 @@ gtogmd012		A12. Sits supported (with help)
 gtogmd013		A13. Sits momentarily (on their own)
 gtogmd014		A14. Reaches for a second object
 gtogmd015		A15. Rolls from back to stomach
-gtogmd016		A16. Can see a small object.
+gtogmd016		A16. Can see a small object
 gtogmd017		A17. Rake (grasps with four fingers) a small object
 gtogmd018		A18. Sits without help (short time)
 gtogmd019		A19. Can turn on floor
@@ -2356,7 +2356,7 @@ gtogmd026		A26. Moves from lying to sitting
 gtogmd027		A27. Stands with Support
 gtogmd028		A28. Stands alone for 5 secs or more if put in a standing position
 gtogmd029		A29. Walks when one hand held
-gtogmd030		A30. Plays 'give and take'
+gtogmd030		A30. Plays "give and take"
 gtogmd031		A31. Releases ball purposefully
 gtogmd032		A32. Takes few steps alone
 gtogmd033		A33. Kick a ball from stationary position
@@ -2370,7 +2370,7 @@ gtogmd040		A40. Kneels and gets to standing without using hands
 gtogmd041		A41. Throws beanbag on to a cloth
 gtogmd042		A42. Jumps with two feet together
 gtogmd043		A43. Jumps over a piece of paper (widthways)
-gtogmd044		A44. Stands on one foot ² 5 secs
+gtogmd044		A44. Stands on one foot <= 5 secs
 gtogmd045		A45. Hops forward on one foot 3 steps
 gtogmd046		A46. Stands on one foot > 5 seconds
 gtogmd047		A47. Walks on tiptoes 6 or more steps
@@ -2381,7 +2381,7 @@ gtolgd002		B2. Smiles in response
 gtolgd003		B3. Calms and quiets with caregivers
 gtolgd004		B4. Happy vocalizing or making sounds
 gtolgd005		B5. Turn to Voice
-gtolgd006		B6. Laughs 
+gtolgd006		B6. Laughs
 gtolgd007		B7. Vocalises when spoken to
 gtolgd008		B8. Repeats syllables
 gtolgd009		B9. Babbles while playing
@@ -2393,7 +2393,7 @@ gtolgd014		B14. Uses one definite word
 gtolgd015		B15. Imitates simple words
 gtolgd016		B16. Uses 5 clear words
 gtolgd017		B17. Identifies 1 clothing item
-gtolgd018		B18. IDENTIFIES 2 objects you name
+gtolgd018		B18. Identifies 2 objects you name
 gtolgd019		B19. Interested in story
 gtolgd020		B20. Follows simple commands (1 step)
 gtolgd021		B21. Points to two pictures
@@ -2401,8 +2401,8 @@ gtolgd022		B22. Identifies 3 clothing items
 gtolgd023		B23. Follows 2 step commands
 gtolgd024		B24. Says sentences with 2 words together
 gtolgd025		B25. Points at 5 pictures in book
-gtolgd026		B26. IDENTIFIES 5 objects you name
-gtolgd027		B27. NAMES 5 objects
+gtolgd026		B26. Identifies 5 objects you name
+gtolgd027		B27. Names 5 objects
 gtolgd028		B28. Speaks clearly in sentences
 gtolgd029		B29. Points to 1+ or more body parts
 gtolgd030		B30. Child can say first name
@@ -2410,7 +2410,7 @@ gtolgd031		B31. Knows actions or function of 3 or more objects
 gtolgd032		B32. Matches pictures
 gtolgd033		B33. Names 4 pictures
 gtolgd034		B34. Identifies 5 action pictures
-gtolgd035		B35. NAMES 10 objects
+gtolgd035		B35. Names 10 objects
 gtolgd036		B36. Uses multiple-word utterances
 gtolgd037		B37. Talks spontaneously on daily events
 gtolgd038		B38. Points to parts of whole objects
@@ -2419,10 +2419,10 @@ gtolgd040		B40. Child is able to categorize things
 gtolgd041		B41. Matches 3 colors
 gtolgd042		B42. Child describes picture
 gtolgd043		B43. Identifies 2 or more colors
-gtolgd044		"B44. Understands adjective ""faster"""
+gtolgd044		B44. Understands adjective "faster"
 gtolgd045		B45. Knows use of objects
 gtolgd046		B46. Names actions (5)
-gtolgd047		"B47. Understands ""more"""
+gtolgd047		B47. Understands "more"
 gtolgd048		B48. Identifies at least 2 shapes
 gtolgd049		B49. Names at least 2 colours
 gtolgd050		B50. Tapping with 2 blocks

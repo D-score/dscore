@@ -2273,161 +2273,161 @@ grired805		Can count backwards from 20
 grired806		Knows 7 coins
 grired807		Tells the time - half hours (from clock face test)
 grired808		Tells the time - quarter hours
-gtofmd001		Eyes fixate (2x)
-gtofmd002		Responds to sound (2x)
-gtofmd003		Fixes and follows - 180 degrees
-gtofmd004		Interest in making a sound (2x)
-gtofmd005		Discriminates strangers
-gtofmd006		Turns head towards fallen object (2x)
-gtofmd007		Manipulates cup OR spoon in play
-gtofmd008		Lifts cup by the handle (2x)
-gtofmd009		Pulls string to get object (2x)
-gtofmd010		Picks up cup to get block
-gtofmd011		Puts block in cup
-gtofmd012		Bang 2 objects together
-gtofmd013		Finds toy under cloth (2x)
-gtofmd014		Pats toy to make noise
-gtofmd015		Puts 3 or more blocks in cup
-gtofmd016		Repeats something when encouraged (2x)
-gtofmd017		Makes marks with crayon
-gtofmd018		Can manage a cup well
-gtofmd019		Holds crayon with fingers not fist (2x)
-gtofmd020		Scribbles in any way (2x)
-gtofmd021		Puts 1 peg in again (2x)
-gtofmd022		Accepts third block without dropping (2x)
-gtofmd023		Puts blocks in jar
-gtofmd024		Builds tower of 2 blocks (2x)
-gtofmd025		Dumps blocks out of jar purposefully. (2x)
-gtofmd026		Finds object under 2 alternating cups
-gtofmd027		Uses objects in play by themselves (2x)
-gtofmd028		Builds tower of 3 blocks (2x)
-gtofmd029		Understands the concept of 'one' (2x)
-gtofmd030		Scribbles on paper (circular scribble)
-gtofmd031		Uses objects in play with someone
-gtofmd032		Puts pegs in board <= 2 minutes. (2x)
-gtofmd033		2 shapes in board complete (2x)
-gtofmd034		Understands 'more'
-gtofmd035		3 shapes in board complete 2 minutes (2x)
-gtofmd036		3 shape board 2 minutes rotated (2x)
-gtofmd037		Builds tower of 6 blocks. (2x)
-gtofmd038		Puts pegs in board in <=30 seconds. (2x)
-gtofmd039		3 shapes in 15 seconds (2x)
-gtofmd040		Unscrews and screws lid of jar (2x)
-gtofmd041		Representational play
-gtofmd042		Copies 2-part activity (3x)
-gtofmd043		Builds truck/lorry of blocks (2x)
-gtofmd044		Imitates building a bridge (2x)
-gtofmd045		Draws a horizontal line (2x)
-gtofmd046		Picks longest stick 3 of 3 (3x to 5x)
-gtofmd047		Child understands prepositions (2x)
-gtofmd048		Builds wall of blocks (2x)
-gtofmd049		Copies a circle
-gtofmd050		Copies a cross or plus sign (2x)
-gtofmd051		Understands concept of size
-gtofmd052		Draws 3 or more body parts
-gtofmd053		Copies a square (2x)
-gtofmd054		Can count 3 + objects.
-gtogmd001		Lifts head in prone 45 degrees
-gtogmd002		Frolics alone - moving body, kicking legs.
-gtogmd003		Frolics with mother or caregiver responsively
-gtogmd004		Pulls to sit - no head lag
-gtogmd005		Lifts head, shoulders, chest when prone
-gtogmd006		Hands together in front of face
-gtogmd007		Reach for an object
-gtogmd008		Resist object being taken away
-gtogmd009		Grasps hold of large thing
-gtogmd010		Carries object to mouth to explore
-gtogmd011		Balances head well while sitting
-gtogmd012		Sits supported (with help)
-gtogmd013		Sits momentarily (on their own)
-gtogmd014		Reaches for a second object
-gtogmd015		Rolls from back to stomach
-gtogmd016		Can see a small object.
-gtogmd017		Rake (grasps with four fingers) a small object
-gtogmd018		Sits without help (short time)
-gtogmd019		Can turn on floor
-gtogmd020		Can pick object from ground
-gtogmd021		Shifts object from one hand to another
-gtogmd022		Sits by self well
-gtogmd023		Crawls
-gtogmd024		Stands with Support
-gtogmd025		Picks up small object between thumb and finger
-gtogmd026		Pulls him or herself up to a standing position
-gtogmd027		Moves from lying to sitting
-gtogmd028		Stands alone for 5 secs or more if put in a standing position
-gtogmd029		Walks when one hand held
-gtogmd030		Plays 'give and take'
-gtogmd031		Releases ball purposefully
-gtogmd032		Takes few steps alone
-gtogmd033		Kick a ball from stationary position
-gtogmd034		Stoops and recovers
-gtogmd035		Walks well
-gtogmd036		Basic running, may fall over
-gtogmd037		Runs well
-gtogmd038		Moves from sitting to standing not using hands
-gtogmd039		Runs and kicks a ball well
-gtogmd040		Kneels and gets to standing without using hands
-gtogmd041		Throws beanbag on to a cloth
-gtogmd042		Jumps with two feet together
-gtogmd043		Jumps over a piece of paper (widthways)
-gtogmd044		Stands on one foot < 5 secs
-gtogmd045		Hops forward on one foot 3 steps
-gtogmd046		Stands on one foot > 5 seconds
-gtogmd047		Walks on tiptoes 6 or more steps
-gtogmd048		Walks along line heel to toe
-gtogmd049		Throws a ball up into the air and can catch it
-gtolgd001		Reacts when spoken to
-gtolgd002		Smiles in response
-gtolgd003		Happy vocalizing or making sounds
-gtolgd004		Laughs
-gtolgd005		Calms and quiets with caregivers
-gtolgd006		Turn to Voice
-gtolgd007		Vocalises when spoken to
-gtolgd008		Repeats syllables
-gtolgd009		Babbles while playing
-gtolgd010		Uses 2/4 syllable babble
-gtolgd011		Understands when being cautioned
-gtolgd012		Uses gestures to communicate
-gtolgd013		Responds to verbal request
-gtolgd014		Uses one definite word
-gtolgd015		Imitates simple words
-gtolgd016		Uses 5 clear words
-gtolgd017		Identifies 1 clothing item
-gtolgd018		IDENTIFIES 2 objects you name
-gtolgd019		Follows simple commands (1 step)
-gtolgd020		Points to two pictures
-gtolgd021		Identifies 3 clothing items
-gtolgd022		Follows 2 step commands
-gtolgd023		Interested in story
-gtolgd024		Says sentences with 2 words together
-gtolgd025		Points at 5 pictures in book
-gtolgd026		IDENTIFIES 5 objects you name
-gtolgd027		NAMES 5 objects
-gtolgd028		Speaks clearly in sentences
-gtolgd029		Points to 1+ body parts
-gtolgd030		Child can say first name
-gtolgd031		Knows actions or function of 3 or more objects
-gtolgd032		Matches pictures
-gtolgd033		Names 4 pictures
-gtolgd034		Identifies 5 action pictures
-gtolgd035		NAMES 10 objects
-gtolgd036		Uses multiple-word utterances
-gtolgd037		Talks spontaneously on daily events
-gtolgd038		Points to parts of whole objects
-gtolgd039		Logical response to a question
-gtolgd040		Child is able to categorize things
-gtolgd041		Child describes picture
-gtolgd042		Identifies 2 or more colors
-gtolgd043		Understands adjective 'faster'
-gtolgd044		Knows use of objects
-gtolgd045		Understands 'more and less'
-gtolgd046		Identifies at least 2 shapes
-gtolgd047		Names at least 2 colours
-gtolgd048		Matches 3 colors
-gtolgd049		Names actions (5)
-gtolgd050		Repeats tapping 2 blocks
-gtolgd051		Repeats tapping with 4 blocks
-gtolgd052		Repeats tapping with 8 blocks
+gtofmd001		C1. Eyes fixate       
+gtofmd002		C2. Responds to sound     
+gtofmd003		C3. Fixes and follows - 180 degrees
+gtofmd004		C4. Interest in making a sound
+gtofmd005		C5. Discriminates strangers
+gtofmd006		C6. Turns head towards fallen spoon
+gtofmd007		C7. Manipulates cup OR spoon in play
+gtofmd008		C8. Lifts cup by the handle
+gtofmd009		C9. Pulls string to get object
+gtofmd010		C10. Picks up cup to get block
+gtofmd011		C11. Puts block in cup
+gtofmd012		C12. Bang 2 objects together
+gtofmd013		C13. Finds toy under cloth
+gtofmd014		C14. Pats toy to make noise
+gtofmd015		C15. Puts 3 or more blocks in cup
+gtofmd016		C16. Repeats something when encouraged
+gtofmd017		C17. Makes marks with crayon
+gtofmd018		C18. Can manage a cup well
+gtofmd019		C19. Holds crayon with fingers not fist
+gtofmd020		C20. Scribbles in any way
+gtofmd021		C21. Puts 1 peg in again      
+gtofmd022		C22. Accepts third block without dropping
+gtofmd023		C23. Puts blocks in jar       
+gtofmd024		C24. Builds tower of 2 blocks
+gtofmd025		C25. Dumps blocks out of jar purposefully.
+gtofmd026		C26. Finds object under 2 alternating cups
+gtofmd027		C27. Uses objects in play by themselves
+gtofmd028		C28. Builds tower of 3 blocks
+gtofmd029		"C29. Understands the concept of ""one"""
+gtofmd030		C30. Scribbles on paper (circular scribble)
+gtofmd031		C31. Uses objects in play with someone
+gtofmd032		C32. Puts pegs in board <= 2 minutes.
+gtofmd033		C33. 2 shapes in board complete
+gtofmd034		"C34. Understands ""more"""
+gtofmd035		C35. 3 shapes in board complete 2 minutes
+gtofmd036		C36. 3 shape board 2 minutes rotated
+gtofmd037		C37. Builds tower of 6 blocks.
+gtofmd038		C38. Puts pegs in board in <=30 seconds.
+gtofmd039		C39. 3 shapes in 15 seconds
+gtofmd040		C40. Unscrews and screws lid of jar
+gtofmd041		C41. Representational play
+gtofmd042		C42. Copies 2-part activity
+gtofmd043		C43. Builds truck/lorry of blocks
+gtofmd044		C44. Imitates building a bridge
+gtofmd045		C45. Draws a horizontal line
+gtofmd046		C46. Picks longest stick 3 of 3
+gtofmd047		C47. Child understands prepositions
+gtofmd048		C48. Builds wall of blocks
+gtofmd049		C49. Copies a circle
+gtofmd050		C50. Copies a cross or a plus sign
+gtofmd051		C51. Understands concept of size
+gtofmd052		C52. Draws 3 or more body parts
+gtofmd053		C53. Copies a square
+gtofmd054		C54. Can count 3 + objects
+gtogmd001		A1. Lifts head in prone 45 degrees
+gtogmd002		A2. Frolics alone - moving body, kicking legs.
+gtogmd003		A3. Frolics with mother or caregiver responsively
+gtogmd004		A4. Hands together in front of face
+gtogmd005		A5. Balances head well while suppported
+gtogmd006		A6. Pulls to sit - no head lag
+gtogmd007		A7. Lifts head, shoulders, chest when prone
+gtogmd008		A8. Reach for an object
+gtogmd009		A9. Resist object being taken away
+gtogmd010		A10. Grasps hold of large thing
+gtogmd011		A11. Carries object to mouth to explore
+gtogmd012		A12. Sits supported (with help)
+gtogmd013		A13. Sits momentarily (on their own)
+gtogmd014		A14. Reaches for a second object
+gtogmd015		A15. Rolls from back to stomach
+gtogmd016		A16. Can see a small object.
+gtogmd017		A17. Rake (grasps with four fingers) a small object
+gtogmd018		A18. Sits without help (short time)
+gtogmd019		A19. Can turn on floor
+gtogmd020		A20. Can pick object from ground
+gtogmd021		A21. Shifts object from one hand to another
+gtogmd022		A22. Sits by self well
+gtogmd023		A23. Crawls
+gtogmd024		A24. Picks up small object between thumb and finger
+gtogmd025		A25. Pulls him or herself up to a standing position
+gtogmd026		A26. Moves from lying to sitting
+gtogmd027		A27. Stands with Support
+gtogmd028		A28. Stands alone for 5 secs or more if put in a standing position
+gtogmd029		A29. Walks when one hand held
+gtogmd030		A30. Plays 'give and take'
+gtogmd031		A31. Releases ball purposefully
+gtogmd032		A32. Takes few steps alone
+gtogmd033		A33. Kick a ball from stationary position
+gtogmd034		A34. Stoops and recovers
+gtogmd035		A35. Moves from sitting to standing not using hands
+gtogmd036		A36. Walks well
+gtogmd037		A37. Basic running, may fall over
+gtogmd038		A38. Runs well
+gtogmd039		A39. Runs and kicks a ball well
+gtogmd040		A40. Kneels and gets to standing without using hands
+gtogmd041		A41. Throws beanbag on to a cloth
+gtogmd042		A42. Jumps with two feet together
+gtogmd043		A43. Jumps over a piece of paper (widthways)
+gtogmd044		A44. Stands on one foot ² 5 secs
+gtogmd045		A45. Hops forward on one foot 3 steps
+gtogmd046		A46. Stands on one foot > 5 seconds
+gtogmd047		A47. Walks on tiptoes 6 or more steps
+gtogmd048		A48. Walks along line heel to toe
+gtogmd049		A49. Throws a ball up into the air and can catch it
+gtolgd001		B1. Reacts when spoken to
+gtolgd002		B2. Smiles in response
+gtolgd003		B3. Calms and quiets with caregivers
+gtolgd004		B4. Happy vocalizing or making sounds
+gtolgd005		B5. Turn to Voice
+gtolgd006		B6. Laughs 
+gtolgd007		B7. Vocalises when spoken to
+gtolgd008		B8. Repeats syllables
+gtolgd009		B9. Babbles while playing
+gtolgd010		B10. Uses 2/4 syllable babble
+gtolgd011		B11. Understands when being cautioned
+gtolgd012		B12. Uses gestures to communicate
+gtolgd013		B13. Responds to verbal request
+gtolgd014		B14. Uses one definite word
+gtolgd015		B15. Imitates simple words
+gtolgd016		B16. Uses 5 clear words
+gtolgd017		B17. Identifies 1 clothing item
+gtolgd018		B18. IDENTIFIES 2 objects you name
+gtolgd019		B19. Interested in story
+gtolgd020		B20. Follows simple commands (1 step)
+gtolgd021		B21. Points to two pictures
+gtolgd022		B22. Identifies 3 clothing items
+gtolgd023		B23. Follows 2 step commands
+gtolgd024		B24. Says sentences with 2 words together
+gtolgd025		B25. Points at 5 pictures in book
+gtolgd026		B26. IDENTIFIES 5 objects you name
+gtolgd027		B27. NAMES 5 objects
+gtolgd028		B28. Speaks clearly in sentences
+gtolgd029		B29. Points to 1+ or more body parts
+gtolgd030		B30. Child can say first name
+gtolgd031		B31. Knows actions or function of 3 or more objects
+gtolgd032		B32. Matches pictures
+gtolgd033		B33. Names 4 pictures
+gtolgd034		B34. Identifies 5 action pictures
+gtolgd035		B35. NAMES 10 objects
+gtolgd036		B36. Uses multiple-word utterances
+gtolgd037		B37. Talks spontaneously on daily events
+gtolgd038		B38. Points to parts of whole objects
+gtolgd039		B39. Logical response to a question
+gtolgd040		B40. Child is able to categorize things
+gtolgd041		B41. Matches 3 colors
+gtolgd042		B42. Child describes picture
+gtolgd043		B43. Identifies 2 or more colors
+gtolgd044		"B44. Understands adjective ""faster"""
+gtolgd045		B45. Knows use of objects
+gtolgd046		B46. Names actions (5)
+gtolgd047		"B47. Understands ""more"""
+gtolgd048		B48. Identifies at least 2 shapes
+gtolgd049		B49. Names at least 2 colours
+gtolgd050		B50. Tapping with 2 blocks
+gtolgd051		B51. Tapping with 4 blocks
+gtolgd052		B52. Tapping with 8 blocks
 hypgmd001		Pure noise item (simulated)
 hypgmd002		Item with an asymptote (simulated)
 hypgmd003		Wrongly coded item (simulated)

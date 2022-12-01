@@ -21,6 +21,8 @@
 #'  - May 30, 2022 - added gto (LF) and gpa (SF) items
 #'  - June 1, 2022 - added seven gsd items
 #'  - Nov 24, 2022 - Added instruments gs1, gs2
+#'  - Dec 01, 2022 - Labels of gto replaced by correct order. This change invalidates
+#'  any analyses done on LF done after May 30, 2022 !!!
 #' @author Compiled by Stef van Buuren
 #' @keywords datasets
 "builtin_itemtable"

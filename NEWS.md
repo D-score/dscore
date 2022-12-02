@@ -1,3 +1,8 @@
+# dscore 1.6.7
+
+* WARNING: On 22021130, we found errors in the LF item order. This error invalidates most analyses done done after May 30, 2022! Please wait for version 1.7.0 of the `dscore` package.
+* Updates `builtin_itemtable` and `builtin_itembank` with correct LF item order
+
 # dscore 1.6.6
 
 * Provides snapshot of analyses based on incorrect LF1 item ordering

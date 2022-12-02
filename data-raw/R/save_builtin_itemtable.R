@@ -20,11 +20,7 @@ ecdi_itemtable <- read.delim("data-raw/data/ecdi_itemtable.txt")
 ecdi_itemtable <- ecdi_itemtable %>%
   select(item, label) %>%
   mutate(equate = NA_character_) %>%
-  select(item, equate, label)
-
-builtin_itemtable <- bind_rows(gsx_itemtable,
-                               builtin_itemtable,
-                               ecdi_itemtable) %>%
+  select(item, equate, label) %>%
   mutate(equate = ifelse(item %in% c("ecdxxc001", "gpamoc097"), "ECD1", NA),
          equate = ifelse(item %in% c("ecdxxc002", "gpamoc106"), "ECD2", equate),
          equate = ifelse(item %in% c("ecdxxc003", "gpamoc129"), "ECD3", equate),
@@ -34,6 +30,10 @@ builtin_itemtable <- bind_rows(gsx_itemtable,
          equate = ifelse(item %in% c("ecdxxc008", "gpaclc113"), "ECD8", equate),
          equate = ifelse(item %in% c("ecdxxc009", "gpaclc101"), "ECD9", equate),
          equate = ifelse(item %in% c("ecdxxc013", "gpaclc126"), "ECD13", equate))
+
+builtin_itemtable <- bind_rows(gsx_itemtable,
+                               builtin_itemtable,
+                               ecdi_itemtable)
 
 info <- dscore::decompose_itemnames(builtin_itemtable$item)
 builtin_itemtable <- builtin_itemtable %>%

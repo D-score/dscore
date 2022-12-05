@@ -23,8 +23,8 @@
 #' @param key A string that selects a subset in the itembank that
 #' makes up the key, the set of difficulty
 #' estimates from a fitted Rasch model.
-#' The built-in keys are:  `"gsed2208"` (default), `"gsed2206"`,
-#' `"gsed1912"`, `"lf2206"`, `"sf2206"`, `"gcdg"`,
+#' The built-in keys are:  `"gsed2212"` (default), `"gsed2208"` (deprecated),
+#' `"gsed2206"` (deprecated), `"gsed1912"`, `"lf2206"`, `"sf2206"`, `"gcdg"`,
 #' and `"dutch"`. Since version 1.5.0, the `key = "gsed"`
 #' selects the latest key starting with the string "gsed".
 #' Use `key = ""` to use all item names,
@@ -109,6 +109,7 @@
 #' `"gsed1912"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
 #' `"gsed2206"`  | `818_17` | `-10:100` | 22  | mixed  | GSED Team, 2022
 #' `"gsed2208"`  | `818_6` | `-10:100` | 22  | mixed  | GSED Team, 2022
+#' `"gsed2212"`  | `818_6` | `-10:100` | 22  | mixed  | GSED Team, 2022
 #' `"lf2206"`    | `155_0` | `-10:100`  | 1   | direct | GSED Team, 2022
 #' `"sf2206"`    | `139_0` | `-10:100`  | 1   | caregiver | GSED Team, 2022
 #'
@@ -116,7 +117,7 @@
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
 #' the advice is to use the default, which currently links to
-#' `"gsed2208"`.
+#' `"gsed2212"`.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
@@ -243,12 +244,12 @@ calc_dscore <- function(data, items, xname, xunit,
 
   # set default key
   if (is.null(key) || key == "gsed") {
-    key <- "gsed2208"
+    key <- "gsed2212"
   }
 
   # set default reference population for DAZ
   if (is.null(population)) {
-    if (key %in% c("gsed2208", "293_0"))
+    if (key %in% c("gsed2212", "gsed2208", "293_0"))
       population <- "phase1"
     if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0"))
       population <- "gcdg"

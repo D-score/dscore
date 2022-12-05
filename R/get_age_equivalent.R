@@ -24,12 +24,12 @@ get_age_equivalent <- function(items,
 
   # set default key
   if (is.null(key) || key == "gsed") {
-    key <- "gsed2208"
+    key <- "gsed2212"
   }
 
   # set default reference population for DAZ
   if (is.null(population)) {
-    if (key %in% c("gsed2208", "293_0"))
+    if (key %in% c("gsed2212", "gsed2208", "293_0"))
       population <- "phase1"
     if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0"))
       population <- "gcdg"

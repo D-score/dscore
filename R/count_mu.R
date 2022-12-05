@@ -52,8 +52,8 @@ count_mu_gcdg <- function(t) {
 #'
 #' The working range is 0-3.5 years. After the age of 3.5 years, the function
 #' will increase at an arbitrary rate of 3.8 D-score points per year.
-#' This function is intended to be called when `key = "gsed2208"` or
-#' `key = "293_0"`.
+#' This function is intended to be called when `key = "gsed2212"`,
+#' `key = "gsed2208"` or `key = "293_0"`.
 #' @param t Decimal age, numeric vector
 #' @return
 #' A vector of length `length(t)` with the median of the GCDG references.

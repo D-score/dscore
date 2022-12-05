@@ -62,8 +62,8 @@ The default (\code{"decimal"}) means decimal age in years.}
 \item{key}{A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
 estimates from a fitted Rasch model.
-The built-in keys are:  \code{"gsed2208"} (default), \code{"gsed2206"},
-\code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
+The built-in keys are:  \code{"gsed2212"} (default), \code{"gsed2208"} (deprecated),
+\code{"gsed2206"} (deprecated), \code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
 and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
 selects the latest key starting with the string "gsed".
 Use \code{key = ""} to use all item names,
@@ -161,6 +161,7 @@ A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    \code{"gsed1912"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
    \code{"gsed2206"} \tab \verb{818_17} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
    \code{"gsed2208"} \tab \verb{818_6} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
+   \code{"gsed2212"} \tab \verb{818_6} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
    \code{"lf2206"} \tab \verb{155_0} \tab \code{-10:100} \tab 1 \tab direct \tab GSED Team, 2022 \cr
    \code{"sf2206"} \tab \verb{139_0} \tab \code{-10:100} \tab 1 \tab caregiver \tab GSED Team, 2022 \cr
 }
@@ -170,7 +171,7 @@ As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
 the advice is to use the default, which currently links to
-\code{"gsed2208"}.
+\code{"gsed2212"}.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The

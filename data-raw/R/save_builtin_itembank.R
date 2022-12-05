@@ -97,7 +97,7 @@ key_gsed2212_gs1_gl1 <- read.delim(file = f16, stringsAsFactors = FALSE) %>%
 # Extend 293_0 key with model items 818_6 (version 20221201_remodel)
 # Add gs1 and gs2 instrument names (gpa=gs1)
 # Add ecdi
-# Save as gsed2208
+# Save as gsed2212
 key_gsed2212 <- bind_rows(key_gsed2212_gs1_gl1,
                           key_293_0, key_gsed2212, key_ecd2208) %>%
   mutate(key = "gsed2212") %>%
@@ -137,13 +137,13 @@ check_single_key(key_gsed1912)
 # --- key_gcdg (565 items)
 check_single_key(key_gcdg)
 
-# --- key_lf2206 Deprecated --> gsed2208
+# --- key_lf2206 Deprecated --> gsed2212
 # Extend lf2206 with gsed item names
 key_lf2206 <- bind_rows(key_lf2206,
                         data.frame(key = "lf2206", item = lf_gsed, tau = key_lf2206$tau))
 check_single_key(key_lf2206)
 
-# --- key_sf2206 Deprecated --> gsed2208
+# --- key_sf2206 Deprecated --> gsed2212
 # Extend sf2206 with gsed item names
 key_sf2206 <- bind_rows(key_sf2206,
                         data.frame(key = "sf2206", item = sf_gsed, tau = key_sf2206$tau))
@@ -156,7 +156,7 @@ key_294_0 <- bind_rows(key_294_0,
                        key_ecd294_0)
 check_single_key(key_294_0)
 
-# --- key_293_9 GSED CORE MODEL (part of key_gsed2208)
+# --- key_293_9 GSED CORE MODEL (part of key_gsed2212)
 check_single_key(key_293_0)
 
 # --- key_dutch (76 items)

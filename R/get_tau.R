@@ -18,7 +18,7 @@ get_tau <- function(items,
                     itembank = dscore::builtin_itembank) {
   # set default key
   if (is.null(key) || key == "gsed") {
-    key <- "gsed2208"
+    key <- "gsed2212"
   }
 
   # if key = "", then search in all rows

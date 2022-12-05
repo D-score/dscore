@@ -4,79 +4,43 @@ editor_options:
     wrap: 72
 ---
 
-# dscore 1.6.9 
+# dscore 1.7.0
 
-- Set default key to `gsed2212`. This key repairs problems in `gsed2206` and `gsed2208`. 
+### Major issue
 
-# dscore 1.6.8
-
--   Repairs LF item order problem
--   Created and distributed a spreadsheet that compares LF labels for
-    three versions:
-    -   `dscore::builtin_itemtable` (incorrect since May 30);
+-   On 22021130, we found errors in the LF item order. Solves a documentation error. This error was introduced on May 30, 2022 and invalidates keys `gsed2206` and `gsed2208`, as well as analyses that rely on correct LF item labels. Version 1.7.0 corrects these problems.
+-   Item labels are taken from 
     -   `LF1`, corrected using RedCAP comparisons from
         `Phase_1_master_data_dictionary_V1.0_29_11_2022.xlsx`;
     -   `LF2`, from
         `GSED LF Item Guide_October22_FINAL_clean_27Nov22.docx` and
         manually matched to `LF1`.
--   Update and document `builtin_itemtable` in `dscore` package with
-    correct `gto` labels
--   Add NOTE to README to wait for `dscore 1.7.0`
--   Redocument anchors
--   Table `itemnames_translate.tsv` in `gsedread` is outdated and needs
-    to be updated
--   Links to `gsed` lexicon items need to be updated to make appropriate
-    matches to items from other instruments (critical for model 818_6)
--   Update data reading scripts `assemble_data.R` and `edit_data.R` in
-    `gsedscripts`.
 -   Rerun core 293_0 model, check edits, redocument, regenerate
     diagnostic plots, etc. Check that result is identical.
--   Refit full 818_6 model (DONE, in general better ICC's, effect on
-    D-score calculation is minor, six items were unmatched)
--   Extend itemtable and itembank with new instrument code `gl1` (LF,
-    Phase 2 validation)) and `gs1` (SF Phase 2 validation)
--   Add updated tau estimates to `dscore::builtin_itembank`
+-   Refit full 818_6 model. In general better ICC's, effect on
+    D-score calculation is minor, six items were bad matches
 
-# dscore 1.6.7
+### Major changes
 
--   WARNING: On 22021130, we found errors in the LF item order. This
-    error invalidates most analyses done done after May 30, 2022! Please
-    wait for version 1.7.0 of the `dscore` package.
+-   Introduces new default key `gsed2212`
+-   Introduces new instrument codes `gs1` (GSED SF V1.0) and `gl1` (GSED LF V1.0)
+-   Updates `gto` labels with correct order
+-   Set default key to `gsed2212`. This key repairs problems in `gsed2206` and `gsed2208`. 
+-   `get_labels()` now returns the labels in the same order as `items`
+-   Extends key `gsed2212` with 18 ECDI items using Phase 1 validation data
 -   Updates `builtin_itemtable` and `builtin_itembank` with correct LF
     item order
+-   Redocuments upper anchor item
 
-# dscore 1.6.6
-
--   Provides snapshot of analyses based on incorrect LF1 item ordering
--   Extends `builtin_itemtable` with `gs1` and `gs2` instruments
--   Replaces ECDI Excel file by txt file, removes non-ascii characters
--   Adds txt file with item order for GSED SF (Phase 2 validation
-    version)
--   Replaces bitwise by more elegant elementwise comparison in
-    `dscore.cpp`
--   Removes the dependency on the `sirt` package
-
-# dscore 1.6.5
+### Minor changes
 
 -   Solves bug that crashed `dscore::count_mu_phase1(t)` when `t` is a
     vector containing `NA`s
-
-# dscore 1.6.4
-
 -   Adds example data set `gsample` with 10 cases with SF and LF scores
-
-# dscore 1.6.3
-
 -   Adds `order` argument to `get_itemnames()`
--   Repair an error in the `sort_itemnames()` example
-
-# dscore 1.6.2
-
--   `get_labels()` now returns the labels in the same order as `items`
-
-# dscore 1.6.1
-
--   Extends `gsed2208` with 18 ECDI items using Phase 1 data
+-   Repairs an error in the `sort_itemnames()` example
+-   Replaces bitwise by more elegant elementwise comparison in `dscore.cpp`
+-   Removes the dependency on the `sirt` package
 
 # dscore 1.6.0
 

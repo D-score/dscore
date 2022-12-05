@@ -20,7 +20,7 @@ defined items."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.9</span>
       </span>
     </div>
 
@@ -75,6 +75,18 @@ defined items.</p>
     <div id="format">
     <h2>Format</h2>
     <p>A <code>data.frame</code> with variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>key</code></td><td>String indicating a specific Rasch model (the key)</td></tr><tr><td><code>item</code></td><td>Item name, gsed lexicon</td></tr><tr><td><code>tau</code></td><td>Difficulty estimate</td></tr><tr><td><code>label</code></td><td>Label (English)</td></tr><tr><td><code>instrument</code></td><td>Instrument code</td></tr><tr><td><code>domain</code></td><td>Domain code</td></tr><tr><td><code>mode</code></td><td>Administration mode</td></tr><tr><td><code>number</code></td><td>Item number</td></tr></table></div>
+    <div id="details">
+    <h2>Details</h2>
+    <p>In general, one can only compare D-score calculated with the same
+key. The current recommendation for new projects is to choose
+key <code>gsed2212</code>.</p>
+    </div>
+    <div id="note">
+    <h2>Note</h2>
+    <p>Last update:</p><ul><li><p>Dec 01, 2022 - Overwrite labels of gto by correct item order.</p></li>
+<li><p>Dec 05, 2022 - Adds key <code>gsed2212</code>, adding instruments <code>gl1</code> and <code>gs1</code>, and
+defining correct order for <code>gto</code></p></li>
+</ul></div>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="dscore.html">dscore()</a></code>, <code><a href="get_tau.html">get_tau()</a></code>,
@@ -85,26 +97,26 @@ defined items.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">builtin_itembank</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        key      item  tau</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 gsed2208 gpalac001 4.57</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 gsed2208 gpacgc002 6.90</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 gsed2208 gpafmc003 5.77</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 gsed2208 gpasec004 1.10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 gsed2208 gpamoc005 8.14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 gsed2208 gpamoc006 3.22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                               label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       Does your child cry when he/she is hungry, wet, tired, or wants to be held?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                 Does your child look at and focus on objects in front of him/her?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          Does your child grasp your finger if you touch her hand?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                            Does your child smile?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Does your child try to move his/her head (or eyes) to follow an object or person?</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           When lying on his/her back, does your child move his/her arms and legs?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 gsed2212 gs1sec001 1.10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 gsed2212 gs1moc002 3.22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 gsed2212 gs1sec003 3.60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 gsed2212 gs1lgc004 4.57</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 gsed2212 gs1moc005 5.77</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 gsed2212 gs1cgc006 6.90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                         label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                      Does your child smile?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     When lying on his/her back, does your child move his/her arms and legs?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                Does your child look at your face when you speak to him/her?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Does your child cry when he/she is hungry, wet, tired, or wants to be held?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    Does your child grasp your finger if you touch her hand?</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           Does your child look at and focus on objects in front of him/her?</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   instrument domain mode number</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        gpa     la    c    001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2        gpa     cg    c    002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        gpa     fm    c    003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4        gpa     se    c    004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        gpa     mo    c    005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6        gpa     mo    c    006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        gs1     se    c    001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        gs1     mo    c    002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        gs1     se    c    003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        gs1     lg    c    004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        gs1     mo    c    005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        gs1     cg    c    006</span>
 </code></pre></div>
     </div>
   </div>

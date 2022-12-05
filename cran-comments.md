@@ -3,30 +3,80 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.4.0` extends the itembank and resolves some problems
+`dscore 1.7.0` provides new features and resolves some problems
 
 ## Test environments
 
--   local OS X install, 11.0.1, R 4.0.3
--   win-builder, using `devtools::check_win_devel()`
--   rhub
+### Local
 
-### Local build
+``` r
+R.Version()
+```
+
+    ## $platform
+    ## [1] "x86_64-apple-darwin17.0"
+    ## 
+    ## $arch
+    ## [1] "x86_64"
+    ## 
+    ## $os
+    ## [1] "darwin17.0"
+    ## 
+    ## $system
+    ## [1] "x86_64, darwin17.0"
+    ## 
+    ## $status
+    ## [1] ""
+    ## 
+    ## $major
+    ## [1] "4"
+    ## 
+    ## $minor
+    ## [1] "2.2"
+    ## 
+    ## $year
+    ## [1] "2022"
+    ## 
+    ## $month
+    ## [1] "10"
+    ## 
+    ## $day
+    ## [1] "31"
+    ## 
+    ## $`svn rev`
+    ## [1] "83211"
+    ## 
+    ## $language
+    ## [1] "R"
+    ## 
+    ## $version.string
+    ## [1] "R version 4.2.2 (2022-10-31)"
+    ## 
+    ## $nickname
+    ## [1] "Innocent and Trusting"
+
+## Local check
 
 Package built by
 
 ``` r
 library("devtools")
-build(manual = TRUE)
+build()
 ```
 
 ``` bash
-R CMD CHECK /Users/buurensv/Package/dscore/dscore_1.4.0.tar.gz
-
-Status: OK
+R CMD CHECK dscore_1.6.9.tar.gz
 ```
 
-### WIN\_DEVEL
+Status: OK
+
+## win-builder
+
+``` r
+devtools::check_win_devel()
+```
+
+### WIN_DEVEL
 
 `devtools::check_win_devel()` resulted in:
 
@@ -40,25 +90,14 @@ check_rhub()
 
 The result is:
 
-    ── dscore 1.4.0: ERROR
+    ── dscore 1.6.9: OK
 
-    Build ID:   dscore_1.4.0.tar.gz-97d617cf0f4d458aae592e265a2f8872
-    Platform:   Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-    Submitted:  6 minutes 59.9 seconds ago
-    Build time: 6 minutes 57.7 seconds
+      Build ID:   dscore_1.6.9.tar.gz-0128e87e7c4a472d9179d9b1df43073e
+      Platform:   Windows Server 2022, R-devel, 64 bit
+      Submitted:  2m 18.2s ago
+      Build time: 2m 15.9s
 
-    * checking examples ...
-    ** running examples for arch 'i386' ... ERROR
-    Running examples in 'dscore-Ex.R' failed
-    The error most likely occurred in:
-
-    > ### Name: get_age_equivalent
-    > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-    > ### Aliases: get_age_equivalent
-    > 
-    Error in loadNamespace(x) : there is no package called 'utf8'
-
-SvB: The problem with the `utf8` package is outside my reach.
+    0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
     dscore 1.4.0: OK
     Build ID:   dscore_1.4.0.tar.gz-b7c485c90af2483588faae90192af7d9

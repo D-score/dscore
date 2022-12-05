@@ -1,31 +1,41 @@
 ---
 title: "cran-comments"
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Reason for update
 
-`dscore 1.4.0` extends the itembank and resolves some problems
+`dscore 1.7.0` provides new features and resolves some problems
 
 ## Test environments
 
-* local OS X install, 11.0.1, R 4.0.3
-* win-builder, using `devtools::check_win_devel()`
-* rhub
+### Local
 
-### Local build
+```{r}
+R.Version()
+```
+
+## Local check
 
 Package built by
 
 ```{r eval = FALSE}
 library("devtools")
-build(manual = TRUE)
+build()
 ```
 
 ```{bash eval=FALSE}
-R CMD CHECK /Users/buurensv/Package/dscore/dscore_1.4.0.tar.gz
+R CMD CHECK dscore_1.6.9.tar.gz
+```
 
 Status: OK
+
+## win-builder
+
+```{r eval=FALSE}
+devtools::check_win_devel()
 ```
 
 ### WIN_DEVEL
@@ -45,56 +55,33 @@ check_rhub()
 The result is:
 
 ```
-── dscore 1.4.0: ERROR
+── dscore 1.6.9: OK
 
-Build ID:	dscore_1.4.0.tar.gz-97d617cf0f4d458aae592e265a2f8872
-Platform:	Windows Server 2008 R2 SP1, R-devel, 32/64 bit
-Submitted:	6 minutes 59.9 seconds ago
-Build time:	6 minutes 57.7 seconds
+  Build ID:   dscore_1.6.9.tar.gz-0128e87e7c4a472d9179d9b1df43073e
+  Platform:   Windows Server 2022, R-devel, 64 bit
+  Submitted:  2m 18.2s ago
+  Build time: 2m 15.9s
 
-* checking examples ...
-** running examples for arch 'i386' ... ERROR
-Running examples in 'dscore-Ex.R' failed
-The error most likely occurred in:
-
-> ### Name: get_age_equivalent
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Aliases: get_age_equivalent
-> 
-Error in loadNamespace(x) : there is no package called 'utf8'
-```
-
-SvB: The problem with the `utf8` package is outside my reach. 
-
-```
-dscore 1.4.0: OK
-Build ID:	dscore_1.4.0.tar.gz-b7c485c90af2483588faae90192af7d9
-Platform:	Ubuntu Linux 16.04 LTS, R-release, GCC
-Submitted:	47 minutes 33.8 seconds ago
-Build time:	47 minutes 31.6 seconds
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 ```
 
 ```
-dscore 1.4.0: OK
-Build ID:	dscore_1.4.0.tar.gz-07cb0e7218cb4fc2920b459722c0dd79
+Build ID:	dscore_1.6.9.tar.gz-8ab540851dd644c5b8cd198948311da9
+Platform:	Ubuntu Linux 20.04.1 LTS, R-release, GCC
+Submitted:	1 hour 36 minutes 30.1 seconds ago
+Build time:	1 hour 36 minutes 25.5 seconds
+
+Status: succes
+```
+
+```
+Build ID:	dscore_1.6.9.tar.gz-8badaf3d46cf49e699c58e47254fa428
 Platform:	Fedora Linux, R-devel, clang, gfortran
-Submitted:	54 minutes 40.1 seconds ago
-Build time:	54 minutes 38.3 seconds
+Submitted:	1 hour 37 minutes 54.8 seconds ago
+Build time:	1 hour 37 minutes 50.7 seconds
+
+Status: succes
 ```
-
-```
-dscore 1.4.0: PREPERROR
-Build ID:	dscore_1.4.0.tar.gz-bd4ae33d5a6b4b8caaff07a0d493a465
-Platform:	Debian Linux, R-devel, GCC ASAN/UBSAN
-Submitted:	1 hour 14 minutes 53.8 seconds ago
-Build time:	1 hour 14 minutes 42.8 seconds
-
-> ERROR: dependencies ‘xml2’, ‘rvest’ are not available for package ‘kableExtra’
-> ERROR: dependencies ‘CDM’, ‘TAM’, ‘pbv’ are not available for package ‘sirt’```
-```
-
-SvB: Test environment Debian Linux is incomplete. Unlikely to be related to the `dscore` package. 
-
 
 ## Downstream dependencies
 

@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.6.9 
+
+- Set default key to `gsed2212`. This key repairs problems in `gsed2206` and `gsed2208`. 
+
 # dscore 1.6.8
 
 -   Repairs LF item order problem

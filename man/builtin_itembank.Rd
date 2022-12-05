@@ -29,12 +29,14 @@ defined items.
 \details{
 In general, one can only compare D-score calculated with the same
 key. The current recommendation for new projects is to choose
-key \code{gsed2208}.
+key \code{gsed2212}.
 }
 \note{
 Last update:
 \itemize{
 \item Dec 01, 2022 - Overwrite labels of gto by correct item order.
+\item Dec 05, 2022 - Adds key \code{gsed2212}, adding instruments \code{gl1} and \code{gs1}, and
+defining correct order for \code{gto}
 }
 }
 \examples{

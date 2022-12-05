@@ -35,6 +35,8 @@ f11 <- "data-raw/data/keys/293_0.txt"
 f12 <- "data-raw/data/keys/gsed2208.txt"
 f13 <- "data-raw/data/keys/ecd2208.txt"
 f14 <- "data-raw/data/keys/items_sf.txt"
+f15 <- "data-raw/data/keys/gsed2212.txt"
+f16 <- "data-raw/data/keys/items_gs1_gl1.txt"
 
 key_dutch <- read.delim(file = f1, stringsAsFactors = FALSE)
 key_dutch <- key_dutch[order_itemnames(key_dutch$item), ]
@@ -85,11 +87,29 @@ key_ecd2208 <- key_ecd2208[order_itemnames(key_ecd2208$item), ]
 key_sf12 <- read.delim(file = f14, stringsAsFactors = FALSE)
 key_sf12 <- key_sf12[order_itemnames(key_sf12$item, order = "imnd"), ]
 
+key_gsed2212 <- read.delim(file = f15, stringsAsFactors = FALSE)
+key_gsed2212 <- key_gsed2212[order_itemnames(key_gsed2212$item), ]
+
+key_gsed2212_gs1_gl1 <- read.delim(file = f16, stringsAsFactors = FALSE) %>%
+  select(key, item, tau)
+
+# --- key2212
+# Extend 293_0 key with model items 818_6 (version 20221201_remodel)
+# Add gs1 and gs2 instrument names (gpa=gs1)
+# Add ecdi
+# Save as gsed2208
+key_gsed2212 <- bind_rows(key_gsed2212_gs1_gl1,
+                          key_293_0, key_gsed2212, key_ecd2208) %>%
+  mutate(key = "gsed2212") %>%
+  select(key, item, tau)
+check_single_key(key_gsed2212)
+
 # --- key2208
 # Extend 293_0 key with 818 items from the previous model 818_17
 # Add gs1 and gs2 instrument names (gpa=gs1)
 # Add ecdi
 # Save as gsed2208
+# Superseeded by gsed2212 because of LF item order problem - do not use
 key_gsed2208 <- bind_rows(key_sf12, key_293_0, key_gsed2208, key_ecd2208) %>%
   mutate(key = "gsed2208") %>%
   select(key, item, tau)
@@ -143,7 +163,8 @@ check_single_key(key_293_0)
 check_single_key(key_dutch)
 
 
-builtin_itembank <- bind_rows(key_gsed2208,
+builtin_itembank <- bind_rows(key_gsed2212,
+                              key_gsed2208,
                               key_gsed2206,
                               key_gsed1912,
                               key_gcdg,

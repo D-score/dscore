@@ -7,7 +7,7 @@
 #'
 #' In general, one can only compare D-score calculated with the same
 #' key. The current recommendation for new projects is to choose
-#' key `gsed2208`.
+#' key `gsed2212`.
 #'
 #' @docType data
 #' @format A `data.frame` with variables:
@@ -26,6 +26,8 @@
 #' @note
 #' Last update:
 #'  - Dec 01, 2022 - Overwrite labels of gto by correct item order.
+#'  - Dec 05, 2022 - Adds key `gsed2212`, adding instruments `gl1` and `gs1`, and
+#'    defining correct order for `gto`
 #'
 #' @examples
 #' head(builtin_itembank)

@@ -46,7 +46,7 @@ editor_options:
 
 ### Major changes
 
--   Solves a long-standing issue that led to severe incongruences
+-   Solves a long-standing issue that led to severe incongruence
     between LF and SF at the earliest ages (\<6M).
 -   Adds two new keys (`gsed2208` and `293_0`) using the Phase 1
     validation data for the GSED SF and GSED LF.

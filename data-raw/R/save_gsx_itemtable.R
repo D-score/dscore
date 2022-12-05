@@ -1,59 +1,67 @@
 # Processes SF item order info, and save table in keys
+# Updated 22021205: Reconstructs gs1 and gl1 item codes
 library(dplyr)
 library(dscore)
+library(openxlsx)
 
-fn <- file.path("data-raw/data/SF_LF_Phase_2_Item_Ordering.txt")
-io <- read.delim(file = fn, quote = "",
-                 stringsAsFactors = FALSE, na = "",
-                 fileEncoding = "UTF-8",
-                 header = TRUE)
+# NOTE: The following file is invalid for LF, use only for SF
+# NOTE: sfi$tau is taken from key 294_0. IGNORE
+fn <- file.path("data-raw/data/SF_LF_Phase 2_Item Ordering.txt")
+sfi <- read.delim(file = fn, quote = "",
+                  stringsAsFactors = FALSE, na = "",
+                  fileEncoding = "UTF-8",
+                  header = TRUE)
+colnames(sfi) <- c("start", "ph2", "ph1", "tau", "label", "domain", "gsed2", "gsed1")
+sfi$domain <- recode(sfi$domain, sem = "se", motor = "mo", lang = "lg", cog = "cg", life = "li")
 
-# Note: io$tau is taken from key 294_0. This should be key 293_0.
+# LF Item order (corrected 22021201)
+fn <- file.path("data-raw/data/lf_gto_match_2.xlsx")
+lfi <- read.xlsx(fn, sheet = "gto_LF1_LF2 (221130)", startRow = 2)
+lfi <- lfi[, c("stream", "matched_item", "matched_tau", "LF2_correct", "LF2_Stem")]
+lfi <- lfi[order(lfi$LF2_correct), ]
+lfi <- lfi[!is.na(lfi$matched_tau), ]
 
-colnames(io) <- c("start", "ph2", "ph1", "tau", "label", "domain", "gsed2", "gsed1")
+# select core model, using gpa and gto instrument codes
+fn <- file.path("data-raw/data/keys/293_0.txt")
+core <- read.delim(file = fn, quote = "",
+                   stringsAsFactors = FALSE, na = "",
+                   fileEncoding = "UTF-8",
+                   header = TRUE)
+core$label <- get_labels(core$item)
 
-# info <- dscore::decompose_itemnames(io$gsed2)
-# table(info$domain)
-# unique(io$domain)
-
-io$domain <- recode(io$domain, sem = "se", motor = "mo", lang = "lg", cog = "cg", life = "li")
-
-# construct item names sf1 and sf2
-# gs1: GSED SF Version 1 (Phase 1)
-# gs2: GSED SF Version 2 (Phase 2)
-
-# select gsed2008 tau values
-ib <- dplyr::filter(builtin_itembank, key == "gsed2208") %>%
-  dplyr::select(all_of(c("key", "item", "tau", "label")))
-
-# create gs2 itembank part
-gs2_names <- paste0("gs2", io$domain, "c", formatC(1:139, width = 3, flag = "0"))
-gs2 <- data.frame(gs2_names, item = io$gsed2)
-gs2 <- left_join(x = gs2, y = ib, by = "item")
-gs2 <- data.frame(
-  key = "gsed2208",
-  item = gs2$gs2_names,
-  tau = gs2$tau,
-  label = gs2$label,
-  decompose_itemnames(gs2$gs2_names))
-gs2[28, "label"] <- "Does your child hold his/her hands in fists all the time?"
-
+# Construct item names gs1
+# gs1: GSED SF Version 1 (Validation Phase 2)
 # create gs1 itembank part
-info <- dscore::decompose_itemnames(io$gsed2)
-idx <- order(info$number)
-io1 <- io[idx, ]
-gs1_names <- paste0("gs1", io1$domain, "c", formatC(1:139, width = 3, flag = "0"))
-gs1 <- data.frame(gs1_names, item = io1$gsed2)
-gs1 <- left_join(x = gs1, y = ib, by = "item")
+gs1_names <- paste0("gs1", sfi$domain, "c", formatC(1:139, width = 3, flag = "0"))
+gs1 <- data.frame(gs1_names, item = sfi$gsed2)
+gs1 <- left_join(x = gs1, y = core, by = "item")
 gs1 <- data.frame(
-  key = "gsed2208",
+  key = "gsed2212",
   item = gs1$gs1_names,
   tau = gs1$tau,
   label = gs1$label,
-  decompose_itemnames(gs1$gs1_names))
-gs1[8, "label"] <- "Does your child hold his/her hands in fists all the time?"
+  decompose_itemnames(gs1_names))
+gs1[28, "label"] <- "Does your child hold his/her hands in fists all the time?"
 
-gsx <- bind_rows(gs1, gs2)
+# Construct item names gl1
+# gl1: GSED LF Version 1 (Validation Phase 2)
+# create gl1 itembank part
+gl1_names <- paste0("gl1",
+                    c(rep("aa", 49), rep("bb",52), rep("cc", 54)),
+                    "d",
+                    c(formatC(1:49, width = 3, flag = "0"),
+                      formatC(1:52, width = 3, flag = "0"),
+                      formatC(1:54, width = 3, flag = "0")))
+gl1 <- data.frame(new = gl1_names, item = lfi$matched_item)
+gl1 <- left_join(x = gl1, y = core, by = "item")
+gl1 <- data.frame(
+  key = "gsed2212",
+  item = gl1_names,
+  tau = lfi$matched_tau,
+  label = lfi$LF2_Stem,
+  decompose_itemnames(gl1_names))
 
-write.table(gsx, file = "data-raw/data/keys/items_sf.txt",
+gsx <- bind_rows(gs1, gl1)
+
+write.table(gsx, file = "data-raw/data/keys/items_gs1_gl1.txt",
             quote = FALSE, sep = "\t", row.names = FALSE)

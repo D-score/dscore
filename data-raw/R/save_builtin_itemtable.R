@@ -7,8 +7,8 @@ builtin_itemtable <- read.delim(file = fn, quote = "",
                                 fileEncoding = "UTF-8",
                                 header = TRUE)
 
-## add GSED SF itemtable: gs1, gs2
-gsx_itemtable <- read.delim("data-raw/data/keys/items_sf.txt",
+## add GSED SF itemtable: gs1 and gl1 (Phase 2)
+gsx_itemtable <- read.delim("data-raw/data/keys/items_gs1_gl1.txt",
                             stringsAsFactors = FALSE, na = "",
                             fileEncoding = "UTF-8",
                             header = TRUE) %>%

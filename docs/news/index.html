@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -58,77 +58,50 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.9" id="dscore-169">dscore 1.6.9<a class="anchor" aria-label="anchor" href="#dscore-169"></a></h2>
-<ul><li>Set default key to <code>gsed2212</code>. This key repairs problems in <code>gsed2206</code> and <code>gsed2208</code>.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.8" id="dscore-168">dscore 1.6.8<a class="anchor" aria-label="anchor" href="#dscore-168"></a></h2>
-<ul><li>Repairs LF item order problem</li>
-<li>Created and distributed a spreadsheet that compares LF labels for three versions:
+<h2 class="page-header" data-toc-text="1.7.0" id="dscore-170">dscore 1.7.0<a class="anchor" aria-label="anchor" href="#dscore-170"></a></h2>
+<div class="section level4">
+<h4 id="major-issue-1-7-0">Major issue<a class="anchor" aria-label="anchor" href="#major-issue-1-7-0"></a></h4>
+<ul><li>On 22021130, we found errors in the LF item order. Solves a documentation error. This error was introduced on May 30, 2022 and invalidates keys <code>gsed2206</code> and <code>gsed2208</code>, as well as analyses that rely on correct LF item labels. Version 1.7.0 corrects these problems.</li>
+<li>Item labels are taken from
 <ul><li>
-<code><a href="../reference/builtin_itemtable.html">dscore::builtin_itemtable</a></code> (incorrect since May 30);</li>
-<li>
 <code>LF1</code>, corrected using RedCAP comparisons from <code>Phase_1_master_data_dictionary_V1.0_29_11_2022.xlsx</code>;</li>
 <li>
 <code>LF2</code>, from <code>GSED LF Item Guide_October22_FINAL_clean_27Nov22.docx</code> and manually matched to <code>LF1</code>.</li>
 </ul></li>
-<li>Update and document <code>builtin_itemtable</code> in <code>dscore</code> package with correct <code>gto</code> labels</li>
-<li>Add NOTE to README to wait for <code>dscore 1.7.0</code>
-</li>
-<li>Redocument anchors</li>
-<li>Table <code>itemnames_translate.tsv</code> in <code>gsedread</code> is outdated and needs to be updated</li>
-<li>Links to <code>gsed</code> lexicon items need to be updated to make appropriate matches to items from other instruments (critical for model 818_6)</li>
-<li>Update data reading scripts <code>assemble_data.R</code> and <code>edit_data.R</code> in <code>gsedscripts</code>.</li>
 <li>Rerun core 293_0 model, check edits, redocument, regenerate diagnostic plots, etc. Check that result is identical.</li>
-<li>Refit full 818_6 model (DONE, in general better ICC’s, effect on D-score calculation is minor, six items were unmatched)</li>
-<li>Extend itemtable and itembank with new instrument code <code>gl1</code> (LF, Phase 2 validation)) and <code>gs1</code> (SF Phase 2 validation)</li>
-<li>Add updated tau estimates to <code><a href="../reference/builtin_itembank.html">dscore::builtin_itembank</a></code>
+<li>Refit full 818_6 model. In general better ICC’s, effect on D-score calculation is minor, six items were bad matches</li>
+</ul></div>
+<div class="section level4">
+<h4 id="major-changes-1-7-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-1-7-0"></a></h4>
+<ul><li>Introduces new default key <code>gsed2212</code>
 </li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.7" id="dscore-167">dscore 1.6.7<a class="anchor" aria-label="anchor" href="#dscore-167"></a></h2>
-<ul><li>WARNING: On 22021130, we found errors in the LF item order. This error invalidates most analyses done done after May 30, 2022! Please wait for version 1.7.0 of the <code>dscore</code> package.</li>
+<li>Introduces new instrument codes <code>gs1</code> (GSED SF V1.0) and <code>gl1</code> (GSED LF V1.0)</li>
+<li>Updates <code>gto</code> labels with correct order</li>
+<li>Set default key to <code>gsed2212</code>. This key repairs problems in <code>gsed2206</code> and <code>gsed2208</code>.</li>
+<li>
+<code><a href="../reference/get_labels.html">get_labels()</a></code> now returns the labels in the same order as <code>items</code>
+</li>
+<li>Extends key <code>gsed2212</code> with 18 ECDI items using Phase 1 validation data</li>
 <li>Updates <code>builtin_itemtable</code> and <code>builtin_itembank</code> with correct LF item order</li>
+<li>Redocuments upper anchor item</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.6" id="dscore-166">dscore 1.6.6<a class="anchor" aria-label="anchor" href="#dscore-166"></a></h2>
-<ul><li>Provides snapshot of analyses based on incorrect LF1 item ordering</li>
-<li>Extends <code>builtin_itemtable</code> with <code>gs1</code> and <code>gs2</code> instruments</li>
-<li>Replaces ECDI Excel file by txt file, removes non-ascii characters</li>
-<li>Adds txt file with item order for GSED SF (Phase 2 validation version)</li>
+<div class="section level4">
+<h4 id="minor-changes-1-7-0">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-1-7-0"></a></h4>
+<ul><li>Solves bug that crashed <code>dscore::count_mu_phase1(t)</code> when <code>t</code> is a vector containing <code>NA</code>s</li>
+<li>Adds example data set <code>gsample</code> with 10 cases with SF and LF scores</li>
+<li>Adds <code>order</code> argument to <code><a href="../reference/get_itemnames.html">get_itemnames()</a></code>
+</li>
+<li>Repairs an error in the <code><a href="../reference/sort_itemnames.html">sort_itemnames()</a></code> example</li>
 <li>Replaces bitwise by more elegant elementwise comparison in <code>dscore.cpp</code>
 </li>
 <li>Removes the dependency on the <code>sirt</code> package</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.5" id="dscore-165">dscore 1.6.5<a class="anchor" aria-label="anchor" href="#dscore-165"></a></h2>
-<ul><li>Solves bug that crashed <code>dscore::count_mu_phase1(t)</code> when <code>t</code> is a vector containing <code>NA</code>s</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.4" id="dscore-164">dscore 1.6.4<a class="anchor" aria-label="anchor" href="#dscore-164"></a></h2>
-<ul><li>Adds example data set <code>gsample</code> with 10 cases with SF and LF scores</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.3" id="dscore-163">dscore 1.6.3<a class="anchor" aria-label="anchor" href="#dscore-163"></a></h2>
-<ul><li>Adds <code>order</code> argument to <code><a href="../reference/get_itemnames.html">get_itemnames()</a></code>
-</li>
-<li>Repair an error in the <code><a href="../reference/sort_itemnames.html">sort_itemnames()</a></code> example</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.2" id="dscore-162">dscore 1.6.2<a class="anchor" aria-label="anchor" href="#dscore-162"></a></h2>
-<ul><li>
-<code><a href="../reference/get_labels.html">get_labels()</a></code> now returns the labels in the same order as <code>items</code>
-</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.6.1" id="dscore-161">dscore 1.6.1<a class="anchor" aria-label="anchor" href="#dscore-161"></a></h2>
-<ul><li>Extends <code>gsed2208</code> with 18 ECDI items using Phase 1 data</li>
-</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.6.0" id="dscore-160">dscore 1.6.0<a class="anchor" aria-label="anchor" href="#dscore-160"></a></h2>
 <div class="section level4">
 <h4 id="major-changes-1-6-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-1-6-0"></a></h4>
-<ul><li>Solves a long-standing issue that led to severe incongruences between LF and SF at the earliest ages (&lt;6M).</li>
+<ul><li>Solves a long-standing issue that led to severe incongruence between LF and SF at the earliest ages (&lt;6M).</li>
 <li>Adds two new keys (<code>gsed2208</code> and <code>293_0</code>) using the Phase 1 validation data for the GSED SF and GSED LF.</li>
 <li>Sets <code>293_0</code> as the <strong>GSED core model</strong> and extended it to include the 818 items that fitted the previous model (“gsed2206”).</li>
 <li>Adds a new reference (named <code>phase1</code>), based on LF and SF data from cohorts GSED-BGD, GSED-PAK and GSED-TZA studies.</li>

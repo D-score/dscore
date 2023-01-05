@@ -31,9 +31,20 @@ ecdi_itemtable <- ecdi_itemtable %>%
          equate = ifelse(item %in% c("ecdxxc009", "gpaclc101"), "ECD9", equate),
          equate = ifelse(item %in% c("ecdxxc013", "gpaclc126"), "ECD13", equate))
 
+## add HH items to itemtable, creates instrument code gh1, overwrites item
+hh_itemtable <- read.csv2("data-raw/data/ageforms_GSED_HH_2022-12-20.csv")
+info <- dscore::decompose_itemnames(hh_itemtable$item)
+info$instrument <- "gh1"
+info$number <- formatC(1:55, width = 3, flag = "0")
+hh_itemtable$item <- with(info, paste0(instrument, domain, mode, number))
+hh_itemtable <- hh_itemtable %>%
+  mutate(equate = NA_character_) %>%
+  select(item, equate, label)
+
 builtin_itemtable <- bind_rows(gsx_itemtable,
                                builtin_itemtable,
-                               ecdi_itemtable)
+                               ecdi_itemtable,
+                               hh_itemtable)
 
 info <- dscore::decompose_itemnames(builtin_itemtable$item)
 builtin_itemtable <- builtin_itemtable %>%

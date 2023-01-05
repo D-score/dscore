@@ -36,7 +36,7 @@ D-score for children aged 0-5 years. The distribution is modelled
 after the LMS distribution (Cole & Green, 1992) or BCT model
 (Stasinopoulos & Rigby, 2022) and is equal for
 both boys and girls. The LMS/BCT values can be used to graph
-reference charts and to calculate age-conditonal Z-scores, also
+reference charts and to calculate age-conditional Z-scores, also
 known as DAZ.
 }
 \details{

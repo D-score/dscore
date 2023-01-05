@@ -1,0 +1,56 @@
+﻿item;label;tau;startitem;form_nr;form_startage
+gpasec004;Does your child smile?;1,1;yes;1;0
+gpamoc006;When lying on his/her back, does your child move his/her arms and legs?;3,22;no;1;0
+gpasec015;Does your child look at your face when you speak to him/her?;3,6;no;1;0
+gpalac001;Does your child cry when he/she is hungry, wet, tired, or wants to be held?;4,57;no;1;0
+gpamoc011;Does your child bring his/her hand to his/her mouth?;7,47;no;1;0
+gpasec010;Does your child smile when you smile or talk with him/her?;8,26;no;1;0
+gpaclc007;Does your child look at a person when that person starts talking or making noise?;8,32;no;1;0
+gpalgc012;When you talk to your child, does he/she smile, make noises, or move arms, legs or trunk in response?;9,3;yes;2;3
+gpasec014;When you are about to pick up your child, does he/she act happy or excited?;10,86;no;2;3
+gpalgc021;Does your child turn his/her head towards your voice or some noise?;12,61;no;2;3
+gpalac009;Does your child make sounds other than crying?;15,25;no;2;3
+gpasec020;Does your child sometimes suck his/her thumb or fingers?;15,39;no;2;3
+gpamoc017;While your child is on his/her back, can he/she bring his/her hands together?;15,66;no;2;3
+gpalgc019;Does your child make noise or gesture to get your attention?;16,03;no;2;3
+gpaclc033;Does your child recognize you or other family members (e.g., smile when they enter a room or move toward them)?;17,39;no;2;3
+gpaclc023;Does your child laugh?;17,42;no;2;3
+gpasec032;Does your child smile or become excited when seeing someone familiar?;17,81;no;2;3
+gpagmc013;When your child is on his/her stomach, can he/she turn his/her head to the side?;18,65;no;2;3
+gpalgc022;Does your child make sounds when LOOKING at toys or people (not crying)?;18,79;no;2;3
+gpamoc024;Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?;21,12;yes;3;6
+gpagmc018;When your child is on his/her stomach, can he/she hold his/her head up off the ground?;23,41;no;3;6
+gpamoc029;When he/she is on his/her tummy, can your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.;26,7;no;3;6
+gpagmc030;Can your child roll from his/her back to stomach or stomach to his/her side?;27,52;no;3;6
+gpalgc027;Does your child make single sounds like 'buh' or 'duh' or 'muh'?;28,43;no;3;6
+gpasec039;Can your child eat food from your fingers or off a spoon you hold?;28,54;no;3;6
+gpamoc028;Does your child try to reach for objects that are in front of him/her by extending one or both arms?;28,69;no;3;6
+gpamoc041;If an object falls to the ground out of view, does your child look for it?;29,66;no;3;6
+gpamoc038;Can your child roll from his/her back to stomach, or stomach to back, on his/her own?;30,14;no;3;6
+gpaclc047;Does your child play by tapping an object on the ground or a table?;31,35;no;3;6
+gpaclc046;Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)?;31,41;no;3;6
+gpasec064;Can your child pick up small bits of food and feed him/her-self using his/her hand?;35,45;yes;4;12
+gpamoc050;Can your child bang objects together, or bang an object on the table or on the ground?;36,65;no;4;12
+gpamoc054;Can your child maintain a standing position while holding on to a person or object (e.g., wall or furniture)?;37,43;no;4;12
+gpalgc059;Does your child stop what he/she is doing when you say 'Stop!' even if just for a second?;41,17;no;4;12
+gpagmc055;While holding onto furniture, does your child bend down and pick up a small object from the floor and then return to a standing position?;43,21;no;4;12
+gpalgc068;Does your child make a gesture to indicate 'No' (e.g., shaking head)?;44,73;yes;5;18
+gpamoc062;Can your child maintain a standing position on his/her own, without holding on or receiving support?;47,58;no;5;18
+gpamoc065;Can your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?;48,06;no;5;18
+gpamoc063;Can your child make any light marks on paper or in dirt with a crayon or a stick?;48,78;no;5;18
+gpalgc072;Can your child follow a simple spoken command or direction without you making a gesture?;49,34;no;5;18
+gpamoc066;Can your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately afterward?;49,6;no;5;18
+gpasec086;Does your child share with others (e.g., food)?;49,84;no;5;18
+gpagmc069;Can your child stand up from sitting by himself and take several steps forward?;50,17;no;5;18
+gpamoc071;Can your child make a scribble on paper, or in dirt, in a back and forth manner? For example, can he or she move the pen or pencil or stick back and forth?;50,23;no;5;18
+gpamoc078;Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?;51,66;no;5;18
+gpamoc079;Can your child kick a ball or other round object forward using his/her foot?;53,05;no;5;18
+gpaclc088;Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?;53,97;no;5;18
+gpaclc093;Can your child ask for something (e.g., food, water) by name when he/she wants it?;56,1;no;5;18
+gpamoc084;Can your child run well, without falling or bumping into objects?;56,68;no;5;18
+gpaxxc092;Can your child wash hands by him/herself?;56,72;no;5;18
+gpaclc101;If you show your child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it?;57,49;no;5;18
+gpacmc090;Can your child say ten or more words in addition to 'Mama' and 'Dada'?;60,22;no;5;18
+gpaclc112;Can your child speak using sentences of three or more words that go together (e.g., 'I want water' or 'The house is big')?;63,18;no;5;18
+gpamoc106;Can your child jump with both feet leaving the ground?;64,14;no;5;18
+gpaclc113;Can your child correctly use any of the words 'I,' 'you,' 'she,' or 'he' (e.g., 'I go to store,' or 'He eats rice')?;65,72;no;5;18

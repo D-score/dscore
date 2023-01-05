@@ -37,6 +37,7 @@ f13 <- "data-raw/data/keys/ecd2208.txt"
 f14 <- "data-raw/data/keys/items_sf.txt"
 f15 <- "data-raw/data/keys/gsed2212.txt"
 f16 <- "data-raw/data/keys/items_gs1_gl1.txt"
+f17 <- "data-raw/data/ageforms_GSED_HH_2022-12-20.csv"
 
 key_dutch <- read.delim(file = f1, stringsAsFactors = FALSE)
 key_dutch <- key_dutch[order_itemnames(key_dutch$item), ]
@@ -93,13 +94,21 @@ key_gsed2212 <- key_gsed2212[order_itemnames(key_gsed2212$item), ]
 key_gsed2212_gs1_gl1 <- read.delim(file = f16, stringsAsFactors = FALSE) %>%
   select(key, item, tau)
 
+key_gsed2212_gh1 <- read.csv2(file = f17) %>%
+  mutate(key = "gsed2212",
+         item = get_itemnames(instrument = "gh1", order = "indm")) %>%
+  select(key, item, tau)
+
 # --- key2212
 # Extend 293_0 key with model items 818_6 (version 20221201_remodel)
 # Add gs1 and gs2 instrument names (gpa=gs1)
 # Add ecdi
 # Save as gsed2212
 key_gsed2212 <- bind_rows(key_gsed2212_gs1_gl1,
-                          key_293_0, key_gsed2212, key_ecd2208) %>%
+                          key_gsed2212_gh1,
+                          key_293_0,
+                          key_gsed2212,
+                          key_ecd2208) %>%
   mutate(key = "gsed2212") %>%
   select(key, item, tau)
 check_single_key(key_gsed2212)

@@ -37,6 +37,7 @@ Last update:
 \item Dec 01, 2022 - Overwrite labels of gto by correct item order.
 \item Dec 05, 2022 - Adds key \code{gsed2212}, adding instruments \code{gl1} and \code{gs1}, and
 defining correct order for \code{gto}
+\item Jan 05, 2023 - Adds instrument \code{gh1} to key \code{gsed2212}
 }
 }
 \examples{

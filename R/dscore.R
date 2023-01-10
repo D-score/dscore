@@ -371,9 +371,9 @@ calc_dscore <- function(data, items, xname, xunit,
       sd = sd,
       .rownum = 1L:n()
     ) %>%
-    select(.data$.rownum, .data$a, .data$mu, .data$sd, items) %>%
+    select(all_of(c(".rownum", "a", "mu", "sd", items))) %>%
     pivot_longer(
-      cols = items, names_to = "item",
+      cols = all_of(items), names_to = "item",
       values_to = "score", values_drop_na = TRUE
     ) %>%
     arrange(.data$.rownum, .data$item) %>%
@@ -452,7 +452,7 @@ calc_dscore <- function(data, items, xname, xunit,
           dec = dec[2L]),
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) %>%
-      select(.data$a, .data$n, .data$p, .data$d, .data$sem, .data$daz)
+      select(all_of(c("a", "n", "p", "d", "sem", "daz")))
     return(data5)
   }
 }

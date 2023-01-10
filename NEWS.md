@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.7.2
+
+- Rewrite calls to `select()` and `pivot_longer()` to conform to `tidyselect 1.2.0` grammar
+
 # dscore 1.7.1
 
 - Adds instrument `gh1` (GSED-HH, version 20221220) to `builtin_itemtable` and `builtin_itembank` as part of key `gsed2212`

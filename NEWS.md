@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.7.6
+
+- Adds example dataset `sample_hf` for GSED HH V1
+
 # dscore 1.7.5
 
 - Renames streams in `gl1` instruments as: aa --> gm, bb --> lg, cc --> fm

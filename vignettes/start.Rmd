@@ -69,12 +69,12 @@ The table given below displays the number of items per instrument for various ke
 | `ddi`  | Dutch Development Instrument (Van Wiechenschema)        |   77  |   76  |   65  |   64  |    64   |       |
 | `den`  | Denver-2                                                |  111  |       |   67  |   50  |    50   |       |
 | `dmc`  | Developmental Milestones Checklist                      |   66  |       |       |   43  |    43   |       |
-| `gh1`  | GSED HH (v1, Boston version 20221220)                   |   55  |       |       |       |    55   |       |
-| `gl1`  | GSED LF (v1, Phase 2 validation)                        |  155  |       |       |       |   155   |       | 
 | `gri`  | Griffiths Mental Development Scales                     |  312  |       |  104  |   93  |    18   |       |
-| `gpa`  | GSED SF (v0, Phase 1 validation)                        |  139  |       |       |       |   138   |  138  |
 | `gs1`  | GSED SF (v1, Phase 2 validation)                        |  139  |       |       |       |   138   |       |
+| `gl1`  | GSED LF (v1, Phase 2 validation)                        |  155  |       |       |       |   155   |       | 
+| `gh1`  | GSED HH (v1, JAN 2023 version 20230113)                 |   55  |       |       |       |    55   |       |
 | `gto`  | GSED LF (v0, Phase 1 validation)                        |  155  |       |       |       |   155   |  155  |
+| `gpa`  | GSED SF (v0, Phase 1 validation)                        |  139  |       |       |       |   138   |  138  |
 | `iyo`  | Infant and Young Child Development (IYCD)               |   90  |       |       |   55  |    57   |       |
 | `kdi`  | Kilifi Developmental Inventory                          |   69  |       |       |   48  |    48   |       |
 | `mac`  | MacArthur Communicative Development Inventory           |    6  |       |    3  |    3  |     3   |       |

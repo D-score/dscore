@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.7.4
+
+- Repairs a problem in the item selection logic. `dscore()` now silently ignores any items not present in the data.
+- Adds two example datasets: `sample_sf` and `sample_lf`
+
 # dscore 1.7.3
 
 - Updates `builtin_itemtable` and `builtin_itembank` with GSED HH JAN 2023 version using the correct materials field

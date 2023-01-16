@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.7.3
+
+- Updates `builtin_itemtable` and `builtin_itembank` with GSED HH JAN 2023 version using the correct materials field
+
 # dscore 1.7.2
 
 - Rewrite calls to `select()` and `pivot_longer()` to conform to `tidyselect 1.2.0` grammar

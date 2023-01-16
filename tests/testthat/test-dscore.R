@@ -56,6 +56,10 @@ test_that("produces expected D-scores", {
   expect_identical(z7$d, expected_d7)
 })
 
+test_that("Silently handles outside item code", {
+  expect_silent(dscore(data, items = c(items[1:2], "gpagmc013"), key = "gsed2206"))
+})
+
 
 # --- test zero rows
 data <- data.frame(age = numeric(0))

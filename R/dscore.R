@@ -320,8 +320,8 @@ calc_dscore <- function(data, items, xname, xunit,
   )
 
   # subset items
-  items <- intersect(items, names(data))
   items <- items[!is.na(ib$tau)]
+  items <- intersect(items, names(data))
 
   # handle case where not a single tau is found
   if (length(items) == 0L) {

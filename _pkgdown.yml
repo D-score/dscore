@@ -56,10 +56,12 @@ reference:
   - title: "Datasets"
     desc: "Built-in datasets"
     contents:
-      - gsample
-      - milestones
-      - builtin_itembank
       - builtin_itemtable
+      - builtin_itembank
       - builtin_references
+      - milestones
+      - gsample
+      - sample_sf
+      - sample_lf
 navbar:
   type: inverse

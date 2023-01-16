@@ -138,158 +138,158 @@ gsed2212	gs1lgc136	74.91	Can your child talk about things that will happen in th
 gsed2212	gs1moc137	75.89	Can the child fasten and unfasten buttons without help?	gs1	mo	c	137
 gsed2212	gs1lic138	76.6	Can your child dress him/herself completely (except for shoelaces, buttons and zippers)?	gs1	li	c	138
 gsed2212	gs1sec139	79.27	Can your child say what others like or dislike (e.g., 'Mama doesn't like fruit,' Papa likes football)?	gs1	se	c	139
-gsed2212	gl1aad001	8.78	Moves body in reaction to caregiver	gl1	aa	d	001
-gsed2212	gl1aad002	9	Moves body, kicking legs and moving arms equally on his/her own	gl1	aa	d	002
-gsed2212	gl1aad003	21.55	Pulls to sit - no head lag	gl1	aa	d	003
-gsed2212	gl1aad004	20	Lifts head in prone 45 degrees	gl1	aa	d	004
-gsed2212	gl1aad005	26.63	Lifts head, shoulders, chest when prone (2X)	gl1	aa	d	005
-gsed2212	gl1aad006	16.86	Puts hands together in front of face	gl1	aa	d	006
-gsed2212	gl1aad007	23	Carries object to mouth to explore (2X)	gl1	aa	d	007
-gsed2212	gl1aad008	26.65	Reaches for an object (2X)	gl1	aa	d	008
-gsed2212	gl1aad009	21.19	Grasps hold of large object (2X)	gl1	aa	d	009
-gsed2212	gl1aad010	17.69	Balances head while supported	gl1	aa	d	010
-gsed2212	gl1aad011	25.14	Sits supported (with help) (2X)	gl1	aa	d	011
-gsed2212	gl1aad012	22.15	Resists object being taken away (2X)	gl1	aa	d	012
-gsed2212	gl1aad013	27.94	Sees a small object	gl1	aa	d	013
-gsed2212	gl1aad014	30.36	Sits momentarily (on his/her own)	gl1	aa	d	014
-gsed2212	gl1aad015	29.69	Sits without help (short time) (2X)	gl1	aa	d	015
-gsed2212	gl1aad016	27.94	Picks object from ground (2X)	gl1	aa	d	016
-gsed2212	gl1aad017	33.98	Rolls from back to stomach (2X)	gl1	aa	d	017
-gsed2212	gl1aad018	30.14	Sits by self well (2X)	gl1	aa	d	018
-gsed2212	gl1aad019	34.37	Rakes (grasps with 3 or 4 fingers) a small object (2X)	gl1	aa	d	019
-gsed2212	gl1aad020	35.57	Turns on floor (2X)	gl1	aa	d	020
-gsed2212	gl1aad021	40	Moves from lying to sitting	gl1	aa	d	021
-gsed2212	gl1aad022	37.41	Stands with support (2X)	gl1	aa	d	022
-gsed2212	gl1aad023	35.97	Reaches for a second object (2X)	gl1	aa	d	023
-gsed2212	gl1aad024	38.99	Crawls (2X)	gl1	aa	d	024
-gsed2212	gl1aad025	40.48	Pulls up to standing position	gl1	aa	d	025
-gsed2212	gl1aad026	39.97	Shifts object from 1 hand to the other (2X)	gl1	aa	d	026
-gsed2212	gl1aad027	36.8	Picks up small object between thumb and finger (2X)	gl1	aa	d	027
-gsed2212	gl1aad028	44.33	Walks when 1 hand held	gl1	aa	d	028
-gsed2212	gl1aad029	47.33	Stands alone for 5 seconds or more if put in standing position (2X)	gl1	aa	d	029
-gsed2212	gl1aad030	48.19	Plays "give-and-take" (3X)	gl1	aa	d	030
-gsed2212	gl1aad031	48.46	Takes few steps alone (2X)	gl1	aa	d	031
-gsed2212	gl1aad032	46.83	Walks	gl1	aa	d	032
-gsed2212	gl1aad033	54.44	Runs (basic), may fall over (2X)	gl1	aa	d	033
-gsed2212	gl1aad034	50.31	Stoops and recovers (2X)	gl1	aa	d	034
-gsed2212	gl1aad035	50	Releases ball purposefully	gl1	aa	d	035
-gsed2212	gl1aad036	81.44	Runs well (2X)	gl1	aa	d	036
-gsed2212	gl1aad037	56.07	Kicks a ball from stationary position (2X)	gl1	aa	d	037
-gsed2212	gl1aad038	61.2	Runs and kicks a ball well (2X)	gl1	aa	d	038
-gsed2212	gl1aad039	69.42	Kneels and then stands, without using hands (2X)	gl1	aa	d	039
-gsed2212	gl1aad040	69.89	Hops forward on 1 foot 3 steps (2X)	gl1	aa	d	040
-gsed2212	gl1aad041	72.36	Jumps with both feet together (2X)	gl1	aa	d	041
-gsed2212	gl1aad042	70.84	Jumps over a piece of paper (widthways) (2X)	gl1	aa	d	042
-gsed2212	gl1aad043	71.83	Walks along line heel- to- toe (2X)	gl1	aa	d	043
-gsed2212	gl1aad044	73.16	Throws bean bag onto a cloth (3X)	gl1	aa	d	044
-gsed2212	gl1aad045	74.83	Stands on 1 foot <= 5 seconds (2X)	gl1	aa	d	045
-gsed2212	gl1aad046	78.74	Walks on tiptoes 6 or more steps (2X)	gl1	aa	d	046
-gsed2212	gl1aad047	69.41	Moves from sitting to standing without using hands	gl1	aa	d	047
-gsed2212	gl1aad048	83.19	Stands on 1 foot > 5 seconds (2X)	gl1	aa	d	048
-gsed2212	gl1aad049	85.38	Throws ball up into the air and catches it (3X)	gl1	aa	d	049
-gsed2212	gl1bbd001	19.12	Makes sounds or vocalizes (2X)	gl1	bb	d	001
-gsed2212	gl1bbd002	8.47	Reacts when spoken to (2X)	gl1	bb	d	002
-gsed2212	gl1bbd003	13.22	Smiles in response (2X)	gl1	bb	d	003
-gsed2212	gl1bbd004	24.62	Laughs (2X)	gl1	bb	d	004
-gsed2212	gl1bbd005	5.33	Calms and quiets with caregiver	gl1	bb	d	005
-gsed2212	gl1bbd006	23.47	Vocalizes when spoken to	gl1	bb	d	006
-gsed2212	gl1bbd007	25.43	Turns to voice (2X)	gl1	bb	d	007
-gsed2212	gl1bbd008	34.77	Babbles while playing	gl1	bb	d	008
-gsed2212	gl1bbd009	35.25	Repeats syllables	gl1	bb	d	009
-gsed2212	gl1bbd010	46.44	Uses gestures to communicate	gl1	bb	d	010
-gsed2212	gl1bbd011	46.62	Uses 2 - 4 syllable babble	gl1	bb	d	011
-gsed2212	gl1bbd012	50.16	Responds to verbal request (2X)	gl1	bb	d	012
-gsed2212	gl1bbd013	50.92	Uses 1 definite word	gl1	bb	d	013
-gsed2212	gl1bbd014	52.67	Understands when being cautioned (2X)	gl1	bb	d	014
-gsed2212	gl1bbd015	53.15	Imitates simple words	gl1	bb	d	015
-gsed2212	gl1bbd016	53.81	Follows simple commands (1 step) (2X)	gl1	bb	d	016
-gsed2212	gl1bbd017	57.89	Points to 2 pictures	gl1	bb	d	017
-gsed2212	gl1bbd018	54.92	Identifies 2 objects you name (2X)	gl1	bb	d	018
-gsed2212	gl1bbd019	56.94	Identifies 5 objects you name (2X)	gl1	bb	d	019
-gsed2212	gl1bbd020	58.67	Identifies 1 item of clothing	gl1	bb	d	020
-gsed2212	gl1bbd021	62.34	Identifies 3 items of clothing	gl1	bb	d	021
-gsed2212	gl1bbd022	59.7	Points to 1 or more body parts (2X)	gl1	bb	d	022
-gsed2212	gl1bbd023	60.6	Points at 5 pictures in book	gl1	bb	d	023
-gsed2212	gl1bbd024	53.24	Shows Interest in story	gl1	bb	d	024
-gsed2212	gl1bbd025	61.32	Follows 2-step commands (2X)	gl1	bb	d	025
-gsed2212	gl1bbd026	63.12	Says sentences with 2 words together	gl1	bb	d	026
-gsed2212	gl1bbd027	63.45	Names 4 pictures	gl1	bb	d	027
-gsed2212	gl1bbd028	63.56	Uses 5 clear words	gl1	bb	d	028
-gsed2212	gl1bbd029	64.44	Matches pictures	gl1	bb	d	029
-gsed2212	gl1bbd030	65.66	Names 5 objects (2X)	gl1	bb	d	030
-gsed2212	gl1bbd031	66.97	Uses multiple-word utterances	gl1	bb	d	031
-gsed2212	gl1bbd032	65.91	Speaks clearly in sentences	gl1	bb	d	032
-gsed2212	gl1bbd033	67.6	Knows actions or functions of 3 or more objects	gl1	bb	d	033
-gsed2212	gl1bbd034	68.74	Points to parts of whole objects	gl1	bb	d	034
-gsed2212	gl1bbd035	69.81	Says first name (2X)	gl1	bb	d	035
-gsed2212	gl1bbd036	70.24	Names 10 objects (2X)	gl1	bb	d	036
-gsed2212	gl1bbd037	72.07	Understands "more"	gl1	bb	d	037
-gsed2212	gl1bbd038	81.73	Identifies 2 or more colours (2X)	gl1	bb	d	038
-gsed2212	gl1bbd039	71.54	Knows use of objects (2X)	gl1	bb	d	039
-gsed2212	gl1bbd040	85.58	Names at least 2 colours	gl1	bb	d	040
-gsed2212	gl1bbd041	72.61	Identifies 5 action pictures	gl1	bb	d	041
-gsed2212	gl1bbd042	80.83	Identifies at least 2 shapes (2X)	gl1	bb	d	042
-gsed2212	gl1bbd043	74.67	Taps with 2 blocks	gl1	bb	d	043
-gsed2212	gl1bbd044	75.75	Talks easily about daily events	gl1	bb	d	044
-gsed2212	gl1bbd045	79.55	Describes picture (2X)	gl1	bb	d	045
-gsed2212	gl1bbd046	76.25	Gives logical response to a question (2X)	gl1	bb	d	046
-gsed2212	gl1bbd047	79.78	Categorizes things	gl1	bb	d	047
-gsed2212	gl1bbd048	76.09	Matches 3 colours (2X)	gl1	bb	d	048
-gsed2212	gl1bbd049	71.77	Understands adjective "faster" (2X)	gl1	bb	d	049
-gsed2212	gl1bbd050	83.21	Taps with 4 blocks	gl1	bb	d	050
-gsed2212	gl1bbd051	73.24	Names actions (5)	gl1	bb	d	051
-gsed2212	gl1bbd052	86.08	Taps with 8 blocks	gl1	bb	d	052
-gsed2212	gl1ccd001	8.61	Eyes fixate (2X)	gl1	cc	d	001
-gsed2212	gl1ccd002	13.81	Responds to sound (2X)	gl1	cc	d	002
-gsed2212	gl1ccd003	25.02	Fixes and follows - 180 degrees	gl1	cc	d	003
-gsed2212	gl1ccd004	25.88	Manipulates cup OR spoon in play	gl1	cc	d	004
-gsed2212	gl1ccd005	26.19	Shows interest in making a sound (2X)	gl1	cc	d	005
-gsed2212	gl1ccd006	28.79	Turns head towards fallen object (2X)	gl1	cc	d	006
-gsed2212	gl1ccd007	31.39	Discriminates strangers	gl1	cc	d	007
-gsed2212	gl1ccd008	37.6	Picks up cup to get block	gl1	cc	d	008
-gsed2212	gl1ccd009	38.18	Finds toy under cloth (2X)	gl1	cc	d	009
-gsed2212	gl1ccd010	38.16	Pulls string to get object (2X)	gl1	cc	d	010
-gsed2212	gl1ccd011	43.13	Lifts cup by the handle (2X)	gl1	cc	d	011
-gsed2212	gl1ccd012	43.8	Puts block in cup	gl1	cc	d	012
-gsed2212	gl1ccd013	44.79	Bangs 2 objects together	gl1	cc	d	013
-gsed2212	gl1ccd014	45.32	Pats toy to make noise	gl1	cc	d	014
-gsed2212	gl1ccd015	46.48	Makes marks with crayon	gl1	cc	d	015
-gsed2212	gl1ccd016	46.99	Puts 3 or more blocks in cup	gl1	cc	d	016
-gsed2212	gl1ccd017	42.73	Puts blocks in jar	gl1	cc	d	017
-gsed2212	gl1ccd018	48.54	Puts 1 peg in again (2X)	gl1	cc	d	018
-gsed2212	gl1ccd019	48.57	Scribbles in any way (2X)	gl1	cc	d	019
-gsed2212	gl1ccd020	48.79	Accepts third block without dropping (2X)	gl1	cc	d	020
-gsed2212	gl1ccd021	50.06	Uses objects in play by him-/herself (2X)	gl1	cc	d	021
-gsed2212	gl1ccd022	49.91	Manages a cup well	gl1	cc	d	022
-gsed2212	gl1ccd023	50.28	Holds crayon with fingers, not fist (2X)	gl1	cc	d	023
-gsed2212	gl1ccd024	50.4	Repeats something when encouraged (2X)	gl1	cc	d	024
-gsed2212	gl1ccd025	53.17	Dumps blocks out of jar purposefully (2X)	gl1	cc	d	025
-gsed2212	gl1ccd026	53.89	Builds tower of 2 blocks (2X)	gl1	cc	d	026
-gsed2212	gl1ccd027	54.14	Puts pegs in board <= 2 minutes (2X)	gl1	cc	d	027
-gsed2212	gl1ccd028	57.38	Builds tower of 3 blocks (2X)	gl1	cc	d	028
-gsed2212	gl1ccd029	58.75	Finds object under 2 alternating cups	gl1	cc	d	029
-gsed2212	gl1ccd030	59.52	Places 2 shapes in board (2X)	gl1	cc	d	030
-gsed2212	gl1ccd031	62.26	Places 3 shapes in board in 2 minutes (2X)	gl1	cc	d	031
-gsed2212	gl1ccd032	64.17	Uses objects in play with someone	gl1	cc	d	032
-gsed2212	gl1ccd033	65.05	Scribbles on paper (circular scribble)	gl1	cc	d	033
-gsed2212	gl1ccd034	65.26	Builds tower of 6 blocks (2X)	gl1	cc	d	034
-gsed2212	gl1ccd035	66.1	Understands the concept of "1" (2X)	gl1	cc	d	035
-gsed2212	gl1ccd036	66.23	Places 3 shapes in rotated board in 2 minutes (2X)	gl1	cc	d	036
-gsed2212	gl1ccd037	67.24	Builds truck/lorry of blocks (2X)	gl1	cc	d	037
-gsed2212	gl1ccd038	68.66	Unscrews and screws lid of jar (2X)	gl1	cc	d	038
-gsed2212	gl1ccd039	68.77	Engages in representational play	gl1	cc	d	039
-gsed2212	gl1ccd040	68.92	Inserts 3 shapes in 15 seconds (2X)	gl1	cc	d	040
-gsed2212	gl1ccd041	70.1	Copies 2-part activity (3X)	gl1	cc	d	041
-gsed2212	gl1ccd042	70.26	Puts pegs in board in <= 30 seconds (2X)	gl1	cc	d	042
-gsed2212	gl1ccd043	71.61	Draws horizontal line (2X)	gl1	cc	d	043
-gsed2212	gl1ccd044	73.53	Understands "more"	gl1	cc	d	044
-gsed2212	gl1ccd045	74.5	Imitates building bridge (2X)	gl1	cc	d	045
-gsed2212	gl1ccd046	74.54	Picks longest stick 3 of 3 (3X to 5X)	gl1	cc	d	046
-gsed2212	gl1ccd047	74.57	Copies a circle	gl1	cc	d	047
-gsed2212	gl1ccd048	75.27	Builds wall of blocks (2X)	gl1	cc	d	048
-gsed2212	gl1ccd049	75.9	Understands concept of size	gl1	cc	d	049
-gsed2212	gl1ccd050	77.52	Understands prepositions (2X)	gl1	cc	d	050
-gsed2212	gl1ccd051	77.98	Copies a cross or plus sign (2X)	gl1	cc	d	051
-gsed2212	gl1ccd052	81.36	Counts 3 or more objects.	gl1	cc	d	052
-gsed2212	gl1ccd053	86.45	Copies a square (2X)	gl1	cc	d	053
-gsed2212	gl1ccd054	88.86	Draws 3 or more body parts	gl1	cc	d	054
+gsed2212	gl1gmd001	8.78	Moves body in reaction to caregiver	gl1	gm	d	001
+gsed2212	gl1gmd002	9	Moves body, kicking legs and moving arms equally on his/her own	gl1	gm	d	002
+gsed2212	gl1gmd003	21.55	Pulls to sit - no head lag	gl1	gm	d	003
+gsed2212	gl1gmd004	20	Lifts head in prone 45 degrees	gl1	gm	d	004
+gsed2212	gl1gmd005	26.63	Lifts head, shoulders, chest when prone (2X)	gl1	gm	d	005
+gsed2212	gl1gmd006	16.86	Puts hands together in front of face	gl1	gm	d	006
+gsed2212	gl1gmd007	23	Carries object to mouth to explore (2X)	gl1	gm	d	007
+gsed2212	gl1gmd008	26.65	Reaches for an object (2X)	gl1	gm	d	008
+gsed2212	gl1gmd009	21.19	Grasps hold of large object (2X)	gl1	gm	d	009
+gsed2212	gl1gmd010	17.69	Balances head while supported	gl1	gm	d	010
+gsed2212	gl1gmd011	25.14	Sits supported (with help) (2X)	gl1	gm	d	011
+gsed2212	gl1gmd012	22.15	Resists object being taken away (2X)	gl1	gm	d	012
+gsed2212	gl1gmd013	27.94	Sees a small object	gl1	gm	d	013
+gsed2212	gl1gmd014	30.36	Sits momentarily (on his/her own)	gl1	gm	d	014
+gsed2212	gl1gmd015	29.69	Sits without help (short time) (2X)	gl1	gm	d	015
+gsed2212	gl1gmd016	27.94	Picks object from ground (2X)	gl1	gm	d	016
+gsed2212	gl1gmd017	33.98	Rolls from back to stomach (2X)	gl1	gm	d	017
+gsed2212	gl1gmd018	30.14	Sits by self well (2X)	gl1	gm	d	018
+gsed2212	gl1gmd019	34.37	Rakes (grasps with 3 or 4 fingers) a small object (2X)	gl1	gm	d	019
+gsed2212	gl1gmd020	35.57	Turns on floor (2X)	gl1	gm	d	020
+gsed2212	gl1gmd021	40	Moves from lying to sitting	gl1	gm	d	021
+gsed2212	gl1gmd022	37.41	Stands with support (2X)	gl1	gm	d	022
+gsed2212	gl1gmd023	35.97	Reaches for a second object (2X)	gl1	gm	d	023
+gsed2212	gl1gmd024	38.99	Crawls (2X)	gl1	gm	d	024
+gsed2212	gl1gmd025	40.48	Pulls up to standing position	gl1	gm	d	025
+gsed2212	gl1gmd026	39.97	Shifts object from 1 hand to the other (2X)	gl1	gm	d	026
+gsed2212	gl1gmd027	36.8	Picks up small object between thumb and finger (2X)	gl1	gm	d	027
+gsed2212	gl1gmd028	44.33	Walks when 1 hand held	gl1	gm	d	028
+gsed2212	gl1gmd029	47.33	Stands alone for 5 seconds or more if put in standing position (2X)	gl1	gm	d	029
+gsed2212	gl1gmd030	48.19	Plays "give-and-take" (3X)	gl1	gm	d	030
+gsed2212	gl1gmd031	48.46	Takes few steps alone (2X)	gl1	gm	d	031
+gsed2212	gl1gmd032	46.83	Walks	gl1	gm	d	032
+gsed2212	gl1gmd033	54.44	Runs (basic), may fall over (2X)	gl1	gm	d	033
+gsed2212	gl1gmd034	50.31	Stoops and recovers (2X)	gl1	gm	d	034
+gsed2212	gl1gmd035	50	Releases ball purposefully	gl1	gm	d	035
+gsed2212	gl1gmd036	81.44	Runs well (2X)	gl1	gm	d	036
+gsed2212	gl1gmd037	56.07	Kicks a ball from stationary position (2X)	gl1	gm	d	037
+gsed2212	gl1gmd038	61.2	Runs and kicks a ball well (2X)	gl1	gm	d	038
+gsed2212	gl1gmd039	69.42	Kneels and then stands, without using hands (2X)	gl1	gm	d	039
+gsed2212	gl1gmd040	69.89	Hops forward on 1 foot 3 steps (2X)	gl1	gm	d	040
+gsed2212	gl1gmd041	72.36	Jumps with both feet together (2X)	gl1	gm	d	041
+gsed2212	gl1gmd042	70.84	Jumps over a piece of paper (widthways) (2X)	gl1	gm	d	042
+gsed2212	gl1gmd043	71.83	Walks along line heel- to- toe (2X)	gl1	gm	d	043
+gsed2212	gl1gmd044	73.16	Throws bean bag onto a cloth (3X)	gl1	gm	d	044
+gsed2212	gl1gmd045	74.83	Stands on 1 foot <= 5 seconds (2X)	gl1	gm	d	045
+gsed2212	gl1gmd046	78.74	Walks on tiptoes 6 or more steps (2X)	gl1	gm	d	046
+gsed2212	gl1gmd047	69.41	Moves from sitting to standing without using hands	gl1	gm	d	047
+gsed2212	gl1gmd048	83.19	Stands on 1 foot > 5 seconds (2X)	gl1	gm	d	048
+gsed2212	gl1gmd049	85.38	Throws ball up into the air and catches it (3X)	gl1	gm	d	049
+gsed2212	gl1lgd001	19.12	Makes sounds or vocalizes (2X)	gl1	lg	d	001
+gsed2212	gl1lgd002	8.47	Reacts when spoken to (2X)	gl1	lg	d	002
+gsed2212	gl1lgd003	13.22	Smiles in response (2X)	gl1	lg	d	003
+gsed2212	gl1lgd004	24.62	Laughs (2X)	gl1	lg	d	004
+gsed2212	gl1lgd005	5.33	Calms and quiets with caregiver	gl1	lg	d	005
+gsed2212	gl1lgd006	23.47	Vocalizes when spoken to	gl1	lg	d	006
+gsed2212	gl1lgd007	25.43	Turns to voice (2X)	gl1	lg	d	007
+gsed2212	gl1lgd008	34.77	Babbles while playing	gl1	lg	d	008
+gsed2212	gl1lgd009	35.25	Repeats syllables	gl1	lg	d	009
+gsed2212	gl1lgd010	46.44	Uses gestures to communicate	gl1	lg	d	010
+gsed2212	gl1lgd011	46.62	Uses 2 - 4 syllable babble	gl1	lg	d	011
+gsed2212	gl1lgd012	50.16	Responds to verbal request (2X)	gl1	lg	d	012
+gsed2212	gl1lgd013	50.92	Uses 1 definite word	gl1	lg	d	013
+gsed2212	gl1lgd014	52.67	Understands when being cautioned (2X)	gl1	lg	d	014
+gsed2212	gl1lgd015	53.15	Imitates simple words	gl1	lg	d	015
+gsed2212	gl1lgd016	53.81	Follows simple commands (1 step) (2X)	gl1	lg	d	016
+gsed2212	gl1lgd017	57.89	Points to 2 pictures	gl1	lg	d	017
+gsed2212	gl1lgd018	54.92	Identifies 2 objects you name (2X)	gl1	lg	d	018
+gsed2212	gl1lgd019	56.94	Identifies 5 objects you name (2X)	gl1	lg	d	019
+gsed2212	gl1lgd020	58.67	Identifies 1 item of clothing	gl1	lg	d	020
+gsed2212	gl1lgd021	62.34	Identifies 3 items of clothing	gl1	lg	d	021
+gsed2212	gl1lgd022	59.7	Points to 1 or more body parts (2X)	gl1	lg	d	022
+gsed2212	gl1lgd023	60.6	Points at 5 pictures in book	gl1	lg	d	023
+gsed2212	gl1lgd024	53.24	Shows Interest in story	gl1	lg	d	024
+gsed2212	gl1lgd025	61.32	Follows 2-step commands (2X)	gl1	lg	d	025
+gsed2212	gl1lgd026	63.12	Says sentences with 2 words together	gl1	lg	d	026
+gsed2212	gl1lgd027	63.45	Names 4 pictures	gl1	lg	d	027
+gsed2212	gl1lgd028	63.56	Uses 5 clear words	gl1	lg	d	028
+gsed2212	gl1lgd029	64.44	Matches pictures	gl1	lg	d	029
+gsed2212	gl1lgd030	65.66	Names 5 objects (2X)	gl1	lg	d	030
+gsed2212	gl1lgd031	66.97	Uses multiple-word utterances	gl1	lg	d	031
+gsed2212	gl1lgd032	65.91	Speaks clearly in sentences	gl1	lg	d	032
+gsed2212	gl1lgd033	67.6	Knows actions or functions of 3 or more objects	gl1	lg	d	033
+gsed2212	gl1lgd034	68.74	Points to parts of whole objects	gl1	lg	d	034
+gsed2212	gl1lgd035	69.81	Says first name (2X)	gl1	lg	d	035
+gsed2212	gl1lgd036	70.24	Names 10 objects (2X)	gl1	lg	d	036
+gsed2212	gl1lgd037	72.07	Understands "more"	gl1	lg	d	037
+gsed2212	gl1lgd038	81.73	Identifies 2 or more colours (2X)	gl1	lg	d	038
+gsed2212	gl1lgd039	71.54	Knows use of objects (2X)	gl1	lg	d	039
+gsed2212	gl1lgd040	85.58	Names at least 2 colours	gl1	lg	d	040
+gsed2212	gl1lgd041	72.61	Identifies 5 action pictures	gl1	lg	d	041
+gsed2212	gl1lgd042	80.83	Identifies at least 2 shapes (2X)	gl1	lg	d	042
+gsed2212	gl1lgd043	74.67	Taps with 2 blocks	gl1	lg	d	043
+gsed2212	gl1lgd044	75.75	Talks easily about daily events	gl1	lg	d	044
+gsed2212	gl1lgd045	79.55	Describes picture (2X)	gl1	lg	d	045
+gsed2212	gl1lgd046	76.25	Gives logical response to a question (2X)	gl1	lg	d	046
+gsed2212	gl1lgd047	79.78	Categorizes things	gl1	lg	d	047
+gsed2212	gl1lgd048	76.09	Matches 3 colours (2X)	gl1	lg	d	048
+gsed2212	gl1lgd049	71.77	Understands adjective "faster" (2X)	gl1	lg	d	049
+gsed2212	gl1lgd050	83.21	Taps with 4 blocks	gl1	lg	d	050
+gsed2212	gl1lgd051	73.24	Names actions (5)	gl1	lg	d	051
+gsed2212	gl1lgd052	86.08	Taps with 8 blocks	gl1	lg	d	052
+gsed2212	gl1fmd001	8.61	Eyes fixate (2X)	gl1	fm	d	001
+gsed2212	gl1fmd002	13.81	Responds to sound (2X)	gl1	fm	d	002
+gsed2212	gl1fmd003	25.02	Fixes and follows - 180 degrees	gl1	fm	d	003
+gsed2212	gl1fmd004	25.88	Manipulates cup OR spoon in play	gl1	fm	d	004
+gsed2212	gl1fmd005	26.19	Shows interest in making a sound (2X)	gl1	fm	d	005
+gsed2212	gl1fmd006	28.79	Turns head towards fallen object (2X)	gl1	fm	d	006
+gsed2212	gl1fmd007	31.39	Discriminates strangers	gl1	fm	d	007
+gsed2212	gl1fmd008	37.6	Picks up cup to get block	gl1	fm	d	008
+gsed2212	gl1fmd009	38.18	Finds toy under cloth (2X)	gl1	fm	d	009
+gsed2212	gl1fmd010	38.16	Pulls string to get object (2X)	gl1	fm	d	010
+gsed2212	gl1fmd011	43.13	Lifts cup by the handle (2X)	gl1	fm	d	011
+gsed2212	gl1fmd012	43.8	Puts block in cup	gl1	fm	d	012
+gsed2212	gl1fmd013	44.79	Bangs 2 objects together	gl1	fm	d	013
+gsed2212	gl1fmd014	45.32	Pats toy to make noise	gl1	fm	d	014
+gsed2212	gl1fmd015	46.48	Makes marks with crayon	gl1	fm	d	015
+gsed2212	gl1fmd016	46.99	Puts 3 or more blocks in cup	gl1	fm	d	016
+gsed2212	gl1fmd017	42.73	Puts blocks in jar	gl1	fm	d	017
+gsed2212	gl1fmd018	48.54	Puts 1 peg in again (2X)	gl1	fm	d	018
+gsed2212	gl1fmd019	48.57	Scribbles in any way (2X)	gl1	fm	d	019
+gsed2212	gl1fmd020	48.79	Accepts third block without dropping (2X)	gl1	fm	d	020
+gsed2212	gl1fmd021	50.06	Uses objects in play by him-/herself (2X)	gl1	fm	d	021
+gsed2212	gl1fmd022	49.91	Manages a cup well	gl1	fm	d	022
+gsed2212	gl1fmd023	50.28	Holds crayon with fingers, not fist (2X)	gl1	fm	d	023
+gsed2212	gl1fmd024	50.4	Repeats something when encouraged (2X)	gl1	fm	d	024
+gsed2212	gl1fmd025	53.17	Dumps blocks out of jar purposefully (2X)	gl1	fm	d	025
+gsed2212	gl1fmd026	53.89	Builds tower of 2 blocks (2X)	gl1	fm	d	026
+gsed2212	gl1fmd027	54.14	Puts pegs in board <= 2 minutes (2X)	gl1	fm	d	027
+gsed2212	gl1fmd028	57.38	Builds tower of 3 blocks (2X)	gl1	fm	d	028
+gsed2212	gl1fmd029	58.75	Finds object under 2 alternating cups	gl1	fm	d	029
+gsed2212	gl1fmd030	59.52	Places 2 shapes in board (2X)	gl1	fm	d	030
+gsed2212	gl1fmd031	62.26	Places 3 shapes in board in 2 minutes (2X)	gl1	fm	d	031
+gsed2212	gl1fmd032	64.17	Uses objects in play with someone	gl1	fm	d	032
+gsed2212	gl1fmd033	65.05	Scribbles on paper (circular scribble)	gl1	fm	d	033
+gsed2212	gl1fmd034	65.26	Builds tower of 6 blocks (2X)	gl1	fm	d	034
+gsed2212	gl1fmd035	66.1	Understands the concept of "1" (2X)	gl1	fm	d	035
+gsed2212	gl1fmd036	66.23	Places 3 shapes in rotated board in 2 minutes (2X)	gl1	fm	d	036
+gsed2212	gl1fmd037	67.24	Builds truck/lorry of blocks (2X)	gl1	fm	d	037
+gsed2212	gl1fmd038	68.66	Unscrews and screws lid of jar (2X)	gl1	fm	d	038
+gsed2212	gl1fmd039	68.77	Engages in representational play	gl1	fm	d	039
+gsed2212	gl1fmd040	68.92	Inserts 3 shapes in 15 seconds (2X)	gl1	fm	d	040
+gsed2212	gl1fmd041	70.1	Copies 2-part activity (3X)	gl1	fm	d	041
+gsed2212	gl1fmd042	70.26	Puts pegs in board in <= 30 seconds (2X)	gl1	fm	d	042
+gsed2212	gl1fmd043	71.61	Draws horizontal line (2X)	gl1	fm	d	043
+gsed2212	gl1fmd044	73.53	Understands "more"	gl1	fm	d	044
+gsed2212	gl1fmd045	74.5	Imitates building bridge (2X)	gl1	fm	d	045
+gsed2212	gl1fmd046	74.54	Picks longest stick 3 of 3 (3X to 5X)	gl1	fm	d	046
+gsed2212	gl1fmd047	74.57	Copies a circle	gl1	fm	d	047
+gsed2212	gl1fmd048	75.27	Builds wall of blocks (2X)	gl1	fm	d	048
+gsed2212	gl1fmd049	75.9	Understands concept of size	gl1	fm	d	049
+gsed2212	gl1fmd050	77.52	Understands prepositions (2X)	gl1	fm	d	050
+gsed2212	gl1fmd051	77.98	Copies a cross or plus sign (2X)	gl1	fm	d	051
+gsed2212	gl1fmd052	81.36	Counts 3 or more objects.	gl1	fm	d	052
+gsed2212	gl1fmd053	86.45	Copies a square (2X)	gl1	fm	d	053
+gsed2212	gl1fmd054	88.86	Draws 3 or more body parts	gl1	fm	d	054

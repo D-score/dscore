@@ -47,7 +47,7 @@ gs1[28, "label"] <- "Does your child hold his/her hands in fists all the time?"
 # gl1: GSED LF Version 1 (Validation Phase 2)
 # create gl1 itembank part
 gl1_names <- paste0("gl1",
-                    c(rep("aa", 49), rep("bb",52), rep("cc", 54)),
+                    c(rep("gm", 49), rep("lg",52), rep("fm", 54)),
                     "d",
                     c(formatC(1:49, width = 3, flag = "0"),
                       formatC(1:52, width = 3, flag = "0"),

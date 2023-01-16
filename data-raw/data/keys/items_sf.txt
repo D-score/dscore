@@ -1,0 +1,279 @@
+key	item	tau	label	instrument	domain	mode	number
+gsed2208	gs1lgc001	4.57	Does your child cry when he/she is hungry, wet, tired, or wants to be held?	gs1	lg	c	001
+gsed2208	gs1cgc002	6.9	Does your child look at and focus on objects in front of him/her?	gs1	cg	c	002
+gsed2208	gs1moc003	5.77	Does your child grasp your finger if you touch her hand?	gs1	mo	c	003
+gsed2208	gs1sec004	1.1	Does your child smile?	gs1	se	c	004
+gsed2208	gs1moc005	8.14	Does your child try to move his/her head (or eyes) to follow an object or person?	gs1	mo	c	005
+gsed2208	gs1moc006	3.22	When lying on his/her back, does your child move his/her arms and legs?	gs1	mo	c	006
+gsed2208	gs1lgc007	8.32	Does your child look at a person when that person starts talking or making noise?	gs1	lg	c	007
+gsed2208	gs1moc008	NA	Does your child hold his/her hands in fists all the time?	gs1	mo	c	008
+gsed2208	gs1lgc009	15.25	Does your child make sounds other than crying?	gs1	lg	c	009
+gsed2208	gs1sec010	8.26	Does your child smile when you smile or talk with him/her?	gs1	se	c	010
+gsed2208	gs1moc011	7.47	Does your child bring his/her hand to his/her mouth?	gs1	mo	c	011
+gsed2208	gs1lgc012	9.3	When you talk to your child, does he/she smile, make noises, or move arms, legs or trunk in response?	gs1	lg	c	012
+gsed2208	gs1moc013	18.65	When your child is on his/her stomach, can he/she turn his/her head to the side?	gs1	mo	c	013
+gsed2208	gs1sec014	10.86	When you are about to pick up your child, does he/she act happy or excited?	gs1	se	c	014
+gsed2208	gs1sec015	3.6	Does your child look at your face when you speak to him/her?	gs1	se	c	015
+gsed2208	gs1sec016	8.88	Does your child stop crying or calm down when you come to the room after being out of sight, or when you pick him or her up?	gs1	se	c	016
+gsed2208	gs1moc017	15.66	While your child is on his/her back, can he/she bring his/her hands together?	gs1	mo	c	017
+gsed2208	gs1moc018	23.41	When your child is on his/her stomach, can he/she hold his/her head up off the ground?	gs1	mo	c	018
+gsed2208	gs1lgc019	16.03	Does your child make noise or gesture to get your attention?	gs1	lg	c	019
+gsed2208	gs1sec020	15.39	Does your child sometimes suck his/her thumb or fingers?	gs1	se	c	020
+gsed2208	gs1lgc021	12.61	Does your child turn his/her head towards your voice or some noise?	gs1	lg	c	021
+gsed2208	gs1lgc022	18.79	Does your child make sounds when LOOKING at toys or people (not crying)?	gs1	lg	c	022
+gsed2208	gs1lgc023	17.42	Does your child laugh?	gs1	lg	c	023
+gsed2208	gs1moc024	21.12	Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?	gs1	mo	c	024
+gsed2208	gs1sec025	16.04	Does your child move excitedly, kick legs, move arms or trunk, or make coo noises when a known person enters the room or speaks to them?	gs1	se	c	025
+gsed2208	gs1moc026	13.24	Does your child grasp onto a small object (e.g., your finger, a spoon) when put in his/her hand?	gs1	mo	c	026
+gsed2208	gs1lgc027	28.43	Does your child make single sounds like 'buh' or 'duh' or 'muh'?	gs1	lg	c	027
+gsed2208	gs1moc028	28.69	Does your child try to reach for objects that are in front of him/her by extending one or both arms?	gs1	mo	c	028
+gsed2208	gs1moc029	26.7	When he/she is on his/her tummy, can your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.	gs1	mo	c	029
+gsed2208	gs1moc030	27.52	Can your child roll from his/her back to stomach or stomach to his/her side?	gs1	mo	c	030
+gsed2208	gs1sec031	16.98	If you play a game with your child, does he/she respond with interest? For example, if you play peek-a-boo, pat-a-cake, wave bye-bye, etc. does your child smile, widen their eyes, kick or move arms or vocalize?	gs1	se	c	031
+gsed2208	gs1sec032	17.81	Does your child smile or become excited when seeing someone familiar?	gs1	se	c	032
+gsed2208	gs1sec033	17.39	Does your child recognize you or other family members (e.g., smile when they enter a room or move toward them)?	gs1	se	c	033
+gsed2208	gs1cgc034	25.64	Does your child show interest in new objects that are put in front of him/her by reaching out for them?	gs1	cg	c	034
+gsed2208	gs1moc035	28.36	Can your child reach for AND HOLD an object, at least for a few seconds?	gs1	mo	c	035
+gsed2208	gs1moc036	32.59	When you put your child on the floor, can she lean on her hands while sitting? (If she already sits up straight without leaning on her hands, mark 'yes' for this item.).	gs1	mo	c	036
+gsed2208	gs1moc037	23.05	When held in a sitting position, can the child hold his/her head steady and straight?	gs1	mo	c	037
+gsed2208	gs1moc038	30.14	Can your child roll from his/her back to stomach, or stomach to back, on his/her own?	gs1	mo	c	038
+gsed2208	gs1lic039	28.54	Can your child eat food from your fingers or off a spoon you hold?	gs1	li	c	039
+gsed2208	gs1moc040	28.89	Can your child pick up a small object (e.g., a small toy or small stone) using just one hand?	gs1	mo	c	040
+gsed2208	gs1cgc041	29.66	If an object falls to the ground out of view, does your child look for it?	gs1	cg	c	041
+gsed2208	gs1moc042	29.53	When lying on his/her stomach, can your child hold his/her head and chest off the ground using only his/her hands and arms for support?	gs1	mo	c	042
+gsed2208	gs1moc043	30.2	When lying on his/her back, does the child grab his/her feet?	gs1	mo	c	043
+gsed2208	gs1moc044	28.92	Can your child sit with support, either leaning against something (furniture or person), or by leaning forward on his or her hands?	gs1	mo	c	044
+gsed2208	gs1sec045	20.2	Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?	gs1	se	c	045
+gsed2208	gs1cgc046	31.41	Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)?	gs1	cg	c	046
+gsed2208	gs1moc047	31.35	Does your child play by tapping an object on the ground or a table?	gs1	mo	c	047
+gsed2208	gs1moc048	32.53	Does your child intentionally move or change his/her position to get objects that are out of reach?	gs1	mo	c	048
+gsed2208	gs1moc049	31.59	Can your child hold him/herself in a sitting position without help or support for longer than a few seconds?	gs1	mo	c	049
+gsed2208	gs1moc050	36.65	Can your child bang objects together, or bang an object on the table or on the ground?	gs1	mo	c	050
+gsed2208	gs1lgc051	32.63	Does your child make two similar sounds together like baba, mumu, pepe, didi (single consonant vowel combinations)?	gs1	lg	c	051
+gsed2208	gs1moc052	34.68	Can your child pass a small object from one hand to the other?	gs1	mo	c	052
+gsed2208	gs1moc053	38.39	Can your child pick up a small object (e.g., a piece of food, small toy or small stone) with just his/her thumb and one finger?	gs1	mo	c	053
+gsed2208	gs1moc054	37.43	Can your child maintain a standing position while holding on to a person or object (e.g., wall or furniture)?	gs1	mo	c	054
+gsed2208	gs1moc055	43.21	While holding onto furniture, does your child bend down and pick up a small object from the floor and then return to a standing position?	gs1	mo	c	055
+gsed2208	gs1moc056	40.1	Can your child pull themselves up from the floor while holding onto something? For example, can they pull themselves up using a chair, a person, or some other object?	gs1	mo	c	056
+gsed2208	gs1moc057	43.47	While holding onto furniture, does your child squat with control (without falling or flopping down)?	gs1	mo	c	057
+gsed2208	gs1moc058	37.63	Can your child pick up and drop a small object (e.g., a small toy or small stone) into a bucket or bowl while sitting?	gs1	mo	c	058
+gsed2208	gs1lgc059	41.17	Does your child stop what he/she is doing when you say 'Stop!' even if just for a second?	gs1	lg	c	059
+gsed2208	gs1moc060	42.33	Can your child walk several steps while holding on to a person or object (e.g., wall or furniture)?	gs1	mo	c	060
+gsed2208	gs1moc061	46.34	Can your child stand up without holding onto anything, even if just for a few seconds?	gs1	mo	c	061
+gsed2208	gs1moc062	47.58	Can your child maintain a standing position on his/her own, without holding on or receiving support?	gs1	mo	c	062
+gsed2208	gs1moc063	48.78	Can your child make any light marks on paper or in dirt with a crayon or a stick?	gs1	mo	c	063
+gsed2208	gs1lic064	35.45	Can your child pick up small bits of food and feed him/her-self using his/her hand?	gs1	li	c	064
+gsed2208	gs1moc065	48.06	Can your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?	gs1	mo	c	065
+gsed2208	gs1moc066	49.6	Can your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately afterward?	gs1	mo	c	066
+gsed2208	gs1moc067	50.6	Can your child move around by walking, rather than by crawling on his hands and knees?	gs1	mo	c	067
+gsed2208	gs1lgc068	44.73	Does your child make a gesture to indicate 'No' (e.g., shaking head)?	gs1	lg	c	068
+gsed2208	gs1moc069	50.17	Can your child stand up from sitting by himself and take several steps forward?	gs1	mo	c	069
+gsed2208	gs1moc070	48.97	Can your child bend down or squat to pick up an object from the floor and then stand up again, without help from a person or object?	gs1	mo	c	070
+gsed2208	gs1moc071	50.23	Can your child make a scribble on paper, or in dirt, in a back and forth manner? For example, can he or she move the pen or pencil or stick back and forth?	gs1	mo	c	071
+gsed2208	gs1lgc072	49.34	Can your child follow a simple spoken command or direction without you making a gesture?	gs1	lg	c	072
+gsed2208	gs1lgc073	49.36	Can your child fetch something when asked?	gs1	lg	c	073
+gsed2208	gs1lic074	48.15	Can your child drink from an open  cup without help?	gs1	li	c	074
+gsed2208	gs1lic075	47.23	Does your child put his/her hands out to have them washed?	gs1	li	c	075
+gsed2208	gs1moc076	49.9	While standing, can your child purposefully throw the ball and not just drop it?	gs1	mo	c	076
+gsed2208	gs1moc077	51.49	Can your child walk well, with coordination, without falling down often? With one foot in front of the other (rather than shifting weight side to side, stiff- legged)?	gs1	mo	c	077
+gsed2208	gs1moc078	51.66	Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?	gs1	mo	c	078
+gsed2208	gs1moc079	53.05	Can your child kick a ball or other round object forward using his/her foot?	gs1	mo	c	079
+gsed2208	gs1moc080	57.08	While standing, can your child kick a ball by swinging his/her leg forward?	gs1	mo	c	080
+gsed2208	gs1cgc081	54.92	Can your child follow directions with more than one step? For example, 'Go to the kitchen and bring me a spoon'?	gs1	cg	c	081
+gsed2208	gs1sec082	45.7	Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?	gs1	se	c	082
+gsed2208	gs1moc083	58	Can your child stack three or more small objects (e.g., blocks, cups, bottle caps) on top of each other?	gs1	mo	c	083
+gsed2208	gs1moc084	56.68	Can your child run well, without falling or bumping into objects?	gs1	mo	c	084
+gsed2208	gs1sec085	52.79	Can your child greet people either by giving his/her hand or saying Hello?	gs1	se	c	085
+gsed2208	gs1sec086	49.84	Does your child share with others (e.g., food)?	gs1	se	c	086
+gsed2208	gs1lic087	57.19	Does your child dry hands by herself/himself after you have washed them?	gs1	li	c	087
+gsed2208	gs1lgc088	53.97	Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?	gs1	lg	c	088
+gsed2208	gs1lic089	63.17	Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?	gs1	li	c	089
+gsed2208	gs1lgc090	60.22	Can your child say ten or more words in addition to 'Mama' and 'Dada'?	gs1	lg	c	090
+gsed2208	gs1lgc091	60.86	Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?	gs1	lg	c	091
+gsed2208	gs1lic092	56.72	Can your child wash hands by him/herself?	gs1	li	c	092
+gsed2208	gs1lgc093	56.1	Can your child ask for something (e.g., food, water) by name when he/she wants it?	gs1	lg	c	093
+gsed2208	gs1lic094	49.99	Can your child break off pieces of food and feed them to him/her-self?	gs1	li	c	094
+gsed2208	gs1sec095	57.23	Does your child show independence (e.g., wants to go and visit a friends house)?	gs1	se	c	095
+gsed2208	gs1lgc096	56.03	Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)?	gs1	lg	c	096
+gsed2208	gs1moc097	59.32	Can your child walk on an uneven surface (e.g., a bumpy or steep road) without falling?	gs1	mo	c	097
+gsed2208	gs1lgc098	60.55	When looking at pictures, if you say to your child 'what is this?', can they say the name of the object that you point to?	gs1	lg	c	098
+gsed2208	gs1lgc099	56.1	Can your child identify at least seven objects? For example, when you ask 'where is the ball/spoon/cup/cloth/door/plate/bucket etc.' does your child look at or point to (or even name) the objects?	gs1	lg	c	099
+gsed2208	gs1lgc100	63.2	Can your child name at least two body parts (e.g., arm, eye, or nose)?	gs1	lg	c	100
+gsed2208	gs1lgc101	57.49	If you show your child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it?	gs1	lg	c	101
+gsed2208	gs1lgc102	59.88	Does your child usually communicate with words what he/she wants in a way that is understandable to others?	gs1	lg	c	102
+gsed2208	gs1moc103	68.37	Can your child draw a straight line?	gs1	mo	c	103
+gsed2208	gs1lic104	63.53	Can your child remove an item of clothing (e.g., take off his/her shirt)?	gs1	li	c	104
+gsed2208	gs1lgc105	63.57	Can your child say 15 or more separate words (e.g., names like 'Mama' or objects like 'ball')?	gs1	lg	c	105
+gsed2208	gs1moc106	64.14	Can your child jump with both feet leaving the ground?	gs1	mo	c	106
+gsed2208	gs1lgc107	65.81	Can your child sing a short song or repeat parts of a rhyme from memory by him/herself?	gs1	lg	c	107
+gsed2208	gs1lgc108	64.35	Can your child tell you or someone familiar his/her own name [nickname] when asked to?	gs1	lg	c	108
+gsed2208	gs1lic109	67.7	Can your child  put on at least one piece of clothing by himself?	gs1	li	c	109
+gsed2208	gs1moc110	61.06	Can your child unscrew the lid from a bottle or jar?	gs1	mo	c	110
+gsed2208	gs1cgc111	65.97	Does your child know the difference between the words 'big' and 'small'? For example, if you ask, 'Give me the big spoon' can your child understand which one to give if there are two different sizes?	gs1	cg	c	111
+gsed2208	gs1lgc112	63.18	Can your child speak using sentences of three or more words that go together (e.g., 'I want water' or 'The house is big')?	gs1	lg	c	112
+gsed2208	gs1lgc113	65.72	Can your child correctly use any of the words 'I,' 'you,' 'she,' or 'he' (e.g., 'I go to store,' or 'He eats rice')?	gs1	lg	c	113
+gsed2208	gs1lgc114	69.48	Can your child say what he/she likes or dislikes (e.g., 'I like sweets')?	gs1	lg	c	114
+gsed2208	gs1lgc115	64.82	Can your child correctly ask questions using any of the words 'what,' 'which,' 'where,' or 'who'?	gs1	lg	c	115
+gsed2208	gs1lgc116	66.09	Does your child pronounce most of his/her words correctly?	gs1	lg	c	116
+gsed2208	gs1cgc117	69.55	If you show your child two objects or people of different size, can he/she tell you which one is the big one and which is the small one?	gs1	cg	c	117
+gsed2208	gs1cgc118	74.57	Can your child count objects up to five  (e.g., fingers, people)?	gs1	cg	c	118
+gsed2208	gs1lgc119	67.74	Can your child explain in words what common objects like a cup or chair are used for?	gs1	lg	c	119
+gsed2208	gs1lgc120	67.69	If you point to an object, can your child correctly use the words 'on,' 'in,' or 'under' to describe where it is (e.g., 'The cup is on the table' instead of 'The cup is in the table.')	gs1	lg	c	120
+gsed2208	gs1lgc121	69.72	Does your child regularly use describing words such as 'fast,' 'short,' 'hot,' 'fat,' or 'beautiful' correctly?	gs1	lg	c	121
+gsed2208	gs1cgc122	74.43	Can the child name at least one color (e.g., red, blue, yellow)?	gs1	cg	c	122
+gsed2208	gs1sec123	70.54	Does your child know to keep quiet when the situation requires it? (e.g., at ceremonies, when someone is asleep)	gs1	se	c	123
+gsed2208	gs1lgc124	71.94	Does your child ask 'why' questions (e.g., 'Why are you tall?')?	gs1	lg	c	124
+gsed2208	gs1sec125	74.11	Can your child tell you when he/she is happy, angry, or sad?	gs1	se	c	125
+gsed2208	gs1cgc126	72.24	If you ask your child to give you three objects (e.g., stones, beans), does the child give you the correct amount?	gs1	cg	c	126
+gsed2208	gs1lgc127	74.03	Can your child tell a story?	gs1	lg	c	127
+gsed2208	gs1sec128	74.75	Can your child tell you when others are happy, angry, or sad?	gs1	se	c	128
+gsed2208	gs1lic129	76.6	Can your child dress him/herself completely (except for shoelaces, buttons and zippers)?	gs1	li	c	129
+gsed2208	gs1sec130	62.29	Does your child help out around the house with simple chores, even if he/she doesn't do them well?	gs1	se	c	130
+gsed2208	gs1cgc131	72.48	Does your child understand the term 'longest'? For example, if you ask him/her to choose 'which is the longest of 3 objects?' (e.g. 3 spoons or sticks), would he/she be able to choose the longest?	gs1	cg	c	131
+gsed2208	gs1moc132	75.89	Can the child fasten and unfasten buttons without help?	gs1	mo	c	132
+gsed2208	gs1moc133	74.67	If you draw a circle can your child do it, just as you did?	gs1	mo	c	133
+gsed2208	gs1lic134	66.16	Can your child go to the toilet by him/her-self?	gs1	li	c	134
+gsed2208	gs1moc135	72.23	Can your child stand on one foot WITHOUT any support for at least a few seconds?	gs1	mo	c	135
+gsed2208	gs1sec136	79.27	Can your child say what others like or dislike (e.g., 'Mama doesn't like fruit,' Papa likes football)?	gs1	se	c	136
+gsed2208	gs1sec137	65.55	Does your child show respect around elders?	gs1	se	c	137
+gsed2208	gs1lgc138	72.64	Can your child talk about things that have happened in the past using correct language (e.g., 'Yesterday I played with my friend' or 'Last week she went to the market')?	gs1	lg	c	138
+gsed2208	gs1lgc139	74.91	Can your child talk about things that will happen in the future using correct language (e.g., 'Tomorrow he will attend school' or 'Next week we will go to the market')?	gs1	lg	c	139
+gsed2208	gs2sec001	1.1	Does your child smile?	gs2	se	c	001
+gsed2208	gs2moc002	3.22	When lying on his/her back, does your child move his/her arms and legs?	gs2	mo	c	002
+gsed2208	gs2sec003	3.6	Does your child look at your face when you speak to him/her?	gs2	se	c	003
+gsed2208	gs2lgc004	4.57	Does your child cry when he/she is hungry, wet, tired, or wants to be held?	gs2	lg	c	004
+gsed2208	gs2moc005	5.77	Does your child grasp your finger if you touch her hand?	gs2	mo	c	005
+gsed2208	gs2cgc006	6.9	Does your child look at and focus on objects in front of him/her?	gs2	cg	c	006
+gsed2208	gs2moc007	7.47	Does your child bring his/her hand to his/her mouth?	gs2	mo	c	007
+gsed2208	gs2moc008	8.14	Does your child try to move his/her head (or eyes) to follow an object or person?	gs2	mo	c	008
+gsed2208	gs2sec009	8.26	Does your child smile when you smile or talk with him/her?	gs2	se	c	009
+gsed2208	gs2lgc010	8.32	Does your child look at a person when that person starts talking or making noise?	gs2	lg	c	010
+gsed2208	gs2sec011	8.88	Does your child stop crying or calm down when you come to the room after being out of sight, or when you pick him or her up?	gs2	se	c	011
+gsed2208	gs2lgc012	9.3	When you talk to your child, does he/she smile, make noises, or move arms, legs or trunk in response?	gs2	lg	c	012
+gsed2208	gs2sec013	10.86	When you are about to pick up your child, does he/she act happy or excited?	gs2	se	c	013
+gsed2208	gs2lgc014	12.61	Does your child turn his/her head towards your voice or some noise?	gs2	lg	c	014
+gsed2208	gs2moc015	13.24	Does your child grasp onto a small object (e.g., your finger, a spoon) when put in his/her hand?	gs2	mo	c	015
+gsed2208	gs2lgc016	15.25	Does your child make sounds other than crying?	gs2	lg	c	016
+gsed2208	gs2sec017	15.39	Does your child sometimes suck his/her thumb or fingers?	gs2	se	c	017
+gsed2208	gs2moc018	15.66	While your child is on his/her back, can he/she bring his/her hands together?	gs2	mo	c	018
+gsed2208	gs2sec019	16.04	Does your child move excitedly, kick legs, move arms or trunk, or make coo noises when a known person enters the room or speaks to them?	gs2	se	c	019
+gsed2208	gs2lgc020	16.03	Does your child make noise or gesture to get your attention?	gs2	lg	c	020
+gsed2208	gs2sec021	16.98	If you play a game with your child, does he/she respond with interest? For example, if you play peek-a-boo, pat-a-cake, wave bye-bye, etc. does your child smile, widen their eyes, kick or move arms or vocalize?	gs2	se	c	021
+gsed2208	gs2sec022	17.39	Does your child recognize you or other family members (e.g., smile when they enter a room or move toward them)?	gs2	se	c	022
+gsed2208	gs2lgc023	17.42	Does your child laugh?	gs2	lg	c	023
+gsed2208	gs2sec024	17.81	Does your child smile or become excited when seeing someone familiar?	gs2	se	c	024
+gsed2208	gs2moc025	18.65	When your child is on his/her stomach, can he/she turn his/her head to the side?	gs2	mo	c	025
+gsed2208	gs2lgc026	18.79	Does your child make sounds when LOOKING at toys or people (not crying)?	gs2	lg	c	026
+gsed2208	gs2sec027	20.2	Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?	gs2	se	c	027
+gsed2208	gs2moc028	NA	Does your child hold his/her hands in fists all the time?	gs2	mo	c	028
+gsed2208	gs2moc029	21.12	Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?	gs2	mo	c	029
+gsed2208	gs2moc030	23.05	When held in a sitting position, can the child hold his/her head steady and straight?	gs2	mo	c	030
+gsed2208	gs2moc031	23.41	When your child is on his/her stomach, can he/she hold his/her head up off the ground?	gs2	mo	c	031
+gsed2208	gs2cgc032	25.64	Does your child show interest in new objects that are put in front of him/her by reaching out for them?	gs2	cg	c	032
+gsed2208	gs2moc033	26.7	When he/she is on his/her tummy, can your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.	gs2	mo	c	033
+gsed2208	gs2moc034	27.52	Can your child roll from his/her back to stomach or stomach to his/her side?	gs2	mo	c	034
+gsed2208	gs2moc035	28.36	Can your child reach for AND HOLD an object, at least for a few seconds?	gs2	mo	c	035
+gsed2208	gs2lic036	28.54	Can your child eat food from your fingers or off a spoon you hold?	gs2	li	c	036
+gsed2208	gs2lgc037	28.43	Does your child make single sounds like 'buh' or 'duh' or 'muh'?	gs2	lg	c	037
+gsed2208	gs2moc038	28.92	Can your child sit with support, either leaning against something (furniture or person), or by leaning forward on his or her hands?	gs2	mo	c	038
+gsed2208	gs2moc039	28.69	Does your child try to reach for objects that are in front of him/her by extending one or both arms?	gs2	mo	c	039
+gsed2208	gs2moc040	28.89	Can your child pick up a small object (e.g., a small toy or small stone) using just one hand?	gs2	mo	c	040
+gsed2208	gs2moc041	29.53	When lying on his/her stomach, can your child hold his/her head and chest off the ground using only his/her hands and arms for support?	gs2	mo	c	041
+gsed2208	gs2cgc042	29.66	If an object falls to the ground out of view, does your child look for it?	gs2	cg	c	042
+gsed2208	gs2moc043	30.2	When lying on his/her back, does the child grab his/her feet?	gs2	mo	c	043
+gsed2208	gs2moc044	30.14	Can your child roll from his/her back to stomach, or stomach to back, on his/her own?	gs2	mo	c	044
+gsed2208	gs2moc045	31.35	Does your child play by tapping an object on the ground or a table?	gs2	mo	c	045
+gsed2208	gs2cgc046	31.41	Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)?	gs2	cg	c	046
+gsed2208	gs2moc047	31.59	Can your child hold him/herself in a sitting position without help or support for longer than a few seconds?	gs2	mo	c	047
+gsed2208	gs2moc048	32.53	Does your child intentionally move or change his/her position to get objects that are out of reach?	gs2	mo	c	048
+gsed2208	gs2lgc049	32.63	Does your child make two similar sounds together like baba, mumu, pepe, didi (single consonant vowel combinations)?	gs2	lg	c	049
+gsed2208	gs2moc050	32.59	When you put your child on the floor, can she lean on her hands while sitting? (If she already sits up straight without leaning on her hands, mark 'yes' for this item.).	gs2	mo	c	050
+gsed2208	gs2moc051	34.68	Can your child pass a small object from one hand to the other?	gs2	mo	c	051
+gsed2208	gs2moc052	36.65	Can your child bang objects together, or bang an object on the table or on the ground?	gs2	mo	c	052
+gsed2208	gs2lic053	35.45	Can your child pick up small bits of food and feed him/her-self using his/her hand?	gs2	li	c	053
+gsed2208	gs2moc054	37.63	Can your child pick up and drop a small object (e.g., a small toy or small stone) into a bucket or bowl while sitting?	gs2	mo	c	054
+gsed2208	gs2moc055	37.43	Can your child maintain a standing position while holding on to a person or object (e.g., wall or furniture)?	gs2	mo	c	055
+gsed2208	gs2moc056	38.39	Can your child pick up a small object (e.g., a piece of food, small toy or small stone) with just his/her thumb and one finger?	gs2	mo	c	056
+gsed2208	gs2moc057	40.1	Can your child pull themselves up from the floor while holding onto something? For example, can they pull themselves up using a chair, a person, or some other object?	gs2	mo	c	057
+gsed2208	gs2lgc058	41.17	Does your child stop what he/she is doing when you say 'Stop!' even if just for a second?	gs2	lg	c	058
+gsed2208	gs2moc059	42.33	Can your child walk several steps while holding on to a person or object (e.g., wall or furniture)?	gs2	mo	c	059
+gsed2208	gs2moc060	43.21	While holding onto furniture, does your child bend down and pick up a small object from the floor and then return to a standing position?	gs2	mo	c	060
+gsed2208	gs2moc061	43.47	While holding onto furniture, does your child squat with control (without falling or flopping down)?	gs2	mo	c	061
+gsed2208	gs2lgc062	44.73	Does your child make a gesture to indicate 'No' (e.g., shaking head)?	gs2	lg	c	062
+gsed2208	gs2sec063	45.7	Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?	gs2	se	c	063
+gsed2208	gs2moc064	46.34	Can your child stand up without holding onto anything, even if just for a few seconds?	gs2	mo	c	064
+gsed2208	gs2lic065	47.23	Does your child put his/her hands out to have them washed?	gs2	li	c	065
+gsed2208	gs2moc066	47.58	Can your child maintain a standing position on his/her own, without holding on or receiving support?	gs2	mo	c	066
+gsed2208	gs2lic067	48.15	Can your child drink from an open  cup without help?	gs2	li	c	067
+gsed2208	gs2moc068	48.06	Can your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?	gs2	mo	c	068
+gsed2208	gs2moc069	48.78	Can your child make any light marks on paper or in dirt with a crayon or a stick?	gs2	mo	c	069
+gsed2208	gs2moc070	48.97	Can your child bend down or squat to pick up an object from the floor and then stand up again, without help from a person or object?	gs2	mo	c	070
+gsed2208	gs2lgc071	49.34	Can your child follow a simple spoken command or direction without you making a gesture?	gs2	lg	c	071
+gsed2208	gs2lgc072	49.36	Can your child fetch something when asked?	gs2	lg	c	072
+gsed2208	gs2sec073	49.84	Does your child share with others (e.g., food)?	gs2	se	c	073
+gsed2208	gs2moc074	49.6	Can your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately afterward?	gs2	mo	c	074
+gsed2208	gs2moc075	49.9	While standing, can your child purposefully throw the ball and not just drop it?	gs2	mo	c	075
+gsed2208	gs2moc076	50.17	Can your child stand up from sitting by himself and take several steps forward?	gs2	mo	c	076
+gsed2208	gs2lic077	49.99	Can your child break off pieces of food and feed them to him/her-self?	gs2	li	c	077
+gsed2208	gs2moc078	50.23	Can your child make a scribble on paper, or in dirt, in a back and forth manner? For example, can he or she move the pen or pencil or stick back and forth?	gs2	mo	c	078
+gsed2208	gs2moc079	50.6	Can your child move around by walking, rather than by crawling on his hands and knees?	gs2	mo	c	079
+gsed2208	gs2moc080	51.49	Can your child walk well, with coordination, without falling down often? With one foot in front of the other (rather than shifting weight side to side, stiff- legged)?	gs2	mo	c	080
+gsed2208	gs2moc081	51.66	Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?	gs2	mo	c	081
+gsed2208	gs2sec082	52.79	Can your child greet people either by giving his/her hand or saying Hello?	gs2	se	c	082
+gsed2208	gs2moc083	53.05	Can your child kick a ball or other round object forward using his/her foot?	gs2	mo	c	083
+gsed2208	gs2lgc084	53.97	Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?	gs2	lg	c	084
+gsed2208	gs2cgc085	54.92	Can your child follow directions with more than one step? For example, 'Go to the kitchen and bring me a spoon'?	gs2	cg	c	085
+gsed2208	gs2lgc086	56.03	Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)?	gs2	lg	c	086
+gsed2208	gs2lgc087	56.1	Can your child identify at least seven objects? For example, when you ask 'where is the ball/spoon/cup/cloth/door/plate/bucket etc.' does your child look at or point to (or even name) the objects?	gs2	lg	c	087
+gsed2208	gs2lgc088	56.1	Can your child ask for something (e.g., food, water) by name when he/she wants it?	gs2	lg	c	088
+gsed2208	gs2moc089	56.68	Can your child run well, without falling or bumping into objects?	gs2	mo	c	089
+gsed2208	gs2lic090	56.72	Can your child wash hands by him/herself?	gs2	li	c	090
+gsed2208	gs2moc091	57.08	While standing, can your child kick a ball by swinging his/her leg forward?	gs2	mo	c	091
+gsed2208	gs2lic092	57.19	Does your child dry hands by herself/himself after you have washed them?	gs2	li	c	092
+gsed2208	gs2sec093	57.23	Does your child show independence (e.g., wants to go and visit a friends house)?	gs2	se	c	093
+gsed2208	gs2lgc094	57.49	If you show your child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it?	gs2	lg	c	094
+gsed2208	gs2moc095	58	Can your child stack three or more small objects (e.g., blocks, cups, bottle caps) on top of each other?	gs2	mo	c	095
+gsed2208	gs2moc096	59.32	Can your child walk on an uneven surface (e.g., a bumpy or steep road) without falling?	gs2	mo	c	096
+gsed2208	gs2lgc097	59.88	Does your child usually communicate with words what he/she wants in a way that is understandable to others?	gs2	lg	c	097
+gsed2208	gs2lgc098	60.22	Can your child say ten or more words in addition to 'Mama' and 'Dada'?	gs2	lg	c	098
+gsed2208	gs2lgc099	60.55	When looking at pictures, if you say to your child 'what is this?', can they say the name of the object that you point to?	gs2	lg	c	099
+gsed2208	gs2lgc100	60.86	Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?	gs2	lg	c	100
+gsed2208	gs2moc101	61.06	Can your child unscrew the lid from a bottle or jar?	gs2	mo	c	101
+gsed2208	gs2sec102	62.29	Does your child help out around the house with simple chores, even if he/she doesn't do them well?	gs2	se	c	102
+gsed2208	gs2lic103	63.17	Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?	gs2	li	c	103
+gsed2208	gs2lgc104	63.18	Can your child speak using sentences of three or more words that go together (e.g., 'I want water' or 'The house is big')?	gs2	lg	c	104
+gsed2208	gs2lgc105	63.2	Can your child name at least two body parts (e.g., arm, eye, or nose)?	gs2	lg	c	105
+gsed2208	gs2lic106	63.53	Can your child remove an item of clothing (e.g., take off his/her shirt)?	gs2	li	c	106
+gsed2208	gs2lgc107	63.57	Can your child say 15 or more separate words (e.g., names like 'Mama' or objects like 'ball')?	gs2	lg	c	107
+gsed2208	gs2moc108	64.14	Can your child jump with both feet leaving the ground?	gs2	mo	c	108
+gsed2208	gs2lgc109	64.35	Can your child tell you or someone familiar his/her own name [nickname] when asked to?	gs2	lg	c	109
+gsed2208	gs2lgc110	64.82	Can your child correctly ask questions using any of the words 'what,' 'which,' 'where,' or 'who'?	gs2	lg	c	110
+gsed2208	gs2sec111	65.55	Does your child show respect around elders?	gs2	se	c	111
+gsed2208	gs2lgc112	65.72	Can your child correctly use any of the words 'I,' 'you,' 'she,' or 'he' (e.g., 'I go to store,' or 'He eats rice')?	gs2	lg	c	112
+gsed2208	gs2lgc113	65.81	Can your child sing a short song or repeat parts of a rhyme from memory by him/herself?	gs2	lg	c	113
+gsed2208	gs2cgc114	65.97	Does your child know the difference between the words 'big' and 'small'? For example, if you ask, 'Give me the big spoon' can your child understand which one to give if there are two different sizes?	gs2	cg	c	114
+gsed2208	gs2lgc115	66.09	Does your child pronounce most of his/her words correctly?	gs2	lg	c	115
+gsed2208	gs2lic116	66.16	Can your child go to the toilet by him/her-self?	gs2	li	c	116
+gsed2208	gs2lgc117	67.69	If you point to an object, can your child correctly use the words 'on,' 'in,' or 'under' to describe where it is (e.g., 'The cup is on the table' instead of 'The cup is in the table.')	gs2	lg	c	117
+gsed2208	gs2lic118	67.7	Can your child  put on at least one piece of clothing by himself?	gs2	li	c	118
+gsed2208	gs2lgc119	67.74	Can your child explain in words what common objects like a cup or chair are used for?	gs2	lg	c	119
+gsed2208	gs2moc120	68.37	Can your child draw a straight line?	gs2	mo	c	120
+gsed2208	gs2lgc121	69.48	Can your child say what he/she likes or dislikes (e.g., 'I like sweets')?	gs2	lg	c	121
+gsed2208	gs2cgc122	69.55	If you show your child two objects or people of different size, can he/she tell you which one is the big one and which is the small one?	gs2	cg	c	122
+gsed2208	gs2lgc123	69.72	Does your child regularly use describing words such as 'fast,' 'short,' 'hot,' 'fat,' or 'beautiful' correctly?	gs2	lg	c	123
+gsed2208	gs2sec124	70.54	Does your child know to keep quiet when the situation requires it? (e.g., at ceremonies, when someone is asleep)	gs2	se	c	124
+gsed2208	gs2lgc125	71.94	Does your child ask 'why' questions (e.g., 'Why are you tall?')?	gs2	lg	c	125
+gsed2208	gs2moc126	72.23	Can your child stand on one foot WITHOUT any support for at least a few seconds?	gs2	mo	c	126
+gsed2208	gs2cgc127	72.24	If you ask your child to give you three objects (e.g., stones, beans), does the child give you the correct amount?	gs2	cg	c	127
+gsed2208	gs2cgc128	72.48	Does your child understand the term 'longest'? For example, if you ask him/her to choose 'which is the longest of 3 objects?' (e.g. 3 spoons or sticks), would he/she be able to choose the longest?	gs2	cg	c	128
+gsed2208	gs2lgc129	72.64	Can your child talk about things that have happened in the past using correct language (e.g., 'Yesterday I played with my friend' or 'Last week she went to the market')?	gs2	lg	c	129
+gsed2208	gs2lgc130	74.03	Can your child tell a story?	gs2	lg	c	130
+gsed2208	gs2sec131	74.11	Can your child tell you when he/she is happy, angry, or sad?	gs2	se	c	131
+gsed2208	gs2cgc132	74.43	Can the child name at least one color (e.g., red, blue, yellow)?	gs2	cg	c	132
+gsed2208	gs2cgc133	74.57	Can your child count objects up to five  (e.g., fingers, people)?	gs2	cg	c	133
+gsed2208	gs2moc134	74.67	If you draw a circle can your child do it, just as you did?	gs2	mo	c	134
+gsed2208	gs2sec135	74.75	Can your child tell you when others are happy, angry, or sad?	gs2	se	c	135
+gsed2208	gs2lgc136	74.91	Can your child talk about things that will happen in the future using correct language (e.g., 'Tomorrow he will attend school' or 'Next week we will go to the market')?	gs2	lg	c	136
+gsed2208	gs2moc137	75.89	Can the child fasten and unfasten buttons without help?	gs2	mo	c	137
+gsed2208	gs2lic138	76.6	Can your child dress him/herself completely (except for shoelaces, buttons and zippers)?	gs2	li	c	138
+gsed2208	gs2sec139	79.27	Can your child say what others like or dislike (e.g., 'Mama doesn't like fruit,' Papa likes football)?	gs2	se	c	139

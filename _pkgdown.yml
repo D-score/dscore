@@ -63,5 +63,6 @@ reference:
       - gsample
       - sample_sf
       - sample_lf
+      - sample_hf
 navbar:
   type: inverse

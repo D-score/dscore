@@ -64,3 +64,25 @@
 #' head(sample_lf)
 #' @seealso [dscore()]
 "sample_lf"
+
+#' Sample of 10 children from GSED HH
+#'
+#' A demo dataset with developmental scores at the item level for
+#' 10 random children from the GSED Phase 1 data.
+#'
+#' @docType data
+#' @format A `data.frame` with 10 rows and 57 variables:
+#'
+#' Name       | Label
+#' ---------- | ---------
+#' `subjid`   | Integer, child ID
+#' `agedays`  | Integer, age in days
+#' `hf001`    | Integer, ...: 1 = yes, 0 = no, NA = not administered
+#' `hf002`    | Integer, ...: 1 = yes, 0 = no, NA = not administered
+#' `...`      | and so on..
+#'
+#' Sample data for 55 `gpa` items forming GSED HH V1
+#' @examples
+#' head(sample_hf)
+#' @seealso [dscore()]
+"sample_hf"

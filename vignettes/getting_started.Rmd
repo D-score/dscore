@@ -21,7 +21,7 @@ vignette: >
 
 ## Overview
 
-The $D$-score is a one-number summary measure of early child development. The $D$-score has a fixed unit. We may use the $D$-score to [answer questions on the individual, group and population level](https://d-score.org/dbook1/sec-questions.html). For more background, see the introductory booklet [D-score: Turning milestones into measurement](https://d-score.org/dbook1/).
+The $D$-score is a one-number summary measure of early child development. The $D$-score has a fixed unit. In principle, we may use the $D$-score to [answer questions on the individual, group and population level](https://d-score.org/dbook1/sec-questions.html), but be aware that no instruments have yet been validated for individual application. For more background, see the introductory booklet [D-score: Turning milestones into measurement](https://d-score.org/dbook1/).
 
 This vignette shows how to estimate the $D$-score and the $D$-score age-adjusted Z-score (DAZ) from child data on developmental milestones. The vignette covers some typical actions needed when estimating the $D$-score and DAZ:
 

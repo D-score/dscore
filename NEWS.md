@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.7.7
+
+- Adds vignette to calculate D-scores and DAZ dedicated to GSED instruments
+
 # dscore 1.7.6
 
 - Adds example dataset `sample_hf` for GSED HH V1

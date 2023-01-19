@@ -1,0 +1,562 @@
+---
+title: "Scoring GSED"
+output: 
+  rmarkdown::html_vignette:
+    css: vignette.css
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: yes
+vignette: >
+  %\VignetteIndexEntry{Scoring GSED}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## D-score and DAZ
+
+Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HH to one or more children. The next step is calculating each child's developmental score ($D$-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the $D$-score and DAZ. We may pick one of the following two methods:
+
+1. Online calculator. The online Shiny app <https://tnochildhealthstatistics.shinyapps.io/dcalculator/> is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
+2. `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the $D$-score. It is an excellent choice for users familiar with `R` and users who like to incorporate $D$-score calculations into a workflow.
+
+## Preliminaries
+
+- We use the `R` language. If you are new to `R` consult the [Getting Started with R](https://support.rstudio.com/hc/en-us/articles/201141096-Getting-Started-with-R) site; 
+- You need to install the `R` package `dscore` on your local machine;
+- The child data need to be stored as a `data.frame`, a standard `R` tabular structure;
+- You need to run the `dscore()` function to calculate the $D$-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
+
+## Install the `dscore` package
+
+The `dscore` package contains tools to
+
+- Map your item names to the GSED convention
+- Calculate *D*-scores from item level responses
+- Transform the *D*-scores into DAZ, age-standardised Z-scores
+
+The required input consists of *item level* responses on milestones collected using instruments for measuring child development, including the GSED LF, GSED SF and GSED HH.
+
+There are two versions of the `dscore` package. For daily use, we recommend the curated and published version on [CRAN](https://CRAN.R-project.org/package=dscore). In `R`, install the `dscore` package as
+
+```{r eval=FALSE}
+install.packages("dscore")
+```
+
+In some cases, you might need a more recent version that includes extensions and bug fixes not yet available on CRAN. You can install the development version from [GitHub](https://github.com/) by:
+
+```{r eval=FALSE}
+install.packages("remotes")
+remotes::install_github("d-score/dscore")
+```
+
+The development version requires a local C++ compiler for building the package from source.
+
+```{r include=FALSE}
+stopifnot(packageVersion("dscore") >= "1.7.6")
+```
+
+
+## GSED 9-position item names
+
+The `dscore()` function accepts item names that follow the GSED 9-position schema. A name with a length of nine characters identifies every milestone. The following table shows the construction of names.
+
+Position   | Description          | Example
+----------:|:-------------------- |:-------------
+1-3        | instrument           | `by3`
+4-5        | developmental domain | `cg`
+6          | administration mode  | `d`
+7-9        | item number          | `018`
+
+Thus, item `by3cgd018` refers to the 18th item in the cognitive scale of the Bayley-III. The label of the item can be obtained by 
+
+```{r getlabels}
+library(dscore)
+get_labels("by3cgd018")
+```
+
+The `dscore` package maintains a list of items names. 
+
+## Response data format
+
+Rows: One measurement, i.e., one test administration for a child at a given age, occupies a row in the data set. Thus, if a child is measured three times at different ages, there will be three rows for that child in the dataset. 
+
+Columns: There should be at least two columns in the data set: 
+
+- One column with the age of the child. The age column may have any name, and may be measured in decimal age, months, or days since birth. Do not truncate age. Make the value as a continuous as possible, for example by calculating age in days by the difference between measurement date and birth date.
+- One column for each item, appropriately named by the 9-position GSED item name. Normally, the items come from the same instrument, but they may also come from multiple instruments. The data from any recognised item name will contribute to the $D$-score. Do not duplicate names in the data. A PASS is coded as `1`, a FAIL as `0`. If there is no answer or if the item was not administered use the missing value code `NA`. Items that are never administered may be coded as all `NA` or deleted.
+
+The dataset may contain additional columns, e.g., the child number or health information. These are ignored by the $D$-score calculation.
+
+The most important steps is preparing the data for the D-score calculations are:
+
+- rename your original variable names into the 9-position GSED item names;
+- recode all item response as `0`, `1` or `NA`
+
+
+## GSED Instruments {.tabset .tabset-pills}
+
+The table below lists the five available GSED instruments:
+
+Instrument name    | Instrument code | Length        | Status
+:------------------|:--------------- |--------------:|:----------------
+`GSED SF V1`       | `gs1`           | 139           | Active
+`GSED LF V1`       | `gl1`           | 155           | Active
+`GSED HH V1`       | `gh1`           | 55            | Active
+`GSED SF V0`       | `gpa`           | 139           | Retired
+`GSED LF V0`       | `gto`           | 155           | Retired
+
+Select the section corresponding to your instrument for further instructions.
+
+### `GSED SF V1`
+
+The `GSED SF V1` instrument contains 139 items and has instrument code `gs1`. 
+
+#### Check 
+
+Obtain the full list of item name for as 
+
+```{r}
+instrument <- "gs1"
+items <- get_itemnames(instrument = instrument, order = "indm")
+length(items)
+head(items)
+```
+
+The `order` argument is needed to sort items according to sequence number 1 to 139. Check that you have the correct version by comparing the labels of the first few items as:
+
+```{r}
+labels <- get_labels(items)
+head(cbind(items, substr(labels, 1, 50)))
+```
+
+#### Renaming example
+
+Suppose that you stored your data with items names `sf001` to `sf139`. For example, 
+
+```{r}
+sf <- dscore::sample_sf
+head(sf[, c(1:2, 101:105)])
+```
+
+Make sure that the items are in the correct order. Rename the columns with gsed 9-position item names.
+
+```{r}
+colnames(sf)[3:141] <- items
+head(sf[, c(1:2, 101:105)])
+```
+
+The data in `sf` are now ready for the `dscore()` function.
+
+#### Calculate $D$-score
+
+Once the data are in proper shape, calculation of the $D$-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
+
+```{r}
+results <- dscore(sf, xname = "agedays", xunit = "days")
+head(results)
+```
+
+The table below provides the interpretation of the output: 
+
+Name   | Interpretation
+------ | -------------
+`a`    | Decimal age in years
+`n`    | Number of items used to calculate the $D$-score
+`p`    | Proportion of passed milestones
+`d`    | $D$-score (posterior mean)
+`sem`  | Standard error of measurement (posterior standard deviation)
+`daz`  | $D$-score corrected for age
+
+The number of rows of `result` is equal to the number of rows of `sf`. We save the result for later processing.
+
+```{r}
+sf2 <- data.frame(sf, results)
+```
+
+It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gs1` and `gl1` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+
+```{r}
+items_motor <- get_itemnames(instrument = c("gs1", "gl1"), domain = c("mo", "gm"))
+results <- dscore(sf, items = items_motor, xname = "agedays", xunit = "days")
+head(results)
+```
+
+### `GSED LF V1`
+
+The `GSED LF V1` instrument contains 155 items and has instrument code `gl1`. 
+
+#### Check 
+
+Obtain the full list of item name for as 
+
+```{r}
+instrument <- "gl1"
+items <- get_itemnames(instrument = instrument)
+length(items)
+head(items)
+```
+
+Reorder item names so that they corresponds to streams A, B and C, respectively.
+
+```{r}
+items <- items[c(55:155, 1:54)]
+head(items)
+```
+
+Check that you have the correct version by comparing the labels of the first few items as:
+
+```{r}
+labels <- get_labels(items)
+head(cbind(items, substr(labels, 1, 50)))
+```
+
+#### Renaming example
+
+Suppose that you stored your data with items names `lf001` to `lf155`. For example, 
+
+```{r}
+lf <- dscore::sample_lf
+head(lf[, c(1:2, 60:64)])
+```
+
+Make sure that the items are in the correct order. Rename the columns with gsed 9-position item names.
+
+```{r}
+colnames(lf)[3:157] <- items
+head(lf[, c(1:2, 60:64)])
+```
+
+The data in `lf` are now ready for the `dscore()` function.
+
+#### Calculate $D$-score
+
+Once the data are in proper shape, calculation of the $D$-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
+
+```{r}
+results <- dscore(lf, xname = "agedays", xunit = "days")
+head(results)
+```
+
+The table below provides the interpretation of the output: 
+
+Name   | Interpretation
+------ | -------------
+`a`    | Decimal age in years
+`n`    | Number of items used to calculate the $D$-score
+`p`    | Proportion of passed milestones
+`d`    | $D$-score (posterior mean)
+`sem`  | Standard error of measurement (posterior standard deviation)
+`daz`  | $D$-score corrected for age
+
+The number of rows of `result` is equal to the number of rows of `lf`. We save the result for later processing.
+
+```{r}
+lf2 <- data.frame(lf, results)
+```
+
+It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gs1` and `gl1` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+
+```{r}
+items_motor <- get_itemnames(instrument = c("gs1", "gl1"), domain = c("mo", "gm"))
+results <- dscore(lf, items = items_motor, xname = "agedays", xunit = "days")
+head(results)
+```
+
+### `GSED HH V1`
+
+The `GSED HH V1` instrument contains 55 items and has instrument code `gh1`. 
+
+#### Check 
+
+Obtain the full list of item name for as 
+
+```{r}
+instrument <- "gh1"
+items <- get_itemnames(instrument = instrument, order = "indm")
+length(items)
+head(items)
+```
+
+The `order` argument is needed to sort items according to sequence number 1 to 55. Check that you have the correct version by comparing the labels of the first few items as:
+
+```{r}
+labels <- get_labels(items)
+head(cbind(items, substr(labels, 1, 50)))
+```
+
+#### Renaming example
+
+Suppose that you stored your data with items names `hf001` to `hf139`. For example, 
+
+```{r}
+hf <- dscore::sample_hf
+head(hf[, c(1:2, 30:35)])
+```
+
+Make sure that the items are in the correct order. Rename the columns with gsed 9-position item names.
+
+```{r}
+colnames(hf)[3:57] <- items
+head(hf[, c(1:2, 30:35)])
+```
+
+The data in `hf` are now ready for the `dscore()` function.
+
+#### Calculate $D$-score
+
+Once the data are in proper shape, calculation of the $D$-score is straightforward. The `hf` dataset has properly named columns that identify each item. 
+
+```{r}
+results <- dscore(hf, xname = "agedays", xunit = "days")
+head(results)
+```
+
+The table below provides the interpretation of the output: 
+
+Name   | Interpretation
+------ | -------------
+`a`    | Decimal age in years
+`n`    | Number of items used to calculate the $D$-score
+`p`    | Proportion of passed milestones
+`d`    | $D$-score (posterior mean)
+`sem`  | Standard error of measurement (posterior standard deviation)
+`daz`  | $D$-score corrected for age
+
+The number of rows of `results` is equal to the number of rows of `hf`. We save the result for later processing.
+
+```{r}
+hf2 <- data.frame(hf, results)
+```
+
+It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gs1`, `gl1` and `gh1` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+
+```{r}
+items_motor <- get_itemnames(instrument = c("gs1", "gl1", "gh1"), domain = c("mo", "gm"))
+results <- dscore(hf, items = items_motor, xname = "agedays", xunit = "days")
+head(results)
+```
+
+
+### `GSED SF V0`
+
+The `GSED SF V0` instrument contains 139 items and has instrument code `gpa`. 
+
+#### Check 
+
+Obtain the full list of item name for as 
+
+```{r}
+instrument <- "gpa"
+items <- get_itemnames(instrument = instrument, order = "indm")
+length(items)
+head(items)
+```
+
+The `order` argument is needed to sort items according to sequence number 1 to 139. Check that you have the correct version by comparing the labels of the first few items as:
+
+```{r}
+labels <- get_labels(items)
+head(cbind(items, substr(labels, 1, 50)))
+```
+
+#### Renaming example
+
+Suppose that you stored your data with items names `sf001` to `sf139`. For example, 
+
+```{r}
+sf <- dscore::sample_sf
+head(sf[, c(1:2, 101:105)])
+```
+
+Make sure that the items are in the correct order. Rename the columns with gsed 9-position item names.
+
+```{r}
+colnames(sf)[3:141] <- items
+head(sf[, c(1:2, 101:105)])
+```
+
+The data in `sf` are now ready for the `dscore()` function.
+
+#### Calculate $D$-score
+
+Once the data are in proper shape, calculation of the $D$-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
+
+```{r}
+results <- dscore(sf, xname = "agedays", xunit = "days")
+head(results)
+```
+
+The table below provides the interpretation of the output: 
+
+Name   | Interpretation
+------ | -------------
+`a`    | Decimal age in years
+`n`    | Number of items used to calculate the $D$-score
+`p`    | Proportion of passed milestones
+`d`    | $D$-score (posterior mean)
+`sem`  | Standard error of measurement (posterior standard deviation)
+`daz`  | $D$-score corrected for age
+
+The number of rows of `result` is equal to the number of rows of `sf`. We save the result for later processing.
+
+```{r}
+sf3 <- data.frame(sf, results)
+```
+
+It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gpa` and `gto` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+
+```{r}
+items_motor <- get_itemnames(instrument = c("gpa", "gto"), domain = c("mo", "gm"))
+results <- dscore(sf, items = items_motor, xname = "agedays", xunit = "days")
+head(results)
+```
+
+### `GSED LF V0`
+
+The `GSED LF V0` instrument contains 155 items and has instrument code `gto`. 
+
+#### Check 
+
+Obtain the full list of item name for as 
+
+```{r}
+instrument <- "gto"
+items <- get_itemnames(instrument = instrument)
+length(items)
+head(items)
+```
+
+Reorder item names so that they corresponds to streams A, B and C, respectively.
+
+```{r}
+items <- items[c(55:155, 1:54)]
+head(items)
+```
+
+Check that you have the correct version by comparing the labels of the first few items as:
+
+```{r}
+labels <- get_labels(items)
+head(cbind(items, substr(labels, 1, 50)))
+```
+
+#### Renaming example
+
+Suppose that you stored your data with items names `lf001` to `lf155`. For example, 
+
+```{r}
+lf <- dscore::sample_lf
+head(lf[, c(1:2, 60:64)])
+```
+
+Make sure that the items are in the correct order. Rename the columns with gsed 9-position item names.
+
+```{r}
+colnames(lf)[3:157] <- items
+head(lf[, c(1:2, 60:64)])
+```
+
+The data in `lf` are now ready for the `dscore()` function.
+
+#### Calculate $D$-score
+
+Once the data are in proper shape, calculation of the $D$-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
+
+```{r}
+results <- dscore(lf, xname = "agedays", xunit = "days")
+head(results)
+```
+
+The table below provides the interpretation of the output: 
+
+Name   | Interpretation
+------ | -------------
+`a`    | Decimal age in years
+`n`    | Number of items used to calculate the $D$-score
+`p`    | Proportion of passed milestones
+`d`    | $D$-score (posterior mean)
+`sem`  | Standard error of measurement (posterior standard deviation)
+`daz`  | $D$-score corrected for age
+
+The number of rows of `result` is equal to the number of rows of `lf`. We save the result for later processing.
+
+```{r}
+lf3 <- data.frame(lf, results)
+```
+
+It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gpa` and `gto` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+
+```{r}
+items_motor <- get_itemnames(instrument = c("gpa", "gto"), domain = c("mo", "gm"))
+results <- dscore(lf, items = items_motor, xname = "agedays", xunit = "days")
+head(results)
+```
+
+
+## {-}
+
+
+
+### Phase 1 references and DAZ
+
+We used the GSED Phase I data to calculate age-conditional reference scores for the $D$-score. The references are based on about 12,000 administration of the GSED SF and GSED LF from Bangladesh, Pakistan and Tanzania. Extract the references as
+
+```{r}
+library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
+ref <- builtin_references %>% 
+  filter(pop == "phase1") %>% 
+  select(pop, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
+head(ref)
+```
+
+The columns `mu`, `sigma`, `nu` and `tau` are the age-varying parameters of a Box-Cox $t$ (BCT) distribution. 
+
+The script below creates a figure with -2SD, 0SD and +2SD centiles plus 20 $D$-scores (10 LF and 10 SF) for the `lf2` and `sf2` data.
+
+```{r fig.height=5, fig.width=10, warning=FALSE}
+library(ggplot2)
+library(patchwork)
+
+r <- builtin_references %>% 
+  filter(pop == "phase1" & age <= 3.5) %>% 
+  mutate(m = age * 12)
+
+lf2$ins <- "lf"; lf2$m <- lf2$a * 12
+sf2$ins <- "sf"; sf2$m <- sf2$a * 12
+data <- bind_rows(lf2, sf2)
+g1 <- ggplot(data, aes(x = m, y = d, group = ins, color = ins)) + 
+  theme_light() +
+  annotate("polygon", x = c(r$age, rev(r$age)),
+           y = c(r$SDM2, rev(r$SDP2)), alpha = 0.06, fill = "#C5EDDE") +
+  annotate("line", x = r$m, y = r$SDM2, lwd = 0.5, color = "#C5EDDE") +
+  annotate("line", x = r$m, y = r$SDP2, lwd = 0.5, color = "#C5EDDE") +
+  annotate("line", x = r$m, y = r$SD0, lwd = 1, color = "#C5EDDE") +
+  scale_x_continuous("Age (in months)",
+                     limits = c(0, 42),
+                     breaks = seq(0, 42, 12)) +
+  scale_y_continuous(
+    expression(paste(italic(D), "-score", sep = "")),
+    breaks = seq(0, 80, 20),
+    limits = c(0, 90)) +
+  geom_point(size = 2) +
+  theme(legend.position = "none")
+g2 <- ggplot(data, aes(x = m, y = daz, group = ins, color = ins)) + 
+  theme_light() +
+  scale_x_continuous("Age (in months)",
+                     limits = c(0, 42),
+                     breaks = seq(0, 42, 12)) +
+  scale_y_continuous(
+    "DAZ",
+    breaks = seq(-4, 4, 2),
+    limits = c(-5, 5)) +
+  geom_point(size = 2) +
+  theme(legend.position = "none")
+g1 + g2
+```
+
+## References
+

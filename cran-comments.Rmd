@@ -7,7 +7,7 @@ editor_options:
 
 ## Reason for update
 
-`dscore 1.7.0` provides new features and resolves some problems
+`dscore 1.8.0` provides new features and resolves some problems
 
 ## Test environments
 
@@ -27,7 +27,7 @@ build()
 ```
 
 ```{bash eval=FALSE}
-R CMD CHECK dscore_1.6.9.tar.gz
+R CMD CHECK dscore_1.8.0.tar.gz
 ```
 
 Status: OK
@@ -43,8 +43,17 @@ devtools::check_win_devel()
 `devtools::check_win_devel()` resulted in:
 
 ```
-Status: OK
+* checking CRAN incoming feasibility ... [11s] NOTE
+Maintainer: 'Stef van Buuren <stef.vanbuuren@tno.nl>'
+
+Found the following (possibly) invalid URLs:
+  URL: https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R
+    From: inst/doc/scoring_GSED.html
+    Status: 403
+    Message: Forbidden
 ```
+
+The URL is reachable by browser. I assume this status results from a setting made by Posit.
 
 ### RHUB
 
@@ -52,36 +61,8 @@ Status: OK
 check_rhub()
 ```
 
-The result is:
+The result is: `SUCCESS` for all four builds
 
-```
-── dscore 1.6.9: OK
-
-  Build ID:   dscore_1.6.9.tar.gz-0128e87e7c4a472d9179d9b1df43073e
-  Platform:   Windows Server 2022, R-devel, 64 bit
-  Submitted:  2m 18.2s ago
-  Build time: 2m 15.9s
-
-0 errors ✔ | 0 warnings ✔ | 0 notes ✔
-```
-
-```
-Build ID:	dscore_1.6.9.tar.gz-8ab540851dd644c5b8cd198948311da9
-Platform:	Ubuntu Linux 20.04.1 LTS, R-release, GCC
-Submitted:	1 hour 36 minutes 30.1 seconds ago
-Build time:	1 hour 36 minutes 25.5 seconds
-
-Status: succes
-```
-
-```
-Build ID:	dscore_1.6.9.tar.gz-8badaf3d46cf49e699c58e47254fa428
-Platform:	Fedora Linux, R-devel, clang, gfortran
-Submitted:	1 hour 37 minutes 54.8 seconds ago
-Build time:	1 hour 37 minutes 50.7 seconds
-
-Status: succes
-```
 
 ## Downstream dependencies
 

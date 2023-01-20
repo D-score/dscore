@@ -3,7 +3,7 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.7.0` provides new features and resolves some problems
+`dscore 1.8.0` provides new features and resolves some problems
 
 ## Test environments
 
@@ -14,16 +14,16 @@ R.Version()
 ```
 
     ## $platform
-    ## [1] "x86_64-apple-darwin17.0"
+    ## [1] "aarch64-apple-darwin20"
     ## 
     ## $arch
-    ## [1] "x86_64"
+    ## [1] "aarch64"
     ## 
     ## $os
-    ## [1] "darwin17.0"
+    ## [1] "darwin20"
     ## 
     ## $system
-    ## [1] "x86_64, darwin17.0"
+    ## [1] "aarch64, darwin20"
     ## 
     ## $status
     ## [1] ""
@@ -65,7 +65,7 @@ build()
 ```
 
 ``` bash
-R CMD CHECK dscore_1.6.9.tar.gz
+R CMD CHECK dscore_1.8.0.tar.gz
 ```
 
 Status: OK
@@ -80,7 +80,17 @@ devtools::check_win_devel()
 
 `devtools::check_win_devel()` resulted in:
 
-    Status: OK
+    * checking CRAN incoming feasibility ... [11s] NOTE
+    Maintainer: 'Stef van Buuren <stef.vanbuuren@tno.nl>'
+
+    Found the following (possibly) invalid URLs:
+      URL: https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R
+        From: inst/doc/scoring_GSED.html
+        Status: 403
+        Message: Forbidden
+
+The URL is reachable by browser. I assume this status results from a
+setting made by Posit.
 
 ### RHUB
 
@@ -88,40 +98,7 @@ devtools::check_win_devel()
 check_rhub()
 ```
 
-The result is:
-
-    ── dscore 1.6.9: OK
-
-      Build ID:   dscore_1.6.9.tar.gz-0128e87e7c4a472d9179d9b1df43073e
-      Platform:   Windows Server 2022, R-devel, 64 bit
-      Submitted:  2m 18.2s ago
-      Build time: 2m 15.9s
-
-    0 errors ✔ | 0 warnings ✔ | 0 notes ✔
-
-    dscore 1.4.0: OK
-    Build ID:   dscore_1.4.0.tar.gz-b7c485c90af2483588faae90192af7d9
-    Platform:   Ubuntu Linux 16.04 LTS, R-release, GCC
-    Submitted:  47 minutes 33.8 seconds ago
-    Build time: 47 minutes 31.6 seconds
-
-    dscore 1.4.0: OK
-    Build ID:   dscore_1.4.0.tar.gz-07cb0e7218cb4fc2920b459722c0dd79
-    Platform:   Fedora Linux, R-devel, clang, gfortran
-    Submitted:  54 minutes 40.1 seconds ago
-    Build time: 54 minutes 38.3 seconds
-
-    dscore 1.4.0: PREPERROR
-    Build ID:   dscore_1.4.0.tar.gz-bd4ae33d5a6b4b8caaff07a0d493a465
-    Platform:   Debian Linux, R-devel, GCC ASAN/UBSAN
-    Submitted:  1 hour 14 minutes 53.8 seconds ago
-    Build time: 1 hour 14 minutes 42.8 seconds
-
-    > ERROR: dependencies ‘xml2’, ‘rvest’ are not available for package ‘kableExtra’
-    > ERROR: dependencies ‘CDM’, ‘TAM’, ‘pbv’ are not available for package ‘sirt’```
-
-SvB: Test environment Debian Linux is incomplete. Unlikely to be related
-to the `dscore` package.
+The result is: `SUCCESS` for all four builds
 
 ## Downstream dependencies
 

@@ -4,35 +4,19 @@ editor_options:
     wrap: 72
 ---
 
-# dscore 1.7.7
+# dscore 1.8.0
 
+### Major changes
+
+- Adds instrument `gh1` (GSED-HH, JAN 2023) to `builtin_itemtable` and `builtin_itembank` as part of key `gsed2212`
+- Adds example datasets: `sample_sf`, `sample_lf` and `sample_hf`
 - Adds vignette to calculate D-scores and DAZ dedicated to GSED instruments
-
-# dscore 1.7.6
-
-- Adds example dataset `sample_hf` for GSED HH V1
-
-# dscore 1.7.5
-
 - Renames streams in `gl1` instruments as: aa --> gm, bb --> lg, cc --> fm
 - Replaces item name `gl1aad001` --> `gl1gmd001`, and so on
 
-# dscore 1.7.4
-
-- Repairs a problem in the item selection logic. `dscore()` now silently ignores any items not present in the data.
-- Adds two example datasets: `sample_sf` and `sample_lf`
-
-# dscore 1.7.3
-
-- Updates `builtin_itemtable` and `builtin_itembank` with GSED HH JAN 2023 version using the correct materials field
-
-# dscore 1.7.2
+### Minor changes 
 
 - Rewrite calls to `select()` and `pivot_longer()` to conform to `tidyselect 1.2.0` grammar
-
-# dscore 1.7.1
-
-- Adds instrument `gh1` (GSED-HH, version 20221220) to `builtin_itemtable` and `builtin_itembank` as part of key `gsed2212`
 
 # dscore 1.7.0
 

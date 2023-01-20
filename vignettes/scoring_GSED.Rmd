@@ -25,7 +25,7 @@ Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HH to one o
 
 ## Preliminaries
 
-- We use the `R` language. If you are new to `R` consult the [Getting Started with R](https://support.rstudio.com/hc/en-us/articles/201141096-Getting-Started-with-R) site; 
+- We use the `R` language. If you are new to `R` consult the [Getting Started with R](https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R) site; 
 - You need to install the `R` package `dscore` on your local machine;
 - The child data need to be stored as a `data.frame`, a standard `R` tabular structure;
 - You need to run the `dscore()` function to calculate the $D$-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
@@ -56,7 +56,7 @@ remotes::install_github("d-score/dscore")
 The development version requires a local C++ compiler for building the package from source.
 
 ```{r include=FALSE}
-stopifnot(packageVersion("dscore") >= "1.7.6")
+stopifnot(packageVersion("dscore") >= "1.8.0")
 ```
 
 

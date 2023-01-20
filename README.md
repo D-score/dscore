@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lif
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.7.7-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.8.0-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -49,8 +49,9 @@ needed:
 4.  Summarise your results.
 
 The `dscore` package provides various function that support these steps.
-See [Getting started](https://d-score.org/dscore/articles/start.html)
-for more details.
+See [Getting
+started](https://d-score.org/dscore/articles/getting_started.html) for
+more details.
 
 ## Resources
 

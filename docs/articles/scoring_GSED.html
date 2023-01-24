@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.1</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <h2 id="d-score-and-daz">D-score and DAZ<a class="anchor" aria-label="anchor" href="#d-score-and-daz"></a>
 </h2>
 <p>Suppose you have administered GSED SF, GSED LF <span class="citation">(<a href="#ref-mccray2023" role="doc-biblioref">McCray
-et al. 2023</a>)</span> or GSED HH to one or more children. The next
+et al. 2023</a>)</span> or GSED HF to one or more children. The next
 step is calculating each child’s developmental score (<span class="math inline">\(D\)</span>-score) and age-adjusted equivalent
 (DAZ). This step is known as <strong>scoring</strong>. The present
 section provides recipes for calculating the <span class="math inline">\(D\)</span>-score and DAZ. We may pick one of the
@@ -143,7 +143,7 @@ Z-scores</li>
 </ul>
 <p>The required input consists of <em>item level</em> responses on
 milestones collected using instruments for measuring child development,
-including the GSED LF, GSED SF and GSED HH.</p>
+including the GSED LF, GSED SF and GSED HF.</p>
 <p>There are two versions of the <code>dscore</code> package. For daily
 use, we recommend the curated and published version on <a href="https://CRAN.R-project.org/package=dscore" class="external-link">CRAN</a>. In
 <code>R</code>, install the <code>dscore</code> package as</p>
@@ -265,7 +265,7 @@ names;</li>
 <td align="left">Active</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>GSED HH V1</code></td>
+<td align="left"><code>GSED HF V1</code></td>
 <td align="left"><code>gh1</code></td>
 <td align="right">55</td>
 <td align="left">Active</td>
@@ -562,10 +562,10 @@ practical application, but suppose we are interested in the <span class="math in
 </div>
 </div>
 <div class="section level3">
-<h3 id="gsed-hh-v1">
-<code>GSED HH V1</code><a class="anchor" aria-label="anchor" href="#gsed-hh-v1"></a>
+<h3 id="gsed-hf-v1">
+<code>GSED HF V1</code><a class="anchor" aria-label="anchor" href="#gsed-hf-v1"></a>
 </h3>
-<p>The <code>GSED HH V1</code> instrument contains 55 items and has
+<p>The <code>GSED HF V1</code> instrument contains 55 items and has
 instrument code <code>gh1</code>.</p>
 <div class="section level4">
 <h4 id="check-2">Check<a class="anchor" aria-label="anchor" href="#check-2"></a>
@@ -597,7 +597,7 @@ comparing the labels of the first few items as:</p>
 <h4 id="renaming-example-2">Renaming example<a class="anchor" aria-label="anchor" href="#renaming-example-2"></a>
 </h4>
 <p>Suppose that you stored your data with items names <code>hf001</code>
-to <code>hf139</code>. For example,</p>
+to <code>hf055</code>. For example,</p>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hf</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="../reference/sample_hf.html">sample_hf</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hf</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, <span class="fl">30</span><span class="op">:</span><span class="fl">35</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>

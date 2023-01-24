@@ -4,11 +4,15 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.1
+
+- Rename GSED HH to GSED HF
+
 # dscore 1.8.0
 
 ### Major changes
 
-- Adds instrument `gh1` (GSED-HH, JAN 2023) to `builtin_itemtable` and `builtin_itembank` as part of key `gsed2212`
+- Adds instrument `gh1` (GSED-HF, JAN 2023) to `builtin_itemtable` and `builtin_itembank` as part of key `gsed2212`
 - Adds example datasets: `sample_sf`, `sample_lf` and `sample_hf`
 - Adds vignette to calculate D-scores and DAZ dedicated to GSED instruments
 - Renames streams in `gl1` instruments as: aa --> gm, bb --> lg, cc --> fm

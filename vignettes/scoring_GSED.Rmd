@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## D-score and DAZ
 
-Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HH to one or more children. The next step is calculating each child's developmental score ($D$-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the $D$-score and DAZ. We may pick one of the following two methods:
+Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HF to one or more children. The next step is calculating each child's developmental score ($D$-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the $D$-score and DAZ. We may pick one of the following two methods:
 
 1. Online calculator. The online Shiny app <https://tnochildhealthstatistics.shinyapps.io/dcalculator/> is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
 2. `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the $D$-score. It is an excellent choice for users familiar with `R` and users who like to incorporate $D$-score calculations into a workflow.
@@ -38,7 +38,7 @@ The `dscore` package contains tools to
 - Calculate *D*-scores from item level responses
 - Transform the *D*-scores into DAZ, age-standardised Z-scores
 
-The required input consists of *item level* responses on milestones collected using instruments for measuring child development, including the GSED LF, GSED SF and GSED HH.
+The required input consists of *item level* responses on milestones collected using instruments for measuring child development, including the GSED LF, GSED SF and GSED HF.
 
 There are two versions of the `dscore` package. For daily use, we recommend the curated and published version on [CRAN](https://CRAN.R-project.org/package=dscore). In `R`, install the `dscore` package as
 
@@ -105,7 +105,7 @@ Instrument name    | Instrument code | Length        | Status
 :------------------|:--------------- |--------------:|:----------------
 `GSED SF V1`       | `gs1`           | 139           | Active
 `GSED LF V1`       | `gl1`           | 155           | Active
-`GSED HH V1`       | `gh1`           | 55            | Active
+`GSED HF V1`       | `gh1`           | 55            | Active
 `GSED SF V0`       | `gpa`           | 139           | Retired
 `GSED LF V0`       | `gto`           | 155           | Retired
 
@@ -266,9 +266,9 @@ results <- dscore(lf, items = items_motor, xname = "agedays", xunit = "days")
 head(results)
 ```
 
-### `GSED HH V1`
+### `GSED HF V1`
 
-The `GSED HH V1` instrument contains 55 items and has instrument code `gh1`. 
+The `GSED HF V1` instrument contains 55 items and has instrument code `gh1`. 
 
 #### Check 
 
@@ -290,7 +290,7 @@ head(cbind(items, substr(labels, 1, 50)))
 
 #### Renaming example
 
-Suppose that you stored your data with items names `hf001` to `hf139`. For example, 
+Suppose that you stored your data with items names `hf001` to `hf055`. For example, 
 
 ```{r}
 hf <- dscore::sample_hf

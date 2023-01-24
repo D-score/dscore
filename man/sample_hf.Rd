@@ -3,7 +3,7 @@
 \docType{data}
 \name{sample_hf}
 \alias{sample_hf}
-\title{Sample of 10 children from GSED HH}
+\title{Sample of 10 children from GSED HF}
 \format{
 A \code{data.frame} with 10 rows and 57 variables:\tabular{ll}{
    Name \tab Label \cr
@@ -15,7 +15,7 @@ A \code{data.frame} with 10 rows and 57 variables:\tabular{ll}{
 }
 
 
-Sample data for 55 \code{gpa} items forming GSED HH V1
+Sample data for 55 \code{gpa} items forming GSED HF V1
 }
 \usage{
 sample_hf

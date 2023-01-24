@@ -31,7 +31,7 @@ ecdi_itemtable <- ecdi_itemtable %>%
          equate = ifelse(item %in% c("ecdxxc009", "gpaclc101"), "ECD9", equate),
          equate = ifelse(item %in% c("ecdxxc013", "gpaclc126"), "ECD13", equate))
 
-## add HH items to itemtable, creates instrument code gh1, overwrites item
+## add HF items to itemtable, creates instrument code gh1, overwrites item
 hh_itemtable <- openxlsx::read.xlsx("data-raw/data/ageforms_2023-01-13.xlsx")
 info <- dscore::decompose_itemnames(hh_itemtable$item)
 info$instrument <- "gh1"

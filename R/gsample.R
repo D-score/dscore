@@ -65,7 +65,7 @@
 #' @seealso [dscore()]
 "sample_lf"
 
-#' Sample of 10 children from GSED HH
+#' Sample of 10 children from GSED HF
 #'
 #' A demo dataset with developmental scores at the item level for
 #' 10 random children from the GSED Phase 1 data.
@@ -81,7 +81,7 @@
 #' `hf002`    | Integer, ...: 1 = yes, 0 = no, NA = not administered
 #' `...`      | and so on..
 #'
-#' Sample data for 55 `gpa` items forming GSED HH V1
+#' Sample data for 55 `gpa` items forming GSED HF V1
 #' @examples
 #' head(sample_hf)
 #' @seealso [dscore()]

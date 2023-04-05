@@ -54,7 +54,12 @@ daz <- function(d, x = as.numeric(names(d)),
     sigma <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
     nu <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
     tau <- approx(x = reference[, "age"], y = reference[, "tau"], xout = x)$y
-    z <- qnorm(pBCT(d, mu, sigma, nu, tau))
+    # evade pBCT error
+    if (length(nu) == 1L && is.na(nu)) {
+      z <- NA
+    } else {
+      z <- qnorm(pBCT(d, mu, sigma, nu, tau))
+    }
   }
 
   names(z) <- as.character(x)

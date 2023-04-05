@@ -4,9 +4,13 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.2
+
+- Evades an error produced by `gamlss::pBCT()` when `is.na(nu)` is `TRUE`
+
 # dscore 1.8.1
 
-- Rename GSED HH to GSED HF
+- Renames GSED HH to GSED HF
 
 # dscore 1.8.0
 

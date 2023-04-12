@@ -46,8 +46,6 @@ qBCT <- function (p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   else if (nu != 0)
     ya <- mu * (nu * sigma * z + 1)^(1/nu)
   else ya <- mu * exp(sigma * z)
-  # Round up D-scores < 1 to 1.0
-  ya <- ya[ya < 1.0 & !is.na(ya)] <- 1.0
   ya
 }
 

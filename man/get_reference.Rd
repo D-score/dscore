@@ -4,11 +4,12 @@
 \alias{get_reference}
 \title{Get D-score reference}
 \usage{
-get_reference(population = "gcdg", references = dscore::builtin_references)
+get_reference(population = "phase1", references = dscore::builtin_references)
 }
 \arguments{
 \item{population}{A string describing the population. Currently supported
-are \code{"dutch"}, \code{"gcdg"} and \code{"phase1"}.}
+are \code{"dutch"}, \code{"gcdg"} and \code{"phase1"}. The default is \code{"phase1"}, in sync
+with the default \code{key = "gsed"}.}
 
 \item{references}{A \code{data.frame} with the same structure
 as \code{builtin_references}. The default is to use

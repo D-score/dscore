@@ -16,8 +16,7 @@
 #' a subset of rows from the `builtin_references` using its
 #' default `pop` argument.
 #' @param dec The number of decimals (default `dec = 3`).
-#' @return The `daz()` function return a named vector with
-#' Z-scores with `length(d)` elements
+#' @return Unnamed numeric vector with Z-scores of length `length(d)`.
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
 #' method and penalized likelihood. Statistics in Medicine, 11(10),
@@ -31,9 +30,7 @@
 #' # using Dutch reference
 #' daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("dutch"))
 #' @export
-daz <- function(d, x = as.numeric(names(d)),
-                reference = get_reference(),
-                dec = 3) {
+daz <- function(d, x, reference = get_reference(), dec = 3) {
   if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
   pop <- reference$pop[1]
 
@@ -62,12 +59,10 @@ daz <- function(d, x = as.numeric(names(d)),
     }
   }
 
-  names(z) <- as.character(x)
   return(round(z, dec))
 }
 
-#' @return The `zad()` function returns a vector with D-scores
-#' with `length(z)` elements.
+#' @return Unnamed numeric vector with D-scores of length `length(z)`.
 #' @rdname daz
 #' @examples
 #' # population median at ages 0.5, 1 and 2 years, gcdg reference
@@ -84,9 +79,7 @@ daz <- function(d, x = as.numeric(names(d)),
 #'   lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score"
 #' )
 #' @export
-zad <- function(z, x = as.numeric(names(z)),
-                reference = get_reference(),
-                dec = 2) {
+zad <- function(z, x, reference = get_reference(), dec = 2) {
   if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
   pop <- reference$pop[1]
 
@@ -109,6 +102,5 @@ zad <- function(z, x = as.numeric(names(z)),
     d <- qBCT(pnorm(z), mu, sigma, nu, tau)
   }
 
-  names(d) <- as.character(x)
   return(round(d, dec))
 }

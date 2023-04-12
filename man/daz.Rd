@@ -5,9 +5,9 @@
 \alias{zad}
 \title{D-score standard deviation score: DAZ}
 \usage{
-daz(d, x = as.numeric(names(d)), reference = get_reference(), dec = 3)
+daz(d, x, reference = get_reference(), dec = 3)
 
-zad(z, x = as.numeric(names(z)), reference = get_reference(), dec = 2)
+zad(z, x, reference = get_reference(), dec = 2)
 }
 \arguments{
 \item{d}{Vector of D-scores}
@@ -24,11 +24,9 @@ default \code{pop} argument.}
 \item{z}{Vector of standard deviation scores (DAZ)}
 }
 \value{
-The \code{daz()} function return a named vector with
-Z-scores with \code{length(d)} elements
+Unnamed numeric vector with Z-scores of length \code{length(d)}.
 
-The \code{zad()} function returns a vector with D-scores
-with \code{length(z)} elements.
+Unnamed numeric vector with D-scores of length \code{length(z)}.
 }
 \description{
 The \code{daz()} function calculated the

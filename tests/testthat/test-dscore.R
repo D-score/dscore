@@ -8,6 +8,22 @@ data <- data.frame(
   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 )
 
+# default key: "gsed" (currently points to "gsed2212", population "phase1")
+z <- dscore(data)
+expected_d <- c(NA, NA, 6.61, 5.60, 9.09, 9.09, 9.09, 9.09, 15.30, 15.30)
+expected_daz <- c(NA, NA, -2.019, -2.235, -1.447, -1.447, -1.447, -1.447, 0.277, 0.277)
+test_that("produces expected D-scores - key gsed", {
+  expect_identical(z$d, expected_d)
+  expect_identical(z$daz, expected_daz)
+})
+
+# explicit key "gsed2212"
+z <- dscore(data, key = "gsed2212")
+test_that("produces expected D-scores - key gsed2212", {
+  expect_identical(z$d, expected_d)
+  expect_identical(z$daz, expected_daz)
+})
+
 z1 <- dscore(data, key = "dutch")
 expected_d1 <- c(NA, -1.87, -1.94, 1.26, 1.26, 1.26, 4.63, 4.63,
                  4.63, 12.06)

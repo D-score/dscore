@@ -46,6 +46,7 @@ qBCT <- function (p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   else if (nu != 0)
     ya <- mu * (nu * sigma * z + 1)^(1/nu)
   else ya <- mu * exp(sigma * z)
+  ya[ya < 1.0 & !is.na(ya)] <- 1.0
   ya
 }
 
@@ -61,11 +62,16 @@ pBCT <- function (q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
     stop(paste("tau must be positive", "\n", ""))
   # recode D-score < 1 to 1.
   q[q < 1.0 & !is.na(q)] <- 1.0
+  # added check
+  if (length(nu) == 1L && is.na(nu))
+    return(NA)
   if (length(nu) > 1)
     z <- ifelse(nu != 0, (((q/mu)^nu - 1)/(nu * sigma)),
                 log(q/mu)/sigma)
   else if (nu != 0)
     z <- (((q/mu)^nu - 1)/(nu * sigma))
+  else if (is.na(nu))
+    z <- NA
   else z <- log(q/mu)/sigma
   FYy1 <- pt(z, tau)
   if (length(nu) > 1)

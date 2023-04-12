@@ -16,10 +16,16 @@
 #' a subset of rows from the `builtin_references`.
 #' @param dec The number of decimals (default `dec = 3`).
 #' @return Unnamed numeric vector with Z-scores of length `length(d)`.
-#' @details The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
-#' distributions model only positive D-score values. One way to circumvent this
-#' limitation is adding a positive value to the D-scores prior to calculating
-#' the references.
+#' @details
+#'
+#' Note 1: The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
+#' distributions model only positive D-score values. To increase
+#' robustness, the `daz()` and `zad()` functions will round up any
+#' D-scores lower than 1.0 to 1.0.
+#'
+#' Note 2: The `daz()` and `zad()` function call modified version of the
+#' `pBCT()` and `qBCT()` functions from `gamlss` for better handling
+#' of `NA`'s and rounding.
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
 #' method and penalized likelihood. Statistics in Medicine, 11(10),
@@ -57,12 +63,7 @@ daz <- function(d, x, reference = get_reference(), dec = 3) {
     sigma <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
     nu <- approx(x = reference[, "age"], y = reference[, "nu"], xout = x)$y
     tau <- approx(x = reference[, "age"], y = reference[, "tau"], xout = x)$y
-    # evade pBCT error
-    if (length(nu) == 1L && is.na(nu)) {
-      z <- NA
-    } else {
-      z <- qnorm(pBCT(d, mu, sigma, nu, tau))
-    }
+    z <- qnorm(pBCT(d, mu, sigma, nu, tau))
   }
 
   return(round(z, dec))
@@ -71,8 +72,8 @@ daz <- function(d, x, reference = get_reference(), dec = 3) {
 #' @return Unnamed numeric vector with D-scores of length `length(z)`.
 #' @rdname daz
 #' @examples
-#' #' # population median at ages 0.5, 1 and 2 years, gcdg reference
-#' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("phase1"))
+#' # population median at ages 0.5, 1 and 2 years, phase1 reference
+#' zad(z = rep(0, 3), x = c(0.5, 1, 2))
 #'
 #' # population median at ages 0.5, 1 and 2 years, gcdg reference
 #' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("gcdg"))

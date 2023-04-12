@@ -36,10 +36,14 @@ The \code{zad()} is the inverse of \code{daz()}: Given age and
 the Z-score, it finds the raw D-score.
 }
 \details{
-The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
-distributions model only positive D-score values. One way to circumvent this
-limitation is adding a positive value to the D-scores prior to calculating
-the references.
+Note 1: The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
+distributions model only positive D-score values. To increase
+robustness, the \code{daz()} and \code{zad()} functions will round up any
+D-scores lower than 1.0 to 1.0.
+
+Note 2: The \code{daz()} and \code{zad()} function call modified version of the
+\code{pBCT()} and \code{qBCT()} functions from \code{gamlss} for better handling
+of \code{NA}'s and rounding.
 }
 \examples{
 # using GSED Phase 1 reference
@@ -50,8 +54,8 @@ daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("gcdg"))
 
 # using Dutch reference
 daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("dutch"))
-#' # population median at ages 0.5, 1 and 2 years, gcdg reference
-zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("phase1"))
+# population median at ages 0.5, 1 and 2 years, phase1 reference
+zad(z = rep(0, 3), x = c(0.5, 1, 2))
 
 # population median at ages 0.5, 1 and 2 years, gcdg reference
 zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("gcdg"))

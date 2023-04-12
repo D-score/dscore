@@ -4,7 +4,8 @@
 #' distribution.
 #'
 #' @param population A string describing the population. Currently supported
-#' are `"dutch"`, `"gcdg"` and `"phase1"`.
+#' are `"dutch"`, `"gcdg"` and `"phase1"`. The default is `"phase1"`, in sync
+#' with the default `key = "gsed"`.
 #' @param references A `data.frame` with the same structure
 #' as `builtin_references`. The default is to use
 #' `builtin_references`.
@@ -33,8 +34,9 @@
 #'
 #' @seealso [builtin_references()]
 #' @export
-get_reference <- function(population = "gcdg",
+get_reference <- function(population = "phase1",
                           references = dscore::builtin_references) {
-  if (population == "gsed") population <- "gcdg"
+  #
+  # if (population == "gsed") population <- "gcdg"
   references[references$pop == population, ]
 }

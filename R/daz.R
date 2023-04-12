@@ -13,10 +13,13 @@
 #' @param x Vector of ages (decimal age)
 #' @param reference A `data.frame` with the LMS reference values.
 #' The default uses the `get_reference()` function. This selects
-#' a subset of rows from the `builtin_references` using its
-#' default `pop` argument.
+#' a subset of rows from the `builtin_references`.
 #' @param dec The number of decimals (default `dec = 3`).
 #' @return Unnamed numeric vector with Z-scores of length `length(d)`.
+#' @details The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
+#' distributions model only positive D-score values. One way to circumvent this
+#' limitation is adding a positive value to the D-scores prior to calculating
+#' the references.
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
 #' method and penalized likelihood. Statistics in Medicine, 11(10),
@@ -24,8 +27,11 @@
 #' @seealso [dscore()]
 #' @author Stef van Buuren 2020
 #' @examples
-#' # using gcdg-reference
+#' # using GSED Phase 1 reference
 #' daz(d = c(35, 50), x = c(0.5, 1.0))
+#'
+#' # using Dutch reference
+#' daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("gcdg"))
 #'
 #' # using Dutch reference
 #' daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("dutch"))
@@ -65,8 +71,11 @@ daz <- function(d, x, reference = get_reference(), dec = 3) {
 #' @return Unnamed numeric vector with D-scores of length `length(z)`.
 #' @rdname daz
 #' @examples
+#' #' # population median at ages 0.5, 1 and 2 years, gcdg reference
+#' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("phase1"))
+#'
 #' # population median at ages 0.5, 1 and 2 years, gcdg reference
-#' zad(z = rep(0, 3), x = c(0.5, 1, 2))
+#' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("gcdg"))
 #'
 #' # population median at ages 0.5, 1 and 2 years, dutch reference
 #' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("dutch"))

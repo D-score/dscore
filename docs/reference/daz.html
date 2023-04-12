@@ -22,7 +22,7 @@ the Z-score, it finds the raw D-score."><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
 
@@ -76,9 +76,9 @@ the Z-score, it finds the raw D-score.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">daz</span><span class="op">(</span><span class="va">d</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span><span class="op">)</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="op">)</span>, dec <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">daz</span><span class="op">(</span><span class="va">d</span>, <span class="va">x</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="op">)</span>, dec <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">zad</span><span class="op">(</span><span class="va">z</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">z</span><span class="op">)</span><span class="op">)</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="op">)</span>, dec <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">zad</span><span class="op">(</span><span class="va">z</span>, <span class="va">x</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="op">)</span>, dec <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -94,8 +94,7 @@ the Z-score, it finds the raw D-score.</p>
 <dt>reference</dt>
 <dd><p>A <code>data.frame</code> with the LMS reference values.
 The default uses the <code><a href="get_reference.html">get_reference()</a></code> function. This selects
-a subset of rows from the <code>builtin_references</code> using its
-default <code>pop</code> argument.</p></dd>
+a subset of rows from the <code>builtin_references</code>.</p></dd>
 
 
 <dt>dec</dt>
@@ -110,12 +109,20 @@ default <code>pop</code> argument.</p></dd>
     <h2>Value</h2>
     
 
-<p>The <code>daz()</code> function return a named vector with
-Z-scores with <code>length(d)</code> elements</p>
+<p>Unnamed numeric vector with Z-scores of length <code>length(d)</code>.</p>
 
 
-<p>The <code>zad()</code> function returns a vector with D-scores
-with <code>length(z)</code> elements.</p>
+<p>Unnamed numeric vector with D-scores of length <code>length(z)</code>.</p>
+    </div>
+    <div id="details">
+    <h2>Details</h2>
+    <p>Note 1: The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
+distributions model only positive D-score values. To increase
+robustness, the <code>daz()</code> and <code>zad()</code> functions will round up any
+D-scores lower than 1.0 to 1.0.</p>
+<p>Note 2: The <code>daz()</code> and <code>zad()</code> function call modified version of the
+<code>pBCT()</code> and <code>qBCT()</code> functions from <code>gamlss</code> for better handling
+of <code>NA</code>'s and rounding.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -134,24 +141,28 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># using gcdg-reference</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># using GSED Phase 1 reference</span></span></span>
 <span class="r-in"><span><span class="fu">daz</span><span class="op">(</span>d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">35</span>, <span class="fl">50</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1.0</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    0.5      1 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -0.425  0.299 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.788 0.587</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># using Dutch reference</span></span></span>
+<span class="r-in"><span><span class="fu">daz</span><span class="op">(</span>d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">35</span>, <span class="fl">50</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1.0</span><span class="op">)</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="st">"gcdg"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.425  0.299</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># using Dutch reference</span></span></span>
 <span class="r-in"><span><span class="fu">daz</span><span class="op">(</span>d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">35</span>, <span class="fl">50</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1.0</span><span class="op">)</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="st">"dutch"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    0.5      1 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -0.091  0.357 </span>
-<span class="r-in"><span><span class="co"># population median at ages 0.5, 1 and 2 years, gcdg reference</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.091  0.357</span>
+<span class="r-in"><span><span class="co"># population median at ages 0.5, 1 and 2 years, phase1 reference</span></span></span>
 <span class="r-in"><span><span class="fu">zad</span><span class="op">(</span>z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.5     1     2 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36.32 49.11 62.67 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 32.28 47.93 64.30</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># population median at ages 0.5, 1 and 2 years, gcdg reference</span></span></span>
+<span class="r-in"><span><span class="fu">zad</span><span class="op">(</span>z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="st">"gcdg"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 36.32 49.11 62.67</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># population median at ages 0.5, 1 and 2 years, dutch reference</span></span></span>
 <span class="r-in"><span><span class="fu">zad</span><span class="op">(</span>z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, reference <span class="op">=</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span><span class="st">"dutch"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.5     1     2 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35.27 48.91 63.77 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 35.27 48.91 63.77</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># percentiles of D-score reference</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid</a></span><span class="op">(</span>age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">2</span>, <span class="fl">0.1</span><span class="op">)</span>, p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span></span></span>

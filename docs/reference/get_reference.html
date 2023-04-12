@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
       </span>
     </div>
 
@@ -68,14 +68,15 @@ distribution.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"gcdg"</span>, references <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_references.html">builtin_references</a></span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"phase1"</span>, references <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_references.html">builtin_references</a></span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>population</dt>
 <dd><p>A string describing the population. Currently supported
-are <code>"dutch"</code>, <code>"gcdg"</code> and <code>"phase1"</code>.</p></dd>
+are <code>"dutch"</code>, <code>"gcdg"</code> and <code>"phase1"</code>. The default is <code>"phase1"</code>, in sync
+with the default <code>key = "gsed"</code>.</p></dd>
 
 
 <dt>references</dt>

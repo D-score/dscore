@@ -4,9 +4,16 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.3
+
+- Sets the default reference in `get_reference()` to `phase1` to remain in sync with the default `key = "gsed"`
+- Moves error evasion code into internal `pBCT()`
+- Document up-rounding to a D-score of 1 or higher when `daz()` and `zad()` using the BCT transformation for positive values 
+- Removes the superfluous `names` attribute from the return value of `daz()` and `zad()`
+
 # dscore 1.8.2
 
-- Evades an error produced by `gamlss::pBCT()` when `is.na(nu)` is `TRUE`
+- Evades an error produced by internal `pBCT()` when `is.na(nu)` is `TRUE`
 
 # dscore 1.8.1
 

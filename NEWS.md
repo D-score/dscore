@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.4
+
+- Per request from CRAN  (`Specified C++11: please drop specification unless essential`), removes a C++11 specification
+
 # dscore 1.8.3
 
 - Sets the default reference in `get_reference()` to `phase1` to remain in sync with the default `key = "gsed"`

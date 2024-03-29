@@ -19,7 +19,7 @@ observations on milestones."><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.5</span>
       </span>
     </div>
 
@@ -75,6 +75,7 @@ observations on milestones.</p>
 <span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
+<span>  prepend <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
 <span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
@@ -92,6 +93,7 @@ observations on milestones.</p>
 <span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
+<span>  prepend <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
 <span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
@@ -132,6 +134,12 @@ that have a difficulty parameter under the specified <code>key</code>.</p></dd>
 <dd><p>A string specifying the unit in which age is measured
 (either <code>"decimal"</code>, <code>"days"</code> or <code>"months"</code>).
 The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
+
+
+<dt>prepend</dt>
+<dd><p>Character vector with column names in <code>data</code> that will
+be prepended to the returned data frame. This is useful for copying
+columns from data into the result, e.g., for matching.</p></dd>
 
 
 <dt>key</dt>
@@ -222,12 +230,18 @@ ignore scores.</p></dd>
     <h2>Value</h2>
     
 
-<p>The <code>dscore()</code> function returns a <code>data.frame</code> with
-<code>nrow(data)</code> rows and the following columns:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>a</code></td><td>Decimal age</td></tr><tr><td><code>n</code></td><td>Number of items with valid (0/1) data</td></tr><tr><td><code>p</code></td><td>Percentage of passed milestones</td></tr><tr><td><code>d</code></td><td>Ability estimate, mean of posterior</td></tr><tr><td><code>sem</code></td><td>Standard error of measurement, standard deviation of the posterior</td></tr><tr><td><code>daz</code></td><td>D-score corrected for age, calculated in Z-scale</td></tr></table><p>The <code>dscore_posterior()</code> function returns a numeric matrix with
-<code>nrow(data)</code> rows and <code>length(qp)</code> columns with the
-density at each quadrature point. The vector represents the full
-posterior ability distribution. If no valid responses were obtained,
-<code>dscore_posterior()</code> returns the prior.</p>
+<p>The <code>dscore()</code> function returns a <code>data.frame</code> with <code>nrow(data)</code> rows.
+Optionally, the first block of columns can be specified by <code>prepend</code></p>
+
+
+<p>are copied from <code>data</code>. The second block consists of the
+following columns:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>a</code></td><td>Decimal age</td></tr><tr><td><code>n</code></td><td>Number of items with valid (0/1) data</td></tr><tr><td><code>p</code></td><td>Percentage of passed milestones</td></tr><tr><td><code>d</code></td><td>Ability estimate, mean of posterior</td></tr><tr><td><code>sem</code></td><td>Standard error of measurement, standard deviation of the posterior</td></tr><tr><td><code>daz</code></td><td>D-score corrected for age, calculated in Z-scale</td></tr></table><p>The <code>dscore_posterior()</code> function returns a data frame with
+<code>nrow(data)</code> rows and <code>length(qp)</code> plus prepended columns with the
+density at each quadrature point. A row vector representes the full
+posterior ability distribution. If no valid responses are found,
+<code>dscore_posterior()</code> returns the prior density. Versions prior to
+1.8.5 returned a <code>matrix</code> (instead of a <code>data.frame</code>). Code that depends on
+the result being a <code>matrix</code> may break and needs to be adapted.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -280,12 +294,14 @@ BMJ Global Health, BMJ Global Health 4: e001724.
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Jane"</span>, <span class="st">"Martin"</span>, <span class="st">"ID-3"</span>, <span class="st">"No. 4"</span>, <span class="st">"Five"</span>, <span class="st">"6"</span>,</span></span>
+<span class="r-in"><span>        <span class="cn">NA_character_</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fl">8</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fl">21</span> <span class="op">/</span> <span class="fl">365.25</span>, <span class="fl">4</span><span class="op">)</span>, <span class="fl">10</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  ddifmd001 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  ddicmm029 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  ddigmd053 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># third item is not part of default key</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="get_tau.html">get_tau</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></span>
@@ -306,12 +322,35 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.0575 2 1.0 15.30 3.851173  0.277</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.0575 2 1.0 15.30 3.851173  0.277</span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># prepend id variable to output</span></span></span>
+<span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span>, prepend <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        id      a n   p     d      sem    daz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Jane     NA 0  NA    NA       NA     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Martin     NA 0  NA    NA       NA     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    ID-3 0.0575 1 0.0  6.61 2.763004 -2.019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   No. 4 0.0575 2 0.0  5.60 2.459750 -2.235</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Five 0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       6 0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    &lt;NA&gt; 0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8       8 0.0575 2 0.5  9.09 1.695326 -1.447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9       9 0.0575 2 1.0 15.30 3.851173  0.277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10     10 0.0575 2 1.0 15.30 3.851173  0.277</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># prepend all data</span></span></span>
+<span class="r-in"><span><span class="co"># dscore(data, prepend = colnames(data))</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># calculate full posterior</span></span></span>
 <span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">dscore_posterior</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># check that rows sum to 1</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">rowSums</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.9999992 0.9999992 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 1.0000000 1.0000000 1.0000000</span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># plot posterior for row 7</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>, y <span class="op">=</span> <span class="va">p</span><span class="op">[</span><span class="fl">7</span>, <span class="op">]</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"D-score"</span>,</span></span>
-<span class="r-in"><span> ylab <span class="op">=</span> <span class="st">"Density"</span>, xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">30</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html" class="external-link">barplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">p</span><span class="op">[</span><span class="fl">7</span>, <span class="fl">12</span><span class="op">:</span><span class="fl">29</span><span class="op">]</span><span class="op">)</span>, names <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">18</span>,</span></span>
+<span class="r-in"><span>  xlab <span class="op">=</span> <span class="st">"D-score"</span>, ylab <span class="op">=</span> <span class="st">"Density"</span>,</span></span>
+<span class="r-in"><span>  main <span class="op">=</span> <span class="st">"Full D-score posterior for measurement in row 7"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="dscore-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>

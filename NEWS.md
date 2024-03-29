@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.5
+
+- `dscore()` and `dscore_posterior()` can now copy variables from the input `data` into the output through the `prepend` argument. (#46)
+- BREAKING CHANGE: `dscore_posterior()` now returns a `data.frame` with column names that indicate the quadrature point. This was an unnamed `matrix`. Code that expects a `matrix` as the return of `dscore_posterior()` may need to be adapted.
+
 # dscore 1.8.4
 
 - Per request from CRAN  (`Specified C++11: please drop specification unless essential`), removes a C++11 specification

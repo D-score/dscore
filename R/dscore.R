@@ -20,6 +20,9 @@
 #' @param xunit A string specifying the unit in which age is measured
 #' (either `"decimal"`, `"days"` or `"months"`).
 #' The default (`"decimal"`) means decimal age in years.
+#' @param prepend Character vector with column names in `data` that will
+#' be prepended to the returned data frame. This is useful for copying
+#' columns from data into the result, e.g., for matching.
 #' @param key A string that selects a subset in the itembank that
 #' makes up the key, the set of difficulty
 #' estimates from a fitted Rasch model.
@@ -75,8 +78,10 @@
 #' ignore the score on the item. The default is `c(-Inf, +Inf)` does not
 #' ignore scores.
 #' @return
-#' The `dscore()` function returns a `data.frame` with
-#' `nrow(data)` rows and the following columns:
+#' The `dscore()` function returns a `data.frame` with `nrow(data)` rows.
+#' Optionally, the first block of columns can be specified by `prepend`
+#' are copied from `data`. The second block consists of the
+#' following columns:
 #'
 #' Name | Label
 #' ---  | ---------
@@ -87,11 +92,13 @@
 #' `sem` | Standard error of measurement, standard deviation of the posterior
 #' `daz` | D-score corrected for age, calculated in Z-scale
 #'
-#' The `dscore_posterior()` function returns a numeric matrix with
-#' `nrow(data)` rows and `length(qp)` columns with the
-#' density at each quadrature point. The vector represents the full
-#' posterior ability distribution. If no valid responses were obtained,
-#' `dscore_posterior()` returns the prior.
+#' The `dscore_posterior()` function returns a data frame with
+#' `nrow(data)` rows and `length(qp)` plus prepended columns with the
+#' density at each quadrature point. A row vector representes the full
+#' posterior ability distribution. If no valid responses are found,
+#' `dscore_posterior()` returns the prior density. Versions prior to
+#' 1.8.5 returned a `matrix` (instead of a `data.frame`). Code that depends on
+#' the result being a `matrix` may break and needs to be adapted.
 #'
 #' @details
 #' The algorithm is based on the method by Bock and Mislevy (1982). The
@@ -152,12 +159,14 @@
 #' [builtin_references()]
 #' @examples
 #' data <- data.frame(
+#'   id = c("Jane", "Martin", "ID-3", "No. 4", "Five", "6",
+#'         NA_character_, as.character(8:10)),
 #'   age = rep(round(21 / 365.25, 4), 10),
 #'   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
 #'   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
 #'   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 #' )
-#' items <- names(data)[2:4]
+#' items <- names(data)[3:5]
 #'
 #' # third item is not part of default key
 #' get_tau(items)
@@ -165,17 +174,28 @@
 #' # calculate D-score
 #' dscore(data)
 #'
+#' # prepend id variable to output
+#' dscore(data, prepend = "id")
+#'
+#' # prepend all data
+#' # dscore(data, prepend = colnames(data))
+#'
 #' # calculate full posterior
 #' p <- dscore_posterior(data)
 #'
+#' # check that rows sum to 1
+#' rowSums(p)
+#'
 #' # plot posterior for row 7
-#' plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score",
-#'  ylab = "Density", xlim = c(0, 30))
+#' barplot(as.matrix(p[7, 12:29]), names = 1:18,
+#'   xlab = "D-score", ylab = "Density",
+#'   main = "Full D-score posterior for measurement in row 7")
 #' @export
 dscore <- function(data,
                    items = names(data),
                    xname = "age",
                    xunit = c("decimal", "days", "months"),
+                   prepend = NULL,
                    key = NULL,
                    itembank = dscore::builtin_itembank,
                    metric = c("dscore", "logit"),
@@ -191,6 +211,7 @@ dscore <- function(data,
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
+    prepend = prepend,
     key = key, itembank = itembank, metric = metric,
     prior_mean = prior_mean, prior_sd = prior_sd,
     transform = transform, qp = qp,
@@ -208,6 +229,7 @@ dscore_posterior <- function(data,
                              items = names(data),
                              xname = "age",
                              xunit = c("decimal", "days", "months"),
+                             prepend = NULL,
                              key = NULL,
                              itembank = dscore::builtin_itembank,
                              metric = c("dscore", "logit"),
@@ -223,7 +245,7 @@ dscore_posterior <- function(data,
   metric <- match.arg(metric)
 
   calc_dscore(
-    data = data, items = items, xname = xname, xunit = xunit,
+    data = data, items = items, xname = xname, xunit = xunit, prepend = prepend,
     key = key, itembank = itembank, metric = metric,
     prior_mean = prior_mean, prior_sd = prior_sd,
     transform = transform, qp = qp,
@@ -233,7 +255,7 @@ dscore_posterior <- function(data,
   )
 }
 
-calc_dscore <- function(data, items, xname, xunit,
+calc_dscore <- function(data, items, xname, xunit, prepend,
                         key, itembank, metric,
                         prior_mean, prior_sd,
                         transform, qp,
@@ -305,11 +327,11 @@ calc_dscore <- function(data, items, xname, xunit,
 
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
-  a <- switch(xunit,
-              decimal = round(data[[xname]], 4L),
-              months  = round(data[[xname]] / 12, 4L),
-              days    = round(data[[xname]] / 365.25, 4L),
-              rep(NA, nrow(data))
+  decage <- switch(xunit,
+                   decimal = round(data[[xname]], 4L),
+                   months  = round(data[[xname]] / 12, 4L),
+                   days    = round(data[[xname]] / 365.25, 4L),
+                   rep(NA, nrow(data))
   )
 
   # obtain difficulty estimates
@@ -327,7 +349,7 @@ calc_dscore <- function(data, items, xname, xunit,
   if (length(items) == 0L) {
     return(
       data.frame(
-        a = a,
+        a = decage,
         n = 0L,
         p = NA,
         d = NA,
@@ -340,11 +362,11 @@ calc_dscore <- function(data, items, xname, xunit,
   # initialise prior mean (mu)
   mu <- rep(NA, nrow(data))
   if (prior_mean == ".gcdg") {
-    mu <- count_mu_gcdg(a)
+    mu <- count_mu_gcdg(decage)
   } else if (prior_mean == ".dutch") {
-    mu <- count_mu_dutch(a)
+    mu <- count_mu_dutch(decage)
   } else if (prior_mean == ".phase1") {
-    mu <- count_mu_phase1(a)
+    mu <- count_mu_phase1(decage)
   } else if (prior_mean %in% names(data)) {
     mu <- data[[prior_mean]]
   }
@@ -365,7 +387,7 @@ calc_dscore <- function(data, items, xname, xunit,
 
   # bind difficulty estimates to data
   data2 <- data %>%
-    bind_cols(a = a) %>%
+    mutate(a = decage) %>%
     mutate(
       mu = mu,
       sd = sd,
@@ -398,6 +420,7 @@ calc_dscore <- function(data, items, xname, xunit,
     # unlist the posterior and store in proper row
     # return prior if calculate_posterior returned NULL
     data4 <- matrix(NA, nrow = nrow(data), ncol = length(qp))
+    colnames(data4) <- paste("qp", as.character(qp), sep = "_")
     for (i in seq_len(nrow(data4))) {
       idx <- data3[, ".rownum", drop = TRUE] == i
       f <- unlist(data3[idx, "w"])
@@ -410,7 +433,7 @@ calc_dscore <- function(data, items, xname, xunit,
         )
       }
     }
-    return(data4)
+    data5 <- as.data.frame(data4)
   }
 
   # if dscore() was called
@@ -453,6 +476,26 @@ calc_dscore <- function(data, items, xname, xunit,
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) %>%
       select(all_of(c("a", "n", "p", "d", "sem", "daz")))
-    return(data5)
   }
+
+  # prepend administrative variables from data
+  nfo <- setdiff(prepend, colnames(data))
+  if (length(nfo)) {
+    warning("Not found: ",
+            paste(nfo, collapse = ", "),
+            call. = FALSE)
+  }
+  adm <- intersect(colnames(data), prepend)
+  dup <- intersect(colnames(data5), adm)
+  if (length(dup)) {
+    warning("Overwrites column(s): ",
+            paste(dup, collapse = ", "),
+            call. = FALSE)
+    adm <- setdiff(adm, dup)
+  }
+  if (length(adm)) {
+    data5 <- data.frame(data[, adm, drop = FALSE], data5)
+  }
+
+  return(data5)
 }

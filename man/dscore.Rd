@@ -10,6 +10,7 @@ dscore(
   items = names(data),
   xname = "age",
   xunit = c("decimal", "days", "months"),
+  prepend = NULL,
   key = NULL,
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
@@ -27,6 +28,7 @@ dscore_posterior(
   items = names(data),
   xname = "age",
   xunit = c("decimal", "days", "months"),
+  prepend = NULL,
   key = NULL,
   itembank = dscore::builtin_itembank,
   metric = c("dscore", "logit"),
@@ -58,6 +60,10 @@ that have a difficulty parameter under the specified \code{key}.}
 \item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default (\code{"decimal"}) means decimal age in years.}
+
+\item{prepend}{Character vector with column names in \code{data} that will
+be prepended to the returned data frame. This is useful for copying
+columns from data into the result, e.g., for matching.}
 
 \item{key}{A string that selects a subset in the itembank that
 makes up the key, the set of difficulty
@@ -124,8 +130,10 @@ ignore the score on the item. The default is \code{c(-Inf, +Inf)} does not
 ignore scores.}
 }
 \value{
-The \code{dscore()} function returns a \code{data.frame} with
-\code{nrow(data)} rows and the following columns:\tabular{ll}{
+The \code{dscore()} function returns a \code{data.frame} with \code{nrow(data)} rows.
+Optionally, the first block of columns can be specified by \code{prepend}
+are copied from \code{data}. The second block consists of the
+following columns:\tabular{ll}{
    Name \tab Label \cr
    \code{a} \tab Decimal age \cr
    \code{n} \tab Number of items with valid (0/1) data \cr
@@ -136,11 +144,13 @@ The \code{dscore()} function returns a \code{data.frame} with
 }
 
 
-The \code{dscore_posterior()} function returns a numeric matrix with
-\code{nrow(data)} rows and \code{length(qp)} columns with the
-density at each quadrature point. The vector represents the full
-posterior ability distribution. If no valid responses were obtained,
-\code{dscore_posterior()} returns the prior.
+The \code{dscore_posterior()} function returns a data frame with
+\code{nrow(data)} rows and \code{length(qp)} plus prepended columns with the
+density at each quadrature point. A row vector representes the full
+posterior ability distribution. If no valid responses are found,
+\code{dscore_posterior()} returns the prior density. Versions prior to
+1.8.5 returned a \code{matrix} (instead of a \code{data.frame}). Code that depends on
+the result being a \code{matrix} may break and needs to be adapted.
 }
 \description{
 The function \code{dscore()} function estimates the D-score,
@@ -185,12 +195,14 @@ valid items, and uninformative for large number of items (say >10 items).
 }
 \examples{
 data <- data.frame(
+  id = c("Jane", "Martin", "ID-3", "No. 4", "Five", "6",
+        NA_character_, as.character(8:10)),
   age = rep(round(21 / 365.25, 4), 10),
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 )
-items <- names(data)[2:4]
+items <- names(data)[3:5]
 
 # third item is not part of default key
 get_tau(items)
@@ -198,12 +210,22 @@ get_tau(items)
 # calculate D-score
 dscore(data)
 
+# prepend id variable to output
+dscore(data, prepend = "id")
+
+# prepend all data
+# dscore(data, prepend = colnames(data))
+
 # calculate full posterior
 p <- dscore_posterior(data)
 
+# check that rows sum to 1
+rowSums(p)
+
 # plot posterior for row 7
-plot(x = -10:100, y = p[7, ], type = "l", xlab = "D-score",
- ylab = "Density", xlim = c(0, 30))
+barplot(as.matrix(p[7, 12:29]), names = 1:18,
+  xlab = "D-score", ylab = "Density",
+  main = "Full D-score posterior for measurement in row 7")
 }
 \references{
 Bock DD, Mislevy RJ (1982).

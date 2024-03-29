@@ -170,3 +170,22 @@ test_that("empty vector works with all keys", {
   expect_silent(dscore(scores, key = "gcdg"))
   expect_silent(dscore(scores, key = "gsed"))
 })
+
+# Variables to append
+n <- nrow(data)
+ids <- data.frame(id_chr = LETTERS[1:n],
+                  id_num = 128 + 1:n,
+                  a = NA_real_,
+                  d = rnorm(n))
+data2 <- data.frame(ids, data)
+
+test_that("prepend attaches two ID columns", {
+  expect_equal(ncol(dscore(data2, prepend = c("id_chr", "id_num"))), 2 + 6)
+})
+test_that("unknown variables names produce notfound warning", {
+  expect_warning(dscore(data2, prepend = c("idonotexist")), "Not found: idonotexist")
+})
+test_that("reserved names produce overwrite warning", {
+  expect_warning(dscore(data2, prepend = c("a", "d")))
+})
+

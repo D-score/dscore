@@ -96,3 +96,23 @@ Marcus Waldman, Susan Walker and Ann Weber). 2019. “The Global Scale
 for Early Development (GSED).” \emph{Early Childhood Matters}.
 \url{https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/d-score/dscore}
+  \item \url{https://d-score.org/dscore/}
+  \item \url{https://d-score.org/dbook1/}
+  \item Report bugs at \url{https://github.com/d-score/dscore/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Stef van Buuren \email{stef.vanbuuren@tno.nl}
+
+Authors:
+\itemize{
+  \item Iris Eekhout \email{iris.eekhout@tno.nl}
+  \item Arjan Huizing \email{arjan.huizing@tno.nl}
+}
+
+}

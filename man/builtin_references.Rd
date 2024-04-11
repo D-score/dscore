@@ -5,9 +5,9 @@
 \alias{builtin_references}
 \title{Age-conditional reference distribution of D-score}
 \format{
-A \code{data.frame} with 265 rows and 17 variables:\tabular{ll}{
+A \code{data.frame} with 18 variables:\tabular{ll}{
    Name \tab Label \cr
-   \code{pop} \tab Population, either \code{"dutch"}, \code{"gcdg"} or \code{"phase1"} \cr
+   \code{pop} \tab Population: \code{"dutch"}, \code{"gcdg"}, \code{"phase1"} or \code{"dutch_gsed2212"} \cr
    \code{age} \tab Decimal age in years \cr
    \code{mu} \tab M-curve, median D-score, P50 \cr
    \code{sigma} \tab S-curve, spread expressed as coefficient of variation \cr
@@ -47,6 +47,8 @@ GCDG-study, and cover age range 0-5 years (Weber, 2019).
 The \code{"phase1"} references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+The \code{"dutch_gsed2212"} references were calculated from Dutch data using
+the \code{gsed2212} key. This is a temporary name, and will be deprecated.
 }
 \examples{
 head(builtin_references)

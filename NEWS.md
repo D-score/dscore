@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.6
+
+- Adds reference `"dutch_gsed2212"` calculated from Dutch data using the "gsed2212" key. Note: This is a temporary name and will be deprecated.
+
 # dscore 1.8.5
 
 - `dscore()` and `dscore_posterior()` can now copy variables from the input `data` into the output through the `prepend` argument. (#46)

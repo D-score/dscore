@@ -23,7 +23,7 @@ known as DAZ."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.6</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@ known as DAZ.</p>
 
     <div id="format">
     <h2>Format</h2>
-    <p>A <code>data.frame</code> with 265 rows and 17 variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>pop</code></td><td>Population, either <code>"dutch"</code>, <code>"gcdg"</code> or <code>"phase1"</code></td></tr><tr><td><code>age</code></td><td>Decimal age in years</td></tr><tr><td><code>mu</code></td><td>M-curve, median D-score, P50</td></tr><tr><td><code>sigma</code></td><td>S-curve, spread expressed as coefficient of variation</td></tr><tr><td><code>nu</code></td><td>L-curve, the lambda coefficient of the LMS/BCT model for skewness</td></tr><tr><td><code>tau</code></td><td>Kurtosis parameter in the BCT model</td></tr><tr><td><code>P3</code></td><td>P3 percentile</td></tr><tr><td><code>P10</code></td><td>P10 percentile</td></tr><tr><td><code>P25</code></td><td>P25 percentile</td></tr><tr><td><code>P50</code></td><td>P50 percentile</td></tr><tr><td><code>P75</code></td><td>P75 percentile</td></tr><tr><td><code>P90</code></td><td>P90 percentile</td></tr><tr><td><code>P97</code></td><td>P97 percentile</td></tr><tr><td><code>SDM2</code></td><td>-2SD centile</td></tr><tr><td><code>SDM1</code></td><td>-1SD centile</td></tr><tr><td><code>SD0</code></td><td>0SD centile, median</td></tr><tr><td><code>SDP1</code></td><td>+1SD centile</td></tr><tr><td><code>SDP2</code></td><td>+2SD centile</td></tr></table></div>
+    <p>A <code>data.frame</code> with 18 variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>pop</code></td><td>Population: <code>"dutch"</code>, <code>"gcdg"</code>, <code>"phase1"</code> or <code>"dutch_gsed2212"</code></td></tr><tr><td><code>age</code></td><td>Decimal age in years</td></tr><tr><td><code>mu</code></td><td>M-curve, median D-score, P50</td></tr><tr><td><code>sigma</code></td><td>S-curve, spread expressed as coefficient of variation</td></tr><tr><td><code>nu</code></td><td>L-curve, the lambda coefficient of the LMS/BCT model for skewness</td></tr><tr><td><code>tau</code></td><td>Kurtosis parameter in the BCT model</td></tr><tr><td><code>P3</code></td><td>P3 percentile</td></tr><tr><td><code>P10</code></td><td>P10 percentile</td></tr><tr><td><code>P25</code></td><td>P25 percentile</td></tr><tr><td><code>P50</code></td><td>P50 percentile</td></tr><tr><td><code>P75</code></td><td>P75 percentile</td></tr><tr><td><code>P90</code></td><td>P90 percentile</td></tr><tr><td><code>P97</code></td><td>P97 percentile</td></tr><tr><td><code>SDM2</code></td><td>-2SD centile</td></tr><tr><td><code>SDM1</code></td><td>-1SD centile</td></tr><tr><td><code>SD0</code></td><td>0SD centile, median</td></tr><tr><td><code>SDP1</code></td><td>+1SD centile</td></tr><tr><td><code>SDP2</code></td><td>+2SD centile</td></tr></table></div>
     <div id="details">
     <h2>Details</h2>
     <p>The <code>"dutch"</code> references were calculated from the SMOCC data, and cover
@@ -92,7 +92,9 @@ The <code>"gcdg"</code> references were calculated from the 15 cohorts of the
 GCDG-study, and cover age range 0-5 years (Weber, 2019).
 The <code>"phase1"</code> references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
-age range 3.5-5 yrs is linearly extrapolated and are only indicative.</p>
+age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+The <code>"dutch_gsed2212"</code> references were calculated from Dutch data using
+the <code>gsed2212</code> key. This is a temporary name, and will be deprecated.</p>
     </div>
     <div id="references">
     <h2>References</h2>

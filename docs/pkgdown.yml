@@ -1,10 +1,10 @@
-pandoc: 3.1.1
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   getting_started: getting_started.html
   scoring_GSED: scoring_GSED.html
-last_built: 2024-04-11T15:48Z
+last_built: 2024-05-23T13:32Z
 urls:
   reference: https://d-score.github.io/dscore/reference
   article: https://d-score.github.io/dscore/articles

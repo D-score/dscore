@@ -10,7 +10,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lif
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.8.6-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.8.7-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The *D*-score is a numerical score that measures generic development in
@@ -115,7 +115,8 @@ Waldman, Susan P. Walker, Ann M. Weber and Aisha K. Yousafzai.
 
 ### Literature
 
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
 
 <div id="ref-fernald2017" class="csl-entry">
 

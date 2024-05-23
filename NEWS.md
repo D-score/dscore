@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.7
+
+- Adds new reference `"phase1_healthy"` calculated from selective subsample of the GSED Phase 1 data using the "gsed2212" key. This reference is based on the same data as the `"phase1"` reference, but only includes children who were developing well at the time of the assessment. This reference is intended for use in studies where the population of interest is healthy children. Note: This is a temporary name and will be deprecated.
+
 # dscore 1.8.6
 
 - Adds reference `"dutch_gsed2212"` calculated from Dutch data using the "gsed2212" key. Note: This is a temporary name and will be deprecated.

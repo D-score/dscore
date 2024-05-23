@@ -51,6 +51,7 @@ reference:
       - count_mu_dutch
       - count_mu_gcdg
       - count_mu_phase1
+      - count_mu_phase1_healthy
       - posterior
       - normalize
   - title: "Datasets"

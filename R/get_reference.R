@@ -4,8 +4,8 @@
 #' distribution.
 #'
 #' @param population A string describing the population. Currently supported
-#' are `"dutch"`, `"gcdg"` and `"phase1"`. The default is `"phase1"`, in sync
-#' with the default `key = "gsed"`.
+#' are `"dutch"`, `"gcdg"`, `"phase1"` or `"phase1_health"`.
+#' The default is `"phase1"`, in sync with the default `key = "gsed"`.
 #' @param references A `data.frame` with the same structure
 #' as `builtin_references`. The default is to use
 #' `builtin_references`.
@@ -20,6 +20,8 @@
 #' The `"phase1"` references were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 #' age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+#' The `"phase1_healthy"` references were calculated from the GSED Phase 1 validation
+#' using a subset of children with healthy development.
 #' @references
 #' Van Buuren S (2014). Growth charts of human development.
 #' Stat Methods Med Res, 23(4), 346-368.

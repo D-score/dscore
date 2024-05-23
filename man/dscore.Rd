@@ -89,7 +89,8 @@ default.}
 \item{prior_mean}{A string specifying where the mean of the
 prior for the D-score calculation should come from. It could be
 a column name in \code{data} (when you want your own prior for every row),
-but normally this is one of the keywords \code{".dutch"}, \code{".gcdg"} or \code{".phase1"}.
+but normally this is one of the keywords \code{".dutch"}, \code{".gcdg"}
+or \code{".phase1"}.
 The default depends on the \code{key}. If \code{key == "dutch"} then
 \code{prior_mean = ".dutch"}. The choice \code{prior_mean = ".dutch"}
 calculates \code{prior_mean} from the Count model coded in
@@ -97,8 +98,10 @@ calculates \code{prior_mean} from the Count model coded in
 If \code{key} is #' \code{"gcdg"}, \code{"gsed1912"},
 \code{"gsed2206"}, \code{"lf2206"} or \code{"sf2206"} then \code{prior_mean = ".gcdg"}.
 This setting calculates an age-dependent prior mean internally according
-to function \code{dscore:::count_mu_gcdg()}. In other cases, \code{prior_mean = ".phase1"}
-which uses the function \code{dscore:::count_mu_phase1()}.
+to function \code{dscore:::count_mu_gcdg()}.
+In other cases, \code{prior_mean = ".phase1"}
+which uses the function \code{dscore:::count_mu_phase1()} or
+\code{dscore:::count_mu_phase1_healthy()}.
 Normally, you should not touch this parameter, but feel free to use
 \code{prior_mean} to override the automatic choices.}
 

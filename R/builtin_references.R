@@ -13,7 +13,8 @@
 #'
 #' | Name | Label |
 #' | --- | --------- |
-#' | `pop` | Population: `"dutch"`, `"gcdg"`, `"phase1"` or `"dutch_gsed2212"` |
+#' | `pop` | Population: `"dutch"`, `"gcdg"`, `"phase1"`, `"phase1_healthy"`,
+#'          `"dutch_gsed2212"` |
 #' | `age` | Decimal age in years |
 #' | `mu`  | M-curve, median D-score, P50 |
 #' | `sigma` | S-curve, spread expressed as coefficient of variation |
@@ -40,6 +41,9 @@
 #' The `"phase1"` references were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 #' age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+#' The `"phase1_healthy"` references were calculated from the GSED Phase 1 validation
+#' data (GSED-BGD, GSED-PAK, GSED-TZA) using a subset of children with
+#' healthy development.
 #' The `"dutch_gsed2212"` references were calculated from Dutch data using
 #' the `gsed2212` key. This is a temporary name, and will be deprecated.
 #' @examples

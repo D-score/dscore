@@ -44,7 +44,8 @@
 #' @param prior_mean A string specifying where the mean of the
 #' prior for the D-score calculation should come from. It could be
 #' a column name in `data` (when you want your own prior for every row),
-#' but normally this is one of the keywords `".dutch"`, `".gcdg"` or `".phase1"`.
+#' but normally this is one of the keywords `".dutch"`, `".gcdg"`
+#' or `".phase1"`.
 #' The default depends on the `key`. If `key == "dutch"` then
 #' `prior_mean = ".dutch"`. The choice `prior_mean = ".dutch"`
 #' calculates `prior_mean` from the Count model coded in
@@ -52,8 +53,10 @@
 #' If `key` is #' `"gcdg"`, `"gsed1912"`,
 #' `"gsed2206"`, `"lf2206"` or `"sf2206"` then `prior_mean = ".gcdg"`.
 #' This setting calculates an age-dependent prior mean internally according
-#' to function `dscore:::count_mu_gcdg()`. In other cases, `prior_mean = ".phase1"`
-#' which uses the function `dscore:::count_mu_phase1()`.
+#' to function `dscore:::count_mu_gcdg()`.
+#' In other cases, `prior_mean = ".phase1"`
+#' which uses the function `dscore:::count_mu_phase1()` or
+#' `dscore:::count_mu_phase1_healthy()`.
 #' Normally, you should not touch this parameter, but feel free to use
 #' `prior_mean` to override the automatic choices.
 #' @param prior_sd A string specifying a column name in `data`
@@ -287,6 +290,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   if (is.null(prior_mean)) {
     prior_mean <- switch(population,
                          phase1 = ".phase1",
+                         phase1_health = ".phase1_healthy",
                          gcdg = ".gcdg",
                          dutch = ".dutch",
                          "other")
@@ -367,6 +371,8 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
     mu <- count_mu_dutch(decage)
   } else if (prior_mean == ".phase1") {
     mu <- count_mu_phase1(decage)
+  } else if (prior_mean == ".phase1_healthy") {
+    mu <- count_mu_phase1_healthy(decage)
   } else if (prior_mean %in% names(data)) {
     mu <- data[[prior_mean]]
   }

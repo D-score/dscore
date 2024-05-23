@@ -8,8 +8,8 @@ get_reference(population = "phase1", references = dscore::builtin_references)
 }
 \arguments{
 \item{population}{A string describing the population. Currently supported
-are \code{"dutch"}, \code{"gcdg"} and \code{"phase1"}. The default is \code{"phase1"}, in sync
-with the default \code{key = "gsed"}.}
+are \code{"dutch"}, \code{"gcdg"}, \code{"phase1"} or \code{"phase1_health"}.
+The default is \code{"phase1"}, in sync with the default \code{key = "gsed"}.}
 
 \item{references}{A \code{data.frame} with the same structure
 as \code{builtin_references}. The default is to use
@@ -33,6 +33,8 @@ observations (Weber, 2019).
 The \code{"phase1"} references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+The \code{"phase1_healthy"} references were calculated from the GSED Phase 1 validation
+using a subset of children with healthy development.
 }
 \references{
 Van Buuren S (2014). Growth charts of human development.

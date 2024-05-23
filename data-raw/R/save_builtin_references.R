@@ -65,7 +65,7 @@ ref_dutchgsed <- read.delim(file = f4) %>%
          SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 # ------------- phase1 references for subset of healthy participants
-ref_phase1healthy <- read.delim(file = f5) %>%
+ref_phase1_healthy <- read.delim(file = f5) %>%
   mutate(pop = "phase1_healthy",
          P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
          P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
@@ -81,7 +81,7 @@ ref_phase1healthy <- read.delim(file = f5) %>%
          SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 # save to /data
-builtin_references <- bind_rows(ref_dutch, ref_gcdg, ref_phase1, ref_phase1healthy, ref_dutchgsed) %>%
+builtin_references <- bind_rows(ref_dutch, ref_gcdg, ref_phase1, ref_phase1_healthy, ref_dutchgsed) %>%
   rename(age = year) %>%
   dplyr::select(
     pop, age, mu, sigma, nu, tau,

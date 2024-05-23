@@ -57,7 +57,7 @@ daz <- function(d, x, reference = get_reference(), dec = 3) {
     )
   }
 
-  if (pop %in% c("phase1")) {
+  if (pop %in% c("phase1", "phase1_healthy")) {
     # BCT reference
     mu <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
     sigma <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
@@ -103,7 +103,7 @@ zad <- function(z, x, reference = get_reference(), dec = 2) {
                 mu * exp(sigma * z))
   }
 
-  if (pop %in% c("phase1")) {
+  if (pop %in% c("phase1", "phase1_healthy")) {
     # BCT reference
     mu <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
     sigma <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y

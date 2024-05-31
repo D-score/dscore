@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.8
+
 - BREAKING CHANGE: Adds an `algorithm` argument to `dscore()` and `dscore_posterior()` to select the algorithm used to calculate the D-score. The default algorithm, called `"current"`, correctly uses a scale factor of 1 for calculation in the logistic metric. Previously, a scale factor of 1 was errroneously applied to the D-score metric. The current algorithm results in different D-score estimates and higher SEM estimates, but is preferred to the former method. For backward-compatibility to `dscore 1.8.7` and earlier, use `algorithm = "1.8.7"`.
 
 # dscore 1.8.7

@@ -18,7 +18,7 @@ dynamic EAP, the procedure ignores the score of item j."><!-- mathjax --><script
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.8</span>
       </span>
     </div>
 
@@ -68,7 +68,7 @@ dynamic EAP, the procedure ignores the score of item j.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calculate_posterior</span><span class="op">(</span><span class="va">scores</span>, <span class="va">tau</span>, <span class="va">qp</span>, <span class="va">mu</span>, <span class="va">sd</span>, <span class="va">relhi</span>, <span class="va">rello</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calculate_posterior</span><span class="op">(</span><span class="va">scores</span>, <span class="va">tau</span>, <span class="va">qp</span>, <span class="va">scale</span>, <span class="va">mu</span>, <span class="va">sd</span>, <span class="va">relhi</span>, <span class="va">rello</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -86,6 +86,10 @@ preferred metric/scale.</p></dd>
 
 <dt>qp</dt>
 <dd><p>Numeric vector of equally spaced quadrature points.</p></dd>
+
+
+<dt>scale</dt>
+<dd><p>Scale expansion</p></dd>
 
 
 <dt>mu</dt>

@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+- BREAKING CHANGE: Adds an `algorithm` argument to `dscore()` and `dscore_posterior()` to select the algorithm used to calculate the D-score. The default algorithm, called `"current"`, correctly uses a scale factor of 1 for calculation in the logistic metric. Previously, a scale factor of 1 was errroneously applied to the D-score metric. The current algorithm results in different D-score estimates and higher SEM estimates, but is preferred to the former method. For backward-compatibility to `dscore 1.8.7` and earlier, use `algorithm = "1.8.7"`.
+
 # dscore 1.8.7
 
 - Adds new reference `"phase1_healthy"` calculated from selective subsample of the GSED Phase 1 data using the "gsed2212" key. This reference is based on the same data as the `"phase1"` reference, but only includes children who were developing well at the time of the assessment. This reference is intended for use in studies where the population of interest is healthy children. Note: This is a temporary name and will be deprecated.

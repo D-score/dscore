@@ -41,6 +41,7 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 //' @param tau Numeric, difficulty parameter
 //' @param prior Vector of prior values on quadrature points `qp`
 //' @param qp vector of equally spaced quadrature points
+//' @param scale expansion relative to the logit scale
 //' @return A vector of length `length(prior)`
 //' @author Stef van Buuren, Arjan Huizing, 2020
 //' @note: Internal function
@@ -48,14 +49,14 @@ NumericVector normalize(NumericVector d, NumericVector qp) {
 // [[Rcpp::export]]
 NumericVector posterior(int score, double tau,
                         NumericVector prior,
-                        NumericVector qp){
+                        NumericVector qp,
+                        double scale) {
 
   NumericVector cpc;
   score += 1;
   if((score < 1) | (score > 2)){stop("score out-of-range.");}
 
   // compute category respones probability under 1PL model
-  double scale = qp(1) - qp(0);
   NumericVector p = plogis(qp, tau, scale);
 
   if(score == 1){
@@ -99,6 +100,7 @@ double wmean(NumericVector x, NumericVector w) {
 //' scores in `scores` estimated from the Rasch model in the
 //' preferred metric/scale.
 //' @param qp Numeric vector of equally spaced quadrature points.
+//' @param scale Scale expansion
 //' @param mu Numeric scalar. The mean of the prior.
 //' @param sd Numeric scalar. Standard deviation of the prior.
 //' @param relhi Positive numeric scalar. Upper end of the relevance interval
@@ -117,6 +119,7 @@ double wmean(NumericVector x, NumericVector w) {
 List calculate_posterior(NumericVector scores,
                           NumericVector tau,
                           NumericVector qp,
+                          double scale,
                           double mu, double sd,
                           double relhi, double rello){
 
@@ -150,7 +153,7 @@ List calculate_posterior(NumericVector scores,
 
     // calculate posterior
     prior = post;
-    post = posterior(score, tauj, prior, qp);
+    post = posterior(score, tauj, prior, qp, scale);
 
     // store posterior and eap estimate
     fullpost["posterior"] = post;

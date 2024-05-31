@@ -9,7 +9,7 @@ data <- data.frame(
 )
 
 # default key: "gsed" (currently points to "gsed2212", population "phase1")
-z <- dscore(data)
+z <- dscore(data, algorithm = "1.8.7")
 expected_d <- c(NA, NA, 6.61, 5.60, 9.09, 9.09, 9.09, 9.09, 15.30, 15.30)
 expected_daz <- c(NA, NA, -2.019, -2.235, -1.447, -1.447, -1.447, -1.447, 0.277, 0.277)
 test_that("produces expected D-scores - key gsed", {
@@ -18,27 +18,27 @@ test_that("produces expected D-scores - key gsed", {
 })
 
 # explicit key "gsed2212"
-z <- dscore(data, key = "gsed2212")
+z <- dscore(data, key = "gsed2212", algorithm = "1.8.7")
 test_that("produces expected D-scores - key gsed2212", {
   expect_identical(z$d, expected_d)
   expect_identical(z$daz, expected_daz)
 })
 
-z1 <- dscore(data, key = "dutch")
+z1 <- dscore(data, key = "dutch", algorithm = "1.8.7")
 expected_d1 <- c(NA, -1.87, -1.94, 1.26, 1.26, 1.26, 4.63, 4.63,
                  4.63, 12.06)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z1$d, expected_d1)
 })
 
-z2 <- dscore(data, key = "gcdg")
+z2 <- dscore(data, key = "gcdg", algorithm = "1.8.7")
 expected_d2 <- c(NA, NA, 3.47, 0.96, 4.83, 4.83, 4.83, 4.83,
                  11.81, 11.81)
 test_that("produces expected D-scores - key gcdg", {
   expect_identical(z2$d, expected_d2)
 })
 
-z3 <- dscore(data, key = "gsed2206")
+z3 <- dscore(data, key = "gsed2206", algorithm = "1.8.7")
 expected_d3 <- c(NA, NA, 3.46, 0.96, 4.82, 4.82, 4.82, 4.82,
                  11.81, 11.81)
 test_that("produces expected D-scores - key gsed", {
@@ -47,33 +47,35 @@ test_that("produces expected D-scores - key gsed", {
 
 # subset by items
 items <- c("ddifmd001", "ddicmm029", "ddigmd053")
-z4 <- dscore(data, items = items, key = "dutch")
+z4 <- dscore(data, items = items, key = "dutch", algorithm = "1.8.7")
 expected_d4 <- expected_d1
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z4$d, expected_d4)
 })
 
-z5 <- dscore(data, items = items[1:2], key = "dutch")
+z5 <- dscore(data, items = items[1:2], key = "dutch", algorithm = "1.8.7")
 expected_d5 <- c(NA, NA, 3.53, 0.59, 4.61, 4.61, 4.61, 4.61,
                  12.06, 12.06)
 test_that("produces expected D-scores - key dutch", {
   expect_identical(z5$d, expected_d5)
 })
 
-z6 <- dscore(data, items = items[1:2], key = "gsed2206")
+z6 <- dscore(data, items = items[1:2], key = "gsed2206", algorithm = "1.8.7")
 expected_d6 <- expected_d3
 test_that("produces expected D-scores", {
   expect_identical(z6$d, expected_d6)
 })
 
-z7 <- dscore(data, items = c(items[1:2], "junk"), key = "gsed2206")
+z7 <- dscore(data, items = c(items[1:2], "junk"), key = "gsed2206",
+             algorithm = "1.8.7")
 expected_d7 <- expected_d3
 test_that("produces expected D-scores", {
   expect_identical(z7$d, expected_d7)
 })
 
 test_that("Silently handles outside item code", {
-  expect_silent(dscore(data, items = c(items[1:2], "gpagmc013"), key = "gsed2206"))
+  expect_silent(dscore(data, items = c(items[1:2], "gpagmc013"), key = "gsed2206",
+                       algorithm = "1.8.7"))
 })
 
 
@@ -103,23 +105,67 @@ data <- data.frame(
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 )
-
-transform <- c(0, 2)
 keyd <- data.frame(key = "temp",
                    item = items,
                    tau = get_tau(items = items, key = "dutch"))
 
+# externally specified transformation
+transform <- c(38.906, 2.1044)
+# transform <- c(0, 1)
+# transform <- c(0, 2)
+# transform <- c(50, 3)
+
+algorithm <- "1.8.7"
 zd <- dscore(data, items = items, dec = 4, metric = "dscore",
-             itembank = keyd, key = "temp", population = "dutch")
-
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = transform, algorithm = algorithm)
 zl <- dscore(data, items = items, dec = 4, metric = "logit",
-             transform = transform,
-             itembank = keyd, key = "temp", population = "dutch")
-
-test_that("logit and dscore are identical", {
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = transform, algorithm = algorithm)
+test_that("logit and dscore are identical (1.8.7)", {
   expect_equal(zl$d, (zd$d - transform[1])/transform[2], tolerance = 0.001)
   expect_equal(zl$d*transform[2] + transform[1], zd$d, tolerance = 0.001)
 })
+
+algorithm <- "current"
+zd <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = transform, algorithm = algorithm)
+zl <- dscore(data, items = items, dec = 4, metric = "logit",
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = transform, algorithm = algorithm)
+test_that("logit and dscore are identical (current)", {
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2], tolerance = 0.001)
+  expect_equal(zl$d*transform[2] + transform[1], zd$d, tolerance = 0.001)
+})
+
+# calls with NULL transform
+transform <- c(38.906, 2.1044)
+
+algorithm <- "1.8.7"
+zd <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = NULL, algorithm = algorithm)
+zl <- dscore(data, items = items, dec = 4, metric = "logit",
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = NULL, algorithm = algorithm)
+test_that("logit and dscore are identical (1.8.7)", {
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2], tolerance = 0.001)
+  expect_equal(zl$d*transform[2] + transform[1], zd$d, tolerance = 0.001)
+})
+
+algorithm <- "current"
+zd <- dscore(data, items = items, dec = 4, metric = "dscore",
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = NULL, algorithm = algorithm)
+zl <- dscore(data, items = items, dec = 4, metric = "logit",
+             itembank = keyd, key = "temp", population = "dutch",
+             transform = NULL, algorithm = algorithm)
+test_that("logit and dscore are identical (current)", {
+  expect_equal(zl$d, (zd$d - transform[1])/transform[2], tolerance = 0.001)
+  expect_equal(zl$d*transform[2] + transform[1], zd$d, tolerance = 0.001)
+})
+
 
 # check prior mean
 data <- cbind(data, start = rep(c(0, 10), times = 5))

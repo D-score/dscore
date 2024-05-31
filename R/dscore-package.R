@@ -89,10 +89,10 @@
 #' Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K.
 #' Yousafzai.
 #'
-#' @name dscore-package
-#' @docType package
+#' @name dscore
 #' @aliases dscore-package
-NULL
+#' @keywords package
+"_PACKAGE"
 
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!

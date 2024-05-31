@@ -64,8 +64,7 @@
 #' If not specified, the standard deviation is taken as 5 for every row.
 #' @param transform Vector of length 2, signalling the intercept
 #' and slope respectively of the linear transform that converts an
-#' observation in the logit scale to the the D-score scale. Only
-#' needed if `metric == "logit"`.
+#' observation in the logit scale to the the D-score scale.
 #' @param qp Numeric vector of equally spaced quadrature points.
 #' This vector should span the range of all D-score values. The default
 #' (`qp = -10:100`) is suitable for age range 0-4 years.
@@ -80,6 +79,8 @@
 #' next item is outside the relevance interval around EAP, the procedure
 #' ignore the score on the item. The default is `c(-Inf, +Inf)` does not
 #' ignore scores.
+#' @param algorithm Computational method, for backward compatibility.
+#' Either `"current"` (default) or `"1.8.7"` (deprecated).
 #' @return
 #' The `dscore()` function returns a `data.frame` with `nrow(data)` rows.
 #' Optionally, the first block of columns can be specified by `prepend`
@@ -208,9 +209,11 @@ dscore <- function(data,
                    qp = -10:100,
                    population = NULL,
                    dec = c(2L, 3L),
-                   relevance = c(-Inf, Inf)) {
+                   relevance = c(-Inf, Inf),
+                   algorithm = c("current", "1.8.7")) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
+  algorithm <- match.arg(algorithm)
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit,
@@ -220,7 +223,8 @@ dscore <- function(data,
     transform = transform, qp = qp,
     population = population, dec = dec,
     posterior = FALSE,
-    relevance = relevance
+    relevance = relevance,
+    algorithm = algorithm
   )
 }
 
@@ -242,10 +246,12 @@ dscore_posterior <- function(data,
                              qp = -10:100,
                              population = NULL,
                              dec = c(2L, 3L),
-                             relevance = c(-Inf, Inf)) {
+                             relevance = c(-Inf, Inf),
+                             algorithm = c("current", "1.8.7")) {
 
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
+  algorithm <- match.arg(algorithm)
 
   calc_dscore(
     data = data, items = items, xname = xname, xunit = xunit, prepend = prepend,
@@ -254,7 +260,8 @@ dscore_posterior <- function(data,
     transform = transform, qp = qp,
     population = population, dec = dec,
     posterior = TRUE,
-    relevance = relevance
+    relevance = relevance,
+    algorithm = algorithm
   )
 }
 
@@ -264,7 +271,8 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
                         transform, qp,
                         population, dec,
                         posterior,
-                        relevance) {
+                        relevance,
+                        algorithm) {
   stopifnot(length(relevance) == 2L)
 
   # set default key
@@ -301,7 +309,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   }
 
   # set default transform if needed
-  if (is.null(transform) && metric == "logit") {
+  if (is.null(transform)) {
     transform <- switch(population,
                         phase1 = c(54.939147, 4.064264),
                         gcdg = c(66.174355, 2.073871),
@@ -383,12 +391,22 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   if (is.character(prior_sd) && prior_sd %in% names(data))
     sd <- data[[prior_sd]]
 
+  # In D-score scale, set scale expansion
+  scale <- switch(algorithm,
+                  "current" = transform[2L],
+                  "1.8.7" = 1,
+                  transform[2L])
+
   # setup for logit scale
   if (metric == "logit") {
     ib$tau <- (ib$tau - transform[1L]) / transform[2L]
     qp <- (qp - transform[1L]) / transform[2L]
     mu <- (mu - transform[1L]) / transform[2L]
     sd <- sd / transform[2L]
+    scale <- switch(algorithm,
+                    "current" = 1,
+                    "1.8.7" = 1 / transform[2],
+                    1)
   }
 
   # bind difficulty estimates to data
@@ -416,6 +434,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
           scores = .data$score,
           tau = .data$tau,
           qp = qp,
+          scale = scale[1L],
           mu = (.data$mu)[1L],
           sd = (.data$sd)[1L],
           relhi = relevance[2L],
@@ -455,6 +474,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
           scores = .data$score,
           tau = .data$tau,
           qp = qp,
+          scale = scale[1L],
           mu = (.data$mu)[1L],
           sd = (.data$sd)[1L],
           relhi = relevance[2L],

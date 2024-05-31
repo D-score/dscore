@@ -24,8 +24,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // posterior
-NumericVector posterior(int score, double tau, NumericVector prior, NumericVector qp);
-RcppExport SEXP _dscore_posterior(SEXP scoreSEXP, SEXP tauSEXP, SEXP priorSEXP, SEXP qpSEXP) {
+NumericVector posterior(int score, double tau, NumericVector prior, NumericVector qp, double scale);
+RcppExport SEXP _dscore_posterior(SEXP scoreSEXP, SEXP tauSEXP, SEXP priorSEXP, SEXP qpSEXP, SEXP scaleSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -33,32 +33,34 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type prior(priorSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type qp(qpSEXP);
-    rcpp_result_gen = Rcpp::wrap(posterior(score, tau, prior, qp));
+    Rcpp::traits::input_parameter< double >::type scale(scaleSEXP);
+    rcpp_result_gen = Rcpp::wrap(posterior(score, tau, prior, qp, scale));
     return rcpp_result_gen;
 END_RCPP
 }
 // calculate_posterior
-List calculate_posterior(NumericVector scores, NumericVector tau, NumericVector qp, double mu, double sd, double relhi, double rello);
-RcppExport SEXP _dscore_calculate_posterior(SEXP scoresSEXP, SEXP tauSEXP, SEXP qpSEXP, SEXP muSEXP, SEXP sdSEXP, SEXP relhiSEXP, SEXP relloSEXP) {
+List calculate_posterior(NumericVector scores, NumericVector tau, NumericVector qp, double scale, double mu, double sd, double relhi, double rello);
+RcppExport SEXP _dscore_calculate_posterior(SEXP scoresSEXP, SEXP tauSEXP, SEXP qpSEXP, SEXP scaleSEXP, SEXP muSEXP, SEXP sdSEXP, SEXP relhiSEXP, SEXP relloSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type scores(scoresSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type tau(tauSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type qp(qpSEXP);
+    Rcpp::traits::input_parameter< double >::type scale(scaleSEXP);
     Rcpp::traits::input_parameter< double >::type mu(muSEXP);
     Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
     Rcpp::traits::input_parameter< double >::type relhi(relhiSEXP);
     Rcpp::traits::input_parameter< double >::type rello(relloSEXP);
-    rcpp_result_gen = Rcpp::wrap(calculate_posterior(scores, tau, qp, mu, sd, relhi, rello));
+    rcpp_result_gen = Rcpp::wrap(calculate_posterior(scores, tau, qp, scale, mu, sd, relhi, rello));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_dscore_normalize", (DL_FUNC) &_dscore_normalize, 2},
-    {"_dscore_posterior", (DL_FUNC) &_dscore_posterior, 4},
-    {"_dscore_calculate_posterior", (DL_FUNC) &_dscore_calculate_posterior, 7},
+    {"_dscore_posterior", (DL_FUNC) &_dscore_posterior, 5},
+    {"_dscore_calculate_posterior", (DL_FUNC) &_dscore_calculate_posterior, 8},
     {NULL, NULL, 0}
 };
 

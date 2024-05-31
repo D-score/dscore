@@ -4,7 +4,7 @@
 \alias{calculate_posterior}
 \title{Calculate posterior of ability}
 \usage{
-calculate_posterior(scores, tau, qp, mu, sd, relhi, rello)
+calculate_posterior(scores, tau, qp, scale, mu, sd, relhi, rello)
 }
 \arguments{
 \item{scores}{A vector with PASS/FAIL observations.
@@ -15,6 +15,8 @@ scores in \code{scores} estimated from the Rasch model in the
 preferred metric/scale.}
 
 \item{qp}{Numeric vector of equally spaced quadrature points.}
+
+\item{scale}{Scale expansion}
 
 \item{mu}{Numeric scalar. The mean of the prior.}
 

@@ -4,9 +4,9 @@ citEntry(
   entry    = "Manual",
   title    = "D-score for Child Development",
   author   = as.person("S. van Buuren [aut], I. Eekhout [aut], A. Huizing [aut]"),
-  year     = "2020",
-  note     = "R package version 1.0.0",
+  year     = "2024",
+  note     = "R package version 1.9.0",
   url      = "https://github.com/d-score/dscore",
   key      = "dscore-package",
-  textVersion =  "Van Buuren S, Eekhout I, Huizing A (2020). D-score for Child Development. The dscore R package, version 1.0.0."
+  textVersion =  "Van Buuren S, Eekhout I, Huizing A (2024). D-score for Child Development. The dscore R package, version 1.9.0."
 )

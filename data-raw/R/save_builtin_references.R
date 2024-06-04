@@ -10,11 +10,11 @@ f4 <- file.path(path, "Dutch_gsed2212.txt")
 f5 <- file.path(path, "phase1_healthy.txt")
 
 # ------------- dutch references
-ref_dutch <- read.delim(file = f1) %>%
+ref_dutch <- read.delim(file = f1) |>
   mutate(pop = "dutch")
 
 # ------------- gcdg references
-ref_gcdg <- read.delim(file = f2) %>%
+ref_gcdg <- read.delim(file = f2) |>
   mutate(pop = "gcdg")
 # using the fact that gcdg_reference is a normal model
 # add percentiles/SD lines
@@ -32,7 +32,7 @@ colnames(p) <- c(
 ref_gcdg <- bind_cols(ref_gcdg, data.frame(p))
 
 # ------------- phase1 references
-ref_phase1 <- read.delim(file = f3) %>%
+ref_phase1 <- read.delim(file = f3) |>
   mutate(pop = "phase1",
          P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
          P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
@@ -49,7 +49,7 @@ ref_phase1 <- read.delim(file = f3) %>%
   )
 
 # ------------- Dutch references for gsed2212 key
-ref_dutchgsed <- read.delim(file = f4) %>%
+ref_dutchgsed <- read.delim(file = f4) |>
   mutate(pop = "dutch_gsed2212",
          P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
          P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
@@ -65,7 +65,7 @@ ref_dutchgsed <- read.delim(file = f4) %>%
          SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 # ------------- phase1 references for subset of healthy participants
-ref_phase1_healthy <- read.delim(file = f5) %>%
+ref_phase1_healthy <- read.delim(file = f5) |>
   mutate(pop = "phase1_healthy",
          P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
          P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
@@ -81,8 +81,8 @@ ref_phase1_healthy <- read.delim(file = f5) %>%
          SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 # save to /data
-builtin_references <- bind_rows(ref_dutch, ref_gcdg, ref_phase1, ref_phase1_healthy, ref_dutchgsed) %>%
-  rename(age = year) %>%
+builtin_references <- bind_rows(ref_dutch, ref_gcdg, ref_phase1, ref_phase1_healthy, ref_dutchgsed) |>
+  rename(age = year) |>
   dplyr::select(
     pop, age, mu, sigma, nu, tau,
     P3, P10, P25, P50, P75, P90, P97,

@@ -99,12 +99,12 @@ The extensions for Mullen were added to the "`"gsed1912"` key. The extension was
 
 ```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE}
 library(dscore)
-ib <- builtin_itembank %>% 
-  filter(key == "gsed2212") %>% 
+ib <- builtin_itembank |> 
+  filter(key == "gsed2212") |> 
   mutate(a = get_age_equivalent(items = item, pct = 50, 
                                 itembank = builtin_itembank)$a,
-         a = a * 12) %>% 
-  select(a, instrument, label) %>% 
+         a = a * 12) |> 
+  select(a, instrument, label) |> 
   na.omit()
   
 ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
@@ -150,7 +150,7 @@ The `dscore` package can recognise `r nrow(dscore::builtin_itemtable)` item name
 ```{r table}
 items <- get_itemnames()
 din <- decompose_itemnames(items)
-knitr::kable(with(din, table(instrument, domain)), format = "html") %>% 
+knitr::kable(with(din, table(instrument, domain)), format = "html") |> 
   kableExtra::column_spec(1, monospace = TRUE)
 ```
 
@@ -233,8 +233,8 @@ We may plot the 27 individual developmental curves by
 library(ggplot2)
 library(dplyr)
 
-r <- builtin_references %>% 
-  filter(pop == "dutch") %>% 
+r <- builtin_references |> 
+  filter(pop == "dutch") |> 
   select(age, SDM2, SD0, SDP2)
 
 ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 

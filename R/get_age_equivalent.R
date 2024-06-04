@@ -58,8 +58,8 @@ get_age_equivalent <- function(items,
   reference <- get_reference(population)
 
   # calculate age-equivalent percentiles
-  ib <- ib %>%
-    slice(rep(seq_along(items), each = length(pct))) %>%
+  ib <- ib |>
+    slice(rep(seq_along(items), each = length(pct))) |>
     mutate(
       pct = rep(pct, length(items)),
       d = .data$d + scalefactor * qlogis(.data$pct / 100),

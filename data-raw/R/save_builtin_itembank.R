@@ -64,9 +64,9 @@ key_sf2206 <- key_sf2206[order_itemnames(key_sf2206$item, order = "indm"), ]
 key_294_0 <- read.delim(file = f8, stringsAsFactors = FALSE)
 items_gpa <- key_294_0$item[starts_with("gpa", vars = key_294_0$item)]
 items_gto <- key_294_0$item[starts_with("gto", vars = key_294_0$item)]
-key_294_0_gto <- key_294_0 %>% filter(item %in% items_gto)
+key_294_0_gto <- key_294_0 |> filter(item %in% items_gto)
 key_294_0_gto <- key_294_0_gto[order_itemnames(key_294_0_gto$item), ]
-key_294_0_gpa <- key_294_0 %>% filter(item %in% items_gpa)
+key_294_0_gpa <- key_294_0 |> filter(item %in% items_gpa)
 key_294_0_gpa <- key_294_0_gpa[order_itemnames(key_294_0_gpa$item, order = "indm"), ]
 key_294_0 <- bind_rows(key_294_0_gto,
                        key_294_0_gpa)
@@ -91,12 +91,12 @@ key_sf12 <- key_sf12[order_itemnames(key_sf12$item, order = "imnd"), ]
 key_gsed2212 <- read.delim(file = f15, stringsAsFactors = FALSE)
 key_gsed2212 <- key_gsed2212[order_itemnames(key_gsed2212$item), ]
 
-key_gsed2212_gs1_gl1 <- read.delim(file = f16, stringsAsFactors = FALSE) %>%
+key_gsed2212_gs1_gl1 <- read.delim(file = f16, stringsAsFactors = FALSE) |>
   select(key, item, tau)
 
-key_gsed2212_gh1 <- openxlsx::read.xlsx(f17) %>%
+key_gsed2212_gh1 <- openxlsx::read.xlsx(f17) |>
   mutate(key = "gsed2212",
-         item = get_itemnames(instrument = "gh1", order = "indm")) %>%
+         item = get_itemnames(instrument = "gh1", order = "indm")) |>
   select(key, item, tau)
 
 # --- key2212
@@ -108,8 +108,8 @@ key_gsed2212 <- bind_rows(key_gsed2212_gs1_gl1,
                           key_gsed2212_gh1,
                           key_293_0,
                           key_gsed2212,
-                          key_ecd2208) %>%
-  mutate(key = "gsed2212") %>%
+                          key_ecd2208) |>
+  mutate(key = "gsed2212") |>
   select(key, item, tau)
 check_single_key(key_gsed2212)
 
@@ -119,8 +119,8 @@ check_single_key(key_gsed2212)
 # Add ecdi
 # Save as gsed2208
 # Superseeded by gsed2212 because of LF item order problem - do not use
-key_gsed2208 <- bind_rows(key_sf12, key_293_0, key_gsed2208, key_ecd2208) %>%
-  mutate(key = "gsed2208") %>%
+key_gsed2208 <- bind_rows(key_sf12, key_293_0, key_gsed2208, key_ecd2208) |>
+  mutate(key = "gsed2208") |>
   select(key, item, tau)
 check_single_key(key_gsed2208)
 
@@ -134,7 +134,7 @@ sf_tau <- dscore::get_tau(sf_gsed, key = "gsed2206", itembank = key_gsed2206)
 key_gsed2206 <- bind_rows(key_gsed2206,
                           data.frame(key = "gsed2206", item = key_lf2206$item, tau = lf_tau),
                           data.frame(key = "gsed2206", item = key_sf2206$item, tau = sf_tau),
-                          key_ecd2206) %>%
+                          key_ecd2206) |>
   filter(!is.na(tau))
 check_single_key(key_gsed2206)
 
@@ -181,8 +181,8 @@ builtin_itembank <- bind_rows(key_gsed2212,
                               key_sf2206,
                               key_294_0,
                               key_293_0,
-                              key_dutch) %>%
-  left_join(get_itemtable(decompose = TRUE), by = "item") %>%
+                              key_dutch) |>
+  left_join(get_itemtable(decompose = TRUE), by = "item") |>
   select(-equate)
 
 # save to /data

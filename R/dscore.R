@@ -410,25 +410,25 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   }
 
   # bind difficulty estimates to data
-  data2 <- data %>%
-    mutate(a = decage) %>%
+  data2 <- data |>
+    mutate(a = decage) |>
     mutate(
       mu = mu,
       sd = sd,
       .rownum = 1L:n()
-    ) %>%
-    select(all_of(c(".rownum", "a", "mu", "sd", items))) %>%
+    ) |>
+    select(all_of(c(".rownum", "a", "mu", "sd", items))) |>
     pivot_longer(
       cols = all_of(items), names_to = "item",
       values_to = "score", values_drop_na = TRUE
-    ) %>%
-    arrange(.data$.rownum, .data$item) %>%
+    ) |>
+    arrange(.data$.rownum, .data$item) |>
     left_join(ib, by = "item")
 
   # if dscore_posterior() was called
   if (posterior) {
-    data3 <- data2 %>%
-      group_by(.data$.rownum) %>%
+    data3 <- data2 |>
+      group_by(.data$.rownum) |>
       summarise(
         w = list(calculate_posterior(
           scores = .data$score,
@@ -464,8 +464,8 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   # if dscore() was called
   if (!posterior) {
     # summarise n, p, d and sem
-    data3 <- data2 %>%
-      group_by(.data$.rownum, .data$a) %>%
+    data3 <- data2 |>
+      group_by(.data$.rownum, .data$a) |>
       summarise(
         n = n(),
         p = round(mean(.data$score), digits = 4L),
@@ -482,16 +482,16 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
         )$posterior)
       )
 
-    data4 <- data3 %>%
-      group_by(.data$.rownum, .data$a, .data$n, .data$p) %>%
+    data4 <- data3 |>
+      group_by(.data$.rownum, .data$a, .data$n, .data$p) |>
       summarise(
         d = weighted.mean(x = unlist(.data$x), w = unlist(.data$w)),
         sem = sqrt(sum(unlist(.data$w) * (unlist(.data$x) - unlist(.data$d))^2))
       )
 
     # add daz, shape end result
-    data5 <- data.frame(.rownum = seq_len(nrow(data))) %>%
-      left_join(data4, by = ".rownum") %>%
+    data5 <- data.frame(.rownum = seq_len(nrow(data))) |>
+      left_join(data4, by = ".rownum") |>
       mutate(
         n = recode(.data$n, .missing = 0L),
         d = round(.data$d, digits = dec[1L]),
@@ -500,7 +500,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
           reference = get_reference(population),
           dec = dec[2L]),
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)
-      ) %>%
+      ) |>
       select(all_of(c("a", "n", "p", "d", "sem", "daz")))
   }
 

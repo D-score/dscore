@@ -11,16 +11,16 @@ builtin_itemtable <- read.delim(file = fn, quote = "",
 gsx_itemtable <- read.delim("data-raw/data/keys/items_gs1_gl1.txt",
                             stringsAsFactors = FALSE, na = "",
                             fileEncoding = "UTF-8",
-                            header = TRUE) %>%
-  mutate(equate = NA_character_) %>%
+                            header = TRUE) |>
+  mutate(equate = NA_character_) |>
   select(item, equate, label)
 
 ## add ecdi items to itemtable
 ecdi_itemtable <- read.delim("data-raw/data/ecdi_itemtable.txt")
-ecdi_itemtable <- ecdi_itemtable %>%
-  select(item, label) %>%
-  mutate(equate = NA_character_) %>%
-  select(item, equate, label) %>%
+ecdi_itemtable <- ecdi_itemtable |>
+  select(item, label) |>
+  mutate(equate = NA_character_) |>
+  select(item, equate, label) |>
   mutate(equate = ifelse(item %in% c("ecdxxc001", "gpamoc097"), "ECD1", NA),
          equate = ifelse(item %in% c("ecdxxc002", "gpamoc106"), "ECD2", equate),
          equate = ifelse(item %in% c("ecdxxc003", "gpamoc129"), "ECD3", equate),
@@ -38,8 +38,8 @@ info$instrument <- "gh1"
 info$domain <- recode(hh_itemtable$voted_domain, cog = "cg", lang = "lg", life = "li", motor = "mo", sem = "se")
 info$number <- formatC(1:55, width = 3, flag = "0")
 hh_itemtable$item <- with(info, paste0(instrument, domain, mode, number))
-hh_itemtable <- hh_itemtable %>%
-  mutate(equate = NA_character_) %>%
+hh_itemtable <- hh_itemtable |>
+  mutate(equate = NA_character_) |>
   select(item, equate, label)
 
 builtin_itemtable <- bind_rows(gsx_itemtable,
@@ -48,9 +48,9 @@ builtin_itemtable <- bind_rows(gsx_itemtable,
                                hh_itemtable)
 
 info <- dscore::decompose_itemnames(builtin_itemtable$item)
-builtin_itemtable <- builtin_itemtable %>%
-  bind_cols(info) %>%
-  arrange(instrument, domain, mode, number) %>%
+builtin_itemtable <- builtin_itemtable |>
+  bind_cols(info) |>
+  arrange(instrument, domain, mode, number) |>
   select(item, equate, label)
 
 # check

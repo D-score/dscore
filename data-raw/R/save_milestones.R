@@ -11,15 +11,15 @@ items <- gseddata::rename_gcdg_gsed(paste0("n", 1:57))
 names(pops_orig)[44:100] <- items
 
 # rename variables
-pops_data <- pops_orig %>%
+pops_data <- pops_orig |>
   mutate(
     subjid = as.integer(patid),
     sex = recode(gender, `1` = "male", `2` = "female", .missing = "unknown"),
     agedays = as.integer(Age),
     age = agedays / 365.25,
     gagebrth = as.integer(gestationalage * 7)
-  ) %>%
-  mutate_at(vars(items), function(x) as.integer(1 - x)) %>%
+  ) |>
+  mutate_at(vars(items), function(x) as.integer(1 - x)) |>
   dplyr::select(
     subjid, sex, agedays, age,
     gagebrth,
@@ -33,8 +33,8 @@ nas <- apply(pops_data[, items], MARGIN = 1, function(x) sum(is.na(x)))
 # select rows with at least one DDI-item
 #        infants below 32 weeks (224 days) gestational age
 #                no dead, no handicaps
-pops_pt <- pops_data %>%
-  dplyr::filter(nas < 57) %>%
+pops_pt <- pops_data |>
+  dplyr::filter(nas < 57) |>
   dplyr::filter(gagebrth < 224 & dead == 0 & handicap == 0)
 
 # Data on 258 pre-terms
@@ -42,7 +42,7 @@ pops_pt <- pops_data %>%
 # [1] 258
 
 # ---- save first 100 rows
-popsdemo <- dplyr::slice(pops_pt, 1:100) %>%
+popsdemo <- dplyr::slice(pops_pt, 1:100) |>
   as.data.frame()
 
 ids <- table(popsdemo$subjid)
@@ -51,9 +51,9 @@ ids <- table(popsdemo$subjid)
 set.seed(15199)
 id <- sample(100:999, size = length(ids))
 popsdemo$id <- rep(id, ids)
-milestones <- popsdemo %>%
-  select(-subjid, agedays, -dead, -handicap) %>%
-  select(id, agedays, age, sex, everything()) %>%
+milestones <- popsdemo |>
+  select(-subjid, agedays, -dead, -handicap) |>
+  select(id, agedays, age, sex, everything()) |>
   arrange(id, age)
 
 # save to /data

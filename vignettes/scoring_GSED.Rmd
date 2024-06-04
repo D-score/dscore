@@ -507,8 +507,8 @@ We used the GSED Phase I data to calculate age-conditional reference scores for 
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
-ref <- builtin_references %>% 
-  filter(pop == "phase1") %>% 
+ref <- builtin_references |> 
+  filter(pop == "phase1") |> 
   select(pop, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
 head(ref)
 ```
@@ -521,8 +521,8 @@ The script below creates a figure with -2SD, 0SD and +2SD centiles plus 20 $D$-s
 library(ggplot2)
 library(patchwork)
 
-r <- builtin_references %>% 
-  filter(pop == "phase1" & age <= 3.5) %>% 
+r <- builtin_references |> 
+  filter(pop == "phase1" & age <= 3.5) |> 
   mutate(m = age * 12)
 
 lf2$ins <- "lf"; lf2$m <- lf2$a * 12

@@ -23,8 +23,7 @@ Imports:
     Rcpp,
     stats,
     stringr,
-    tidyr (>= 1.0.0),
-    tidyselect (>= 1.0.0)
+    tidyr (>= 1.0.0)
 LinkingTo: Rcpp, RcppArmadillo
 Suggests:
     ggplot2,

@@ -18,25 +18,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## D-score and DAZ
 
-Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HF to one or more children. The next step is calculating each child's developmental score ($D$-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the $D$-score and DAZ. We may pick one of the following two methods:
+Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HF to one or more children. The next step is calculating each child's developmental score (D-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the D-score and DAZ. We may pick one of the following two methods:
 
 1. Online calculator. The online Shiny app <https://tnochildhealthstatistics.shinyapps.io/dcalculator/> is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
-2. `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the $D$-score. It is an excellent choice for users familiar with `R` and users who like to incorporate $D$-score calculations into a workflow.
+2. `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the D-score. It is an excellent choice for users familiar with `R` and users who like to incorporate D-score calculations into a workflow.
 
 ## Preliminaries
 
 - We use the `R` language. If you are new to `R` consult the [Getting Started with R](https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R) site; 
 - You need to install the `R` package `dscore` on your local machine;
 - The child data need to be stored as a `data.frame`, a standard `R` tabular structure;
-- You need to run the `dscore()` function to calculate the $D$-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
+- You need to run the `dscore()` function to calculate the D-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
 
 ## Install the `dscore` package
 
 The `dscore` package contains tools to
 
 - Map your item names to the GSED convention
-- Calculate *D*-scores from item level responses
-- Transform the *D*-scores into DAZ, age-standardised Z-scores
+- Calculate D-scores from item level responses
+- Transform the D-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones collected using instruments for measuring child development, including the GSED LF, GSED SF and GSED HF.
 
@@ -87,9 +87,9 @@ Rows: One measurement, i.e., one test administration for a child at a given age,
 Columns: There should be at least two columns in the data set: 
 
 - One column with the age of the child. The age column may have any name, and may be measured in decimal age, months, or days since birth. Do not truncate age. Make the value as a continuous as possible, for example by calculating age in days by the difference between measurement date and birth date.
-- One column for each item, appropriately named by the 9-position GSED item name. Normally, the items come from the same instrument, but they may also come from multiple instruments. The data from any recognised item name will contribute to the $D$-score. Do not duplicate names in the data. A PASS is coded as `1`, a FAIL as `0`. If there is no answer or if the item was not administered use the missing value code `NA`. Items that are never administered may be coded as all `NA` or deleted.
+- One column for each item, appropriately named by the 9-position GSED item name. Normally, the items come from the same instrument, but they may also come from multiple instruments. The data from any recognised item name will contribute to the D-score. Do not duplicate names in the data. A PASS is coded as `1`, a FAIL as `0`. If there is no answer or if the item was not administered use the missing value code `NA`. Items that are never administered may be coded as all `NA` or deleted.
 
-The dataset may contain additional columns, e.g., the child number or health information. These are ignored by the $D$-score calculation.
+The dataset may contain additional columns, e.g., the child number or health information. These are ignored by the D-score calculation.
 
 The most important steps is preparing the data for the D-score calculations are:
 
@@ -151,9 +151,9 @@ head(sf[, c(1:2, 101:105)])
 
 The data in `sf` are now ready for the `dscore()` function.
 
-#### Calculate $D$-score
+#### Calculate D-score
 
-Once the data are in proper shape, calculation of the $D$-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
 
 ```{r}
 results <- dscore(sf, xname = "agedays", xunit = "days")
@@ -165,11 +165,11 @@ The table below provides the interpretation of the output:
 Name   | Interpretation
 ------ | -------------
 `a`    | Decimal age in years
-`n`    | Number of items used to calculate the $D$-score
+`n`    | Number of items used to calculate the D-score
 `p`    | Proportion of passed milestones
-`d`    | $D$-score (posterior mean)
+`d`    | D-score (posterior mean)
 `sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | $D$-score corrected for age
+`daz`  | D-score corrected for age
 
 The number of rows of `result` is equal to the number of rows of `sf`. We save the result for later processing.
 
@@ -177,7 +177,7 @@ The number of rows of `result` is equal to the number of rows of `sf`. We save t
 sf2 <- data.frame(sf, results)
 ```
 
-It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gs1` and `gl1` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+It is possible to calculate D-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the D-score based on items from `gs1` and `gl1` for domains `mo` or `gm` (motor) only. The "motor" D-score can be calculated as follows:
 
 ```{r}
 items_motor <- get_itemnames(instrument = c("gs1", "gl1"), domain = c("mo", "gm"))
@@ -232,9 +232,9 @@ head(lf[, c(1:2, 60:64)])
 
 The data in `lf` are now ready for the `dscore()` function.
 
-#### Calculate $D$-score
+#### Calculate D-score
 
-Once the data are in proper shape, calculation of the $D$-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
 
 ```{r}
 results <- dscore(lf, xname = "agedays", xunit = "days")
@@ -246,11 +246,11 @@ The table below provides the interpretation of the output:
 Name   | Interpretation
 ------ | -------------
 `a`    | Decimal age in years
-`n`    | Number of items used to calculate the $D$-score
+`n`    | Number of items used to calculate the D-score
 `p`    | Proportion of passed milestones
-`d`    | $D$-score (posterior mean)
+`d`    | D-score (posterior mean)
 `sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | $D$-score corrected for age
+`daz`  | D-score corrected for age
 
 The number of rows of `result` is equal to the number of rows of `lf`. We save the result for later processing.
 
@@ -258,7 +258,7 @@ The number of rows of `result` is equal to the number of rows of `lf`. We save t
 lf2 <- data.frame(lf, results)
 ```
 
-It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gs1` and `gl1` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+It is possible to calculate D-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the D-score based on items from `gs1` and `gl1` for domains `mo` or `gm` (motor) only. The "motor" D-score can be calculated as follows:
 
 ```{r}
 items_motor <- get_itemnames(instrument = c("gs1", "gl1"), domain = c("mo", "gm"))
@@ -306,9 +306,9 @@ head(hf[, c(1:2, 30:35)])
 
 The data in `hf` are now ready for the `dscore()` function.
 
-#### Calculate $D$-score
+#### Calculate D-score
 
-Once the data are in proper shape, calculation of the $D$-score is straightforward. The `hf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `hf` dataset has properly named columns that identify each item. 
 
 ```{r}
 results <- dscore(hf, xname = "agedays", xunit = "days")
@@ -320,11 +320,11 @@ The table below provides the interpretation of the output:
 Name   | Interpretation
 ------ | -------------
 `a`    | Decimal age in years
-`n`    | Number of items used to calculate the $D$-score
+`n`    | Number of items used to calculate the D-score
 `p`    | Proportion of passed milestones
-`d`    | $D$-score (posterior mean)
+`d`    | D-score (posterior mean)
 `sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | $D$-score corrected for age
+`daz`  | D-score corrected for age
 
 The number of rows of `results` is equal to the number of rows of `hf`. We save the result for later processing.
 
@@ -332,7 +332,7 @@ The number of rows of `results` is equal to the number of rows of `hf`. We save 
 hf2 <- data.frame(hf, results)
 ```
 
-It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gs1`, `gl1` and `gh1` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+It is possible to calculate D-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the D-score based on items from `gs1`, `gl1` and `gh1` for domains `mo` or `gm` (motor) only. The "motor" D-score can be calculated as follows:
 
 ```{r}
 items_motor <- get_itemnames(instrument = c("gs1", "gl1", "gh1"), domain = c("mo", "gm"))
@@ -381,9 +381,9 @@ head(sf[, c(1:2, 101:105)])
 
 The data in `sf` are now ready for the `dscore()` function.
 
-#### Calculate $D$-score
+#### Calculate D-score
 
-Once the data are in proper shape, calculation of the $D$-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
 
 ```{r}
 results <- dscore(sf, xname = "agedays", xunit = "days")
@@ -395,11 +395,11 @@ The table below provides the interpretation of the output:
 Name   | Interpretation
 ------ | -------------
 `a`    | Decimal age in years
-`n`    | Number of items used to calculate the $D$-score
+`n`    | Number of items used to calculate the D-score
 `p`    | Proportion of passed milestones
-`d`    | $D$-score (posterior mean)
+`d`    | D-score (posterior mean)
 `sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | $D$-score corrected for age
+`daz`  | D-score corrected for age
 
 The number of rows of `result` is equal to the number of rows of `sf`. We save the result for later processing.
 
@@ -407,7 +407,7 @@ The number of rows of `result` is equal to the number of rows of `sf`. We save t
 sf3 <- data.frame(sf, results)
 ```
 
-It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gpa` and `gto` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+It is possible to calculate D-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the D-score based on items from `gpa` and `gto` for domains `mo` or `gm` (motor) only. The "motor" D-score can be calculated as follows:
 
 ```{r}
 items_motor <- get_itemnames(instrument = c("gpa", "gto"), domain = c("mo", "gm"))
@@ -462,9 +462,9 @@ head(lf[, c(1:2, 60:64)])
 
 The data in `lf` are now ready for the `dscore()` function.
 
-#### Calculate $D$-score
+#### Calculate D-score
 
-Once the data are in proper shape, calculation of the $D$-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
 
 ```{r}
 results <- dscore(lf, xname = "agedays", xunit = "days")
@@ -476,11 +476,11 @@ The table below provides the interpretation of the output:
 Name   | Interpretation
 ------ | -------------
 `a`    | Decimal age in years
-`n`    | Number of items used to calculate the $D$-score
+`n`    | Number of items used to calculate the D-score
 `p`    | Proportion of passed milestones
-`d`    | $D$-score (posterior mean)
+`d`    | D-score (posterior mean)
 `sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | $D$-score corrected for age
+`daz`  | D-score corrected for age
 
 The number of rows of `result` is equal to the number of rows of `lf`. We save the result for later processing.
 
@@ -488,7 +488,7 @@ The number of rows of `result` is equal to the number of rows of `lf`. We save t
 lf3 <- data.frame(lf, results)
 ```
 
-It is possible to calculate $D$-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the $D$-score based on items from `gpa` and `gto` for domains `mo` or `gm` (motor) only. The "motor" $D$-score can be calculated as follows:
+It is possible to calculate D-score for item subsets by setting the `items` argument. We do not advertise this option for practical application, but suppose we are interested in the D-score based on items from `gpa` and `gto` for domains `mo` or `gm` (motor) only. The "motor" D-score can be calculated as follows:
 
 ```{r}
 items_motor <- get_itemnames(instrument = c("gpa", "gto"), domain = c("mo", "gm"))
@@ -503,7 +503,7 @@ head(results)
 
 ### Phase 1 references and DAZ
 
-We used the GSED Phase I data to calculate age-conditional reference scores for the $D$-score. The references are based on about 12,000 administration of the GSED SF and GSED LF from Bangladesh, Pakistan and Tanzania. Extract the references as
+We used the GSED Phase I data to calculate age-conditional reference scores for the D-score. The references are based on about 12,000 administration of the GSED SF and GSED LF from Bangladesh, Pakistan and Tanzania. Extract the references as
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
@@ -515,7 +515,7 @@ head(ref)
 
 The columns `mu`, `sigma`, `nu` and `tau` are the age-varying parameters of a Box-Cox $t$ (BCT) distribution. 
 
-The script below creates a figure with -2SD, 0SD and +2SD centiles plus 20 $D$-scores (10 LF and 10 SF) for the `lf2` and `sf2` data.
+The script below creates a figure with -2SD, 0SD and +2SD centiles plus 20 D-scores (10 LF and 10 SF) for the `lf2` and `sf2` data.
 
 ```{r fig.height=5, fig.width=10, warning=FALSE}
 library(ggplot2)

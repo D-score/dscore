@@ -49,7 +49,7 @@ supported are \code{"phase1"} (default), \code{"dutch"}, \code{"gcdg"}.}
 The default (\code{"decimal"}) means decimal age in years.}
 }
 \value{
-Tibble with four columns: \code{item}, \code{d} (\emph{D}-score),
+Tibble with four columns: \code{item}, \code{d} (D-score),
 \code{pct} (percentile), and \code{a} (age-equivalent, in \code{xunit} units).
 }
 \description{

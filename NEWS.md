@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+- Simplifies the spelling of the term "D-score" to improve consistency and readability
+- Removes dependency on `tidyselect`
 - Replaces  `magrittr` pipe `%>%` by base pipe `|>`
 
 # dscore 1.8.8

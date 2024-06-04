@@ -9,7 +9,7 @@
 #' @param pct Numeric vector with requested percentiles (0-100). The
 #' default is `pct = c(10, 50, 90)`.
 #' @inheritParams dscore
-#' @return Tibble with four columns: `item`, `d` (*D*-score),
+#' @return Tibble with four columns: `item`, `d` (D-score),
 #' `pct` (percentile), and `a` (age-equivalent, in `xunit` units).
 #' @examples
 #' get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"))

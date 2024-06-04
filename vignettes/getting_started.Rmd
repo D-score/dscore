@@ -21,25 +21,25 @@ suppressPackageStartupMessages(library(ggplot2))
 
 ## Overview
 
-The $D$-score is a one-number summary measure of early child development. The $D$-score has a fixed unit. In principle, we may use the $D$-score to [answer questions on the individual, group and population level](https://d-score.org/dbook1/sec-questions.html), but be aware that no instruments have yet been validated for individual application. For more background, see the introductory booklet [D-score: Turning milestones into measurement](https://d-score.org/dbook1/).
+The D-score is a one-number summary measure of early child development. The D-score has a fixed unit. In principle, we may use the D-score to [answer questions on the individual, group and population level](https://d-score.org/dbook1/sec-questions.html), but be aware that no instruments have yet been validated for individual application. For more background, see the introductory booklet [D-score: Turning milestones into measurement](https://d-score.org/dbook1/).
 
-This vignette shows how to estimate the $D$-score and the $D$-score age-adjusted Z-score (DAZ) from child data on developmental milestones. The vignette covers some typical actions needed when estimating the $D$-score and DAZ:
+This vignette shows how to estimate the D-score and the D-score age-adjusted Z-score (DAZ) from child data on developmental milestones. The vignette covers some typical actions needed when estimating the D-score and DAZ:
 
 1. Identify whether the `dscore` package covers your measurement instrument;
 2. Map your variable names to the GSED 9-position schema;
-3. Calculate $D$-score and DAZ;
+3. Calculate D-score and DAZ;
 4. Summarise your results.
 
 ## Is your measurement instrument covered?
 
 The `dscore` package covers a subset of all possible assessment instruments. Moreover, it may have a restricted age range for a given instrument. Your first tasks are
 
-- to evaluate whether the current `dscore` package can convert your measurements into $D$-scores;
+- to evaluate whether the current `dscore` package can convert your measurements into D-scores;
 - to choose a `key` that best suits your objectives.
 
-The inventory by @fernald2017 identified [147 instruments](http://pubdocs.worldbank.org/en/685691512577486773/ECD-Measurement-Inventory-children-0-8-years-WorldBank.xlsx) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The $D$-score is defined by and calculated from, subsets of milestones from such instruments.
+The inventory by @fernald2017 identified [147 instruments](http://pubdocs.worldbank.org/en/685691512577486773/ECD-Measurement-Inventory-children-0-8-years-WorldBank.xlsx) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The D-score is defined by and calculated from, subsets of milestones from such instruments.
 
-Assessment instruments connect to the $D$-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports the following keys (in historic order):
+Assessment instruments connect to the D-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports the following keys (in historic order):
 
 1. `dutch`, a model developed for the *Dutch development instrument*; 
 2. `gcdg`, a model covering 14 instruments using *direct* measurements; 
@@ -47,7 +47,7 @@ Assessment instruments connect to the $D$-score through a *measurement model*. W
 5. `293_0`, covers only GSED SF (138 items) and GSED LF (155 items). GSED core model. (Aug 2022)
 6. `gsed2212`, covers 23 instruments using a mix of *direct* and *caregiver-reported* measurements. Extends the GSED core model. (Jan 2022).
 
-Different keys lead to different $D$-scores.  Hence, we may compare only $D$-scores that are calculated under the same key. Our advice to set the key is:
+Different keys lead to different D-scores.  Hence, we may compare only D-scores that are calculated under the same key. Our advice to set the key is:
 
 - For new data, use the generic `key = "gsed"`. This choice will automatically fetch the latest GSED key;
 - To explicitly set the most recent key use `key = "gsed2212"`. The ignores later keys.
@@ -91,9 +91,9 @@ The table given below displays the number of items per instrument for various ke
 | `ecd`  | Eerly Child Development Indicators (ECDI)               |   20  |       |       |       |    18   |       |
 | `mul`  | Mullen Scales of Early Learning                         |  232  |       |       |  138  |         |       |
 
-Unfortunately, it is not possible to calculate the $D$-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
+Unfortunately, it is not possible to calculate the D-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
 
-For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed1912"` or `"gsed2212"`. Your choice may depend on the goal of your analysis. If you want to compare to other $D$-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed2212"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`. Before version 1.5.0 the default linked to `"gsed1912"`. Since version 1.7.0 the default selects `"gsed2212"`.
+For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed1912"` or `"gsed2212"`. Your choice may depend on the goal of your analysis. If you want to compare to other D-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed2212"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`. Before version 1.5.0 the default linked to `"gsed1912"`. Since version 1.7.0 the default selects `"gsed2212"`.
 
 The extensions for Mullen were added to the "`"gsed1912"` key. The extension was made based on two datasets, the Provide dataset [@provide] and the Bambam dataset [@bambam]. The Mullen items were matched to existing items and two well fitting items were selected as anchors in a new model on the combined Provide and Bambam data. 
 
@@ -190,10 +190,10 @@ There may be different versions and revision of the same instrument. Therefore, 
 
 The `dscore` package assumes that response to milestones are dichotomous (1 = PASS, 0 = FAIL). If necessary, recode your data to match these response categories.
 
-## Calculate the $D$-score and DAZ
+## Calculate the D-score and DAZ
 
 
-Once the data are in proper shape, calculation of the $D$-score and DAZ is easy.
+Once the data are in proper shape, calculation of the D-score and DAZ is easy.
 
 The `milestones` dataset in the `dscore` package contains responses of 27 preterm children measured at various age between birth and 2.5 years on the Dutch Development Instrument (`ddi`). The dataset looks like:
 
@@ -203,7 +203,7 @@ head(milestones[, c(1, 3, 4, 9:14)])
 
 Each row corresponds to a visit. Most children have three or four visits. Columns starting with `ddi` hold the responses on DDI-items. A  `1` means a PASS, a `0` means a FAIL, and `NA` means that the item was not administered.
 
-The `milestones` dataset has properly named columns that identify each item. Calculating the $D$-score and DAZ is then done by:
+The `milestones` dataset has properly named columns that identify each item. Calculating the D-score and DAZ is then done by:
 
 ```{r}
 ds <- dscore(milestones)
@@ -221,13 +221,13 @@ The table below provides the interpretation of the output:
 Name | Interpretation
 ---- | -------------
 `a`    | Decimal age
-`n`    | number of items used to calculate $D$-score
+`n`    | number of items used to calculate D-score
 `p`    | Percentage of passed milestones
-`d`    | $D$-score estimate, mean of posterior
+`d`    | D-score estimate, mean of posterior
 `sem`  | Standard error of measurement, standard deviation of the posterior
-`daz`  | $D$-score corrected for age
+`daz`  | D-score corrected for age
 
-## Summarise $D$-score and DAZ
+## Summarise D-score and DAZ
 
 Combine the `milestones` data and the result by
 
@@ -267,7 +267,7 @@ ggplot(md, aes(x = a, y = d, group = id, color = sex)) +
 
 Note that similarity of these curves to growth curves for body height and weight.
 
-The DAZ is an age-standardized $D$-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by
+The DAZ is an age-standardized D-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by
 
 ```{r graphDAZ, fig.width = 7, fig.height = 5}
 ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) +
@@ -290,7 +290,7 @@ ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) +
   ylab("DAZ")
 ```
 
-Note that the $D$-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can [account for prematurity](https://d-score.org/dbook1/sec-pops.html#age-adjustment) by correcting for gestational age.
+Note that the D-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can [account for prematurity](https://d-score.org/dbook1/sec-pops.html#age-adjustment) by correcting for gestational age.
 
 The distributions of DAZ for boys and girls show that a large overlap:
 

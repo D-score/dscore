@@ -62,7 +62,6 @@ count_mu_gcdg <- function(t) {
 #' @examples
 #' dscore:::count_mu_phase1(0:5)
 count_mu_phase1 <- function(t) {
-
   to <- !is.na(t)
   t1 <- to & t <= 0.75
   t2 <- to & t > 0.75 & t <= 3.5

@@ -13,10 +13,10 @@ vignette: >
 ---
 
 ```{r setup, include=FALSE}
-  knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
-  # options(width = 80)
-  suppressPackageStartupMessages(library(dplyr))
-  suppressPackageStartupMessages(library(ggplot2))
+knitr::opts_chunk$set(echo = TRUE, fig.retina = 2)
+# options(width = 80)
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
 ```
 
 ## Overview
@@ -99,19 +99,25 @@ The extensions for Mullen were added to the "`"gsed1912"` key. The extension was
 
 ```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE}
 library(dscore)
-ib <- builtin_itembank |> 
-  filter(key == "gsed2212") |> 
-  mutate(a = get_age_equivalent(items = item, pct = 50, 
-                                itembank = builtin_itembank)$a,
-         a = a * 12) |> 
-  select(a, instrument, label) |> 
+ib <- builtin_itembank |>
+  filter(key == "gsed2212") |>
+  mutate(
+    a = get_age_equivalent(
+      items = item, pct = 50,
+      itembank = builtin_itembank
+    )$a,
+    a = a * 12
+  ) |>
+  select(a, instrument, label) |>
   na.omit()
-  
+
 ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
   scale_y_discrete(limits = rev(unique(ib$instrument)), name = "") +
-  scale_x_continuous(limits = c(0, 60), 
-                     breaks = seq(0, 60, 12), name = "Age (months)") +
-  geom_point(pch = 3, size = 1, colour = "blue") + 
+  scale_x_continuous(
+    limits = c(0, 60),
+    breaks = seq(0, 60, 12), name = "Age (months)"
+  ) +
+  geom_point(pch = 3, size = 1, colour = "blue") +
   theme_light() +
   theme(axis.text.y = element_text(hjust = 0, family = "mono"))
 ```
@@ -150,7 +156,7 @@ The `dscore` package can recognise `r nrow(dscore::builtin_itemtable)` item name
 ```{r table}
 items <- get_itemnames()
 din <- decompose_itemnames(items)
-knitr::kable(with(din, table(instrument, domain)), format = "html") |> 
+knitr::kable(with(din, table(instrument, domain)), format = "html") |>
   kableExtra::column_spec(1, monospace = TRUE)
 ```
 
@@ -164,8 +170,10 @@ get_labels(items)
 In practice, you need to spend some time to figure out how item names in your data map to those in the `dscore` package. Once you've completed this mapping, rename the items into the GSED 9-position schema. For example, suppose that your first three gross motor MDAT items are called `mot1`, `mot2`, and `mot3`. 
 
 ```{r smalldataset}
-data <- data.frame(id = c(1, 1, 2), age = c(1, 1.6, 0.9), mot1 = c(1, NA, NA), 
-                   mot2 = c(0, 1, 1), mot3 = c(NA, 0, 1))
+data <- data.frame(
+  id = c(1, 1, 2), age = c(1, 1.6, 0.9), mot1 = c(1, NA, NA),
+  mot2 = c(0, 1, 1), mot3 = c(NA, 0, 1)
+)
 data
 ```
 
@@ -233,23 +241,25 @@ We may plot the 27 individual developmental curves by
 library(ggplot2)
 library(dplyr)
 
-r <- builtin_references |> 
-  filter(pop == "dutch") |> 
+r <- builtin_references |>
+  filter(pop == "dutch") |>
   select(age, SDM2, SD0, SDP2)
 
-ggplot(md, aes(x = a, y = d, group = id, color = sex)) + 
-  theme_light() + 
+ggplot(md, aes(x = a, y = d, group = id, color = sex)) +
+  theme_light() +
   theme(legend.position = c(.85, .15)) +
   theme(legend.background = element_blank()) +
   theme(legend.key = element_blank()) +
-  annotate("polygon", x = c(r$age, rev(r$age)), 
-           y = c(r$SDM2, rev(r$SDP2)), alpha = 0.1, fill = "green") +
+  annotate("polygon",
+    x = c(r$age, rev(r$age)),
+    y = c(r$SDM2, rev(r$SDP2)), alpha = 0.1, fill = "green"
+  ) +
   annotate("line", x = r$age, y = r$SDM2, lwd = 0.3, alpha = 0.2, color = "green") +
   annotate("line", x = r$age, y = r$SDP2, lwd = 0.3, alpha = 0.2, color = "green") +
   annotate("line", x = r$age, y = r$SD0, lwd = 0.5, alpha = 0.2, color = "green") +
   coord_cartesian(xlim = c(0, 2.5)) +
   ylab(expression(paste(italic(D), "-score", sep = ""))) +
-  xlab("Age (in years)")+
+  xlab("Age (in years)") +
   scale_color_brewer(palette = "Set1") +
   geom_line(lwd = 0.1) +
   geom_point(size = 1)
@@ -260,20 +270,24 @@ Note that similarity of these curves to growth curves for body height and weight
 The DAZ is an age-standardized $D$-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by
 
 ```{r graphDAZ, fig.width = 7, fig.height = 5}
-ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) + 
-  theme_light() + 
+ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) +
+  theme_light() +
   theme(legend.position = c(.85, .15)) +
   theme(legend.background = element_blank()) +
   theme(legend.key = element_blank()) +
   scale_color_brewer(palette = "Set1") +
-  annotate("rect", xmin = -Inf, xmax = Inf, ymin = -2, ymax = 2, alpha = 0.1,
-            fill = "green") +
-  coord_cartesian(xlim = c(0, 2.5), 
-                  ylim = c(-4, 4)) +
+  annotate("rect",
+    xmin = -Inf, xmax = Inf, ymin = -2, ymax = 2, alpha = 0.1,
+    fill = "green"
+  ) +
+  coord_cartesian(
+    xlim = c(0, 2.5),
+    ylim = c(-4, 4)
+  ) +
   geom_line(lwd = 0.1) +
   geom_point(size = 1) +
   xlab("Age (in years)") +
-  ylab("DAZ") 
+  ylab("DAZ")
 ```
 
 Note that the $D$-scores and DAZ are a little lower than average. The explanation here is that these all children are born preterm. We can [account for prematurity](https://d-score.org/dbook1/sec-pops.html#age-adjustment) by correcting for gestational age.
@@ -281,18 +295,20 @@ Note that the $D$-scores and DAZ are a little lower than average. The explanatio
 The distributions of DAZ for boys and girls show that a large overlap:
 
 ```{r density, fig.width = 7, fig.height = 4}
-ggplot(md) + 
+ggplot(md) +
   theme_light() +
   scale_fill_brewer(palette = "Set1") +
-  geom_density(aes(x = daz, group = sex, fill = sex), alpha = 0.4, 
-               adjust = 1.5, color = "transparent") +
+  geom_density(aes(x = daz, group = sex, fill = sex),
+    alpha = 0.4,
+    adjust = 1.5, color = "transparent"
+  ) +
   xlab("DAZ")
 ```
 
 Under the assumption of independence, we may test whether sex differences are constant in age by a linear regression that includes the interaction between age and sex:
 
 ```{r independence}
-summary(lm(daz ~  age * sex, data = md))
+summary(lm(daz ~ age * sex, data = md))
 ```
 
 This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.
@@ -301,7 +317,7 @@ We may account for the clustering effect by including random intercept and age e
 
 ```{r multilevel}
 library(lme4)
-lmer(daz ~  1 + age + sex + sex * age + (1 + age | id), data = md)
+lmer(daz ~ 1 + age + sex + sex * age + (1 + age | id), data = md)
 ```
 
 This analysis yields the same substantive conclusions as before.

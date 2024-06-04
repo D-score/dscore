@@ -1,6 +1,6 @@
 # This script compares the equate groups defined in
 # ddata::itemtable and dscore::itemtable
-library(ddata)  # V0.50.0
+library(ddata) # V0.50.0
 it <- ddata::itemtable
 rownames(it) <- NULL
 
@@ -41,7 +41,7 @@ it$equate.x <- it$equate.y
 it$label.x[2652:3173] <- it$label.y[2652:3173]
 
 it$equate <- it$equate.x
-it$label  <- it$label.x
+it$label <- it$label.x
 
 it <- it[, c("item", "equate", "label")]
 it <- it[gtools::mixedorder(it$item), ]
@@ -59,7 +59,8 @@ it[2853, 3] <- "Can your child greet people either by giving his/her hand or say
 it[2972, 3] <- "Three-hole board - one in, two trials."
 it[2973, 3] <- "Three-hole board - three in."
 
-write.table(x = it, file = "data-raw/data/itemtable_20200424.txt",
-           quote = FALSE, sep = "\t", na = "", row.names = FALSE,
-           fileEncoding = "UTF-8")
-
+write.table(
+  x = it, file = "data-raw/data/itemtable_20200424.txt",
+  quote = FALSE, sep = "\t", na = "", row.names = FALSE,
+  fileEncoding = "UTF-8"
+)

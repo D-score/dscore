@@ -33,52 +33,55 @@ ref_gcdg <- bind_cols(ref_gcdg, data.frame(p))
 
 # ------------- phase1 references
 ref_phase1 <- read.delim(file = f3) |>
-  mutate(pop = "phase1",
-         P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
-         P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
-         P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
-         P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
-         P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
-         P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
-         P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
-         SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
-         SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
-         SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
-         SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
-         SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
+  mutate(
+    pop = "phase1",
+    P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
+    P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
+    P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
+    P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
+    P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
+    P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
+    P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
+    SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
+    SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
+    SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
+    SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
+    SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 
 # ------------- Dutch references for gsed2212 key
 ref_dutchgsed <- read.delim(file = f4) |>
-  mutate(pop = "dutch_gsed2212",
-         P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
-         P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
-         P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
-         P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
-         P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
-         P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
-         P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
-         SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
-         SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
-         SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
-         SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
-         SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
+  mutate(
+    pop = "dutch_gsed2212",
+    P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
+    P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
+    P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
+    P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
+    P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
+    P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
+    P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
+    SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
+    SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
+    SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
+    SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
+    SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 # ------------- phase1 references for subset of healthy participants
 ref_phase1_healthy <- read.delim(file = f5) |>
-  mutate(pop = "phase1_healthy",
-         P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
-         P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
-         P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
-         P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
-         P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
-         P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
-         P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
-         SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
-         SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
-         SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
-         SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
-         SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
+  mutate(
+    pop = "phase1_healthy",
+    P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
+    P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
+    P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
+    P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
+    P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
+    P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
+    P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
+    SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
+    SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
+    SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
+    SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
+    SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 # save to /data
 builtin_references <- bind_rows(ref_dutch, ref_gcdg, ref_phase1, ref_phase1_healthy, ref_dutchgsed) |>

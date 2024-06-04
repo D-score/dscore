@@ -4,7 +4,7 @@ library(openxlsx)
 
 # define project
 project <- path.expand("~/Package/dscore/dscore")
-#project <- path.expand("~/OneDrive - TNO/Documents/GitHub/dscore")
+# project <- path.expand("~/OneDrive - TNO/Documents/GitHub/dscore")
 
 # ------------- export dutch key
 fn <- file.path(project, "data-raw/data/bds_edited.csv")
@@ -48,7 +48,8 @@ ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/gsed1912.txt")
 write.table(ib_gsed,
   file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE)
+  na = "", row.names = FALSE
+)
 
 # ------------- export gsed2206 key
 fn <- path.expand("~/Project/GSED/phase1/joint/818_17_joint_fixed/model.Rds")
@@ -62,8 +63,9 @@ ib_gsed <- gsed_model_818_17$itembank |>
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/gsed2206.txt")
 write.table(ib_gsed,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 # ------------- export 293_0 key
 fn <- path.expand("~/Project/GSED/phase1/remodel/293_0/model.Rds")
@@ -79,8 +81,9 @@ gpa <- gpa[order_itemnames(gpa$item, order = "imnd"), ]
 ib_gsed <- bind_rows(gpa, ib_gsed[139:293, ])
 fo <- file.path(project, "data-raw/data/keys/293_0.txt")
 write.table(ib_gsed,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 # ------------- export gsed2208 key
 fn <- path.expand("~/Project/GSED/phase1/remodel/818_6/model.Rds")
@@ -94,8 +97,9 @@ ib_gsed <- gsed_model_818_6$itembank |>
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/gsed2208.txt")
 write.table(ib_gsed,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 
 # ------------- export lf2206 key
@@ -110,8 +114,9 @@ ib_gsed <- gsed_model$itembank |>
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/lf2206.txt")
 write.table(ib_gsed,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 # ------------- export sf2206 key
 fn <- path.expand("~/Project/GSED/phase1/sf/139_0/model.Rds")
@@ -125,8 +130,9 @@ ib_gsed <- gsed_model$itembank |>
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/sf2206.txt")
 write.table(ib_gsed,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 
 
@@ -145,8 +151,9 @@ ib_ecdi <- ecdi_model$itembank |>
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/ecd2206.txt")
 write.table(ib_ecdi,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 
 ## model 294_0 extende with ecdi items
@@ -162,8 +169,9 @@ ib_ecdi <- ecdi_model$itembank |>
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/ecd294_0.txt")
 write.table(ib_ecdi,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)
 
 
 
@@ -180,8 +188,6 @@ ib_ecdi <- ecdi_model$itembank |>
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/ecd2208.txt")
 write.table(ib_ecdi,
-            file = fo, quote = FALSE, sep = "\t",
-            na = "", row.names = FALSE)
-
-
-
+  file = fo, quote = FALSE, sep = "\t",
+  na = "", row.names = FALSE
+)

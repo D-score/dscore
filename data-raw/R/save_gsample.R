@@ -1,14 +1,16 @@
-hh_subset <- c("gpasec004", "gpasec015", "gpalac001", "gpacgc002", "gpamoc011",
-               "gpasec010", "gpaclc007", "gpalgc012", "gpasec014", "gpalgc021",
-               "gpasec020", "gpamoc017", "gpalgc019", "gpasec025", "gpaclc033",
-               "gpaclc023", "gpasec032", "gpasec045", "gpamoc024", "gpamoc037",
-               "gpaclc034", "gpamoc029", "gpasec039", "gpamoc028", "gpamoc044",
-               "gpamoc042", "gpamoc043", "gpaclc046", "gpamoc049", "gpasec064",
-               "gpamoc054", "gpamoc058", "gpamoc056", "gpalgc059", "gpamoc060",
-               "gpalgc068", "gpamoc061", "gpasec075", "gpamoc062", "gpamoc065",
-               "gpamoc063", "gpalgc072", "gpasec086", "gpamoc071", "gpagmc067",
-               "gpamoc078", "gpaclc088", "gpaclc093", "gpamoc084", "gpaxxc092",
-               "gpaclc101", "gpacmc090", "gpaclc112", "gpamoc106", "gpaclc113")
+hh_subset <- c(
+  "gpasec004", "gpasec015", "gpalac001", "gpacgc002", "gpamoc011",
+  "gpasec010", "gpaclc007", "gpalgc012", "gpasec014", "gpalgc021",
+  "gpasec020", "gpamoc017", "gpalgc019", "gpasec025", "gpaclc033",
+  "gpaclc023", "gpasec032", "gpasec045", "gpamoc024", "gpamoc037",
+  "gpaclc034", "gpamoc029", "gpasec039", "gpamoc028", "gpamoc044",
+  "gpamoc042", "gpamoc043", "gpaclc046", "gpamoc049", "gpasec064",
+  "gpamoc054", "gpamoc058", "gpamoc056", "gpalgc059", "gpamoc060",
+  "gpalgc068", "gpamoc061", "gpasec075", "gpamoc062", "gpamoc065",
+  "gpamoc063", "gpalgc072", "gpasec086", "gpamoc071", "gpagmc067",
+  "gpamoc078", "gpaclc088", "gpaclc093", "gpamoc084", "gpaxxc092",
+  "gpaclc101", "gpacmc090", "gpaclc112", "gpamoc106", "gpaclc113"
+)
 file <- "data-raw/data/sample/gsed_sample.txt"
 gsample <- read.table(file, header = TRUE, sep = "\t")
 usethis::use_data(gsample, overwrite = TRUE)

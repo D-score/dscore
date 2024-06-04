@@ -269,8 +269,10 @@ The package contains the following built-in data:\tabular{ll}{
 
 \examples{
 data <- data.frame(
-  id = c("Jane", "Martin", "ID-3", "No. 4", "Five", "6",
-        NA_character_, as.character(8:10)),
+  id = c(
+    "Jane", "Martin", "ID-3", "No. 4", "Five", "6",
+    NA_character_, as.character(8:10)
+  ),
   age = rep(round(21 / 365.25, 4), 10),
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
@@ -297,9 +299,11 @@ p <- dscore_posterior(data)
 rowSums(p)
 
 # plot posterior for row 7
-barplot(as.matrix(p[7, 12:29]), names = 1:18,
+barplot(as.matrix(p[7, 12:29]),
+  names = 1:18,
   xlab = "D-score", ylab = "Density",
-  main = "Full D-score posterior for measurement in row 7")
+  main = "Full D-score posterior for measurement in row 7"
+)
 }
 \references{
 Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale

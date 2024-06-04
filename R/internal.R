@@ -13,80 +13,108 @@
 #   note = {R package version 6.0-3},
 #   url = {https://CRAN.R-project.org/package=gamlss.dist}}
 
-qBCT <- function (p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
-                  log.p = FALSE, na.rm = TRUE)
-{
-  if (any(mu < 0, na.rm = na.rm))
+qBCT <- function(p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
+                 log.p = FALSE, na.rm = TRUE) {
+  if (any(mu < 0, na.rm = na.rm)) {
     stop(paste("mu must be positive", "\n", ""))
-  if (any(sigma < 0, na.rm = na.rm))
+  }
+  if (any(sigma < 0, na.rm = na.rm)) {
     stop(paste("sigma must be positive", "\n", ""))
-  if (any(tau < 0, na.rm = na.rm))
+  }
+  if (any(tau < 0, na.rm = na.rm)) {
     stop(paste("tau must be positive", "\n", ""))
-  if (log.p == TRUE)
+  }
+  if (log.p == TRUE) {
     p <- exp(p)
-  else p <- p
-  if (any(p <= 0, na.rm = na.rm) | any(p >= 1, na.rm = na.rm))
-    stop(paste("p must be between 0 and 1", "\n", ""))
-  if (lower.tail == TRUE)
+  } else {
     p <- p
-  else p <- 1 - p
+  }
+  if (any(p <= 0, na.rm = na.rm) | any(p >= 1, na.rm = na.rm)) {
+    stop(paste("p must be between 0 and 1", "\n", ""))
+  }
+  if (lower.tail == TRUE) {
+    p <- p
+  } else {
+    p <- 1 - p
+  }
   if (length(nu) > 1) {
-    z <- ifelse((nu <= 0), qt(p * pt(1/(sigma * abs(nu)),
-                                     tau), tau), qt(1 - (1 - p) * pt(1/(sigma * abs(nu)),
-                                                                     tau), tau))
+    z <- ifelse((nu <= 0), qt(p * pt(
+      1 / (sigma * abs(nu)),
+      tau
+    ), tau), qt(1 - (1 - p) * pt(
+      1 / (sigma * abs(nu)),
+      tau
+    ), tau))
+  } else {
+    z <- if (nu <= 0) {
+      qt(p * pt(1 / (sigma * abs(nu)), tau), tau)
+    } else {
+      qt(1 - (1 - p) * pt(1 / (sigma * abs(nu)), tau), tau)
+    }
   }
-  else {
-    z <- if (nu <= 0)
-      qt(p * pt(1/(sigma * abs(nu)), tau), tau)
-    else qt(1 - (1 - p) * pt(1/(sigma * abs(nu)), tau), tau)
+  if (length(nu) > 1) {
+    ya <- ifelse(nu != 0, mu * (nu * sigma * z + 1)^(1 / nu),
+      mu * exp(sigma * z)
+    )
+  } else if (nu != 0) {
+    ya <- mu * (nu * sigma * z + 1)^(1 / nu)
+  } else {
+    ya <- mu * exp(sigma * z)
   }
-  if (length(nu) > 1)
-    ya <- ifelse(nu != 0, mu * (nu * sigma * z + 1)^(1/nu),
-                 mu * exp(sigma * z))
-  else if (nu != 0)
-    ya <- mu * (nu * sigma * z + 1)^(1/nu)
-  else ya <- mu * exp(sigma * z)
   ya[ya < 1.0 & !is.na(ya)] <- 1.0
   ya
 }
 
 
-pBCT <- function (q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
-                  log.p = FALSE, na.rm = TRUE)
-{
-  if (any(mu < 0, na.rm = na.rm))
+pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
+                 log.p = FALSE, na.rm = TRUE) {
+  if (any(mu < 0, na.rm = na.rm)) {
     stop(paste("mu must be positive", "\n", ""))
-  if (any(sigma < 0, na.rm = na.rm))
+  }
+  if (any(sigma < 0, na.rm = na.rm)) {
     stop(paste("sigma must be positive", "\n", ""))
-  if (any(tau < 0, na.rm = na.rm))
+  }
+  if (any(tau < 0, na.rm = na.rm)) {
     stop(paste("tau must be positive", "\n", ""))
+  }
   # recode D-score < 1 to 1.
   q[q < 1.0 & !is.na(q)] <- 1.0
   # added check
-  if (length(nu) == 1L && is.na(nu))
+  if (length(nu) == 1L && is.na(nu)) {
     return(NA)
-  if (length(nu) > 1)
-    z <- ifelse(nu != 0, (((q/mu)^nu - 1)/(nu * sigma)),
-                log(q/mu)/sigma)
-  else if (nu != 0)
-    z <- (((q/mu)^nu - 1)/(nu * sigma))
-  else if (is.na(nu))
+  }
+  if (length(nu) > 1) {
+    z <- ifelse(nu != 0, (((q / mu)^nu - 1) / (nu * sigma)),
+      log(q / mu) / sigma
+    )
+  } else if (nu != 0) {
+    z <- (((q / mu)^nu - 1) / (nu * sigma))
+  } else if (is.na(nu)) {
     z <- NA
-  else z <- log(q/mu)/sigma
+  } else {
+    z <- log(q / mu) / sigma
+  }
   FYy1 <- pt(z, tau)
-  if (length(nu) > 1)
-    FYy2 <- ifelse(nu > 0, pt(-1/(sigma * abs(nu)), df = tau),
-                   0)
-  else if (nu > 0)
-    FYy2 <- pt(-1/(sigma * abs(nu)), df = tau)
-  else FYy2 <- 0
-  FYy3 <- pt(1/(sigma * abs(nu)), df = tau)
-  FYy <- (FYy1 - FYy2)/FYy3
-  if (lower.tail == TRUE)
+  if (length(nu) > 1) {
+    FYy2 <- ifelse(nu > 0, pt(-1 / (sigma * abs(nu)), df = tau),
+      0
+    )
+  } else if (nu > 0) {
+    FYy2 <- pt(-1 / (sigma * abs(nu)), df = tau)
+  } else {
+    FYy2 <- 0
+  }
+  FYy3 <- pt(1 / (sigma * abs(nu)), df = tau)
+  FYy <- (FYy1 - FYy2) / FYy3
+  if (lower.tail == TRUE) {
     FYy <- FYy
-  else FYy <- 1 - FYy
-  if (log.p == FALSE)
+  } else {
+    FYy <- 1 - FYy
+  }
+  if (log.p == FALSE) {
     FYy <- FYy
-  else FYy <- log(FYy)
+  } else {
+    FYy <- log(FYy)
+  }
   FYy
 }

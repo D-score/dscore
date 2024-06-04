@@ -52,8 +52,8 @@ daz <- function(d, x, reference = get_reference(), dec = 3) {
     m <- approx(x = reference[, "age"], y = reference[, "mu"], xout = x)$y
     s <- approx(x = reference[, "age"], y = reference[, "sigma"], xout = x)$y
     z <- ifelse(l > 0.01 | l < (-0.01),
-                (((d / m)^l) - 1) / (l * s),
-                log(d / m) / s
+      (((d / m)^l) - 1) / (l * s),
+      log(d / m) / s
     )
   }
 
@@ -99,8 +99,9 @@ zad <- function(z, x, reference = get_reference(), dec = 2) {
     sigma <- approx(reference[, "age"], reference[, "sigma"], xout = x)$y
     nu <- approx(reference[, "age"], reference[, "nu"], xout = x)$y
     d <- ifelse(nu > 0.01 | nu < (-0.01),
-                mu * ((nu * sigma * z + 1) ^ (1 / nu)),
-                mu * exp(sigma * z))
+      mu * ((nu * sigma * z + 1)^(1 / nu)),
+      mu * exp(sigma * z)
+    )
   }
 
   if (pop %in% c("phase1", "phase1_healthy")) {

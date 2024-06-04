@@ -7,10 +7,12 @@ library(openxlsx)
 # NOTE: The following file is invalid for LF, use only for SF
 # NOTE: sfi$tau is taken from key 294_0. IGNORE
 fn <- file.path("data-raw/data/SF_LF_Phase 2_Item Ordering.txt")
-sfi <- read.delim(file = fn, quote = "",
-                  stringsAsFactors = FALSE, na = "",
-                  fileEncoding = "UTF-8",
-                  header = TRUE)
+sfi <- read.delim(
+  file = fn, quote = "",
+  stringsAsFactors = FALSE, na = "",
+  fileEncoding = "UTF-8",
+  header = TRUE
+)
 colnames(sfi) <- c("start", "ph2", "ph1", "tau", "label", "domain", "gsed2", "gsed1")
 sfi$domain <- recode(sfi$domain, sem = "se", motor = "mo", lang = "lg", cog = "cg", life = "li")
 
@@ -23,10 +25,12 @@ lfi <- lfi[!is.na(lfi$matched_tau), ]
 
 # select core model, using gpa and gto instrument codes
 fn <- file.path("data-raw/data/keys/293_0.txt")
-core <- read.delim(file = fn, quote = "",
-                   stringsAsFactors = FALSE, na = "",
-                   fileEncoding = "UTF-8",
-                   header = TRUE)
+core <- read.delim(
+  file = fn, quote = "",
+  stringsAsFactors = FALSE, na = "",
+  fileEncoding = "UTF-8",
+  header = TRUE
+)
 core$label <- get_labels(core$item)
 
 # Construct item names gs1
@@ -40,18 +44,23 @@ gs1 <- data.frame(
   item = gs1$gs1_names,
   tau = gs1$tau,
   label = gs1$label,
-  decompose_itemnames(gs1_names))
+  decompose_itemnames(gs1_names)
+)
 gs1[28, "label"] <- "Does your child hold his/her hands in fists all the time?"
 
 # Construct item names gl1
 # gl1: GSED LF Version 1 (Validation Phase 2)
 # create gl1 itembank part
-gl1_names <- paste0("gl1",
-                    c(rep("gm", 49), rep("lg",52), rep("fm", 54)),
-                    "d",
-                    c(formatC(1:49, width = 3, flag = "0"),
-                      formatC(1:52, width = 3, flag = "0"),
-                      formatC(1:54, width = 3, flag = "0")))
+gl1_names <- paste0(
+  "gl1",
+  c(rep("gm", 49), rep("lg", 52), rep("fm", 54)),
+  "d",
+  c(
+    formatC(1:49, width = 3, flag = "0"),
+    formatC(1:52, width = 3, flag = "0"),
+    formatC(1:54, width = 3, flag = "0")
+  )
+)
 gl1 <- data.frame(new = gl1_names, item = lfi$matched_item)
 gl1 <- left_join(x = gl1, y = core, by = "item")
 gl1 <- data.frame(
@@ -59,9 +68,12 @@ gl1 <- data.frame(
   item = gl1_names,
   tau = lfi$matched_tau,
   label = lfi$LF2_Stem,
-  decompose_itemnames(gl1_names))
+  decompose_itemnames(gl1_names)
+)
 
 gsx <- bind_rows(gs1, gl1)
 
-write.table(gsx, file = "data-raw/data/keys/items_gs1_gl1.txt",
-            quote = FALSE, sep = "\t", row.names = FALSE)
+write.table(gsx,
+  file = "data-raw/data/keys/items_gs1_gl1.txt",
+  quote = FALSE, sep = "\t", row.names = FALSE
+)

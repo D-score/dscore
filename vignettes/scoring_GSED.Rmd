@@ -507,8 +507,8 @@ We used the GSED Phase I data to calculate age-conditional reference scores for 
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
-ref <- builtin_references |> 
-  filter(pop == "phase1") |> 
+ref <- builtin_references |>
+  filter(pop == "phase1") |>
   select(pop, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
 head(ref)
 ```
@@ -521,38 +521,46 @@ The script below creates a figure with -2SD, 0SD and +2SD centiles plus 20 $D$-s
 library(ggplot2)
 library(patchwork)
 
-r <- builtin_references |> 
-  filter(pop == "phase1" & age <= 3.5) |> 
+r <- builtin_references |>
+  filter(pop == "phase1" & age <= 3.5) |>
   mutate(m = age * 12)
 
-lf2$ins <- "lf"; lf2$m <- lf2$a * 12
-sf2$ins <- "sf"; sf2$m <- sf2$a * 12
+lf2$ins <- "lf"
+lf2$m <- lf2$a * 12
+sf2$ins <- "sf"
+sf2$m <- sf2$a * 12
 data <- bind_rows(lf2, sf2)
-g1 <- ggplot(data, aes(x = m, y = d, group = ins, color = ins)) + 
+g1 <- ggplot(data, aes(x = m, y = d, group = ins, color = ins)) +
   theme_light() +
-  annotate("polygon", x = c(r$age, rev(r$age)),
-           y = c(r$SDM2, rev(r$SDP2)), alpha = 0.06, fill = "#C5EDDE") +
+  annotate("polygon",
+    x = c(r$age, rev(r$age)),
+    y = c(r$SDM2, rev(r$SDP2)), alpha = 0.06, fill = "#C5EDDE"
+  ) +
   annotate("line", x = r$m, y = r$SDM2, lwd = 0.5, color = "#C5EDDE") +
   annotate("line", x = r$m, y = r$SDP2, lwd = 0.5, color = "#C5EDDE") +
   annotate("line", x = r$m, y = r$SD0, lwd = 1, color = "#C5EDDE") +
   scale_x_continuous("Age (in months)",
-                     limits = c(0, 42),
-                     breaks = seq(0, 42, 12)) +
+    limits = c(0, 42),
+    breaks = seq(0, 42, 12)
+  ) +
   scale_y_continuous(
     expression(paste(italic(D), "-score", sep = "")),
     breaks = seq(0, 80, 20),
-    limits = c(0, 90)) +
+    limits = c(0, 90)
+  ) +
   geom_point(size = 2) +
   theme(legend.position = "none")
-g2 <- ggplot(data, aes(x = m, y = daz, group = ins, color = ins)) + 
+g2 <- ggplot(data, aes(x = m, y = daz, group = ins, color = ins)) +
   theme_light() +
   scale_x_continuous("Age (in months)",
-                     limits = c(0, 42),
-                     breaks = seq(0, 42, 12)) +
+    limits = c(0, 42),
+    breaks = seq(0, 42, 12)
+  ) +
   scale_y_continuous(
     "DAZ",
     breaks = seq(-4, 4, 2),
-    limits = c(-5, 5)) +
+    limits = c(-5, 5)
+  ) +
   geom_point(size = 2) +
   theme(legend.position = "none")
 g1 + g2

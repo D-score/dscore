@@ -15,7 +15,6 @@
 #' get_labels(get_itemnames(instrument = "mac", number = 1:2), trim = 40)
 #' @export
 get_labels <- function(items = NULL, trim = NULL, itemtable = NULL) {
-
   # construct variable names
   if (is.null(items)) items <- get_itemnames(itemtable = itemtable)
 

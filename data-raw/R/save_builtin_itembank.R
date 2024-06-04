@@ -68,8 +68,10 @@ key_294_0_gto <- key_294_0 |> filter(item %in% items_gto)
 key_294_0_gto <- key_294_0_gto[order_itemnames(key_294_0_gto$item), ]
 key_294_0_gpa <- key_294_0 |> filter(item %in% items_gpa)
 key_294_0_gpa <- key_294_0_gpa[order_itemnames(key_294_0_gpa$item, order = "indm"), ]
-key_294_0 <- bind_rows(key_294_0_gto,
-                       key_294_0_gpa)
+key_294_0 <- bind_rows(
+  key_294_0_gto,
+  key_294_0_gpa
+)
 
 key_ecd2206 <- read.delim(file = f9, stringsAsFactors = FALSE)
 key_ecd2206 <- key_ecd2206[order_itemnames(key_ecd2206$item), ]
@@ -95,8 +97,10 @@ key_gsed2212_gs1_gl1 <- read.delim(file = f16, stringsAsFactors = FALSE) |>
   select(key, item, tau)
 
 key_gsed2212_gh1 <- openxlsx::read.xlsx(f17) |>
-  mutate(key = "gsed2212",
-         item = get_itemnames(instrument = "gh1", order = "indm")) |>
+  mutate(
+    key = "gsed2212",
+    item = get_itemnames(instrument = "gh1", order = "indm")
+  ) |>
   select(key, item, tau)
 
 # --- key2212
@@ -104,11 +108,13 @@ key_gsed2212_gh1 <- openxlsx::read.xlsx(f17) |>
 # Add gs1 and gs2 instrument names (gpa=gs1)
 # Add ecdi
 # Save as gsed2212
-key_gsed2212 <- bind_rows(key_gsed2212_gs1_gl1,
-                          key_gsed2212_gh1,
-                          key_293_0,
-                          key_gsed2212,
-                          key_ecd2208) |>
+key_gsed2212 <- bind_rows(
+  key_gsed2212_gs1_gl1,
+  key_gsed2212_gh1,
+  key_293_0,
+  key_gsed2212,
+  key_ecd2208
+) |>
   mutate(key = "gsed2212") |>
   select(key, item, tau)
 check_single_key(key_gsed2212)
@@ -131,16 +137,20 @@ sf_gsed <- gsedread::rename_vector(key_sf2206$item, lexin = "gsed2", lexout = "g
 lfsf_gsed <- gsedread::rename_vector(key_294_0$item, lexin = "gsed2", lexout = "gsed")
 lf_tau <- dscore::get_tau(lf_gsed, key = "gsed2206", itembank = key_gsed2206)
 sf_tau <- dscore::get_tau(sf_gsed, key = "gsed2206", itembank = key_gsed2206)
-key_gsed2206 <- bind_rows(key_gsed2206,
-                          data.frame(key = "gsed2206", item = key_lf2206$item, tau = lf_tau),
-                          data.frame(key = "gsed2206", item = key_sf2206$item, tau = sf_tau),
-                          key_ecd2206) |>
+key_gsed2206 <- bind_rows(
+  key_gsed2206,
+  data.frame(key = "gsed2206", item = key_lf2206$item, tau = lf_tau),
+  data.frame(key = "gsed2206", item = key_sf2206$item, tau = sf_tau),
+  key_ecd2206
+) |>
   filter(!is.na(tau))
 check_single_key(key_gsed2206)
 
 # --- key1912 (807 items)
-key_gsed1912 <- bind_rows(key_gsed1912,
-                          key_mullen)
+key_gsed1912 <- bind_rows(
+  key_gsed1912,
+  key_mullen
+)
 check_single_key(key_gsed1912)
 
 # --- key_gcdg (565 items)
@@ -148,21 +158,27 @@ check_single_key(key_gcdg)
 
 # --- key_lf2206 Deprecated --> gsed2212
 # Extend lf2206 with gsed item names
-key_lf2206 <- bind_rows(key_lf2206,
-                        data.frame(key = "lf2206", item = lf_gsed, tau = key_lf2206$tau))
+key_lf2206 <- bind_rows(
+  key_lf2206,
+  data.frame(key = "lf2206", item = lf_gsed, tau = key_lf2206$tau)
+)
 check_single_key(key_lf2206)
 
 # --- key_sf2206 Deprecated --> gsed2212
 # Extend sf2206 with gsed item names
-key_sf2206 <- bind_rows(key_sf2206,
-                        data.frame(key = "sf2206", item = sf_gsed, tau = key_sf2206$tau))
+key_sf2206 <- bind_rows(
+  key_sf2206,
+  data.frame(key = "sf2206", item = sf_gsed, tau = key_sf2206$tau)
+)
 check_single_key(key_sf2206)
 
 # --- key_294_0 DEPRECATED --> key_293_0
 # Extend 294_0 with gsed item names
-key_294_0 <- bind_rows(key_294_0,
-                       data.frame(key = "294_0", item = lfsf_gsed, tau = key_294_0$tau),
-                       key_ecd294_0)
+key_294_0 <- bind_rows(
+  key_294_0,
+  data.frame(key = "294_0", item = lfsf_gsed, tau = key_294_0$tau),
+  key_ecd294_0
+)
 check_single_key(key_294_0)
 
 # --- key_293_9 GSED CORE MODEL (part of key_gsed2212)
@@ -172,16 +188,18 @@ check_single_key(key_293_0)
 check_single_key(key_dutch)
 
 
-builtin_itembank <- bind_rows(key_gsed2212,
-                              key_gsed2208,
-                              key_gsed2206,
-                              key_gsed1912,
-                              key_gcdg,
-                              key_lf2206,
-                              key_sf2206,
-                              key_294_0,
-                              key_293_0,
-                              key_dutch) |>
+builtin_itembank <- bind_rows(
+  key_gsed2212,
+  key_gsed2208,
+  key_gsed2206,
+  key_gsed1912,
+  key_gcdg,
+  key_lf2206,
+  key_sf2206,
+  key_294_0,
+  key_293_0,
+  key_dutch
+) |>
   left_join(get_itemtable(decompose = TRUE), by = "item") |>
   select(-equate)
 

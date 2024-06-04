@@ -29,12 +29,15 @@ get_age_equivalent <- function(items,
 
   # set default reference population for DAZ
   if (is.null(population)) {
-    if (key %in% c("gsed2212", "gsed2208", "293_0"))
+    if (key %in% c("gsed2212", "gsed2208", "293_0")) {
       population <- "phase1"
-    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0"))
+    }
+    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0")) {
       population <- "gcdg"
-    if (key %in% c("dutch"))
+    }
+    if (key %in% c("dutch")) {
       population <- "dutch"
+    }
     if (is.null(population)) {
       population <- "phase1"
       warning("Could not set population argument. Uses phase1.")
@@ -43,16 +46,18 @@ get_age_equivalent <- function(items,
 
   # set scalefactor
   scalefactor <- switch(population,
-                        phase1 = 4.064264,
-                        gcdg = 2.073871,
-                        dutch = 2.1044,
-                        NA)
+    phase1 = 4.064264,
+    gcdg = 2.073871,
+    dutch = 2.1044,
+    NA
+  )
   if (is.na(scalefactor)) stop("Could not set scale factor for population.")
 
   # obtain difficulty estimates
   ib <- tibble(
     item = items,
-    d = get_tau(items = items, key = key, itembank = itembank))
+    d = get_tau(items = items, key = key, itembank = itembank)
+  )
 
   # get reference
   reference <- get_reference(population)

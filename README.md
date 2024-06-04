@@ -13,15 +13,15 @@ status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org
 [![](https://img.shields.io/badge/github%20version-1.8.8-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
-The *D*-score is a numerical score that measures generic development in
-children. You may use the *D*-score to analyze and predict development
-of children similar to measures like height and weight.
+The D-score is a numerical score that measures generic development in
+children. You may use the D-score to analyze and predict development of
+children similar to measures like height and weight.
 
 The `dscore` package contains tools to
 
 - Map your item names to the GSED convention
-- Calculate *D*-score from item level responses
-- Transform the *D*-scores into DAZ, age-standardised Z-scores
+- Calculate D-score from item level responses
+- Transform the D-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones from
 widely used instruments for measuring child development.
@@ -38,14 +38,13 @@ remotes::install_github("d-score/dscore")
 
 ## Overview
 
-You may estimate the *D*-score and the *D*-score age-adjusted Z-score
-(DAZ) from child data on developmental milestones. Four steps are
-needed:
+You may estimate the D-score and the D-score age-adjusted Z-score (DAZ)
+from child data on developmental milestones. Four steps are needed:
 
 1.  Identify whether the `dscore` package covers your measurement
     instrument;
 2.  Map your variable names to the GSED 9-position schema;
-3.  Calculate *D*-score and DAZ;
+3.  Calculate D-score and DAZ;
 4.  Summarise your results.
 
 The `dscore` package provides various function that support these steps.
@@ -57,7 +56,7 @@ more details.
 
 ### Books and reports
 
-1.  [*D*-score: Turning milestones into
+1.  [D-score: Turning milestones into
     measurement](https://d-score.org/dbook1/)
 2.  [Inventory of 147 instruments for measuring early child
     development](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries):

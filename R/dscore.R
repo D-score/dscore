@@ -163,8 +163,10 @@
 #' [builtin_references()]
 #' @examples
 #' data <- data.frame(
-#'   id = c("Jane", "Martin", "ID-3", "No. 4", "Five", "6",
-#'         NA_character_, as.character(8:10)),
+#'   id = c(
+#'     "Jane", "Martin", "ID-3", "No. 4", "Five", "6",
+#'     NA_character_, as.character(8:10)
+#'   ),
 #'   age = rep(round(21 / 365.25, 4), 10),
 #'   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
 #'   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
@@ -191,9 +193,11 @@
 #' rowSums(p)
 #'
 #' # plot posterior for row 7
-#' barplot(as.matrix(p[7, 12:29]), names = 1:18,
+#' barplot(as.matrix(p[7, 12:29]),
+#'   names = 1:18,
 #'   xlab = "D-score", ylab = "Density",
-#'   main = "Full D-score posterior for measurement in row 7")
+#'   main = "Full D-score posterior for measurement in row 7"
+#' )
 #' @export
 dscore <- function(data,
                    items = names(data),
@@ -248,7 +252,6 @@ dscore_posterior <- function(data,
                              dec = c(2L, 3L),
                              relevance = c(-Inf, Inf),
                              algorithm = c("current", "1.8.7")) {
-
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
@@ -282,12 +285,15 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
 
   # set default reference population for DAZ
   if (is.null(population)) {
-    if (key %in% c("gsed2212", "gsed2208", "293_0"))
+    if (key %in% c("gsed2212", "gsed2208", "293_0")) {
       population <- "phase1"
-    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0"))
+    }
+    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0")) {
       population <- "gcdg"
-    if (key %in% c("dutch"))
+    }
+    if (key %in% c("dutch")) {
       population <- "dutch"
+    }
     if (is.null(population)) {
       population <- "phase1"
       warning("Could not set 'population' argument. Uses phase1.")
@@ -297,11 +303,12 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   # set default column name of prior_mean
   if (is.null(prior_mean)) {
     prior_mean <- switch(population,
-                         phase1 = ".phase1",
-                         phase1_health = ".phase1_healthy",
-                         gcdg = ".gcdg",
-                         dutch = ".dutch",
-                         "other")
+      phase1 = ".phase1",
+      phase1_health = ".phase1_healthy",
+      gcdg = ".gcdg",
+      dutch = ".dutch",
+      "other"
+    )
     if (prior_mean == "other") {
       prior_mean <- ".phase1"
       warning("Inherits prior mean from population phase1. Set prior_mean = '.phase1' to silence this warning.")
@@ -311,9 +318,10 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   # set default transform if needed
   if (is.null(transform)) {
     transform <- switch(population,
-                        phase1 = c(54.939147, 4.064264),
-                        gcdg = c(66.174355, 2.073871),
-                        dutch = c(38.906, 2.1044))
+      phase1 = c(54.939147, 4.064264),
+      gcdg = c(66.174355, 2.073871),
+      dutch = c(38.906, 2.1044)
+    )
     # if (key %in% c("gsed2208", "293_0"))
     #   transform <- c(54.939147, 4.064264)
     # if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
@@ -340,10 +348,10 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
   decage <- switch(xunit,
-                   decimal = round(data[[xname]], 4L),
-                   months  = round(data[[xname]] / 12, 4L),
-                   days    = round(data[[xname]] / 365.25, 4L),
-                   rep(NA, nrow(data))
+    decimal = round(data[[xname]], 4L),
+    months  = round(data[[xname]] / 12, 4L),
+    days    = round(data[[xname]] / 365.25, 4L),
+    rep(NA, nrow(data))
   )
 
   # obtain difficulty estimates
@@ -388,14 +396,16 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
 
   # determine sd for the prior
   sd <- rep(5, nrow(data))
-  if (is.character(prior_sd) && prior_sd %in% names(data))
+  if (is.character(prior_sd) && prior_sd %in% names(data)) {
     sd <- data[[prior_sd]]
+  }
 
   # In D-score scale, set scale expansion
   scale <- switch(algorithm,
-                  "current" = transform[2L],
-                  "1.8.7" = 1,
-                  transform[2L])
+    "current" = transform[2L],
+    "1.8.7" = 1,
+    transform[2L]
+  )
 
   # setup for logit scale
   if (metric == "logit") {
@@ -404,9 +414,10 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
     mu <- (mu - transform[1L]) / transform[2L]
     sd <- sd / transform[2L]
     scale <- switch(algorithm,
-                    "current" = 1,
-                    "1.8.7" = 1 / transform[2],
-                    1)
+      "current" = 1,
+      "1.8.7" = 1 / transform[2],
+      1
+    )
   }
 
   # bind difficulty estimates to data
@@ -453,8 +464,8 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
         data4[i, ] <- f
       } else {
         data4[i, ] <- dnorm(qp,
-                            mean = as.double(data2[i, "mu"]),
-                            sd = as.double(data2[i, "sd"])
+          mean = as.double(data2[i, "mu"]),
+          sd = as.double(data2[i, "sd"])
         )
       }
     }
@@ -498,7 +509,8 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
         daz = daz(
           d = .data$d, x = .data$a,
           reference = get_reference(population),
-          dec = dec[2L]),
+          dec = dec[2L]
+        ),
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)
       ) |>
       select(all_of(c("a", "n", "p", "d", "sem", "daz")))
@@ -508,15 +520,17 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   nfo <- setdiff(prepend, colnames(data))
   if (length(nfo)) {
     warning("Not found: ",
-            paste(nfo, collapse = ", "),
-            call. = FALSE)
+      paste(nfo, collapse = ", "),
+      call. = FALSE
+    )
   }
   adm <- intersect(colnames(data), prepend)
   dup <- intersect(colnames(data5), adm)
   if (length(dup)) {
     warning("Overwrites column(s): ",
-            paste(dup, collapse = ", "),
-            call. = FALSE)
+      paste(dup, collapse = ", "),
+      call. = FALSE
+    )
     adm <- setdiff(adm, dup)
   }
   if (length(adm)) {

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
       </span>
     </div>
 
@@ -60,6 +60,20 @@
       <small>Source: <a href="https://github.com/d-score/dscore/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.8.9" id="dscore-189">dscore 1.8.9<a class="anchor" aria-label="anchor" href="#dscore-189"></a></h2>
+<ul><li>
+<p>Updates the <code>phase1_healthy</code> age-conditional D-score references with three changes:</p>
+<ol style="list-style-type: decimal"><li>D-score estimation uses the new model 20240601 with correct scale factor</li>
+<li>Calculates the D-score for SF and LF separately (not combined)</li>
+<li>Tunes the GAMSLSS model to fit the healthy subsample</li>
+</ol><p>Use <code>population = "phase1_healthy"</code> to calculate DAZ relative to this new reference. The new reference is based on healthy children only, and is currently experimental. The current reference <code>"phase1"</code> remains the default for now, but may be superseeded by <code>"phase1_healthy"</code> in a future version.</p>
+</li>
+<li><p>Simplifies the spelling of the term “D-score” to improve consistency and readability</p></li>
+<li><p>Removes dependency on <code>tidyselect</code></p></li>
+<li><p>Replaces <code>magrittr</code> pipe <code>%&gt;%</code> by base pipe <code>|&gt;</code></p></li>
+<li><p>Make style more consistent with <code>styler</code></p></li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.8.8" id="dscore-188">dscore 1.8.8<a class="anchor" aria-label="anchor" href="#dscore-188"></a></h2>
 <ul><li>BREAKING CHANGE: Adds an <code>algorithm</code> argument to <code><a href="../reference/dscore.html">dscore()</a></code> and <code><a href="../reference/dscore.html">dscore_posterior()</a></code> to select the algorithm used to calculate the D-score. The default algorithm, called <code>"current"</code>, correctly uses a scale factor of 1 for calculation in the logistic metric. Previously, a scale factor of 1 was errroneously applied to the D-score metric. The current algorithm results in different D-score estimates and higher SEM estimates, but is preferred to the former method. For backward-compatibility to <code>dscore 1.8.7</code> and earlier, use <code>algorithm = "1.8.7"</code>.</li>

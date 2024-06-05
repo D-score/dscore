@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
       </span>
     </div>
 
@@ -96,10 +96,10 @@
 </h2>
 <p>Suppose you have administered GSED SF, GSED LF <span class="citation">(<a href="#ref-mccray2023">McCray et al.
 2023</a>)</span> or GSED HF to one or more children. The next step is
-calculating each child’s developmental score (<span class="math inline">\(D\)</span>-score) and age-adjusted equivalent
-(DAZ). This step is known as <strong>scoring</strong>. The present
-section provides recipes for calculating the <span class="math inline">\(D\)</span>-score and DAZ. We may pick one of the
-following two methods:</p>
+calculating each child’s developmental score (D-score) and age-adjusted
+equivalent (DAZ). This step is known as <strong>scoring</strong>. The
+present section provides recipes for calculating the D-score and DAZ. We
+may pick one of the following two methods:</p>
 <ol style="list-style-type: decimal">
 <li>Online calculator. The online Shiny app <a href="https://tnochildhealthstatistics.shinyapps.io/dcalculator/" class="external-link uri">https://tnochildhealthstatistics.shinyapps.io/dcalculator/</a>
 is a convenient option for users not familiar with <code>R</code>. The
@@ -108,10 +108,9 @@ further discussed here.</li>
 <li>
 <code>R</code> package <code>dscore</code>. The <code>R</code>
 package <code>dscore</code> at <a href="https://CRAN.R-project.org/package=dscore" class="external-link uri">https://CRAN.R-project.org/package=dscore</a> is a flexible
-option with all the tools needed to calculate the <span class="math inline">\(D\)</span>-score. It is an excellent choice for
-users familiar with <code>R</code> and users who like to incorporate
-<span class="math inline">\(D\)</span>-score calculations into a
-workflow.</li>
+option with all the tools needed to calculate the D-score. It is an
+excellent choice for users familiar with <code>R</code> and users who
+like to incorporate D-score calculations into a workflow.</li>
 </ol>
 </div>
 <div class="section level2">
@@ -126,9 +125,8 @@ on your local machine;</li>
 <li>The child data need to be stored as a <code>data.frame</code>, a
 standard <code>R</code> tabular structure;</li>
 <li>You need to run the <code><a href="../reference/dscore.html">dscore()</a></code> function to calculate the
-<span class="math inline">\(D\)</span>-score and DAZ. The function
-returns a table with six columns with the estimates with the same number
-of rows as your data.</li>
+D-score and DAZ. The function returns a table with six columns with the
+estimates with the same number of rows as your data.</li>
 </ul>
 </div>
 <div class="section level2">
@@ -137,9 +135,8 @@ of rows as your data.</li>
 <p>The <code>dscore</code> package contains tools to</p>
 <ul>
 <li>Map your item names to the GSED convention</li>
-<li>Calculate <em>D</em>-scores from item level responses</li>
-<li>Transform the <em>D</em>-scores into DAZ, age-standardised
-Z-scores</li>
+<li>Calculate D-scores from item level responses</li>
+<li>Transform the D-scores into DAZ, age-standardised Z-scores</li>
 </ul>
 <p>The required input consists of <em>item level</em> responses on
 milestones collected using instruments for measuring child development,
@@ -222,14 +219,14 @@ date and birth date.</li>
 <li>One column for each item, appropriately named by the 9-position GSED
 item name. Normally, the items come from the same instrument, but they
 may also come from multiple instruments. The data from any recognised
-item name will contribute to the <span class="math inline">\(D\)</span>-score. Do not duplicate names in the
+item name will contribute to the D-score. Do not duplicate names in the
 data. A PASS is coded as <code>1</code>, a FAIL as <code>0</code>. If
 there is no answer or if the item was not administered use the missing
 value code <code>NA</code>. Items that are never administered may be
 coded as all <code>NA</code> or deleted.</li>
 </ul>
 <p>The dataset may contain additional columns, e.g., the child number or
-health information. These are ignored by the <span class="math inline">\(D\)</span>-score calculation.</p>
+health information. These are ignored by the D-score calculation.</p>
 <p>The most important steps is preparing the data for the D-score
 calculations are:</p>
 <ul>
@@ -349,11 +346,11 @@ with gsed 9-position item names.</p>
 <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
 </div>
 <div class="section level4">
-<h4 id="calculate-d-score">Calculate <span class="math inline">\(D\)</span>-score<a class="anchor" aria-label="anchor" href="#calculate-d-score"></a>
+<h4 id="calculate-d-score">Calculate D-score<a class="anchor" aria-label="anchor" href="#calculate-d-score"></a>
 </h4>
-<p>Once the data are in proper shape, calculation of the <span class="math inline">\(D\)</span>-score is straightforward. The
-<code>sf</code> dataset has properly named columns that identify each
-item.</p>
+<p>Once the data are in proper shape, calculation of the D-score is
+straightforward. The <code>sf</code> dataset has properly named columns
+that identify each item.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
@@ -377,7 +374,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>n</code></td>
-<td>Number of items used to calculate the <span class="math inline">\(D\)</span>-score</td>
+<td>Number of items used to calculate the D-score</td>
 </tr>
 <tr class="odd">
 <td><code>p</code></td>
@@ -385,8 +382,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>d</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score (posterior mean)</td>
+<td>D-score (posterior mean)</td>
 </tr>
 <tr class="odd">
 <td><code>sem</code></td>
@@ -394,8 +390,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>daz</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score corrected for age</td>
+<td>D-score corrected for age</td>
 </tr>
 </tbody>
 </table>
@@ -403,11 +398,12 @@ item.</p>
 rows of <code>sf</code>. We save the result for later processing.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sf2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">sf</span>, <span class="va">results</span><span class="op">)</span></span></code></pre></div>
-<p>It is possible to calculate <span class="math inline">\(D\)</span>-score for item subsets by setting the
+<p>It is possible to calculate D-score for item subsets by setting the
 <code>items</code> argument. We do not advertise this option for
-practical application, but suppose we are interested in the <span class="math inline">\(D\)</span>-score based on items from
-<code>gs1</code> and <code>gl1</code> for domains <code>mo</code> or
-<code>gm</code> (motor) only. The “motor” <span class="math inline">\(D\)</span>-score can be calculated as follows:</p>
+practical application, but suppose we are interested in the D-score
+based on items from <code>gs1</code> and <code>gl1</code> for domains
+<code>mo</code> or <code>gm</code> (motor) only. The “motor” D-score can
+be calculated as follows:</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">items_motor</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gs1"</span>, <span class="st">"gl1"</span><span class="op">)</span>, domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mo"</span>, <span class="st">"gm"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
@@ -489,11 +485,11 @@ with gsed 9-position item names.</p>
 <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
 </div>
 <div class="section level4">
-<h4 id="calculate-d-score-1">Calculate <span class="math inline">\(D\)</span>-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-1"></a>
+<h4 id="calculate-d-score-1">Calculate D-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-1"></a>
 </h4>
-<p>Once the data are in proper shape, calculation of the <span class="math inline">\(D\)</span>-score is straightforward. The
-<code>lf</code> dataset has properly named columns that identify each
-item.</p>
+<p>Once the data are in proper shape, calculation of the D-score is
+straightforward. The <code>lf</code> dataset has properly named columns
+that identify each item.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
@@ -517,7 +513,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>n</code></td>
-<td>Number of items used to calculate the <span class="math inline">\(D\)</span>-score</td>
+<td>Number of items used to calculate the D-score</td>
 </tr>
 <tr class="odd">
 <td><code>p</code></td>
@@ -525,8 +521,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>d</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score (posterior mean)</td>
+<td>D-score (posterior mean)</td>
 </tr>
 <tr class="odd">
 <td><code>sem</code></td>
@@ -534,8 +529,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>daz</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score corrected for age</td>
+<td>D-score corrected for age</td>
 </tr>
 </tbody>
 </table>
@@ -543,11 +537,12 @@ item.</p>
 rows of <code>lf</code>. We save the result for later processing.</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lf2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">lf</span>, <span class="va">results</span><span class="op">)</span></span></code></pre></div>
-<p>It is possible to calculate <span class="math inline">\(D\)</span>-score for item subsets by setting the
+<p>It is possible to calculate D-score for item subsets by setting the
 <code>items</code> argument. We do not advertise this option for
-practical application, but suppose we are interested in the <span class="math inline">\(D\)</span>-score based on items from
-<code>gs1</code> and <code>gl1</code> for domains <code>mo</code> or
-<code>gm</code> (motor) only. The “motor” <span class="math inline">\(D\)</span>-score can be calculated as follows:</p>
+practical application, but suppose we are interested in the D-score
+based on items from <code>gs1</code> and <code>gl1</code> for domains
+<code>mo</code> or <code>gm</code> (motor) only. The “motor” D-score can
+be calculated as follows:</p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">items_motor</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gs1"</span>, <span class="st">"gl1"</span><span class="op">)</span>, domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mo"</span>, <span class="st">"gm"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
@@ -624,11 +619,11 @@ with gsed 9-position item names.</p>
 <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
 </div>
 <div class="section level4">
-<h4 id="calculate-d-score-2">Calculate <span class="math inline">\(D\)</span>-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-2"></a>
+<h4 id="calculate-d-score-2">Calculate D-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-2"></a>
 </h4>
-<p>Once the data are in proper shape, calculation of the <span class="math inline">\(D\)</span>-score is straightforward. The
-<code>hf</code> dataset has properly named columns that identify each
-item.</p>
+<p>Once the data are in proper shape, calculation of the D-score is
+straightforward. The <code>hf</code> dataset has properly named columns
+that identify each item.</p>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">hf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
@@ -652,7 +647,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>n</code></td>
-<td>Number of items used to calculate the <span class="math inline">\(D\)</span>-score</td>
+<td>Number of items used to calculate the D-score</td>
 </tr>
 <tr class="odd">
 <td><code>p</code></td>
@@ -660,8 +655,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>d</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score (posterior mean)</td>
+<td>D-score (posterior mean)</td>
 </tr>
 <tr class="odd">
 <td><code>sem</code></td>
@@ -669,8 +663,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>daz</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score corrected for age</td>
+<td>D-score corrected for age</td>
 </tr>
 </tbody>
 </table>
@@ -678,11 +671,12 @@ item.</p>
 rows of <code>hf</code>. We save the result for later processing.</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hf2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">hf</span>, <span class="va">results</span><span class="op">)</span></span></code></pre></div>
-<p>It is possible to calculate <span class="math inline">\(D\)</span>-score for item subsets by setting the
+<p>It is possible to calculate D-score for item subsets by setting the
 <code>items</code> argument. We do not advertise this option for
-practical application, but suppose we are interested in the <span class="math inline">\(D\)</span>-score based on items from
-<code>gs1</code>, <code>gl1</code> and <code>gh1</code> for domains
-<code>mo</code> or <code>gm</code> (motor) only. The “motor” <span class="math inline">\(D\)</span>-score can be calculated as follows:</p>
+practical application, but suppose we are interested in the D-score
+based on items from <code>gs1</code>, <code>gl1</code> and
+<code>gh1</code> for domains <code>mo</code> or <code>gm</code> (motor)
+only. The “motor” D-score can be calculated as follows:</p>
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">items_motor</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gs1"</span>, <span class="st">"gl1"</span>, <span class="st">"gh1"</span><span class="op">)</span>, domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mo"</span>, <span class="st">"gm"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">hf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
@@ -759,11 +753,11 @@ with gsed 9-position item names.</p>
 <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
 </div>
 <div class="section level4">
-<h4 id="calculate-d-score-3">Calculate <span class="math inline">\(D\)</span>-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-3"></a>
+<h4 id="calculate-d-score-3">Calculate D-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-3"></a>
 </h4>
-<p>Once the data are in proper shape, calculation of the <span class="math inline">\(D\)</span>-score is straightforward. The
-<code>sf</code> dataset has properly named columns that identify each
-item.</p>
+<p>Once the data are in proper shape, calculation of the D-score is
+straightforward. The <code>sf</code> dataset has properly named columns
+that identify each item.</p>
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
@@ -787,7 +781,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>n</code></td>
-<td>Number of items used to calculate the <span class="math inline">\(D\)</span>-score</td>
+<td>Number of items used to calculate the D-score</td>
 </tr>
 <tr class="odd">
 <td><code>p</code></td>
@@ -795,8 +789,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>d</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score (posterior mean)</td>
+<td>D-score (posterior mean)</td>
 </tr>
 <tr class="odd">
 <td><code>sem</code></td>
@@ -804,8 +797,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>daz</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score corrected for age</td>
+<td>D-score corrected for age</td>
 </tr>
 </tbody>
 </table>
@@ -813,11 +805,12 @@ item.</p>
 rows of <code>sf</code>. We save the result for later processing.</p>
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sf3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">sf</span>, <span class="va">results</span><span class="op">)</span></span></code></pre></div>
-<p>It is possible to calculate <span class="math inline">\(D\)</span>-score for item subsets by setting the
+<p>It is possible to calculate D-score for item subsets by setting the
 <code>items</code> argument. We do not advertise this option for
-practical application, but suppose we are interested in the <span class="math inline">\(D\)</span>-score based on items from
-<code>gpa</code> and <code>gto</code> for domains <code>mo</code> or
-<code>gm</code> (motor) only. The “motor” <span class="math inline">\(D\)</span>-score can be calculated as follows:</p>
+practical application, but suppose we are interested in the D-score
+based on items from <code>gpa</code> and <code>gto</code> for domains
+<code>mo</code> or <code>gm</code> (motor) only. The “motor” D-score can
+be calculated as follows:</p>
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">items_motor</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gpa"</span>, <span class="st">"gto"</span><span class="op">)</span>, domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mo"</span>, <span class="st">"gm"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
@@ -899,11 +892,11 @@ with gsed 9-position item names.</p>
 <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
 </div>
 <div class="section level4">
-<h4 id="calculate-d-score-4">Calculate <span class="math inline">\(D\)</span>-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-4"></a>
+<h4 id="calculate-d-score-4">Calculate D-score<a class="anchor" aria-label="anchor" href="#calculate-d-score-4"></a>
 </h4>
-<p>Once the data are in proper shape, calculation of the <span class="math inline">\(D\)</span>-score is straightforward. The
-<code>lf</code> dataset has properly named columns that identify each
-item.</p>
+<p>Once the data are in proper shape, calculation of the D-score is
+straightforward. The <code>lf</code> dataset has properly named columns
+that identify each item.</p>
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
@@ -927,7 +920,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>n</code></td>
-<td>Number of items used to calculate the <span class="math inline">\(D\)</span>-score</td>
+<td>Number of items used to calculate the D-score</td>
 </tr>
 <tr class="odd">
 <td><code>p</code></td>
@@ -935,8 +928,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>d</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score (posterior mean)</td>
+<td>D-score (posterior mean)</td>
 </tr>
 <tr class="odd">
 <td><code>sem</code></td>
@@ -944,8 +936,7 @@ item.</p>
 </tr>
 <tr class="even">
 <td><code>daz</code></td>
-<td>
-<span class="math inline">\(D\)</span>-score corrected for age</td>
+<td>D-score corrected for age</td>
 </tr>
 </tbody>
 </table>
@@ -953,11 +944,12 @@ item.</p>
 rows of <code>lf</code>. We save the result for later processing.</p>
 <div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lf3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">lf</span>, <span class="va">results</span><span class="op">)</span></span></code></pre></div>
-<p>It is possible to calculate <span class="math inline">\(D\)</span>-score for item subsets by setting the
+<p>It is possible to calculate D-score for item subsets by setting the
 <code>items</code> argument. We do not advertise this option for
-practical application, but suppose we are interested in the <span class="math inline">\(D\)</span>-score based on items from
-<code>gpa</code> and <code>gto</code> for domains <code>mo</code> or
-<code>gm</code> (motor) only. The “motor” <span class="math inline">\(D\)</span>-score can be calculated as follows:</p>
+practical application, but suppose we are interested in the D-score
+based on items from <code>gpa</code> and <code>gto</code> for domains
+<code>mo</code> or <code>gm</code> (motor) only. The “motor” D-score can
+be calculated as follows:</p>
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">items_motor</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gpa"</span>, <span class="st">"gto"</span><span class="op">)</span>, domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mo"</span>, <span class="st">"gm"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
@@ -978,14 +970,13 @@ practical application, but suppose we are interested in the <span class="math in
 <h3 id="phase-1-references-and-daz">Phase 1 references and DAZ<a class="anchor" aria-label="anchor" href="#phase-1-references-and-daz"></a>
 </h3>
 <p>We used the GSED Phase I data to calculate age-conditional reference
-scores for the <span class="math inline">\(D\)</span>-score. The
-references are based on about 12,000 administration of the GSED SF and
-GSED LF from Bangladesh, Pakistan and Tanzania. Extract the references
-as</p>
+scores for the D-score. The references are based on about 12,000
+administration of the GSED SF and GSED LF from Bangladesh, Pakistan and
+Tanzania. Extract the references as</p>
 <div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="va">ref</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
+<span><span class="va">ref</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">age</span>, <span class="va">mu</span>, <span class="va">sigma</span>, <span class="va">nu</span>, <span class="va">tau</span>, <span class="va">SDM2</span>, <span class="va">SD0</span>, <span class="va">SDP2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ref</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##      pop    age    mu  sigma     nu    tau     SDM2      SD0     SDP2</span></span>
@@ -998,44 +989,52 @@ as</p>
 <p>The columns <code>mu</code>, <code>sigma</code>, <code>nu</code> and
 <code>tau</code> are the age-varying parameters of a Box-Cox <span class="math inline">\(t\)</span> (BCT) distribution.</p>
 <p>The script below creates a figure with -2SD, 0SD and +2SD centiles
-plus 20 <span class="math inline">\(D\)</span>-scores (10 LF and 10 SF)
-for the <code>lf2</code> and <code>sf2</code> data.</p>
+plus 20 D-scores (10 LF and 10 SF) for the <code>lf2</code> and
+<code>sf2</code> data.</p>
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">r</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"phase1"</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">3.5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
+<span><span class="va">r</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"phase1"</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">3.5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>m <span class="op">=</span> <span class="va">age</span> <span class="op">*</span> <span class="fl">12</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">lf2</span><span class="op">$</span><span class="va">ins</span> <span class="op">&lt;-</span> <span class="st">"lf"</span>; <span class="va">lf2</span><span class="op">$</span><span class="va">m</span> <span class="op">&lt;-</span> <span class="va">lf2</span><span class="op">$</span><span class="va">a</span> <span class="op">*</span> <span class="fl">12</span></span>
-<span><span class="va">sf2</span><span class="op">$</span><span class="va">ins</span> <span class="op">&lt;-</span> <span class="st">"sf"</span>; <span class="va">sf2</span><span class="op">$</span><span class="va">m</span> <span class="op">&lt;-</span> <span class="va">sf2</span><span class="op">$</span><span class="va">a</span> <span class="op">*</span> <span class="fl">12</span></span>
+<span><span class="va">lf2</span><span class="op">$</span><span class="va">ins</span> <span class="op">&lt;-</span> <span class="st">"lf"</span></span>
+<span><span class="va">lf2</span><span class="op">$</span><span class="va">m</span> <span class="op">&lt;-</span> <span class="va">lf2</span><span class="op">$</span><span class="va">a</span> <span class="op">*</span> <span class="fl">12</span></span>
+<span><span class="va">sf2</span><span class="op">$</span><span class="va">ins</span> <span class="op">&lt;-</span> <span class="st">"sf"</span></span>
+<span><span class="va">sf2</span><span class="op">$</span><span class="va">m</span> <span class="op">&lt;-</span> <span class="va">sf2</span><span class="op">$</span><span class="va">a</span> <span class="op">*</span> <span class="fl">12</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">lf2</span>, <span class="va">sf2</span><span class="op">)</span></span>
-<span><span class="va">g1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">m</span>, y <span class="op">=</span> <span class="va">d</span>, group <span class="op">=</span> <span class="va">ins</span>, color <span class="op">=</span> <span class="va">ins</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span><span class="va">g1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">m</span>, y <span class="op">=</span> <span class="va">d</span>, group <span class="op">=</span> <span class="va">ins</span>, color <span class="op">=</span> <span class="va">ins</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_light</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span><span class="st">"polygon"</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">age</span>, <span class="fu"><a href="https://rdrr.io/r/base/rev.html" class="external-link">rev</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">age</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>           y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">SDM2</span>, <span class="fu"><a href="https://rdrr.io/r/base/rev.html" class="external-link">rev</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">SDP2</span><span class="op">)</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.06</span>, fill <span class="op">=</span> <span class="st">"#C5EDDE"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span><span class="st">"polygon"</span>,</span>
+<span>    x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">age</span>, <span class="fu"><a href="https://rdrr.io/r/base/rev.html" class="external-link">rev</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">age</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">SDM2</span>, <span class="fu"><a href="https://rdrr.io/r/base/rev.html" class="external-link">rev</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">SDP2</span><span class="op">)</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.06</span>, fill <span class="op">=</span> <span class="st">"#C5EDDE"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span><span class="st">"line"</span>, x <span class="op">=</span> <span class="va">r</span><span class="op">$</span><span class="va">m</span>, y <span class="op">=</span> <span class="va">r</span><span class="op">$</span><span class="va">SDM2</span>, lwd <span class="op">=</span> <span class="fl">0.5</span>, color <span class="op">=</span> <span class="st">"#C5EDDE"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span><span class="st">"line"</span>, x <span class="op">=</span> <span class="va">r</span><span class="op">$</span><span class="va">m</span>, y <span class="op">=</span> <span class="va">r</span><span class="op">$</span><span class="va">SDP2</span>, lwd <span class="op">=</span> <span class="fl">0.5</span>, color <span class="op">=</span> <span class="st">"#C5EDDE"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span><span class="st">"line"</span>, x <span class="op">=</span> <span class="va">r</span><span class="op">$</span><span class="va">m</span>, y <span class="op">=</span> <span class="va">r</span><span class="op">$</span><span class="va">SD0</span>, lwd <span class="op">=</span> <span class="fl">1</span>, color <span class="op">=</span> <span class="st">"#C5EDDE"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span><span class="st">"Age (in months)"</span>,</span>
-<span>                     limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span><span class="op">)</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span><span class="op">)</span>,</span>
+<span>    breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span>, <span class="fl">12</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="fu">italic</span><span class="op">(</span><span class="va">D</span><span class="op">)</span>, <span class="st">"-score"</span>, sep <span class="op">=</span> <span class="st">""</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">80</span>, <span class="fl">20</span><span class="op">)</span>,</span>
-<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">90</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">90</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span>
-<span><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">m</span>, y <span class="op">=</span> <span class="va">daz</span>, group <span class="op">=</span> <span class="va">ins</span>, color <span class="op">=</span> <span class="va">ins</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">m</span>, y <span class="op">=</span> <span class="va">daz</span>, group <span class="op">=</span> <span class="va">ins</span>, color <span class="op">=</span> <span class="va">ins</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_light</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span><span class="st">"Age (in months)"</span>,</span>
-<span>                     limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span><span class="op">)</span>,</span>
-<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span><span class="op">)</span>,</span>
+<span>    breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">42</span>, <span class="fl">12</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span></span>
 <span>    <span class="st">"DAZ"</span>,</span>
 <span>    breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">4</span>, <span class="fl">2</span><span class="op">)</span>,</span>
-<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span>
 <span><span class="va">g1</span> <span class="op">+</span> <span class="va">g2</span></span></code></pre></div>

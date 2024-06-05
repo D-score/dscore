@@ -95,7 +95,6 @@ count_mu_phase1 <- function(t) {
 #' @examples
 #' dscore:::count_mu_phase1_healthy(0:5)
 count_mu_phase1_healthy <- function(t) {
-  warning("Function count_mu_phase1_health() not yet updated")
 
   to <- !is.na(t)
   t1 <- to & t <= 0.75
@@ -103,14 +102,19 @@ count_mu_phase1_healthy <- function(t) {
   t3 <- to & t > 3.5
 
   # Round 1 model
-  # t[t1] <- suppressWarnings(21.3449 + 26.4916 * t[t1] + 7.0251 * log(t[t1] + 0.2))
-  # t[t2] <- suppressWarnings(14.69947 - 12.18636 * t[t2] + 69.11675 * log(t[t2] + 0.92))
-  # t[t3] <- suppressWarnings(61.40956 + 3.80904 * t[t3])
+  # t[t1] <- suppressWarnings(24.226 + 24.057 * t[t1] + 8.996 * log(t[t1] + 0.2))
+  # t[t2] <- suppressWarnings(18.012 - 9.561 * t[t2] + 62.214 * log(t[t2] + 0.92))
+  # t[t3] <- suppressWarnings(63.0822 + 3.9134 * t[t3])
+
+  # Round 3 model
+  # t[t1] <- suppressWarnings(24.486 + 23.912 * t[t1] + 9.165 * log(t[t1] + 0.2))
+  # t[t2] <- suppressWarnings(18.391 - 9.245 * t[t2] + 61.361 * log(t[t2] + 0.92))
+  # t[t3] <- suppressWarnings(61.5214 + 4.4309 * t[t3])
 
   # Round 2 model
-  t[t1] <- suppressWarnings(20.5883 + 27.3376 * t[t1] + 6.4254 * log(t[t1] + 0.2))
-  t[t2] <- suppressWarnings(14.63748 - 12.11774 * t[t2] + 69.05463 * log(t[t2] + 0.92))
-  t[t3] <- suppressWarnings(61.37967 + 3.83513 * t[t3])
+  t[t1] <- suppressWarnings(24.522 + 23.886 * t[t1] + 9.190 * log(t[t1] + 0.2))
+  t[t2] <- suppressWarnings(18.434 - 9.206 * t[t2] + 61.255 * log(t[t2] + 0.92))
+  t[t3] <- suppressWarnings(62.6268 + 4 * t[t3])
 
   return(t)
 }

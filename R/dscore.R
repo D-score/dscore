@@ -304,7 +304,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   if (is.null(prior_mean)) {
     prior_mean <- switch(population,
       phase1 = ".phase1",
-      phase1_health = ".phase1_healthy",
+      phase1_healthy = ".phase1_healthy",
       gcdg = ".gcdg",
       dutch = ".dutch",
       "other"
@@ -319,6 +319,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   if (is.null(transform)) {
     transform <- switch(population,
       phase1 = c(54.939147, 4.064264),
+      phase1_healthy = c(54.939147, 4.064264),
       gcdg = c(66.174355, 2.073871),
       dutch = c(38.906, 2.1044)
     )

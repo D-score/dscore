@@ -4,9 +4,20 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.8.9
+
+- Updates the `phase1_healthy` age-conditional D-score references with three changes: 
+
+  1. D-score estimation uses the new model 20240601 with correct scale factor
+  2. Calculates the D-score for SF and LF separately (not combined)
+  3. Tunes the GAMSLSS model to fit the healthy subsample
+  
+  Use `population = "phase1_healthy"` to calculate DAZ relative to this new reference. The new reference is based on healthy children only, and is currently experimental. The current reference `"phase1"` remains the default for now, but may be superseeded by `"phase1_healthy"` in a future version.
+  
 - Simplifies the spelling of the term "D-score" to improve consistency and readability
 - Removes dependency on `tidyselect`
 - Replaces  `magrittr` pipe `%>%` by base pipe `|>`
+- Make style more consistent with `styler`
 
 # dscore 1.8.8
 

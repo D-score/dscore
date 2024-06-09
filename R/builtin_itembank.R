@@ -1,13 +1,13 @@
 #' Built-in itembank
 #'
-#' A data frame with administrative information per item. Includes
-#' only items that are part of a Rasch model.
+#' A data frame with administrative information per item with difficulty
+#' estimates (tau) for the Rasch model. The itembank is used to calculate
+#' D-scores. The items in the item bank are a subset of all items.
 #' See [dscore::builtin_itemtable] for an overview of all currently
-#' defined items.
+#' known items.
 #'
-#' In general, one can only compare D-score calculated with the same
-#' key. The current recommendation for new projects is to choose
-#' key `gsed2212`.
+#' One can only compare D-score calculated with the same key. The current
+#' recommendation for new projects is to choose key `gsed2212`.
 #'
 #' @docType data
 #' @format A `data.frame` with variables:

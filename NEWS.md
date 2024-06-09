@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+- Maintenance improvements: Renames the files in `data-raw/data/keys` to more consistent names, adapts `data-raw/R/save_builtin_itembank.R` to reflect model history, and rebuilds `builtin_itembank`
+
 # dscore 1.8.9
 
 - Updates the `phase1_healthy` age-conditional D-score references with three changes: 

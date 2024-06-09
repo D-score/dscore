@@ -149,7 +149,7 @@ ib_ecdi <- ecdi_model$itembank |>
   ) |>
   select(one_of("key", "item", "tau"))
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
-fo <- file.path(project, "data-raw/data/keys/ecd2206.txt")
+fo <- file.path(project, "data-raw/data/keys/gsed2206_ecd.txt")
 write.table(ib_ecdi,
   file = fo, quote = FALSE, sep = "\t",
   na = "", row.names = FALSE
@@ -167,7 +167,7 @@ ib_ecdi <- ecdi_model$itembank |>
   ) |>
   select(one_of("key", "item", "tau"))
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
-fo <- file.path(project, "data-raw/data/keys/ecd294_0.txt")
+fo <- file.path(project, "data-raw/data/keys/294_0_ecd.txt")
 write.table(ib_ecdi,
   file = fo, quote = FALSE, sep = "\t",
   na = "", row.names = FALSE
@@ -186,7 +186,7 @@ ib_ecdi <- ecdi_model$itembank |>
   ) |>
   select(one_of("key", "item", "tau"))
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
-fo <- file.path(project, "data-raw/data/keys/ecd2208.txt")
+fo <- file.path(project, "data-raw/data/keys/gsed2208_ecd.txt")
 write.table(ib_ecdi,
   file = fo, quote = FALSE, sep = "\t",
   na = "", row.names = FALSE

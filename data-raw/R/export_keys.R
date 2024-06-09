@@ -191,3 +191,14 @@ write.table(ib_ecdi,
   file = fo, quote = FALSE, sep = "\t",
   na = "", row.names = FALSE
 )
+
+# Export GSED GH1 - Household form
+key_gsed2212_gh1 <- openxlsx::read.xlsx("data-raw/data/ageforms_2023-01-13.xlsx") |>
+  mutate(
+    key = "gsed2212",
+    item = get_itemnames(instrument = "gh1", order = "indm")
+  ) |>
+  select(key, item, tau)
+write.table(key_gsed2212_gh1,
+            file = "data-raw/data/keys/gsed2212_gh1.txt",
+            sep = "\t", quote = FALSE, row.names = FALSE)

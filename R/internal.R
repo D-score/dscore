@@ -54,7 +54,7 @@ qBCT <- function(p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   }
   if (length(nu) > 1) {
     ya <- ifelse(nu != 0, mu * (nu * sigma * z + 1)^(1 / nu),
-      mu * exp(sigma * z)
+                 mu * exp(sigma * z)
     )
   } else if (nu != 0) {
     ya <- mu * (nu * sigma * z + 1)^(1 / nu)
@@ -85,7 +85,7 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   }
   if (length(nu) > 1) {
     z <- ifelse(nu != 0, (((q / mu)^nu - 1) / (nu * sigma)),
-      log(q / mu) / sigma
+                log(q / mu) / sigma
     )
   } else if (nu != 0) {
     z <- (((q / mu)^nu - 1) / (nu * sigma))
@@ -97,7 +97,7 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   FYy1 <- pt(z, tau)
   if (length(nu) > 1) {
     FYy2 <- ifelse(nu > 0, pt(-1 / (sigma * abs(nu)), df = tau),
-      0
+                   0
     )
   } else if (nu > 0) {
     FYy2 <- pt(-1 / (sigma * abs(nu)), df = tau)
@@ -117,4 +117,36 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
     FYy <- log(FYy)
   }
   FYy
+}
+
+init_key <- function(key, transform, qp) {
+  # set default key
+  if (is.null(key) || key == "gsed") {
+    key <- "gsed2212"
+  }
+
+  keys <- dscore::builtin_keys
+  idx <- which(keys$key == key)
+
+  # take transform from builtin_keys
+  if (is.null(transform)) {
+    if (!length(idx)) {
+      stop("No built-in key '", key, "'. Specify 'transform' argument.")
+    }
+    transform <- c(keys$intercept[idx], keys$slope[idx])
+  }
+
+  # calculate qp from builtin_keys
+  if (is.null(qp)) {
+    if (!length(idx)) {
+      stop("No built-in key '", key, "'. Specify 'qp' argument.")
+    }
+    qp <- seq(from = keys$from[idx], to = keys$to[idx], by = keys$by[idx])
+  }
+
+  result <- list(
+    key = key,
+    transform = transform,
+    qp = qp)
+  return(result)
 }

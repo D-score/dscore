@@ -1,8 +1,7 @@
 #' D-score estimation
 #'
-#' The function `dscore()` function estimates the D-score,
-#' a numeric score that measures child development, from PASS/FAIL
-#' observations on milestones.
+#' The `dscore()` function estimates the D-score, a numeric score that
+#' quantifies child development by one number.
 #'
 #' @rdname dscore
 #' @param data  A `data.frame` with the data.
@@ -16,16 +15,16 @@
 #' D-score calculation is done on all items found in the data
 #' that have a difficulty parameter under the specified `key`.
 #' @param xname A string with the name of the age variable in
-#' `data`. The default is `"age"`.
+#' `data`. The default is `"age"`. Do not round age.
 #' @param xunit A string specifying the unit in which age is measured
 #' (either `"decimal"`, `"days"` or `"months"`).
-#' The default (`"decimal"`) means decimal age in years.
+#' The default `"decimal"` corresponds to decimal age in years.
 #' @param prepend Character vector with column names in `data` that will
 #' be prepended to the returned data frame. This is useful for copying
 #' columns from data into the result, e.g., for matching.
 #' @param key A string that selects a subset in the itembank that
-#' makes up the key, the set of difficulty
-#' estimates from a fitted Rasch model.
+#' makes up the key, the set of difficulty estimates from a fitted
+#' Rasch model.
 #' The built-in keys are:  `"gsed2212"` (default), `"gsed2208"` (deprecated),
 #' `"gsed2206"` (deprecated), `"gsed1912"`, `"lf2206"`, `"sf2206"`, `"gcdg"`,
 #' and `"dutch"`. Since version 1.5.0, the `key = "gsed"`
@@ -33,12 +32,10 @@
 #' Use `key = ""` to use all item names,
 #' which should only be done if there are no duplicate itemnames
 #' in the itembank.
-#' @param itembank A `data.frame` with columns
-#' `key`, `item`, `tau`, `instrument`, `domain`,
-#' `mode`, `number` and `label`. Only columns `item`
-#' and `tau` are required.
-#' The function uses `dscore::builtin_itembank` by
-#' default.
+#' @param itembank A `data.frame` with at least two columns
+#' named `item` and `tau`. By default, the function uses
+#' `dscore::builtin_itembank`. If you specify your own `itembank`,
+#' then also specify the `transform` and `qd` arguments.
 #' @param metric A string, either `"dscore"` (default) or
 #' `"logit"`, signalling the metric in which ability is estimated.
 #' @param prior_mean A string specifying where the mean of the
@@ -62,12 +59,14 @@
 #' @param prior_sd A string specifying a column name in `data`
 #' with the standard deviation of the prior for the D-score calculation.
 #' If not specified, the standard deviation is taken as 5 for every row.
-#' @param transform Vector of length 2, signalling the intercept
-#' and slope respectively of the linear transform that converts an
-#' observation in the logit scale to the the D-score scale.
+#' @param transform Numeric vector, length 2, containing the intercept
+#' and slope of the linear transform from the logit scale into the
+#' the D-score scale. The default (`NULL`) searches `builtin_keys`
+#' for intercept and slope values.
 #' @param qp Numeric vector of equally spaced quadrature points.
-#' This vector should span the range of all D-score values. The default
-#' (`qp = -10:100`) is suitable for age range 0-4 years.
+#' This vector should span the range of all D-score or logit values.
+#' The default (`NULL`) creates `seq(from, to, by)` searching the
+#' arguments from `builtin_keys`.
 #' @param population A string describing the population. Currently
 #' supported are `"phase1"` (default), `"dutch"`, `"gcdg"`.
 #' @param dec A vector of two integers specifying the number of
@@ -210,7 +209,7 @@ dscore <- function(data,
                    prior_mean = NULL,
                    prior_sd = NULL,
                    transform = NULL,
-                   qp = -10:100,
+                   qp = NULL,
                    population = NULL,
                    dec = c(2L, 3L),
                    relevance = c(-Inf, Inf),
@@ -247,7 +246,7 @@ dscore_posterior <- function(data,
                              prior_mean = NULL,
                              prior_sd = NULL,
                              transform = NULL,
-                             qp = -10:100,
+                             qp = NULL,
                              population = NULL,
                              dec = c(2L, 3L),
                              relevance = c(-Inf, Inf),
@@ -278,10 +277,10 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
                         algorithm) {
   stopifnot(length(relevance) == 2L)
 
-  # set default key
-  if (is.null(key) || key == "gsed") {
-    key <- "gsed2212"
-  }
+  init <- init_key(key, transform, qp)
+  key <- init$key
+  transform <- init$transform
+  qp <- init$qp
 
   # set default reference population for DAZ
   if (is.null(population)) {
@@ -303,33 +302,16 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   # set default column name of prior_mean
   if (is.null(prior_mean)) {
     prior_mean <- switch(population,
-      phase1 = ".phase1",
-      phase1_healthy = ".phase1_healthy",
-      gcdg = ".gcdg",
-      dutch = ".dutch",
-      "other"
+                         phase1 = ".phase1",
+                         phase1_healthy = ".phase1_healthy",
+                         gcdg = ".gcdg",
+                         dutch = ".dutch",
+                         "other"
     )
     if (prior_mean == "other") {
       prior_mean <- ".phase1"
       warning("Inherits prior mean from population phase1. Set prior_mean = '.phase1' to silence this warning.")
     }
-  }
-
-  # set default transform if needed
-  if (is.null(transform)) {
-    transform <- switch(population,
-      phase1 = c(54.939147, 4.064264),
-      phase1_healthy = c(54.939147, 4.064264),
-      gcdg = c(66.174355, 2.073871),
-      dutch = c(38.906, 2.1044)
-    )
-    # if (key %in% c("gsed2208", "293_0"))
-    #   transform <- c(54.939147, 4.064264)
-    # if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206"))
-    #   transform <- c(66.174355, 2.073871)
-    # if (key %in% c("dutch"))
-    #   transform <- c(38.906, 2.1044) # van buuren 2014
-    if (is.null(transform)) stop("Could not set 'transform' argument.")
   }
 
   # handle zero rows
@@ -349,10 +331,10 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
   decage <- switch(xunit,
-    decimal = round(data[[xname]], 4L),
-    months  = round(data[[xname]] / 12, 4L),
-    days    = round(data[[xname]] / 365.25, 4L),
-    rep(NA, nrow(data))
+                   decimal = round(data[[xname]], 4L),
+                   months  = round(data[[xname]] / 12, 4L),
+                   days    = round(data[[xname]] / 365.25, 4L),
+                   rep(NA, nrow(data))
   )
 
   # obtain difficulty estimates
@@ -403,9 +385,9 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
 
   # In D-score scale, set scale expansion
   scale <- switch(algorithm,
-    "current" = transform[2L],
-    "1.8.7" = 1,
-    transform[2L]
+                  "current" = transform[2L],
+                  "1.8.7" = 1,
+                  transform[2L]
   )
 
   # setup for logit scale
@@ -415,9 +397,9 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
     mu <- (mu - transform[1L]) / transform[2L]
     sd <- sd / transform[2L]
     scale <- switch(algorithm,
-      "current" = 1,
-      "1.8.7" = 1 / transform[2],
-      1
+                    "current" = 1,
+                    "1.8.7" = 1 / transform[2],
+                    1
     )
   }
 
@@ -465,8 +447,8 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
         data4[i, ] <- f
       } else {
         data4[i, ] <- dnorm(qp,
-          mean = as.double(data2[i, "mu"]),
-          sd = as.double(data2[i, "sd"])
+                            mean = as.double(data2[i, "mu"]),
+                            sd = as.double(data2[i, "sd"])
         )
       }
     }
@@ -521,16 +503,16 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
   nfo <- setdiff(prepend, colnames(data))
   if (length(nfo)) {
     warning("Not found: ",
-      paste(nfo, collapse = ", "),
-      call. = FALSE
+            paste(nfo, collapse = ", "),
+            call. = FALSE
     )
   }
   adm <- intersect(colnames(data), prepend)
   dup <- intersect(colnames(data5), adm)
   if (length(dup)) {
     warning("Overwrites column(s): ",
-      paste(dup, collapse = ", "),
-      call. = FALSE
+            paste(dup, collapse = ", "),
+            call. = FALSE
     )
     adm <- setdiff(adm, dup)
   }

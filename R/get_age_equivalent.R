@@ -17,15 +17,16 @@
 get_age_equivalent <- function(items,
                                pct = c(10, 50, 90),
                                key = NULL,
+                               transform = NULL,
+                               qp = NULL,
                                itembank = dscore::builtin_itembank,
                                population = NULL,
                                xunit = c("decimal", "days", "months")) {
   xunit <- match.arg(xunit)
 
-  # set default key
-  if (is.null(key) || key == "gsed") {
-    key <- "gsed2212"
-  }
+  init <- init_key(key, transform, qp)
+  key <- init$key
+  transform <- init$transform
 
   # set default reference population for DAZ
   if (is.null(population)) {
@@ -44,15 +45,6 @@ get_age_equivalent <- function(items,
     }
   }
 
-  # set scalefactor
-  scalefactor <- switch(population,
-    phase1 = 4.064264,
-    gcdg = 2.073871,
-    dutch = 2.1044,
-    NA
-  )
-  if (is.na(scalefactor)) stop("Could not set scale factor for population.")
-
   # obtain difficulty estimates
   ib <- tibble(
     item = items,
@@ -67,7 +59,7 @@ get_age_equivalent <- function(items,
     slice(rep(seq_along(items), each = length(pct))) |>
     mutate(
       pct = rep(pct, length(items)),
-      d = .data$d + scalefactor * qlogis(.data$pct / 100),
+      d = .data$d + qlogis(.data$pct / 100, scale = transform[2]),
       a = approx(x = reference$mu, y = reference$age, xout = .data$d)$y
     )
 

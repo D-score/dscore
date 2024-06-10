@@ -19,7 +19,7 @@ dscore(
   prior_mean = NULL,
   prior_sd = NULL,
   transform = NULL,
-  qp = -10:100,
+  qp = NULL,
   population = NULL,
   dec = c(2L, 3L),
   relevance = c(-Inf, Inf),
@@ -38,7 +38,7 @@ dscore_posterior(
   prior_mean = NULL,
   prior_sd = NULL,
   transform = NULL,
-  qp = -10:100,
+  qp = NULL,
   population = NULL,
   dec = c(2L, 3L),
   relevance = c(-Inf, Inf),
@@ -59,19 +59,19 @@ D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified \code{key}.}
 
 \item{xname}{A string with the name of the age variable in
-\code{data}. The default is \code{"age"}.}
+\code{data}. The default is \code{"age"}. Do not round age.}
 
 \item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
-The default (\code{"decimal"}) means decimal age in years.}
+The default \code{"decimal"} corresponds to decimal age in years.}
 
 \item{prepend}{Character vector with column names in \code{data} that will
 be prepended to the returned data frame. This is useful for copying
 columns from data into the result, e.g., for matching.}
 
 \item{key}{A string that selects a subset in the itembank that
-makes up the key, the set of difficulty
-estimates from a fitted Rasch model.
+makes up the key, the set of difficulty estimates from a fitted
+Rasch model.
 The built-in keys are:  \code{"gsed2212"} (default), \code{"gsed2208"} (deprecated),
 \code{"gsed2206"} (deprecated), \code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
 and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
@@ -80,12 +80,10 @@ Use \code{key = ""} to use all item names,
 which should only be done if there are no duplicate itemnames
 in the itembank.}
 
-\item{itembank}{A \code{data.frame} with columns
-\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
-\code{mode}, \code{number} and \code{label}. Only columns \code{item}
-and \code{tau} are required.
-The function uses \code{dscore::builtin_itembank} by
-default.}
+\item{itembank}{A \code{data.frame} with at least two columns
+named \code{item} and \code{tau}. By default, the function uses
+\code{dscore::builtin_itembank}. If you specify your own \code{itembank},
+then also specify the \code{transform} and \code{qd} arguments.}
 
 \item{metric}{A string, either \code{"dscore"} (default) or
 \code{"logit"}, signalling the metric in which ability is estimated.}
@@ -113,13 +111,15 @@ Normally, you should not touch this parameter, but feel free to use
 with the standard deviation of the prior for the D-score calculation.
 If not specified, the standard deviation is taken as 5 for every row.}
 
-\item{transform}{Vector of length 2, signalling the intercept
-and slope respectively of the linear transform that converts an
-observation in the logit scale to the the D-score scale.}
+\item{transform}{Numeric vector, length 2, containing the intercept
+and slope of the linear transform from the logit scale into the
+the D-score scale. The default (\code{NULL}) searches \code{builtin_keys}
+for intercept and slope values.}
 
 \item{qp}{Numeric vector of equally spaced quadrature points.
-This vector should span the range of all D-score values. The default
-(\code{qp = -10:100}) is suitable for age range 0-4 years.}
+This vector should span the range of all D-score or logit values.
+The default (\code{NULL}) creates \code{seq(from, to, by)} searching the
+arguments from \code{builtin_keys}.}
 
 \item{population}{A string describing the population. Currently
 supported are \code{"phase1"} (default), \code{"dutch"}, \code{"gcdg"}.}
@@ -166,9 +166,8 @@ The \code{dscore} package implements several tools needed to
 calculate the D-score, a numerical score that measures
 generic development in children.
 
-The function \code{dscore()} function estimates the D-score,
-a numeric score that measures child development, from PASS/FAIL
-observations on milestones.
+The \code{dscore()} function estimates the D-score, a numeric score that
+quantifies child development by one number.
 }
 \details{
 The algorithm is based on the method by Bock and Mislevy (1982). The

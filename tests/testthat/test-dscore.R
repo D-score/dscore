@@ -125,6 +125,7 @@ keyd <- data.frame(
 
 # externally specified transformation
 transform <- c(38.906, 2.1044)
+qp <- -10:80
 # transform <- c(0, 1)
 # transform <- c(0, 2)
 # transform <- c(50, 3)
@@ -133,12 +134,12 @@ algorithm <- "1.8.7"
 zd <- dscore(data,
   items = items, dec = 4, metric = "dscore",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 zl <- dscore(data,
   items = items, dec = 4, metric = "logit",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 test_that("logit and dscore are identical (1.8.7)", {
   expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
@@ -149,12 +150,12 @@ algorithm <- "current"
 zd <- dscore(data,
   items = items, dec = 4, metric = "dscore",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 zl <- dscore(data,
   items = items, dec = 4, metric = "logit",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 test_that("logit and dscore are identical (current)", {
   expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
@@ -162,18 +163,17 @@ test_that("logit and dscore are identical (current)", {
 })
 
 # calls with NULL transform
-transform <- c(38.906, 2.1044)
 
 algorithm <- "1.8.7"
 zd <- dscore(data,
   items = items, dec = 4, metric = "dscore",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = NULL, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 zl <- dscore(data,
   items = items, dec = 4, metric = "logit",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = NULL, algorithm = algorithm
+  transform = transform, qp =qp, algorithm = algorithm
 )
 test_that("logit and dscore are identical (1.8.7)", {
   expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
@@ -184,12 +184,12 @@ algorithm <- "current"
 zd <- dscore(data,
   items = items, dec = 4, metric = "dscore",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = NULL, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 zl <- dscore(data,
   items = items, dec = 4, metric = "logit",
   itembank = keyd, key = "temp", population = "dutch",
-  transform = NULL, algorithm = algorithm
+  transform = transform, qp = qp, algorithm = algorithm
 )
 test_that("logit and dscore are identical (current)", {
   expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
@@ -201,12 +201,12 @@ test_that("logit and dscore are identical (current)", {
 data <- cbind(data, start = rep(c(0, 10), times = 5))
 zp0 <- dscore(data,
   items = items, dec = 4, metric = "dscore",
-  itembank = keyd, key = "temp", population = "dutch"
+  itembank = keyd, population = "dutch"
 )
 zp1 <- dscore(data,
   items = items, dec = 4, metric = "dscore",
   itembank = keyd, key = "temp", population = "dutch",
-  prior_mean = "start"
+  transform = transform, qp = qp, prior_mean = "start"
 )
 
 test_that("count_mu_phase() handles missing ages", {

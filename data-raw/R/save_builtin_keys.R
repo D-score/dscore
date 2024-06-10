@@ -6,11 +6,14 @@ builtin_keys <- data.frame(
               1126, 606, 293, 1407, 1478),
   n_instruments = c(1, 13, 21, 7, 13,
                     22, 20, 2, 25, 27),
-  intercept = c(38.906, 66.174355, 66.174355, 66.174355, 66.174355,
+  intercept = c(38.906, 66.483757, 66.174355, 66.174355, 66.174355,
                 66.174355, 55, 54.939147, 54.939147, 54.939147),
-  slope = c(2.1044, 2.073871, 2.073871, 2.073871, 2.073871,
+  slope = c(2.1044, 2.075044, 2.073871, 2.073871, 2.073871,
             2.073871, 4, 4.064264, 4.064264, 4.064264),
-  deprecated = c(FALSE, FALSE, FALSE, TRUE, TRUE,
+  from = rep(-10, 10),
+  to = c(80, rep(100, 9)),
+  by = rep(1, 10),
+  retired = c(FALSE, FALSE, FALSE, TRUE, TRUE,
                  TRUE, TRUE, FALSE, TRUE, FALSE),
   stringsAsFactors = FALSE
 )

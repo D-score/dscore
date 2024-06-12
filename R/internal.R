@@ -119,34 +119,19 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   FYy
 }
 
-init_key <- function(key, transform, qp) {
-  # set default key
-  if (is.null(key) || key == "gsed") {
-    key <- "gsed2212"
-  }
+init_key <- function(key, population, transform, qp) {
+  key <- set_default_key(key)
+  idx <- which(dscore::builtin_keys$key == key)
 
-  keys <- dscore::builtin_keys
-  idx <- which(keys$key == key)
-
-  # take transform from builtin_keys
-  if (is.null(transform)) {
-    if (!length(idx)) {
-      stop("No built-in key '", key, "'. Specify 'transform' argument.")
-    }
-    transform <- c(keys$intercept[idx], keys$slope[idx])
-  }
-
-  # calculate qp from builtin_keys
-  if (is.null(qp)) {
-    if (!length(idx)) {
-      stop("No built-in key '", key, "'. Specify 'qp' argument.")
-    }
-    qp <- seq(from = keys$from[idx], to = keys$to[idx], by = keys$by[idx])
-  }
+  population <- set_default_population(population, idx)
+  transform <- set_default_transform(transform, idx)
+  qp <- set_default_qp(qp, idx)
 
   result <- list(
     key = key,
+    population = population,
     transform = transform,
     qp = qp)
+
   return(result)
 }

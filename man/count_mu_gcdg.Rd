@@ -14,8 +14,8 @@ A vector of length \code{length(t)} with the median of the GCDG references.
 }
 \description{
 Returns the age-interpolated median of the GCDG references (Weber
-et al, 2019). The working range is 0-4 years. This function should
-be called when the \code{key = "gsed"} or \code{key = "gcdg"}.
+et al, 2019). The working range is 0-4 years. This function is used
+to set prior mean under keys \code{"gcdg"} and \code{"gsed1912"}.
 }
 \note{
 Internal function. Called by \code{dscore()}

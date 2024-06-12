@@ -14,7 +14,8 @@ A vector of length \code{length(t)} with the median of the GCDG references.
 }
 \description{
 Returns the age-interpolated median of the phase1 references
-based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA.
+based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA. This function is used
+to set prior mean under keys \code{"293_0"} and \code{"gsed2212"}.
 }
 \details{
 The interpolation is done in two rounds. First round: Calculate D-scores
@@ -35,8 +36,6 @@ Linear model: > 3.5 YRS: 61.37967 + 3.83513 t
 
 The working range is 0-3.5 years. After the age of 3.5 years, the function
 will increase at an arbitrary rate of 3.8 D-score points per year.
-This function is intended to be called when \code{key = "gsed2212"},
-\code{key = "gsed2208"} or \code{key = "293_0"}.
 }
 \note{
 Internal function. Called by \code{dscore()}

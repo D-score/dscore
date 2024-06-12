@@ -4,59 +4,53 @@ editor_options:
     wrap: 72
 ---
 
-- Adds `keys.rda` object to store key information
-- Maintenance improvements: Renames the files in `data-raw/data/keys` to more consistent names, adapts `data-raw/R/save_builtin_itembank.R` to reflect model history, and rebuilds `builtin_itembank`
+# dscore 1.9.0 (June 2024)
 
-# dscore 1.8.9
+### Overview
 
-- Updates the `phase1_healthy` age-conditional D-score references with three changes: 
+This is a major update of the `dscore` package featuring:
+- a new default reference `"preliminary_standards"`
+- a correction of an issue with the scaling factor
+- a major clean-up of the itembank, references, keys, and R code
+- improved documentation and examples
 
-  1. D-score estimation uses the new model 20240601 with correct scale factor
-  2. Calculates the D-score for SF and LF separately (not combined)
-  3. Tunes the GAMSLSS model to fit the healthy subsample
-  
-  Use `population = "phase1_healthy"` to calculate DAZ relative to this new reference. The new reference is based on healthy children only, and is currently experimental. The current reference `"phase1"` remains the default for now, but may be superseeded by `"phase1_healthy"` in a future version.
-  
+### Major issues
+
+BREAKING CHANGE: On May 31, 2024 we detected a long-time error in the calculation of the D-score resulting from an incorrect scale factor that led us to believe that item characteristic curves are steeper than the actually are. The impact of the error on the result is as follows: 1) There is no effect on the difficulty estimates of the Rasch models, 2) The D-score estimates are slightly altered but changes are small, 3) The references are largely unaffected and need not to be redone, 4) The estimates of the SEMs can differ substantially, so inferences based on the SEMs should be re-evaluated, 5) When there were changes in the analyses, the results in the newer method look smoother and are preferred. The correction appeared in the development version `dscore 1.8.8`, and is now incorporated into release `dscore 1.9.0`. For backward compatibility to `dscore 1.8.7` and earlier, use the argument `algorithm = "1.8.7"` in calls to the `dscore()` function.
+
+BREAKING CHANGE: `dscore_posterior()` now returns a `data.frame` with column names that indicate the quadrature point. This was an unnamed `matrix`. Code that expects a `matrix` as the return of `dscore_posterior()` may need to be adapted.
+
+NEW DEFAULT KEY: Adds a new reference `"preliminary_standards"` calculated from selected subsample of the GSED Phase 1 data, and makes these the default in this release. The reference is a temporary stand-in for a future norm-based standard for normal early child development. This reference replaces the temporary reference `"phase1_healthy"` that was introduced in `dscore 1.8.7`. Compared to the `"phase1"` reference, the `"preliminary_standards"` reference has the following differences: 1) D-score estimation uses the new model 20240601 with correct scale factor, 2) Calculates the D-score for SF and LF separately (not combined), 3) Tunes the GAMSLSS model to fit the healthy subsample. The `"phase1_healthy"` object is removed.
+
+### Major changes
+
+- Adds a new age-conditional reference for population `"dutch"` calculated using the `"gsed2212"` key.
+- Defines a new key `"gsed2406"` to accomodate for the changed prior mean because of the adoption of the new reference `"preliminary_standards"` as the base population. The key `"gsed2406"` is identical to `"gsed2212"`, and is the default key in this release.
+- Adds a new `builtin_keys` table that contains proper defaults for the base reference, transformation and quadrature points per key
+- Indexed a reference now by two fields: `key` and `population`. Previously the index was based on only `population`. This change allows for multiple references per key, and for references created for the same population under different keys. The `key` field is now mandatory in the reference table.
+- Adds a `verbose` option to `dscore()`, `dscore_posterior()`, `get_age_equivalent()`, `get_reference()`, `get_tau()`, `daz()` and `zad()` to print progress messages to the console on the values of `key`, `population`, `transform`, `qp` and `algorithm`. This is useful for debugging and for understanding the behavior of the functions.
+- Cleans up the R code to take advantage of the specification made in the new `builtin_keys` table. This makes the code more readable and maintainable.
+- Retires keys `sf2206`, `lf2206`, `294_0`, `gsed2206`, `gsed2208` and removes from the `builtin_itembank`.
+- `dscore()` and `dscore_posterior()` can now copy variables from the input `data` into the output through the `prepend` argument. (#46)
+
+### Minor changes 
+
+- Simplifies the package DESCRIPTION file
+- New internal `init_key()` and `set_default_xxx()` functions to regulate values for `key`, `population`, `transform` and `qp` arguments
+- Renames the files in `data-raw/data/keys` to more consistent names, adapts `data-raw/R/save_builtin_itembank.R` to reflect model history, and rebuilds `builtin_itembank`
+- Removes the dependency on `tibble` and `tidyselect`, and replaces the dependency on `stringr` by the lighter `stringi`
+- Rename the argument name `reference` to `reference_table` in `daz()` and `zad()` to avoid confusion with the `references` argument in `get_reference()`
 - Simplifies the spelling of the term "D-score" to improve consistency and readability
-- Removes dependency on `tidyselect`
 - Replaces  `magrittr` pipe `%>%` by base pipe `|>`
 - Make style more consistent with `styler`
-
-# dscore 1.8.8
-
-- BREAKING CHANGE: Adds an `algorithm` argument to `dscore()` and `dscore_posterior()` to select the algorithm used to calculate the D-score. The default algorithm, called `"current"`, correctly uses a scale factor of 1 for calculation in the logistic metric. Previously, a scale factor of 1 was errroneously applied to the D-score metric. The current algorithm results in different D-score estimates and higher SEM estimates, but is preferred to the former method. For backward-compatibility to `dscore 1.8.7` and earlier, use `algorithm = "1.8.7"`.
-
-# dscore 1.8.7
-
-- Adds new reference `"phase1_healthy"` calculated from selective subsample of the GSED Phase 1 data using the "gsed2212" key. This reference is based on the same data as the `"phase1"` reference, but only includes children who were developing well at the time of the assessment. This reference is intended for use in studies where the population of interest is healthy children. Note: This is a temporary name and will be deprecated.
-
-# dscore 1.8.6
-
-- Adds reference `"dutch_gsed2212"` calculated from Dutch data using the "gsed2212" key. Note: This is a temporary name and will be deprecated.
-
-# dscore 1.8.5
-
-- `dscore()` and `dscore_posterior()` can now copy variables from the input `data` into the output through the `prepend` argument. (#46)
-- BREAKING CHANGE: `dscore_posterior()` now returns a `data.frame` with column names that indicate the quadrature point. This was an unnamed `matrix`. Code that expects a `matrix` as the return of `dscore_posterior()` may need to be adapted.
-
-# dscore 1.8.4
-
 - Per request from CRAN  (`Specified C++11: please drop specification unless essential`), removes a C++11 specification
-
-# dscore 1.8.3
-
-- Sets the default reference in `get_reference()` to `phase1` to remain in sync with the default `key = "gsed"`
 - Moves error evasion code into internal `pBCT()`
 - Document up-rounding to a D-score of 1 or higher when `daz()` and `zad()` using the BCT transformation for positive values 
 - Removes the superfluous `names` attribute from the return value of `daz()` and `zad()`
-
-# dscore 1.8.2
-
 - Evades an error produced by internal `pBCT()` when `is.na(nu)` is `TRUE`
-
-# dscore 1.8.1
-
 - Renames GSED HH to GSED HF
+- Change CITATION file to use the `bibtex` package
+- Moved all keys to the `data-raw/data/keys` folder and renamed them to improve readability
 
 # dscore 1.8.0
 

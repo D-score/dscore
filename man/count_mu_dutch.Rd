@@ -14,8 +14,8 @@ A vector of length \code{length(t)} with the median of the Dutch references.
 }
 \description{
 Returns the age-interpolated median of the Dutch references (van Buuren 2014).
-The working range is 0-3 years. This function should
-be called when the \code{key = "dutch"}.
+The working range is 0-3 years. This function is used
+to set prior mean under key \code{"dutch"}.
 }
 \note{
 Internal function. Called by \code{dscore()}

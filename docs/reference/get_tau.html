@@ -70,7 +70,12 @@ are done in lower case.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_tau</span><span class="op">(</span><span class="va">items</span>, key <span class="op">=</span> <span class="cn">NULL</span>, itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_tau</span><span class="op">(</span></span>
+<span>  <span class="va">items</span>,</span>
+<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -84,25 +89,20 @@ that have a difficulty parameter under the specified <code>key</code>.</p></dd>
 
 
 <dt>key</dt>
-<dd><p>A string that selects a subset in the itembank that
-makes up the key, the set of difficulty
-estimates from a fitted Rasch model.
-The built-in keys are:  <code>"gsed2212"</code> (default), <code>"gsed2208"</code> (deprecated),
-<code>"gsed2206"</code> (deprecated), <code>"gsed1912"</code>, <code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
-and <code>"dutch"</code>. Since version 1.5.0, the <code>key = "gsed"</code>
-selects the latest key starting with the string "gsed".
-Use <code>key = ""</code> to use all item names,
-which should only be done if there are no duplicate itemnames
-in the itembank.</p></dd>
+<dd><p>String. Name of the key that bundles the difficulty estimates
+pertaining one the same Rasch model. View <code>builtin_keys</code> for an overview
+of the available keys.</p></dd>
 
 
 <dt>itembank</dt>
-<dd><p>A <code>data.frame</code> with columns
-<code>key</code>, <code>item</code>, <code>tau</code>, <code>instrument</code>, <code>domain</code>,
-<code>mode</code>, <code>number</code> and <code>label</code>. Only columns <code>item</code>
-and <code>tau</code> are required.
-The function uses <code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code> by
-default.</p></dd>
+<dd><p>A <code>data.frame</code> with at least two columns
+named <code>item</code> and <code>tau</code>. By default, the function uses
+<code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code>. If you specify your own <code>itembank</code>,
+then you should also provide the relevant <code>transform</code> and <code>qp</code> arguments.</p></dd>
+
+
+<dt>verbose</dt>
+<dd><p>Logical. Print settings.</p></dd>
 
 </dl></div>
     <div id="value">

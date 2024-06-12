@@ -42,7 +42,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "g", "gm", domn)
     domn <- ifelse(domo == "ps", "sl", domn)
     nr <- gsub("[a-z]", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "c"
     instr <- "aqi"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -51,7 +51,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   bar <- function(x) {
     domn <- "xx"
     nr <- gsub("[a-z]", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     repi <- gsub("bm|[0-9]", "", x)
     rep <- "x"
     rep <- ifelse(grepl("a", repi), "d", rep)
@@ -68,7 +68,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "a", "ad", domn)
     domn <- ifelse(domo == "m", "mo", domn)
     domn <- ifelse(domo == "s", "sl", domn)
-    nr <- str_pad(unlist(lapply(strsplit(x, "_z"), `[[`, 2)),
+    nr <- stri_pad(unlist(lapply(strsplit(x, "_z"), `[[`, 2)),
       3,
       pad = "0"
     )
@@ -83,7 +83,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "m", "md", domn)
     domn <- ifelse(domo == "p", "pd", domn)
     nr <- gsub("b1p|b1m", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "by1"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -96,7 +96,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "p" | domo == "g", "pd", domn)
     # 3 items with g instead of p with same label b2g102 b2g103 b2g109
     nr <- gsub("b2p|b2m|b2g", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "by2"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -111,7 +111,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "r", "re", domn)
     domn <- ifelse(domo == "g", "gm", domn)
     nr <- gsub("b3|[a-z]", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "by3"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -224,7 +224,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
       14, 16, 19, 25, 39:43, 45:48, 50, 51, 73
     )
     rep <- ifelse(nr %in% mitem, "m", "d")
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     instr <- "ddi"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
   }
@@ -237,7 +237,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "g", "gm", domn)
     domn <- ifelse(domo == "p", "sl", domn)
     nr <- gsub("[a-z]", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "den"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -254,7 +254,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     nr <- gsub("g|[a-z]", "", x)
     nr <- ifelse(nchar(nr) > 3, gsub("_", "", nr), nr)
     nr <- gsub("_", "0", nr)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "gri"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -263,7 +263,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   mac <- function(x) {
     domn <- "gm"
     nr <- gsub("mg", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     nr <- ifelse(nr == "04a", "041", nr)
     nr <- ifelse(nr == "04b", "042", nr)
     rep <- "d"
@@ -274,7 +274,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   mds <- function(x) {
     domn <- "gm"
     nr <- gsub("mil", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "mds"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -299,7 +299,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     ad <- ifelse(tr == "e", "4", ad)
     ad <- ifelse(tr == "f", "5", ad)
     nr <- paste0(nr, ad)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "mul"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -308,7 +308,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   peg <- function(x) {
     domn <- "fm"
     nr <- gsub("peg", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "peg"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -324,7 +324,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "l", "gm", domn)
     domn <- ifelse(domo == "ps" | domo == "s", "re", domn)
     nr <- gsub("[a-z]", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "sgr"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -339,7 +339,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "s", "sl", domn)
     nr <- gsub("[a-z]", "", x)
     nr <- ifelse(nchar(nr) == 1, paste0(nr, "0"), nr)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "sbi"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -352,7 +352,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(nr > 16 & nr <= 40, "lg", domn)
     domn <- ifelse(nr > 40, "mo", domn)
     nr <- gsub("[a-z]|__", "", x)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "d"
     instr <- "tep"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -382,7 +382,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     nr <- ifelse(grepl("playself", x), "49", nr)
     nr <- ifelse(grepl("ytoilet", x), "50", nr)
     nr <- ifelse(grepl("dressself", x), "51", nr)
-    nr <- str_pad(nr, 3, pad = "0")
+    nr <- stri_pad(nr, 3, pad = "0")
     rep <- "c"
     instr <- "vin"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))

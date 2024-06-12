@@ -4,16 +4,30 @@
 \alias{get_reference}
 \title{Get D-score reference}
 \usage{
-get_reference(population = "phase1", references = dscore::builtin_references)
+get_reference(
+  population = NULL,
+  key = NULL,
+  references = dscore::builtin_references,
+  verbose = FALSE,
+  ...
+)
 }
 \arguments{
-\item{population}{A string describing the population. Currently supported
-are \code{"dutch"}, \code{"gcdg"}, \code{"phase1"} or \code{"phase1_health"}.
-The default is \code{"phase1"}, in sync with the default \code{key = "gsed"}.}
+\item{population}{String. The name of the reference population to calculate DAZ.
+Use \code{unique(builtin_references$population)} to obtain the set of currently
+available reference populations.}
 
-\item{references}{A \code{data.frame} with the same structure
-as \code{builtin_references}. The default is to use
-\code{builtin_references}.}
+\item{key}{String. Name of the key that bundles the difficulty estimates
+pertaining one the same Rasch model. View \code{builtin_keys} for an overview
+of the available keys.}
+
+\item{references}{A \code{data.frame} with the same structure as \code{builtin_references}.
+The default is to use \code{builtin_references}.}
+
+\item{verbose}{Logical. Print settings.}
+
+\item{\dots}{Used to test whether the call contained the deprecated argument
+\code{references}.}
 }
 \value{
 A \code{data.frame} with the LMS reference values.
@@ -33,8 +47,26 @@ observations (Weber, 2019).
 The \code{"phase1"} references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 age range 3.5-5 yrs is linearly extrapolated and are only indicative.
-The \code{"phase1_healthy"} references were calculated from the GSED Phase 1 validation
-using a subset of children with healthy development.
+The \code{"preliminary_standards"} references were calculated from the GSED
+Phase 1 validation using a subset of children with healthy development.
+}
+\examples{
+# see key-population combinations of builtin_references
+table(builtin_references$key, builtin_references$population)
+
+# get the default reference
+reftab <- get_reference()
+head(reftab, 2)
+
+# get the default reference for the key "gsed2212"
+reftab <- get_reference(key = "gsed2212", verbose = TRUE)
+
+# get dutch reference for default key
+reftab <- get_reference(population = "dutch", verbose = TRUE)
+
+# loading a non-existing reference yields zero rows
+reftab <- get_reference(population = "france", verbose = TRUE)
+nrow(reftab)
 }
 \references{
 Van Buuren S (2014). Growth charts of human development.

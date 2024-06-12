@@ -20,12 +20,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Suppose you have administered GSED SF, GSED LF [@mccray2023] or GSED HF to one or more children. The next step is calculating each child's developmental score (D-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the D-score and DAZ. We may pick one of the following two methods:
 
-1. Online calculator. The online Shiny app <https://tnochildhealthstatistics.shinyapps.io/dcalculator/> is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
+1. Online calculator. The online app [D-score calculator](https://tnochildhealthstatistics.shinyapps.io/dcalculator) is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
 2. `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the D-score. It is an excellent choice for users familiar with `R` and users who like to incorporate D-score calculations into a workflow.
 
 ## Preliminaries
 
-- We use the `R` language. If you are new to `R` consult the [Getting Started with R](https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R) site; 
+- We use the `R` language. If you are new to `R` consult the [R for Data Science](https://r4ds.had.co.nz/) book by Hadley Wickham and Garrett Grolemund; 
 - You need to install the `R` package `dscore` on your local machine;
 - The child data need to be stored as a `data.frame`, a standard `R` tabular structure;
 - You need to run the `dscore()` function to calculate the D-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
@@ -508,8 +508,8 @@ We used the GSED Phase I data to calculate age-conditional reference scores for 
 ```{r}
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
 ref <- builtin_references |>
-  filter(pop == "phase1") |>
-  select(pop, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
+  filter(population == "phase1") |>
+  select(population, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
 head(ref)
 ```
 
@@ -522,7 +522,7 @@ library(ggplot2)
 library(patchwork)
 
 r <- builtin_references |>
-  filter(pop == "phase1" & age <= 3.5) |>
+  filter(population == "phase1" & age <= 3.5) |>
   mutate(m = age * 12)
 
 lf2$ins <- "lf"

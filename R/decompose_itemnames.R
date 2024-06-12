@@ -2,7 +2,7 @@
 #'
 #' This utility function decomposes item names into components:
 #' instrument, domain, mode and number
-#' @param x A character vector containing item names (gcdg lexicon)
+#' @param x A character vector containing item names (gsed lexicon)
 #' @return A `data.frame` with `length(x)` rows and
 #' four columns, named: `instrument`, `domain`, `mode`,
 #' and `number`.

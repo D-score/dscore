@@ -72,9 +72,12 @@ in the reference population passes the items.</p>
 <span>  <span class="va">items</span>,</span>
 <span>  pct <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">50</span>, <span class="fl">90</span><span class="op">)</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  name <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  itembank <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_itembank.html">builtin_itembank</a></span>,</span>
 <span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span></span>
+<span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -94,65 +97,71 @@ default is <code>pct = c(10, 50, 90)</code>.</p></dd>
 
 
 <dt>key</dt>
-<dd><p>A string that selects a subset in the itembank that
-makes up the key, the set of difficulty
-estimates from a fitted Rasch model.
-The built-in keys are:  <code>"gsed2212"</code> (default), <code>"gsed2208"</code> (deprecated),
-<code>"gsed2206"</code> (deprecated), <code>"gsed1912"</code>, <code>"lf2206"</code>, <code>"sf2206"</code>, <code>"gcdg"</code>,
-and <code>"dutch"</code>. Since version 1.5.0, the <code>key = "gsed"</code>
-selects the latest key starting with the string "gsed".
-Use <code>key = ""</code> to use all item names,
-which should only be done if there are no duplicate itemnames
-in the itembank.</p></dd>
+<dd><p>String. Name of the key that bundles the difficulty estimates
+pertaining one the same Rasch model. View <code>builtin_keys</code> for an overview
+of the available keys.</p></dd>
+
+
+<dt>name</dt>
+<dd><p>String. The name of the reference to calculate DAZ.
+Use <code>unique(builtin_references$name)</code> to obtain the set of currently
+available references.</p></dd>
+
+
+<dt>transform</dt>
+<dd><p>Numeric vector, length 2, containing the intercept
+and slope of the linear transform from the logit scale into the
+the D-score scale. The default (<code>NULL</code>) searches <code>builtin_keys</code>
+for intercept and slope values.</p></dd>
 
 
 <dt>itembank</dt>
-<dd><p>A <code>data.frame</code> with columns
-<code>key</code>, <code>item</code>, <code>tau</code>, <code>instrument</code>, <code>domain</code>,
-<code>mode</code>, <code>number</code> and <code>label</code>. Only columns <code>item</code>
-and <code>tau</code> are required.
-The function uses <code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code> by
-default.</p></dd>
+<dd><p>A <code>data.frame</code> with at least two columns
+named <code>item</code> and <code>tau</code>. By default, the function uses
+<code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code>. If you specify your own <code>itembank</code>,
+then you should also provide the relevant <code>transform</code> and <code>qp</code> arguments.</p></dd>
 
 
 <dt>population</dt>
-<dd><p>A string describing the population. Currently
-supported are <code>"phase1"</code> (default), <code>"dutch"</code>, <code>"gcdg"</code>.</p></dd>
+<dd><p>A string describing the population of the
+reference distribution.</p></dd>
 
 
 <dt>xunit</dt>
 <dd><p>A string specifying the unit in which age is measured
 (either <code>"decimal"</code>, <code>"days"</code> or <code>"months"</code>).
-The default (<code>"decimal"</code>) means decimal age in years.</p></dd>
+The default <code>"decimal"</code> corresponds to decimal age in years.</p></dd>
+
+
+<dt>verbose</dt>
+<dd><p>Logical. Print settings.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
     
 
-<p>Tibble with four columns: <code>item</code>, <code>d</code> (D-score),
+<p><code>data.frame</code> with four columns: <code>item</code>, <code>d</code> (D-score),
 <code>pct</code> (percentile), and <code>a</code> (age-equivalent, in <code>xunit</code> units).</p>
     </div>
-    <div id="details">
-    <h2>Details</h2>
+    <div id="note">
+    <h2>Note</h2>
     <p>The function internally defines a scale factor given the key.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_age_equivalent</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gpagmc018"</span>, <span class="st">"gtogmd026"</span>, <span class="st">"ddicmm050"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   item          d   pct       a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> gpagmc018  14.5    10  0.061<span style="text-decoration: underline;">0</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> gpagmc018  23.4    50  0.295 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> gpagmc018  32.3    90  0.501 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> gtogmd026  31.1    10  0.473 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> gtogmd026  40      50  0.708 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> gtogmd026  48.9    90  1.04  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> ddicmm050  68.7    10  2.44  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> ddicmm050  77.7    50  4.25  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> ddicmm050  86.6    90 <span style="color: #BB0000;">NA</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                    item       d pct          a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gpagmc018...1 gpagmc018 14.4799  10 0.06732101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gpagmc018...2 gpagmc018 23.4100  50 0.26671882</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gpagmc018...3 gpagmc018 32.3401  90 0.47426699</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gtogmd026...4 gtogmd026 31.0699  10 0.44347097</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gtogmd026...5 gtogmd026 40.0000  50 0.67885781</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gtogmd026...6 gtogmd026 48.9301  90 0.98580403</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ddicmm050...7 ddicmm050 68.7399  10 2.30267033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ddicmm050...8 ddicmm050 77.6700  50 3.66932935</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ddicmm050...9 ddicmm050 86.6001  90         NA</span>
 </code></pre></div>
     </div>
   </div>

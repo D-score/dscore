@@ -187,16 +187,19 @@ key_gsed2212 <- bind_rows(
   select(key, item, tau)
 check_single_key(key_gsed2212)
 
+# --- key2406
+# Creat copy of gsed2212 to make D-score calculation consistent
+# with the adoption of the preliminary_standards
+key_gsed2406 <- key_gsed2212 |>
+  mutate(key = "gsed2406")
+check_single_key(key_gsed2406)
+
 # --- Build itembank in reverse history order
 builtin_itembank <- bind_rows(
+  key_gsed2406,
   key_gsed2212,
-  key_gsed2208,
   key_293_0,
-  key_294_0,
-  key_gsed2206,
   key_gsed1912,
-  key_lf2206,
-  key_sf2206,
   key_gcdg,
   key_dutch) |>
   left_join(get_itemtable(decompose = TRUE), by = "item") |>
@@ -204,3 +207,4 @@ builtin_itembank <- bind_rows(
 
 # save to /data
 usethis::use_data(builtin_itembank, overwrite = TRUE)
+

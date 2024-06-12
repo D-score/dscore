@@ -3,32 +3,32 @@
 \docType{data}
 \name{builtin_keys}
 \alias{builtin_keys}
-\title{D-score builtin_keys table}
+\title{Available keys for calculating the D-score}
 \format{
-A \code{data.frame} with variables:\tabular{ll}{
+\code{builtin_keys} is a \code{data.frame} with variables:\tabular{ll}{
    Name \tab Label \cr
-   \code{key} \tab String indicating a specific Rasch model (the key) \cr
+   \code{key} \tab String. Name of the key indicating the Rasch model \cr
+   \code{base_population} \tab String. Name of the base population for the key \cr
    \code{n_items} \tab Number of items in the key \cr
    \code{n_instruments} \tab Number of instruments in the key \cr
    \code{intercept} \tab Intercept to convert logit into D-score \cr
    \code{slope} \tab Slope to convert logit into D-score \cr
-   \code{deprecated} \tab Logical. Is key deprecated? \cr
+   \code{from} \tab Starting value of the quadrature points \cr
+   \code{to} \tab Stopping value of the quadrature points \cr
+   \code{by} \tab Increment of the quadrature points \cr
+   \code{retired} \tab Has the key been retired? \cr
 }
 }
 \usage{
 builtin_keys
 }
 \description{
-A key represents a set of Rasch models that have the same item difficulty
-estimates (tau). The key is used to calculate D-scores. D-scores can
-only be compared when calculated with the same key. The current
-recommendation for new projects is to choose key \code{gsed2212}.
-}
-\details{
-Some case are depecreated and should not be used, other than for
-replication. The \code{deprecated} column indicates if a key is deprecated.
+A key contains the item difficulty estimates from a given Rasch model.
+The difficulty estimates (\code{tau}) are used to calculate D-scores.
+D-scores can only be compared when calculated with the same key.
 }
 \note{
-20240609 SvB: Added \code{builtin_keys} table by \verb{data-raw\\data\\R\\save_builtin_keys.R}
+20240609 SvB: Added \code{builtin_keys} table by
+\verb{data-raw\\data\\R\\save_builtin_keys.R}
 }
 \keyword{datasets}

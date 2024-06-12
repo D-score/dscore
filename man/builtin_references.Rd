@@ -3,34 +3,31 @@
 \docType{data}
 \name{builtin_references}
 \alias{builtin_references}
-\title{Age-conditional reference distribution of D-score}
+\title{Collection of age-conditional reference distributions}
 \format{
-A \code{data.frame} with 18 variables:\tabular{ll}{
+A \code{data.frame} with the following variables:\tabular{ll}{
    Name \tab Label \cr
-   \code{pop} \tab Population: \code{"dutch"}, \code{"gcdg"}, \code{"phase1"}, \code{"phase1_healthy"}, \cr
+   \code{population} \tab Name of the reference population \cr
+   \code{key} \tab D-score key, e.g., \code{"dutch"}, \code{"gcdg"} or \code{"gsed"} \cr
+   \code{distribution} \tab Distribution family: \code{"LMS"} or \code{"BCT"} \cr
+   \code{age} \tab Decimal age in years \cr
+   \code{mu} \tab M-curve, median D-score, P50 \cr
+   \code{sigma} \tab S-curve, spread expressed as coefficient of variation \cr
+   \code{nu} \tab L-curve, the lambda coefficient of the LMS/BCT model for skewness \cr
+   \code{tau} \tab Kurtosis parameter in the BCT model \cr
+   \code{P3} \tab P3 percentile \cr
+   \code{P10} \tab P10 percentile \cr
+   \code{P25} \tab P25 percentile \cr
+   \code{P50} \tab P50 percentile \cr
+   \code{P75} \tab P75 percentile \cr
+   \code{P90} \tab P90 percentile \cr
+   \code{P97} \tab P97 percentile \cr
+   \code{SDM2} \tab -2SD centile \cr
+   \code{SDM1} \tab -1SD centile \cr
+   \code{SD0} \tab 0SD centile, median \cr
+   \code{SDP1} \tab +1SD centile \cr
+   \code{SDP2} \tab +2SD centile \cr
 }
-
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{     `"dutch_gsed2212"` |
-}\if{html}{\out{</div>}}
-
-| \code{age} | Decimal age in years |
-| \code{mu}  | M-curve, median D-score, P50 |
-| \code{sigma} | S-curve, spread expressed as coefficient of variation |
-| \code{nu}    | L-curve, the lambda coefficient of the LMS/BCT model for skewness |
-| \code{tau}   | Kurtosis parameter in the BCT model |
-| \code{P3}    | P3 percentile |
-| \code{P10}   | P10 percentile |
-| \code{P25}   | P25 percentile |
-| \code{P50}   | P50 percentile |
-| \code{P75}   | P75 percentile |
-| \code{P90}   | P90 percentile |
-| \code{P97}   | P97 percentile |
-| \code{SDM2}  | -2SD centile |
-| \code{SDM1}  | -1SD centile |
-| \code{SD0}   | 0SD centile, median |
-| \code{SDP1}  | +1SD centile |
-| \code{SDP2}  | +2SD centile |
 }
 \usage{
 builtin_references
@@ -42,9 +39,10 @@ after the LMS distribution (Cole & Green, 1992) or BCT model
 (Stasinopoulos & Rigby, 2022) and is equal for
 both boys and girls. The LMS/BCT values can be used to graph
 reference charts and to calculate age-conditional Z-scores, also
-known as DAZ.
+known as the \emph{Development-for-Age Z-score (DAZ)}.
 }
 \details{
+Here are more details on the reference population:
 The \code{"dutch"} references were calculated from the SMOCC data, and cover
 age range 0-2.5 years (van Buuren, 2014).
 The \code{"gcdg"} references were calculated from the 15 cohorts of the
@@ -52,14 +50,13 @@ GCDG-study, and cover age range 0-5 years (Weber, 2019).
 The \code{"phase1"} references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 age range 3.5-5 yrs is linearly extrapolated and are only indicative.
-The \code{"phase1_healthy"} references were calculated from the GSED Phase 1 validation
+The \code{"preliminary_standards"} were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) using a subset of children with
-healthy development.
-The \code{"dutch_gsed2212"} references were calculated from Dutch data using
-the \code{gsed2212} key. This is a temporary name, and will be deprecated.
+covariate indicating healthy development.
 }
 \examples{
-head(builtin_references)
+# get an overview of available references per key
+table(builtin_references$population, builtin_references$key)
 }
 \references{
 Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS

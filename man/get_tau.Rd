@@ -4,7 +4,12 @@
 \alias{get_tau}
 \title{Obtain difficulty parameters from item bank}
 \usage{
-get_tau(items, key = NULL, itembank = dscore::builtin_itembank)
+get_tau(
+  items,
+  key = NULL,
+  itembank = dscore::builtin_itembank,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{items}{A character vector containing names of items to be
@@ -13,23 +18,16 @@ numerically as \code{1} (pass) and \code{0} (fail). By default,
 D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified \code{key}.}
 
-\item{key}{A string that selects a subset in the itembank that
-makes up the key, the set of difficulty
-estimates from a fitted Rasch model.
-The built-in keys are:  \code{"gsed2212"} (default), \code{"gsed2208"} (deprecated),
-\code{"gsed2206"} (deprecated), \code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
-and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
-selects the latest key starting with the string "gsed".
-Use \code{key = ""} to use all item names,
-which should only be done if there are no duplicate itemnames
-in the itembank.}
+\item{key}{String. Name of the key that bundles the difficulty estimates
+pertaining one the same Rasch model. View \code{builtin_keys} for an overview
+of the available keys.}
 
-\item{itembank}{A \code{data.frame} with columns
-\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
-\code{mode}, \code{number} and \code{label}. Only columns \code{item}
-and \code{tau} are required.
-The function uses \code{dscore::builtin_itembank} by
-default.}
+\item{itembank}{A \code{data.frame} with at least two columns
+named \code{item} and \code{tau}. By default, the function uses
+\code{dscore::builtin_itembank}. If you specify your own \code{itembank},
+then you should also provide the relevant \code{transform} and \code{qp} arguments.}
+
+\item{verbose}{Logical. Print settings.}
 }
 \value{
 A named vector with the difficulty estimate per item with

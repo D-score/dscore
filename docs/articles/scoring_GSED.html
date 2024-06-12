@@ -355,12 +355,12 @@ that identify each item.</p>
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204 29 0.7586 66.97 1.786892  0.077</span></span>
-<span><span class="co">## 2 2.4586 39 0.6923 68.43 1.546287 -0.147</span></span>
-<span><span class="co">## 3 0.5558 49 0.6531 38.71 1.667682  1.155</span></span>
-<span><span class="co">## 4 2.6448 36 0.7500 74.53 1.632129  1.223</span></span>
-<span><span class="co">## 5 2.1081 50 0.5000 65.71 1.367400  0.052</span></span>
-<span><span class="co">## 6 0.8378 49 0.6939 41.66 1.721093 -0.574</span></span></code></pre>
+<span><span class="co">## 1 2.2204 29 0.7586 67.14 1.800564 -0.184</span></span>
+<span><span class="co">## 2 2.4586 39 0.6923 68.57 1.552064 -0.471</span></span>
+<span><span class="co">## 3 0.5558 49 0.6531 38.85 1.670395  1.019</span></span>
+<span><span class="co">## 4 2.6448 36 0.7500 74.70 1.641886  0.688</span></span>
+<span><span class="co">## 5 2.1081 50 0.5000 65.81 1.367646 -0.203</span></span>
+<span><span class="co">## 6 0.8378 49 0.6939 41.87 1.723344 -0.919</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -409,12 +409,12 @@ be calculated as follows:</p>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204  6 0.8333 67.03 3.480607  0.094</span></span>
-<span><span class="co">## 2 2.4586  8 0.7500 68.58 3.166252 -0.104</span></span>
-<span><span class="co">## 3 0.5558 30 0.7333 39.84 2.010431  1.475</span></span>
-<span><span class="co">## 4 2.6448  5 0.8000 74.75 3.305858  1.288</span></span>
-<span><span class="co">## 5 2.1081 10 0.7000 68.75 2.922500  0.938</span></span>
-<span><span class="co">## 6 0.8378 31 0.7419 42.27 2.066650 -0.412</span></span></code></pre>
+<span><span class="co">## 1 2.2204  6 0.8333 67.69 3.559666 -0.037</span></span>
+<span><span class="co">## 2 2.4586  8 0.7500 69.18 3.211214 -0.314</span></span>
+<span><span class="co">## 3 0.5558 30 0.7333 40.04 2.018110  1.393</span></span>
+<span><span class="co">## 4 2.6448  5 0.8000 75.45 3.341612  0.892</span></span>
+<span><span class="co">## 5 2.1081 10 0.7000 69.19 2.935576  0.716</span></span>
+<span><span class="co">## 6 0.8378 31 0.7419 42.58 2.078539 -0.714</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -494,12 +494,12 @@ that identify each item.</p>
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204 45 0.5556 66.95 1.412499  0.071</span></span>
-<span><span class="co">## 2 2.4586 53 0.6226 71.38 1.358664  0.722</span></span>
-<span><span class="co">## 3 0.5558 34 0.5588 33.90 1.703685 -0.214</span></span>
-<span><span class="co">## 4 2.6448 54 0.5185 70.81 1.291428  0.106</span></span>
-<span><span class="co">## 5 2.1081 58 0.1724 39.07 1.910183 -4.339</span></span>
-<span><span class="co">## 6 0.8378 32 0.5625 44.34 1.661675  0.157</span></span></code></pre>
+<span><span class="co">## 1 2.2204 45 0.5556 67.06 1.412549 -0.205</span></span>
+<span><span class="co">## 2 2.4586 53 0.6226 71.49 1.361023  0.299</span></span>
+<span><span class="co">## 3 0.5558 34 0.5588 34.04 1.704546 -0.460</span></span>
+<span><span class="co">## 4 2.6448 54 0.5185 70.92 1.291551 -0.319</span></span>
+<span><span class="co">## 5 2.1081 58 0.1724 39.25 1.896424 -4.693</span></span>
+<span><span class="co">## 6 0.8378 32 0.5625 44.55 1.663876 -0.125</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -548,12 +548,12 @@ be calculated as follows:</p>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204 12 0.5833 64.92 3.050222 -0.502</span></span>
-<span><span class="co">## 2 2.4586 18 0.6111 70.63 2.423923  0.498</span></span>
-<span><span class="co">## 3 0.5558 19 0.6842 35.97 2.174798  0.368</span></span>
-<span><span class="co">## 4 2.6448 12 0.4167 65.41 2.869913 -1.373</span></span>
-<span><span class="co">## 5 2.1081 12 0.5000 60.24 3.048372 -1.397</span></span>
-<span><span class="co">## 6 0.8378 14 0.7143 44.62 2.460212  0.236</span></span></code></pre>
+<span><span class="co">## 1 2.2204 12 0.5833 65.41 3.046474 -0.633</span></span>
+<span><span class="co">## 2 2.4586 18 0.6111 70.97 2.418469  0.159</span></span>
+<span><span class="co">## 3 0.5558 19 0.6842 36.21 2.182034  0.196</span></span>
+<span><span class="co">## 4 2.6448 12 0.4167 65.93 2.849341 -1.520</span></span>
+<span><span class="co">## 5 2.1081 12 0.5000 60.73 3.066503 -1.469</span></span>
+<span><span class="co">## 6 0.8378 14 0.7143 45.07 2.487767  0.034</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -628,12 +628,12 @@ that identify each item.</p>
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">hf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204  8 0.7500 65.95 3.051486 -0.215</span></span>
-<span><span class="co">## 2 2.4586  8 1.0000 72.66 3.848197  1.103</span></span>
-<span><span class="co">## 3 0.5558 29 0.6207 37.13 2.186652  0.701</span></span>
-<span><span class="co">## 4 2.6448  3 1.0000 73.01 4.128311  0.765</span></span>
-<span><span class="co">## 5 2.1081  7 1.0000 69.98 3.749281  1.298</span></span>
-<span><span class="co">## 6 0.8378 30 0.7000 42.20 2.180302 -0.431</span></span></code></pre>
+<span><span class="co">## 1 2.2204  8 0.7500 66.46 3.099626 -0.362</span></span>
+<span><span class="co">## 2 2.4586  8 1.0000 73.55 3.959115  0.861</span></span>
+<span><span class="co">## 3 0.5558 29 0.6207 37.36 2.190590  0.553</span></span>
+<span><span class="co">## 4 2.6448  3 1.0000 74.12 4.231796  0.530</span></span>
+<span><span class="co">## 5 2.1081  7 1.0000 70.72 3.841959  1.140</span></span>
+<span><span class="co">## 6 0.8378 30 0.7000 42.55 2.182150 -0.722</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -682,12 +682,12 @@ only. The “motor” D-score can be calculated as follows:</p>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">hf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204  1 1.0000 68.56 4.463483  0.541</span></span>
-<span><span class="co">## 2 2.4586  1 1.0000 70.31 4.531827  0.403</span></span>
-<span><span class="co">## 3 0.5558 18 0.5000 36.34 2.504365  0.474</span></span>
-<span><span class="co">## 4 2.6448  1 1.0000 71.51 4.583563  0.314</span></span>
-<span><span class="co">## 5 2.1081  1 1.0000 67.65 4.433554  0.615</span></span>
-<span><span class="co">## 6 0.8378 18 0.6111 41.83 2.509712 -0.529</span></span></code></pre>
+<span><span class="co">## 1 2.2204  1 1.0000 69.63 4.504147  0.488</span></span>
+<span><span class="co">## 2 2.4586  1 1.0000 71.52 4.583980  0.307</span></span>
+<span><span class="co">## 3 0.5558 18 0.5000 36.65 2.506216  0.332</span></span>
+<span><span class="co">## 4 2.6448  1 1.0000 72.86 4.642396  0.191</span></span>
+<span><span class="co">## 5 2.1081  1 1.0000 68.67 4.467450  0.573</span></span>
+<span><span class="co">## 6 0.8378 18 0.6111 42.29 2.508751 -0.798</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -762,12 +762,12 @@ that identify each item.</p>
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204 29 0.7586 67.35 1.833347  0.187</span></span>
-<span><span class="co">## 2 2.4586 39 0.6923 69.35 1.615555  0.120</span></span>
-<span><span class="co">## 3 0.5558 50 0.6600 38.90 1.706903  1.209</span></span>
-<span><span class="co">## 4 2.6448 36 0.7500 74.51 1.647317  1.217</span></span>
-<span><span class="co">## 5 2.1081 50 0.5000 65.70 1.388967  0.049</span></span>
-<span><span class="co">## 6 0.8378 50 0.7000 41.80 1.766009 -0.537</span></span></code></pre>
+<span><span class="co">## 1 2.2204 29 0.7586 67.53 1.846355 -0.080</span></span>
+<span><span class="co">## 2 2.4586 39 0.6923 69.51 1.620815 -0.228</span></span>
+<span><span class="co">## 3 0.5558 50 0.6600 39.05 1.710319  1.082</span></span>
+<span><span class="co">## 4 2.6448 36 0.7500 74.68 1.656658  0.683</span></span>
+<span><span class="co">## 5 2.1081 50 0.5000 65.80 1.389134 -0.206</span></span>
+<span><span class="co">## 6 0.8378 50 0.7000 42.03 1.768821 -0.873</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -816,12 +816,12 @@ be calculated as follows:</p>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">sf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204  5 1.0000 71.69 3.712845  1.460</span></span>
-<span><span class="co">## 2 2.4586  5 1.0000 72.93 3.848665  1.183</span></span>
-<span><span class="co">## 3 0.5558 33 0.5758 38.29 1.937968  1.035</span></span>
-<span><span class="co">## 4 2.6448  6 0.6667 72.45 3.297708  0.596</span></span>
-<span><span class="co">## 5 2.1081  8 0.7500 71.45 3.046306  1.720</span></span>
-<span><span class="co">## 6 0.8378 32 0.6250 41.30 2.020684 -0.668</span></span></code></pre>
+<span><span class="co">## 1 2.2204  5 1.0000 72.44 3.795312  1.262</span></span>
+<span><span class="co">## 2 2.4586  5 1.0000 73.81 3.946724  0.932</span></span>
+<span><span class="co">## 3 0.5558 33 0.5758 38.47 1.940250  0.900</span></span>
+<span><span class="co">## 4 2.6448  6 0.6667 73.15 3.305113  0.269</span></span>
+<span><span class="co">## 5 2.1081  8 0.7500 71.93 3.058227  1.475</span></span>
+<span><span class="co">## 6 0.8378 32 0.6250 41.60 2.022400 -0.997</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -901,12 +901,12 @@ that identify each item.</p>
 <code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204 45 0.5556 66.94 1.446026  0.068</span></span>
-<span><span class="co">## 2 2.4586 53 0.6226 71.31 1.382120  0.701</span></span>
-<span><span class="co">## 3 0.5558 34 0.5588 34.12 1.709861 -0.153</span></span>
-<span><span class="co">## 4 2.6448 54 0.5185 70.68 1.319209  0.068</span></span>
-<span><span class="co">## 5 2.1081 58 0.1724 39.09 1.907483 -4.337</span></span>
-<span><span class="co">## 6 0.8378 32 0.5625 44.62 1.711366  0.236</span></span></code></pre>
+<span><span class="co">## 1 2.2204 45 0.5556 67.05 1.446135 -0.207</span></span>
+<span><span class="co">## 2 2.4586 53 0.6226 71.43 1.383643  0.283</span></span>
+<span><span class="co">## 3 0.5558 34 0.5588 34.27 1.711715 -0.392</span></span>
+<span><span class="co">## 4 2.6448 54 0.5185 70.79 1.318900 -0.352</span></span>
+<span><span class="co">## 5 2.1081 58 0.1724 39.27 1.894231 -4.691</span></span>
+<span><span class="co">## 6 0.8378 32 0.5625 44.84 1.712872 -0.037</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -955,12 +955,12 @@ be calculated as follows:</p>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">lf</span>, items <span class="op">=</span> <span class="va">items_motor</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204 12 0.5833 65.05 3.078993 -0.466</span></span>
-<span><span class="co">## 2 2.4586 18 0.6111 70.63 2.423923  0.498</span></span>
-<span><span class="co">## 3 0.5558 19 0.6842 35.97 2.164432  0.368</span></span>
-<span><span class="co">## 4 2.6448 12 0.4167 65.51 2.909268 -1.348</span></span>
-<span><span class="co">## 5 2.1081 12 0.5000 60.24 3.049007 -1.397</span></span>
-<span><span class="co">## 6 0.8378 14 0.7143 44.49 2.527046  0.199</span></span></code></pre>
+<span><span class="co">## 1 2.2204 12 0.5833 65.55 3.075622 -0.597</span></span>
+<span><span class="co">## 2 2.4586 18 0.6111 70.97 2.418469  0.159</span></span>
+<span><span class="co">## 3 0.5558 19 0.6842 36.20 2.172205  0.193</span></span>
+<span><span class="co">## 4 2.6448 12 0.4167 66.04 2.887817 -1.495</span></span>
+<span><span class="co">## 5 2.1081 12 0.5000 60.73 3.067461 -1.469</span></span>
+<span><span class="co">## 6 0.8378 14 0.7143 44.96 2.552111  0.000</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -976,10 +976,10 @@ Tanzania. Extract the references as</p>
 <div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">ref</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">age</span>, <span class="va">mu</span>, <span class="va">sigma</span>, <span class="va">nu</span>, <span class="va">tau</span>, <span class="va">SDM2</span>, <span class="va">SD0</span>, <span class="va">SDP2</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">age</span>, <span class="va">mu</span>, <span class="va">sigma</span>, <span class="va">nu</span>, <span class="va">tau</span>, <span class="va">SDM2</span>, <span class="va">SD0</span>, <span class="va">SDP2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ref</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##      pop    age    mu  sigma     nu    tau     SDM2      SD0     SDP2</span></span>
+<pre><code><span><span class="co">##     name    age    mu  sigma     nu    tau     SDM2      SD0     SDP2</span></span>
 <span><span class="co">## 1 phase1 0.0383 13.68 0.2456 1.1731 15.422 6.042690 13.68707 20.71620</span></span>
 <span><span class="co">## 2 phase1 0.0575 14.36 0.2324 1.2062 15.540 6.699401 14.36568 21.30880</span></span>
 <span><span class="co">## 3 phase1 0.0767 15.02 0.2206 1.2375 15.652 7.354450 15.02457 21.88555</span></span>
@@ -996,7 +996,7 @@ plus 20 D-scores (10 LF and 10 SF) for the <code>lf2</code> and
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"phase1"</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">3.5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"phase1"</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">3.5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>m <span class="op">=</span> <span class="va">age</span> <span class="op">*</span> <span class="fl">12</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">lf2</span><span class="op">$</span><span class="va">ins</span> <span class="op">&lt;-</span> <span class="st">"lf"</span></span>

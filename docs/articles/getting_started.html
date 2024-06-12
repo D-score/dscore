@@ -3527,12 +3527,12 @@ number of rows as the input data. The first six rows are</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 0.4873 11 0.9091 30.09 3.660450 -0.452</span></span>
-<span><span class="co">## 2 0.6571 14 0.6429 28.75 2.495662 -2.236</span></span>
-<span><span class="co">## 3 1.1800 19 0.9474 52.69 3.323291  0.235</span></span>
-<span><span class="co">## 4 1.9055 13 0.8462 63.44 2.923704  0.082</span></span>
-<span><span class="co">## 5 0.5503 11 0.8182 28.17 3.397256 -1.583</span></span>
-<span><span class="co">## 6 0.7666 14 0.7857 33.49 2.989587 -1.990</span></span></code></pre>
+<span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.629</span></span>
+<span><span class="co">## 2 0.6571 14 0.6429 29.06 2.518082 -2.717</span></span>
+<span><span class="co">## 3 1.1800 19 0.9474 53.35 3.414966  0.001</span></span>
+<span><span class="co">## 4 1.9055 13 0.8462 63.88 2.971594 -0.090</span></span>
+<span><span class="co">## 5 0.5503 11 0.8182 28.75 3.476988 -1.857</span></span>
+<span><span class="co">## 6 0.7666 14 0.7857 34.21 3.088920 -2.372</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <colgroup>
@@ -3584,7 +3584,7 @@ posterior</td>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="st">"dutch"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"dutch"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">age</span>, <span class="va">SDM2</span>, <span class="va">SD0</span>, <span class="va">SDP2</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">md</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">a</span>, y <span class="op">=</span> <span class="va">d</span>, group <span class="op">=</span> <span class="va">id</span>, color <span class="op">=</span> <span class="va">sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -3663,20 +3663,20 @@ interaction between age and sex:</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## Residuals:</span></span>
 <span><span class="co">##      Min       1Q   Median       3Q      Max </span></span>
-<span><span class="co">## -1.84716 -0.69763 -0.05527  0.61210  2.65347 </span></span>
+<span><span class="co">## -2.12270 -0.74970 -0.06271  0.66999  2.74876 </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Coefficients:</span></span>
 <span><span class="co">##             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
-<span><span class="co">## (Intercept) -1.83776    0.28518  -6.444 4.64e-09 ***</span></span>
-<span><span class="co">## age          1.11251    0.23866   4.661 1.01e-05 ***</span></span>
-<span><span class="co">## sexmale      0.06829    0.39523   0.173    0.863    </span></span>
-<span><span class="co">## age:sexmale -0.10309    0.31711  -0.325    0.746    </span></span>
+<span><span class="co">## (Intercept) -2.20467    0.31613  -6.974 3.92e-10 ***</span></span>
+<span><span class="co">## age          1.20601    0.26456   4.559 1.52e-05 ***</span></span>
+<span><span class="co">## sexmale      0.04247    0.43812   0.097    0.923    </span></span>
+<span><span class="co">## age:sexmale -0.10201    0.35152  -0.290    0.772    </span></span>
 <span><span class="co">## ---</span></span>
 <span><span class="co">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Residual standard error: 0.9979 on 96 degrees of freedom</span></span>
-<span><span class="co">## Multiple R-squared:  0.3199, Adjusted R-squared:  0.2986 </span></span>
-<span><span class="co">## F-statistic: 15.05 on 3 and 96 DF,  p-value: 4.185e-08</span></span></code></pre>
+<span><span class="co">## Residual standard error: 1.106 on 96 degrees of freedom</span></span>
+<span><span class="co">## Multiple R-squared:  0.3121, Adjusted R-squared:  0.2906 </span></span>
+<span><span class="co">## F-statistic: 14.52 on 3 and 96 DF,  p-value: 7.165e-08</span></span></code></pre>
 <p>This group of very preterms starts around -2.5 SD, followed by a
 catch-up in child development of approximately 1.0 SD per year. The size
 of the catch-up is equal for boys and girls.</p>
@@ -3691,16 +3691,16 @@ intercept and age effects, and rerun as</p>
 <pre><code><span><span class="co">## Linear mixed model fit by REML ['lmerMod']</span></span>
 <span><span class="co">## Formula: daz ~ 1 + age + sex + sex * age + (1 + age | id)</span></span>
 <span><span class="co">##    Data: md</span></span>
-<span><span class="co">## REML criterion at convergence: 283.6501</span></span>
+<span><span class="co">## REML criterion at convergence: 301.9489</span></span>
 <span><span class="co">## Random effects:</span></span>
 <span><span class="co">##  Groups   Name        Std.Dev. Corr </span></span>
-<span><span class="co">##  id       (Intercept) 0.5808        </span></span>
-<span><span class="co">##           age         0.2274   -1.00</span></span>
-<span><span class="co">##  Residual             0.9307        </span></span>
+<span><span class="co">##  id       (Intercept) 0.7702        </span></span>
+<span><span class="co">##           age         0.3287   -1.00</span></span>
+<span><span class="co">##  Residual             1.0066        </span></span>
 <span><span class="co">## Number of obs: 100, groups:  id, 27</span></span>
 <span><span class="co">## Fixed Effects:</span></span>
 <span><span class="co">## (Intercept)          age      sexmale  age:sexmale  </span></span>
-<span><span class="co">##    -1.83322      1.11123      0.06334     -0.09933  </span></span>
+<span><span class="co">##    -2.18642      1.19654      0.02596     -0.09168  </span></span>
 <span><span class="co">## optimizer (nloptwrap) convergence code: 0 (OK) ; 0 optimizer warnings; 1 lme4 warnings</span></span></code></pre>
 <p>This analysis yields the same substantive conclusions as before.</p>
 </div>

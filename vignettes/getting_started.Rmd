@@ -242,7 +242,7 @@ library(ggplot2)
 library(dplyr)
 
 r <- builtin_references |>
-  filter(pop == "dutch") |>
+  filter(population == "dutch") |>
   select(age, SDM2, SD0, SDP2)
 
 ggplot(md, aes(x = a, y = d, group = id, color = sex)) +

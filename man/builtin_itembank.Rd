@@ -3,11 +3,11 @@
 \docType{data}
 \name{builtin_itembank}
 \alias{builtin_itembank}
-\title{Built-in itembank}
+\title{Collection of items fitting the Rasch model}
 \format{
 A \code{data.frame} with variables:\tabular{ll}{
    Name \tab Label \cr
-   \code{key} \tab String indicating a specific Rasch model (the key) \cr
+   \code{key} \tab String indicating a specific Rasch model \cr
    \code{item} \tab Item name, gsed lexicon \cr
    \code{tau} \tab Difficulty estimate \cr
    \code{label} \tab Label (English) \cr
@@ -22,17 +22,18 @@ builtin_itembank
 }
 \description{
 A data frame with administrative information per item with difficulty
-estimates (tau) for the Rasch model. The itembank is used to calculate
-D-scores. The items in the item bank are a subset of all items.
-See \link{builtin_itemtable} for an overview of all currently
-known items.
+estimates (\code{tau}) from the Rasch model. The item bank provides the basic
+information to calculate D-scores. The items in the item bank
+are a subset of all items as collected in \link{builtin_itemtable}.
 }
 \details{
-One can only compare D-score calculated with the same key. The current
-recommendation for new projects is to choose key \code{gsed2212}.
+The difficulty estimates were estimated by a Rasch model. The \code{key}
+indicates the specific Rasch model used to estimate the difficulty.
+Strictly speaking, one can only compare D-score calculated from the
+same \code{key}.
 }
 \note{
-Last update:
+Updates:
 \itemize{
 \item Dec 01, 2022 - Overwrite labels of gto by correct item order.
 \item Dec 05, 2022 - Adds key \code{gsed2212}, adding instruments \code{gl1} and \code{gs1}, and
@@ -41,10 +42,10 @@ defining correct order for \code{gto}
 }
 }
 \examples{
-head(builtin_itembank)
+# count number of items per instrument in each key
+table(builtin_itembank$instrument, builtin_itembank$key)
 }
 \seealso{
-\code{\link[=dscore]{dscore()}}, \code{\link[=get_tau]{get_tau()}},
-\code{\link[=builtin_itemtable]{builtin_itemtable()}}
+\code{\link[=dscore]{dscore()}}, \code{\link[=get_tau]{get_tau()}}, \code{\link[=builtin_itemtable]{builtin_itemtable()}}
 }
 \keyword{datasets}

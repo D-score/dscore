@@ -37,7 +37,7 @@ reference:
       - get_tau
   - title: "Working with references"
     desc: >
-      Specification of the imputation models can be made more
+      Specification of the models can be made more
       convenient using the following set of helpers.
     contents:
       - daz
@@ -45,20 +45,20 @@ reference:
       - get_age_equivalent
   - title: "Internal functions"
     desc: >
-      While documented, these internal functions should not be
-      called directly.
+      For research purposes only.
     contents:
       - count_mu_dutch
       - count_mu_gcdg
       - count_mu_phase1
-      - count_mu_phase1_healthy
+      - count_mu_preliminary_standards
       - posterior
       - normalize
   - title: "Datasets"
     desc: "Built-in datasets"
     contents:
-      - builtin_itemtable
+      - builtin_keys
       - builtin_itembank
+      - builtin_itemtable
       - builtin_references
       - milestones
       - gsample

@@ -1,9 +1,8 @@
 #' @importFrom dplyr       all_of arrange bind_cols filter group_by
-#'                         intersect left_join
-#'                         mutate n recode select slice summarise
-#'                         tibble ungroup .data
+#'                         intersect left_join mutate n recode select
+#'                         slice summarise ungroup .data
 #' @importFrom stats       approx dnorm plogis qlogis weighted.mean qt pt
 #'                         pnorm qnorm
-#' @importFrom stringr     str_pad
+#' @importFrom stringi     stri_pad
 #' @importFrom tidyr       pivot_longer
 NULL

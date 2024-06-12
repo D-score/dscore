@@ -1,12 +1,9 @@
-citHeader("To cite dscore in publications use:")
-
-citEntry(
-  entry    = "Manual",
-  title    = "D-score for Child Development",
-  author   = as.person("S. van Buuren [aut], I. Eekhout [aut], A. Huizing [aut]"),
-  year     = "2024",
-  note     = "R package version 1.9.0",
-  url      = "https://github.com/d-score/dscore",
-  key      = "dscore-package",
-  textVersion =  "Van Buuren S, Eekhout I, Huizing A (2024). D-score for Child Development. The dscore R package, version 1.9.0."
+bibentry(
+  bibtype  = "Book",
+  title    = "Child Development with the D-score",
+  author   = c(person("Stef", "van Buuren"), person("Iris", "Eekhout")),
+  year     = "2023",
+  publisher = "CRC Press",
+  address  = "Boca Raton, FL",
+  doi      = "https://doi.org/10.1201/9781003216315"
 )

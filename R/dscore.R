@@ -1,19 +1,30 @@
 #' D-score estimation
 #'
-#' The `dscore()` function estimates the D-score, a numeric score that
-#' quantifies child development by one number.
+#' The `dscore()` function estimates the following quantities: *D-score*,
+#' a numeric score that quantifies child development by one number,
+#' *Development-for-Age Z-score (DAZ)* that corrects the D-score for age,
+#' *standard error of measurement (SEM)* of the D-score.
 #'
-#' @rdname dscore
 #' @param data  A `data.frame` with the data.
 #' A row collects all observations made on a child on a set of
 #' milestones administered at a given age. The function calculates
-#' a D-score for each row. Different rows correspond to different
-#' children or different ages.
+#' a D-score for each row. Different rows can correspond to different
+#' children or ages.
 #' @param items A character vector containing names of items to be
 #' included into the D-score calculation. Milestone scores are coded
 #' numerically as `1` (pass) and `0` (fail). By default,
 #' D-score calculation is done on all items found in the data
 #' that have a difficulty parameter under the specified `key`.
+#' @param key String. Name of the key that bundles the difficulty estimates
+#' pertaining one the same Rasch model. View `builtin_keys` for an overview
+#' of the available keys.
+#' @param population String. The name of the reference population to calculate DAZ.
+#' Use `unique(builtin_references$population)` to obtain the set of currently
+#' available reference populations.
+#' @param itembank A `data.frame` with at least two columns
+#' named `item` and `tau`. By default, the function uses
+#' `dscore::builtin_itembank`. If you specify your own `itembank`,
+#' then you should also provide the relevant `transform` and `qp` arguments.
 #' @param xname A string with the name of the age variable in
 #' `data`. The default is `"age"`. Do not round age.
 #' @param xunit A string specifying the unit in which age is measured
@@ -22,43 +33,19 @@
 #' @param prepend Character vector with column names in `data` that will
 #' be prepended to the returned data frame. This is useful for copying
 #' columns from data into the result, e.g., for matching.
-#' @param key A string that selects a subset in the itembank that
-#' makes up the key, the set of difficulty estimates from a fitted
-#' Rasch model.
-#' The built-in keys are:  `"gsed2212"` (default), `"gsed2208"` (deprecated),
-#' `"gsed2206"` (deprecated), `"gsed1912"`, `"lf2206"`, `"sf2206"`, `"gcdg"`,
-#' and `"dutch"`. Since version 1.5.0, the `key = "gsed"`
-#' selects the latest key starting with the string "gsed".
-#' Use `key = ""` to use all item names,
-#' which should only be done if there are no duplicate itemnames
-#' in the itembank.
-#' @param itembank A `data.frame` with at least two columns
-#' named `item` and `tau`. By default, the function uses
-#' `dscore::builtin_itembank`. If you specify your own `itembank`,
-#' then also specify the `transform` and `qd` arguments.
 #' @param metric A string, either `"dscore"` (default) or
 #' `"logit"`, signalling the metric in which ability is estimated.
-#' @param prior_mean A string specifying where the mean of the
-#' prior for the D-score calculation should come from. It could be
-#' a column name in `data` (when you want your own prior for every row),
-#' but normally this is one of the keywords `".dutch"`, `".gcdg"`
-#' or `".phase1"`.
-#' The default depends on the `key`. If `key == "dutch"` then
-#' `prior_mean = ".dutch"`. The choice `prior_mean = ".dutch"`
-#' calculates `prior_mean` from the Count model coded in
-#' `dscore:::count_mu_dutch()`).
-#' If `key` is #' `"gcdg"`, `"gsed1912"`,
-#' `"gsed2206"`, `"lf2206"` or `"sf2206"` then `prior_mean = ".gcdg"`.
-#' This setting calculates an age-dependent prior mean internally according
-#' to function `dscore:::count_mu_gcdg()`.
-#' In other cases, `prior_mean = ".phase1"`
-#' which uses the function `dscore:::count_mu_phase1()` or
-#' `dscore:::count_mu_phase1_healthy()`.
-#' Normally, you should not touch this parameter, but feel free to use
-#' `prior_mean` to override the automatic choices.
-#' @param prior_sd A string specifying a column name in `data`
-#' with the standard deviation of the prior for the D-score calculation.
-#' If not specified, the standard deviation is taken as 5 for every row.
+#' `daz` is not calculated for the logit scale.
+#' @param prior_mean A string or numeric scalar. If a string, it should
+#' refer to a column name in `data` with user-supplied values of the prior mean
+#' for each observation. If a numeric scalar, it is used as the prior mean
+#' for all observations. The default (`NULL`) will consult the
+#' `base_population` field in `builtin_keys`, and use the corresponding
+#' median of that reference as prior mean for the D-score.
+#' @param prior_sd A string or a numeric scalar. If a string, it should
+#' refer to a column name in `data` with user-supplied values of the prior
+#' sd for all observations. If a numeric scalar, it is used as the prior sd
+#' for all observations. The default (`NULL`) uses a values of 5.
 #' @param transform Numeric vector, length 2, containing the intercept
 #' and slope of the linear transform from the logit scale into the
 #' the D-score scale. The default (`NULL`) searches `builtin_keys`
@@ -67,8 +54,6 @@
 #' This vector should span the range of all D-score or logit values.
 #' The default (`NULL`) creates `seq(from, to, by)` searching the
 #' arguments from `builtin_keys`.
-#' @param population A string describing the population. Currently
-#' supported are `"phase1"` (default), `"dutch"`, `"gcdg"`.
 #' @param dec A vector of two integers specifying the number of
 #' decimals for rounding the D-score and DAZ, respectively.
 #' The default is `dec = c(2L, 3L)`.
@@ -80,10 +65,11 @@
 #' ignore scores.
 #' @param algorithm Computational method, for backward compatibility.
 #' Either `"current"` (default) or `"1.8.7"` (deprecated).
-#' @return
-#' The `dscore()` function returns a `data.frame` with `nrow(data)` rows.
-#' Optionally, the first block of columns can be specified by `prepend`
-#' are copied from `data`. The second block consists of the
+#' @param verbose Logical. Print settings.
+#'
+#' @return The `dscore()` function returns a `data.frame` with `nrow(data)` rows.
+#' Optionally, the first block of columns can be copied to the
+#' result by using `prepend`. The second block consists of the
 #' following columns:
 #'
 #' Name | Label
@@ -93,19 +79,19 @@
 #' `p`  | Percentage of passed milestones
 #' `d`  | Ability estimate, mean of posterior
 #' `sem` | Standard error of measurement, standard deviation of the posterior
-#' `daz` | D-score corrected for age, calculated in Z-scale
+#' `daz` | D-score corrected for age, calculated in Z-scale (for metric `"dscore"`)
 #'
-#' The `dscore_posterior()` function returns a data frame with
+#' For more detail, the `dscore_posterior()` function returns a data frame with
 #' `nrow(data)` rows and `length(qp)` plus prepended columns with the
-#' density at each quadrature point. A row vector representes the full
-#' posterior ability distribution. If no valid responses are found,
-#' `dscore_posterior()` returns the prior density. Versions prior to
-#' 1.8.5 returned a `matrix` (instead of a `data.frame`). Code that depends on
-#' the result being a `matrix` may break and needs to be adapted.
+#' full posterior density of the D-score at each quadrature point.
+#' If no valid responses are found, `dscore_posterior()` returns the
+#' prior density. Versions prior to 1.8.5 returned a `matrix` (instead of
+#' a `data.frame`). Code that depends on the result being a `matrix` may break
+#' and may need adaptation.
 #'
 #' @details
-#' The algorithm is based on the method by Bock and Mislevy (1982). The
-#' method uses Bayes rule to update a prior ability into a posterior
+#' The scoring algorithm is based on the method by Bock and Mislevy (1982).
+#' The method uses Bayes rule to update a prior ability into a posterior
 #' ability.
 #'
 #' The item names should correspond to the `"gsed"` lexicon.
@@ -115,29 +101,25 @@
 #' Key | Model | Quadrature | Instruments | Direct/Caregiver | Reference
 #' --- | -----:| ----------:| ----------: |:----------------:|:---------
 #' `"dutch"` | `75_0`   | `-10:80`  | 1   | direct | Van Buuren, 2014/2020
-#' `"gcdg"`  | `565_18` | `-10:100` | 14  | direct | Weber, 2019
-#' `"gsed1912"`  | `807_17` | `-10:100` | 20  | mixed  | GSED Team, 2019
-#' `"gsed2206"`  | `818_17` | `-10:100` | 22  | mixed  | GSED Team, 2022
-#' `"gsed2208"`  | `818_6` | `-10:100` | 22  | mixed  | GSED Team, 2022
-#' `"gsed2212"`  | `818_6` | `-10:100` | 22  | mixed  | GSED Team, 2022
-#' `"lf2206"`    | `155_0` | `-10:100`  | 1   | direct | GSED Team, 2022
-#' `"sf2206"`    | `139_0` | `-10:100`  | 1   | caregiver | GSED Team, 2022
+#' `"gcdg"`  | `565_18` | `-10:100` | 13  | direct | Weber, 2019
+#' `"gsed1912"`  | `807_17` | `-10:100` | 21  | mixed  | GSED Team, 2019
+#' `"293_0"`     | `293_0` | `-10:100` | 2   | mixed  | GSED Team, 2022
+#' `"gsed2212"`  | `818_6` | `-10:100` | 27  | mixed  | GSED Team, 2022
+#' `"gsed2406"`  | `818_6` | `-10:100` | 27  | mixed  | GSED Team, 2024
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
-#' the advice is to use the default, which currently links to
-#' `"gsed2212"`.
+#' the advice is to use the default, which currently is `"gsed2406"`.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
-#' Count models are stored as internal functions
-#' `dscore:::count_mu_phase1()`, `dscore:::count_mu_gcdg()` and
-#' `dscore:::count_mu_dutch()`. The spread of the starting prior
-#' is 5 D-score points around this mean D-score, which corresponds to
+#' The Count models are implemented in the function `[count_mu()]`.
+#' By default, the spread of the starting prior
+#' is 5 D-score points around the mean D-score, which corresponds to
 #' approximately 1.5 to 2 times the normal spread of child of a given age. The
-#' starting prior is thus somewhat informative for low numbers of
-#' valid items, and uninformative for large number of items (say >10 items).
+#' starting prior is informative for very short test (say <5 items), but has
+#' little impact on the posterior for larger tests.
 #'
 #' @references
 #' Bock DD, Mislevy RJ (1982).
@@ -157,10 +139,14 @@
 #' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>
 #'
 #' @author Stef van Buuren, Iris Eekhout, Arjan Huizing (2022)
-#' @seealso [get_tau()],
-#' [builtin_itembank()], [posterior()],
-#' [builtin_references()]
+#' @seealso [builtin_keys()], [builtin_itembank()], [builtin_itemtable()],
+#' [builtin_references()], [get_tau()], [posterior()], [milestones()]
 #' @examples
+#' # using all defaults and properly formatted data
+#' ds <- dscore(milestones)
+#' head(ds)
+#'
+#' # step-by-step example
 #' data <- data.frame(
 #'   id = c(
 #'     "Jane", "Martin", "ID-3", "No. 4", "Five", "6",
@@ -173,8 +159,8 @@
 #' )
 #' items <- names(data)[3:5]
 #'
-#' # third item is not part of default key
-#' get_tau(items)
+#' # third item is not part of the default key
+#' get_tau(items, verbose = TRUE)
 #'
 #' # calculate D-score
 #' dscore(data)
@@ -182,7 +168,7 @@
 #' # prepend id variable to output
 #' dscore(data, prepend = "id")
 #'
-#' # prepend all data
+#' # or prepend all data
 #' # dscore(data, prepend = colnames(data))
 #'
 #' # calculate full posterior
@@ -191,43 +177,57 @@
 #' # check that rows sum to 1
 #' rowSums(p)
 #'
-#' # plot posterior for row 7
-#' barplot(as.matrix(p[7, 12:29]),
-#'   names = 1:18,
-#'   xlab = "D-score", ylab = "Density",
-#'   main = "Full D-score posterior for measurement in row 7"
-#' )
+#' # plot full posterior for measurement 7
+#' barplot(as.matrix(p[7, 12:36]),
+#'   names = 1:25,
+#'   xlab = "D-score", ylab = "Density", col = "grey",
+#'   main = "Full D-score posterior for measurement in row 7",
+#'   sub = "D-score (EAP) = 11.58, SEM = 3.99")
+#'
+#' # plot P10, P50 and P90 of D-score references
+#' g <- expand.grid(age = seq(0.1, 4, 0.1), p = c(0.1, 0.5, 0.9))
+#' d <- zad(z = qnorm(g$p), x = g$age, verbose = TRUE)
+#' matplot(
+#'   x = matrix(g$age, ncol = 3), y = matrix(d, ncol = 3), type = "l",
+#'   lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score",
+#'   main = "D-score preliminary standards: P10, P50 and P90")
+#' abline(h = seq(10, 80, 10), v = seq(0, 4, 0.5), col = "gray", lty = 2)
+#'
+#' # add measurements made on very preterms, ga < 32 weeks
+#' ds <- dscore(milestones)
+#' points(x = ds$a, y = ds$d, pch = 19, col = "red")
 #' @export
 dscore <- function(data,
                    items = names(data),
+                   key = NULL,
+                   population = NULL,
                    xname = "age",
                    xunit = c("decimal", "days", "months"),
                    prepend = NULL,
-                   key = NULL,
                    itembank = dscore::builtin_itembank,
                    metric = c("dscore", "logit"),
                    prior_mean = NULL,
                    prior_sd = NULL,
                    transform = NULL,
                    qp = NULL,
-                   population = NULL,
                    dec = c(2L, 3L),
                    relevance = c(-Inf, Inf),
-                   algorithm = c("current", "1.8.7")) {
+                   algorithm = c("current", "1.8.7"),
+                   verbose = FALSE) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
 
   calc_dscore(
-    data = data, items = items, xname = xname, xunit = xunit,
-    prepend = prepend,
-    key = key, itembank = itembank, metric = metric,
+    data = data, items = items, key = key, population = population,
+    xname = xname, xunit = xunit, prepend = prepend,
+    itembank = itembank, metric = metric,
     prior_mean = prior_mean, prior_sd = prior_sd,
-    transform = transform, qp = qp,
-    population = population, dec = dec,
+    transform = transform, qp = qp, dec = dec,
     posterior = FALSE,
     relevance = relevance,
-    algorithm = algorithm
+    algorithm = algorithm,
+    verbose = verbose
   )
 }
 
@@ -237,81 +237,61 @@ dscore <- function(data,
 #' @export
 dscore_posterior <- function(data,
                              items = names(data),
+                             key = NULL,
+                             population = NULL,
                              xname = "age",
                              xunit = c("decimal", "days", "months"),
                              prepend = NULL,
-                             key = NULL,
                              itembank = dscore::builtin_itembank,
                              metric = c("dscore", "logit"),
                              prior_mean = NULL,
                              prior_sd = NULL,
                              transform = NULL,
                              qp = NULL,
-                             population = NULL,
                              dec = c(2L, 3L),
                              relevance = c(-Inf, Inf),
-                             algorithm = c("current", "1.8.7")) {
+                             algorithm = c("current", "1.8.7"),
+                             verbose = FALSE) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
 
   calc_dscore(
-    data = data, items = items, xname = xname, xunit = xunit, prepend = prepend,
-    key = key, itembank = itembank, metric = metric,
+    data = data, items = items, key = key, population = population,
+    xname = xname, xunit = xunit, prepend = prepend,
+    itembank = itembank, metric = metric,
     prior_mean = prior_mean, prior_sd = prior_sd,
-    transform = transform, qp = qp,
-    population = population, dec = dec,
+    transform = transform, qp = qp, dec = dec,
     posterior = TRUE,
     relevance = relevance,
-    algorithm = algorithm
+    algorithm = algorithm,
+    verbose = verbose
   )
 }
 
-calc_dscore <- function(data, items, xname, xunit, prepend,
-                        key, itembank, metric,
+calc_dscore <- function(data, items, key, population,
+                        xname, xunit, prepend,
+                        itembank, metric,
                         prior_mean, prior_sd,
-                        transform, qp,
-                        population, dec,
+                        transform, qp, dec,
                         posterior,
                         relevance,
-                        algorithm) {
+                        algorithm,
+                        verbose) {
   stopifnot(length(relevance) == 2L)
 
-  init <- init_key(key, transform, qp)
+  init <- init_key(key, population, transform, qp)
   key <- init$key
+  population <- init$population
   transform <- init$transform
   qp <- init$qp
 
-  # set default reference population for DAZ
-  if (is.null(population)) {
-    if (key %in% c("gsed2212", "gsed2208", "293_0")) {
-      population <- "phase1"
-    }
-    if (key %in% c("gcdg", "gsed1912", "gsed2206", "lf2206", "sf2206", "294_0")) {
-      population <- "gcdg"
-    }
-    if (key %in% c("dutch")) {
-      population <- "dutch"
-    }
-    if (is.null(population)) {
-      population <- "phase1"
-      warning("Could not set 'population' argument. Uses phase1.")
-    }
-  }
-
-  # set default column name of prior_mean
-  if (is.null(prior_mean)) {
-    prior_mean <- switch(population,
-                         phase1 = ".phase1",
-                         phase1_healthy = ".phase1_healthy",
-                         gcdg = ".gcdg",
-                         dutch = ".dutch",
-                         "other"
-    )
-    if (prior_mean == "other") {
-      prior_mean <- ".phase1"
-      warning("Inherits prior mean from population phase1. Set prior_mean = '.phase1' to silence this warning.")
-    }
+  if (verbose) {
+    cat("key:        ", key, "\n")
+    cat("population: ", population, "\n")
+    cat("transform:  ", transform, "\n")
+    cat("qp range:   ", range(qp), "\n")
+    cat("algorithm:  ", algorithm, "\n")
   }
 
   # handle zero rows
@@ -362,25 +342,24 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
     )
   }
 
-  # initialise prior mean (mu)
-  mu <- rep(NA, nrow(data))
-  if (prior_mean == ".gcdg") {
-    mu <- count_mu_gcdg(decage)
-  } else if (prior_mean == ".dutch") {
-    mu <- count_mu_dutch(decage)
-  } else if (prior_mean == ".phase1") {
-    mu <- count_mu_phase1(decage)
-  } else if (prior_mean == ".phase1_healthy") {
-    mu <- count_mu_phase1_healthy(decage)
-  } else if (prior_mean %in% names(data)) {
+  # initialise prior mean mu conditional on key
+  if (is.null(prior_mean)) {
+    mu <- count_mu(decage, key)
+  } else if (is.character(prior_mean) && prior_mean %in% names(data)) {
     mu <- data[[prior_mean]]
+  } else {
+    mu <- rep(NA_real_, nrow(data))
   }
-  # if (any(is.na(mu))) stop("Missing values in prior mean found.")
 
-  # determine sd for the prior
-  sd <- rep(5, nrow(data))
-  if (is.character(prior_sd) && prior_sd %in% names(data)) {
+  # initialise prior sd (sd)
+  if (is.null(prior_sd)) {
+    sd <- rep(5, nrow(data))
+  } else if (is.character(prior_sd) && prior_sd %in% names(data)) {
     sd <- data[[prior_sd]]
+  } else if (is.numeric(prior_sd)) {
+    sd <- rep(prior_sd, nrow(data))
+  } else {
+    sd <- rep(NA_real_, nrow(data))
   }
 
   # In D-score scale, set scale expansion
@@ -491,7 +470,7 @@ calc_dscore <- function(data, items, xname, xunit, prepend,
         d = round(.data$d, digits = dec[1L]),
         daz = daz(
           d = .data$d, x = .data$a,
-          reference = get_reference(population),
+          reference_table = get_reference(population = population, key = key),
           dec = dec[2L]
         ),
         daz = ifelse(is.nan(.data$daz), NA, .data$daz)

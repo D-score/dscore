@@ -1,4 +1,4 @@
-#' Age-conditional reference distribution of D-score
+#' Collection of age-conditional reference distributions
 #'
 #' A data frame containing the age-dependent distribution of the
 #' D-score for children aged 0-5 years. The distribution is modelled
@@ -6,17 +6,18 @@
 #' (Stasinopoulos & Rigby, 2022) and is equal for
 #' both boys and girls. The LMS/BCT values can be used to graph
 #' reference charts and to calculate age-conditional Z-scores, also
-#' known as DAZ.
+#' known as the *Development-for-Age Z-score (DAZ)*.
 #'
 #' @docType data
-#' @format A `data.frame` with 18 variables:
+#' @format A `data.frame` with the following variables:
 #'
-#' | Name | Label |
-#' | --- | --------- |
-#' | `pop` | Population: `"dutch"`, `"gcdg"`, `"phase1"`, `"phase1_healthy"`,
-#'          `"dutch_gsed2212"` |
-#' | `age` | Decimal age in years |
-#' | `mu`  | M-curve, median D-score, P50 |
+#' | Name    | Label |
+#' | ------- | --------- |
+#' | `population` | Name of the reference population |
+#' | `key`   | D-score key, e.g., `"dutch"`, `"gcdg"` or `"gsed"` |
+#' | `distribution` | Distribution family: `"LMS"` or `"BCT"` |
+#' | `age`   | Decimal age in years |
+#' | `mu`    | M-curve, median D-score, P50 |
 #' | `sigma` | S-curve, spread expressed as coefficient of variation |
 #' | `nu`    | L-curve, the lambda coefficient of the LMS/BCT model for skewness |
 #' | `tau`   | Kurtosis parameter in the BCT model |
@@ -34,6 +35,7 @@
 #' | `SDP2`  | +2SD centile |
 #'
 #' @details
+#' Here are more details on the reference population:
 #' The `"dutch"` references were calculated from the SMOCC data, and cover
 #' age range 0-2.5 years (van Buuren, 2014).
 #' The `"gcdg"` references were calculated from the 15 cohorts of the
@@ -41,13 +43,13 @@
 #' The `"phase1"` references were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 #' age range 3.5-5 yrs is linearly extrapolated and are only indicative.
-#' The `"phase1_healthy"` references were calculated from the GSED Phase 1 validation
+#' The `"preliminary_standards"` were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) using a subset of children with
-#' healthy development.
-#' The `"dutch_gsed2212"` references were calculated from Dutch data using
-#' the `gsed2212` key. This is a temporary name, and will be deprecated.
+#' covariate indicating healthy development.
+#'
 #' @examples
-#' head(builtin_references)
+#' # get an overview of available references per key
+#' table(builtin_references$population, builtin_references$key)
 #' @references
 #' Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
 #' method and penalized likelihood. Statistics in Medicine, 11(10),

@@ -8,16 +8,10 @@ data <- data.frame(
   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 )
 
-# default key: "gsed" (currently points to "gsed2212", population "phase1")
-z <- dscore(data, algorithm = "1.8.7")
-expected_d <- c(NA, NA, 6.61, 5.60, 9.09, 9.09, 9.09, 9.09, 15.30, 15.30)
-expected_daz <- c(NA, NA, -2.019, -2.235, -1.447, -1.447, -1.447, -1.447, 0.277, 0.277)
-test_that("produces expected D-scores - key gsed", {
-  expect_identical(z$d, expected_d)
-  expect_identical(z$daz, expected_daz)
-})
 
 # explicit key "gsed2212"
+expected_d <- c(NA, NA, 6.61, 5.60, 9.09, 9.09, 9.09, 9.09, 15.30, 15.30)
+expected_daz <- c(NA, NA, -2.019, -2.235, -1.447, -1.447, -1.447, -1.447, 0.277, 0.277)
 z <- dscore(data, key = "gsed2212", algorithm = "1.8.7")
 test_that("produces expected D-scores - key gsed2212", {
   expect_identical(z$d, expected_d)
@@ -42,15 +36,6 @@ test_that("produces expected D-scores - key gcdg", {
   expect_identical(z2$d, expected_d2)
 })
 
-z3 <- dscore(data, key = "gsed2206", algorithm = "1.8.7")
-expected_d3 <- c(
-  NA, NA, 3.46, 0.96, 4.82, 4.82, 4.82, 4.82,
-  11.81, 11.81
-)
-test_that("produces expected D-scores - key gsed", {
-  expect_identical(z3$d, expected_d3)
-})
-
 # subset by items
 items <- c("ddifmd001", "ddicmm029", "ddigmd053")
 z4 <- dscore(data, items = items, key = "dutch", algorithm = "1.8.7")
@@ -68,24 +53,9 @@ test_that("produces expected D-scores - key dutch", {
   expect_identical(z5$d, expected_d5)
 })
 
-z6 <- dscore(data, items = items[1:2], key = "gsed2206", algorithm = "1.8.7")
-expected_d6 <- expected_d3
-test_that("produces expected D-scores", {
-  expect_identical(z6$d, expected_d6)
-})
-
-z7 <- dscore(data,
-  items = c(items[1:2], "junk"), key = "gsed2206",
-  algorithm = "1.8.7"
-)
-expected_d7 <- expected_d3
-test_that("produces expected D-scores", {
-  expect_identical(z7$d, expected_d7)
-})
-
 test_that("Silently handles outside item code", {
   expect_silent(dscore(data,
-    items = c(items[1:2], "gpagmc013"), key = "gsed2206",
+    items = c(items[1:2], "gpagmc013"),
     algorithm = "1.8.7"
   ))
 })
@@ -117,101 +87,61 @@ data <- data.frame(
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 )
-keyd <- data.frame(
-  key = "temp",
+my_itembank <- data.frame(
+  key = "mykey",
   item = items,
   tau = get_tau(items = items, key = "dutch")
 )
 
 # externally specified transformation
-transform <- c(38.906, 2.1044)
-qp <- -10:80
 # transform <- c(0, 1)
 # transform <- c(0, 2)
 # transform <- c(50, 3)
 
+# algorithm <- "1.8.7"
+# zd <- dscore(data,
+#   items = items, dec = 4, metric = "dscore",
+#   itembank = keyd, key = "temp", population = "dutch",
+#   transform = transform, qp = qp, algorithm = algorithm
+# )
+# zl <- dscore(data,
+#   items = items, dec = 4, metric = "logit",
+#   itembank = keyd, key = "temp", population = "dutch",
+#   transform = transform, qp = qp, algorithm = algorithm
+# )
+
+lastkey <- builtin_keys[nrow(builtin_keys), ]
+transform <- c(lastkey$intercept, lastkey$slope)
 algorithm <- "1.8.7"
-zd <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
-zl <- dscore(data,
-  items = items, dec = 4, metric = "logit",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
+zd <- dscore(data, metric = "dscore", algorithm = algorithm, verbose = FALSE)
+zl <- dscore(data, metric = "logit", algorithm = algorithm)
 test_that("logit and dscore are identical (1.8.7)", {
   expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
   expect_equal(zl$d * transform[2] + transform[1], zd$d, tolerance = 0.001)
 })
 
 algorithm <- "current"
-zd <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
-zl <- dscore(data,
-  items = items, dec = 4, metric = "logit",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
+zd <- dscore(data, metric = "dscore", algorithm = algorithm, verbose = FALSE)
+zl <- dscore(data, metric = "logit", algorithm = algorithm)
 test_that("logit and dscore are identical (current)", {
   expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
   expect_equal(zl$d * transform[2] + transform[1], zd$d, tolerance = 0.001)
 })
 
-# calls with NULL transform
-
-algorithm <- "1.8.7"
-zd <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
-zl <- dscore(data,
-  items = items, dec = 4, metric = "logit",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp =qp, algorithm = algorithm
-)
-test_that("logit and dscore are identical (1.8.7)", {
-  expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
-  expect_equal(zl$d * transform[2] + transform[1], zd$d, tolerance = 0.001)
-})
-
-algorithm <- "current"
-zd <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
-zl <- dscore(data,
-  items = items, dec = 4, metric = "logit",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, algorithm = algorithm
-)
-test_that("logit and dscore are identical (current)", {
-  expect_equal(zl$d, (zd$d - transform[1]) / transform[2], tolerance = 0.001)
-  expect_equal(zl$d * transform[2] + transform[1], zd$d, tolerance = 0.001)
-})
-
-
-# check prior mean
+# check prior mean as column in data
 data <- cbind(data, start = rep(c(0, 10), times = 5))
-zp0 <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = keyd, population = "dutch"
-)
-zp1 <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = keyd, key = "temp", population = "dutch",
-  transform = transform, qp = qp, prior_mean = "start"
-)
+zp0 <- dscore(data)
+zp1 <- dscore(data, prior_mean = "start")
+test_that("D-score difference at uneven rows (with start 0) is higher than on uneven rows (with start 10)", {
+  expect_gt(zp0$d[3] - zp1$d[3], zp0$d[4] - zp1$d[4])
+  expect_gt(zp0$d[5] - zp1$d[5], zp0$d[6] - zp1$d[6])
+  expect_gt(zp0$d[7] - zp1$d[7], zp0$d[8] - zp1$d[8])
+  expect_gt(zp0$d[9] - zp1$d[9], zp0$d[10] - zp1$d[10])
+})
 
 test_that("count_mu_phase() handles missing ages", {
-  expect_silent(dscore:::count_mu_phase1(t = c(NA, NA)))
-  expect_silent(dscore:::count_mu_phase1(t = c(NA, -3, 1:3, NA)))
+  expect_silent(dscore::count_mu(t = c(NA, NA), key = "preliminary_standards"))
+  expect_silent(dscore::count_mu(t = c(NA, -3, 1:3, NA), key = "preliminary_standards"))
 })
 
 

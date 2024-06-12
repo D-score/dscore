@@ -18,7 +18,7 @@ rename_sf <- function(x, match_table) {
   domn[is.na(match_y)] <- "xx"
   rep <- "c"
   nr <- gsub("Ra_SF", "", x)
-  nr <- str_pad(nr, 3, pad = "0")
+  nr <- stri_pad(nr, 3, pad = "0")
 
   y <- paste(instr, domn, rep, nr, sep = "")
   y

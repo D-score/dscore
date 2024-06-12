@@ -1,8 +1,34 @@
+#' Median D-score from the default references for the given key
+#'
+#' Returns the age-interpolated median of the D-score of the default
+#' reference for a given key.
+#'
+#' Do not use this function if you want the median D-score for a specific
+#' reference.
+#' @param t Decimal age, numeric vector
+#' @param key Character, key of the reference population
+#' @return
+#' A vector of length `length(t)` with the median of the default reference
+#' population for the key.
+#' @export
+count_mu <- function(t, key) {
+  # calculate P50 from the default population for the key
+  init <- init_key(key = key, population = NULL, transform = NULL, qp = NULL)
+  population <- init$population
+  mu <- switch(population,
+               "dutch" = count_mu_dutch(t),
+               "gcdg" = count_mu_gcdg(t),
+               "phase1" = count_mu_phase1(t),
+               "preliminary_standards" = count_mu_preliminary_standards(t),
+               rep(NA_real_, length(t)))
+  return(mu)
+}
+
 #' Median of Dutch references
 #'
 #' Returns the age-interpolated median of the Dutch references (van Buuren 2014).
-#' The working range is 0-3 years. This function should
-#' be called when the `key = "dutch"`.
+#' The working range is 0-3 years. This function is used
+#' to set prior mean under key `"dutch"`.
 #' @param t Decimal age, numeric vector
 #' @return
 #' A vector of length `length(t)` with the median of the Dutch references.
@@ -16,8 +42,8 @@ count_mu_dutch <- function(t) {
 #' Median of GCDG references
 #'
 #' Returns the age-interpolated median of the GCDG references (Weber
-#' et al, 2019). The working range is 0-4 years. This function should
-#' be called when the `key = "gsed"` or `key = "gcdg"`.
+#' et al, 2019). The working range is 0-4 years. This function is used
+#' to set prior mean under keys `"gcdg"` and `"gsed1912"`.
 #' @param t Decimal age, numeric vector
 #' @return
 #' A vector of length `length(t)` with the median of the GCDG references.
@@ -28,11 +54,11 @@ count_mu_gcdg <- function(t) {
   suppressWarnings(47.65 - 3.05 * t + 26.70 * log(t + 0.19))
 }
 
-
 #' Median of phase1 references
 #'
 #' Returns the age-interpolated median of the phase1 references
-#' based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA.
+#' based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA. This function is used
+#' to set prior mean under keys `"293_0"` and `"gsed2212"`.
 #'
 #' The interpolation is done in two rounds. First round: Calculate D-scores
 #' using .gcdg prior-mean, calculate reference, estimate round 1 parameters
@@ -52,8 +78,7 @@ count_mu_gcdg <- function(t) {
 #'
 #' The working range is 0-3.5 years. After the age of 3.5 years, the function
 #' will increase at an arbitrary rate of 3.8 D-score points per year.
-#' This function is intended to be called when `key = "gsed2212"`,
-#' `key = "gsed2208"` or `key = "293_0"`.
+#'
 #' @param t Decimal age, numeric vector
 #' @return
 #' A vector of length `length(t)` with the median of the GCDG references.
@@ -80,21 +105,20 @@ count_mu_phase1 <- function(t) {
   return(t)
 }
 
-#' Median of phase1_healthy references
+#' Median of preliminary_standards
 #'
-#' Returns the age-interpolated median of the phase1 references
-#' based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA.
+#' Returns the age-interpolated median of the preliminary_standards
+#' based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA. This function is used
+#' to set prior mean under key `"gsed2406"`.
 #'
-#' This function is intended to be called when `key = "gsed2212"`,
-#' `key = "gsed2208"` or `key = "293_0"`.
 #' @param t Decimal age, numeric vector
 #' @return
 #' A vector of length `length(t)` with the median of the GCDG references.
 #' @note Internal function. Called by `dscore()`
 #' @author Stef van Buuren, on behalf of GSED project
 #' @examples
-#' dscore:::count_mu_phase1_healthy(0:5)
-count_mu_phase1_healthy <- function(t) {
+#' dscore:::count_mu_preliminary_standards(0:5)
+count_mu_preliminary_standards <- function(t) {
 
   to <- !is.na(t)
   t1 <- to & t <= 0.75

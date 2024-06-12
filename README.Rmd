@@ -27,12 +27,12 @@ suppressPackageStartupMessages(library(ggplot2))
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
 [![CRAN status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.8.9-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.9.0-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The D-score is a numerical score that measures generic development 
-in children. You may use the D-score to analyze and predict 
-development of children similar to measures like height and weight.
+in children. Use the D-score to analyze and predict early development of 
+children similar to measures like height and weight.
 
 The `dscore` package contains tools to
 
@@ -54,7 +54,7 @@ remotes::install_github("d-score/dscore")
 
 ## Overview
 
-You may estimate the D-score and the D-score age-adjusted Z-score (DAZ) from child data on developmental milestones. Four steps are needed:
+You may estimate the D-score and the Development-for-Age Z-score (DAZ) from child data on developmental milestones. Four steps are needed:
 
 1. Identify whether the `dscore` package covers your measurement instrument;
 2. Map your variable names to the GSED 9-position schema;
@@ -74,8 +74,8 @@ The `dscore` package provides various function that support these steps. See [Ge
 ### Keys
 
 1. Project with `dutch` key, 0-2 years: @vanbuuren2014
-3. Project with `gcdg` key: @weber2019
-4. Project with `gsed` key: @gsedteam2019
+2. Project with `gcdg` key: @weber2019
+3. Project with `gsed` keys: @gsedteam2023
 
 ### Methodology
 
@@ -88,9 +88,9 @@ If you want to calculate the D-score on your own data, and you're not an `R` use
 
 ## Acknowledgement
 
-This study was supported by the Bill & Melinda Gates Foundation. The contents are the sole responsibility of the authors and may not necessarily represent the official views of the Bill & Melinda Gates Foundation or other agencies that may have supported the primary data studies used in the present study. 
-
 The authors wish to recognize the principal investigators and their study team members for their generous contribution of the data that made this tool possible and the members of the Ki team who directly or indirectly contributed to the study: Amina Abubakar, Claudia R. Lindgren Alves, Orazio Attanasio, Maureen M. Black, Maria Caridad Araujo, Susan M. Chang-Lopez, Gary L. Darmstadt, Bernice M. Doove, Wafaie Fawzi, Lia C.H. Fernald, Günther Fink, Emanuela Galasso, Melissa Gladstone, Sally M. Grantham-McGregor, Cristina Gutierrez de Pineres, Pamela Jervis, Jena Derakhshani Hamadani, Charlotte Hanlon, Simone M. Karam, Gillian Lancaster, Betzy Lozoff, Gareth McCray, Jeffrey R Measelle, Girmay Medhin, Ana M. B. Menezes, Lauren Pisani, Helen Pitchik, Muneera Rasheed, Lisy Ratsifandrihamanana, Sarah Reynolds, Linda Richter, Marta Rubio-Codina, Norbert Schady, Limbika Sengani, Chris Sudfeld, Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K. Yousafzai.
+
+This study was supported by the Bill & Melinda Gates Foundation. The contents are the sole responsibility of the authors and may not necessarily represent the official views of the Bill & Melinda Gates Foundation or other agencies that may have supported the primary data studies used in the present study. 
 
 ### Literature
 

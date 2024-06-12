@@ -27,7 +27,7 @@ build()
 ```
 
 ```{bash eval=FALSE}
-R CMD CHECK dscore_1.8.0.tar.gz
+R CMD CHECK dscore_1.9.0.tar.gz
 ```
 
 Status: OK

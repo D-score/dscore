@@ -19,7 +19,7 @@ D-scores can only be compared when calculated with the same key."><!-- mathjax -
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
       </span>
     </div>
 
@@ -75,7 +75,7 @@ D-scores can only be compared when calculated with the same key.</p>
 
     <div id="format">
     <h2>Format</h2>
-    <p><code>builtin_keys</code> is a <code>data.frame</code> with variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>key</code></td><td>String. Name of the key indicating the Rasch model</td></tr><tr><td><code>default_reference</code></td><td>String. Name of the default reference for the key</td></tr><tr><td><code>n_items</code></td><td>Number of items in the key</td></tr><tr><td><code>n_instruments</code></td><td>Number of instruments in the key</td></tr><tr><td><code>intercept</code></td><td>Intercept to convert logit into D-score</td></tr><tr><td><code>slope</code></td><td>Slope to convert logit into D-score</td></tr><tr><td><code>from</code></td><td>Starting value of the quadrature points</td></tr><tr><td><code>to</code></td><td>Stopping value of the quadrature points</td></tr><tr><td><code>by</code></td><td>Increment of the quadrature points</td></tr><tr><td><code>retired</code></td><td>Has the key been retired?</td></tr></table></div>
+    <p><code>builtin_keys</code> is a <code>data.frame</code> with variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>key</code></td><td>String. Name of the key indicating the Rasch model</td></tr><tr><td><code>base_population</code></td><td>String. Name of the base population for the key</td></tr><tr><td><code>n_items</code></td><td>Number of items in the key</td></tr><tr><td><code>n_instruments</code></td><td>Number of instruments in the key</td></tr><tr><td><code>intercept</code></td><td>Intercept to convert logit into D-score</td></tr><tr><td><code>slope</code></td><td>Slope to convert logit into D-score</td></tr><tr><td><code>from</code></td><td>Starting value of the quadrature points</td></tr><tr><td><code>to</code></td><td>Stopping value of the quadrature points</td></tr><tr><td><code>by</code></td><td>Increment of the quadrature points</td></tr><tr><td><code>retired</code></td><td>Has the key been retired?</td></tr></table></div>
     <div id="note">
     <h2>Note</h2>
     <p>20240609 SvB: Added <code>builtin_keys</code> table by

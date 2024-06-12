@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
       </span>
     </div>
 
@@ -101,10 +101,10 @@ equivalent (DAZ). This step is known as <strong>scoring</strong>. The
 present section provides recipes for calculating the D-score and DAZ. We
 may pick one of the following two methods:</p>
 <ol style="list-style-type: decimal">
-<li>Online calculator. The online Shiny app <a href="https://tnochildhealthstatistics.shinyapps.io/dcalculator/" class="external-link uri">https://tnochildhealthstatistics.shinyapps.io/dcalculator/</a>
-is a convenient option for users not familiar with <code>R</code>. The
-app contains online documentation and instructions and will not be
-further discussed here.</li>
+<li>Online calculator. The online app <a href="https://tnochildhealthstatistics.shinyapps.io/dcalculator" class="external-link">D-score
+calculator</a> is a convenient option for users not familiar with
+<code>R</code>. The app contains online documentation and instructions
+and will not be further discussed here.</li>
 <li>
 <code>R</code> package <code>dscore</code>. The <code>R</code>
 package <code>dscore</code> at <a href="https://CRAN.R-project.org/package=dscore" class="external-link uri">https://CRAN.R-project.org/package=dscore</a> is a flexible
@@ -118,8 +118,8 @@ like to incorporate D-score calculations into a workflow.</li>
 </h2>
 <ul>
 <li>We use the <code>R</code> language. If you are new to <code>R</code>
-consult the <a href="https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R" class="external-link">Getting
-Started with R</a> site;</li>
+consult the <a href="https://r4ds.had.co.nz/" class="external-link">R for Data Science</a>
+book by Hadley Wickham and Garrett Grolemund;</li>
 <li>You need to install the <code>R</code> package <code>dscore</code>
 on your local machine;</li>
 <li>The child data need to be stored as a <code>data.frame</code>, a
@@ -976,16 +976,16 @@ Tanzania. Extract the references as</p>
 <div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">ref</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">age</span>, <span class="va">mu</span>, <span class="va">sigma</span>, <span class="va">nu</span>, <span class="va">tau</span>, <span class="va">SDM2</span>, <span class="va">SD0</span>, <span class="va">SDP2</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">population</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">population</span>, <span class="va">age</span>, <span class="va">mu</span>, <span class="va">sigma</span>, <span class="va">nu</span>, <span class="va">tau</span>, <span class="va">SDM2</span>, <span class="va">SD0</span>, <span class="va">SDP2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ref</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##     name    age    mu  sigma     nu    tau     SDM2      SD0     SDP2</span></span>
-<span><span class="co">## 1 phase1 0.0383 13.68 0.2456 1.1731 15.422 6.042690 13.68707 20.71620</span></span>
-<span><span class="co">## 2 phase1 0.0575 14.36 0.2324 1.2062 15.540 6.699401 14.36568 21.30880</span></span>
-<span><span class="co">## 3 phase1 0.0767 15.02 0.2206 1.2375 15.652 7.354450 15.02457 21.88555</span></span>
-<span><span class="co">## 4 phase1 0.0958 15.68 0.2100 1.2670 15.758 8.014796 15.68368 22.47481</span></span>
-<span><span class="co">## 5 phase1 0.1150 16.35 0.2005 1.2951 15.860 8.680976 16.35299 23.09062</span></span>
-<span><span class="co">## 6 phase1 0.1342 17.03 0.1917 1.3218 15.957 9.363085 17.03241 23.72268</span></span></code></pre>
+<pre><code><span><span class="co">##   population    age    mu  sigma     nu    tau     SDM2      SD0     SDP2</span></span>
+<span><span class="co">## 1     phase1 0.0383 13.68 0.2456 1.1731 15.422 6.042690 13.68707 20.71620</span></span>
+<span><span class="co">## 2     phase1 0.0575 14.36 0.2324 1.2062 15.540 6.699401 14.36568 21.30880</span></span>
+<span><span class="co">## 3     phase1 0.0767 15.02 0.2206 1.2375 15.652 7.354450 15.02457 21.88555</span></span>
+<span><span class="co">## 4     phase1 0.0958 15.68 0.2100 1.2670 15.758 8.014796 15.68368 22.47481</span></span>
+<span><span class="co">## 5     phase1 0.1150 16.35 0.2005 1.2951 15.860 8.680976 16.35299 23.09062</span></span>
+<span><span class="co">## 6     phase1 0.1342 17.03 0.1917 1.3218 15.957 9.363085 17.03241 23.72268</span></span></code></pre>
 <p>The columns <code>mu</code>, <code>sigma</code>, <code>nu</code> and
 <code>tau</code> are the age-varying parameters of a Box-Cox <span class="math inline">\(t\)</span> (BCT) distribution.</p>
 <p>The script below creates a figure with -2SD, 0SD and +2SD centiles
@@ -996,7 +996,7 @@ plus 20 D-scores (10 LF and 10 SF) for the <code>lf2</code> and
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">name</span> <span class="op">==</span> <span class="st">"phase1"</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">3.5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">population</span> <span class="op">==</span> <span class="st">"phase1"</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">3.5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>m <span class="op">=</span> <span class="va">age</span> <span class="op">*</span> <span class="fl">12</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">lf2</span><span class="op">$</span><span class="va">ins</span> <span class="op">&lt;-</span> <span class="st">"lf"</span></span>

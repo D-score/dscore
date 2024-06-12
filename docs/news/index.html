@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
       </span>
     </div>
 
@@ -61,60 +61,57 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.9" id="dscore-189">dscore 1.8.9<a class="anchor" aria-label="anchor" href="#dscore-189"></a></h2>
-<ul><li>
-<p>Updates the <code>phase1_healthy</code> age-conditional D-score references with three changes:</p>
-<ol style="list-style-type: decimal"><li>D-score estimation uses the new model 20240601 with correct scale factor</li>
-<li>Calculates the D-score for SF and LF separately (not combined)</li>
-<li>Tunes the GAMSLSS model to fit the healthy subsample</li>
-</ol><p>Use <code>population = "phase1_healthy"</code> to calculate DAZ relative to this new reference. The new reference is based on healthy children only, and is currently experimental. The current reference <code>"phase1"</code> remains the default for now, but may be superseeded by <code>"phase1_healthy"</code> in a future version.</p>
-</li>
-<li><p>Simplifies the spelling of the term “D-score” to improve consistency and readability</p></li>
-<li><p>Removes dependency on <code>tidyselect</code></p></li>
-<li><p>Replaces <code>magrittr</code> pipe <code>%&gt;%</code> by base pipe <code>|&gt;</code></p></li>
-<li><p>Make style more consistent with <code>styler</code></p></li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.8" id="dscore-188">dscore 1.8.8<a class="anchor" aria-label="anchor" href="#dscore-188"></a></h2>
-<ul><li>BREAKING CHANGE: Adds an <code>algorithm</code> argument to <code><a href="../reference/dscore.html">dscore()</a></code> and <code><a href="../reference/dscore.html">dscore_posterior()</a></code> to select the algorithm used to calculate the D-score. The default algorithm, called <code>"current"</code>, correctly uses a scale factor of 1 for calculation in the logistic metric. Previously, a scale factor of 1 was errroneously applied to the D-score metric. The current algorithm results in different D-score estimates and higher SEM estimates, but is preferred to the former method. For backward-compatibility to <code>dscore 1.8.7</code> and earlier, use <code>algorithm = "1.8.7"</code>.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.7" id="dscore-187">dscore 1.8.7<a class="anchor" aria-label="anchor" href="#dscore-187"></a></h2>
-<ul><li>Adds new reference <code>"phase1_healthy"</code> calculated from selective subsample of the GSED Phase 1 data using the “gsed2212” key. This reference is based on the same data as the <code>"phase1"</code> reference, but only includes children who were developing well at the time of the assessment. This reference is intended for use in studies where the population of interest is healthy children. Note: This is a temporary name and will be deprecated.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.6" id="dscore-186">dscore 1.8.6<a class="anchor" aria-label="anchor" href="#dscore-186"></a></h2>
-<ul><li>Adds reference <code>"dutch_gsed2212"</code> calculated from Dutch data using the “gsed2212” key. Note: This is a temporary name and will be deprecated.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.5" id="dscore-185">dscore 1.8.5<a class="anchor" aria-label="anchor" href="#dscore-185"></a></h2>
-<ul><li>
+<h2 class="page-header" data-toc-text="1.9.0" id="dscore-190">dscore 1.9.0<a class="anchor" aria-label="anchor" href="#dscore-190"></a></h2>
+<div class="section level4">
+<h4 id="overview-1-9-0">Overview<a class="anchor" aria-label="anchor" href="#overview-1-9-0"></a></h4>
+<p>This is a major update of the <code>dscore</code> package featuring: - a new default reference <code>"preliminary_standards"</code> - a correction of an issue with the scaling factor - a major clean-up of the itembank, references, keys, and R code - improved documentation and examples</p>
+</div>
+<div class="section level4">
+<h4 id="major-issues-1-9-0">Major issues<a class="anchor" aria-label="anchor" href="#major-issues-1-9-0"></a></h4>
+<p>BREAKING CHANGE: On May 31, 2024 we detected a long-time error in the calculation of the D-score resulting from an incorrect scale factor that led us to believe that item characteristic curves are steeper than the actually are. The impact of the error on the result is as follows: 1) There is no effect on the difficulty estimates of the Rasch models, 2) The D-score estimates are slightly altered but changes are small, 3) The references are largely unaffected and need not to be redone, 4) The estimates of the SEMs can differ substantially, so inferences based on the SEMs should be re-evaluated, 5) When there were changes in the analyses, the results in the newer method look smoother and are preferred. The correction appeared in the development version <code>dscore 1.8.8</code>, and is now incorporated into release <code>dscore 1.9.0</code>. For backward compatibility to <code>dscore 1.8.7</code> and earlier, use the argument <code>algorithm = "1.8.7"</code> in calls to the <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
+<p>BREAKING CHANGE: <code><a href="../reference/dscore.html">dscore_posterior()</a></code> now returns a <code>data.frame</code> with column names that indicate the quadrature point. This was an unnamed <code>matrix</code>. Code that expects a <code>matrix</code> as the return of <code><a href="../reference/dscore.html">dscore_posterior()</a></code> may need to be adapted.</p>
+<p>NEW DEFAULT KEY: Adds a new reference <code>"preliminary_standards"</code> calculated from selected subsample of the GSED Phase 1 data, and makes these the default in this release. The reference is a temporary stand-in for a future norm-based standard for normal early child development. This reference replaces the temporary reference <code>"phase1_healthy"</code> that was introduced in <code>dscore 1.8.7</code>. Compared to the <code>"phase1"</code> reference, the <code>"preliminary_standards"</code> reference has the following differences: 1) D-score estimation uses the new model 20240601 with correct scale factor, 2) Calculates the D-score for SF and LF separately (not combined), 3) Tunes the GAMSLSS model to fit the healthy subsample. The <code>"phase1_healthy"</code> object is removed.</p>
+</div>
+<div class="section level4">
+<h4 id="major-changes-1-9-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-1-9-0"></a></h4>
+<ul><li>Adds a new age-conditional reference for population <code>"dutch"</code> calculated using the <code>"gsed2212"</code> key.</li>
+<li>Defines a new key <code>"gsed2406"</code> to accomodate for the changed prior mean because of the adoption of the new reference <code>"preliminary_standards"</code> as the base population. The key <code>"gsed2406"</code> is identical to <code>"gsed2212"</code>, and is the default key in this release.</li>
+<li>Adds a new <code>builtin_keys</code> table that contains proper defaults for the base reference, transformation and quadrature points per key</li>
+<li>Indexed a reference now by two fields: <code>key</code> and <code>population</code>. Previously the index was based on only <code>population</code>. This change allows for multiple references per key, and for references created for the same population under different keys. The <code>key</code> field is now mandatory in the reference table.</li>
+<li>Adds a <code>verbose</code> option to <code><a href="../reference/dscore.html">dscore()</a></code>, <code><a href="../reference/dscore.html">dscore_posterior()</a></code>, <code><a href="../reference/get_age_equivalent.html">get_age_equivalent()</a></code>, <code><a href="../reference/get_reference.html">get_reference()</a></code>, <code><a href="../reference/get_tau.html">get_tau()</a></code>, <code><a href="../reference/daz.html">daz()</a></code> and <code><a href="../reference/daz.html">zad()</a></code> to print progress messages to the console on the values of <code>key</code>, <code>population</code>, <code>transform</code>, <code>qp</code> and <code>algorithm</code>. This is useful for debugging and for understanding the behavior of the functions.</li>
+<li>Cleans up the R code to take advantage of the specification made in the new <code>builtin_keys</code> table. This makes the code more readable and maintainable.</li>
+<li>Retires keys <code>sf2206</code>, <code>lf2206</code>, <code>294_0</code>, <code>gsed2206</code>, <code>gsed2208</code> and removes from the <code>builtin_itembank</code>.</li>
+<li>
 <code><a href="../reference/dscore.html">dscore()</a></code> and <code><a href="../reference/dscore.html">dscore_posterior()</a></code> can now copy variables from the input <code>data</code> into the output through the <code>prepend</code> argument. (<a href="https://github.com/d-score/dscore/issues/46" class="external-link">#46</a>)</li>
-<li>BREAKING CHANGE: <code><a href="../reference/dscore.html">dscore_posterior()</a></code> now returns a <code>data.frame</code> with column names that indicate the quadrature point. This was an unnamed <code>matrix</code>. Code that expects a <code>matrix</code> as the return of <code><a href="../reference/dscore.html">dscore_posterior()</a></code> may need to be adapted.</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.4" id="dscore-184">dscore 1.8.4<a class="anchor" aria-label="anchor" href="#dscore-184"></a></h2>
-<ul><li>Per request from CRAN (<code>Specified C++11: please drop specification unless essential</code>), removes a C++11 specification</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.3" id="dscore-183">dscore 1.8.3<a class="anchor" aria-label="anchor" href="#dscore-183"></a></h2>
-<ul><li>Sets the default reference in <code><a href="../reference/get_reference.html">get_reference()</a></code> to <code>phase1</code> to remain in sync with the default <code>key = "gsed"</code>
+<div class="section level4">
+<h4 id="minor-changes-1-9-0">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-1-9-0"></a></h4>
+<ul><li>Simplifies the package DESCRIPTION file</li>
+<li>New internal <code>init_key()</code> and <code>set_default_xxx()</code> functions to regulate values for <code>key</code>, <code>population</code>, <code>transform</code> and <code>qp</code> arguments</li>
+<li>Renames the files in <code>data-raw/data/keys</code> to more consistent names, adapts <code>data-raw/R/save_builtin_itembank.R</code> to reflect model history, and rebuilds <code>builtin_itembank</code>
 </li>
+<li>Removes the dependency on <code>tibble</code> and <code>tidyselect</code>, and replaces the dependency on <code>stringr</code> by the lighter <code>stringi</code>
+</li>
+<li>Rename the argument name <code>reference</code> to <code>reference_table</code> in <code><a href="../reference/daz.html">daz()</a></code> and <code><a href="../reference/daz.html">zad()</a></code> to avoid confusion with the <code>references</code> argument in <code><a href="../reference/get_reference.html">get_reference()</a></code>
+</li>
+<li>Simplifies the spelling of the term “D-score” to improve consistency and readability</li>
+<li>Replaces <code>magrittr</code> pipe <code>%&gt;%</code> by base pipe <code>|&gt;</code>
+</li>
+<li>Make style more consistent with <code>styler</code>
+</li>
+<li>Per request from CRAN (<code>Specified C++11: please drop specification unless essential</code>), removes a C++11 specification</li>
 <li>Moves error evasion code into internal <code>pBCT()</code>
 </li>
 <li>Document up-rounding to a D-score of 1 or higher when <code><a href="../reference/daz.html">daz()</a></code> and <code><a href="../reference/daz.html">zad()</a></code> using the BCT transformation for positive values</li>
 <li>Removes the superfluous <code>names</code> attribute from the return value of <code><a href="../reference/daz.html">daz()</a></code> and <code><a href="../reference/daz.html">zad()</a></code>
 </li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.2" id="dscore-182">dscore 1.8.2<a class="anchor" aria-label="anchor" href="#dscore-182"></a></h2>
-<ul><li>Evades an error produced by internal <code>pBCT()</code> when <code>is.na(nu)</code> is <code>TRUE</code>
+<li>Evades an error produced by internal <code>pBCT()</code> when <code>is.na(nu)</code> is <code>TRUE</code>
 </li>
+<li>Renames GSED HH to GSED HF</li>
+<li>Change CITATION file to use the <code>bibtex</code> package</li>
+<li>Moved all keys to the <code>data-raw/data/keys</code> folder and renamed them to improve readability</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.8.1" id="dscore-181">dscore 1.8.1<a class="anchor" aria-label="anchor" href="#dscore-181"></a></h2>
-<ul><li>Renames GSED HH to GSED HF</li>
-</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.8.0" id="dscore-180">dscore 1.8.0<small>2023-01-20</small><a class="anchor" aria-label="anchor" href="#dscore-180"></a></h2>
 <div class="section level4">

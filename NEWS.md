@@ -4,7 +4,7 @@ editor_options:
     wrap: 72
 ---
 
-# dscore 1.9.0 (June 2024)
+# dscore 1.9.0
 
 ### Overview
 

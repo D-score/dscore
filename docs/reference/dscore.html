@@ -20,7 +20,7 @@ standard error of measurement (SEM) of the D-score."><!-- mathjax --><script src
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
       </span>
     </div>
 
@@ -76,7 +76,7 @@ a numeric score that quantifies child development by one number,
 <span>  <span class="va">data</span>,</span>
 <span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  name <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
 <span>  prepend <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -86,7 +86,6 @@ a numeric score that quantifies child development by one number,
 <span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
 <span>  relevance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span>,</span>
 <span>  algorithm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"current"</span>, <span class="st">"1.8.7"</span><span class="op">)</span>,</span>
@@ -97,7 +96,7 @@ a numeric score that quantifies child development by one number,
 <span>  <span class="va">data</span>,</span>
 <span>  items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>,</span>
 <span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  name <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"age"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"decimal"</span>, <span class="st">"days"</span>, <span class="st">"months"</span><span class="op">)</span>,</span>
 <span>  prepend <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -107,7 +106,6 @@ a numeric score that quantifies child development by one number,
 <span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
 <span>  relevance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span><span class="op">)</span>,</span>
 <span>  algorithm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"current"</span>, <span class="st">"1.8.7"</span><span class="op">)</span>,</span>
@@ -139,10 +137,10 @@ pertaining one the same Rasch model. View <code>builtin_keys</code> for an overv
 of the available keys.</p></dd>
 
 
-<dt>name</dt>
-<dd><p>String. The name of the reference to calculate DAZ.
-Use <code>unique(builtin_references$name)</code> to obtain the set of currently
-available references.</p></dd>
+<dt>population</dt>
+<dd><p>String. The name of the reference population to calculate DAZ.
+Use <code>unique(builtin_references$population)</code> to obtain the set of currently
+available reference populations.</p></dd>
 
 
 <dt>xname</dt>
@@ -180,7 +178,7 @@ then you should also provide the relevant <code>transform</code> and <code>qp</c
 refer to a column name in <code>data</code> with user-supplied values of the prior mean
 for each observation. If a numeric scalar, it is used as the prior mean
 for all observations. The default (<code>NULL</code>) will consult the
-<code>default_reference</code> field in <code>builtin_keys</code>, and use the corresponding
+<code>base_population</code> field in <code>builtin_keys</code>, and use the corresponding
 median of that reference as prior mean for the D-score.</p></dd>
 
 
@@ -203,11 +201,6 @@ for intercept and slope values.</p></dd>
 This vector should span the range of all D-score or logit values.
 The default (<code>NULL</code>) creates <code>seq(from, to, by)</code> searching the
 arguments from <code>builtin_keys</code>.</p></dd>
-
-
-<dt>population</dt>
-<dd><p>A string describing the population of the
-reference distribution.</p></dd>
 
 
 <dt>dec</dt>
@@ -261,15 +254,12 @@ set of quadrature points. For calculating D-scores on new data,
 the advice is to use the default, which currently is <code>"gsed2406"</code>.</p>
 <p>The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
-Count models are stored as functions
-<code><a href="count_mu_preliminary_standards.html">count_mu_preliminary_standards()</a></code>
-<code><a href="count_mu_phase1.html">count_mu_phase1()</a></code>,
-<code><a href="count_mu_gcdg.html">count_mu_gcdg()</a></code> and
-<code><a href="count_mu_dutch.html">count_mu_dutch()</a></code>. The spread of the starting prior
-is 5 D-score points around this mean D-score, which corresponds to
+The Count models are implemented in the function <code>[count_mu()]</code>.
+By default, the spread of the starting prior
+is 5 D-score points around the mean D-score, which corresponds to
 approximately 1.5 to 2 times the normal spread of child of a given age. The
-starting prior is somewhat informative for very short test (say &lt;5 items)
-and uninformative for large number of items (say &gt;10 items).</p>
+starting prior is informative for very short test (say &lt;5 items), but has
+little impact on the posterior for larger tests.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -325,7 +315,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># third item is not part of the default key</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="get_tau.html">get_tau</a></span><span class="op">(</span><span class="va">items</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:        gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ddifmd001 ddicmm029 ddigmd053 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      8.61      8.47        NA </span>
 <span class="r-in"><span></span></span>
@@ -379,8 +369,8 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span><span class="co"># plot P10, P50 and P90 of D-score references</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html" class="external-link">expand.grid</a></span><span class="op">(</span>age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">4</span>, <span class="fl">0.1</span><span class="op">)</span>, p <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="daz.html">zad</a></span><span class="op">(</span>z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">qnorm</a></span><span class="op">(</span><span class="va">g</span><span class="op">$</span><span class="va">p</span><span class="op">)</span>, x <span class="op">=</span> <span class="va">g</span><span class="op">$</span><span class="va">age</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:        gsed2406 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name:       preliminary_standards </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> population:  preliminary_standards </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/matplot.html" class="external-link">matplot</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="va">g</span><span class="op">$</span><span class="va">age</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="va">d</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"l"</span>,</span></span>
 <span class="r-in"><span>  lty <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="st">"blue"</span>, xlab <span class="op">=</span> <span class="st">"Age (years)"</span>, ylab <span class="op">=</span> <span class="st">"D-score"</span>,</span></span>

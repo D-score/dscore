@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
       </span>
     </div>
 
@@ -69,9 +69,8 @@ distribution.</p>
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_reference</span><span class="op">(</span></span>
-<span>  name <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  population <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  references <span class="op">=</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="builtin_references.html">builtin_references</a></span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  <span class="va">...</span></span>
@@ -80,21 +79,16 @@ distribution.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>name</dt>
-<dd><p>String. The name of the reference to calculate DAZ.
-Use <code>unique(builtin_references$name)</code> to obtain the set of currently
-available references.</p></dd>
+    <dl><dt>population</dt>
+<dd><p>String. The name of the reference population to calculate DAZ.
+Use <code>unique(builtin_references$population)</code> to obtain the set of currently
+available reference populations.</p></dd>
 
 
 <dt>key</dt>
 <dd><p>String. Name of the key that bundles the difficulty estimates
 pertaining one the same Rasch model. View <code>builtin_keys</code> for an overview
 of the available keys.</p></dd>
-
-
-<dt>population</dt>
-<dd><p>A string describing the population of the
-reference distribution.</p></dd>
 
 
 <dt>references</dt>
@@ -150,8 +144,8 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># see key-name combinations of builtin_references</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">builtin_references</span><span class="op">$</span><span class="va">key</span>, <span class="va">builtin_references</span><span class="op">$</span><span class="va">name</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># see key-population combinations of builtin_references</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">builtin_references</span><span class="op">$</span><span class="va">key</span>, <span class="va">builtin_references</span><span class="op">$</span><span class="va">population</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            dutch gcdg phase1 preliminary_standards</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   293_0        0    0    186                     0</span>
@@ -164,7 +158,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span><span class="co"># get the default reference</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">reftab</span>, <span class="fl">2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                      name      key distribution    age    mu  sigma     nu</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                population      key distribution    age    mu  sigma     nu</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 944 preliminary_standards gsed2406          BCT 0.0383 13.18 0.2090 1.4212</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 945 preliminary_standards gsed2406          BCT 0.0575 14.04 0.2016 1.4272</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        tau       P3      P10      P25      P50      P75      P90      P97</span>
@@ -176,18 +170,18 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get the default reference for the key "gsed2212"</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>key <span class="op">=</span> <span class="st">"gsed2212"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:        gsed2212 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name:       phase1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2212 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> population:  phase1 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get dutch reference for default key</span></span></span>
-<span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>name <span class="op">=</span> <span class="st">"dutch"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:        gsed2406 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name:       dutch </span>
+<span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"dutch"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> population:  dutch </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># loading a non-existing reference yields zero rows</span></span></span>
-<span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>name <span class="op">=</span> <span class="st">"france"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:        gsed2406 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name:       france </span>
+<span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"france"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> population:  france </span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Reference 'france' for key 'gsed2406' not found.</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">reftab</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>

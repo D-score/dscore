@@ -47,6 +47,7 @@ reference:
     desc: >
       For research purposes only.
     contents:
+      - count_mu
       - count_mu_dutch
       - count_mu_gcdg
       - count_mu_phase1

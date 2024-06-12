@@ -23,7 +23,7 @@ known as the Development-for-Age Z-score (DAZ)."><!-- mathjax --><script src="ht
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.8.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
       </span>
     </div>
 
@@ -83,10 +83,11 @@ known as the <em>Development-for-Age Z-score (DAZ)</em>.</p>
 
     <div id="format">
     <h2>Format</h2>
-    <p>A <code>data.frame</code> with the following variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>name</code></td><td>Name of the reference</td></tr><tr><td><code>key</code></td><td>D-score key: <code>"dutch"</code>, <code>"gcdg"</code> or <code>"gsed2212"</code></td></tr><tr><td><code>distribution</code></td><td>Distribution family: <code>"LMS"</code> or <code>"BCT"</code></td></tr><tr><td><code>age</code></td><td>Decimal age in years</td></tr><tr><td><code>mu</code></td><td>M-curve, median D-score, P50</td></tr><tr><td><code>sigma</code></td><td>S-curve, spread expressed as coefficient of variation</td></tr><tr><td><code>nu</code></td><td>L-curve, the lambda coefficient of the LMS/BCT model for skewness</td></tr><tr><td><code>tau</code></td><td>Kurtosis parameter in the BCT model</td></tr><tr><td><code>P3</code></td><td>P3 percentile</td></tr><tr><td><code>P10</code></td><td>P10 percentile</td></tr><tr><td><code>P25</code></td><td>P25 percentile</td></tr><tr><td><code>P50</code></td><td>P50 percentile</td></tr><tr><td><code>P75</code></td><td>P75 percentile</td></tr><tr><td><code>P90</code></td><td>P90 percentile</td></tr><tr><td><code>P97</code></td><td>P97 percentile</td></tr><tr><td><code>SDM2</code></td><td>-2SD centile</td></tr><tr><td><code>SDM1</code></td><td>-1SD centile</td></tr><tr><td><code>SD0</code></td><td>0SD centile, median</td></tr><tr><td><code>SDP1</code></td><td>+1SD centile</td></tr><tr><td><code>SDP2</code></td><td>+2SD centile</td></tr></table></div>
+    <p>A <code>data.frame</code> with the following variables:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>population</code></td><td>Name of the reference population</td></tr><tr><td><code>key</code></td><td>D-score key, e.g., <code>"dutch"</code>, <code>"gcdg"</code> or <code>"gsed"</code></td></tr><tr><td><code>distribution</code></td><td>Distribution family: <code>"LMS"</code> or <code>"BCT"</code></td></tr><tr><td><code>age</code></td><td>Decimal age in years</td></tr><tr><td><code>mu</code></td><td>M-curve, median D-score, P50</td></tr><tr><td><code>sigma</code></td><td>S-curve, spread expressed as coefficient of variation</td></tr><tr><td><code>nu</code></td><td>L-curve, the lambda coefficient of the LMS/BCT model for skewness</td></tr><tr><td><code>tau</code></td><td>Kurtosis parameter in the BCT model</td></tr><tr><td><code>P3</code></td><td>P3 percentile</td></tr><tr><td><code>P10</code></td><td>P10 percentile</td></tr><tr><td><code>P25</code></td><td>P25 percentile</td></tr><tr><td><code>P50</code></td><td>P50 percentile</td></tr><tr><td><code>P75</code></td><td>P75 percentile</td></tr><tr><td><code>P90</code></td><td>P90 percentile</td></tr><tr><td><code>P97</code></td><td>P97 percentile</td></tr><tr><td><code>SDM2</code></td><td>-2SD centile</td></tr><tr><td><code>SDM1</code></td><td>-1SD centile</td></tr><tr><td><code>SD0</code></td><td>0SD centile, median</td></tr><tr><td><code>SDP1</code></td><td>+1SD centile</td></tr><tr><td><code>SDP2</code></td><td>+2SD centile</td></tr></table></div>
     <div id="details">
     <h2>Details</h2>
-    <p>The <code>"dutch"</code> references were calculated from the SMOCC data, and cover
+    <p>Here are more details on the reference population:
+The <code>"dutch"</code> references were calculated from the SMOCC data, and cover
 age range 0-2.5 years (van Buuren, 2014).
 The <code>"gcdg"</code> references were calculated from the 15 cohorts of the
 GCDG-study, and cover age range 0-5 years (Weber, 2019).
@@ -125,7 +126,7 @@ R package version 6.0-3,
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># get an overview of available references per key</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">builtin_references</span><span class="op">$</span><span class="va">name</span>, <span class="va">builtin_references</span><span class="op">$</span><span class="va">key</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">builtin_references</span><span class="op">$</span><span class="va">population</span>, <span class="va">builtin_references</span><span class="op">$</span><span class="va">key</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                         293_0 dutch gcdg gsed1912 gsed2212 gsed2406</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   dutch                     0   144    0        0      185      185</span>

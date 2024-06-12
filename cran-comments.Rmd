@@ -9,6 +9,11 @@ editor_options:
 
 `dscore 1.9.0` is a major update providing new features and resolving some problems
 
+## Resubmission 1
+
+`rhub_setup()` did not add `^.github$` to `.Rbuildignore`. Now done manually.
+
+
 ## Test environments
 
 ### Local

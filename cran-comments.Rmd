@@ -7,7 +7,7 @@ editor_options:
 
 ## Reason for update
 
-`dscore 1.8.0` provides new features and resolves some problems
+`dscore 1.9.0` is a major update providing new features and resolving some problems
 
 ## Test environments
 
@@ -43,26 +43,32 @@ devtools::check_win_devel()
 `devtools::check_win_devel()` resulted in:
 
 ```
-* checking CRAN incoming feasibility ... [11s] NOTE
-Maintainer: 'Stef van Buuren <stef.vanbuuren@tno.nl>'
-
 Found the following (possibly) invalid URLs:
-  URL: https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R
+  URL: https://tnochildhealthstatistics.shinyapps.io/dcalculator
     From: inst/doc/scoring_GSED.html
-    Status: 403
-    Message: Forbidden
+    Status: 202
+    Message: Accepted
+  URL: https://tnochildhealthstatistics.shinyapps.io/dcalculator/
+    From: README.md
+    Status: 202
+    Message: Accepted
+
+Found the following (possibly) invalid DOIs:
+  DOI: https://doi.org/10.1201/9781003216315
+    From: inst/CITATION
+    Status: 404
+    Message: Not Found
 ```
 
-The URL is reachable by browser. I assume this status results from a setting made by Posit.
+These URLs are reachable by the browser, so I assume these are false positives.
 
 ### RHUB
 
 ```{r eval=FALSE}
-check_rhub()
+rhub::rhub_check()
 ```
 
-The result is: `SUCCESS` for all four builds
-
+Using five builds: Results <https://github.com/D-score/dscore/actions> are OK.
 
 ## Downstream dependencies
 

@@ -3,7 +3,8 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.8.0` provides new features and resolves some problems
+`dscore 1.9.0` is a major update providing new features and resolving
+some problems
 
 ## Test environments
 
@@ -32,28 +33,28 @@ R.Version()
     ## [1] "4"
     ## 
     ## $minor
-    ## [1] "2.2"
+    ## [1] "4.0"
     ## 
     ## $year
-    ## [1] "2022"
+    ## [1] "2024"
     ## 
     ## $month
-    ## [1] "10"
+    ## [1] "04"
     ## 
     ## $day
-    ## [1] "31"
+    ## [1] "24"
     ## 
     ## $`svn rev`
-    ## [1] "83211"
+    ## [1] "86474"
     ## 
     ## $language
     ## [1] "R"
     ## 
     ## $version.string
-    ## [1] "R version 4.2.2 (2022-10-31)"
+    ## [1] "R version 4.4.0 (2024-04-24)"
     ## 
     ## $nickname
-    ## [1] "Innocent and Trusting"
+    ## [1] "Puppy Cup"
 
 ## Local check
 
@@ -65,7 +66,7 @@ build()
 ```
 
 ``` bash
-R CMD CHECK dscore_1.8.0.tar.gz
+R CMD CHECK dscore_1.9.0.tar.gz
 ```
 
 Status: OK
@@ -80,25 +81,33 @@ devtools::check_win_devel()
 
 `devtools::check_win_devel()` resulted in:
 
-    * checking CRAN incoming feasibility ... [11s] NOTE
-    Maintainer: 'Stef van Buuren <stef.vanbuuren@tno.nl>'
-
     Found the following (possibly) invalid URLs:
-      URL: https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R
+      URL: https://tnochildhealthstatistics.shinyapps.io/dcalculator
         From: inst/doc/scoring_GSED.html
-        Status: 403
-        Message: Forbidden
+        Status: 202
+        Message: Accepted
+      URL: https://tnochildhealthstatistics.shinyapps.io/dcalculator/
+        From: README.md
+        Status: 202
+        Message: Accepted
 
-The URL is reachable by browser. I assume this status results from a
-setting made by Posit.
+    Found the following (possibly) invalid DOIs:
+      DOI: https://doi.org/10.1201/9781003216315
+        From: inst/CITATION
+        Status: 404
+        Message: Not Found
+
+These URLs are reachable by the browser, so I assume these are false
+positives.
 
 ### RHUB
 
 ``` r
-check_rhub()
+rhub::rhub_check()
 ```
 
-The result is: `SUCCESS` for all four builds
+Using five builds: Results <https://github.com/D-score/dscore/actions>
+are OK.
 
 ## Downstream dependencies
 

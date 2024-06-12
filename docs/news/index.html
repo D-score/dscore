@@ -64,8 +64,13 @@
 <h2 class="page-header" data-toc-text="1.9.0" id="dscore-190">dscore 1.9.0<a class="anchor" aria-label="anchor" href="#dscore-190"></a></h2>
 <div class="section level4">
 <h4 id="overview-1-9-0">Overview<a class="anchor" aria-label="anchor" href="#overview-1-9-0"></a></h4>
-<p>This is a major update of the <code>dscore</code> package featuring: - a new default reference <code>"preliminary_standards"</code> - a correction of an issue with the scaling factor - a major clean-up of the itembank, references, keys, and R code - improved documentation and examples</p>
-</div>
+<p>This is a major update of the <code>dscore</code> package featuring:</p>
+<ul><li>a new default reference <code>"preliminary_standards"</code>
+</li>
+<li>a correction of an issue with the scaling factor</li>
+<li>a major clean-up of the itembank, references, keys, and R code</li>
+<li>improved documentation and examples</li>
+</ul></div>
 <div class="section level4">
 <h4 id="major-issues-1-9-0">Major issues<a class="anchor" aria-label="anchor" href="#major-issues-1-9-0"></a></h4>
 <p>BREAKING CHANGE: On May 31, 2024 we detected a long-time error in the calculation of the D-score resulting from an incorrect scale factor that led us to believe that item characteristic curves are steeper than the actually are. The impact of the error on the result is as follows: 1) There is no effect on the difficulty estimates of the Rasch models, 2) The D-score estimates are slightly altered but changes are small, 3) The references are largely unaffected and need not to be redone, 4) The estimates of the SEMs can differ substantially, so inferences based on the SEMs should be re-evaluated, 5) When there were changes in the analyses, the results in the newer method look smoother and are preferred. The correction appeared in the development version <code>dscore 1.8.8</code>, and is now incorporated into release <code>dscore 1.9.0</code>. For backward compatibility to <code>dscore 1.8.7</code> and earlier, use the argument <code>algorithm = "1.8.7"</code> in calls to the <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>

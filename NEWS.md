@@ -9,6 +9,7 @@ editor_options:
 ### Overview
 
 This is a major update of the `dscore` package featuring:
+
 - a new default reference `"preliminary_standards"`
 - a correction of an issue with the scaling factor
 - a major clean-up of the itembank, references, keys, and R code

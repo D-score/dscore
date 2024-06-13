@@ -5,5 +5,5 @@ bibentry(
   year     = "2023",
   publisher = "CRC Press",
   address  = "Boca Raton, FL",
-  doi      = "https://doi.org/10.1201/9781003216315"
+  doi      = "10.1201/9781003216315"
 )

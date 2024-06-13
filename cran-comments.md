@@ -11,6 +11,10 @@ some problems
 `rhub_setup()` did not add `^.github$` to `.Rbuildignore`. Now done
 manually.
 
+## Resubmission 2
+
+Removed markup from DOI field in CITATION file
+
 ## Test environments
 
 ### Local

@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.1
+
+- Improves documentation for the population argument in `dscore()`, `dscore_posterior()`, `get_age_equivalent()`, `get_reference()`, `get_tau()`, `daz()` and `zad()`
+
 # dscore 1.9.0
 
 ### Overview

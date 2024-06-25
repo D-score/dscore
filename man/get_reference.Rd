@@ -14,8 +14,8 @@ get_reference(
 }
 \arguments{
 \item{population}{String. The name of the reference population to calculate DAZ.
-Use \code{unique(builtin_references$population)} to obtain the set of currently
-available reference populations.}
+Use \code{with(builtin_references, table(key, population))} to see which
+built-in references are available for \code{key - population} combinations.}
 
 \item{key}{String. Name of the key that bundles the difficulty estimates
 pertaining one the same Rasch model. View \code{builtin_keys} for an overview

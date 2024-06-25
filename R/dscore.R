@@ -19,8 +19,8 @@
 #' pertaining one the same Rasch model. View `builtin_keys` for an overview
 #' of the available keys.
 #' @param population String. The name of the reference population to calculate DAZ.
-#' Use `unique(builtin_references$population)` to obtain the set of currently
-#' available reference populations.
+#' Use `with(builtin_references, table(key, population))` to see which
+#' built-in references are available for `key - population` combinations.
 #' @param itembank A `data.frame` with at least two columns
 #' named `item` and `tau`. By default, the function uses
 #' `dscore::builtin_itembank`. If you specify your own `itembank`,

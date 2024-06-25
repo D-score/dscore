@@ -30,8 +30,8 @@ pertaining one the same Rasch model. View \code{builtin_keys} for an overview
 of the available keys.}
 
 \item{population}{String. The name of the reference population to calculate DAZ.
-Use \code{unique(builtin_references$population)} to obtain the set of currently
-available reference populations.}
+Use \code{with(builtin_references, table(key, population))} to see which
+built-in references are available for \code{key - population} combinations.}
 
 \item{transform}{Numeric vector, length 2, containing the intercept
 and slope of the linear transform from the logit scale into the

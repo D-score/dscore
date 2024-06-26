@@ -13,7 +13,7 @@ dscore(
   xname = "age",
   xunit = c("decimal", "days", "months"),
   prepend = NULL,
-  itembank = dscore::builtin_itembank,
+  itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
   prior_sd = NULL,
@@ -33,7 +33,7 @@ dscore_posterior(
   xname = "age",
   xunit = c("decimal", "days", "months"),
   prepend = NULL,
-  itembank = dscore::builtin_itembank,
+  itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
   prior_sd = NULL,
@@ -77,8 +77,8 @@ The default \code{"decimal"} corresponds to decimal age in years.}
 be prepended to the returned data frame. This is useful for copying
 columns from data into the result, e.g., for matching.}
 
-\item{itembank}{A \code{data.frame} with at least two columns
-named \code{item} and \code{tau}. By default, the function uses
+\item{itembank}{A \code{data.frame} with at least three columns named
+\code{key}, \code{item} and \code{tau}. By default, the function uses
 \code{dscore::builtin_itembank}. If you specify your own \code{itembank},
 then you should also provide the relevant \code{transform} and \code{qp} arguments.}
 

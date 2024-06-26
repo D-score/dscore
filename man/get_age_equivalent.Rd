@@ -38,8 +38,8 @@ and slope of the linear transform from the logit scale into the
 the D-score scale. The default (\code{NULL}) searches \code{builtin_keys}
 for intercept and slope values.}
 
-\item{itembank}{A \code{data.frame} with at least two columns
-named \code{item} and \code{tau}. By default, the function uses
+\item{itembank}{A \code{data.frame} with at least three columns named
+\code{key}, \code{item} and \code{tau}. By default, the function uses
 \code{dscore::builtin_itembank}. If you specify your own \code{itembank},
 then you should also provide the relevant \code{transform} and \code{qp} arguments.}
 

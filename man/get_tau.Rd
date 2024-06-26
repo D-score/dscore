@@ -22,8 +22,8 @@ that have a difficulty parameter under the specified \code{key}.}
 pertaining one the same Rasch model. View \code{builtin_keys} for an overview
 of the available keys.}
 
-\item{itembank}{A \code{data.frame} with at least two columns
-named \code{item} and \code{tau}. By default, the function uses
+\item{itembank}{A \code{data.frame} with at least three columns named
+\code{key}, \code{item} and \code{tau}. By default, the function uses
 \code{dscore::builtin_itembank}. If you specify your own \code{itembank},
 then you should also provide the relevant \code{transform} and \code{qp} arguments.}
 

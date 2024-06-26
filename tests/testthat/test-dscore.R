@@ -92,23 +92,29 @@ my_itembank <- data.frame(
   item = items,
   tau = get_tau(items = items, key = "dutch")
 )
+my_reference <- builtin_references[builtin_references$key == "dutch", ]
+my_reference$key <- "mykey"
 
 # externally specified transformation
 # transform <- c(0, 1)
 # transform <- c(0, 2)
-# transform <- c(50, 3)
+transform <- c(50, 3)
+qp <- -10:100
 
-# algorithm <- "1.8.7"
-# zd <- dscore(data,
-#   items = items, dec = 4, metric = "dscore",
-#   itembank = keyd, key = "temp", population = "dutch",
-#   transform = transform, qp = qp, algorithm = algorithm
-# )
-# zl <- dscore(data,
-#   items = items, dec = 4, metric = "logit",
-#   itembank = keyd, key = "temp", population = "dutch",
-#   transform = transform, qp = qp, algorithm = algorithm
-# )
+algorithm <- "1.8.7"
+algorithm <- "current"
+zd <- dscore(data,
+  items = items, dec = 4, metric = "dscore",
+  itembank = my_itembank, transform = transform, qp = qp,
+  key = "mykey", population = "dutch",
+  algorithm = algorithm,
+  verbose = TRUE
+)
+zl <- dscore(data,
+  items = items, dec = 4, metric = "logit",
+  itembank = my_itembank, key = "mykey", transform = transform, qp = qp,
+  algorithm = algorithm
+)
 
 lastkey <- builtin_keys[nrow(builtin_keys), ]
 transform <- c(lastkey$intercept, lastkey$slope)

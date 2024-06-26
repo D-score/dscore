@@ -6,6 +6,7 @@ editor_options:
 
 # dscore 1.9.1
 
+- Makes the `key` column compulsory in the `itembank` argument. Adds check on proper column names.
 - Improves documentation for the population argument in `dscore()`, `dscore_posterior()`, `get_age_equivalent()`, `get_reference()`, `get_tau()`, `daz()` and `zad()`
 
 # dscore 1.9.0

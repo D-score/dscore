@@ -21,8 +21,8 @@
 #' @param population String. The name of the reference population to calculate DAZ.
 #' Use `with(builtin_references, table(key, population))` to see which
 #' built-in references are available for `key - population` combinations.
-#' @param itembank A `data.frame` with at least two columns
-#' named `item` and `tau`. By default, the function uses
+#' @param itembank A `data.frame` with at least three columns named
+#' `key`, `item` and `tau`. By default, the function uses
 #' `dscore::builtin_itembank`. If you specify your own `itembank`,
 #' then you should also provide the relevant `transform` and `qp` arguments.
 #' @param xname A string with the name of the age variable in
@@ -204,7 +204,7 @@ dscore <- function(data,
                    xname = "age",
                    xunit = c("decimal", "days", "months"),
                    prepend = NULL,
-                   itembank = dscore::builtin_itembank,
+                   itembank = NULL,
                    metric = c("dscore", "logit"),
                    prior_mean = NULL,
                    prior_sd = NULL,
@@ -242,7 +242,7 @@ dscore_posterior <- function(data,
                              xname = "age",
                              xunit = c("decimal", "days", "months"),
                              prepend = NULL,
-                             itembank = dscore::builtin_itembank,
+                             itembank = NULL,
                              metric = c("dscore", "logit"),
                              prior_mean = NULL,
                              prior_sd = NULL,
@@ -316,6 +316,15 @@ calc_dscore <- function(data, items, key, population,
                    days    = round(data[[xname]] / 365.25, 4L),
                    rep(NA, nrow(data))
   )
+
+  # check the itembank
+  if (is.null(itembank)) {
+    itembank <- dscore::builtin_itembank
+  } else {
+    if (!all(c("key", "item", "tau") %in% colnames(itembank))) {
+      stop("itembank must have columns 'key', 'item' and 'tau'")
+    }
+  }
 
   # obtain difficulty estimates
   ib <- data.frame(

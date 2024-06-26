@@ -7,7 +7,7 @@ editor_options:
 # dscore 1.9.1
 
 - Evades superfluous warning 'There was 1 warning in `mutate()`. In argument: `daz = daz(...)`' 
-- Makes the `key` column compulsory in the `itembank` argument. Adds check on proper column names.
+- Makes the `key` column compulsory in the `itembank` argument, and adds a check on proper column names
 - Improves documentation for the `population` and `key` arguments
 
 # dscore 1.9.0

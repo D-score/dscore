@@ -25,13 +25,18 @@ that have a difficulty parameter under the specified \code{key}.}
 \item{pct}{Numeric vector with requested percentiles (0-100). The
 default is \code{pct = c(10, 50, 90)}.}
 
-\item{key}{String. Name of the key that bundles the difficulty estimates
-pertaining one the same Rasch model. View \code{builtin_keys} for an overview
-of the available keys.}
+\item{key}{String. They key identifies 1) the difficulty estimates
+pertaining to a particular Rasch model, and 2) the prior mean and standard
+deviation of the prior distribution for calculating the D-score.
+The default key \code{NULL} sets \code{key = "gsed2406"}.
+View \code{builtin_keys} for an overview of the available keys.}
 
-\item{population}{String. The name of the reference population to calculate DAZ.
+\item{population}{String. The name of the reference population to calculate
+DAZ.
 Use \code{with(builtin_references, table(key, population))} to see which
-built-in references are available for \code{key - population} combinations.}
+built-in references are available for \code{key - population} combinations.
+If not specified, the function set the default population as
+\code{builtin_keys$base_population[key == builtin_keys$key]}.}
 
 \item{transform}{Numeric vector, length 2, containing the intercept
 and slope of the linear transform from the logit scale into the

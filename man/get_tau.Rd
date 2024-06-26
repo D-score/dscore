@@ -18,9 +18,11 @@ numerically as \code{1} (pass) and \code{0} (fail). By default,
 D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified \code{key}.}
 
-\item{key}{String. Name of the key that bundles the difficulty estimates
-pertaining one the same Rasch model. View \code{builtin_keys} for an overview
-of the available keys.}
+\item{key}{String. They key identifies 1) the difficulty estimates
+pertaining to a particular Rasch model, and 2) the prior mean and standard
+deviation of the prior distribution for calculating the D-score.
+The default key \code{NULL} sets \code{key = "gsed2406"}.
+View \code{builtin_keys} for an overview of the available keys.}
 
 \item{itembank}{A \code{data.frame} with at least three columns named
 \code{key}, \code{item} and \code{tau}. By default, the function uses

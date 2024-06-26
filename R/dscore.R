@@ -15,12 +15,17 @@
 #' numerically as `1` (pass) and `0` (fail). By default,
 #' D-score calculation is done on all items found in the data
 #' that have a difficulty parameter under the specified `key`.
-#' @param key String. Name of the key that bundles the difficulty estimates
-#' pertaining one the same Rasch model. View `builtin_keys` for an overview
-#' of the available keys.
-#' @param population String. The name of the reference population to calculate DAZ.
+#' @param key String. They key identifies 1) the difficulty estimates
+#' pertaining to a particular Rasch model, and 2) the prior mean and standard
+#' deviation of the prior distribution for calculating the D-score.
+#' The default key `NULL` sets `key = "gsed2406"`.
+#' View `builtin_keys` for an overview of the available keys.
+#' @param population String. The name of the reference population to calculate
+#' DAZ.
 #' Use `with(builtin_references, table(key, population))` to see which
 #' built-in references are available for `key - population` combinations.
+#' If not specified, the function set the default population as
+#' `builtin_keys$base_population[key == builtin_keys$key]`.
 #' @param itembank A `data.frame` with at least three columns named
 #' `key`, `item` and `tau`. By default, the function uses
 #' `dscore::builtin_itembank`. If you specify your own `itembank`,
@@ -471,20 +476,24 @@ calc_dscore <- function(data, items, key, population,
         sem = sqrt(sum(unlist(.data$w) * (unlist(.data$x) - unlist(.data$d))^2))
       )
 
-    # add daz, shape end result
+    # add n and d
     data5 <- data.frame(.rownum = seq_len(nrow(data))) |>
       left_join(data4, by = ".rownum") |>
       mutate(
         n = recode(.data$n, .missing = 0L),
-        d = round(.data$d, digits = dec[1L]),
-        daz = daz(
-          d = .data$d, x = .data$a,
-          reference_table = get_reference(population = population, key = key),
-          dec = dec[2L]
-        ),
-        daz = ifelse(is.nan(.data$daz), NA, .data$daz)
-      ) |>
-      select(all_of(c("a", "n", "p", "d", "sem", "daz")))
+        d = round(.data$d, digits = dec[1L]))
+
+    # add n and d daz, shape end result
+    reference_table <- get_reference(population = population, key = key)
+    if (nrow(reference_table)) {
+      data5$daz <- daz(
+        d = data5$d, x = data5$a,
+        reference_table = reference_table,
+        dec = dec[2L])
+    } else {
+      data5$daz = NA_real_
+    }
+    data5 <- select(data5, all_of(c("a", "n", "p", "d", "sem", "daz")))
   }
 
   # prepend administrative variables from data

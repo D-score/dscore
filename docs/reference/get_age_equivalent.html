@@ -18,7 +18,7 @@ in the reference population passes the items."><!-- mathjax --><script src="http
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.1</span>
       </span>
     </div>
 
@@ -96,15 +96,20 @@ default is <code>pct = c(10, 50, 90)</code>.</p></dd>
 
 
 <dt>key</dt>
-<dd><p>String. Name of the key that bundles the difficulty estimates
-pertaining one the same Rasch model. View <code>builtin_keys</code> for an overview
-of the available keys.</p></dd>
+<dd><p>String. They key identifies 1) the difficulty estimates
+pertaining to a particular Rasch model, and 2) the prior mean and standard
+deviation of the prior distribution for calculating the D-score.
+The default key <code>NULL</code> sets <code>key = "gsed2406"</code>.
+View <code>builtin_keys</code> for an overview of the available keys.</p></dd>
 
 
 <dt>population</dt>
-<dd><p>String. The name of the reference population to calculate DAZ.
-Use <code>unique(builtin_references$population)</code> to obtain the set of currently
-available reference populations.</p></dd>
+<dd><p>String. The name of the reference population to calculate
+DAZ.
+Use <code>with(builtin_references, table(key, population))</code> to see which
+built-in references are available for <code>key - population</code> combinations.
+If not specified, the function set the default population as
+<code>builtin_keys$base_population[key == builtin_keys$key]</code>.</p></dd>
 
 
 <dt>transform</dt>
@@ -115,8 +120,8 @@ for intercept and slope values.</p></dd>
 
 
 <dt>itembank</dt>
-<dd><p>A <code>data.frame</code> with at least two columns
-named <code>item</code> and <code>tau</code>. By default, the function uses
+<dd><p>A <code>data.frame</code> with at least three columns named
+<code>key</code>, <code>item</code> and <code>tau</code>. By default, the function uses
 <code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code>. If you specify your own <code>itembank</code>,
 then you should also provide the relevant <code>transform</code> and <code>qp</code> arguments.</p></dd>
 

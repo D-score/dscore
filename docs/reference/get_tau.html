@@ -19,7 +19,7 @@ are done in lower case."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.1</span>
       </span>
     </div>
 
@@ -89,14 +89,16 @@ that have a difficulty parameter under the specified <code>key</code>.</p></dd>
 
 
 <dt>key</dt>
-<dd><p>String. Name of the key that bundles the difficulty estimates
-pertaining one the same Rasch model. View <code>builtin_keys</code> for an overview
-of the available keys.</p></dd>
+<dd><p>String. They key identifies 1) the difficulty estimates
+pertaining to a particular Rasch model, and 2) the prior mean and standard
+deviation of the prior distribution for calculating the D-score.
+The default key <code>NULL</code> sets <code>key = "gsed2406"</code>.
+View <code>builtin_keys</code> for an overview of the available keys.</p></dd>
 
 
 <dt>itembank</dt>
-<dd><p>A <code>data.frame</code> with at least two columns
-named <code>item</code> and <code>tau</code>. By default, the function uses
+<dd><p>A <code>data.frame</code> with at least three columns named
+<code>key</code>, <code>item</code> and <code>tau</code>. By default, the function uses
 <code><a href="builtin_itembank.html">dscore::builtin_itembank</a></code>. If you specify your own <code>itembank</code>,
 then you should also provide the relevant <code>transform</code> and <code>qp</code> arguments.</p></dd>
 

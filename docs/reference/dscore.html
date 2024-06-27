@@ -20,7 +20,7 @@ standard error of measurement (SEM) of the D-score."><!-- mathjax --><script src
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
       </span>
     </div>
 
@@ -83,7 +83,9 @@ a numeric score that quantifies child development by one number,
 <span>  itembank <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
 <span>  prior_mean <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  prior_mean_NA <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  prior_sd_NA <span class="op">=</span> <span class="fl">20</span>,</span>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
@@ -103,7 +105,9 @@ a numeric score that quantifies child development by one number,
 <span>  itembank <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dscore"</span>, <span class="st">"logit"</span><span class="op">)</span>,</span>
 <span>  prior_mean <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  prior_mean_NA <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>  prior_sd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  prior_sd_NA <span class="op">=</span> <span class="fl">20</span>,</span>
 <span>  transform <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  qp <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dec <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">3L</span><span class="op">)</span>,</span>
@@ -187,11 +191,23 @@ for all observations. The default (<code>NULL</code>) will consult the
 median of that reference as prior mean for the D-score.</p></dd>
 
 
+<dt>prior_mean_NA</dt>
+<dd><p>Numeric, prior mean when age is missing. The default
+is 50. If you do not want to calculate the D-score for observations without
+age, then set <code>prior_mean_NA = NA</code>.</p></dd>
+
+
 <dt>prior_sd</dt>
 <dd><p>A string or a numeric scalar. If a string, it should
 refer to a column name in <code>data</code> with user-supplied values of the prior
 sd for all observations. If a numeric scalar, it is used as the prior sd
-for all observations. The default (<code>NULL</code>) uses a values of 5.</p></dd>
+for all observations. The default (<code>NULL</code>) uses a value of 5.</p></dd>
+
+
+<dt>prior_sd_NA</dt>
+<dd><p>Numeric, prior sd when age is missing. The default is
+20. If you do not want to calculate the D-score for observations without
+age, then set <code>prior_sd_NA = NA</code>.</p></dd>
 
 
 <dt>transform</dt>
@@ -239,7 +255,7 @@ Either <code>"current"</code> (default) or <code>"1.8.7"</code> (deprecated).</p
 <p>The <code>dscore()</code> function returns a <code>data.frame</code> with <code>nrow(data)</code> rows.
 Optionally, the first block of columns can be copied to the
 result by using <code>prepend</code>. The second block consists of the
-following columns:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>a</code></td><td>Decimal age</td></tr><tr><td><code>n</code></td><td>Number of items with valid (0/1) data</td></tr><tr><td><code>p</code></td><td>Percentage of passed milestones</td></tr><tr><td><code>d</code></td><td>Ability estimate, mean of posterior</td></tr><tr><td><code>sem</code></td><td>Standard error of measurement, standard deviation of the posterior</td></tr><tr><td><code>daz</code></td><td>D-score corrected for age, calculated in Z-scale (for metric <code>"dscore"</code>)</td></tr></table><p>For more detail, the <code>dscore_posterior()</code> function returns a data frame with
+following columns:</p><table class="table table"><tr><td>Name</td><td>Label</td></tr><tr><td><code>a</code></td><td>Decimal age (years)</td></tr><tr><td><code>n</code></td><td>Number of items with valid (0/1) data</td></tr><tr><td><code>p</code></td><td>Percentage of passed milestones</td></tr><tr><td><code>d</code></td><td>D-score, mean of posterior distribution</td></tr><tr><td><code>sem</code></td><td>Standard error of measurement, standard deviation of the posterior</td></tr><tr><td><code>daz</code></td><td>D-score corrected for age, calculated in Z-scale (for metric <code>"dscore"</code>)</td></tr></table><p>For more detail, the <code>dscore_posterior()</code> function returns a data frame with
 <code>nrow(data)</code> rows and <code>length(qp)</code> plus prepended columns with the
 full posterior density of the D-score at each quadrature point.
 If no valid responses are found, <code>dscore_posterior()</code> returns the

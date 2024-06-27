@@ -16,7 +16,9 @@ dscore(
   itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
+  prior_mean_NA = 50,
   prior_sd = NULL,
+  prior_sd_NA = 20,
   transform = NULL,
   qp = NULL,
   dec = c(2L, 3L),
@@ -36,7 +38,9 @@ dscore_posterior(
   itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
+  prior_mean_NA = 50,
   prior_sd = NULL,
+  prior_sd_NA = 20,
   transform = NULL,
   qp = NULL,
   dec = c(2L, 3L),
@@ -98,10 +102,18 @@ for all observations. The default (\code{NULL}) will consult the
 \code{base_population} field in \code{builtin_keys}, and use the corresponding
 median of that reference as prior mean for the D-score.}
 
+\item{prior_mean_NA}{Numeric, prior mean when age is missing. The default
+is 50. If you do not want to calculate the D-score for observations without
+age, then set \code{prior_mean_NA = NA}.}
+
 \item{prior_sd}{A string or a numeric scalar. If a string, it should
 refer to a column name in \code{data} with user-supplied values of the prior
 sd for all observations. If a numeric scalar, it is used as the prior sd
-for all observations. The default (\code{NULL}) uses a values of 5.}
+for all observations. The default (\code{NULL}) uses a value of 5.}
+
+\item{prior_sd_NA}{Numeric, prior sd when age is missing. The default is
+20. If you do not want to calculate the D-score for observations without
+age, then set \code{prior_sd_NA = NA}.}
 
 \item{transform}{Numeric vector, length 2, containing the intercept
 and slope of the linear transform from the logit scale into the
@@ -135,10 +147,10 @@ Optionally, the first block of columns can be copied to the
 result by using \code{prepend}. The second block consists of the
 following columns:\tabular{ll}{
    Name \tab Label \cr
-   \code{a} \tab Decimal age \cr
+   \code{a} \tab Decimal age (years) \cr
    \code{n} \tab Number of items with valid (0/1) data \cr
    \code{p} \tab Percentage of passed milestones \cr
-   \code{d} \tab Ability estimate, mean of posterior \cr
+   \code{d} \tab D-score, mean of posterior distribution \cr
    \code{sem} \tab Standard error of measurement, standard deviation of the posterior \cr
    \code{daz} \tab D-score corrected for age, calculated in Z-scale (for metric \code{"dscore"}) \cr
 }

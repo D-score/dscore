@@ -4,12 +4,14 @@
 \alias{count_mu}
 \title{Median D-score from the default references for the given key}
 \usage{
-count_mu(t, key)
+count_mu(t, key, prior_mean_NA = NA_real_)
 }
 \arguments{
 \item{t}{Decimal age, numeric vector}
 
 \item{key}{Character, key of the reference population}
+
+\item{prior_mean_NA}{Numeric, prior mean when age is missing}
 }
 \value{
 A vector of length \code{length(t)} with the median of the default reference

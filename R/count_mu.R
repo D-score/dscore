@@ -7,11 +7,12 @@
 #' reference.
 #' @param t Decimal age, numeric vector
 #' @param key Character, key of the reference population
+#' @param prior_mean_NA Numeric, prior mean when age is missing
 #' @return
 #' A vector of length `length(t)` with the median of the default reference
 #' population for the key.
 #' @export
-count_mu <- function(t, key) {
+count_mu <- function(t, key, prior_mean_NA = NA_real_) {
   # calculate P50 from the default population for the key
   init <- init_key(key = key, population = NULL, transform = NULL, qp = NULL)
   population <- init$population
@@ -21,6 +22,7 @@ count_mu <- function(t, key) {
                "phase1" = count_mu_phase1(t),
                "preliminary_standards" = count_mu_preliminary_standards(t),
                rep(NA_real_, length(t)))
+  mu[is.na(t)] <- prior_mean_NA
   return(mu)
 }
 

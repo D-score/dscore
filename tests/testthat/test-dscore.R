@@ -70,12 +70,12 @@ test_that("handles zero rows", {
 # --- test negative ages
 # dscore, gsed lexicon
 data <- data.frame(
-  age = rep(-0.26, 10),
+  age = c(-0.26, -0.26, NA, 1000, 0.5, -100, Inf, -Inf, 0, 1),
   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
-  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 1, 1)
 )
-test_that("silently handles negative ages", {
+test_that("silently handles out-of-range ages", {
   expect_silent(dscore(data, key = "dutch"))
 })
 
@@ -146,8 +146,12 @@ test_that("D-score difference at uneven rows (with start 0) is higher than on un
 })
 
 test_that("count_mu_phase() handles missing ages", {
-  expect_silent(dscore::count_mu(t = c(NA, NA), key = "preliminary_standards"))
-  expect_silent(dscore::count_mu(t = c(NA, -3, 1:3, NA), key = "preliminary_standards"))
+  expect_silent(dscore::count_mu(t = c(NA, NA),
+                                 key = "preliminary_standards",
+                                 prior_mean_NA = 50))
+  expect_silent(dscore::count_mu(t = c(NA, -3, 1:3, NA),
+                                 key = "preliminary_standards",
+                                 prior_mean_NA = 50))
 })
 
 

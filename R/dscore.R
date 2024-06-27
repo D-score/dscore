@@ -47,10 +47,16 @@
 #' for all observations. The default (`NULL`) will consult the
 #' `base_population` field in `builtin_keys`, and use the corresponding
 #' median of that reference as prior mean for the D-score.
+#' @param prior_mean_NA Numeric, prior mean when age is missing. The default
+#' is 50. If you do not want to calculate the D-score for observations without
+#' age, then set `prior_mean_NA = NA`.
 #' @param prior_sd A string or a numeric scalar. If a string, it should
 #' refer to a column name in `data` with user-supplied values of the prior
 #' sd for all observations. If a numeric scalar, it is used as the prior sd
-#' for all observations. The default (`NULL`) uses a values of 5.
+#' for all observations. The default (`NULL`) uses a value of 5.
+#' @param prior_sd_NA Numeric, prior sd when age is missing. The default is
+#' 20. If you do not want to calculate the D-score for observations without
+#' age, then set `prior_sd_NA = NA`.
 #' @param transform Numeric vector, length 2, containing the intercept
 #' and slope of the linear transform from the logit scale into the
 #' the D-score scale. The default (`NULL`) searches `builtin_keys`
@@ -79,10 +85,10 @@
 #'
 #' Name | Label
 #' ---  | ---------
-#' `a`  | Decimal age
+#' `a`  | Decimal age (years)
 #' `n`  | Number of items with valid (0/1) data
 #' `p`  | Percentage of passed milestones
-#' `d`  | Ability estimate, mean of posterior
+#' `d`  | D-score, mean of posterior distribution
 #' `sem` | Standard error of measurement, standard deviation of the posterior
 #' `daz` | D-score corrected for age, calculated in Z-scale (for metric `"dscore"`)
 #'
@@ -212,7 +218,9 @@ dscore <- function(data,
                    itembank = NULL,
                    metric = c("dscore", "logit"),
                    prior_mean = NULL,
+                   prior_mean_NA = 50,
                    prior_sd = NULL,
+                   prior_sd_NA = 20,
                    transform = NULL,
                    qp = NULL,
                    dec = c(2L, 3L),
@@ -227,7 +235,8 @@ dscore <- function(data,
     data = data, items = items, key = key, population = population,
     xname = xname, xunit = xunit, prepend = prepend,
     itembank = itembank, metric = metric,
-    prior_mean = prior_mean, prior_sd = prior_sd,
+    prior_mean = prior_mean, prior_mean_NA = prior_mean_NA,
+    prior_sd = prior_sd, prior_sd_NA = prior_sd_NA,
     transform = transform, qp = qp, dec = dec,
     posterior = FALSE,
     relevance = relevance,
@@ -250,7 +259,9 @@ dscore_posterior <- function(data,
                              itembank = NULL,
                              metric = c("dscore", "logit"),
                              prior_mean = NULL,
+                             prior_mean_NA = 50,
                              prior_sd = NULL,
+                             prior_sd_NA = 20,
                              transform = NULL,
                              qp = NULL,
                              dec = c(2L, 3L),
@@ -265,7 +276,8 @@ dscore_posterior <- function(data,
     data = data, items = items, key = key, population = population,
     xname = xname, xunit = xunit, prepend = prepend,
     itembank = itembank, metric = metric,
-    prior_mean = prior_mean, prior_sd = prior_sd,
+    prior_mean = prior_mean, prior_mean_NA = prior_mean_NA,
+    prior_sd = prior_sd, prior_sd_NA = prior_sd_NA,
     transform = transform, qp = qp, dec = dec,
     posterior = TRUE,
     relevance = relevance,
@@ -277,7 +289,8 @@ dscore_posterior <- function(data,
 calc_dscore <- function(data, items, key, population,
                         xname, xunit, prepend,
                         itembank, metric,
-                        prior_mean, prior_sd,
+                        prior_mean, prior_mean_NA,
+                        prior_sd, prior_sd_NA,
                         transform, qp, dec,
                         posterior,
                         relevance,
@@ -315,7 +328,7 @@ calc_dscore <- function(data, items, key, population,
 
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
-  decage <- switch(xunit,
+  a <- switch(xunit,
                    decimal = round(data[[xname]], 4L),
                    months  = round(data[[xname]] / 12, 4L),
                    days    = round(data[[xname]] / 365.25, 4L),
@@ -346,7 +359,7 @@ calc_dscore <- function(data, items, key, population,
   if (length(items) == 0L) {
     return(
       data.frame(
-        a = decage,
+        a = t,
         n = 0L,
         p = NA,
         d = NA,
@@ -358,22 +371,24 @@ calc_dscore <- function(data, items, key, population,
 
   # initialise prior mean mu conditional on key
   if (is.null(prior_mean)) {
-    mu <- count_mu(decage, key)
+    mu <- count_mu(a, key, prior_mean_NA)
   } else if (is.character(prior_mean) && prior_mean %in% names(data)) {
     mu <- data[[prior_mean]]
   } else {
-    mu <- rep(NA_real_, nrow(data))
+    mu <- rep(NA_real_, length(a))
   }
 
   # initialise prior sd (sd)
   if (is.null(prior_sd)) {
-    sd <- rep(5, nrow(data))
+    sd <- rep(5, length(a))
+    sd[is.na(a)] <- prior_sd_NA
   } else if (is.character(prior_sd) && prior_sd %in% names(data)) {
     sd <- data[[prior_sd]]
   } else if (is.numeric(prior_sd)) {
     sd <- rep(prior_sd, nrow(data))
+    sd[is.na(a)] <- prior_sd_NA
   } else {
-    sd <- rep(NA_real_, nrow(data))
+    sd <- rep(NA_real_, length(t))
   }
 
   # In D-score scale, set scale expansion
@@ -398,8 +413,8 @@ calc_dscore <- function(data, items, key, population,
 
   # bind difficulty estimates to data
   data2 <- data |>
-    mutate(a = decage) |>
     mutate(
+      a = a,
       mu = mu,
       sd = sd,
       .rownum = 1L:n()

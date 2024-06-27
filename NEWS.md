@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.2
+
+- Implements an automatic prior with mean 50 and sd 20 for observations with missing ages
+
 # dscore 1.9.1
 
 - Evades superfluous warning 'There was 1 warning in `mutate()`. In argument: `daz = daz(...)`' 

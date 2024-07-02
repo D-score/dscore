@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.3
+
+- Refreshes `preliminary_standards` with a larger sample from Bangladesh
+
 # dscore 1.9.2
 
 - Implements an automatic prior with mean 50 and sd 20 for observations with missing ages

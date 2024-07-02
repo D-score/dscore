@@ -19,7 +19,7 @@ external age-conditional reference."><!-- mathjax --><script src="https://cdnjs.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.3</span>
       </span>
     </div>
 
@@ -143,13 +143,13 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># using default reference and key</span></span></span>
 <span class="r-in"><span><span class="fu">daz</span><span class="op">(</span>d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">35</span>, <span class="fl">50</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1.0</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.496 0.219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.499 0.218</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># print out names of the used reference table</span></span></span>
 <span class="r-in"><span><span class="fu">daz</span><span class="op">(</span>d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">35</span>, <span class="fl">50</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1.0</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> population:  preliminary_standards </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.496 0.219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.499 0.218</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># using the default reference in key gcdg</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"gcdg"</span><span class="op">)</span></span></span>
@@ -164,7 +164,7 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.709 0.996</span>
 <span class="r-in"><span><span class="co"># population median at ages 0.5, 1 and 2 years, default reference</span></span></span>
 <span class="r-in"><span><span class="fu">zad</span><span class="op">(</span>z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span><span class="op">)</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 33.39 49.28 65.32</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 33.39 49.29 65.33</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># population median at ages 0.5, 1 and 2 years, gcdg key</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_reference.html">get_reference</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"gcdg"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>

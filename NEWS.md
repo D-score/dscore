@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+- Restores a datafile `data-raw/data/keys/items_gs1_gl1.txt` that was accidentally removed in a previous release
+
 # dscore 1.9.3
 
 - Refreshes `preliminary_standards` with a larger sample from Bangladesh

@@ -8,6 +8,7 @@ data <- data.frame(
   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 )
 
+expect_silent(dscore(data, items = character(0)))
 
 # explicit key "gsed2212"
 expected_d <- c(NA, NA, 6.61, 5.60, 9.09, 9.09, 9.09, 9.09, 15.30, 15.30)

@@ -4,6 +4,7 @@ editor_options:
     wrap: 72
 ---
 
+- Repairs bug that occured when no items was found resulting in error "cannot coerce class 'function' to a data.frame" in `dscore()`
 - Restores a datafile `data-raw/data/keys/items_gs1_gl1.txt` that was accidentally removed in a previous release
 
 # dscore 1.9.3

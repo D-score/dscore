@@ -329,10 +329,10 @@ calc_dscore <- function(data, items, key, population,
   # get decimal age
   if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
   a <- switch(xunit,
-                   decimal = round(data[[xname]], 4L),
-                   months  = round(data[[xname]] / 12, 4L),
-                   days    = round(data[[xname]] / 365.25, 4L),
-                   rep(NA, nrow(data))
+              decimal = round(data[[xname]], 4L),
+              months  = round(data[[xname]] / 12, 4L),
+              days    = round(data[[xname]] / 365.25, 4L),
+              rep(NA, nrow(data))
   )
 
   # check the itembank
@@ -359,7 +359,7 @@ calc_dscore <- function(data, items, key, population,
   if (length(items) == 0L) {
     return(
       data.frame(
-        a = t,
+        a = a,
         n = 0L,
         p = NA,
         d = NA,

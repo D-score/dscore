@@ -165,7 +165,7 @@ each child, which results in higher D-scores.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Calculate the custom prior mean by adding 5 to the default prior mean</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">milestones</span></span>
-<span><span class="va">mymean</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="fu">:::</span><span class="fu"><a href="../reference/count_mu_preliminary_standards.html">count_mu_preliminary_standards</a></span><span class="op">(</span>t <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">age</span><span class="op">)</span> <span class="op">+</span> <span class="fl">5</span></span>
+<span><span class="va">mymean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_mu.html">get_mu</a></span><span class="op">(</span>t <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">age</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span> <span class="op">+</span> <span class="fl">5</span></span>
 <span></span>
 <span><span class="co"># Calculate default D-scores</span></span>
 <span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>

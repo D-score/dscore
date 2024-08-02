@@ -53,7 +53,7 @@ In this example, we add a value of 5 to the default prior mean for each child, w
 ```{r}
 # Calculate the custom prior mean by adding 5 to the default prior mean
 data <- milestones
-mymean <- dscore:::count_mu_preliminary_standards(t = data$age) + 5
+mymean <- get_mu(t = data$age, key = "gsed2406") + 5
 
 # Calculate default D-scores
 def <- dscore(data)

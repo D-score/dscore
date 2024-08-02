@@ -10,6 +10,7 @@ set_default_population <- function(population, idx) {
     return(dscore::builtin_keys$base_population[idx])
   }
   if (is.null(population) && !length(idx)) {
+    # warning("No population specified, using 'preliminary_standards'.")
     return("preliminary_standards")
   }
   return(population)

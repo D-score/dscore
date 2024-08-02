@@ -56,8 +56,8 @@ test_that("produces expected D-scores - key dutch", {
 
 test_that("Silently handles outside item code", {
   expect_silent(dscore(data,
-    items = c(items[1:2], "gpagmc013"),
-    algorithm = "1.8.7"
+                       items = c(items[1:2], "gpagmc013"),
+                       algorithm = "1.8.7"
   ))
 })
 
@@ -105,16 +105,16 @@ qp <- -10:100
 algorithm <- "1.8.7"
 algorithm <- "current"
 zd <- dscore(data,
-  items = items, dec = 4, metric = "dscore",
-  itembank = my_itembank, transform = transform, qp = qp,
-  key = "mykey", population = "dutch",
-  algorithm = algorithm,
-  verbose = TRUE
+             items = items, dec = 4, metric = "dscore",
+             itembank = my_itembank, transform = transform, qp = qp,
+             key = "mykey", population = "dutch",
+             algorithm = algorithm,
+             verbose = TRUE
 )
 zl <- dscore(data,
-  items = items, dec = 4, metric = "logit",
-  itembank = my_itembank, key = "mykey", transform = transform, qp = qp,
-  algorithm = algorithm
+             items = items, dec = 4, metric = "logit",
+             itembank = my_itembank, key = "mykey", transform = transform, qp = qp,
+             algorithm = algorithm
 )
 
 lastkey <- builtin_keys[nrow(builtin_keys), ]
@@ -146,13 +146,13 @@ test_that("D-score difference at uneven rows (with start 0) is higher than on un
   expect_gt(zp0$d[9] - zp1$d[9], zp0$d[10] - zp1$d[10])
 })
 
-test_that("count_mu_phase() handles missing ages", {
-  expect_silent(dscore::count_mu(t = c(NA, NA),
-                                 key = "preliminary_standards",
-                                 prior_mean_NA = 50))
-  expect_silent(dscore::count_mu(t = c(NA, -3, 1:3, NA),
-                                 key = "preliminary_standards",
-                                 prior_mean_NA = 50))
+test_that("get_mu() handles missing ages", {
+  expect_silent(get_mu(t = c(NA, NA),
+                       key = "gsed2406",
+                       prior_mean_NA = 50))
+  expect_silent(get_mu(t = c(NA, -3, 1:3, NA),
+                       key = "gsed2406",
+                       prior_mean_NA = 50))
 })
 
 

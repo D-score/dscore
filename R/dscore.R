@@ -41,22 +41,34 @@
 #' @param metric A string, either `"dscore"` (default) or
 #' `"logit"`, signalling the metric in which ability is estimated.
 #' `daz` is not calculated for the logit scale.
-#' @param prior_mean A string or numeric scalar. If a string, it should
-#' refer to a column name in `data` with user-supplied values of the prior mean
-#' for each observation. If a numeric scalar, it is used as the prior mean
-#' for all observations. The default (`NULL`) will consult the
-#' `base_population` field in `builtin_keys`, and use the corresponding
-#' median of that reference as prior mean for the D-score.
-#' @param prior_mean_NA Numeric, prior mean when age is missing. The default
-#' is 50. If you do not want to calculate the D-score for observations without
-#' age, then set `prior_mean_NA = NA`.
-#' @param prior_sd A string or a numeric scalar. If a string, it should
-#' refer to a column name in `data` with user-supplied values of the prior
-#' sd for all observations. If a numeric scalar, it is used as the prior sd
-#' for all observations. The default (`NULL`) uses a value of 5.
-#' @param prior_sd_NA Numeric, prior sd when age is missing. The default is
-#' 20. If you do not want to calculate the D-score for observations without
-#' age, then set `prior_sd_NA = NA`.
+#' @param prior_mean `NULL` (default), a string, a numeric scalar, or
+#' a numeric vector with  `nrow(data)` elements. The default value
+#' `NULL` will consult the `base_population` field in `builtin_keys`,
+#' and use the corresponding median of that reference as prior mean for
+#' the D-score. The string should refer to a column name in `data`
+#' that contains user-supplied values of the prior mean for each observation.
+#' A numeric scalar will be expanded to all observations. A numeric vector
+#' will be used as is.
+#' @param prior_mean_NA `NULL` (default) or a scalar numeric, representing
+#' the prior mean for observations with missing ages. By default, D-scores
+#' with missing ages will we `NA`. We suggest setting
+#' `prior_mean_NA = 50` as a reasonable choice for samples between 0-3
+#' years. The argument is ignored if `prior_mean` is specified per
+#' observation, which gives you full control of priors for observations
+#' with missing ages.
+#' @param prior_sd `NULL` (default), a string, a numeric scalar, or
+#' a numeric vector with `nrow(data)` elements. The default (`NULL`)
+#' uses a value of 5 for all ages. The string should refer to a column
+#' name in `data` that contains user-supplied values of the prior sd
+#' for each observation. A numeric scalar will be expanded to all
+#' observations. A numeric vector will be used as is.
+#' @param prior_sd_NA `NULL` (default) or a scalar numeric, representing
+#' the prior sd for observations with missing ages. By default, D-scores
+#' with missing ages will we `NA`. We suggest setting
+#' `prior_sd_NA = 20` as a reasonable choice for samples between 0-3
+#' years. The argument is ignored if `prior_sd` is specified per
+#' observation, which gives you full control of priors for observations
+#' with missing ages.
 #' @param transform Numeric vector, length 2, containing the intercept
 #' and slope of the linear transform from the logit scale into the
 #' the D-score scale. The default (`NULL`) searches `builtin_keys`
@@ -125,7 +137,7 @@
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
-#' The Count models are implemented in the function `[count_mu()]`.
+#' The Count models are implemented in the function `[get_mu()]`.
 #' By default, the spread of the starting prior
 #' is 5 D-score points around the mean D-score, which corresponds to
 #' approximately 1.5 to 2 times the normal spread of child of a given age. The
@@ -218,9 +230,9 @@ dscore <- function(data,
                    itembank = NULL,
                    metric = c("dscore", "logit"),
                    prior_mean = NULL,
-                   prior_mean_NA = 50,
+                   prior_mean_NA = NULL,
                    prior_sd = NULL,
-                   prior_sd_NA = 20,
+                   prior_sd_NA = NULL,
                    transform = NULL,
                    qp = NULL,
                    dec = c(2L, 3L),
@@ -259,9 +271,9 @@ dscore_posterior <- function(data,
                              itembank = NULL,
                              metric = c("dscore", "logit"),
                              prior_mean = NULL,
-                             prior_mean_NA = 50,
+                             prior_mean_NA = NULL,
                              prior_sd = NULL,
-                             prior_sd_NA = 20,
+                             prior_sd_NA = NULL,
                              transform = NULL,
                              qp = NULL,
                              dec = c(2L, 3L),
@@ -369,27 +381,9 @@ calc_dscore <- function(data, items, key, population,
     )
   }
 
-  # initialise prior mean mu conditional on key
-  if (is.null(prior_mean)) {
-    mu <- count_mu(a, key, prior_mean_NA)
-  } else if (is.character(prior_mean) && prior_mean %in% names(data)) {
-    mu <- data[[prior_mean]]
-  } else {
-    mu <- rep(NA_real_, length(a))
-  }
-
-  # initialise prior sd (sd)
-  if (is.null(prior_sd)) {
-    sd <- rep(5, length(a))
-    sd[is.na(a)] <- prior_sd_NA
-  } else if (is.character(prior_sd) && prior_sd %in% names(data)) {
-    sd <- data[[prior_sd]]
-  } else if (is.numeric(prior_sd)) {
-    sd <- rep(prior_sd, nrow(data))
-    sd[is.na(a)] <- prior_sd_NA
-  } else {
-    sd <- rep(NA_real_, length(t))
-  }
+  # initialize prior mean mu and standard deviation sd
+  mu <- init_mu(data, key, a, prior_mean, prior_mean_NA)
+  sd <- init_sd(data, key, a, prior_sd, prior_sd_NA)
 
   # In D-score scale, set scale expansion
   scale <- switch(algorithm,

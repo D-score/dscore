@@ -118,20 +118,3 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   }
   FYy
 }
-
-init_key <- function(key, population, transform, qp) {
-  key <- set_default_key(key)
-  idx <- which(dscore::builtin_keys$key == key)
-
-  population <- set_default_population(population, idx)
-  transform <- set_default_transform(transform, idx)
-  qp <- set_default_qp(qp, idx)
-
-  result <- list(
-    key = key,
-    population = population,
-    transform = transform,
-    qp = qp)
-
-  return(result)
-}

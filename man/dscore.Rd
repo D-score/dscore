@@ -16,9 +16,9 @@ dscore(
   itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
-  prior_mean_NA = 50,
+  prior_mean_NA = NULL,
   prior_sd = NULL,
-  prior_sd_NA = 20,
+  prior_sd_NA = NULL,
   transform = NULL,
   qp = NULL,
   dec = c(2L, 3L),
@@ -38,9 +38,9 @@ dscore_posterior(
   itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
-  prior_mean_NA = 50,
+  prior_mean_NA = NULL,
   prior_sd = NULL,
-  prior_sd_NA = 20,
+  prior_sd_NA = NULL,
   transform = NULL,
   qp = NULL,
   dec = c(2L, 3L),
@@ -95,25 +95,37 @@ then you should also provide the relevant \code{transform} and \code{qp} argumen
 \code{"logit"}, signalling the metric in which ability is estimated.
 \code{daz} is not calculated for the logit scale.}
 
-\item{prior_mean}{A string or numeric scalar. If a string, it should
-refer to a column name in \code{data} with user-supplied values of the prior mean
-for each observation. If a numeric scalar, it is used as the prior mean
-for all observations. The default (\code{NULL}) will consult the
-\code{base_population} field in \code{builtin_keys}, and use the corresponding
-median of that reference as prior mean for the D-score.}
+\item{prior_mean}{\code{NULL} (default), a string, a numeric scalar, or
+a numeric vector with  \code{nrow(data)} elements. The default value
+\code{NULL} will consult the \code{base_population} field in \code{builtin_keys},
+and use the corresponding median of that reference as prior mean for
+the D-score. The string should refer to a column name in \code{data}
+that contains user-supplied values of the prior mean for each observation.
+A numeric scalar will be expanded to all observations. A numeric vector
+will be used as is.}
 
-\item{prior_mean_NA}{Numeric, prior mean when age is missing. The default
-is 50. If you do not want to calculate the D-score for observations without
-age, then set \code{prior_mean_NA = NA}.}
+\item{prior_mean_NA}{\code{NULL} (default) or a scalar numeric, representing
+the prior mean for observations with missing ages. By default, D-scores
+with missing ages will we \code{NA}. We suggest setting
+\code{prior_mean_NA = 50} as a reasonable choice for samples between 0-3
+years. The argument is ignored if \code{prior_mean} is specified per
+observation, which gives you full control of priors for observations
+with missing ages.}
 
-\item{prior_sd}{A string or a numeric scalar. If a string, it should
-refer to a column name in \code{data} with user-supplied values of the prior
-sd for all observations. If a numeric scalar, it is used as the prior sd
-for all observations. The default (\code{NULL}) uses a value of 5.}
+\item{prior_sd}{\code{NULL} (default), a string, a numeric scalar, or
+a numeric vector with \code{nrow(data)} elements. The default (\code{NULL})
+uses a value of 5 for all ages. The string should refer to a column
+name in \code{data} that contains user-supplied values of the prior sd
+for each observation. A numeric scalar will be expanded to all
+observations. A numeric vector will be used as is.}
 
-\item{prior_sd_NA}{Numeric, prior sd when age is missing. The default is
-20. If you do not want to calculate the D-score for observations without
-age, then set \code{prior_sd_NA = NA}.}
+\item{prior_sd_NA}{\code{NULL} (default) or a scalar numeric, representing
+the prior sd for observations with missing ages. By default, D-scores
+with missing ages will we \code{NA}. We suggest setting
+\code{prior_sd_NA = 20} as a reasonable choice for samples between 0-3
+years. The argument is ignored if \code{prior_sd} is specified per
+observation, which gives you full control of priors for observations
+with missing ages.}
 
 \item{transform}{Numeric vector, length 2, containing the intercept
 and slope of the linear transform from the logit scale into the
@@ -195,7 +207,7 @@ the advice is to use the default, which currently is \code{"gsed2406"}.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
-The Count models are implemented in the function \verb{[count_mu()]}.
+The Count models are implemented in the function \verb{[get_mu()]}.
 By default, the spread of the starting prior
 is 5 D-score points around the mean D-score, which corresponds to
 approximately 1.5 to 2 times the normal spread of child of a given age. The

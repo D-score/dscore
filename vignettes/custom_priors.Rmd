@@ -1,0 +1,164 @@
+---
+title: "Custom Priors (Advanced)"
+author: "Stef van Buuren"
+output: 
+  rmarkdown::html_vignette:
+    css: vignette.css
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: yes
+vignette: >
+  %\VignetteIndexEntry{Custom Priors (Advanced)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 7)
+```
+
+## Background
+
+This vignette provides an overview of the default prior settings and demonstrates how to customize the prior mean and standard deviation for D-score calculations. This is an advanced topic that requires a basic understanding of the D-score calculation process. If you are unfamiliar with the D-score methodology, we recommend reviewing the introductory vignettes before proceeding.
+
+## Default Prior Mean and Standard Deviation
+
+The default prior mean and standard deviation for the `dscore()` function are determined by the `key` argument. This function searches for the corresponding `base_population` field in the `builtin_keys` data frame, which contains several columns including the following:
+
+```{r}
+library(dscore)
+builtin_keys[, c("key", "base_population")]
+```
+
+For instance, for `key = gsed2406`, the `base_population` is identified as `"preliminary_standards"`. The `get_mu()` function returns the prior mean for the specified `key` at different ages:
+
+```{r}
+get_mu(t = c(0:12)/12, key = "gsed2406")
+```
+
+This code snippet returns the prior mean for ages ranging from 0 to 12 months. These mean values represent the median of the D-score distribution for the specified `base_population` under the current `key`.
+
+If the standard deviation of the prior is not specified, the `dscore()` function defaults to a value of 5.0 across all ages. In comparison, the age-specific standard deviation for the `base_population` averages around 2.5 to 3.5. Therefore, a standard deviation of 5.0 signifies a relatively broad prior distribution, regardless of age.
+
+It's crucial to note that altering the `key` parameter changes both the prior mean and standard deviation. Since these parameters affect the D-score, comparisons should generally be made only between D-scores calculated using the same key, prior mean, and standard deviation.
+
+## Setting Your Own Prior Mean and Standard Deviation
+
+In certain situations, you may want to define your own prior mean and standard deviation for the D-score calculations. This can be done by setting the `prior_mean` and `prior_sd` arguments in the `dscore()` function. Below are a few examples that demonstrate how to customize these priors.
+
+### Example 1: Custom Prior Mean
+
+In this example, we add a value of 5 to the default prior mean for each child, which results in higher D-scores. 
+
+```{r}
+# Calculate the custom prior mean by adding 5 to the default prior mean
+data <- milestones
+mymean <- dscore:::count_mu_preliminary_standards(t = data$age) + 5
+
+# Calculate default D-scores
+def <- dscore(data)
+head(def)
+
+# Custom prior, direct specification
+adj1 <- dscore(data, prior_mean = mymean)
+head(adj1)
+
+# Custom prior, column specification
+adj2 <- dscore(cbind(data, mymean), prior_mean = "mymean")
+head(adj2)
+
+identical(adj1, adj2)
+```
+
+In this code, the `prior_mean` argument shows two forms. The first form directly specifies the custom prior mean, while the second form refers to an additional column in the data frame that contains the user-specified prior means. Both specifications yield identical results. In addition, the user can specify a scalar value for the `prior_mean` argument, which will be applied to all observations, but this option is unreasonable if ages vary across observations.
+
+The next snippet compares the adjusted and default D-scores as a function of the proportion of items passed by the child.
+
+```{r}
+# Plot the difference between adjusted and default D-scores
+plot(y = adj1$d - def$d, x = def$p, 
+     xlab = "Proportion of items passed by the child", 
+     ylab = "Upward drift of D-score", 
+     pch = 16, main = "Impact of Custom Prior Mean on D-score")
+
+# Add a smoothed line to visualize the trend
+lines(lowess(x = def$p, y = adj1$d - def$d, f = 0.5), col = "grey", lwd = 2)
+```
+
+The plot illustrates that the upward bias is more pronounced when less informative items are administered, i.e., when the proportion of items passed is either very low (not shown) or very high. The bias is relatively mild (one D-score unit increase) when the child can perform about half of the items.
+
+### Example 2: Setting a Custom Prior Standard Deviation
+
+In some situations, we may have strong prior beliefs about the variability of the D-scores based on factors such as the trajectory of a child's D-score or expert knowledge. Incorporating this information can lead to more robust or smooth results by better reflecting our understanding of the variability.
+
+The following code snippet demonstrates how to set a custom prior standard deviation. Here, the `prior_sd` argument is specified using a constant value or values derived from the data.
+
+```{r}
+# Filter data for a specific child
+boy <- milestones[milestones$id == 111, ] 
+
+# Calculate default D-scores
+def <- dscore(boy)
+def
+```
+
+Suppose we want to inform the estimation process by the previous observation. We can use the location of the last observation (in DAZ units) and calculate an informative mean and standard deviation for the next time point as follows:
+
+```{r}
+# Calculate expected D-scores and standard deviations
+exp_d <- zad(z = c(0, def$daz[1:3]), x = def$a)
+exp_sd <- c(5, def$sem[1:3])
+
+# Calculate adjusted D-scores using the custom prior mean and standard deviation
+adj1 <- dscore(boy, prior_mean = exp_d, prior_sd = exp_sd)
+```
+
+The code snippet below plots the raw and informed DAZ trajectories for child 111:
+
+```{r fig.height=4}
+# Plotting the raw and informed DAZ trajectories
+plot(x = def$a, y = def$daz, type = "b", pch = 16, 
+     ylab = "DAZ", xlab = "Age (years)", 
+     main = "Standard (black) and Informed (red) DAZ-trajectory for child 111")
+points(x = adj1$a, y = adj1$daz, col = "red", type = "b", lwd = 2, pch = 16)
+```
+
+This plot illustrates the DAZ trajectory using standard estimates (in black) and the adjusted estimates (in red) for child 111, highlighting the impact of incorporating more informative prior knowledge into the analysis.
+
+Of course, the examples provided here are simplified and may not fully capture the complexity of real-world scenarios. However, they demonstrate how to customize the prior mean and standard deviation in the `dscore()` function to better reflect your prior knowledge and improve the accuracy of the D-score estimates.
+
+### Handling Missing Ages
+
+By default, the D-score of observations with missing ages will be `NA`. It is possible to force D-score calculation by setting `prior_mean_NA` and `prior_sd_NA` to a specific value. The documentation for the `dscore()` function states that `prior_mean_NA = 50` and `prior_sd_NA = 20` as reasonable choices for samples between 0-3 years. If these defaults are not suitable for your data, you can customize them to better reflect your expectations.
+
+### Example 3: Customizing Prior Mean and Standard Deviation for Missing Ages
+
+```{r}
+# Set missing ages for specific observations
+boy$age[2:3] <- NA
+
+# Calculate D-scores using default
+def <- dscore(boy)
+def
+```
+
+This call to `dscore()` produces a D-score of `NA` when age data is missing, which effectively excludes these cases from downstream analyses. This is the safest option, and the default behavior.
+
+```{r}
+# Calculate D-scores for missing ages using age-independent priors
+adj1 <- dscore(boy, prior_mean_NA = 50, prior_sd_NA = 20)
+adj1
+```
+
+This call to `dscore()` uses custom settings `prior_mean_NA = 50` and `prior_sd_NA = 20`, which are suggested age-independent values for children with missing ages between 0 and 3 years.
+
+```{r}
+# Forcing D-scores for missing ages to value -1
+adj2 <- dscore(boy, prior_mean_NA = -1, prior_sd_NA = 0.001)
+adj2
+```
+
+This call sets a custom prior mean and standard deviation `prior_mean_NA = -1` and `prior_sd_NA = 0.001`, effectively resulting in a constant value for the D-score (note that `prior_sd_NA = 0` produces missing values).
+
+Note that the `prior_mean_NA` and `prior_sd_NA` arguments are ignored when `prior_mean` and `prior_sd` are set per observation (either by direct or column specification). Those options allow for full control over the handling of missing ages on a case-by-case basis.
+

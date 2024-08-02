@@ -43,6 +43,7 @@ reference:
       - daz
       - get_reference
       - get_age_equivalent
+      - get_mu
   - title: "Internal functions"
     desc: >
       For research purposes only.

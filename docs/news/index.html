@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.5</span>
       </span>
     </div>
 
@@ -32,6 +32,9 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
+    </li>
+    <li>
       <a href="../articles/getting_started.html">Getting started</a>
     </li>
     <li>
@@ -60,6 +63,15 @@
       <small>Source: <a href="https://github.com/d-score/dscore/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="1.9.5" id="dscore-195">dscore 1.9.5<a class="anchor" aria-label="anchor" href="#dscore-195"></a></h2>
+<ul><li>Breaking change: Changes the default <code>prior_mean_NA</code> and <code>prior_sd_NA</code> to <code>NA</code> (was 50 and 20). This is a safer option to handle missing ages. The user can still emulate the previous automatic behavior (introduced in dscore 1.9.2) by including the <code>prior_mean_NA = 50</code> and <code>prior_sd_NA = 20</code> arguments to the <code><a href="../reference/dscore.html">dscore()</a></code> function.</li>
+<li>Implements new and more friendly options that add increased flexibility to specify prior mean and prior standard deviation for the D-score calculation</li>
+<li>Rebrands <code><a href="../reference/count_mu.html">count_mu()</a></code> as function <code><a href="../reference/get_mu.html">get_mu()</a></code> to extract the prior mean from a reference table. Deprecates <code><a href="../reference/count_mu.html">count_mu()</a></code>.</li>
+<li>Adds a vignette “Custom Priors (Advanced)” to demonstrate the new options for specifying the prior mean and prior standard deviation</li>
+<li>Adds tests in <code>testthat/test-prior.R</code>
+</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.9.4" id="dscore-194">dscore 1.9.4<a class="anchor" aria-label="anchor" href="#dscore-194"></a></h2>
 <ul><li>Repairs bug that occured when no items was found resulting in error “cannot coerce class ‘function’ to a data.frame” in <code><a href="../reference/dscore.html">dscore()</a></code>

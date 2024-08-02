@@ -4,6 +4,14 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.5
+
+- Breaking change: Changes the default `prior_mean_NA` and `prior_sd_NA` to `NA` (was 50 and 20). This is a safer option to handle missing ages. The user can still emulate the previous automatic behavior (introduced in dscore 1.9.2) by including the `prior_mean_NA = 50` and `prior_sd_NA = 20` arguments to the `dscore()` function.
+- Implements new and more friendly options that add increased flexibility to specify prior mean and prior standard deviation for the D-score calculation
+- Rebrands `count_mu()` as function `get_mu()` to extract the prior mean from a reference table. Deprecates `count_mu()`.
+- Adds a vignette "Custom Priors (Advanced)" to demonstrate the new options for specifying the prior mean and prior standard deviation
+- Adds tests in `testthat/test-prior.R`
+
 # dscore 1.9.4
 
 - Repairs bug that occured when no items was found resulting in error "cannot coerce class 'function' to a data.frame" in `dscore()`

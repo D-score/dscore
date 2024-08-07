@@ -80,6 +80,9 @@ daz <- function(d, x, reference_table = NULL, dec = 3, verbose = FALSE) {
     stop("Unknown distribution '", dist, "'.")
   }
 
+  # Turn Inf into NA
+  z[is.infinite(z)] <- NA_real_
+
   return(round(z, dec))
 }
 

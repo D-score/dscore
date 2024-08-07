@@ -5,7 +5,7 @@
 #' *Development-for-Age Z-score (DAZ)* that corrects the D-score for age,
 #' *standard error of measurement (SEM)* of the D-score.
 #'
-#' @param data  A `data.frame` with the data.
+#' @param data  A `data.frame` or `matrix` with the data.
 #' A row collects all observations made on a child on a set of
 #' milestones administered at a given age. The function calculates
 #' a D-score for each row. Different rows can correspond to different
@@ -104,9 +104,22 @@
 #' `sem` | Standard error of measurement, standard deviation of the posterior
 #' `daz` | D-score corrected for age, calculated in Z-scale (for metric `"dscore"`)
 #'
-#' For more detail, the `dscore_posterior()` function returns a data frame with
-#' `nrow(data)` rows and `length(qp)` plus prepended columns with the
-#' full posterior density of the D-score at each quadrature point.
+#' The D-score in column `d` is a linear scale, with values usually ranging
+#' from 0 to 100. The D-score is `NA` if age is missing or if age is lower
+#' than -1/12. It is possible to calculate D-scores for cases with missing ages
+#' by setting `prior_mean_NA` and `prior_sd_NA` to some reasonable value, e.g.,
+#' `prior_mean_NA = 50` and `prior_sd_NA = 20`, for the sample at hand.
+#'
+#' The SEM is a positive number that quantifies the uncertainty of the D-score.
+#' It is `NA` if the D-score is `NA`.
+#'
+#' The DAZ in column `daz` is a Z-score that corrects the D-score for age. It
+#' is `NA` when there are no reference values for the given age, or when
+#' the D-score is extremely unlikely to be valid at the given age.
+#'
+#' Advanced applications: The `dscore_posterior()` function returns a
+#' data frame with `nrow(data)` rows and `length(qp)` plus prepended columns
+#' with the full posterior density of the D-score at each quadrature point.
 #' If no valid responses are found, `dscore_posterior()` returns the
 #' prior density. Versions prior to 1.8.5 returned a `matrix` (instead of
 #' a `data.frame`). Code that depends on the result being a `matrix` may break
@@ -242,6 +255,7 @@ dscore <- function(data,
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
+  data <- as.data.frame(data)
 
   calc_dscore(
     data = data, items = items, key = key, population = population,
@@ -283,6 +297,7 @@ dscore_posterior <- function(data,
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
+  data <- as.data.frame(data)
 
   calc_dscore(
     data = data, items = items, key = key, population = population,
@@ -373,10 +388,10 @@ calc_dscore <- function(data, items, key, population,
       data.frame(
         a = a,
         n = 0L,
-        p = NA,
-        d = NA,
-        sem = NA,
-        daz = NA
+        p = NA_real_,
+        d = NA_real_,
+        sem = NA_real_,
+        daz = NA_real_
       )
     )
   }
@@ -503,6 +518,7 @@ calc_dscore <- function(data, items, key, population,
       data5$daz = NA_real_
     }
     data5 <- select(data5, all_of(c("a", "n", "p", "d", "sem", "daz")))
+    data5$sem[is.nan(data5$sem)] <- NA_real_
   }
 
   # prepend administrative variables from data

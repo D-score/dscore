@@ -144,6 +144,7 @@ count_mu_phase1 <- function(t) {
 count_mu_preliminary_standards <- function(t) {
 
   to <- !is.na(t)
+  t0 <- to & t < -1/12
   t1 <- to & t <= 0.75
   t2 <- to & t > 0.75 & t <= 3.5
   t3 <- to & t > 3.5
@@ -159,6 +160,7 @@ count_mu_preliminary_standards <- function(t) {
   # t[t3] <- suppressWarnings(61.5214 + 4.4309 * t[t3])
 
   # Round 2 model
+  t[t0] <- NA_real_
   t[t1] <- suppressWarnings(24.522 + 23.886 * t[t1] + 9.190 * log(t[t1] + 0.2))
   t[t2] <- suppressWarnings(18.434 - 9.206 * t[t2] + 61.255 * log(t[t2] + 0.92))
   t[t3] <- suppressWarnings(62.6268 + 4 * t[t3])

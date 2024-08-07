@@ -109,7 +109,7 @@ dscore(dm, xunit = "months")
 
 ```
 
-The children with ages `NA`, 48, and -3 have DAZ that are returned as `NA`. DAZ must be relative to age and the reference group is for children 0-36 months old. When scoring data, ensure that ages have been accurately recorded. 
+The children with ages `NA`, 48, and -0.0833 have DAZ that are returned as `NA`. DAZ must be relative to age and the reference group is for children 0-36 months old. When scoring data, ensure that ages have been accurately recorded. 
 
 Children aged 12 and 18 months have no problem with the estimation of the D-scores and DAZ. There are two additional notes:
 

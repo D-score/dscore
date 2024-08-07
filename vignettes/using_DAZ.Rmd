@@ -88,7 +88,7 @@ In contrast, the fourth child in the example (who passed 4/5 milestones) has a D
 
 ## `NA` values for DAZ
 
-When scoring DAZ, `dscore` can occasionally return `NA` and `Inf` values. Let's take a look at why this happens.
+When scoring DAZ, `dscore` can return `NA` values. Let's take a look at why this happens.
 
 `NA` values occur when a child's age is missing or out of range. D-scores can be generated even with missing age values, but DAZ is not possible to be calculated because the calculation of DAZ compares the child's D-score with D-scores of same-aged children. We can see this happen with the below data, where we try to score the same responses patterns with children aged `NA`, 12, 18, 48, and -1 months old. 
 

@@ -4,6 +4,16 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.6
+
+- Turns `Inf` values in `daz()` into `NA` values
+- Turns `NaN` values in SEM into `NA` values
+- Turns ages in `get_mu()` below -1/12 into `NA` values
+- `dscore()` and `dscore_posterior()` now accept a matrix as input
+- Improves documentation for interpretation of `NA`s in D-score, SEM and DAZ
+- Adds a vignette "Understanding and using DAZ" to explain and highlight DAZ (contributed Jonathan Seiden)
+- Fixes typos in vignettes
+
 # dscore 1.9.5
 
 - Breaking change: Changes the default `prior_mean_NA` and `prior_sd_NA` to `NA` (was 50 and 20). This is a safer option to handle missing ages. The user can still emulate the previous automatic behavior (introduced in dscore 1.9.2) by including the `prior_mean_NA = 50` and `prior_sd_NA = 20` arguments to the `dscore()` function.

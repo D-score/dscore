@@ -67,5 +67,14 @@ reference:
       - sample_sf
       - sample_lf
       - sample_hf
+articles:
+  - title: Tips
+    navbar: ~
+    contents:
+    - getting_started
+    - scoring_GSED
+    - using_DAZ
+    - custom_priors
+
 navbar:
   type: inverse

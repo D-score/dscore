@@ -50,7 +50,7 @@ dscore_posterior(
 )
 }
 \arguments{
-\item{data}{A \code{data.frame} with the data.
+\item{data}{A \code{data.frame} or \code{matrix} with the data.
 A row collects all observations made on a child on a set of
 milestones administered at a given age. The function calculates
 a D-score for each row. Different rows can correspond to different
@@ -168,9 +168,22 @@ following columns:\tabular{ll}{
 }
 
 
-For more detail, the \code{dscore_posterior()} function returns a data frame with
-\code{nrow(data)} rows and \code{length(qp)} plus prepended columns with the
-full posterior density of the D-score at each quadrature point.
+The D-score in column \code{d} is a linear scale, with values usually ranging
+from 0 to 100. The D-score is \code{NA} if age is missing or if age is lower
+than -1/12. It is possible to calculate D-scores for cases with missing ages
+by setting \code{prior_mean_NA} and \code{prior_sd_NA} to some reasonable value, e.g.,
+\code{prior_mean_NA = 50} and \code{prior_sd_NA = 20}, for the sample at hand.
+
+The SEM is a positive number that quantifies the uncertainty of the D-score.
+It is \code{NA} if the D-score is \code{NA}.
+
+The DAZ in column \code{daz} is a Z-score that corrects the D-score for age. It
+is \code{NA} when there are no reference values for the given age, or when
+the D-score is extremely unlikely to be valid at the given age.
+
+Advanced applications: The \code{dscore_posterior()} function returns a
+data frame with \code{nrow(data)} rows and \code{length(qp)} plus prepended columns
+with the full posterior density of the D-score at each quadrature point.
 If no valid responses are found, \code{dscore_posterior()} returns the
 prior density. Versions prior to 1.8.5 returned a \code{matrix} (instead of
 a \code{data.frame}). Code that depends on the result being a \code{matrix} may break

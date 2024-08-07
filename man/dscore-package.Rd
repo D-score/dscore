@@ -120,6 +120,7 @@ Authors:
 \itemize{
   \item Iris Eekhout \email{iris.eekhout@tno.nl}
   \item Arjan Huizing \email{arjan.huizing@tno.nl}
+  \item Jonathan Seiden \email{jseiden@g.harvard.edu}
 }
 
 }

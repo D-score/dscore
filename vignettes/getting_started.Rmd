@@ -52,7 +52,7 @@ Different keys lead to different D-scores.  Hence, we may compare only D-scores 
 - For new data, use the generic `key = "gsed"`. This choice will automatically fetch the latest GSED key;
 - To explicitly set the most recent key use `key = "gsed2212"`. The ignores later keys.
 - Use older keys `dutch`, `gcdg` or `gsed1912` to regenerate old results. These are unlikely to be useful for new data;
-- Superseeded keys are: `gsed2206`, `gsed2208`, `lf2206`, `sf2006` and `294_0`. These are available for research purposes, and will be removed in future versions.
+- Superseded keys are: `gsed2206`, `gsed2208`, `lf2206`, `sf2006` and `294_0`. These are available for research purposes, and will be removed in future versions.
 
 The table given below displays the number of items per instrument for various keys. If the entry is blank, the key does not cover the instrument.
 
@@ -66,7 +66,7 @@ The table given below displays the number of items per instrument for various ke
 | `by2`  | Bayley Scales for Infant and Toddler Development-2      |  121  |       |   16  |   16  |    16   |       |
 | `by3`  | Bayley Scales for Infant and Toddler Development-3      |  320  |       |  105  |   67  |    67   |       |
 | `cro`  | Caregiver Reported Early Development Instrument (CREDI) |  149  |       |       |   62  |    64   |       |
-| `ddi`  | Dutch Development Instrument (Van Wiechenschema)        |   77  |   76  |   65  |   64  |    64   |       |
+| `ddi`  | Dutch Development Instrument (Van Wiechen Schema)       |   77  |   76  |   65  |   64  |    64   |       |
 | `den`  | Denver-2                                                |  111  |       |   67  |   50  |    50   |       |
 | `dmc`  | Developmental Milestones Checklist                      |   66  |       |       |   43  |    43   |       |
 | `gri`  | Griffiths Mental Development Scales                     |  312  |       |  104  |   93  |    18   |       |
@@ -88,7 +88,7 @@ The table given below displays the number of items per instrument for various ke
 | `vin`  | Vineland Social Maturity Scale                          |   50  |       |   17  |   17  |    17   |       |
 |        |                                                         |       |   76  |  565  |  807  |   818   |  293  |
 |        | Extensions                                              |       |       |       |       |         |       |
-| `ecd`  | Eerly Child Development Indicators (ECDI)               |   20  |       |       |       |    18   |       |
+| `ecd`  | Early Child Development Indicators (ECDI)               |   20  |       |       |       |    18   |       |
 | `mul`  | Mullen Scales of Early Learning                         |  232  |       |       |  138  |         |       |
 
 Unfortunately, it is not possible to calculate the D-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
@@ -311,7 +311,7 @@ Under the assumption of independence, we may test whether sex differences are co
 summary(lm(daz ~ age * sex, data = md))
 ```
 
-This group of very preterms starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.
+This group of children born very preterm starts around -2.5 SD, followed by a catch-up in child development of approximately 1.0 SD per year. The size of the catch-up is equal for boys and girls.
 
 We may account for the clustering effect by including random intercept and age effects, and rerun as
 

@@ -1,6 +1,5 @@
 ---
 title: "Custom Priors (Advanced)"
-author: "Stef van Buuren"
 output: 
   rmarkdown::html_vignette:
     css: vignette.css

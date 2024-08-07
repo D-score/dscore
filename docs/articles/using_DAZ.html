@@ -140,9 +140,9 @@ Phase I validation sample of GSED data, consisting of 4,374 children
 from Bangladesh, Pakistan, and Tanzania. This data included children
 that were both very advantaged and those with significant constraints on
 their development. In <code>dscore 1.9.0</code>, the reference group has
-been refined to a sub-sample of children with <em>minimal</em>
+been refined to a sub-sample of 2,295 children with <em>minimal</em>
 constraints on their early development.</p>
-<p>The default reference group of includes children who:</p>
+<p>The default reference group includes children who:</p>
 <ul>
 <li>were of normal birth weight (above 2500 g)</li>
 <li>were born term (between 37 and 42 weeks)</li>
@@ -152,10 +152,10 @@ height-for-age, or weight-for-height Z-scores)</li>
 <li>had a mother who had completed at least a secondary level of
 education</li>
 </ul>
-<p>The default reference population since <code>dscore 1.9.0</code>
-consist of a subset of X from 4,374 children. The GSED team is currently
-undergoing a large international study to expand the reference group to
-a more diverse and representative international sample (<a href="https://bmjopen.bmj.com/content/13/1/e062562" class="external-link uri">https://bmjopen.bmj.com/content/13/1/e062562</a>).</p>
+<p>In the future, the DAZ reference group will be updated with a larger
+and more representative sample both through the inclusion of additional
+countries in validation studies as well as a dedicated Norms &amp;
+Standards study (<a href="https://bmjopen.bmj.com/content/13/1/e062562" class="external-link uri">https://bmjopen.bmj.com/content/13/1/e062562</a>).</p>
 </div>
 <div class="section level2">
 <h2 id="can-i-use-a-benchmark-with-daz-to-monitor-the-proportion-of-children-that-are-developmentally-on-track">Can I use a benchmark with DAZ to monitor the proportion of children
@@ -194,7 +194,7 @@ practice and how to interpret results.</p>
 <span>  ncol <span class="op">=</span> <span class="fl">6</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">dm</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"gs1moc060"</span>, <span class="st">"gs1moc061"</span>, <span class="st">"gs1lgc062"</span>, <span class="st">"gs1sec063"</span>, <span class="st">"gs1moc064"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Score the dataframe using dscore function</span></span>
+<span><span class="co"># Score the data using dscore function</span></span>
 <span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">dm</span>, xunit <span class="op">=</span> <span class="st">"months"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Add centile rankings to the output</span></span>

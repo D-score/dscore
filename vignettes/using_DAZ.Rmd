@@ -36,9 +36,9 @@ DAZ is estimated *after* calculating the D-scores for each child. The D-scores p
 
 ## Who is in the reference population used in the D-score package?
 
-Before version 1.9.0, DAZ scores were calculated using the entire Phase I validation sample of GSED data, consisting of 4,374 children from Bangladesh, Pakistan, and Tanzania. This data included children that were both very advantaged and those with significant constraints on their development. In `dscore 1.9.0`, the reference group has been refined to a sub-sample of children with *minimal* constraints on their early development. 
+Before version 1.9.0, DAZ scores were calculated using the entire Phase I validation sample of GSED data, consisting of 4,374 children from Bangladesh, Pakistan, and Tanzania. This data included children that were both very advantaged and those with significant constraints on their development. In `dscore 1.9.0`, the reference group has been refined to a sub-sample of 2,295 children with *minimal* constraints on their early development.
 
-The default reference group of includes children who:
+The default reference group includes children who:
 
 * were of normal birth weight (above 2500 g)
 * were born term (between 37 and 42 weeks)
@@ -46,7 +46,7 @@ The default reference group of includes children who:
 * had no known severe birth defects or chronic health problems
 * had a mother who had completed at least a secondary level of education
 
-The default reference population since `dscore 1.9.0` consist of a subset of X from 4,374 children. The GSED team is currently undergoing a large international study to expand the reference group to a more diverse and representative international sample (https://bmjopen.bmj.com/content/13/1/e062562). 
+In the future, the DAZ reference group will be updated with a larger and more representative sample both through the inclusion of additional countries in validation studies as well as a dedicated Norms & Standards study (https://bmjopen.bmj.com/content/13/1/e062562).
 
 ## Can I use a benchmark with DAZ to monitor the proportion of children that are developmentally on track?
 
@@ -71,7 +71,7 @@ dm <- matrix(
   ncol = 6, byrow = TRUE)
 colnames(dm) <- c("age", "gs1moc060", "gs1moc061", "gs1lgc062", "gs1sec063", "gs1moc064")
 
-# Score the dataframe using dscore function
+# Score the data using dscore function
 output <- dscore(dm, xunit = "months")
 
 # Add centile rankings to the output

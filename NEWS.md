@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.7
+
+- Some minor edits to the "Understanding and using DAZ" vignette
+
 # dscore 1.9.6
 
 - Turns `Inf` values in `daz()` into `NA` values

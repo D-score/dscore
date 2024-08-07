@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.6</span>
       </span>
     </div>
 
@@ -50,13 +50,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
-    </li>
-    <li>
       <a href="../articles/getting_started.html">Getting started</a>
     </li>
     <li>
       <a href="../articles/scoring_GSED.html">Scoring GSED</a>
+    </li>
+    <li>
+      <a href="../articles/using_DAZ.html">Understanding and using DAZ</a>
+    </li>
+    <li>
+      <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
     </li>
   </ul>
 </li>
@@ -85,8 +88,6 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Custom Priors (Advanced)</h1>
-                        <h4 data-toc-skip class="author">Stef van
-Buuren</h4>
             
       
       <small class="dont-index">Source: <a href="https://github.com/d-score/dscore/blob/HEAD/vignettes/custom_priors.Rmd" class="external-link"><code>vignettes/custom_priors.Rmd</code></a></small>
@@ -306,8 +307,8 @@ Ages<a class="anchor" aria-label="anchor" href="#example-3-customizing-prior-mea
 <span><span class="va">def</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span></span>
-<span><span class="co">## 2     NA 14 0.6429    NA      NaN     NA</span></span>
-<span><span class="co">## 3     NA 19 0.9474    NA      NaN     NA</span></span>
+<span><span class="co">## 2     NA 14 0.6429    NA       NA     NA</span></span>
+<span><span class="co">## 3     NA 19 0.9474    NA       NA     NA</span></span>
 <span><span class="co">## 4 1.9055 13 0.8462 63.88 2.971594 -0.094</span></span></code></pre>
 <p>This call to <code><a href="../reference/dscore.html">dscore()</a></code> produces a D-score of
 <code>NA</code> when age data is missing, which effectively excludes
@@ -360,7 +361,7 @@ handling of missing ages on a case-by-case basis.</p>
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Stef van Buuren, Iris Eekhout, Arjan Huizing.</p>
+<p>Developed by Stef van Buuren, Iris Eekhout, Arjan Huizing, Jonathan Seiden.</p>
 </div>
 
 <div class="pkgdown">

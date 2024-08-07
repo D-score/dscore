@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.9.6</span>
       </span>
     </div>
 
@@ -50,13 +50,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
-    </li>
-    <li>
       <a href="../articles/getting_started.html">Getting started</a>
     </li>
     <li>
       <a href="../articles/scoring_GSED.html">Scoring GSED</a>
+    </li>
+    <li>
+      <a href="../articles/using_DAZ.html">Understanding and using DAZ</a>
+    </li>
+    <li>
+      <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
     </li>
   </ul>
 </li>
@@ -168,7 +171,7 @@ will automatically fetch the latest GSED key;</li>
 <li>Use older keys <code>dutch</code>, <code>gcdg</code> or
 <code>gsed1912</code> to regenerate old results. These are unlikely to
 be useful for new data;</li>
-<li>Superseeded keys are: <code>gsed2206</code>, <code>gsed2208</code>,
+<li>Superseded keys are: <code>gsed2206</code>, <code>gsed2208</code>,
 <code>lf2206</code>, <code>sf2006</code> and <code>294_0</code>. These
 are available for research purposes, and will be removed in future
 versions.</li>
@@ -270,7 +273,7 @@ instrument.</p>
 </tr>
 <tr class="even">
 <td><code>ddi</code></td>
-<td>Dutch Development Instrument (Van Wiechenschema)</td>
+<td>Dutch Development Instrument (Van Wiechen Schema)</td>
 <td align="right">77</td>
 <td align="right">76</td>
 <td align="right">65</td>
@@ -490,7 +493,7 @@ instrument.</p>
 </tr>
 <tr class="even">
 <td><code>ecd</code></td>
-<td>Eerly Child Development Indicators (ECDI)</td>
+<td>Early Child Development Indicators (ECDI)</td>
 <td align="right">20</td>
 <td align="right"></td>
 <td align="right"></td>
@@ -3680,9 +3683,9 @@ interaction between age and sex:</p>
 <span><span class="co">## Residual standard error: 1.107 on 96 degrees of freedom</span></span>
 <span><span class="co">## Multiple R-squared:  0.3123, Adjusted R-squared:  0.2908 </span></span>
 <span><span class="co">## F-statistic: 14.53 on 3 and 96 DF,  p-value: 7.058e-08</span></span></code></pre>
-<p>This group of very preterms starts around -2.5 SD, followed by a
-catch-up in child development of approximately 1.0 SD per year. The size
-of the catch-up is equal for boys and girls.</p>
+<p>This group of children born very preterm starts around -2.5 SD,
+followed by a catch-up in child development of approximately 1.0 SD per
+year. The size of the catch-up is equal for boys and girls.</p>
 <p>We may account for the clustering effect by including random
 intercept and age effects, and rerun as</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
@@ -3740,7 +3743,7 @@ Project.”</span> Bangladesh.
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Stef van Buuren, Iris Eekhout, Arjan Huizing.</p>
+<p>Developed by Stef van Buuren, Iris Eekhout, Arjan Huizing, Jonathan Seiden.</p>
 </div>
 
 <div class="pkgdown">

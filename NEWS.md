@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.9.8
+
+- Changes `warning("Reference XX for key YY not found."` into `warning("Reference XX for key YY not found. Using default."` 
+- Returns `preliminary_standards` from key `gsed2406` in the above case.
+
 # dscore 1.9.7
 
 - Some minor edits to the "Understanding and using DAZ" vignette

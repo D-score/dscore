@@ -70,8 +70,11 @@ get_reference <- function(population = NULL,
   # filter references
   idx <- which(references$key == key & references$population == population)
   if (!any(idx)) {
-    warning("Reference '", population, "' for key '", key, "' not found.",
+    # use default reference if not found
+    warning("Reference '", population, "' for key '", key, "' not found. Using default.",
             call. = FALSE)
+    idx <- which(references$key == "gsed2406" &
+                   references$population == "preliminary_standards")
   }
   return(references[idx, ])
 }

@@ -1,9 +1,17 @@
 bibentry(
-  bibtype  = "Book",
-  title    = "Child Development with the D-score",
-  author   = c(person("Stef", "van Buuren"), person("Iris", "Eekhout")),
-  year     = "2023",
-  publisher = "CRC Press",
-  address  = "Boca Raton, FL",
-  doi      = "10.1201/9781003216315"
+  bibtype  = "Manual",
+  title    = "dscore: D-score for Child Development",
+  author   = c(
+    person("Stef", "van Buuren", role = c("cre", "aut"),
+           comment = "ORCID: 0000-0003-1098-2119"),
+    person("Iris", "Eekhout", role = "aut",
+           comment = "ORCID: 0000-0002-0030-1458"),
+    person("Arjan", "Huizing", role = "aut",
+           comment = "ORCID: 0000-0002-2385-6800"),
+    person("Jonathan", "Seiden", role = "aut",
+           comment = "ORCID: 0000-0002-0318-8016")),
+  year     = "2024",
+  note     = "R package version 1.9.8",
+  url      = "https://CRAN.R-project.org/package=dscore",
+  key      = "dscore-package"
 )

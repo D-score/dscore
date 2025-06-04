@@ -6,11 +6,11 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.9.8-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.10.0-orange.svg)](https://github.com/d-score/dscore)
 <!-- badges: end -->
 
 The D-score is a numerical score that measures generic development in

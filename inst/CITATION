@@ -10,8 +10,8 @@ bibentry(
            comment = "ORCID: 0000-0002-2385-6800"),
     person("Jonathan", "Seiden", role = "aut",
            comment = "ORCID: 0000-0002-0318-8016")),
-  year     = "2024",
-  note     = "R package version 1.9.8",
+  year     = "2025",
+  note     = "R package version 1.10.0",
   url      = "https://CRAN.R-project.org/package=dscore",
   key      = "dscore-package"
 )

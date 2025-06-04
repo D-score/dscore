@@ -1,7 +1,7 @@
 Package: dscore
 Type: Package
 Title: D-Score for Child Development
-Version: 1.9.8
+Version: 1.10.0
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"),
@@ -14,7 +14,7 @@ Description: The D-score summarizes the child's performance on a set of
     using age-conditional references, and to map milestone names into a 
     generic 9-position item naming convention.
 Depends:
-    R (>= 3.5)
+    R (>= 4.1.0)
 Imports:
     dplyr (>= 1.0.0),
     Rcpp,

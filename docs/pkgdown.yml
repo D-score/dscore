@@ -1,13 +1,12 @@
-pandoc: 3.1.11
-pkgdown: 2.0.9
+pandoc: '3.4'
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   custom_priors: custom_priors.html
   getting_started: getting_started.html
   scoring_GSED: scoring_GSED.html
   using_DAZ: using_DAZ.html
-last_built: 2024-08-12T14:30Z
+last_built: 2025-06-04T19:15Z
 urls:
   reference: https://d-score.github.io/dscore/reference
   article: https://d-score.github.io/dscore/articles
-

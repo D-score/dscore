@@ -6,6 +6,10 @@ cran-comments
 `dscore 1.10.0` is a major update providing new features and resolving
 some problems
 
+### Resubmission 1
+
+The pre-test identified a link behind a paywall. Now replaced by DOI.
+
 ## Test environments
 
 ### Local

@@ -52,7 +52,7 @@ In the future, the DAZ reference group will be updated with a larger and more re
 
 Many anthropometric measures use a -2 SD benchmark to describe the percentage of children with low height for age (stunting) weight for age (underweight) or weight for height (wasting). DAZ scores *can* be used with a benchmark for monitoring purposes, but this should be done with extreme caution. This is because, unlike HAZ, WAZ, and WHZ, DAZ scores are calculated using a relatively small and globally unrepresentative reference sample. 
 
-Further guidance and a more concrete benchmark will be analyzed after the completion of an ongoing Norms & Standards study. For now, if a benchmark for use is required to determine the proportion of children that are developmentally on track, we recommend using a **transitional benchmark** -1.5 SD. This is slightly higher than -2 SD but was determined to give reasonable alignment with inferences from the ECDI2030 (https://www.sciencedirect.com/science/article/abs/pii/S0885200623001588). 
+Further guidance and a more concrete benchmark will be analyzed after the completion of an ongoing Norms & Standards study. For now, if a benchmark for use is required to determine the proportion of children that are developmentally on track, we recommend using a **transitional benchmark** -1.5 SD. This is slightly higher than -2 SD but was determined to give reasonable alignment with inferences from the ECDI2030 (https://doi.org/10.1016/j.ecresq.2023.11.004). 
 
 ## Examples of DAZ and interpretation
 

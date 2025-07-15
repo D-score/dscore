@@ -16,6 +16,11 @@ A \code{data.frame} with 10 rows and 141 variables:\tabular{ll}{
 
 
 Sample data for 139 \code{gpa} items from GSED SF
+
+#' @details
+On July 15, 2025, the item \code{gpaclc088} was renamed to \code{gpaclc089}
+(Can you child say five or more separate words) and \code{gpasec089} was renamed
+to \code{gpasec088} (Is your child able to pee and poo).
 }
 \usage{
 sample_sf

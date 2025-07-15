@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+This commit corrects an error in the definition of the gpa item names.
+
+- Renames `gpaclc088` --> `gpaclc089` (Can you child say five or more separate words)
+- Renames `gpasec089` --> `gpasec088` (Is your child able to pee or poo)
+
 # dscore 1.10.0
 
 ### Overview

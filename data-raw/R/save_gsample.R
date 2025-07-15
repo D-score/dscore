@@ -8,7 +8,7 @@ hh_subset <- c(
   "gpamoc054", "gpamoc058", "gpamoc056", "gpalgc059", "gpamoc060",
   "gpalgc068", "gpamoc061", "gpasec075", "gpamoc062", "gpamoc065",
   "gpamoc063", "gpalgc072", "gpasec086", "gpamoc071", "gpagmc067",
-  "gpamoc078", "gpaclc088", "gpaclc093", "gpamoc084", "gpaxxc092",
+  "gpamoc078", "gpaclc089", "gpaclc093", "gpamoc084", "gpaxxc092",
   "gpaclc101", "gpacmc090", "gpaclc112", "gpamoc106", "gpaclc113"
 )
 file <- "data-raw/data/sample/gsed_sample.txt"

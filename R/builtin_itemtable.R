@@ -25,6 +25,8 @@
 #'  - Dec 05, 2022 - Redefines gs1 and instrument for Phase 2, removes gs2 (139)
 #'                   Adds gl1 (Long Form Phase 2 items 155)
 #'  - Jan 05, 2023 - Adds 55 items from GSED-HF
+#'  - Jul 15, 2025 - Rename gpaclc088 --> gpaclc089 (Can you child say five or more separate words)
+#'                   Rename gpasec089 --> gpasec088 (Is your child able to pee and poo)
 #' @author Compiled by Stef van Buuren using different sources
 #' @keywords datasets
 "builtin_itemtable"

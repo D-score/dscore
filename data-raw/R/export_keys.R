@@ -77,6 +77,10 @@ ib_gsed <- gsed_model_293_0$itembank |>
   ) |>
   select(one_of("key", "item", "tau"))
 gpa <- ib_gsed[1:138, ]
+# rename to correct for reversed items
+gpa[gpa$item == "gpasec089", "item"] <- "gpasec088"
+gpa[gpa$item == "gpaclc088", "item"] <- "gpaclc089"
+# end correction
 gpa <- gpa[order_itemnames(gpa$item, order = "imnd"), ]
 ib_gsed <- bind_rows(gpa, ib_gsed[139:293, ])
 fo <- file.path(project, "data-raw/data/keys/293_0.txt")
@@ -127,6 +131,10 @@ ib_gsed <- gsed_model$itembank |>
     tau = round(tau, 2)
   ) |>
   select(one_of("key", "item", "tau"))
+# rename to correct for reversed items
+ib_gsed[ib_gsed$item == "gpasec089", "item"] <- "gpasec088"
+ib_gsed[ib_gsed$item == "gpaclc088", "item"] <- "gpaclc089"
+# end correction
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/sf2206.txt")
 write.table(ib_gsed,
@@ -193,7 +201,7 @@ write.table(ib_ecdi,
 )
 
 # Export GSED GH1 - Household form
-key_gsed2212_gh1 <- openxlsx::read.xlsx("data-raw/data/ageforms_2023-01-13.xlsx") |>
+key_gsed2212_gh1 <- openxlsx::read.xlsx("data-raw/data/ageforms_2025-07-15.xlsx") |>
   mutate(
     key = "gsed2212",
     item = get_itemnames(instrument = "gh1", order = "indm")

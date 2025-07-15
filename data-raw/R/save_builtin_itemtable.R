@@ -37,7 +37,7 @@ ecdi_itemtable <- ecdi_itemtable |>
   )
 
 ## add HF items to itemtable, creates instrument code gh1, overwrites item
-hh_itemtable <- openxlsx::read.xlsx("data-raw/data/ageforms_2023-01-13.xlsx")
+hh_itemtable <- openxlsx::read.xlsx("data-raw/data/ageforms_2025-07-15.xlsx")
 info <- dscore::decompose_itemnames(hh_itemtable$item)
 info$instrument <- "gh1"
 info$domain <- recode(hh_itemtable$voted_domain, cog = "cg", lang = "lg", life = "li", motor = "mo", sem = "se")

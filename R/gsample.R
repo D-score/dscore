@@ -16,6 +16,12 @@
 #'
 #' There are 138 `gpa` items (item `gpamoc008` (clench fists) removed) from GSED SF and
 #' and 155 `gto` items from GSED LF.
+#'
+#' @details
+#' On July 15, 2025, the item `gpaclc088` was renamed to `gpaclc089`
+#' (Can you child say five or more separate words) and `gpasec089` was renamed
+#' to `gpasec088` (Is your child able to pee and poo).
+#'
 #' @examples
 #' head(gsample)
 #' @seealso [dscore()]
@@ -38,6 +44,12 @@
 #' `...`      | and so on..
 #'
 #' Sample data for 139 `gpa` items from GSED SF
+#'
+#' #' @details
+#' On July 15, 2025, the item `gpaclc088` was renamed to `gpaclc089`
+#' (Can you child say five or more separate words) and `gpasec089` was renamed
+#' to `gpasec088` (Is your child able to pee and poo).
+#'
 #' @examples
 #' head(sample_sf)
 #' @seealso [dscore()]

@@ -85,8 +85,8 @@ key	item	tau
 293_0	gpasec085	52.79
 293_0	gpasec086	49.84
 293_0	gpaxxc087	57.19
-293_0	gpaclc088	53.97
-293_0	gpasec089	63.17
+293_0	gpasec088	63.17
+293_0	gpaclc089	53.97
 293_0	gpacmc090	60.22
 293_0	gpaclc091	60.86
 293_0	gpaxxc092	56.72

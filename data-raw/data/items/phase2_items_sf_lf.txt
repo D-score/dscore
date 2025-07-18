@@ -1,0 +1,295 @@
+Order	code	text			gsed	gsed2	p1	p2	p3
+1	Ma_LF_A01	Moves body in reaction to caregiver			mdtsed003	gtogmd003	lf1	a_d	001
+2	Ma_LF_A02	Moves body, kicking legs and moving arms equally on his/her own			mdtsed004	gtogmd002	lf1	a_d	002
+3	Ma_LF_A03	Pulls to sit - no head lag			mdtgmd004	gtogmd006	lf1	a_d	003
+4	Ma_LF_A04	Lifts head in prone 45 degrees (2X)			ddigmd057	gtogmd001	lf1	a_d	004
+5	Ma_LF_A05	Lifts head, shoulders, chest when prone (2X)			mdtgmd005	gtogmd007	lf1	a_d	005
+6	Ma_LF_A06	Puts hands together in front of face			mdtfmd003	gtogmd004	lf1	a_d	006
+7	Ma_LF_A07	Carries object to mouth to explore (2X)			sgrehd012	gtogmd011	lf1	a_d	007
+8	Ma_LF_A08	Reaches for an object (2X)			by1mdd051	gtogmd008	lf1	a_d	008
+9	Ma_LF_A09	Grasps hold of large object (2X)			mdtfmd006	gtogmd010	lf1	a_d	009
+10	Ma_LF_A10	Balances head while supported			ddigmd061	gtogmd005	lf1	a_d	010
+11	Ma_LF_A11	Sits supported (with help) (2X)			dmcgmd003	gtogmd012	lf1	a_d	011
+12	Ma_LF_A12	Resists object being taken away (2X)			sgrred010	gtogmd009	lf1	a_d	012
+13	Ma_LF_A13	Sees a small object (2X)			mdtfmd008	gtogmd016	lf1	a_d	013
+14	Ma_LF_A14	Sits momentarily (on his/her own) (2X)			by1pdd023	gtogmd013	lf1	a_d	014
+15	Ma_LF_A15	Sits without help (short time) (2X)			mdtgmd009	gtogmd018	lf1	a_d	015
+16	Ma_LF_A16	Picks object from ground (2X)			mdtfmd007	gtogmd020	lf1	a_d	016
+17	Ma_LF_A17	Rolls from back to stomach (2X)			by1pdd028	gtogmd015	lf1	a_d	017
+18	Ma_LF_A18	Sits by self well (2X)			mdtgmd010	gtogmd022	lf1	a_d	018
+19	Ma_LF_A19	Rakes (grasps with 3 or 4 fingers) a small object (2X)			denfmd009	gtogmd017	lf1	a_d	019
+20	Ma_LF_A20	Turns on floor (2X)			sgrgmd022	gtogmd019	lf1	a_d	020
+21	Ma_LF_A21	Moves from lying to sitting			kdigmd031	gtogmd026	lf1	a_d	021
+22	Ma_LF_A22	Stands with support (2X)			kdigmd001	gtogmd027	lf1	a_d	022
+23	Ma_LF_A23	Reaches for a second object (2X)			by1mdd064	gtogmd014	lf1	a_d	023
+24	Ma_LF_A24	Crawls (2X)			dmcgmd005	gtogmd023	lf1	a_d	024
+25	Ma_LF_A25	Pulls up to standing position (2X)			mdtgmd012	gtogmd025	lf1	a_d	025
+26	Ma_LF_A26	Shifts object from 1 hand to the other (2X)			mdtfmd009	gtogmd021	lf1	a_d	026
+27	Ma_LF_A27	Picks up small object between thumb and finger (2X)			ddifmd010	gtogmd024	lf1	a_d	027
+28	Ma_LF_A28	Walks when 1 hand held (2X)			kdigmd005	gtogmd029	lf1	a_d	028
+29	Ma_LF_A29	Stands alone for 5 seconds or more if put in standing position (2X)			dmcgmd009	gtogmd028	lf1	a_d	029
+30	Ma_LF_A30	Plays "give-and-take" (3X)			ddifmm012	gtogmd030	lf1	a_d	030
+31	Ma_LF_A31	Takes few steps alone (2X)			grigmd203	gtogmd032	lf1	a_d	031
+32	Ma_LF_A32	Walks			mdtgmd018	gtogmd036	lf1	a_d	032
+33	Ma_LF_A33	Runs (basic), may fall over (2X)			mdtgmd019	gtogmd037	lf1	a_d	033
+34	Ma_LF_A34	Stoops and recovers (2X)			mdtgmd017	gtogmd034	lf1	a_d	034
+35	Ma_LF_A35	Releases ball purposefully (2X)			kdifmd002	gtogmd031	lf1	a_d	035
+36	Ma_LF_A36	Runs well (2X)			mdtgmd021	gtogmd038	lf1	a_d	036
+37	Ma_LF_A37	Kicks a ball from stationary position (2X)			kdigmd003	gtogmd033	lf1	a_d	037
+38	Ma_LF_A38	Runs and kicks a ball well (2X)			mdtgmd024	gtogmd039	lf1	a_d	038
+39	Ma_LF_A39	Kneels and then stands, without using hands (2X)			mdtgmd022	gtogmd040	lf1	a_d	039
+40	Ma_LF_A40	Hops forward on 1 foot 3 steps (2X)			mdtgmd031	gtogmd045	lf1	a_d	040
+41	Ma_LF_A41	Jumps with both feet together (2X)			kdigmd008	gtogmd042	lf1	a_d	041
+42	Ma_LF_A42	Jumps over a piece of paper (widthways) (2X)			mdtgmd029	gtogmd043	lf1	a_d	042
+43	Ma_LF_A43	Walks along line heel-to-toe (2X)			kdigmd015	gtogmd048	lf1	a_d	043
+44	Ma_LF_A44	Throws beanbag onto a cloth (3X)			mdtgmd023	gtogmd041	lf1	a_d	044
+45	Ma_LF_A45	Stands on 1 foot > 5 seconds (2X)			mdtgmd027	gtogmd044	lf1	a_d	045
+46	Ma_LF_A46	Walks on tiptoes 6 or more steps			mdtgmd030	gtogmd047	lf1	a_d	046
+47	Ma_LF_A47	Moves from sitting to standing without using hands			kdigmd034	gtogmd035	lf1	a_d	047
+48	Ma_LF_A48	Stands on 1 foot > 5 seconds (2X)			mdtgmd032	gtogmd046	lf1	a_d	048
+49	Ma_LF_A49	Throws ball up into the air and catches it (3X)			mdtgmd033	gtogmd049	lf1	a_d	049
+50	Ma_LF_B01	Makes sounds or vocalizes (2X)			mdtlgd002	gtolgd004	lf1	a_d	001
+51	Ma_LF_B02	Reacts when spoken to (2X)			ddicmm029	gtolgd001	lf1	a_d	002
+52	Ma_LF_B03	Smiles in response (2X)			ddicmm030	gtolgd002	lf1	a_d	003
+53	Ma_LF_B04	Laughs (2X)			mdtlgd003	gtolgd006	lf1	a_d	004
+54	Ma_LF_B05	Calms and quiets with caregiver			mdtsed005	gtolgd003	lf1	a_d	005
+55	Ma_LF_B06	Vocalizes when spoken to			sgrred006	gtolgd007	lf1	a_d	006
+56	Ma_LF_B07	Turns to voice (2X)			denlgd007	gtolgd005	lf1	a_d	007
+57	Ma_LF_B08	Babbles while playing			ddicmm034	gtolgd009	lf1	a_d	008
+58	Ma_LF_B09	Repeats syllables			dmclgd002	gtolgd008	lf1	a_d	009
+59	Ma_LF_B10	Uses gestures to communicate			dmclgd005	gtolgd012	lf1	a_d	010
+60	Ma_LF_B11	Uses 2 - 4 syllable babble			mdtlgd007	gtolgd010	lf1	a_d	011
+61	Ma_LF_B12	Responds to verbal request (2X)			by1mdd089	gtolgd013	lf1	a_d	012
+62	Ma_LF_B13	Uses 1 definite word			dmclgd006	gtolgd014	lf1	a_d	013
+63	Ma_LF_B14	Understands when being cautioned (2X)			mdtlgd008	gtolgd011	lf1	a_d	014
+64	Ma_LF_B15	Imitates simple words (2X)			by1mdd106	gtolgd015	lf1	a_d	015
+65	Ma_LF_B16	Follows simple commands (1 step) (2X)			mdtlgd010	gtolgd020	lf1	a_d	016
+66	Ma_LF_B17	Points to 2 pictures			by2mdd099	gtolgd021	lf1	a_d	017
+67	Ma_LF_B18	Identifies 2 objects you name (2X)			ddicmd141	gtolgd018	lf1	a_d	018
+68	Ma_LF_B19	Identifies 5 objects you name (2X)			mdtlgd016	gtolgd026	lf1	a_d	019
+69	Ma_LF_B20	Identifies 1 item of clothing			by1mdd117	gtolgd017	lf1	a_d	020
+70	Ma_LF_B21	Identifies 3 items of clothing			by3red022	gtolgd022	lf1	a_d	021
+71	Ma_LF_B22	Points to 1 or more body parts (2X)			mdtlgd018	gtolgd029	lf1	a_d	022
+72	Ma_LF_B23	Points at 5 pictures in book			ddicmd044	gtolgd025	lf1	a_d	023
+73	Ma_LF_B24	Shows interest in story			by3cgd059	gtolgd019	lf1	a_d	024
+74	Ma_LF_B25	Follows 2-step commands (2X)			mdtlgd015	gtolgd023	lf1	a_d	025
+75	Ma_LF_B26	Says sentences with 2 words together			ddicmm041	gtolgd024	lf1	a_d	026
+76	Ma_LF_B27	Names 4 pictures			grihsd223	gtolgd033	lf1	a_d	027
+77	Ma_LF_B28	Uses 5 clear words			grihsd208	gtolgd016	lf1	a_d	028
+78	Ma_LF_B29	Matches pictures			by3cgd064	gtolgd032	lf1	a_d	029
+79	Ma_LF_B30	Names 5 objects (2X)			mdtlgd019	gtolgd027	lf1	a_d	030
+80	Ma_LF_B31	Uses multiple-word utterances			by3exd029	gtolgd036	lf1	a_d	031
+81	Ma_LF_B32	Speaks clearly in sentences			mdtlgd017	gtolgd028	lf1	a_d	032
+82	Ma_LF_B33	Knows actions or functions of 3 or more objects			mdtlgd021	gtolgd031	lf1	a_d	033
+83	Ma_LF_B34	Points to parts of whole objects			by3red028	gtolgd038	lf1	a_d	034
+84	Ma_LF_B35	Says first name (2X)			mdtlgd020	gtolgd030	lf1	a_d	035
+85	Ma_LF_B36	Names 10 objects (2X)			mdtlgd023	gtolgd035	lf1	a_d	036
+86	Ma_LF_B37	Understands "more" (2X)			teplgd018	gtolgd047	lf1	a_d	037
+87	Ma_LF_B38	Identifies 2 or more colours (2X)			teplgd032	gtolgd043	lf1	a_d	038
+88	Ma_LF_B39	Knows use of objects (2X)			grihsd303	gtolgd045	lf1	a_d	039
+89	Ma_LF_B40	Names at least 2 colours (2X)			teplgd031	gtolgd049	lf1	a_d	040
+90	Ma_LF_B41	Identifies 5 action pictures			by3red029	gtolgd034	lf1	a_d	041
+91	Ma_LF_B42	Identifies at least 2 shapes (2X)			teplgd034	gtolgd048	lf1	a_d	042
+92	Ma_LF_B43	Talks easily about daily events			ddicmm047	gtolgd037	lf1	a_d	043
+93	Ma_LF_B44	Describes picture (2X)			teplgd035	gtolgd042	lf1	a_d	044
+94	Ma_LF_B45	Gives logical response to a question (2X)			teplgd281	gtolgd039	lf1	a_d	045
+95	Ma_LF_B46	Categorizes things			mdtlgd024	gtolgd040	lf1	a_d	046
+96	Ma_LF_B47	Matches 3 colours (2X)			by3cgd068	gtolgd041	lf1	a_d	047
+97	Ma_LF_B48	Understands adjective "faster" (2X)			mdtlgd029	gtolgd044	lf1	a_d	048
+98	Ma_LF_B49	Names actions (5)			by3exd037	gtolgd046	lf1	a_d	049
+99	Ma_LF_B50	Taps with 2 blocks			sbiwmd007	gtolgd050	lf1	a_d	050
+100	Ma_LF_B51	Taps with 4 blocks			sbiwmd008	gtolgd051	lf1	a_d	051
+101	Ma_LF_B52	Taps with 8 blocks			sbiwmd009	gtolgd052	lf1	a_d	052
+102	Ma_LF_C01	Fixates eyes (2X)			ddifmd001	gtofmd001	lf1	a_d	001
+103	Ma_LF_C02	Responds to sound (2X)			mdtlgd001	gtofmd002	lf1	a_d	002
+104	Ma_LF_C03	Fixes and follows - 180 degrees			mdtfmd002	gtofmd003	lf1	a_d	003
+105	Ma_LF_C04	Manipulates cup OR spoon in play			sgrred018	gtofmd007	lf1	a_d	004
+106	Ma_LF_C05	Shows interest in making a sound (2X)			by1mdd072	gtofmd004	lf1	a_d	005
+107	Ma_LF_C06	Turns head towards fallen object (2X)			by1mdd062	gtofmd006	lf1	a_d	006
+108	Ma_LF_C07	Discriminates strangers			by1mdd058	gtofmd005	lf1	a_d	007
+109	Ma_LF_C08	Picks up cup to get block			by1mdd088	gtofmd010	lf1	a_d	008
+110	Ma_LF_C09	Finds toy under cloth (2X)			mdtfmd012	gtofmd013	lf1	a_d	009
+111	Ma_LF_C10	Pulls string to get object (2X)			by1mdd080	gtofmd009	lf1	a_d	010
+112	Ma_LF_C11	Lifts cup by the handle (2X)			by1mdd073	gtofmd008	lf1	a_d	011
+113	Ma_LF_C12	Puts block in cup (2X)			denfmd014	gtofmd011	lf1	a_d	012
+114	Ma_LF_C13	Bangs 2 objects together			denfmd013	gtofmd012	lf1	a_d	013
+115	Ma_LF_C14	Pats toy to make noise (2X			by1mdd104	gtofmd014	lf1	a_d	014
+116	Ma_LF_C15	Makes marks with crayon (2X)			dmcfmd009	gtofmd017	lf1	a_d	015
+117	Ma_LF_C16	Puts 3 or more blocks in cup			by1mdd100	gtofmd015	lf1	a_d	016
+118	Ma_LF_C17	Puts blocks in jar			mdtfmd016	gtofmd023	lf1	a_d	017
+119	Ma_LF_C18	Puts 1 peg in again (2X)			by1mdd108	gtofmd021	lf1	a_d	018
+120	Ma_LF_C19	Scribbles in any way (2X)			denfmd015	gtofmd020	lf1	a_d	019
+121	Ma_LF_C20	Accepts third block without dropping (2X)			gricgd023	gtofmd022	lf1	a_d	020
+122	Ma_LF_C21	Uses objects in play by him-/herself (2X)			by3cgd048	gtofmd027	lf1	a_d	021
+123	Ma_LF_C22	Manages a cup well			dmcsld019	gtofmd018	lf1	a_d	022
+124	Ma_LF_C23	Holds crayon with fingers, not fist (2X)			by1mdd098	gtofmd019	lf1	a_d	023
+125	Ma_LF_C24	Repeats something when encouraged (2X)			by1mdd097	gtofmd016	lf1	a_d	024
+126	Ma_LF_C25	Dumps blocks out of jar purposefully (2X)			mdtfmd017	gtofmd025	lf1	a_d	025
+127	Ma_LF_C26	Builds tower of 2 blocks (2X)			ddifmd013	gtofmd024	lf1	a_d	026
+128	Ma_LF_C27	Puts pegs in board < 2 minutes (2X)			mdtfmd021	gtofmd032	lf1	a_d	027
+129	Ma_LF_C28	Builds tower of 3 blocks (2X)			by1mdd119	gtofmd028	lf1	a_d	028
+130	Ma_LF_C29	Finds object under 2 alternating cups (3X)			by1mdd131	gtofmd026	lf1	a_d	029
+131	Ma_LF_C30	Inserts 2 shapes in board (2X)			gricgd213	gtofmd033	lf1	a_d	030
+132	Ma_LF_C31	Inserts 3 shapes in board in 2 minutes (2X)			by3cgd056	gtofmd035	lf1	a_d	031
+133	Ma_LF_C32	Uses objects in play with someone (2X)			by3cgd053	gtofmd031	lf1	a_d	032
+134	Ma_LF_C33	Scribbles on paper (circular scribble)			mdtfmd019	gtofmd030	lf1	a_d	033
+135	Ma_LF_C34	Builds tower of 6 blocks (2X)			mdtfmd023	gtofmd037	lf1	a_d	034
+136	Ma_LF_C35	Understands the concept of "1" (2X)			mdtfmd022	gtofmd029	lf1	a_d	035
+137	Ma_LF_C36	Inserts 3 shapes in rotated board in 2 minutes (2X)			by3cgd060	gtofmd036	lf1	a_d	036
+138	Ma_LF_C37	Builds truck/lorry of blocks (2X)			by3fmd044	gtofmd043	lf1	a_d	037
+139	Ma_LF_C38	Unscrews and screws lid of jar (2X)			mdtfmd025	gtofmd040	lf1	a_d	038
+140	Ma_LF_C39	Engages in representational play			by3cgd065	gtofmd041	lf1	a_d	039
+141	Ma_LF_C40	Inserts 3 shapes in 15 seconds (2X)			sbivsd003	gtofmd039	lf1	a_d	040
+142	Ma_LF_C41	Copies 2-part activity (3X)			by3cgd067	gtofmd042	lf1	a_d	041
+143	Ma_LF_C42	Puts pegs in board in < 30 seconds (2X)			mdtfmd024	gtofmd038	lf1	a_d	042
+144	Ma_LF_C43	Draws horizontal line (2X)			griehd301	gtofmd045	lf1	a_d	043
+145	Ma_LF_C44	Understands "more" (3X-5X)			by3cgd089	gtofmd034	lf1	a_d	044
+146	Ma_LF_C45	Imitates building bridge (2X)			ddifmd023	gtofmd044	lf1	a_d	045
+147	Ma_LF_C46	Picks longest stick 3 of 3 (3X-5X)			mdtfmd028	gtofmd046	lf1	a_d	046
+148	Ma_LF_C47	Copies a circle			ddifmd026	gtofmd049	lf1	a_d	047
+149	Ma_LF_C48	Builds wall of blocks (2X)			by3fmd050	gtofmd048	lf1	a_d	048
+150	Ma_LF_C49	Understands concept of size (2X)			by3cgd073	gtofmd051	lf1	a_d	049
+151	Ma_LF_C50	Understands prepositions (2X)			mdtlgd031	gtofmd047	lf1	a_d	050
+152	Ma_LF_C51	Copies a cross or plus sign (2X)			mdtfmd033	gtofmd050	lf1	a_d	051
+153	Ma_LF_C52	Counts 3 or more objects			mdtlgd033	gtofmd054	lf1	a_d	052
+154	Ma_LF_C53	Copies a square (2X)			mdtfmd034	gtofmd053	lf1	a_d	053
+155	Ma_LF_C54	Draws 3 or more body parts			denfmd024	gtofmd052	lf1	a_d	054
+156	Ma_SF_C001	Does your child smile?			mdtsed001	gpasec004	sf1	__c	001
+157	Ma_SF_C002	When lying on his/her back, does your child move his/her arms and legs?			cromoc008	gpamoc006	sf1	__c	002
+158	Ma_SF_C003	Does your child look at your face when you speak to him/her?			crosec002	gpasec015	sf1	__c	003
+159	Ma_SF_C004	Does your child cry when he/she is hungry, wet, tired, or wants to be held?			gsdlac001	gpalac001	sf1	__c	004
+160	Ma_SF_C005	Does your child grasp your finger if you touch her hand?			gsdfmc003	gpafmc003	sf1	__c	005
+161	Ma_SF_C006	Does your child look at and focus on objects in front of him/her?			gsdcgc002	gpacgc002	sf1	__c	006
+162	Ma_SF_C007	Does your child bring his/her hand to his/her mouth?			cromoc007	gpamoc011	sf1	__c	007
+163	Ma_SF_C008	Does your child try to move his/her head (or eyes) to follow an object or person?			iyomoc001	gpamoc005	sf1	__c	008
+164	Ma_SF_C009	Does your child smile when you smile or talk with him/her?			iyosec004	gpasec010	sf1	__c	009
+165	Ma_SF_C010	Does your child look at a person when that person starts talking or making noise? 			croclc001	gpaclc007	sf1	__c	010
+166	Ma_SF_C011	Does your child stop crying or calm down when you come to the room after being out of sight, or when you pick him or her up?			iyosec001	gpasec016	sf1	__c	011
+167	Ma_SF_C012	When you talk to your child, does he/she smile, make noises, or move arms, legs or trunk in response?			iyolgc002	gpalgc012	sf1	__c	012
+168	Ma_SF_C013	When you are about to pick up your child, does he/she act happy or excited?			iyosec002	gpasec014	sf1	__c	013
+169	Ma_SF_C014	Does your child turn his/her head towards your voice or some noise?			iyolgc001	gpalgc021	sf1	__c	014
+170	Ma_SF_C015	Does your child grasp onto a small object (e.g., your finger, a spoon) when put in his/her hand? 			cromoc006	gpamoc026	sf1	__c	015
+171	Ma_SF_C016	Does your child make sounds other than crying?			gsdlac004	gpalac009	sf1	__c	016
+172	Ma_SF_C017	Does your child sometimes suck his/her thumb or fingers? 			crosec004	gpasec020	sf1	__c	017
+173	Ma_SF_C018	While your child is on his/her back, can he/she bring his/her hands together such that hands touch each other ?			iyomoc002	gpamoc017	sf1	__c	018
+174	Ma_SF_C019	Does your child move excitedly, kick legs, move arms or trunk, or make coo noises when a known person enters the room or speaks to them?			iyosec005	gpasec025	sf1	__c	019
+175	Ma_SF_C020	Does your child make noise or gesture to get your attention?			iyolgc005	gpalgc019	sf1	__c	020
+176	Ma_SF_C021	If you play a game with your child, does he/she respond with interest? For example, if you play peek-a-boo, pat-a-cake, wave bye-bye, etc. does your child smile, widen their eyes, kick or move arms or vocalize?			iyosec003	gpasec031	sf1	__c	021
+177	Ma_SF_C022	Does your child recognize you or other family members (e.g., smile when they enter a room or move toward them)? 			croclc014	gpaclc033	sf1	__c	022
+178	Ma_SF_C023	Does your child laugh?			croclc006	gpaclc023	sf1	__c	023
+179	Ma_SF_C024	Does your child smile or become excited when seeing someone familiar? 			crosec003	gpasec032	sf1	__c	024
+180	Ma_SF_C025	When your child is on his/her stomach, can he/she turn his/her head to the side?			gsdgmc005	gpagmc013	sf1	__c	025
+181	Ma_SF_C026	Does your child make sounds other than crying when LOOKING at toys or people?			iyolgc003	gpalgc022	sf1	__c	026
+182	Ma_SF_C027	Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?			iyosec006	gpasec045	sf1	__c	027
+183	Ma_SF_C028	Does your child hold his/her hands in fists all the time? 			cromoc001	gpamoc008	sf1	__c	028
+184	Ma_SF_C029	Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?			iyomoc004	gpamoc024	sf1	__c	029
+185	Ma_SF_C030	When held in a sitting position, can the child hold his/her head steady and straight?			cromoc002	gpamoc037	sf1	__c	030
+186	Ma_SF_C031	When your child is on his/her stomach, can he/she hold his/her head up off the ground?			gsdgmc006	gpagmc018	sf1	__c	031
+187	Ma_SF_C032	Does your child show interest in new objects that are put in front of him/her by reaching out for them?			croclc004	gpaclc034	sf1	__c	032
+188	Ma_SF_C033	When he/she is on his/her tummy, can your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.			iyomoc005	gpamoc029	sf1	__c	033
+189	Ma_SF_C034	Can your child roll from his/her back to stomach or stomach to his/her side? 			gsdgmc007	gpagmc030	sf1	__c	034
+190	Ma_SF_C035	Can your child reach for AND HOLD an object, at least for a few seconds?			iyomoc007	gpamoc035	sf1	__c	035
+191	Ma_SF_C036	Can your child eat food from your fingers or off a spoon you hold?			mdtsed006	gpasec039	sf1	__c	036
+192	Ma_SF_C037	Does your child make single sounds like "buh" or "duh" or "muh"?			iyolgc004	gpalgc027	sf1	__c	037
+193	Ma_SF_C038	Can your child sit with support, either leaning against something (furniture or person), or by leaning forward on his or her hands?			iyomoc008	gpamoc044	sf1	__c	038
+194	Ma_SF_C039	Does your child try to reach for objects that are in front of him/her by extending one or both arms?			iyomoc006	gpamoc028	sf1	__c	039
+195	Ma_SF_C040	Can your child pick up a small object (e.g., a small toy or small stone) using just one hand?			cromoc012	gpamoc040	sf1	__c	040
+196	Ma_SF_C041	When lying on his/her stomach, can your child hold his/her head and chest off the ground using only his/her hands and arms for support? 			cromoc005	gpamoc042	sf1	__c	041
+197	Ma_SF_C042	If an object falls to the ground out of view, does your child look for it?			iyomoc009	gpamoc041	sf1	__c	042
+198	Ma_SF_C043	When lying on his/her back, does the child grab his/her feet? 			cromoc009	gpamoc043	sf1	__c	043
+199	Ma_SF_C044	Can your child roll from his/her back to stomach, or stomach to back, on his/her own? 			cromoc010	gpamoc038	sf1	__c	044
+200	Ma_SF_C045	Does your child play by tapping an object on the ground or a table? 			croclc007	gpaclc047	sf1	__c	045
+201	Ma_SF_C046	Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)? 			croclc008	gpaclc046	sf1	__c	046
+202	Ma_SF_C047	Can your child hold him/herself in a sitting position without help or support for longer than a few seconds? 			cromoc011	gpamoc049	sf1	__c	047
+203	Ma_SF_C048	Does your child intentionally move or change his/her position to get objects that are out of reach? 			croclc011	gpaclc048	sf1	__c	048
+204	Ma_SF_C049	Does your child make two similar sounds together like baba, mumu, pepe, didi (single consonant vowel combinations)?			iyolgc006	gpalgc051	sf1	__c	049
+205	Ma_SF_C050	When you put your child on the floor, can she lean on her hands while sitting?			aqigmc012	gpagmc036	sf1	__c	050
+206	Ma_SF_C051	Can your child pass a small object from one hand to the other?			iyomoc012	gpamoc052	sf1	__c	051
+207	Ma_SF_C052	Can your child bang objects together, or bang an object on the table or on the ground?			iyomoc011	gpamoc050	sf1	__c	052
+208	Ma_SF_C053	Can your child pick up small bits of food and feed him/her-self using his/her hand?			mdtsed012	gpasec064	sf1	__c	053
+209	Ma_SF_C054	Can your child pick up and drop a small object (e.g., a small toy or small stone) into a bucket or bowl while sitting? 			cromoc022	gpamoc058	sf1	__c	054
+210	Ma_SF_C055	Can your child maintain a standing position while holding on to a person or object (e.g., wall or furniture)? 			cromoc015	gpamoc054	sf1	__c	055
+211	Ma_SF_C056	Can your child pick up a small object (e.g., a piece of food, small toy or small stone) with just his/her thumb and one finger? 			cromoc019	gpamoc053	sf1	__c	056
+212	Ma_SF_C057	Can your child pull themselves up from the floor while holding onto something? For example, can they pull themselves up using a chair, a person, or some other object?			iyomoc016	gpamoc056	sf1	__c	057
+213	Ma_SF_C058	Does your child stop what he/she is doing when you say "Stop!" even if just for a second?			crosec014	gpalgc059	sf1	__c	058
+214	Ma_SF_C059	Can your child walk several steps while holding on to a person or object (e.g., wall or furniture)? 			cromoc018	gpamoc060	sf1	__c	059
+215	Ma_SF_C060	While holding onto furniture, can your child bend down and pick up a small object from the floor and then return to a standing position?			aqigmc021	gpagmc055	sf1	__c	060
+216	Ma_SF_C061	While holding onto furniture, does your child squat with control (without falling or flopping down)?			aqigmc020	gpagmc057	sf1	__c	061
+217	Ma_SF_C062	Does your child make a gesture to indicate "No" (e.g., shaking head)?			mdtlgd009	gpalgc068	sf1	__c	062
+218	Ma_SF_C063	Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?			mdtsed016	gpasec082	sf1	__c	063
+219	Ma_SF_C064	Can your child stand up without holding onto anything, even if just for a few seconds?			iyomoc020	gpamoc061	sf1	__c	064
+220	Ma_SF_C065	Does your child put his/her hands out to have them washed?			mdtsed013	gpasec075	sf1	__c	065
+221	Ma_SF_C066	Can your child maintain a standing position on his/her own, without holding on or receiving support? 			cromoc017	gpamoc062	sf1	__c	066
+222	Ma_SF_C067	Can your child drink from an open cup without help?			vinxxc007	gpaxxc074	sf1	__c	067
+223	Ma_SF_C068	Can your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?			iyomoc022	gpamoc065	sf1	__c	068
+224	Ma_SF_C069	Can your child make any light marks on paper or in dirt with a crayon or a stick?			iyomoc021	gpamoc063	sf1	__c	069
+225	Ma_SF_C070	Can your child bend down or squat to pick up an object from the floor and then stand up again, without help from a person or object?			iyomoc023	gpamoc070	sf1	__c	070
+226	Ma_SF_C071	Can your child follow a simple spoken command or direction without you making a gesture? 			iyolgc013	gpalgc072	sf1	__c	071
+227	Ma_SF_C072	Can your child fetch something when asked?			vinxxc006	gpaxxc073	sf1	__c	072
+228	Ma_SF_C073	Does your child share with others (e.g., food)?			mdtsed018	gpasec086	sf1	__c	073
+229	Ma_SF_C074	Can your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately afterward? 			iyomoc024	gpamoc066	sf1	__c	074
+230	Ma_SF_C075	While standing, can your child purposefully throw the ball and not just drop it?			iyomoc028	gpamoc076	sf1	__c	075
+231	Ma_SF_C076	Can your child stand up from sitting by himself and take several steps forward?			aqigmc026	gpagmc069	sf1	__c	076
+232	Ma_SF_C077	Can your child break off a piece of food and feed it to him/her-self?			mdtsed021	gpasec094	sf1	__c	077
+233	Ma_SF_C078	Can your child make a scribble on paper, or in dirt, in a back and forth manner? For example, can he or she move the pen or pencil or stick back and forth? 			iyomoc025	gpamoc071	sf1	__c	078
+234	Ma_SF_C079	Can your child move around by walking, rather than by crawling on his hands and knees?			aqigmc027	gpagmc067	sf1	__c	079
+235	Ma_SF_C080	Can your child walk well, with coordination, without falling down often? With one foot in front of the other (rather than shifting weight side to side, stiff- legged)?			iyomoc027	gpamoc077	sf1	__c	080
+236	Ma_SF_C081	Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?			iyomoc030	gpamoc078	sf1	__c	081
+237	Ma_SF_C082	Can your child greet people either by giving his/her hand or saying "hello"? (use local examples of greeting)			mdtsed017	gpasec085	sf1	__c	082
+238	Ma_SF_C083	Can your child kick a ball or other round object forward using his/her foot? 			cromoc025	gpamoc079	sf1	__c	083
+239	Ma_SF_C084	"Can your child say five or more separate words (e.g., names like ""Mama"" or objects like ""ball"")?"			mdtsed019	gpasec089	sf1	__c	084
+240	Ma_SF_C085	Can your child follow directions with more than one step? For example, 'Go to the kitchen and bring me a spoon'?			iyolgc017	gpalgc081	sf1	__c	085
+241	Ma_SF_C086	Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)? 			croclc028	gpaclc096	sf1	__c	086
+242	Ma_SF_C087	Can your child identify at least seven objects? For example, when you ask 'where is the ball/spoon/cup/cloth/door/plate/bucket etc.' does your child look at or point to (or even name) the objects?			iyolgc022	gpalgc099	sf1	__c	087
+243	Ma_SF_C088	Can your child ask for something (e.g., food, water) by name when he/she wants it?			croclc025	gpaclc093	sf1	__c	088
+244	Ma_SF_C089	Can your child run well, without falling or bumping into objects?			iyomoc032	gpamoc084	sf1	__c	089
+245	Ma_SF_C090	Can your child wash hands by him/herself?			vinxxc048	gpaxxc092	sf1	__c	090
+246	Ma_SF_C091	While standing, can your child kick a ball by swinging his/her leg forward?			iyomoc031	gpamoc080	sf1	__c	091
+247	Ma_SF_C092	Does your child dry hands by herself/himself after you have washed them?			vinxxc021	gpaxxc087	sf1	__c	092
+248	Ma_SF_C093	Does your child show independence (e.g., wants to go and visit a friend's house)?			mdtsed023	gpasec095	sf1	__c	093
+249	Ma_SF_C094	If you show your child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it? 			croclc034	gpaclc101	sf1	__c	094
+250	Ma_SF_C095	Can your child stack three or more small objects (e.g., blocks, cups, bottle caps) on top of each other? 			cromoc029	gpamoc083	sf1	__c	095
+251	Ma_SF_C096	Can your child walk on an uneven surface (e.g., a bumpy or steep road) without falling? 			cromoc031	gpamoc097	sf1	__c	096
+252	Ma_SF_C097	Does your child usually communicate with words what he/she wants in a way that is understandable to others?			iyolgc023	gpalgc102	sf1	__c	097
+253	Ma_SF_C098	Can your child say ten or more words in addition to "Mama" and "Dada"?			aqicmc033	gpacmc090	sf1	__c	098
+254	Ma_SF_C099	When looking at pictures, if you say to your child "what is this?", can they say the name of the object that you point to?			iyolgc021	gpalgc098	sf1	__c	099
+255	Ma_SF_C100	Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?			croclc024	gpaclc091	sf1	__c	100
+256	Ma_SF_C101	Can your child unscrew the lid from a bottle or jar? 			cromoc033	gpamoc110	sf1	__c	101
+257	Ma_SF_C102	Does your child help out around the house with simple chores, even if he/she doesn't do them well? (use local examples of chores)			mdtsed029	gpasec130	sf1	__c	102
+258	Ma_SF_C103	Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?			croclc023	gpaclc088	sf1	__c	103
+259	Ma_SF_C104	Can your child speak using sentences of three or more words that go together (e.g., "I want water" or "The house is big")?			croclc029	gpaclc112	sf1	__c	104
+260	Ma_SF_C105	Can your child name at least two body parts (e.g., arm, eye, or nose)? 			croclc038	gpaclc100	sf1	__c	105
+261	Ma_SF_C106	Can your child remove an item of clothing (e.g., take off his/her shirt)? 			cromoc035	gpamoc104	sf1	__c	106
+262	Ma_SF_C107	Can your child say 15 or more separate words (e.g., names like "Mama" or objects like "ball")?			croclc027	gpaclc105	sf1	__c	107
+263	Ma_SF_C108	Can your child jump with both feet leaving the ground? 			cromoc034	gpamoc106	sf1	__c	108
+264	Ma_SF_C109	Can your child tell you or someone familiar his/her own name [nickname] when asked to?			croclc032	gpaclc108	sf1	__c	109
+265	Ma_SF_C110	Can your child correctly ask questions using any of the words "what", "which", "where", or "who"?			croclc042	gpaclc115	sf1	__c	110
+266	Ma_SF_C111	Does your child show respect around elders?			mdtsed032	gpasec137	sf1	__c	111
+267	Ma_SF_C112	Can your child correctly use any of the words "I," "you," "she," or "he" (e.g., "I go to store," or "He eats rice")?			croclc031	gpaclc113	sf1	__c	112
+268	Ma_SF_C113	Can your child sing a short song or repeat parts of a rhyme from memory by him/herself? 			croclc037	gpaclc107	sf1	__c	113
+269	Ma_SF_C114	Does your child know the difference between the words "big" and "small"? For example, if you ask, "Give me the big spoon" can your child understand which one to give if there are two different sizes?			iyolgc026	gpalgc111	sf1	__c	114
+270	Ma_SF_C115	Does your child pronounce most of his/her words correctly? 			croclc046	gpaclc116	sf1	__c	115
+271	Ma_SF_C116	Can your child go to the toilet by him/her-self?			mdtsed033	gpasec134	sf1	__c	116
+272	Ma_SF_C117	If you point to an object, can your child correctly use the words "on," "in," or "under" to describe where it is (e.g., "The cup is on the table" instead of "The cup is in the table.")			croclc049	gpaclc120	sf1	__c	117
+273	Ma_SF_C118	Can your child put on at least one piece of clothing by himself?			mdtsed026	gpasec109	sf1	__c	118
+274	Ma_SF_C119	Can your child explain in words what common objects like a cup or chair are used for? 			croclc039	gpaclc119	sf1	__c	119
+275	Ma_SF_C120	Can your child draw a straight line?			iyomoc037	gpamoc103	sf1	__c	120
+276	Ma_SF_C121	Can your child say what he/she likes or dislikes (e.g., "I like sweets")?			crosec042	gpasec114	sf1	__c	121
+277	Ma_SF_C122	If you show your child two objects or people of different size, can he/she tell you which one is the big one and which is the small one? 			croclc035	gpaclc117	sf1	__c	122
+278	Ma_SF_C123	Does your child regularly use describing words such as "fast," "short," "hot," "fat," or "beautiful" correctly?			croclc050	gpaclc121	sf1	__c	123
+279	Ma_SF_C124	Does your child know to keep quiet when the situation requires it? (e.g., at ceremonies, when someone is asleep)			mdtsed028	gpasec123	sf1	__c	124
+280	Ma_SF_C125	Does your child ask "why" questions (e.g., "Why are you tall?")?			croclc051	gpaclc124	sf1	__c	125
+281	Ma_SF_C126	Can your child stand on one foot WITHOUT any support for at least a few seconds?			iyomoc039	gpamoc135	sf1	__c	126
+282	Ma_SF_C127	If you ask your child to give you three objects (e.g., stones, beans), does the child give you the correct amount? 			croclc043	gpaclc126	sf1	__c	127
+283	Ma_SF_C128	Does your child understand the term 'longest'? For example, if you ask him/her to choose 'which is the longest of 3 objects?' (e.g. 3 spoons or sticks), would he/she be able to choose the longest?			iyolgc029	gpalgc131	sf1	__c	128
+284	Ma_SF_C129	Can your child talk about things that have happened in the past using correct language (e.g., "Yesterday I played with my friend" or "Last week she went to the market")?			croclc045	gpaclc138	sf1	__c	129
+285	Ma_SF_C130	Can your child tell a story?			iyolgc030	gpalgc127	sf1	__c	130
+286	Ma_SF_C131	Can your child tell you when he/she is happy, angry, or sad? 			crosec049	gpasec125	sf1	__c	131
+287	Ma_SF_C132	Can the child name at least one color (e.g., red, blue, yellow)? 			croclc044	gpaclc122	sf1	__c	132
+288	Ma_SF_C133	Can your child count objects up to five  (e.g., fingers, people)? 			croclc041	gpaclc118	sf1	__c	133
+289	Ma_SF_C134	If you draw a circle can your child do it, just as you did?			iyomoc038	gpamoc133	sf1	__c	134
+290	Ma_SF_C135	Can your child tell you when others are happy, angry, or sad? 			crosec059	gpasec128	sf1	__c	135
+291	Ma_SF_C136	Can your child talk about things that will happen in the future using correct language (e.g., "Tomorrow he will attend school" or "Next week we will go to the market")?			croclc048	gpaclc139	sf1	__c	136
+292	Ma_SF_C137	Can the child fasten and unfasten buttons without help? 			cromoc039	gpamoc132	sf1	__c	137
+293	Ma_SF_C138	Can your child dress him/herself completely (except for shoelaces, buttons and zippers)?			iyomoc040	gpamoc129	sf1	__c	138
+294	Ma_SF_C139	Can your child say what others like or dislike (e.g., "Mama doesn't like fruit," "Papa likes football")?			crosec051	gpasec136	sf1	__c	139

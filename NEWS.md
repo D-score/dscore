@@ -4,6 +4,9 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.10.2
+
+- Rebuilds `builtin_itemtable` to resolve problems with SF items 88 and 89 and LF B43-B51
 
 # dscore 1.10.1
 
@@ -11,7 +14,6 @@ This version corrects an error in the definition of the gpa item names.
 
 - Renames `gpaclc088` --> `gpaclc089` (Can you child say five or more separate words)
 - Renames `gpasec089` --> `gpasec088` (Is your child able to pee or poo)
-- Rebuilds `builtin_itemtable` to resolve problems with SF items 88 and 89 and LF B43-B51
 
 # dscore 1.10.0
 

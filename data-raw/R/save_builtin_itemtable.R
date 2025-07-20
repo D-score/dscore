@@ -9,12 +9,15 @@ builtin_itemtable <- read.delim(
   header = TRUE
 )
 
-## add GSED SF itemtable: gs1 and gl1 (Phase 2)
-gsx_itemtable <- read.delim("data-raw/data/keys/items_gs1_gl1.txt",
+## Create LF and SF item codes corresponding to published
+## GSED v1.0 Short Form and GSED v1.0 Long Form
+## NOTE: tab also contains crosswalk to gsed and gsed2 lexicon
+tab <- read.delim("data-raw/data/items/phase2_items.txt",
   stringsAsFactors = FALSE, na = "",
   fileEncoding = "UTF-8",
-  header = TRUE
-) |>
+  header = TRUE) |>
+  mutate(item = paste0(instrument, domain, mode, formatC(number, width = 3, flag = "0")))
+gsx_itemtable <- tab |>
   mutate(equate = NA_character_) |>
   select(item, equate, label)
 
@@ -47,28 +50,11 @@ hh_itemtable <- hh_itemtable |>
   mutate(equate = NA_character_) |>
   select(item, equate, label)
 
-
-## Create LF and SF item codes corresponding to published
-## GSED v1.0 Short Form and GSED v1.0 Long Form
-tab <- read.delim("data-raw/data/items/phase2_items_sf_lf.txt",
-                             sep = "\t",
-                            stringsAsFactors = FALSE, na = "",
-                            fileEncoding = "UTF-8",
-                            header = TRUE)
-phase2 <- data.frame(
-  item = paste0(tab$p1,
-                c(rep("_ad", 49), rep("_bd", 52), rep("_cd", 54), rep("__c", 139)),
-                sprintf("%03d",tab$p3)),
-  equate = NA,
-  label = tab$text)
-
-
 builtin_itemtable <- bind_rows(
   gsx_itemtable,
   builtin_itemtable,
   ecdi_itemtable,
   hh_itemtable,
-  phase2
 )
 
 info <- dscore::decompose_itemnames(builtin_itemtable$item)

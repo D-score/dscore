@@ -4,9 +4,13 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.10.3 
+
+- Add item names starting with `lf` and `sf` to `builtin_itemtable`
+
 # dscore 1.10.2
 
-- Rebuilds `builtin_itemtable` to resolve problems with SF items 88 and 89 and LF B43-B51
+- Rebuilds `builtin_itemtable` to resolve problems with SF items 88 and 89 and LF B43-B51.
 
 # dscore 1.10.1
 

@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.10.4
+
+- Moves `gsedread::rename_vector()` to the `dscore` package
+
 # dscore 1.10.3 
 
 - Add item names starting with `lf` and `sf` to `builtin_itemtable`

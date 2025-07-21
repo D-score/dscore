@@ -1,0 +1,621 @@
+phase1	phase2	gsed	gsed2	gsed3	gsed4	short1	short2	instrument	seq_phase1	seq_phase2	label
+Ma_LF_A03	Ma_LF_A01	mdtsed003	gtogmd003	gl1gmd001	lfagmd001	A03	A01	LF	3	1	A1  Moves body in reaction to caregiver
+Ma_LF_A02	Ma_LF_A02	mdtsed004	gtogmd002	gl1gmd002	lfagmd002	A02	A02	LF	2	2	A2  Moves body, kicking legs and moving arms equally on his/her own
+Ma_LF_A06	Ma_LF_A03	mdtgmd004	gtogmd006	gl1gmd003	lfagmd003	A06	A03	LF	6	3	A3  Pulls to sit - no head lag
+Ma_LF_A01	Ma_LF_A04	ddigmd057	gtogmd001	gl1gmd004	lfagmd004	A01	A04	LF	1	4	A4  Lifts head in prone 45 degrees (2X)
+Ma_LF_A07	Ma_LF_A05	mdtgmd005	gtogmd007	gl1gmd005	lfagmd005	A07	A05	LF	7	5	A5  Lifts head, shoulders, chest when prone (2X)
+Ma_LF_A04	Ma_LF_A06	mdtfmd003	gtogmd004	gl1gmd006	lfagmd006	A04	A06	LF	4	6	A6  Puts hands together in front of face
+Ma_LF_A11	Ma_LF_A07	sgrehd012	gtogmd011	gl1gmd007	lfagmd007	A11	A07	LF	11	7	A7  Carries object to mouth to explore (2X)
+Ma_LF_A08	Ma_LF_A08	by1mdd051	gtogmd008	gl1gmd008	lfagmd008	A08	A08	LF	8	8	A8  Reaches for an object (2X)
+Ma_LF_A10	Ma_LF_A09	mdtfmd006	gtogmd010	gl1gmd009	lfagmd009	A10	A09	LF	10	9	A9  Grasps hold of large object (2X)
+Ma_LF_A05	Ma_LF_A10	ddigmd061	gtogmd005	gl1gmd010	lfagmd010	A05	A10	LF	5	10	A10 Balances head while supported
+Ma_LF_A12	Ma_LF_A11	dmcgmd003	gtogmd012	gl1gmd011	lfagmd011	A12	A11	LF	12	11	A11 Sits supported (with help) (2X)
+Ma_LF_A09	Ma_LF_A12	sgrred010	gtogmd009	gl1gmd012	lfagmd012	A09	A12	LF	9	12	A12 Resists object being taken away (2X)
+Ma_LF_A16	Ma_LF_A13	mdtfmd008	gtogmd016	gl1gmd013	lfagmd013	A16	A13	LF	16	13	A13 Sees a small object (2X)
+Ma_LF_A13	Ma_LF_A14	by1pdd023	gtogmd013	gl1gmd014	lfagmd014	A13	A14	LF	13	14	A14 Sits momentarily (on his/her own) (2X)
+Ma_LF_A18	Ma_LF_A15	mdtgmd009	gtogmd018	gl1gmd015	lfagmd015	A18	A15	LF	18	15	A15 Sits without help (short time) (2X)
+Ma_LF_A20	Ma_LF_A16	mdtfmd007	gtogmd020	gl1gmd016	lfagmd016	A20	A16	LF	20	16	A16 Picks object from ground (2X)
+Ma_LF_A15	Ma_LF_A17	by1pdd028	gtogmd015	gl1gmd017	lfagmd017	A15	A17	LF	15	17	A17 Rolls from back to stomach (2X)
+Ma_LF_A22	Ma_LF_A18	mdtgmd010	gtogmd022	gl1gmd018	lfagmd018	A22	A18	LF	22	18	A18 Sits by self well (2X)
+Ma_LF_A17	Ma_LF_A19	denfmd009	gtogmd017	gl1gmd019	lfagmd019	A17	A19	LF	17	19	A19 Rakes (grasps with 3 or 4 fingers) a small object (2X)
+Ma_LF_A19	Ma_LF_A20	sgrgmd022	gtogmd019	gl1gmd020	lfagmd020	A19	A20	LF	19	20	A20 Turns on floor (2X)
+Ma_LF_A26	Ma_LF_A21	kdigmd031	gtogmd026	gl1gmd021	lfagmd021	A26	A21	LF	26	21	A21 Moves from lying to sitting
+Ma_LF_A27	Ma_LF_A22	kdigmd001	gtogmd027	gl1gmd022	lfagmd022	A27	A22	LF	27	22	A22 Stands with support (2X)
+Ma_LF_A14	Ma_LF_A23	by1mdd064	gtogmd014	gl1gmd023	lfagmd023	A14	A23	LF	14	23	A23 Reaches for a second object (2X)
+Ma_LF_A23	Ma_LF_A24	dmcgmd005	gtogmd023	gl1gmd024	lfagmd024	A23	A24	LF	23	24	A24 Crawls (2X)
+Ma_LF_A25	Ma_LF_A25	mdtgmd012	gtogmd025	gl1gmd025	lfagmd025	A25	A25	LF	25	25	A25 Pulls up to standing position (2X)
+Ma_LF_A21	Ma_LF_A26	mdtfmd009	gtogmd021	gl1gmd026	lfagmd026	A21	A26	LF	21	26	A26 Shifts object from 1 hand to the other (2X)
+Ma_LF_A24	Ma_LF_A27	ddifmd010	gtogmd024	gl1gmd027	lfagmd027	A24	A27	LF	24	27	A27 Picks up small object between thumb and finger (2X)
+Ma_LF_A29	Ma_LF_A28	kdigmd005	gtogmd029	gl1gmd028	lfagmd028	A29	A28	LF	29	28	A28 Walks when 1 hand held (2X)
+Ma_LF_A28	Ma_LF_A29	dmcgmd009	gtogmd028	gl1gmd029	lfagmd029	A28	A29	LF	28	29	A29 Stands alone for 5 seconds or more if put in standing position (2X)
+Ma_LF_A30	Ma_LF_A30	ddifmm012	gtogmd030	gl1gmd030	lfagmd030	A30	A30	LF	30	30	"A30 Plays ""give-and-take"" (3X)"
+Ma_LF_A32	Ma_LF_A31	grigmd203	gtogmd032	gl1gmd031	lfagmd031	A32	A31	LF	32	31	A31 Takes few steps alone (2X)
+Ma_LF_A36	Ma_LF_A32	mdtgmd018	gtogmd036	gl1gmd032	lfagmd032	A36	A32	LF	36	32	A32 Walks
+Ma_LF_A37	Ma_LF_A33	mdtgmd019	gtogmd037	gl1gmd033	lfagmd033	A37	A33	LF	37	33	A33 Runs (basic), may fall over (2X)
+Ma_LF_A34	Ma_LF_A34	mdtgmd017	gtogmd034	gl1gmd034	lfagmd034	A34	A34	LF	34	34	A34 Stoops and recovers (2X)
+Ma_LF_A31	Ma_LF_A35	kdifmd002	gtogmd031	gl1gmd035	lfagmd035	A31	A35	LF	31	35	A35 Releases ball purposefully (2X)
+Ma_LF_A38	Ma_LF_A36	mdtgmd021	gtogmd038	gl1gmd036	lfagmd036	A38	A36	LF	38	36	A36 Runs well (2X)
+Ma_LF_A33	Ma_LF_A37	kdigmd003	gtogmd033	gl1gmd037	lfagmd037	A33	A37	LF	33	37	A37 Kicks a ball from stationary position (2X)
+Ma_LF_A39	Ma_LF_A38	mdtgmd024	gtogmd039	gl1gmd038	lfagmd038	A39	A38	LF	39	38	A38 Runs and kicks a ball well (2X)
+Ma_LF_A40	Ma_LF_A39	mdtgmd022	gtogmd040	gl1gmd039	lfagmd039	A40	A39	LF	40	39	A39 Kneels and then stands, without using hands (2X)
+Ma_LF_A45	Ma_LF_A40	mdtgmd031	gtogmd045	gl1gmd040	lfagmd040	A45	A40	LF	45	40	A40 Hops forward on 1 foot 3 steps (2X)
+Ma_LF_A42	Ma_LF_A41	kdigmd008	gtogmd042	gl1gmd041	lfagmd041	A42	A41	LF	42	41	A41 Jumps with both feet together (2X)
+Ma_LF_A43	Ma_LF_A42	mdtgmd029	gtogmd043	gl1gmd042	lfagmd042	A43	A42	LF	43	42	A42 Jumps over a piece of paper (widthways) (2X)
+Ma_LF_A48	Ma_LF_A43	kdigmd015	gtogmd048	gl1gmd043	lfagmd043	A48	A43	LF	48	43	A43 Walks along line heel-to-toe (2X)
+Ma_LF_A41	Ma_LF_A44	mdtgmd023	gtogmd041	gl1gmd044	lfagmd044	A41	A44	LF	41	44	A44 Throws beanbag onto a cloth (3X)
+Ma_LF_A44	Ma_LF_A45	mdtgmd027	gtogmd044	gl1gmd045	lfagmd045	A44	A45	LF	44	45	A45 Stands on 1 foot > 5 seconds (2X)
+Ma_LF_A47	Ma_LF_A46	mdtgmd030	gtogmd047	gl1gmd046	lfagmd046	A47	A46	LF	47	46	A46 Walks on tiptoes 6 or more steps
+Ma_LF_A35	Ma_LF_A47	kdigmd034	gtogmd035	gl1gmd047	lfagmd047	A35	A47	LF	35	47	A47 Moves from sitting to standing without using hands
+Ma_LF_A46	Ma_LF_A48	mdtgmd032	gtogmd046	gl1gmd048	lfagmd048	A46	A48	LF	46	48	A48 Stands on 1 foot > 5 seconds (2X)
+Ma_LF_A49	Ma_LF_A49	mdtgmd033	gtogmd049	gl1gmd049	lfagmd049	A49	A49	LF	49	49	A49 Throws ball up into the air and catches it (3X)
+Ma_LF_B04	Ma_LF_B01	mdtlgd002	gtolgd004	gl1lgd001	lfblgd001	B04	B01	LF	53	50	B1  Makes sounds or vocalizes (2X)
+Ma_LF_B01	Ma_LF_B02	ddicmm029	gtolgd001	gl1lgd002	lfblgd002	B01	B02	LF	50	51	B2  Reacts when spoken to (2X)
+Ma_LF_B02	Ma_LF_B03	ddicmm030	gtolgd002	gl1lgd003	lfblgd003	B02	B03	LF	51	52	B3  Smiles in response (2X)
+Ma_LF_B06	Ma_LF_B04	mdtlgd003	gtolgd006	gl1lgd004	lfblgd004	B06	B04	LF	55	53	B4  Laughs (2X)
+Ma_LF_B03	Ma_LF_B05	mdtsed005	gtolgd003	gl1lgd005	lfblgd005	B03	B05	LF	52	54	B5  Calms and quiets with caregiver
+Ma_LF_B07	Ma_LF_B06	sgrred006	gtolgd007	gl1lgd006	lfblgd006	B07	B06	LF	56	55	B6  Vocalizes when spoken to
+Ma_LF_B05	Ma_LF_B07	denlgd007	gtolgd005	gl1lgd007	lfblgd007	B05	B07	LF	54	56	B7  Turns to voice (2X)
+Ma_LF_B09	Ma_LF_B08	ddicmm034	gtolgd009	gl1lgd008	lfblgd008	B09	B08	LF	58	57	B8  Babbles while playing
+Ma_LF_B08	Ma_LF_B09	dmclgd002	gtolgd008	gl1lgd009	lfblgd009	B08	B09	LF	57	58	B9  Repeats syllables
+Ma_LF_B12	Ma_LF_B10	dmclgd005	gtolgd012	gl1lgd010	lfblgd010	B12	B10	LF	61	59	B10 Uses gestures to communicate
+Ma_LF_B10	Ma_LF_B11	mdtlgd007	gtolgd010	gl1lgd011	lfblgd011	B10	B11	LF	59	60	B11 Uses 2 - 4 syllable babble
+Ma_LF_B13	Ma_LF_B12	by1mdd089	gtolgd013	gl1lgd012	lfblgd012	B13	B12	LF	62	61	B12 Responds to verbal request (2X)
+Ma_LF_B14	Ma_LF_B13	dmclgd006	gtolgd014	gl1lgd013	lfblgd013	B14	B13	LF	63	62	B13 Uses 1 definite word
+Ma_LF_B11	Ma_LF_B14	mdtlgd008	gtolgd011	gl1lgd014	lfblgd014	B11	B14	LF	60	63	B14 Understands when being cautioned (2X)
+Ma_LF_B15	Ma_LF_B15	by1mdd106	gtolgd015	gl1lgd015	lfblgd015	B15	B15	LF	64	64	B15 Imitates simple words (2X)
+Ma_LF_B20	Ma_LF_B16	mdtlgd010	gtolgd020	gl1lgd016	lfblgd016	B20	B16	LF	69	65	B16 Follows simple commands (1 step) (2X)
+Ma_LF_B21	Ma_LF_B17	by2mdd099	gtolgd021	gl1lgd017	lfblgd017	B21	B17	LF	70	66	B17 Points to 2 pictures
+Ma_LF_B18	Ma_LF_B18	ddicmd141	gtolgd018	gl1lgd018	lfblgd018	B18	B18	LF	67	67	B18 Identifies 2 objects you name (2X)
+Ma_LF_B26	Ma_LF_B19	mdtlgd016	gtolgd026	gl1lgd019	lfblgd019	B26	B19	LF	75	68	B19 Identifies 5 objects you name (2X)
+Ma_LF_B17	Ma_LF_B20	by1mdd117	gtolgd017	gl1lgd020	lfblgd020	B17	B20	LF	66	69	B20 Identifies 1 item of clothing
+Ma_LF_B22	Ma_LF_B21	by3red022	gtolgd022	gl1lgd021	lfblgd021	B22	B21	LF	71	70	B21 Identifies 3 items of clothing
+Ma_LF_B29	Ma_LF_B22	mdtlgd018	gtolgd029	gl1lgd022	lfblgd022	B29	B22	LF	78	71	B22 Points to 1 or more body parts (2X)
+Ma_LF_B25	Ma_LF_B23	ddicmd044	gtolgd025	gl1lgd023	lfblgd023	B25	B23	LF	74	72	B23 Points at 5 pictures in book
+Ma_LF_B19	Ma_LF_B24	by3cgd059	gtolgd019	gl1lgd024	lfblgd024	B19	B24	LF	68	73	B24 Shows interest in story
+Ma_LF_B23	Ma_LF_B25	mdtlgd015	gtolgd023	gl1lgd025	lfblgd025	B23	B25	LF	72	74	B25 Follows 2-step commands (2X)
+Ma_LF_B24	Ma_LF_B26	ddicmm041	gtolgd024	gl1lgd026	lfblgd026	B24	B26	LF	73	75	B26 Says sentences with 2 words together
+Ma_LF_B33	Ma_LF_B27	grihsd223	gtolgd033	gl1lgd027	lfblgd027	B33	B27	LF	82	76	B27 Names 4 pictures
+Ma_LF_B16	Ma_LF_B28	grihsd208	gtolgd016	gl1lgd028	lfblgd028	B16	B28	LF	65	77	B28 Uses 5 clear words
+Ma_LF_B32	Ma_LF_B29	by3cgd064	gtolgd032	gl1lgd029	lfblgd029	B32	B29	LF	81	78	B29 Matches pictures
+Ma_LF_B27	Ma_LF_B30	mdtlgd019	gtolgd027	gl1lgd030	lfblgd030	B27	B30	LF	76	79	B30 Names 5 objects (2X)
+Ma_LF_B36	Ma_LF_B31	by3exd029	gtolgd036	gl1lgd031	lfblgd031	B36	B31	LF	85	80	B31 Uses multiple-word utterances
+Ma_LF_B28	Ma_LF_B32	mdtlgd017	gtolgd028	gl1lgd032	lfblgd032	B28	B32	LF	77	81	B32 Speaks clearly in sentences
+Ma_LF_B31	Ma_LF_B33	mdtlgd021	gtolgd031	gl1lgd033	lfblgd033	B31	B33	LF	80	82	B33 Knows actions or functions of 3 or more objects
+Ma_LF_B38	Ma_LF_B34	by3red028	gtolgd038	gl1lgd034	lfblgd034	B38	B34	LF	87	83	B34 Points to parts of whole objects
+Ma_LF_B30	Ma_LF_B35	mdtlgd020	gtolgd030	gl1lgd035	lfblgd035	B30	B35	LF	79	84	B35 Says first name (2X)
+Ma_LF_B35	Ma_LF_B36	mdtlgd023	gtolgd035	gl1lgd036	lfblgd036	B35	B36	LF	84	85	B36 Names 10 objects (2X)
+Ma_LF_B47	Ma_LF_B37	teplgd018	gtolgd047	gl1lgd037	lfblgd037	B47	B37	LF	96	86	"B27 Understands ""more"" (2X)"
+Ma_LF_B43	Ma_LF_B38	teplgd032	gtolgd043	gl1lgd038	lfblgd038	B43	B38	LF	92	87	B38 Identifies 2 or more colours (2X)
+Ma_LF_B45	Ma_LF_B39	grihsd303	gtolgd045	gl1lgd039	lfblgd039	B45	B39	LF	94	88	B39 Knows use of objects (2X)
+Ma_LF_B49	Ma_LF_B40	teplgd031	gtolgd049	gl1lgd040	lfblgd040	B49	B40	LF	98	89	B40 Names at least 2 colours (2X)
+Ma_LF_B34	Ma_LF_B41	by3red029	gtolgd034	gl1lgd041	lfblgd041	B34	B41	LF	83	90	B41 Identifies 5 action pictures
+Ma_LF_B48	Ma_LF_B42	teplgd034	gtolgd048	gl1lgd042	lfblgd042	B48	B42	LF	97	91	B42 Identifies at least 2 shapes (2X)
+Ma_LF_B37	Ma_LF_B43	ddicmm047	gtolgd037	gl1lgd043	lfblgd043	B37	B43	LF	86	92	B43 Talks easily about daily events
+Ma_LF_B42	Ma_LF_B44	teplgd035	gtolgd042	gl1lgd044	lfblgd044	B42	B44	LF	91	93	B44 Describes picture (2X)
+Ma_LF_B39	Ma_LF_B45	teplgd281	gtolgd039	gl1lgd045	lfblgd045	B39	B45	LF	88	94	B45 Gives logical response to a question (2X)
+Ma_LF_B40	Ma_LF_B46	mdtlgd024	gtolgd040	gl1lgd046	lfblgd046	B40	B46	LF	89	95	B46 Categorizes things
+Ma_LF_B41	Ma_LF_B47	by3cgd068	gtolgd041	gl1lgd047	lfblgd047	B41	B47	LF	90	96	B47 Matches 3 colours (2X)
+Ma_LF_B44	Ma_LF_B48	mdtlgd029	gtolgd044	gl1lgd048	lfblgd048	B44	B48	LF	93	97	"B48 Understands adjective ""faster"" (2X)"
+Ma_LF_B46	Ma_LF_B49	by3exd037	gtolgd046	gl1lgd049	lfblgd049	B46	B49	LF	95	98	B49 Names actions (5)
+Ma_LF_B50	Ma_LF_B50	sbiwmd007	gtolgd050	gl1lgd050	lfblgd050	B50	B50	LF	99	99	B50 Taps with 2 blocks
+Ma_LF_B51	Ma_LF_B51	sbiwmd008	gtolgd051	gl1lgd051	lfblgd051	B51	B51	LF	100	100	B51 Taps with 4 blocks
+Ma_LF_B52	Ma_LF_B52	sbiwmd009	gtolgd052	gl1lgd052	lfblgd052	B52	B52	LF	101	101	B52 Taps with 8 blocks
+Ma_LF_C01	Ma_LF_C01	ddifmd001	gtofmd001	gl1fmd001	lfcfmd001	C01	C01	LF	102	102	C1  Fixates eyes (2X)
+Ma_LF_C02	Ma_LF_C02	mdtlgd001	gtofmd002	gl1fmd002	lfcfmd002	C02	C02	LF	103	103	C2  Responds to sound (2X)
+Ma_LF_C03	Ma_LF_C03	mdtfmd002	gtofmd003	gl1fmd003	lfcfmd003	C03	C03	LF	104	104	C3  Fixes and follows - 180 degrees
+Ma_LF_C07	Ma_LF_C04	sgrred018	gtofmd007	gl1fmd004	lfcfmd004	C07	C04	LF	108	105	C4  Manipulates cup OR spoon in play
+Ma_LF_C04	Ma_LF_C05	by1mdd072	gtofmd004	gl1fmd005	lfcfmd005	C04	C05	LF	105	106	C5  Shows interest in making a sound (2X)
+Ma_LF_C06	Ma_LF_C06	by1mdd062	gtofmd006	gl1fmd006	lfcfmd006	C06	C06	LF	107	107	C6  Turns head towards fallen object (2X)
+Ma_LF_C05	Ma_LF_C07	by1mdd058	gtofmd005	gl1fmd007	lfcfmd007	C05	C07	LF	106	108	C7  Discriminates strangers
+Ma_LF_C10	Ma_LF_C08	by1mdd088	gtofmd010	gl1fmd008	lfcfmd008	C10	C08	LF	111	109	C8  Picks up cup to get block
+Ma_LF_C13	Ma_LF_C09	mdtfmd012	gtofmd013	gl1fmd009	lfcfmd009	C13	C09	LF	114	110	C9  Finds toy under cloth (2X)
+Ma_LF_C09	Ma_LF_C10	by1mdd080	gtofmd009	gl1fmd010	lfcfmd010	C09	C10	LF	110	111	C10 Pulls string to get object (2X)
+Ma_LF_C08	Ma_LF_C11	by1mdd073	gtofmd008	gl1fmd011	lfcfmd011	C08	C11	LF	109	112	C11 Lifts cup by the handle (2X)
+Ma_LF_C11	Ma_LF_C12	denfmd014	gtofmd011	gl1fmd012	lfcfmd012	C11	C12	LF	112	113	C12 Puts block in cup (2X)
+Ma_LF_C12	Ma_LF_C13	denfmd013	gtofmd012	gl1fmd013	lfcfmd013	C12	C13	LF	113	114	C13 Bangs 2 objects together
+Ma_LF_C14	Ma_LF_C14	by1mdd104	gtofmd014	gl1fmd014	lfcfmd014	C14	C14	LF	115	115	C14 Pats toy to make noise (2X
+Ma_LF_C17	Ma_LF_C15	dmcfmd009	gtofmd017	gl1fmd015	lfcfmd015	C17	C15	LF	118	116	C15 Makes marks with crayon (2X)
+Ma_LF_C15	Ma_LF_C16	by1mdd100	gtofmd015	gl1fmd016	lfcfmd016	C15	C16	LF	116	117	C16 Puts 3 or more blocks in cup
+Ma_LF_C23	Ma_LF_C17	mdtfmd016	gtofmd023	gl1fmd017	lfcfmd017	C23	C17	LF	124	118	C17 Puts blocks in jar
+Ma_LF_C21	Ma_LF_C18	by1mdd108	gtofmd021	gl1fmd018	lfcfmd018	C21	C18	LF	122	119	C18 Puts 1 peg in again (2X)
+Ma_LF_C20	Ma_LF_C19	denfmd015	gtofmd020	gl1fmd019	lfcfmd019	C20	C19	LF	121	120	C19 Scribbles in any way (2X)
+Ma_LF_C22	Ma_LF_C20	gricgd023	gtofmd022	gl1fmd020	lfcfmd020	C22	C20	LF	123	121	C20 Accepts third block without dropping (2X)
+Ma_LF_C27	Ma_LF_C21	by3cgd048	gtofmd027	gl1fmd021	lfcfmd021	C27	C21	LF	128	122	C21 Uses objects in play by him-/herself (2X)
+Ma_LF_C18	Ma_LF_C22	dmcsld019	gtofmd018	gl1fmd022	lfcfmd022	C18	C22	LF	119	123	C22 Manages a cup well
+Ma_LF_C19	Ma_LF_C23	by1mdd098	gtofmd019	gl1fmd023	lfcfmd023	C19	C23	LF	120	124	C23 Holds crayon with fingers, not fist (2X)
+Ma_LF_C16	Ma_LF_C24	by1mdd097	gtofmd016	gl1fmd024	lfcfmd024	C16	C24	LF	117	125	C24 Repeats something when encouraged (2X)
+Ma_LF_C25	Ma_LF_C25	mdtfmd017	gtofmd025	gl1fmd025	lfcfmd025	C25	C25	LF	126	126	C25 Dumps blocks out of jar purposefully (2X)
+Ma_LF_C24	Ma_LF_C26	ddifmd013	gtofmd024	gl1fmd026	lfcfmd026	C24	C26	LF	125	127	C26 Builds tower of 2 blocks (2X)
+Ma_LF_C32	Ma_LF_C27	mdtfmd021	gtofmd032	gl1fmd027	lfcfmd027	C32	C27	LF	133	128	C27 Puts pegs in board < 2 minutes (2X)
+Ma_LF_C28	Ma_LF_C28	by1mdd119	gtofmd028	gl1fmd028	lfcfmd028	C28	C28	LF	129	129	C28 Builds tower of 3 blocks (2X)
+Ma_LF_C26	Ma_LF_C29	by1mdd131	gtofmd026	gl1fmd029	lfcfmd029	C26	C29	LF	127	130	C29 Finds object under 2 alternating cups (3X)
+Ma_LF_C33	Ma_LF_C30	gricgd213	gtofmd033	gl1fmd030	lfcfmd030	C33	C30	LF	134	131	C30 Inserts 2 shapes in board (2X)
+Ma_LF_C35	Ma_LF_C31	by3cgd056	gtofmd035	gl1fmd031	lfcfmd031	C35	C31	LF	136	132	C31 Inserts 3 shapes in board in 2 minutes (2X)
+Ma_LF_C31	Ma_LF_C32	by3cgd053	gtofmd031	gl1fmd032	lfcfmd032	C31	C32	LF	132	133	C32 Uses objects in play with someone (2X)
+Ma_LF_C30	Ma_LF_C33	mdtfmd019	gtofmd030	gl1fmd033	lfcfmd033	C30	C33	LF	131	134	C33 Scribbles on paper (circular scribble)
+Ma_LF_C37	Ma_LF_C34	mdtfmd023	gtofmd037	gl1fmd034	lfcfmd034	C37	C34	LF	138	135	C34 Builds tower of 6 blocks (2X)
+Ma_LF_C29	Ma_LF_C35	mdtfmd022	gtofmd029	gl1fmd035	lfcfmd035	C29	C35	LF	130	136	"C35 Understands the concept of ""1"" (2X)"
+Ma_LF_C36	Ma_LF_C36	by3cgd060	gtofmd036	gl1fmd036	lfcfmd036	C36	C36	LF	137	137	C36 Inserts 3 shapes in rotated board in 2 minutes (2X)
+Ma_LF_C43	Ma_LF_C37	by3fmd044	gtofmd043	gl1fmd037	lfcfmd037	C43	C37	LF	144	138	C37 Builds truck/lorry of blocks (2X)
+Ma_LF_C40	Ma_LF_C38	mdtfmd025	gtofmd040	gl1fmd038	lfcfmd038	C40	C38	LF	141	139	C38 Unscrews and screws lid of jar (2X)
+Ma_LF_C41	Ma_LF_C39	by3cgd065	gtofmd041	gl1fmd039	lfcfmd039	C41	C39	LF	142	140	C39 Engages in representational play
+Ma_LF_C39	Ma_LF_C40	sbivsd003	gtofmd039	gl1fmd040	lfcfmd040	C39	C40	LF	140	141	C40 Inserts 3 shapes in 15 seconds (2X)
+Ma_LF_C42	Ma_LF_C41	by3cgd067	gtofmd042	gl1fmd041	lfcfmd041	C42	C41	LF	143	142	C41 Copies 2-part activity (3X)
+Ma_LF_C38	Ma_LF_C42	mdtfmd024	gtofmd038	gl1fmd042	lfcfmd042	C38	C42	LF	139	143	C42 Puts pegs in board in < 30 seconds (2X)
+Ma_LF_C45	Ma_LF_C43	griehd301	gtofmd045	gl1fmd043	lfcfmd043	C45	C43	LF	146	144	C43 Draws horizontal line (2X)
+Ma_LF_C34	Ma_LF_C44	by3cgd089	gtofmd034	gl1fmd044	lfcfmd044	C34	C44	LF	135	145	"C44 Understands ""more"" (3X-5X)"
+Ma_LF_C44	Ma_LF_C45	ddifmd023	gtofmd044	gl1fmd045	lfcfmd045	C44	C45	LF	145	146	C45 Imitates building bridge (2X)
+Ma_LF_C46	Ma_LF_C46	mdtfmd028	gtofmd046	gl1fmd046	lfcfmd046	C46	C46	LF	147	147	C46 Picks longest stick 3 of 3 (3X-5X)
+Ma_LF_C49	Ma_LF_C47	ddifmd026	gtofmd049	gl1fmd047	lfcfmd047	C49	C47	LF	150	148	C47 Copies a circle
+Ma_LF_C48	Ma_LF_C48	by3fmd050	gtofmd048	gl1fmd048	lfcfmd048	C48	C48	LF	149	149	C48 Builds wall of blocks (2X)
+Ma_LF_C51	Ma_LF_C49	by3cgd073	gtofmd051	gl1fmd049	lfcfmd049	C51	C49	LF	152	150	C49 Understands concept of size (2X)
+Ma_LF_C47	Ma_LF_C50	mdtlgd031	gtofmd047	gl1fmd050	lfcfmd050	C47	C50	LF	148	151	C50 Understands prepositions (2X)
+Ma_LF_C50	Ma_LF_C51	mdtfmd033	gtofmd050	gl1fmd051	lfcfmd051	C50	C51	LF	151	152	C51 Copies a cross or plus sign (2X)
+Ma_LF_C54	Ma_LF_C52	mdtlgd033	gtofmd054	gl1fmd052	lfcfmd052	C54	C52	LF	155	153	C52 Counts 3 or more objects
+Ma_LF_C53	Ma_LF_C53	mdtfmd034	gtofmd053	gl1fmd053	lfcfmd053	C53	C53	LF	154	154	C53 Copies a square (2X)
+Ma_LF_C52	Ma_LF_C54	denfmd024	gtofmd052	gl1fmd054	lfcfmd054	C52	C54	LF	153	155	C54 Draws 3 or more body parts
+Ma_SF_C04	Ma_SF_C01	mdtsed001	gpasec004	gs1sec001	sf_sec001	SF004	SF001	SF	4	1	SF001 Does your child smile?
+Ma_SF_C06	Ma_SF_C02	cromoc008	gpamoc006	gs1moc002	sf_moc002	SF006	SF002	SF	6	2	SF002 When lying on his/her back, does your child move his/her arms and legs?
+Ma_SF_C15	Ma_SF_C03	crosec002	gpasec015	gs1sec003	sf_sec003	SF015	SF003	SF	15	3	SF003 Does your child look at your face when you speak to him/her?
+Ma_SF_C01	Ma_SF_C04	gsdlac001	gpalac001	gs1lgc004	sf_lgc004	SF001	SF004	SF	1	4	SF004 Does your child cry when he/she is hungry, wet, tired, or wants to be held?
+Ma_SF_C03	Ma_SF_C05	gsdfmc003	gpafmc003	gs1moc005	sf_moc005	SF003	SF005	SF	3	5	SF005 Does your child grasp your finger if you touch her hand?
+Ma_SF_C02	Ma_SF_C06	gsdcgc002	gpacgc002	gs1cgc006	sf_cgc006	SF002	SF006	SF	2	6	SF006 Does your child look at and focus on objects in front of him/her?
+Ma_SF_C11	Ma_SF_C07	cromoc007	gpamoc011	gs1moc007	sf_moc007	SF011	SF007	SF	11	7	SF007 Does your child bring his/her hand to his/her mouth?
+Ma_SF_C05	Ma_SF_C08	iyomoc001	gpamoc005	gs1moc008	sf_moc008	SF005	SF008	SF	5	8	SF008 Does your child try to move his/her head (or eyes) to follow an object or person?
+Ma_SF_C10	Ma_SF_C09	iyosec004	gpasec010	gs1sec009	sf_sec009	SF010	SF009	SF	10	9	SF009 Does your child smile when you smile or talk with him/her?
+Ma_SF_C07	Ma_SF_C10	croclc001	gpaclc007	gs1lgc010	sf_lgc010	SF007	SF010	SF	7	10	SF010 Does your child look at a person when that person starts talking or making noise?
+Ma_SF_C16	Ma_SF_C11	iyosec001	gpasec016	gs1sec011	sf_sec011	SF016	SF011	SF	16	11	SF011 Does your child stop crying or calm down when you come to the room after being out of sight, or when you pick him or her up?
+Ma_SF_C12	Ma_SF_C12	iyolgc002	gpalgc012	gs1lgc012	sf_lgc012	SF012	SF012	SF	12	12	SF012 When you talk to your child, does he/she smile, make noises, or move arms, legs or trunk in response?
+Ma_SF_C14	Ma_SF_C13	iyosec002	gpasec014	gs1sec013	sf_sec013	SF014	SF013	SF	14	13	SF013 When you are about to pick up your child, does he/she act happy or excited?
+Ma_SF_C21	Ma_SF_C14	iyolgc001	gpalgc021	gs1lgc014	sf_lgc014	SF021	SF014	SF	21	14	SF014 Does your child turn his/her head towards your voice or some noise?
+Ma_SF_C26	Ma_SF_C15	cromoc006	gpamoc026	gs1moc015	sf_moc015	SF026	SF015	SF	26	15	SF015 Does your child grasp onto a small object (e.g., your finger, a spoon) when put in his/her hand?
+Ma_SF_C09	Ma_SF_C16	gsdlac004	gpalac009	gs1lgc016	sf_lgc016	SF009	SF016	SF	9	16	SF016 Does your child make sounds other than crying?
+Ma_SF_C20	Ma_SF_C17	crosec004	gpasec020	gs1sec017	sf_sec017	SF020	SF017	SF	20	17	SF017 Does your child sometimes suck his/her thumb or fingers?
+Ma_SF_C17	Ma_SF_C18	iyomoc002	gpamoc017	gs1moc018	sf_moc018	SF017	SF018	SF	17	18	SF018 While your child is on his/her back, can he/she bring his/her hands together such that hands touch each other ?
+Ma_SF_C25	Ma_SF_C19	iyosec005	gpasec025	gs1sec019	sf_sec019	SF025	SF019	SF	25	19	SF019 Does your child move excitedly, kick legs, move arms or trunk, or make coo noises when a known person enters the room or speaks to them?
+Ma_SF_C19	Ma_SF_C20	iyolgc005	gpalgc019	gs1lgc020	sf_lgc020	SF019	SF020	SF	19	20	SF020 Does your child make noise or gesture to get your attention?
+Ma_SF_C31	Ma_SF_C21	iyosec003	gpasec031	gs1sec021	sf_sec021	SF031	SF021	SF	31	21	SF021 If you play a game with your child, does he/she respond with interest? For example, if you play peek-a-boo, pat-a-cake, wave bye-bye, etc. does your child smile, widen their eyes, kick or move arms or vocalize?
+Ma_SF_C33	Ma_SF_C22	croclc014	gpaclc033	gs1sec022	sf_sec022	SF033	SF022	SF	33	22	SF022 Does your child recognize you or other family members (e.g., smile when they enter a room or move toward them)?
+Ma_SF_C23	Ma_SF_C23	croclc006	gpaclc023	gs1lgc023	sf_lgc023	SF023	SF023	SF	23	23	SF023 Does your child laugh?
+Ma_SF_C32	Ma_SF_C24	crosec003	gpasec032	gs1sec024	sf_sec024	SF032	SF024	SF	32	24	SF024 Does your child smile or become excited when seeing someone familiar?
+Ma_SF_C13	Ma_SF_C25	gsdgmc005	gpagmc013	gs1moc025	sf_moc025	SF013	SF025	SF	13	25	SF025 When your child is on his/her stomach, can he/she turn his/her head to the side?
+Ma_SF_C22	Ma_SF_C26	iyolgc003	gpalgc022	gs1lgc026	sf_lgc026	SF022	SF026	SF	22	26	SF026 Does your child make sounds other than crying when LOOKING at toys or people?
+Ma_SF_C45	Ma_SF_C27	iyosec006	gpasec045	gs1sec027	sf_sec027	SF045	SF027	SF	45	27	SF027 Is your child interested when he/she sees other children playing? Does she or he watch, smile, or look excited?
+Ma_SF_C08	Ma_SF_C28	cromoc001	gpamoc008	gs1moc028	sf_moc028	SF008	SF028	SF	8	28	SF028 Does your child hold his/her hands in fists all the time?
+Ma_SF_C24	Ma_SF_C29	iyomoc004	gpamoc024	gs1moc029	sf_moc029	SF024	SF029	SF	24	29	SF029 Can your child hold his/her head steady for at least a few seconds, without it flopping to the side?
+Ma_SF_C37	Ma_SF_C30	cromoc002	gpamoc037	gs1moc030	sf_moc030	SF037	SF030	SF	37	30	SF030 When held in a sitting position, can the child hold his/her head steady and straight?
+Ma_SF_C18	Ma_SF_C31	gsdgmc006	gpagmc018	gs1moc031	sf_moc031	SF018	SF031	SF	18	31	SF031 When your child is on his/her stomach, can he/she hold his/her head up off the ground?
+Ma_SF_C34	Ma_SF_C32	croclc004	gpaclc034	gs1cgc032	sf_cgc032	SF034	SF032	SF	34	32	SF032 Does your child show interest in new objects that are put in front of him/her by reaching out for them?
+Ma_SF_C29	Ma_SF_C33	iyomoc005	gpamoc029	gs1moc033	sf_moc033	SF029	SF033	SF	29	33	SF033 When he/she is on his/her tummy, can your child hold his/her head straight up, looking around for more than a few seconds? He/she can rest on his/her arms while doing this.
+Ma_SF_C30	Ma_SF_C34	gsdgmc007	gpagmc030	gs1moc034	sf_moc034	SF030	SF034	SF	30	34	SF034 Can your child roll from his/her back to stomach or stomach to his/her side?
+Ma_SF_C35	Ma_SF_C35	iyomoc007	gpamoc035	gs1moc035	sf_moc035	SF035	SF035	SF	35	35	SF035 Can your child reach for AND HOLD an object, at least for a few seconds?
+Ma_SF_C39	Ma_SF_C36	mdtsed006	gpasec039	gs1lic036	sf_lic036	SF039	SF036	SF	39	36	SF036 Can your child eat food from your fingers or off a spoon you hold?
+Ma_SF_C27	Ma_SF_C37	iyolgc004	gpalgc027	gs1lgc037	sf_lgc037	SF027	SF037	SF	27	37	"SF037 Does your child make single sounds like ""buh"" or ""duh"" or ""muh""?"
+Ma_SF_C44	Ma_SF_C38	iyomoc008	gpamoc044	gs1moc038	sf_moc038	SF044	SF038	SF	44	38	SF038 Can your child sit with support, either leaning against something (furniture or person), or by leaning forward on his or her hands?
+Ma_SF_C28	Ma_SF_C39	iyomoc006	gpamoc028	gs1moc039	sf_moc039	SF028	SF039	SF	28	39	SF039 Does your child try to reach for objects that are in front of him/her by extending one or both arms?
+Ma_SF_C40	Ma_SF_C40	cromoc012	gpamoc040	gs1moc040	sf_moc040	SF040	SF040	SF	40	40	SF040 Can your child pick up a small object (e.g., a small toy or small stone) using just one hand?
+Ma_SF_C42	Ma_SF_C41	cromoc005	gpamoc042	gs1moc041	sf_moc041	SF042	SF041	SF	42	41	SF041 When lying on his/her stomach, can your child hold his/her head and chest off the ground using only his/her hands and arms for support?
+Ma_SF_C41	Ma_SF_C42	iyomoc009	gpamoc041	gs1cgc042	sf_cgc042	SF041	SF042	SF	41	42	SF042 If an object falls to the ground out of view, does your child look for it?
+Ma_SF_C43	Ma_SF_C43	cromoc009	gpamoc043	gs1moc043	sf_moc043	SF043	SF043	SF	43	43	SF043 When lying on his/her back, does the child grab his/her feet?
+Ma_SF_C38	Ma_SF_C44	cromoc010	gpamoc038	gs1moc044	sf_moc044	SF038	SF044	SF	38	44	SF044 Can your child roll from his/her back to stomach, or stomach to back, on his/her own?
+Ma_SF_C47	Ma_SF_C45	croclc007	gpaclc047	gs1moc045	sf_moc045	SF047	SF045	SF	47	45	SF045 Does your child play by tapping an object on the ground or a table?
+Ma_SF_C46	Ma_SF_C46	croclc008	gpaclc046	gs1cgc046	sf_cgc046	SF046	SF046	SF	46	46	SF046 Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)?
+Ma_SF_C49	Ma_SF_C47	cromoc011	gpamoc049	gs1moc047	sf_moc047	SF049	SF047	SF	49	47	SF047 Can your child hold him/herself in a sitting position without help or support for longer than a few seconds?
+Ma_SF_C48	Ma_SF_C48	croclc011	gpaclc048	gs1moc048	sf_moc048	SF048	SF048	SF	48	48	SF048 Does your child intentionally move or change his/her position to get objects that are out of reach?
+Ma_SF_C51	Ma_SF_C49	iyolgc006	gpalgc051	gs1lgc049	sf_lgc049	SF051	SF049	SF	51	49	SF049 Does your child make two similar sounds together like baba, mumu, pepe, didi (single consonant vowel combinations)?
+Ma_SF_C36	Ma_SF_C50	aqigmc012	gpagmc036	gs1moc050	sf_moc050	SF036	SF050	SF	36	50	SF050 When you put your child on the floor, can she lean on her hands while sitting?
+Ma_SF_C52	Ma_SF_C51	iyomoc012	gpamoc052	gs1moc051	sf_moc051	SF052	SF051	SF	52	51	SF051 Can your child pass a small object from one hand to the other?
+Ma_SF_C50	Ma_SF_C52	iyomoc011	gpamoc050	gs1moc052	sf_moc052	SF050	SF052	SF	50	52	SF052 Can your child bang objects together, or bang an object on the table or on the ground?
+Ma_SF_C64	Ma_SF_C53	mdtsed012	gpasec064	gs1lic053	sf_lic053	SF064	SF053	SF	64	53	SF053 Can your child pick up small bits of food and feed him/her-self using his/her hand?
+Ma_SF_C58	Ma_SF_C54	cromoc022	gpamoc058	gs1moc054	sf_moc054	SF058	SF054	SF	58	54	SF054 Can your child pick up and drop a small object (e.g., a small toy or small stone) into a bucket or bowl while sitting?
+Ma_SF_C54	Ma_SF_C55	cromoc015	gpamoc054	gs1moc055	sf_moc055	SF054	SF055	SF	54	55	SF055 Can your child maintain a standing position while holding on to a person or object (e.g., wall or furniture)?
+Ma_SF_C53	Ma_SF_C56	cromoc019	gpamoc053	gs1moc056	sf_moc056	SF053	SF056	SF	53	56	SF056 Can your child pick up a small object (e.g., a piece of food, small toy or small stone) with just his/her thumb and one finger?
+Ma_SF_C56	Ma_SF_C57	iyomoc016	gpamoc056	gs1moc057	sf_moc057	SF056	SF057	SF	56	57	SF057 Can your child pull themselves up from the floor while holding onto something? For example, can they pull themselves up using a chair, a person, or some other object?
+Ma_SF_C59	Ma_SF_C58	crosec014	gpalgc059	gs1lgc058	sf_lgc058	SF059	SF058	SF	59	58	"SF058 Does your child stop what he/she is doing when you say ""Stop!"" even if just for a second?"
+Ma_SF_C60	Ma_SF_C59	cromoc018	gpamoc060	gs1moc059	sf_moc059	SF060	SF059	SF	60	59	SF059 Can your child walk several steps while holding on to a person or object (e.g., wall or furniture)?
+Ma_SF_C55	Ma_SF_C60	aqigmc021	gpagmc055	gs1moc060	sf_moc060	SF055	SF060	SF	55	60	SF060 While holding onto furniture, can your child bend down and pick up a small object from the floor and then return to a standing position?
+Ma_SF_C57	Ma_SF_C61	aqigmc020	gpagmc057	gs1moc061	sf_moc061	SF057	SF061	SF	57	61	SF061 While holding onto furniture, does your child squat with control (without falling or flopping down)?
+Ma_SF_C68	Ma_SF_C62	mdtlgd009	gpalgc068	gs1lgc062	sf_lgc062	SF068	SF062	SF	68	62	"SF062 Does your child make a gesture to indicate ""No"" (e.g., shaking head)?"
+Ma_SF_C82	Ma_SF_C63	mdtsed016	gpasec082	gs1sec063	sf_sec063	SF082	SF063	SF	82	63	SF063 Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?
+Ma_SF_C61	Ma_SF_C64	iyomoc020	gpamoc061	gs1moc064	sf_moc064	SF061	SF064	SF	61	64	SF064 Can your child stand up without holding onto anything, even if just for a few seconds?
+Ma_SF_C75	Ma_SF_C65	mdtsed013	gpasec075	gs1lic065	sf_lic065	SF075	SF065	SF	75	65	SF065 Does your child put his/her hands out to have them washed?
+Ma_SF_C62	Ma_SF_C66	cromoc017	gpamoc062	gs1moc066	sf_moc066	SF062	SF066	SF	62	66	SF066 Can your child maintain a standing position on his/her own, without holding on or receiving support?
+Ma_SF_C74	Ma_SF_C67	vinxxc007	gpaxxc074	gs1lic067	sf_lic067	SF074	SF067	SF	74	67	SF067 Can your child drink from an open cup without help?
+Ma_SF_C65	Ma_SF_C68	iyomoc022	gpamoc065	gs1moc068	sf_moc068	SF065	SF068	SF	65	68	SF068 Can your child climb onto an object (rock, porch, step, chair, bed, low table, etc.)?
+Ma_SF_C63	Ma_SF_C69	iyomoc021	gpamoc063	gs1moc069	sf_moc069	SF063	SF069	SF	63	69	SF069 Can your child make any light marks on paper or in dirt with a crayon or a stick?
+Ma_SF_C70	Ma_SF_C70	iyomoc023	gpamoc070	gs1moc070	sf_moc070	SF070	SF070	SF	70	70	SF070 Can your child bend down or squat to pick up an object from the floor and then stand up again, without help from a person or object?
+Ma_SF_C72	Ma_SF_C71	iyolgc013	gpalgc072	gs1lgc071	sf_lgc071	SF072	SF071	SF	72	71	SF071 Can your child follow a simple spoken command or direction without you making a gesture?
+Ma_SF_C73	Ma_SF_C72	vinxxc006	gpaxxc073	gs1lgc072	sf_lgc072	SF073	SF072	SF	73	72	SF072 Can your child fetch something when asked?
+Ma_SF_C86	Ma_SF_C73	mdtsed018	gpasec086	gs1sec073	sf_sec073	SF086	SF073	SF	86	73	SF073 Does your child share with others (e.g., food)?
+Ma_SF_C66	Ma_SF_C74	iyomoc024	gpamoc066	gs1moc074	sf_moc074	SF066	SF074	SF	66	74	SF074 Can your child take several steps (3-5) forward without holding onto any person or object, even if they fall down immediately afterward?
+Ma_SF_C76	Ma_SF_C75	iyomoc028	gpamoc076	gs1moc075	sf_moc075	SF076	SF075	SF	76	75	SF075 While standing, can your child purposefully throw the ball and not just drop it?
+Ma_SF_C69	Ma_SF_C76	aqigmc026	gpagmc069	gs1moc076	sf_moc076	SF069	SF076	SF	69	76	SF076 Can your child stand up from sitting by himself and take several steps forward?
+Ma_SF_C94	Ma_SF_C77	mdtsed021	gpasec094	gs1lic077	sf_lic077	SF094	SF077	SF	94	77	SF077 Can your child break off a piece of food and feed it to him/her-self?
+Ma_SF_C71	Ma_SF_C78	iyomoc025	gpamoc071	gs1moc078	sf_moc078	SF071	SF078	SF	71	78	SF078 Can your child make a scribble on paper, or in dirt, in a back and forth manner? For example, can he or she move the pen or pencil or stick back and forth?
+Ma_SF_C67	Ma_SF_C79	aqigmc027	gpagmc067	gs1moc079	sf_moc079	SF067	SF079	SF	67	79	SF079 Can your child move around by walking, rather than by crawling on his hands and knees?
+Ma_SF_C77	Ma_SF_C80	iyomoc027	gpamoc077	gs1moc080	sf_moc080	SF077	SF080	SF	77	80	SF080 Can your child walk well, with coordination, without falling down often? With one foot in front of the other (rather than shifting weight side to side, stiff- legged)?
+Ma_SF_C78	Ma_SF_C81	iyomoc030	gpamoc078	gs1moc081	sf_moc081	SF078	SF081	SF	78	81	SF081 Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?
+Ma_SF_C85	Ma_SF_C82	mdtsed017	gpasec085	gs1sec082	sf_sec082	SF085	SF082	SF	85	82	"SF082 Can your child greet people either by giving his/her hand or saying ""hello""? (use local examples of greeting)"
+Ma_SF_C79	Ma_SF_C83	cromoc025	gpamoc079	gs1moc083	sf_moc083	SF079	SF083	SF	79	83	SF083 Can your child kick a ball or other round object forward using his/her foot?
+Ma_SF_C89	Ma_SF_C84	croclc023	gpaclc089	gs1lgc084	sf_lgc084	SF089	SF084	SF	89	84	"SF084 Can your child say five or more separate words (e.g., names like ""Mama"" or objects like ""ball"")?"
+Ma_SF_C81	Ma_SF_C85	iyolgc017	gpalgc081	gs1cgc085	sf_cgc085	SF081	SF085	SF	81	85	SF085 Can your child follow directions with more than one step? For example, 'Go to the kitchen and bring me a spoon'?
+Ma_SF_C96	Ma_SF_C86	croclc028	gpaclc096	gs1lgc086	sf_lgc086	SF096	SF086	SF	96	86	SF086 Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)?
+Ma_SF_C99	Ma_SF_C87	iyolgc022	gpalgc099	gs1lgc087	sf_lgc087	SF099	SF087	SF	99	87	SF087 Can your child identify at least seven objects? For example, when you ask 'where is the ball/spoon/cup/cloth/door/plate/bucket etc.' does your child look at or point to (or even name) the objects?
+Ma_SF_C93	Ma_SF_C88	croclc025	gpaclc093	gs1lgc088	sf_lgc088	SF093	SF088	SF	93	88	SF088 Can your child ask for something (e.g., food, water) by name when he/she wants it?
+Ma_SF_C84	Ma_SF_C89	iyomoc032	gpamoc084	gs1moc089	sf_moc089	SF084	SF089	SF	84	89	SF089 Can your child run well, without falling or bumping into objects?
+Ma_SF_C92	Ma_SF_C90	vinxxc048	gpaxxc092	gs1lic090	sf_lic090	SF092	SF090	SF	92	90	SF090 Can your child wash hands by him/herself?
+Ma_SF_C80	Ma_SF_C91	iyomoc031	gpamoc080	gs1moc091	sf_moc091	SF080	SF091	SF	80	91	SF091 While standing, can your child kick a ball by swinging his/her leg forward?
+Ma_SF_C87	Ma_SF_C92	vinxxc021	gpaxxc087	gs1lic092	sf_lic092	SF087	SF092	SF	87	92	SF092 Does your child dry hands by herself/himself after you have washed them?
+Ma_SF_C95	Ma_SF_C93	mdtsed023	gpasec095	gs1sec093	sf_sec093	SF095	SF093	SF	95	93	SF093 Does your child show independence (e.g., wants to go and visit a friend's house)?
+Ma_SF_C101	Ma_SF_C94	croclc034	gpaclc101	gs1lgc094	sf_lgc094	SF101	SF094	SF	101	94	SF094 If you show your child an object he/she knows well (e.g., a cup or animal), can he/she consistently name it?
+Ma_SF_C83	Ma_SF_C95	cromoc029	gpamoc083	gs1moc095	sf_moc095	SF083	SF095	SF	83	95	SF095 Can your child stack three or more small objects (e.g., blocks, cups, bottle caps) on top of each other?
+Ma_SF_C97	Ma_SF_C96	cromoc031	gpamoc097	gs1moc096	sf_moc096	SF097	SF096	SF	97	96	SF096 Can your child walk on an uneven surface (e.g., a bumpy or steep road) without falling?
+Ma_SF_C102	Ma_SF_C97	iyolgc023	gpalgc102	gs1lgc097	sf_lgc097	SF102	SF097	SF	102	97	SF097 Does your child usually communicate with words what he/she wants in a way that is understandable to others?
+Ma_SF_C90	Ma_SF_C98	aqicmc033	gpacmc090	gs1lgc098	sf_lgc098	SF090	SF098	SF	90	98	"SF098 Can your child say ten or more words in addition to ""Mama"" and ""Dada""?"
+Ma_SF_C98	Ma_SF_C99	iyolgc021	gpalgc098	gs1lgc099	sf_lgc099	SF098	SF099	SF	98	99	"SF099 When looking at pictures, if you say to your child ""what is this?"", can they say the name of the object that you point to?"
+Ma_SF_C91	Ma_SF_C100	croclc024	gpaclc091	gs1lgc100	sf_lgc100	SF091	SF100	SF	91	100	SF100 Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?
+Ma_SF_C110	Ma_SF_C101	cromoc033	gpamoc110	gs1moc101	sf_moc101	SF110	SF101	SF	110	101	SF101 Can your child unscrew the lid from a bottle or jar?
+Ma_SF_C130	Ma_SF_C102	mdtsed029	gpasec130	gs1sec102	sf_sec102	SF130	SF102	SF	130	102	SF102 Does your child help out around the house with simple chores, even if he/she doesn't do them well? (use local examples of chores)
+Ma_SF_C88	Ma_SF_C103	mdtsed019	gpasec088	gs1lic103	sf_lic103	SF088	SF103	SF	88	103	SF103 Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?
+Ma_SF_C112	Ma_SF_C104	croclc029	gpaclc112	gs1lgc104	sf_lgc104	SF112	SF104	SF	112	104	"SF104 Can your child speak using sentences of three or more words that go together (e.g., ""I want water"" or ""The house is big"")?"
+Ma_SF_C100	Ma_SF_C105	croclc038	gpaclc100	gs1lgc105	sf_lgc105	SF100	SF105	SF	100	105	SF105 Can your child name at least two body parts (e.g., arm, eye, or nose)?
+Ma_SF_C104	Ma_SF_C106	cromoc035	gpamoc104	gs1lic106	sf_lic106	SF104	SF106	SF	104	106	SF106 Can your child remove an item of clothing (e.g., take off his/her shirt)?
+Ma_SF_C105	Ma_SF_C107	croclc027	gpaclc105	gs1lgc107	sf_lgc107	SF105	SF107	SF	105	107	"SF107 Can your child say 15 or more separate words (e.g., names like ""Mama"" or objects like ""ball"")?"
+Ma_SF_C106	Ma_SF_C108	cromoc034	gpamoc106	gs1moc108	sf_moc108	SF106	SF108	SF	106	108	SF108 Can your child jump with both feet leaving the ground?
+Ma_SF_C108	Ma_SF_C109	croclc032	gpaclc108	gs1lgc109	sf_lgc109	SF108	SF109	SF	108	109	SF109 Can your child tell you or someone familiar his/her own name [nickname] when asked to?
+Ma_SF_C115	Ma_SF_C110	croclc042	gpaclc115	gs1lgc110	sf_lgc110	SF115	SF110	SF	115	110	"SF110 Can your child correctly ask questions using any of the words ""what"", ""which"", ""where"", or ""who""?"
+Ma_SF_C137	Ma_SF_C111	mdtsed032	gpasec137	gs1sec111	sf_sec111	SF137	SF111	SF	137	111	SF111 Does your child show respect around elders?
+Ma_SF_C113	Ma_SF_C112	croclc031	gpaclc113	gs1lgc112	sf_lgc112	SF113	SF112	SF	113	112	"SF112 Can your child correctly use any of the words ""I,"" ""you,"" ""she,"" or ""he"" (e.g., ""I go to store,"" or ""He eats rice"")?"
+Ma_SF_C107	Ma_SF_C113	croclc037	gpaclc107	gs1lgc113	sf_lgc113	SF107	SF113	SF	107	113	SF113 Can your child sing a short song or repeat parts of a rhyme from memory by him/herself?
+Ma_SF_C111	Ma_SF_C114	iyolgc026	gpalgc111	gs1cgc114	sf_cgc114	SF111	SF114	SF	111	114	"SF114 Does your child know the difference between the words ""big"" and ""small""? For example, if you ask, ""Give me the big spoon"" can your child understand which one to give if there are two different sizes?"
+Ma_SF_C116	Ma_SF_C115	croclc046	gpaclc116	gs1lgc115	sf_lgc115	SF116	SF115	SF	116	115	SF115 Does your child pronounce most of his/her words correctly?
+Ma_SF_C134	Ma_SF_C116	mdtsed033	gpasec134	gs1lic116	sf_lic116	SF134	SF116	SF	134	116	SF116 Can your child go to the toilet by him/her-self?
+Ma_SF_C120	Ma_SF_C117	croclc049	gpaclc120	gs1lgc117	sf_lgc117	SF120	SF117	SF	120	117	"SF117 If you point to an object, can your child correctly use the words ""on,"" ""in,"" or ""under"" to describe where it is (e.g., ""The cup is on the table"" instead of ""The cup is in the table."")"
+Ma_SF_C109	Ma_SF_C118	mdtsed026	gpasec109	gs1lic118	sf_lic118	SF109	SF118	SF	109	118	SF118 Can your child put on at least one piece of clothing by himself?
+Ma_SF_C119	Ma_SF_C119	croclc039	gpaclc119	gs1lgc119	sf_lgc119	SF119	SF119	SF	119	119	SF119 Can your child explain in words what common objects like a cup or chair are used for?
+Ma_SF_C103	Ma_SF_C120	iyomoc037	gpamoc103	gs1moc120	sf_moc120	SF103	SF120	SF	103	120	SF120 Can your child draw a straight line?
+Ma_SF_C114	Ma_SF_C121	crosec042	gpasec114	gs1lgc121	sf_lgc121	SF114	SF121	SF	114	121	"SF121 Can your child say what he/she likes or dislikes (e.g., ""I like sweets"")?"
+Ma_SF_C117	Ma_SF_C122	croclc035	gpaclc117	gs1cgc122	sf_cgc122	SF117	SF122	SF	117	122	SF122 If you show your child two objects or people of different size, can he/she tell you which one is the big one and which is the small one?
+Ma_SF_C121	Ma_SF_C123	croclc050	gpaclc121	gs1lgc123	sf_lgc123	SF121	SF123	SF	121	123	"SF123 Does your child regularly use describing words such as ""fast,"" ""short,"" ""hot,"" ""fat,"" or ""beautiful"" correctly?"
+Ma_SF_C123	Ma_SF_C124	mdtsed028	gpasec123	gs1sec124	sf_sec124	SF123	SF124	SF	123	124	SF124 Does your child know to keep quiet when the situation requires it? (e.g., at ceremonies, when someone is asleep)
+Ma_SF_C124	Ma_SF_C125	croclc051	gpaclc124	gs1lgc125	sf_lgc125	SF124	SF125	SF	124	125	"SF125 Does your child ask ""why"" questions (e.g., ""Why are you tall?"")?"
+Ma_SF_C135	Ma_SF_C126	iyomoc039	gpamoc135	gs1moc126	sf_moc126	SF135	SF126	SF	135	126	SF126 Can your child stand on one foot WITHOUT any support for at least a few seconds?
+Ma_SF_C126	Ma_SF_C127	croclc043	gpaclc126	gs1cgc127	sf_cgc127	SF126	SF127	SF	126	127	SF127 If you ask your child to give you three objects (e.g., stones, beans), does the child give you the correct amount?
+Ma_SF_C131	Ma_SF_C128	iyolgc029	gpalgc131	gs1cgc128	sf_cgc128	SF131	SF128	SF	131	128	SF128 Does your child understand the term 'longest'? For example, if you ask him/her to choose 'which is the longest of 3 objects?' (e.g. 3 spoons or sticks), would he/she be able to choose the longest?
+Ma_SF_C138	Ma_SF_C129	croclc045	gpaclc138	gs1lgc129	sf_lgc129	SF138	SF129	SF	138	129	"SF129 Can your child talk about things that have happened in the past using correct language (e.g., ""Yesterday I played with my friend"" or ""Last week she went to the market"")?"
+Ma_SF_C127	Ma_SF_C130	iyolgc030	gpalgc127	gs1lgc130	sf_lgc130	SF127	SF130	SF	127	130	SF130 Can your child tell a story?
+Ma_SF_C125	Ma_SF_C131	crosec049	gpasec125	gs1sec131	sf_sec131	SF125	SF131	SF	125	131	SF131 Can your child tell you when he/she is happy, angry, or sad?
+Ma_SF_C122	Ma_SF_C132	croclc044	gpaclc122	gs1cgc132	sf_cgc132	SF122	SF132	SF	122	132	SF132 Can the child name at least one color (e.g., red, blue, yellow)?
+Ma_SF_C118	Ma_SF_C133	croclc041	gpaclc118	gs1cgc133	sf_cgc133	SF118	SF133	SF	118	133	SF133 Can your child count objects up to five  (e.g., fingers, people)?
+Ma_SF_C133	Ma_SF_C134	iyomoc038	gpamoc133	gs1moc134	sf_moc134	SF133	SF134	SF	133	134	SF134 If you draw a circle can your child do it, just as you did?
+Ma_SF_C128	Ma_SF_C135	crosec059	gpasec128	gs1sec135	sf_sec135	SF128	SF135	SF	128	135	SF135 Can your child tell you when others are happy, angry, or sad?
+Ma_SF_C139	Ma_SF_C136	croclc048	gpaclc139	gs1lgc136	sf_lgc136	SF139	SF136	SF	139	136	"SF136 Can your child talk about things that will happen in the future using correct language (e.g., ""Tomorrow he will attend school"" or ""Next week we will go to the market"")?"
+Ma_SF_C132	Ma_SF_C137	cromoc039	gpamoc132	gs1moc137	sf_moc137	SF132	SF137	SF	132	137	SF137 Can the child fasten and unfasten buttons without help?
+Ma_SF_C129	Ma_SF_C138	iyomoc040	gpamoc129	gs1lic138	sf_lic138	SF129	SF138	SF	129	138	SF138 Can your child dress him/herself completely (except for shoelaces, buttons and zippers)?
+Ma_SF_C136	Ma_SF_C139	crosec051	gpasec136	gs1sec139	sf_sec139	SF136	SF139	SF	136	139	"SF139 Can your child say what others like or dislike (e.g., ""Mama doesn't like fruit,"" ""Papa likes football"")?"
+bsid_cog01	bsid_cog01	by3cgd001	by3cgd001	by3cgd001	by3cgd001	cog01	cog01	BSID			Calms when picked up
+bsid_cog02	bsid_cog02	by3cgd002	by3cgd002	by3cgd002	by3cgd002	cog02	cog02	BSID			Responds to surroundings: inspects
+bsid_cog03	bsid_cog03	by3cgd003	by3cgd003	by3cgd003	by3cgd003	cog03	cog03	BSID			Regards 3 sec
+bsid_cog04	bsid_cog04	by3cgd004	by3cgd004	by3cgd004	by3cgd004	cog04	cog04	BSID			Habituates rattle
+bsid_cog05	bsid_cog05	by3cgd005	by3cgd005	by3cgd005	by3cgd005	cog05	cog05	BSID			Discriminates between obj
+bsid_cog06	bsid_cog06	by3cgd006	by3cgd006	by3cgd006	by3cgd006	cog06	cog06	BSID			Recog caregiver
+bsid_cog07	bsid_cog07	by3cgd007	by3cgd007	by3cgd007	by3cgd007	cog07	cog07	BSID			Becomes excited antic
+bsid_cog08	bsid_cog08	by3cgd008	by3cgd008	by3cgd008	by3cgd008	cog08	cog08	BSID			Regards object 5 sec
+bsid_cog09	bsid_cog09	by3cgd009	by3cgd009	by3cgd009	by3cgd009	cog09	cog09	BSID			Reacts disappear face
+bsid_cog10	bsid_cog10	by3cgd010	by3cgd010	by3cgd010	by3cgd010	cog10	cog10	BSID			Shifts attention
+bsid_cog11	bsid_cog11	by3cgd011	by3cgd011	by3cgd011	by3cgd011	cog11	cog11	BSID			Shows visual pref
+bsid_cog12	bsid_cog12	by3cgd012	by3cgd012	by3cgd012	by3cgd012	cog12	cog12	BSID			Habituates to object
+bsid_cog13	bsid_cog13	by3cgd013	by3cgd013	by3cgd013	by3cgd013	cog13	cog13	BSID			Prefers novel obj
+bsid_cog14	bsid_cog14	by3cgd014	by3cgd014	by3cgd014	by3cgd014	cog14	cog14	BSID			Habituates pict - balloons
+bsid_cog15	bsid_cog15	by3cgd015	by3cgd015	by3cgd015	by3cgd015	cog15	cog15	BSID			Prefers novel pict
+bsid_cog16	bsid_cog16	by3cgd016	by3cgd016	by3cgd016	by3cgd016	cog16	cog16	BSID			Explores object
+bsid_cog17	bsid_cog17	by3cgd017	by3cgd017	by3cgd017	by3cgd017	cog17	cog17	BSID			Carries object to mouth
+bsid_cog18	bsid_cog18	by3cgd018	by3cgd018	by3cgd018	by3cgd018	cog18	cog18	BSID			Inspects own hand
+bsid_cog19	bsid_cog19	by3cgd019	by3cgd019	by3cgd019	by3cgd019	cog19	cog19	BSID			Mirror Image Series: Approaches
+bsid_cog20	bsid_cog20	by3cgd020	by3cgd020	by3cgd020	by3cgd020	cog20	cog20	BSID			"Responds to surroundings; awareness of novelty"
+bsid_cog21	bsid_cog21	by3cgd021	by3cgd021	by3cgd021	by3cgd021	cog21	cog21	BSID			Persistent reach
+bsid_cog22	bsid_cog22	by3cgd022	by3cgd022	by3cgd022	by3cgd022	cog22	cog22	BSID			Mirror Image Series: Responds positively
+bsid_cog23	bsid_cog23	by3cgd023	by3cgd023	by3cgd023	by3cgd023	cog23	cog23	BSID			Plays with string
+bsid_cog24	bsid_cog24	by3cgd024	by3cgd024	by3cgd024	by3cgd024	cog24	cog24	BSID			Bangs in play
+bsid_cog25	bsid_cog25	by3cgd025	by3cgd025	by3cgd025	by3cgd025	cog25	cog25	BSID			Searches for fallen object
+bsid_cog26	bsid_cog26	by3cgd026	by3cgd026	by3cgd026	by3cgd026	cog26	cog26	BSID			Bell Series: Manipulates
+bsid_cog27	bsid_cog27	by3cgd027	by3cgd027	by3cgd027	by3cgd027	cog27	cog27	BSID			Picks Up Block Series: Reaches for second block
+bsid_cog28	bsid_cog28	by3cgd028	by3cgd028	by3cgd028	by3cgd028	cog28	cog28	BSID			Pulls cloth to obtain object
+bsid_cog29	bsid_cog29	by3cgd029	by3cgd029	by3cgd029	by3cgd029	cog29	cog29	BSID			Pulls string adaptively
+bsid_cog30	bsid_cog30	by3cgd030	by3cgd030	by3cgd030	by3cgd030	cog30	cog30	BSID			Retains both blocks
+bsid_cog31	bsid_cog31	by3cgd031	by3cgd031	by3cgd031	by3cgd031	cog31	cog31	BSID			Bell Series: Rings purposely
+bsid_cog32	bsid_cog32	by3cgd032	by3cgd032	by3cgd032	by3cgd032	cog32	cog32	BSID			Looks at pictures
+bsid_cog33	bsid_cog33	by3cgd033	by3cgd033	by3cgd033	by3cgd033	cog33	cog33	BSID			Picks Up Block Series: Retains 2 of 3 blocks
+bsid_cog34	bsid_cog34	by3cgd034	by3cgd034	by3cgd034	by3cgd034	cog34	cog34	BSID			Searches for missing objects
+bsid_cog35	bsid_cog35	by3cgd035	by3cgd035	by3cgd035	by3cgd035	cog35	cog35	BSID			Takes blocks out of cup
+bsid_cog36	bsid_cog36	by3cgd036	by3cgd036	by3cgd036	by3cgd036	cog36	cog36	BSID			Block Series: 1 Block
+bsid_cog37	bsid_cog37	by3cgd037	by3cgd037	by3cgd037	by3cgd037	cog37	cog37	BSID			Picks up Block Series: 3 blocks
+bsid_cog38	bsid_cog38	by3cgd038	by3cgd038	by3cgd038	by3cgd038	cog38	cog38	BSID			Explores holes in pegboard
+bsid_cog39	bsid_cog39	by3cgd039	by3cgd039	by3cgd039	by3cgd039	cog39	cog39	BSID			Pushes car
+bsid_cog40	bsid_cog40	by3cgd040	by3cgd040	by3cgd040	by3cgd040	cog40	cog40	BSID			Finds hidden object
+bsid_cog41	bsid_cog41	by3cgd041	by3cgd041	by3cgd041	by3cgd041	cog41	cog41	BSID			Suspends ring
+bsid_cog42	bsid_cog42	by3cgd042	by3cgd042	by3cgd042	by3cgd042	cog42	cog42	BSID			Removes pellet
+bsid_cog43	bsid_cog43	by3cgd043	by3cgd043	by3cgd043	by3cgd043	cog43	cog43	BSID			Clear Box: Front
+bsid_cog44	bsid_cog44	by3cgd044	by3cgd044	by3cgd044	by3cgd044	cog44	cog44	BSID			Squeezes object
+bsid_cog45	bsid_cog45	by3cgd045	by3cgd045	by3cgd045	by3cgd045	cog45	cog45	BSID			Finds hidden object (Reversed)
+bsid_cog46	bsid_cog46	by3cgd046	by3cgd046	by3cgd046	by3cgd046	cog46	cog46	BSID			Removes lid from bottle
+bsid_cog47	bsid_cog47	by3cgd047	by3cgd047	by3cgd047	by3cgd047	cog47	cog47	BSID			Pegboard Series: 2 holes
+bsid_cog48	bsid_cog48	by3cgd048	by3cgd048	by3cgd048	by3cgd048	cog48	cog48	BSID			Relational Play Series: Self
+bsid_cog49	bsid_cog49	by3cgd049	by3cgd049	by3cgd049	by3cgd049	cog49	cog49	BSID			Pink Board Series: 1 piece
+bsid_cog50	bsid_cog50	by3cgd050	by3cgd050	by3cgd050	by3cgd050	cog50	cog50	BSID			Finds hidden object (Visible Displacement)
+bsid_cog51	bsid_cog51	by3cgd051	by3cgd051	by3cgd051	by3cgd051	cog51	cog51	BSID			Blue Board Series: 1 piece
+bsid_cog52	bsid_cog52	by3cgd052	by3cgd052	by3cgd052	by3cgd052	cog52	cog52	BSID			Clear Box: Sides
+bsid_cog53	bsid_cog53	by3cgd053	by3cgd053	by3cgd053	by3cgd053	cog53	cog53	BSID			Relational Play Series: Others
+bsid_cog54	bsid_cog54	by3cgd054	by3cgd054	by3cgd054	by3cgd054	cog54	cog54	BSID			Block Series: 9 Blocks
+bsid_cog55	bsid_cog55	by3cgd055	by3cgd055	by3cgd055	by3cgd055	cog55	cog55	BSID			Pegboard Series: 6 Pegs
+bsid_cog56	bsid_cog56	by3cgd056	by3cgd056	by3cgd056	by3cgd056	cog56	cog56	BSID			Pink Board Series: Completes
+bsid_cog57	bsid_cog57	by3cgd057	by3cgd057	by3cgd057	by3cgd057	cog57	cog57	BSID			Uses pencil to obtain object
+bsid_cog58	bsid_cog58	by3cgd058	by3cgd058	by3cgd058	by3cgd058	cog58	cog58	BSID			Blue Board Series: 4 Pieces
+bsid_cog59	bsid_cog59	by3cgd059	by3cgd059	by3cgd059	by3cgd059	cog59	cog59	BSID			Attends to story
+bsid_cog60	bsid_cog60	by3cgd060	by3cgd060	by3cgd060	by3cgd060	cog60	cog60	BSID			Rotated pink board
+bsid_cog61	bsid_cog61	by3cgd061	by3cgd061	by3cgd061	by3cgd061	cog61	cog61	BSID			Object assembly (Ball)
+bsid_cog62	bsid_cog62	by3cgd062	by3cgd062	by3cgd062	by3cgd062	cog62	cog62	BSID			Completes Pegboard: 25 Seconds
+bsid_cog63	bsid_cog63	by3cgd063	by3cgd063	by3cgd063	by3cgd063	cog63	cog63	BSID			Object assembly (Ice Cream Cone)
+bsid_cog64	bsid_cog64	by3cgd064	by3cgd064	by3cgd064	by3cgd064	cog64	cog64	BSID			Matches pictures
+bsid_cog65	bsid_cog65	by3cgd065	by3cgd065	by3cgd065	by3cgd065	cog65	cog65	BSID			Representational play
+bsid_cog66	bsid_cog66	by3cgd066	by3cgd066	by3cgd066	by3cgd066	cog66	cog66	BSID			Blue Board Series: Completes (75 seconds)
+bsid_cog67	bsid_cog67	by3cgd067	by3cgd067	by3cgd067	by3cgd067	cog67	cog67	BSID			Imitates a two-step action.
+bsid_cog68	bsid_cog68	by3cgd068	by3cgd068	by3cgd068	by3cgd068	cog68	cog68	BSID			Matches 3 colors
+bsid_cog69	bsid_cog69	by3cgd069	by3cgd069	by3cgd069	by3cgd069	cog69	cog69	BSID			Imaginary play
+bsid_cog70	bsid_cog70	by3cgd070	by3cgd070	by3cgd070	by3cgd070	cog70	cog70	BSID			Understands concept of one
+bsid_cog71	bsid_cog71	by3cgd071	by3cgd071	by3cgd071	by3cgd071	cog71	cog71	BSID			Multischeme combination play
+bsid_cog72	bsid_cog72	by3cgd072	by3cgd072	by3cgd072	by3cgd072	cog72	cog72	BSID			Concept Grouping: colour
+bsid_cog73	bsid_cog73	by3cgd073	by3cgd073	by3cgd073	by3cgd073	cog73	cog73	BSID			Concept Grouping: Size
+bsid_cog74	bsid_cog74	by3cgd074	by3cgd074	by3cgd074	by3cgd074	cog74	cog74	BSID			Compares masses
+bsid_cog75	bsid_cog75	by3cgd075	by3cgd075	by3cgd075	by3cgd075	cog75	cog75	BSID			Matches size
+bsid_cog76	bsid_cog76	by3cgd076	by3cgd076	by3cgd076	by3cgd076	cog76	cog76	BSID			Discriminates pictures
+bsid_cog77	bsid_cog77	by3cgd077	by3cgd077	by3cgd077	by3cgd077	cog77	cog77	BSID			Simple pattern
+bsid_cog78	bsid_cog78	by3cgd078	by3cgd078	by3cgd078	by3cgd078	cog78	cog78	BSID			Sorts pegs by colour
+bsid_cog79	bsid_cog79	by3cgd079	by3cgd079	by3cgd079	by3cgd079	cog79	cog79	BSID			Counts (One-to-one correspondence)
+bsid_cog80	bsid_cog80	by3cgd080	by3cgd080	by3cgd080	by3cgd080	cog80	cog80	BSID			Discriminates size
+bsid_cog81	bsid_cog81	by3cgd081	by3cgd081	by3cgd081	by3cgd081	cog81	cog81	BSID			Identifies 3 incomplete pictures
+bsid_cog82	bsid_cog82	by3cgd082	by3cgd082	by3cgd082	by3cgd082	cog82	cog82	BSID			Object assembly (Dog)
+bsid_cog83	bsid_cog83	by3cgd083	by3cgd083	by3cgd083	by3cgd083	cog83	cog83	BSID			Discriminates patterns
+bsid_cog84	bsid_cog84	by3cgd084	by3cgd084	by3cgd084	by3cgd084	cog84	cog84	BSID			Spatial memory
+bsid_cog85	bsid_cog85	by3cgd085	by3cgd085	by3cgd085	by3cgd085	cog85	cog85	BSID			Counts (Cardinally)
+bsid_cog86	bsid_cog86	by3cgd086	by3cgd086	by3cgd086	by3cgd086	cog86	cog86	BSID			Number constancy
+bsid_cog87	bsid_cog87	by3cgd087	by3cgd087	by3cgd087	by3cgd087	cog87	cog87	BSID			Laces card
+bsid_cog88	bsid_cog88	by3cgd088	by3cgd088	by3cgd088	by3cgd088	cog88	cog88	BSID			Classifies objects
+bsid_cog89	bsid_cog89	by3cgd089	by3cgd089	by3cgd089	by3cgd089	cog89	cog89	BSID			Understands concept of more
+bsid_cog90	bsid_cog90	by3cgd090	by3cgd090	by3cgd090	by3cgd090	cog90	cog90	BSID			Repeats number sequences
+bsid_cog91	bsid_cog91	by3cgd091	by3cgd091	by3cgd091	by3cgd091	cog91	cog91	BSID			Completes patterns
+bsid_rc01	bsid_rc01	by3red001	by3red001	by3red001	by3red001	rc01	rc01	BSID			Regards person momentarily
+bsid_rc02	bsid_rc02	by3red002	by3red002	by3red002	by3red002	rc02	rc02	BSID			Tolerates attention
+bsid_rc03	bsid_rc03	by3red003	by3red003	by3red003	by3red003	rc03	rc03	BSID			Calms when spoken to
+bsid_rc04	bsid_rc04	by3red004	by3red004	by3red004	by3red004	rc04	rc04	BSID			Reacts to sound in environment
+bsid_rc05	bsid_rc05	by3red005	by3red005	by3red005	by3red005	rc05	rc05	BSID			Responds to voice
+bsid_rc06	bsid_rc06	by3red006	by3red006	by3red006	by3red006	rc06	rc06	BSID			Searches with head turn
+bsid_rc07	bsid_rc07	by3red007	by3red007	by3red007	by3red007	rc07	rc07	BSID			Discriminates sounds
+bsid_rc08	bsid_rc08	by3red008	by3red008	by3red008	by3red008	rc08	rc08	BSID			Sustained play with objects
+bsid_rc09	bsid_rc09	by3red009	by3red009	by3red009	by3red009	rc09	rc09	BSID			Responds to name
+bsid_rc10	bsid_rc10	by3red010	by3red010	by3red010	by3red010	rc10	rc10	BSID			Interrupts activity
+bsid_rc11	bsid_rc11	by3red011	by3red011	by3red011	by3red011	rc11	rc11	BSID			Recognizes 2 familiar words
+bsid_rc12	bsid_rc12	by3red012	by3red012	by3red012	by3red012	rc12	rc12	BSID			Responds to no-no
+bsid_rc13	bsid_rc13	by3red013	by3red013	by3red013	by3red013	rc13	rc13	BSID			Attends to other's play routine
+bsid_rc14	bsid_rc14	by3red014	by3red014	by3red014	by3red014	rc14	rc14	BSID			Responds to request for social routines
+bsid_rc15	bsid_rc15	by3red015	by3red015	by3red015	by3red015	rc15	rc15	BSID			Identifies Object Series: 1 correct
+bsid_rc16	bsid_rc16	by3red016	by3red016	by3red016	by3red016	rc16	rc16	BSID			Identifies object in the environment
+bsid_rc17	bsid_rc17	by3red017	by3red017	by3red017	by3red017	rc17	rc17	BSID			Identifies Picture Series: 1 correct
+bsid_rc18	bsid_rc18	by3red018	by3red018	by3red018	by3red018	rc18	rc18	BSID			Understands inhibitory words
+bsid_rc19	bsid_rc19	by3red019	by3red019	by3red019	by3red019	rc19	rc19	BSID			Identifies Object Series: 3 correct
+bsid_rc20	bsid_rc20	by3red020	by3red020	by3red020	by3red020	rc20	rc20	BSID			Follows one-part directions
+bsid_rc21	bsid_rc21	by3red021	by3red021	by3red021	by3red021	rc21	rc21	BSID			Identifies Picture Series: 3 Correct
+bsid_rc22	bsid_rc22	by3red022	by3red022	by3red022	by3red022	rc22	rc22	BSID			Identifies 3 clothing items
+bsid_rc23	bsid_rc23	by3red023	by3red023	by3red023	by3red023	rc23	rc23	BSID			Identifies Action Picture Series: 1 correct
+bsid_rc24	bsid_rc24	by3red024	by3red024	by3red024	by3red024	rc24	rc24	BSID			Identifies 5 parts of the body
+bsid_rc25	bsid_rc25	by3red025	by3red025	by3red025	by3red025	rc25	rc25	BSID			Follows two-part directions
+bsid_rc26	bsid_rc26	by3red026	by3red026	by3red026	by3red026	rc26	rc26	BSID			Identifies Action Picture Series: 3 correct
+bsid_rc27	bsid_rc27	by3red027	by3red027	by3red027	by3red027	rc27	rc27	BSID			Understands use of objects
+bsid_rc28	bsid_rc28	by3red028	by3red028	by3red028	by3red028	rc28	rc28	BSID			Understands part/whole relationships
+bsid_rc29	bsid_rc29	by3red029	by3red029	by3red029	by3red029	rc29	rc29	BSID			Identifies Action Picture Series: 5 correct
+bsid_rc30	bsid_rc30	by3red030	by3red030	by3red030	by3red030	rc30	rc30	BSID			Understands pronouns (him, me, my, you, your)
+bsid_rc31	bsid_rc31	by3red031	by3red031	by3red031	by3red031	rc31	rc31	BSID			Understands labels for sizes
+bsid_rc32	bsid_rc32	by3red032	by3red032	by3red032	by3red032	rc32	rc32	BSID			Understands Preposition Series: 2 correct
+bsid_rc33	bsid_rc33	by3red033	by3red033	by3red033	by3red033	rc33	rc33	BSID			Understands possessives
+bsid_rc34	bsid_rc34	by3red034	by3red034	by3red034	by3red034	rc34	rc34	BSID			Understands verb +ing
+bsid_rc35	bsid_rc35	by3red035	by3red035	by3red035	by3red035	rc35	rc35	BSID			Identifies colours
+bsid_rc36	bsid_rc36	by3red036	by3red036	by3red036	by3red036	rc36	rc36	BSID			Understands label of one
+bsid_rc37	bsid_rc37	by3red037	by3red037	by3red037	by3red037	rc37	rc37	BSID			Understands pronouns (they, he, she)
+bsid_rc38	bsid_rc38	by3red038	by3red038	by3red038	by3red038	rc38	rc38	BSID			Understands pronouns (his, her)
+bsid_rc39	bsid_rc39	by3red039	by3red039	by3red039	by3red039	rc39	rc39	BSID			Understands plurals
+bsid_rc40	bsid_rc40	by3red040	by3red040	by3red040	by3red040	rc40	rc40	BSID			Understands more
+bsid_rc41	bsid_rc41	by3red041	by3red041	by3red041	by3red041	rc41	rc41	BSID			Understands most
+bsid_rc42	bsid_rc42	by3red042	by3red042	by3red042	by3red042	rc42	rc42	BSID			Understands Preposition Series: 4 correct
+bsid_rc43	bsid_rc43	by3red043	by3red043	by3red043	by3red043	rc43	rc43	BSID			Understands negatives in sentences
+bsid_rc44	bsid_rc44	by3red044	by3red044	by3red044	by3red044	rc44	rc44	BSID			Understands past tense
+bsid_rc45	bsid_rc45	by3red045	by3red045	by3red045	by3red045	rc45	rc45	BSID			Understands labels for mass
+bsid_rc46	bsid_rc46	by3red046	by3red046	by3red046	by3red046	rc46	rc46	BSID			Understands least
+bsid_rc47	bsid_rc47	by3red047	by3red047	by3red047	by3red047	rc47	rc47	BSID			Understands less
+bsid_rc48	bsid_rc48	by3red048	by3red048	by3red048	by3red048	rc48	rc48	BSID			Understands descriptive labels
+bsid_rc49	bsid_rc49	by3red049	by3red049	by3red049	by3red049	rc49	rc49	BSID			Identifies categories of objects
+bsid_ec01	bsid_ec01	by3exd001	by3exd001	by3exd001	by3exd001	ec01	ec01	BSID			Undifferentiated throaty sounds
+bsid_ec02	bsid_ec02	by3exd002	by3exd002	by3exd002	by3exd002	ec02	ec02	BSID			Social smile
+bsid_ec03	bsid_ec03	by3exd003	by3exd003	by3exd003	by3exd003	ec03	ec03	BSID			Vocalizes mood
+bsid_ec04	bsid_ec04	by3exd004	by3exd004	by3exd004	by3exd004	ec04	ec04	BSID			Undifferentiated nasal sounds
+bsid_ec05	bsid_ec05	by3exd005	by3exd005	by3exd005	by3exd005	ec05	ec05	BSID			Social vocalization or laughing
+bsid_ec06	bsid_ec06	by3exd006	by3exd006	by3exd006	by3exd006	ec06	ec06	BSID			2 Vowel sounds
+bsid_ec07	bsid_ec07	by3exd007	by3exd007	by3exd007	by3exd007	ec07	ec07	BSID			Gets attention
+bsid_ec08	bsid_ec08	by3exd008	by3exd008	by3exd008	by3exd008	ec08	ec08	BSID			2 Consonant sounds
+bsid_ec09	bsid_ec09	by3exd009	by3exd009	by3exd009	by3exd009	ec09	ec09	BSID			Uses gestures
+bsid_ec10	bsid_ec10	by3exd010	by3exd010	by3exd010	by3exd010	ec10	ec10	BSID			Consonant-Vowel Combination Series: 1 Combination
+bsid_ec11	bsid_ec11	by3exd011	by3exd011	by3exd011	by3exd011	ec11	ec11	BSID			Participates in play routine
+bsid_ec12	bsid_ec12	by3exd012	by3exd012	by3exd012	by3exd012	ec12	ec12	BSID			Jabbers expressively
+bsid_ec13	bsid_ec13	by3exd013	by3exd013	by3exd013	by3exd013	ec13	ec13	BSID			Consonant-Vowel Combination Series: 4 Combination
+bsid_ec14	bsid_ec14	by3exd014	by3exd014	by3exd014	by3exd014	ec14	ec14	BSID			Uses one-word approximations
+bsid_ec15	bsid_ec15	by3exd015	by3exd015	by3exd015	by3exd015	ec15	ec15	BSID			Directs attention of other
+bsid_ec16	bsid_ec16	by3exd016	by3exd016	by3exd016	by3exd016	ec16	ec16	BSID			Imitates word
+bsid_ec17	bsid_ec17	by3exd017	by3exd017	by3exd017	by3exd017	ec17	ec17	BSID			Initiates play interaction
+bsid_ec18	bsid_ec18	by3exd018	by3exd018	by3exd018	by3exd018	ec18	ec18	BSID			Uses Words Appropriately Series: 2 words
+bsid_ec19	bsid_ec19	by3exd019	by3exd019	by3exd019	by3exd019	ec19	ec19	BSID			Uses word to make wants known
+bsid_ec20	bsid_ec20	by3exd020	by3exd020	by3exd020	by3exd020	ec20	ec20	BSID			Names Object Series: 1 Object
+bsid_ec21	bsid_ec21	by3exd021	by3exd021	by3exd021	by3exd021	ec21	ec21	BSID			Combines word and gesture
+bsid_ec22	bsid_ec22	by3exd022	by3exd022	by3exd022	by3exd022	ec22	ec22	BSID			Names Picture Series: 1 Picture
+bsid_ec23	bsid_ec23	by3exd023	by3exd023	by3exd023	by3exd023	ec23	ec23	BSID			Uses Words Appropriately Series: 8 words
+bsid_ec24	bsid_ec24	by3exd024	by3exd024	by3exd024	by3exd024	ec24	ec24	BSID			Answers yes or no verbally in response to questions
+bsid_ec25	bsid_ec25	by3exd025	by3exd025	by3exd025	by3exd025	ec25	ec25	BSID			Imitates a two-word utterance
+bsid_ec26	bsid_ec26	by3exd026	by3exd026	by3exd026	by3exd026	ec26	ec26	BSID			Uses a two-word utterance
+bsid_ec27	bsid_ec27	by3exd027	by3exd027	by3exd027	by3exd027	ec27	ec27	BSID			Names Object Series: 3 Object
+bsid_ec28	bsid_ec28	by3exd028	by3exd028	by3exd028	by3exd028	ec28	ec28	BSID			Names Picture Series: 5 Pictures
+bsid_ec29	bsid_ec29	by3exd029	by3exd029	by3exd029	by3exd029	ec29	ec29	BSID			Uses multiple-word utterances
+bsid_ec30	bsid_ec30	by3exd030	by3exd030	by3exd030	by3exd030	ec30	ec30	BSID			Uses pronouns
+bsid_ec31	bsid_ec31	by3exd031	by3exd031	by3exd031	by3exd031	ec31	ec31	BSID			Names Action Picture Series: 1 Picture
+bsid_ec32	bsid_ec32	by3exd032	by3exd032	by3exd032	by3exd032	ec32	ec32	BSID			Poses multiple-word questions
+bsid_ec33	bsid_ec33	by3exd033	by3exd033	by3exd033	by3exd033	ec33	ec33	BSID			Makes a contingent utterance
+bsid_ec34	bsid_ec34	by3exd034	by3exd034	by3exd034	by3exd034	ec34	ec34	BSID			Uses verb +ing
+bsid_ec35	bsid_ec35	by3exd035	by3exd035	by3exd035	by3exd035	ec35	ec35	BSID			Names Action Picture Series: 3 Pictures
+bsid_ec36	bsid_ec36	by3exd036	by3exd036	by3exd036	by3exd036	ec36	ec36	BSID			Uses different word combinations
+bsid_ec37	bsid_ec37	by3exd037	by3exd037	by3exd037	by3exd037	ec37	ec37	BSID			Names Action Picture Series: 5 Pictures
+bsid_ec38	bsid_ec38	by3exd038	by3exd038	by3exd038	by3exd038	ec38	ec38	BSID			Uses plurals
+bsid_ec39	bsid_ec39	by3exd039	by3exd039	by3exd039	by3exd039	ec39	ec39	BSID			Answers what or where questions
+bsid_ec40	bsid_ec40	by3exd040	by3exd040	by3exd040	by3exd040	ec40	ec40	BSID			Uses possessives
+bsid_ec41	bsid_ec41	by3exd041	by3exd041	by3exd041	by3exd041	ec41	ec41	BSID			Names 4 colours
+bsid_ec42	bsid_ec42	by3exd042	by3exd042	by3exd042	by3exd042	ec42	ec42	BSID			Answers questions logically (Related to functions)
+bsid_ec43	bsid_ec43	by3exd043	by3exd043	by3exd043	by3exd043	ec43	ec43	BSID			Tells how an object is used
+bsid_ec44	bsid_ec44	by3exd044	by3exd044	by3exd044	by3exd044	ec44	ec44	BSID			Uses prepositions
+bsid_ec45	bsid_ec45	by3exd045	by3exd045	by3exd045	by3exd045	ec45	ec45	BSID			Uses present progressive form
+bsid_ec46	bsid_ec46	by3exd046	by3exd046	by3exd046	by3exd046	ec46	ec46	BSID			Describes Pictures Series: Uses 4-5 word sentences
+bsid_ec47	bsid_ec47	by3exd047	by3exd047	by3exd047	by3exd047	ec47	ec47	BSID			Describes Pictures Series: Uses past tense
+bsid_ec48	bsid_ec48	by3exd048	by3exd048	by3exd048	by3exd048	ec48	ec48	BSID			Describes Pictures Series: Uses future tense
+bsid_fm01	bsid_fm01	by3fmd001	by3fmd001	by3fmd001	by3fmd001	fm01	fm01	BSID			Hands are fisted
+bsid_fm02	bsid_fm02	by3fmd002	by3fmd002	by3fmd002	by3fmd002	fm02	fm02	BSID			Eyes follow  moving person
+bsid_fm03	bsid_fm03	by3fmd003	by3fmd003	by3fmd003	by3fmd003	fm03	fm03	BSID			Eyes follow ring horizontal
+bsid_fm04	bsid_fm04	by3fmd004	by3fmd004	by3fmd004	by3fmd004	fm04	fm04	BSID			Eyes follow ring vertical
+bsid_fm05	bsid_fm05	by3fmd005	by3fmd005	by3fmd005	by3fmd005	fm05	fm05	BSID			Attempts to bring hand to mouth
+bsid_fm06	bsid_fm06	by3fmd006	by3fmd006	by3fmd006	by3fmd006	fm06	fm06	BSID			Retains ring
+bsid_fm07	bsid_fm07	by3fmd007	by3fmd007	by3fmd007	by3fmd007	fm07	fm07	BSID			Eyes follow ring circular
+bsid_fm08	bsid_fm08	by3fmd008	by3fmd008	by3fmd008	by3fmd008	fm08	fm08	BSID			Head follow ring
+bsid_fm09	bsid_fm09	by3fmd009	by3fmd009	by3fmd009	by3fmd009	fm09	fm09	BSID			Eyes follow rolling ball
+bsid_fm10	bsid_fm10	by3fmd010	by3fmd010	by3fmd010	by3fmd010	fm10	fm10	BSID			Keeps hand open
+bsid_fm11	bsid_fm11	by3fmd011	by3fmd011	by3fmd011	by3fmd011	fm11	fm11	BSID			Rotates wrist
+bsid_fm12	bsid_fm12	by3fmd012	by3fmd012	by3fmd012	by3fmd012	fm12	fm12	BSID			Grasps suspended ring
+bsid_fm13	bsid_fm13	by3fmd013	by3fmd013	by3fmd013	by3fmd013	fm13	fm13	BSID			Blocks series reaches for block
+bsid_fm14	bsid_fm14	by3fmd014	by3fmd014	by3fmd014	by3fmd014	fm14	fm14	BSID			Touches block
+bsid_fm15	bsid_fm15	by3fmd015	by3fmd015	by3fmd015	by3fmd015	fm15	fm15	BSID			Block Series: Whole hand grasp
+bsid_fm16	bsid_fm16	by3fmd016	by3fmd016	by3fmd016	by3fmd016	fm16	fm16	BSID			Reaches unilaterally
+bsid_fm17	bsid_fm17	by3fmd017	by3fmd017	by3fmd017	by3fmd017	fm17	fm17	BSID			Food Pellet Series: Raking grasp
+bsid_fm18	bsid_fm18	by3fmd018	by3fmd018	by3fmd018	by3fmd018	fm18	fm18	BSID			Block Series: Partial thumb opposition
+bsid_fm19	bsid_fm19	by3fmd019	by3fmd019	by3fmd019	by3fmd019	fm19	fm19	BSID			Transfers ring
+bsid_fm20	bsid_fm20	by3fmd020	by3fmd020	by3fmd020	by3fmd020	fm20	fm20	BSID			Food Pellet Series: Whole hand grasp
+bsid_fm21	bsid_fm21	by3fmd021	by3fmd021	by3fmd021	by3fmd021	fm21	fm21	BSID			Transfers block
+bsid_fm22	bsid_fm22	by3fmd022	by3fmd022	by3fmd022	by3fmd022	fm22	fm22	BSID			Block Series: Thumb-fingertip grasp
+bsid_fm23	bsid_fm23	by3fmd023	by3fmd023	by3fmd023	by3fmd023	fm23	fm23	BSID			Brings spoons or blocks to midline
+bsid_fm24	bsid_fm24	by3fmd024	by3fmd024	by3fmd024	by3fmd024	fm24	fm24	BSID			Food Pellet Series: Partial thumb opposition
+bsid_fm25	bsid_fm25	by3fmd025	by3fmd025	by3fmd025	by3fmd025	fm25	fm25	BSID			Lifts cup by the handle
+bsid_fm26	bsid_fm26	by3fmd026	by3fmd026	by3fmd026	by3fmd026	fm26	fm26	BSID			Food Pellet Series: Thumb-fingertip grasp
+bsid_fm27	bsid_fm27	by3fmd027	by3fmd027	by3fmd027	by3fmd027	fm27	fm27	BSID			Turns pages of books
+bsid_fm28	bsid_fm28	by3fmd028	by3fmd028	by3fmd028	by3fmd028	fm28	fm28	BSID			Grasp series: Palmar grasp
+bsid_fm29	bsid_fm29	by3fmd029	by3fmd029	by3fmd029	by3fmd029	fm29	fm29	BSID			Isolates extended ring finger
+bsid_fm30	bsid_fm30	by3fmd030	by3fmd030	by3fmd030	by3fmd030	fm30	fm30	BSID			Scribbles spontaneously
+bsid_fm31	bsid_fm31	by3fmd031	by3fmd031	by3fmd031	by3fmd031	fm31	fm31	BSID			Block Stacking Series: 2 blocks
+bsid_fm32	bsid_fm32	by3fmd032	by3fmd032	by3fmd032	by3fmd032	fm32	fm32	BSID			Imitates Stroke Series: Random
+bsid_fm33	bsid_fm33	by3fmd033	by3fmd033	by3fmd033	by3fmd033	fm33	fm33	BSID			Places 10 pellets in bottle (60 seconds)
+bsid_fm34	bsid_fm34	by3fmd034	by3fmd034	by3fmd034	by3fmd034	fm34	fm34	BSID			Grasp series: Transitional grasp
+bsid_fm35	bsid_fm35	by3fmd035	by3fmd035	by3fmd035	by3fmd035	fm35	fm35	BSID			Coins in slot
+bsid_fm36	bsid_fm36	by3fmd036	by3fmd036	by3fmd036	by3fmd036	fm36	fm36	BSID			Connecting Blocks: Apart
+bsid_fm37	bsid_fm37	by3fmd037	by3fmd037	by3fmd037	by3fmd037	fm37	fm37	BSID			Grasp Series: Intermediate (Tripod) grasp
+bsid_fm38	bsid_fm38	by3fmd038	by3fmd038	by3fmd038	by3fmd038	fm38	fm38	BSID			Block stacking Series: 6 blocks
+bsid_fm39	bsid_fm39	by3fmd039	by3fmd039	by3fmd039	by3fmd039	fm39	fm39	BSID			Uses hand to hold paper in place
+bsid_fm40	bsid_fm40	by3fmd040	by3fmd040	by3fmd040	by3fmd040	fm40	fm40	BSID			Imitates Strokes Series: Horizontal
+bsid_fm41	bsid_fm41	by3fmd041	by3fmd041	by3fmd041	by3fmd041	fm41	fm41	BSID			Imitates Strokes Series: Vertical
+bsid_fm42	bsid_fm42	by3fmd042	by3fmd042	by3fmd042	by3fmd042	fm42	fm42	BSID			Connecting Blocks: Together
+bsid_fm43	bsid_fm43	by3fmd043	by3fmd043	by3fmd043	by3fmd043	fm43	fm43	BSID			Imitates Strokes Series: Circular
+bsid_fm44	bsid_fm44	by3fmd044	by3fmd044	by3fmd044	by3fmd044	fm44	fm44	BSID			Builds train of blocks
+bsid_fm45	bsid_fm45	by3fmd045	by3fmd045	by3fmd045	by3fmd045	fm45	fm45	BSID			Strings 3 blocks
+bsid_fm46	bsid_fm46	by3fmd046	by3fmd046	by3fmd046	by3fmd046	fm46	fm46	BSID			Imitates hand movements
+bsid_fm47	bsid_fm47	by3fmd047	by3fmd047	by3fmd047	by3fmd047	fm47	fm47	BSID			Snips paper
+bsid_fm48	bsid_fm48	by3fmd048	by3fmd048	by3fmd048	by3fmd048	fm48	fm48	BSID			Grasp Series: Dynamic grasp
+bsid_fm49	bsid_fm49	by3fmd049	by3fmd049	by3fmd049	by3fmd049	fm49	fm49	BSID			Tactilely discriminates shapes
+bsid_fm50	bsid_fm50	by3fmd050	by3fmd050	by3fmd050	by3fmd050	fm50	fm50	BSID			Builds wall
+bsid_fm51	bsid_fm51	by3fmd051	by3fmd051	by3fmd051	by3fmd051	fm51	fm51	BSID			Cuts paper
+bsid_fm52	bsid_fm52	by3fmd052	by3fmd052	by3fmd052	by3fmd052	fm52	fm52	BSID			Builds bridge
+bsid_fm53	bsid_fm53	by3fmd053	by3fmd053	by3fmd053	by3fmd053	fm53	fm53	BSID			Imitates plus sign
+bsid_fm54	bsid_fm54	by3fmd054	by3fmd054	by3fmd054	by3fmd054	fm54	fm54	BSID			Block stacking Series: 8 blocks
+bsid_fm55	bsid_fm55	by3fmd055	by3fmd055	by3fmd055	by3fmd055	fm55	fm55	BSID			Cuts on line
+bsid_fm56	bsid_fm56	by3fmd056	by3fmd056	by3fmd056	by3fmd056	fm56	fm56	BSID			Builds T
+bsid_fm57	bsid_fm57	by3fmd057	by3fmd057	by3fmd057	by3fmd057	fm57	fm57	BSID			Buttons 1 button
+bsid_fm58	bsid_fm58	by3fmd058	by3fmd058	by3fmd058	by3fmd058	fm58	fm58	BSID			Builds steps
+bsid_fm59	bsid_fm59	by3fmd059	by3fmd059	by3fmd059	by3fmd059	fm59	fm59	BSID			Traces designs
+bsid_fm60	bsid_fm60	by3fmd060	by3fmd060	by3fmd060	by3fmd060	fm60	fm60	BSID			Imitates square
+bsid_fm61	bsid_fm61	by3fmd061	by3fmd061	by3fmd061	by3fmd061	fm61	fm61	BSID			Copies plus sign
+bsid_fm62	bsid_fm62	by3fmd062	by3fmd062	by3fmd062	by3fmd062	fm62	fm62	BSID			Tapbs fingers
+bsid_fm63	bsid_fm63	by3fmd063	by3fmd063	by3fmd063	by3fmd063	fm63	fm63	BSID			Places 20 pellets in bottle
+bsid_fm64	bsid_fm64	by3fmd064	by3fmd064	by3fmd064	by3fmd064	fm64	fm64	BSID			Cuts circle
+bsid_fm65	bsid_fm65	by3fmd065	by3fmd065	by3fmd065	by3fmd065	fm65	fm65	BSID			Cuts square
+bsid_fm66	bsid_fm66	by3fmd066	by3fmd066	by3fmd066	by3fmd066	fm66	fm66	BSID			Copies square
+bsid_gsm01	bsid_gsm01	by3gmd001	by3gmd001	by3gmd001	by3gmd001	gsm01	gsm01	BSID			Thursts legs in play
+bsid_gsm02	bsid_gsm02	by3gmd002	by3gmd002	by3gmd002	by3gmd002	gsm02	gsm02	BSID			Thrusts arms in play
+bsid_gsm03	bsid_gsm03	by3gmd003	by3gmd003	by3gmd003	by3gmd003	gsm03	gsm03	BSID			Controls head while upright series: lifts head
+bsid_gsm04	bsid_gsm04	by3gmd004	by3gmd004	by3gmd004	by3gmd004	gsm04	gsm04	BSID			Controls head while upright series: 3 secs
+bsid_gsm05	bsid_gsm05	by3gmd005	by3gmd005	by3gmd005	by3gmd005	gsm05	gsm05	BSID			Turns head to side
+bsid_gsm06	bsid_gsm06	by3gmd006	by3gmd006	by3gmd006	by3gmd006	gsm06	gsm06	BSID			Makes crawling movements
+bsid_gsm07	bsid_gsm07	by3gmd007	by3gmd007	by3gmd007	by3gmd007	gsm07	gsm07	BSID			Controls head in dorsal suspension
+bsid_gsm08	bsid_gsm08	by3gmd008	by3gmd008	by3gmd008	by3gmd008	gsm08	gsm08	BSID			Controls head in ventral suspension
+bsid_gsm09	bsid_gsm09	by3gmd009	by3gmd009	by3gmd009	by3gmd009	gsm09	gsm09	BSID			Controls head while upright Series: 15 seconds
+bsid_gsm10	bsid_gsm10	by3gmd010	by3gmd010	by3gmd010	by3gmd010	gsm10	gsm10	BSID			Holds head in midline
+bsid_gsm11	bsid_gsm11	by3gmd011	by3gmd011	by3gmd011	by3gmd011	gsm11	gsm11	BSID			Holds head upright while carried
+bsid_gsm12	bsid_gsm12	by3gmd012	by3gmd012	by3gmd012	by3gmd012	gsm12	gsm12	BSID			Controls head while prone Series: 45 degrees
+bsid_gsm13	bsid_gsm13	by3gmd013	by3gmd013	by3gmd013	by3gmd013	gsm13	gsm13	BSID			Rights head
+bsid_gsm14	bsid_gsm14	by3gmd014	by3gmd014	by3gmd014	by3gmd014	gsm14	gsm14	BSID			Rolls from side to back
+bsid_gsm15	bsid_gsm15	by3gmd015	by3gmd015	by3gmd015	by3gmd015	gsm15	gsm15	BSID			Elevates trunk while Prone Series: Elbows and forearms
+bsid_gsm16	bsid_gsm16	by3gmd016	by3gmd016	by3gmd016	by3gmd016	gsm16	gsm16	BSID			Sits with Support Series: Briefly
+bsid_gsm17	bsid_gsm17	by3gmd017	by3gmd017	by3gmd017	by3gmd017	gsm17	gsm17	BSID			Controls head while prone Series: 90 degrees
+bsid_gsm18	bsid_gsm18	by3gmd018	by3gmd018	by3gmd018	by3gmd018	gsm18	gsm18	BSID			Elevates trunk while prone
+bsid_gsm19	bsid_gsm19	by3gmd019	by3gmd019	by3gmd019	by3gmd019	gsm19	gsm19	BSID			Sits with Support Series: 30 seconds
+bsid_gsm20	bsid_gsm20	by3gmd020	by3gmd020	by3gmd020	by3gmd020	gsm20	gsm20	BSID			Rolls from back to sides
+bsid_gsm21	bsid_gsm21	by3gmd021	by3gmd021	by3gmd021	by3gmd021	gsm21	gsm21	BSID			Elevates Trunk while Prone Series: Extended arms
+bsid_gsm22	bsid_gsm22	by3gmd022	by3gmd022	by3gmd022	by3gmd022	gsm22	gsm22	BSID			Sits with Support Series: 5 seconds
+bsid_gsm23	bsid_gsm23	by3gmd023	by3gmd023	by3gmd023	by3gmd023	gsm23	gsm23	BSID			Pulls up to sit
+bsid_gsm24	bsid_gsm24	by3gmd024	by3gmd024	by3gmd024	by3gmd024	gsm24	gsm24	BSID			Grasps foot with hands
+bsid_gsm25	bsid_gsm25	by3gmd025	by3gmd025	by3gmd025	by3gmd025	gsm25	gsm25	BSID			Rolls from back to stomach
+bsid_gsm26	bsid_gsm26	by3gmd026	by3gmd026	by3gmd026	by3gmd026	gsm26	gsm26	BSID			Sits without Support Series: 30 seconds
+bsid_gsm27	bsid_gsm27	by3gmd027	by3gmd027	by3gmd027	by3gmd027	gsm27	gsm27	BSID			Sits without support and holds objects
+bsid_gsm28	bsid_gsm28	by3gmd028	by3gmd028	by3gmd028	by3gmd028	gsm28	gsm28	BSID			Rotates trunk while seated
+bsid_gsm29	bsid_gsm29	by3gmd029	by3gmd029	by3gmd029	by3gmd029	gsm29	gsm29	BSID			Makes stepping movements
+bsid_gsm30	bsid_gsm30	by3gmd030	by3gmd030	by3gmd030	by3gmd030	gsm30	gsm30	BSID			Crawls Series: On stomach
+bsid_gsm31	bsid_gsm31	by3gmd031	by3gmd031	by3gmd031	by3gmd031	gsm31	gsm31	BSID			Crawls Series: Crawl position
+bsid_gsm32	bsid_gsm32	by3gmd032	by3gmd032	by3gmd032	by3gmd032	gsm32	gsm32	BSID			Moves from sitting to hands and knees
+bsid_gsm33	bsid_gsm33	by3gmd033	by3gmd033	by3gmd033	by3gmd033	gsm33	gsm33	BSID			Supports weight
+bsid_gsm34	bsid_gsm34	by3gmd034	by3gmd034	by3gmd034	by3gmd034	gsm34	gsm34	BSID			Crawls Series: Crawl movement
+bsid_gsm35	bsid_gsm35	by3gmd035	by3gmd035	by3gmd035	by3gmd035	gsm35	gsm35	BSID			Raises self to standing position
+bsid_gsm36	bsid_gsm36	by3gmd036	by3gmd036	by3gmd036	by3gmd036	gsm36	gsm36	BSID			Bounces while standing
+bsid_gsm37	bsid_gsm37	by3gmd037	by3gmd037	by3gmd037	by3gmd037	gsm37	gsm37	BSID			Walks Series: With support
+bsid_gsm38	bsid_gsm38	by3gmd038	by3gmd038	by3gmd038	by3gmd038	gsm38	gsm38	BSID			Walks sideways with support
+bsid_gsm39	bsid_gsm39	by3gmd039	by3gmd039	by3gmd039	by3gmd039	gsm39	gsm39	BSID			Sits down with control
+bsid_gsm40	bsid_gsm40	by3gmd040	by3gmd040	by3gmd040	by3gmd040	gsm40	gsm40	BSID			Stands alone
+bsid_gsm41	bsid_gsm41	by3gmd041	by3gmd041	by3gmd041	by3gmd041	gsm41	gsm41	BSID			Stands up Series: Alone
+bsid_gsm42	bsid_gsm42	by3gmd042	by3gmd042	by3gmd042	by3gmd042	gsm42	gsm42	BSID			Walks Series: Alone
+bsid_gsm43	bsid_gsm43	by3gmd043	by3gmd043	by3gmd043	by3gmd043	gsm43	gsm43	BSID			Walks Series: Alone with coordination
+bsid_gsm44	bsid_gsm44	by3gmd044	by3gmd044	by3gmd044	by3gmd044	gsm44	gsm44	BSID			Throws ball
+bsid_gsm45	bsid_gsm45	by3gmd045	by3gmd045	by3gmd045	by3gmd045	gsm45	gsm45	BSID			Squats without support
+bsid_gsm46	bsid_gsm46	by3gmd046	by3gmd046	by3gmd046	by3gmd046	gsm46	gsm46	BSID			Stands up Series: Mature
+bsid_gsm47	bsid_gsm47	by3gmd047	by3gmd047	by3gmd047	by3gmd047	gsm47	gsm47	BSID			Walks Up Stairs Series: Both feet on each step, with support.
+bsid_gsm48	bsid_gsm48	by3gmd048	by3gmd048	by3gmd048	by3gmd048	gsm48	gsm48	BSID			Walks backward 2 steps
+bsid_gsm49	bsid_gsm49	by3gmd049	by3gmd049	by3gmd049	by3gmd049	gsm49	gsm49	BSID			Walks Down Stairs Series: Both feet on each step, with support
+bsid_gsm50	bsid_gsm50	by3gmd050	by3gmd050	by3gmd050	by3gmd050	gsm50	gsm50	BSID			Runs with coordination
+bsid_gsm51	bsid_gsm51	by3gmd051	by3gmd051	by3gmd051	by3gmd051	gsm51	gsm51	BSID			Balances on Right Foot Series: With support
+bsid_gsm52	bsid_gsm52	by3gmd052	by3gmd052	by3gmd052	by3gmd052	gsm52	gsm52	BSID			Balances on Left Foot Series: With support
+bsid_gsm53	bsid_gsm53	by3gmd053	by3gmd053	by3gmd053	by3gmd053	gsm53	gsm53	BSID			Walks sideways without support
+bsid_gsm54	bsid_gsm54	by3gmd054	by3gmd054	by3gmd054	by3gmd054	gsm54	gsm54	BSID			Jumps from bottom step
+bsid_gsm55	bsid_gsm55	by3gmd055	by3gmd055	by3gmd055	by3gmd055	gsm55	gsm55	BSID			Kicks ball
+bsid_gsm56	bsid_gsm56	by3gmd056	by3gmd056	by3gmd056	by3gmd056	gsm56	gsm56	BSID			Walks forward on path
+bsid_gsm57	bsid_gsm57	by3gmd057	by3gmd057	by3gmd057	by3gmd057	gsm57	gsm57	BSID			Walks Up Stairs Series: Both feet on each step, alone.
+bsid_gsm58	bsid_gsm58	by3gmd058	by3gmd058	by3gmd058	by3gmd058	gsm58	gsm58	BSID			Walks Down Stairs Series: Both feet on each step, alone
+bsid_gsm59	bsid_gsm59	by3gmd059	by3gmd059	by3gmd059	by3gmd059	gsm59	gsm59	BSID			Jumps Forward Series: 4 inches
+bsid_gsm60	bsid_gsm60	by3gmd060	by3gmd060	by3gmd060	by3gmd060	gsm60	gsm60	BSID			Balances on right Foot Series: 2 seconds, alone
+bsid_gsm61	bsid_gsm61	by3gmd061	by3gmd061	by3gmd061	by3gmd061	gsm61	gsm61	BSID			Balances on Left Foot Series: 2 seconds, alone
+bsid_gsm62	bsid_gsm62	by3gmd062	by3gmd062	by3gmd062	by3gmd062	gsm62	gsm62	BSID			Walks on tiptoes 4 steps
+bsid_gsm63	bsid_gsm63	by3gmd063	by3gmd063	by3gmd063	by3gmd063	gsm63	gsm63	BSID			Walks backward close to path
+bsid_gsm64	bsid_gsm64	by3gmd064	by3gmd064	by3gmd064	by3gmd064	gsm64	gsm64	BSID			Walks Up Stairs Series: Alternating feet, alone
+bsid_gsm65	bsid_gsm65	by3gmd065	by3gmd065	by3gmd065	by3gmd065	gsm65	gsm65	BSID			Imitates postures
+bsid_gsm66	bsid_gsm66	by3gmd066	by3gmd066	by3gmd066	by3gmd066	gsm66	gsm66	BSID			Stops from a full run
+bsid_gsm67	bsid_gsm67	by3gmd067	by3gmd067	by3gmd067	by3gmd067	gsm67	gsm67	BSID			Walks Down Stairs Series: Alternating feet, alone
+bsid_gsm68	bsid_gsm68	by3gmd068	by3gmd068	by3gmd068	by3gmd068	gsm68	gsm68	BSID			Hops 5 feet
+bsid_gsm69	bsid_gsm69	by3gmd069	by3gmd069	by3gmd069	by3gmd069	gsm69	gsm69	BSID			Balances on Right Foot Series: 8 seconds, alone
+bsid_gsm70	bsid_gsm70	by3gmd070	by3gmd070	by3gmd070	by3gmd070	gsm70	gsm70	BSID			Balances on Left Foot Series: 8 seconds, alone
+bsid_gsm71	bsid_gsm71	by3gmd071	by3gmd071	by3gmd071	by3gmd071	gsm71	gsm71	BSID			Walks heel to toe
+bsid_gsm72	bsid_gsm72	by3gmd072	by3gmd072	by3gmd072	by3gmd072	gsm72	gsm72	BSID			Jumps Forward Series: 24 inches

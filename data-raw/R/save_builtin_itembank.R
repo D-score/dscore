@@ -119,7 +119,7 @@ check_single_key(key_gsed1912)
 
 # --- key_lf2206 Deprecated --> gsed2212
 # Extend lf2206 with gsed item names
-lf_gsed <- gsedread::rename_vector(key_lf2206$item, lexin = "gsed2", lexout = "gsed")
+lf_gsed <- rename_vector(key_lf2206$item, lexin = "gsed2", lexout = "gsed")
 key_lf2206 <- bind_rows(
   key_lf2206,
   data.frame(key = "lf2206", item = lf_gsed, tau = key_lf2206$tau)
@@ -128,7 +128,7 @@ check_single_key(key_lf2206)
 
 # --- key_sf2206 Deprecated --> gsed2212
 # Extend sf2206 with gsed item names
-sf_gsed <- gsedread::rename_vector(key_sf2206$item, lexin = "gsed2", lexout = "gsed")
+sf_gsed <- rename_vector(key_sf2206$item, lexin = "gsed2", lexout = "gsed")
 key_sf2206 <- bind_rows(
   key_sf2206,
   data.frame(key = "sf2206", item = sf_gsed, tau = key_sf2206$tau)
@@ -150,7 +150,7 @@ check_single_key(key_gsed2206)
 
 # --- key_294_0 DEPRECATED --> key_293_0
 # Extend 294_0 with gsed item names
-lfsf_gsed <- gsedread::rename_vector(key_294_0$item, lexin = "gsed2", lexout = "gsed")
+lfsf_gsed <- rename_vector(key_294_0$item, lexin = "gsed2", lexout = "gsed")
 key_294_0 <- bind_rows(
   key_294_0,
   data.frame(key = "294_0", item = lfsf_gsed, tau = key_294_0$tau),

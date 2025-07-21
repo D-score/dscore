@@ -24,6 +24,7 @@ reference:
       that the dscore() function can understand.
     contents:
       - rename_gcdg_gsed
+      - rename_vector
       - order_itemnames
       - sort_itemnames
   - title: "Calculate D-score and DAZ"
@@ -62,6 +63,7 @@ reference:
       - builtin_itembank
       - builtin_itemtable
       - builtin_references
+      - builtin_translate
       - milestones
       - gsample
       - sample_sf

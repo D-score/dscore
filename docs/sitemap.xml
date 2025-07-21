@@ -13,6 +13,7 @@
 <url><loc>https://d-score.github.io/dscore/reference/builtin_itemtable.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/builtin_keys.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/builtin_references.html</loc></url>
+<url><loc>https://d-score.github.io/dscore/reference/builtin_translate.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/calculate_posterior.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/count_mu.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/count_mu_dutch.html</loc></url>
@@ -36,6 +37,7 @@
 <url><loc>https://d-score.github.io/dscore/reference/normalize.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/posterior.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/rename_gcdg_gsed.html</loc></url>
+<url><loc>https://d-score.github.io/dscore/reference/rename_vector.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/sample_hf.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/sample_lf.html</loc></url>
 <url><loc>https://d-score.github.io/dscore/reference/sample_sf.html</loc></url>

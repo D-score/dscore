@@ -45,19 +45,19 @@ Assessment instruments connect to the D-score through a *measurement model*. We 
 2. `gcdg`, a model covering 14 instruments using *direct* measurements; 
 3. `gsed1912`, covers 20 instruments using a mix of *direct* and *caregiver-reported* measurements (Dec 2019);
 5. `293_0`, covers only GSED SF (138 items) and GSED LF (155 items). GSED core model. (Aug 2022)
-6. `gsed2212`, covers 23 instruments using a mix of *direct* and *caregiver-reported* measurements. Extends the GSED core model. (Jan 2022).
+6. `gsed2406`, covers 23 instruments using a mix of *direct* and *caregiver-reported* measurements. Extends the GSED core model. (June 2024).
 
 Different keys lead to different D-scores.  Hence, we may compare only D-scores that are calculated under the same key. Our advice to set the key is:
 
 - For new data, use the generic `key = "gsed"`. This choice will automatically fetch the latest GSED key;
-- To explicitly set the most recent key use `key = "gsed2212"`. The ignores later keys.
+- To explicitly set the most recent key use `key = "gsed2406"`. 
 - Use older keys `dutch`, `gcdg` or `gsed1912` to regenerate old results. These are unlikely to be useful for new data;
-- Superseded keys are: `gsed2206`, `gsed2208`, `lf2206`, `sf2006` and `294_0`. These are available for research purposes, and will be removed in future versions.
+- Superseded keys are: `gsed2212`, `gsed2206`, `gsed2208`, `lf2206`, `sf2006` and `294_0`. These are available for research purposes, and will be removed in future versions.
 
 The table given below displays the number of items per instrument for various keys. If the entry is blank, the key does not cover the instrument.
 
 
-| Code   | Instrument                                              | Items | dutch | gcdg  |gsed1912|gsed2212| 293_0 |
+| Code   | Instrument                                              | Items | dutch | gcdg  |gsed1912|gsed2406| 293_0 |
 | ------ | ------------------------------------------------------- | -----:|------:|------:|------:|--------:|------:|
 | `aqi`  | Ages & Stages Questionnaires-3                          |  230  |       |   29  |   17  |    17   |       |
 | `bar`  | Barrera Moncada                                         |   22  |       |   15  |   13  |    13   |       |
@@ -93,14 +93,14 @@ The table given below displays the number of items per instrument for various ke
 
 Unfortunately, it is not possible to calculate the D-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
 
-For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed1912"` or `"gsed2212"`. Your choice may depend on the goal of your analysis. If you want to compare to other D-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed2212"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`. Before version 1.5.0 the default linked to `"gsed1912"`. Since version 1.7.0 the default selects `"gsed2212"`.
+For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed1912"` or `"gsed2406"`. Your choice may depend on the goal of your analysis. If you want to compare to other D-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed2406"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`. Before version 1.5.0 the default linked to `"gsed1912"`. Since version 1.7.0 the default selects `"gsed2406"`.
 
 The extensions for Mullen were added to the "`"gsed1912"` key. The extension was made based on two datasets, the Provide dataset [@provide] and the Bambam dataset [@bambam]. The Mullen items were matched to existing items and two well fitting items were selected as anchors in a new model on the combined Provide and Bambam data. 
 
 ```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE}
 library(dscore)
 ib <- builtin_itembank |>
-  filter(key == "gsed2212") |>
+  filter(key == "gsed2406") |>
   mutate(
     a = get_age_equivalent(
       items = item, pct = 50,
@@ -122,7 +122,7 @@ ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
   theme(axis.text.y = element_text(hjust = 0, family = "mono"))
 ```
 
-The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed2212"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `ecd`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.
+The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed2406"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `ecd`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.
 
 
 ## Map variable names to the GSED 9-position schema

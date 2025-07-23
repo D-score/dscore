@@ -22,7 +22,7 @@ builtin_keys <- data.frame(
   to = c(80, rep(100, 10)),
   by = rep(1, 11),
   retired = c(FALSE, FALSE, FALSE, TRUE, TRUE,
-              TRUE, TRUE, FALSE, TRUE, FALSE,
+              TRUE, TRUE, FALSE, TRUE, TRUE,
               FALSE),
   stringsAsFactors = FALSE
 )

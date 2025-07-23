@@ -4,6 +4,12 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.10.5
+
+- Retires the key `gsed2212` (soft deprecation). This key is identical to `gsed2406` (the current default), except that it defines its default `population` as `phase1` instead of `preliminary_standards`. If you want the old behavior, specify `key = "gsed2406"` in combination with `population = "phase1"`. The key `gsed2212` will be removed in a future release.
+
+- Update the getting started vignette.
+
 # dscore 1.10.4
 
 - Moves `gsedread::rename_vector()` to the `dscore` package

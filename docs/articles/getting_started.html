@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.10.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.10.5</span>
       </span>
     </div>
 
@@ -155,9 +155,9 @@ instrument</em>;</li>
 <code>293_0</code>, covers only GSED SF (138 items) and GSED LF (155
 items). GSED core model. (Aug 2022)</li>
 <li>
-<code>gsed2212</code>, covers 23 instruments using a mix of
+<code>gsed2406</code>, covers 23 instruments using a mix of
 <em>direct</em> and <em>caregiver-reported</em> measurements. Extends
-the GSED core model. (Jan 2022).</li>
+the GSED core model. (June 2024).</li>
 </ol>
 <p>Different keys lead to different D-scores. Hence, we may compare only
 D-scores that are calculated under the same key. Our advice to set the
@@ -166,14 +166,14 @@ key is:</p>
 <li>For new data, use the generic <code>key = "gsed"</code>. This choice
 will automatically fetch the latest GSED key;</li>
 <li>To explicitly set the most recent key use
-<code>key = "gsed2212"</code>. The ignores later keys.</li>
+<code>key = "gsed2406"</code>.</li>
 <li>Use older keys <code>dutch</code>, <code>gcdg</code> or
 <code>gsed1912</code> to regenerate old results. These are unlikely to
 be useful for new data;</li>
-<li>Superseded keys are: <code>gsed2206</code>, <code>gsed2208</code>,
-<code>lf2206</code>, <code>sf2006</code> and <code>294_0</code>. These
-are available for research purposes, and will be removed in future
-versions.</li>
+<li>Superseded keys are: <code>gsed2212</code>, <code>gsed2206</code>,
+<code>gsed2208</code>, <code>lf2206</code>, <code>sf2006</code> and
+<code>294_0</code>. These are available for research purposes, and will
+be removed in future versions.</li>
 </ul>
 <p>The table given below displays the number of items per instrument for
 various keys. If the entry is blank, the key does not cover the
@@ -196,7 +196,7 @@ instrument.</p>
 <th align="right">dutch</th>
 <th align="right">gcdg</th>
 <th align="right">gsed1912</th>
-<th align="right">gsed2212</th>
+<th align="right">gsed2406</th>
 <th align="right">293_0</th>
 </tr></thead>
 <tbody>
@@ -521,14 +521,14 @@ whether the requested extension is possible.</p>
 <p>For some instruments, e.g., for <code>cro</code> only one choice is
 possible (<code>"gsed"</code>). For <code>gri</code>, we may choose
 between <code>"gcdg"</code> and <code>"gsed1912"</code> or
-<code>"gsed2212"</code>. Your choice may depend on the goal of your
+<code>"gsed2406"</code>. Your choice may depend on the goal of your
 analysis. If you want to compare to other D-scores calculated under key
 <code>"gcdg"</code>, or reproduce an analysis made under that key, then
 pick <code>"gcdg"</code>. If that is not the case, then
-<code>"gsed2212"</code> is probably a better choice because of its
+<code>"gsed2406"</code> is probably a better choice because of its
 broader generalizability. The default key is <code>"gsed"</code>. Before
 version 1.5.0 the default linked to <code>"gsed1912"</code>. Since
-version 1.7.0 the default selects <code>"gsed2212"</code>.</p>
+version 1.7.0 the default selects <code>"gsed2406"</code>.</p>
 <p>The extensions for Mullen were added to the “<code>"gsed1912"</code>
 key. The extension was made based on two datasets, the Provide dataset
 <span class="citation">(<a href="#ref-provide">Nelson</a>)</span> and
@@ -538,7 +538,7 @@ new model on the combined Provide and Bambam data.</p>
 <p><img src="getting_started_files/figure-html/graphkey-1.png" width="672"></p>
 <p>The designs of the original cohorts determine the age coverage for
 each instrument. The figure above indicates the age range currently
-supported by the <code>"gsed2212"</code> key. Some instruments contain
+supported by the <code>"gsed2406"</code> key. Some instruments contain
 many items for the first two years (e.g., <code>by1</code>,
 <code>dmc</code>), whereas others cover primarily upper ages (e.g.,
 <code>tep</code>, <code>ecd</code>). If you find that the ages in your

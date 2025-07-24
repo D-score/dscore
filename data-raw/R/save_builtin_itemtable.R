@@ -35,6 +35,13 @@ items_gs1 <- tab |>
          equate = NA_character_,
          label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)) |>
   select(item, equate, label)
+# Add SF item names for selfreport mode s
+items_gs1_s <- tab |>
+  filter(instrument == "gs1") |>
+  mutate(item = paste0("gs1", domain, "s", formatC(number, width = 3, flag = "0")),
+         equate = NA_character_,
+         label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)) |>
+  select(item, equate, label)
 items_lf_ <- tab |>
   filter(instrument == "gl1") |>
   mutate(item = paste0("lf", c(rep("a", 49), rep("b", 52), rep("c", 54)),
@@ -50,7 +57,7 @@ items_gl1 <- tab |>
   select(item, equate, label)
 
 gsx_itemtable <- bind_rows(items_sf_, items_sf_s, items_lf_,
-                           items_gs1, items_gl1)
+                           items_gs1, items_gs1_s, items_gl1)
 
 ## add ecdi items to itemtable
 ecdi_itemtable <- read.delim("data-raw/data/ecdi_itemtable.txt")

@@ -43,7 +43,7 @@ Ma_LF_A42	Ma_LF_A41	kdigmd008	gtogmd042	gl1gmd041	lfagmd041	A42	A41	LF	42	41	A41
 Ma_LF_A43	Ma_LF_A42	mdtgmd029	gtogmd043	gl1gmd042	lfagmd042	A43	A42	LF	43	42	A42 Jumps over a piece of paper (widthways) (2X)
 Ma_LF_A48	Ma_LF_A43	kdigmd015	gtogmd048	gl1gmd043	lfagmd043	A48	A43	LF	48	43	A43 Walks along line heel-to-toe (2X)
 Ma_LF_A41	Ma_LF_A44	mdtgmd023	gtogmd041	gl1gmd044	lfagmd044	A41	A44	LF	41	44	A44 Throws beanbag onto a cloth (3X)
-Ma_LF_A44	Ma_LF_A45	mdtgmd027	gtogmd044	gl1gmd045	lfagmd045	A44	A45	LF	44	45	A45 Stands on 1 foot > 5 seconds (2X)
+Ma_LF_A44	Ma_LF_A45	mdtgmd027	gtogmd044	gl1gmd045	lfagmd045	A44	A45	LF	44	45	A45 Stands on 1 foot < 5 seconds (2X)
 Ma_LF_A47	Ma_LF_A46	mdtgmd030	gtogmd047	gl1gmd046	lfagmd046	A47	A46	LF	47	46	A46 Walks on tiptoes 6 or more steps
 Ma_LF_A35	Ma_LF_A47	kdigmd034	gtogmd035	gl1gmd047	lfagmd047	A35	A47	LF	35	47	A47 Moves from sitting to standing without using hands
 Ma_LF_A46	Ma_LF_A48	mdtgmd032	gtogmd046	gl1gmd048	lfagmd048	A46	A48	LF	46	48	A48 Stands on 1 foot > 5 seconds (2X)

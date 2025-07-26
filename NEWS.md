@@ -4,6 +4,7 @@ editor_options:
     wrap: 72
 ---
 
+- Correct description of A45 Stand on 1 foot < 5 seconds
 - Adds mode "s" also to `gsed3`, `gsed2` and `gsed` lexicon
 - Adds item with mode "s" and "gs1" instrument codes
 - (NOTE: there are no gpa-items with mode "s" (gsed2 lexicon))

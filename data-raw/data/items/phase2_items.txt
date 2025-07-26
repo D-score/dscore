@@ -43,7 +43,7 @@ row	code	label	gsed	gsed2	p1	p2	instrument	domain	mode	number
 42	Ma_LF_A42	A42 Jumps over a piece of paper (widthways) (2X)	mdtgmd029	gtogmd043	lf1	a_d	gl1	gm	d	42
 43	Ma_LF_A43	A43 Walks along line heel-to-toe (2X)	kdigmd015	gtogmd048	lf1	a_d	gl1	gm	d	43
 44	Ma_LF_A44	A44 Throws beanbag onto a cloth (3X)	mdtgmd023	gtogmd041	lf1	a_d	gl1	gm	d	44
-45	Ma_LF_A45	A45 Stands on 1 foot > 5 seconds (2X)	mdtgmd027	gtogmd044	lf1	a_d	gl1	gm	d	45
+45	Ma_LF_A45	A45 Stands on 1 foot < 5 seconds (2X)	mdtgmd027	gtogmd044	lf1	a_d	gl1	gm	d	45
 46	Ma_LF_A46	A46 Walks on tiptoes 6 or more steps	mdtgmd030	gtogmd047	lf1	a_d	gl1	gm	d	46
 47	Ma_LF_A47	A47 Moves from sitting to standing without using hands	kdigmd034	gtogmd035	lf1	a_d	gl1	gm	d	47
 48	Ma_LF_A48	A48 Stands on 1 foot > 5 seconds (2X)	mdtgmd032	gtogmd046	lf1	a_d	gl1	gm	d	48

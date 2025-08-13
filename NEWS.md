@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.10.8
+
+- Replaces the `by3` key in `gsed2212` and `gsed2406`. The replacement matches many more by3 items (from 67 to 172), especially for younger children, and raises the D-score estimate for by3 by approximately 2.6 D.
+
 # dscore 1.10.7
 
 - Correct description of A45 Stand on 1 foot < 5 seconds

@@ -38,7 +38,8 @@ key_file <- c(
   gsed2208_gs1_gs2 = "gsed2208_gs1_gs2.txt",
   gsed2212 = "gsed2212.txt",
   gsed2212_gs1_gl1 = "gsed2212_gs1_gl1.txt",
-  gsed2212_gh1 = "gsed2212_gh1.txt"
+  gsed2212_gh1 = "gsed2212_gh1.txt",
+  gsed2212_by3 = "by3_extension_gsed_key.txt"
 )
 key_name <- names(key_file)
 key_path <- "data-raw/data/keys"
@@ -103,6 +104,8 @@ key_gsed2212 <- key_gsed2212[order_itemnames(key_gsed2212$item), ]
 key_gsed2212_gs1_gl1 <- read.delim(file = key_file["gsed2212_gs1_gl1"])
 
 key_gsed2212_gh1 <- read.delim(file = key_file["gsed2212_gh1"])
+
+key_gsed2212_by3 <- read.delim(file = key_file["gsed2212_by3"])
 
 # --- key_dutch (76 items)
 check_single_key(key_dutch)
@@ -185,6 +188,24 @@ key_gsed2212 <- bind_rows(
   key_gsed2208_ecd) |>
   mutate(key = "gsed2212") |>
   select(key, item, tau)
+
+# Replace by3 by by3 update (13/8/25)
+idx_old <- starts_with("by3", vars = key_gsed2212$item)
+by3_old <- key_gsed2212[starts_with("by3", vars = key_gsed2212$item), ]
+by3_new <- key_gsed2212_by3
+by3_new$key <- "gsed2212"
+# by3_merge <- merge(
+#   by3_old,
+#   by3_new,
+#   by = "item",
+#   all.x = TRUE,
+#   suffixes = c("", "_new")
+# )
+key_gsed2212 <- key_gsed2212[-idx_old, ]
+key_gsed2212 <- bind_rows(
+  key_gsed2212,
+  by3_new
+)
 check_single_key(key_gsed2212)
 
 # --- key2406

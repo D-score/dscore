@@ -64,7 +64,7 @@ The table given below displays the number of items per instrument for various ke
 | `bat`  | Battelle Development Inventory and Screener-2           |  137  |       |       |       |         |       |
 | `by1`  | Bayley Scales for Infant and Toddler Development-1      |  156  |       |   85  |   76  |    76   |       |
 | `by2`  | Bayley Scales for Infant and Toddler Development-2      |  121  |       |   16  |   16  |    16   |       |
-| `by3`  | Bayley Scales for Infant and Toddler Development-3      |  320  |       |  105  |   67  |    67   |       |
+| `by3`  | Bayley Scales for Infant and Toddler Development-3      |  320  |       |  105  |   67  |   172   |       |
 | `cro`  | Caregiver Reported Early Development Instrument (CREDI) |  149  |       |       |   62  |    64   |       |
 | `ddi`  | Dutch Development Instrument (Van Wiechen Schema)       |   77  |   76  |   65  |   64  |    64   |       |
 | `den`  | Denver-2                                                |  111  |       |   67  |   50  |    50   |       |

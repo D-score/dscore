@@ -3,6 +3,11 @@ editor_options:
   markdown: 
     wrap: 72
 ---
+# dscore 1.10.10
+
+- Adds .toml and .vscode file to enforce air formatting
+- Initializes air format on save
+
 # dscore 1.10.9
 
 - Supports DAZ for children < 2 weeks using reference `preliminary_standards`

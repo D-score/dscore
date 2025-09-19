@@ -44,52 +44,78 @@
 #' input <- c("file", "GSED_ID", "Ma_SF_Parent ID", paste0("SF00", 1:3))
 #' rename_vector(input, lexin = "short2", lowercase = TRUE)
 #' @export
-rename_vector <- function(input,
-                          lexin = c("phase2", "phase1",
-                                    "short1", "short2",
-                                    "gsed", "gsed2", "gsed3", "gsed4"),
-                          lexout = c("gsed4", "gsed3", "gsed2", "gsed",
-                                     "short2", "short1",
-                                     "phase1", "phase2"),
-                          notfound = "copy",
-                          contains = c("", "Ma_SF_", "Ma_LF_", "bsid_"),
-                          underscore = TRUE,
-                          trim = "Ma_",
-                          lowercase = TRUE,
-                          force_subjid_agedays = FALSE) {
+rename_vector <- function(
+  input,
+  lexin = c(
+    "phase2",
+    "phase1",
+    "short1",
+    "short2",
+    "gsed",
+    "gsed2",
+    "gsed3",
+    "gsed4"
+  ),
+  lexout = c(
+    "gsed4",
+    "gsed3",
+    "gsed2",
+    "gsed",
+    "short2",
+    "short1",
+    "phase1",
+    "phase2"
+  ),
+  notfound = "copy",
+  contains = c("", "Ma_SF_", "Ma_LF_", "bsid_"),
+  underscore = TRUE,
+  trim = "Ma_",
+  lowercase = TRUE,
+  force_subjid_agedays = FALSE
+) {
   lexin <- match.arg(lexin)
   lexout <- match.arg(lexout)
   contains <- match.arg(contains)
 
   # rename itemnames
-  colin <- switch(lexin,
-                  phase1 = "phase1",
-                  phase2 = "phase2",
-                  short1 = "short1",
-                  short2 = "short2",
-                  gsed = "gsed",
-                  gsed2 = "gsed2",
-                  gsed3 = "gsed3",
-                  gsed4 = "gsed4",
-                  "notfound")
-  colout <- switch(lexout,
-                   phase1 = "phase1",
-                   phase2 = "phase2",
-                   short1 = "short1",
-                   short2 = "short2",
-                   gsed = "gsed",
-                   gsed2 = "gsed2",
-                   gsed3 = "gsed3",
-                   gsed4 = "gsed4",
-                   "notfound")
-  if (colin  == "notfound") stop("Lexicon not found: ", lexin)
-  if (colout == "notfound") stop("Lexicon not found: ", lexout)
+  colin <- switch(
+    lexin,
+    phase1 = "phase1",
+    phase2 = "phase2",
+    short1 = "short1",
+    short2 = "short2",
+    gsed = "gsed",
+    gsed2 = "gsed2",
+    gsed3 = "gsed3",
+    gsed4 = "gsed4",
+    "notfound"
+  )
+  colout <- switch(
+    lexout,
+    phase1 = "phase1",
+    phase2 = "phase2",
+    short1 = "short1",
+    short2 = "short2",
+    gsed = "gsed",
+    gsed2 = "gsed2",
+    gsed3 = "gsed3",
+    gsed4 = "gsed4",
+    "notfound"
+  )
+  if (colin == "notfound") {
+    stop("Lexicon not found: ", lexin)
+  }
+  if (colout == "notfound") {
+    stop("Lexicon not found: ", lexout)
+  }
 
   output <- input
   mt <- dscore::builtin_translate
   v <- mt[match(input, pull(mt, colin)), colout, drop = TRUE]
   output[!is.na(v)] <- v[!is.na(v)]
-  if (is.na(notfound[1L]) || notfound[1L] != "copy") output[is.na(v)] <- notfound[1L]
+  if (is.na(notfound[1L]) || notfound[1L] != "copy") {
+    output[is.na(v)] <- notfound[1L]
+  }
 
   # prettify
   if (underscore) {
@@ -97,7 +123,9 @@ rename_vector <- function(input,
     output <- sub("-", "_", output)
   }
   output <- sub(trim, "", output)
-  if (lowercase) output <- tolower(output)
+  if (lowercase) {
+    output <- tolower(output)
+  }
 
   # force subjid and agedays names
   if (force_subjid_agedays) {

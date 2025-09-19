@@ -68,10 +68,7 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     domn <- ifelse(domo == "a", "ad", domn)
     domn <- ifelse(domo == "m", "mo", domn)
     domn <- ifelse(domo == "s", "sl", domn)
-    nr <- stri_pad(unlist(lapply(strsplit(x, "_z"), `[[`, 2)),
-      3,
-      pad = "0"
-    )
+    nr <- stri_pad(unlist(lapply(strsplit(x, "_z"), `[[`, 2)), 3, pad = "0")
     rep <- "d"
     instr <- "bat"
     cbind(as.character(x), paste(instr, domn, rep, nr, sep = ""))
@@ -119,16 +116,68 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
 
   ddi <- function(x) {
     fm <- c(
-      1, 7, 8, 9, 13, 14, 19, 20, 21, 27, 32, 33, 38,
-      39, 44, 45, 51, 52, 53, 54
+      1,
+      7,
+      8,
+      9,
+      13,
+      14,
+      19,
+      20,
+      21,
+      27,
+      32,
+      33,
+      38,
+      39,
+      44,
+      45,
+      51,
+      52,
+      53,
+      54
     )
     cm <- c(
-      2, 6, 10, 25, 31, 30, 37, 40, 47, 55, 56, 16, 36,
-      41, 48
+      2,
+      6,
+      10,
+      25,
+      31,
+      30,
+      37,
+      40,
+      47,
+      55,
+      56,
+      16,
+      36,
+      41,
+      48
     )
     gm <- c(
-      3, 4, 11, 15, 5, 12, 18, 17, 14, 22, 23, 24, 26,
-      28, 29, 34, 35, 42, 50, 43, 49, 57, 46
+      3,
+      4,
+      11,
+      15,
+      5,
+      12,
+      18,
+      17,
+      14,
+      22,
+      23,
+      24,
+      26,
+      28,
+      29,
+      34,
+      35,
+      42,
+      50,
+      43,
+      49,
+      57,
+      46
     )
     domn <- rep("xx", length(x))
     nr <- gsub("n|v", "", x)
@@ -220,8 +269,24 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
     nr <- ifelse(grepl("v74", x), 73, nr)
     nr <- ifelse(grepl("v75", x), 74, nr)
     mitem <- c(
-      4, 9, 12, 29:38, 60, 64, 65, 66, 67,
-      14, 16, 19, 25, 39:43, 45:48, 50, 51, 73
+      4,
+      9,
+      12,
+      29:38,
+      60,
+      64,
+      65,
+      66,
+      67,
+      14,
+      16,
+      19,
+      25,
+      39:43,
+      45:48,
+      50,
+      51,
+      73
     )
     rep <- ifelse(nr %in% mitem, "m", "d")
     nr <- stri_pad(nr, 3, pad = "0")
@@ -398,7 +463,9 @@ rename_gcdg_gsed <- function(x, copy = TRUE) {
   }
 
   y <- x
-  if (!copy) y <- rep("", length(y))
+  if (!copy) {
+    y <- rep("", length(y))
+  }
 
   y <- convert(x, y, 2, c("ac", "af", "ap", "ag"), aqi)
   y <- convert(x, y, 2, c("bm"), bar)

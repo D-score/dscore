@@ -19,12 +19,11 @@
 #' head(get_itemtable(), 3)
 #' get_itemtable(LETTERS[1:3], "")
 #' @export
-get_itemtable <- function(items = NULL, itemtable = NULL,
-                          decompose = FALSE) {
+get_itemtable <- function(items = NULL, itemtable = NULL, decompose = FALSE) {
   if (is.null(itemtable)) {
+    # itemtable == "" is a special case for creating new items
     itemtable <- dscore::builtin_itemtable
-  } # itemtable == "" is a special case for creating new items
-  else if (is.character(itemtable)) {
+  } else if (is.character(itemtable)) {
     if (itemtable == "") {
       if (length(items)) {
         itemtable <- data.frame(

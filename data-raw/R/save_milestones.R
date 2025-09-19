@@ -4,7 +4,9 @@ library("haven")
 library("labelled")
 
 # read data
-pops_orig <- haven::read_sav(path.expand("~/Websites/dbook/dbook1/data-raw/data/pops/POPS19groeiSDS2whoTranslatedExtrav2PLUS.sav"))
+pops_orig <- haven::read_sav(path.expand(
+  "~/Websites/dbook/dbook1/data-raw/data/pops/POPS19groeiSDS2whoTranslatedExtrav2PLUS.sav"
+))
 
 # translate DDI itemnames to lex_gsed
 items <- gseddata::rename_gcdg_gsed(paste0("n", 1:57))
@@ -21,9 +23,13 @@ pops_data <- pops_orig |>
   ) |>
   mutate_at(vars(items), function(x) as.integer(1 - x)) |>
   dplyr::select(
-    subjid, sex, agedays, age,
+    subjid,
+    sex,
+    agedays,
+    age,
     gagebrth,
-    dead, handicap,
+    dead,
+    handicap,
     items
   )
 

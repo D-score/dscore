@@ -3,8 +3,10 @@
 library(dplyr)
 fn <- file.path("data-raw/data/itemtable_20221201.txt")
 builtin_itemtable <- read.delim(
-  file = fn, quote = "",
-  stringsAsFactors = FALSE, na = "",
+  file = fn,
+  quote = "",
+  stringsAsFactors = FALSE,
+  na = "",
   fileEncoding = "UTF-8",
   header = TRUE
 )
@@ -12,52 +14,78 @@ builtin_itemtable <- read.delim(
 ## Create LF and SF item codes corresponding to published
 ## GSED v1.0 Short Form and GSED v1.0 Long Form
 ## NOTE: tab also contains crosswalk to gsed and gsed2 lexicon
-tab <- read.delim("data-raw/data/items/phase2_items.txt",
-                  stringsAsFactors = FALSE, na = "",
-                  fileEncoding = "UTF-8",
-                  header = TRUE)
+tab <- read.delim(
+  "data-raw/data/items/phase2_items.txt",
+  stringsAsFactors = FALSE,
+  na = "",
+  fileEncoding = "UTF-8",
+  header = TRUE
+)
 items_sf_ <- tab |>
   filter(instrument == "gs1") |>
-  mutate(item = paste0("sf_", domain, mode, formatC(number, width = 3, flag = "0")),
-         equate = NA_character_,
-         label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)) |>
+  mutate(
+    item = paste0("sf_", domain, mode, formatC(number, width = 3, flag = "0")),
+    equate = NA_character_,
+    label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)
+  ) |>
   select(item, equate, label)
 # Add SF item names for selfreport mode s
 items_sf_s <- tab |>
   filter(instrument == "gs1") |>
-  mutate(item = paste0("sf_", domain, "s", formatC(number, width = 3, flag = "0")),
-         equate = NA_character_,
-         label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)) |>
+  mutate(
+    item = paste0("sf_", domain, "s", formatC(number, width = 3, flag = "0")),
+    equate = NA_character_,
+    label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)
+  ) |>
   select(item, equate, label)
 items_gs1 <- tab |>
   filter(instrument == "gs1") |>
-  mutate(item = paste0("gs1", domain, mode, formatC(number, width = 3, flag = "0")),
-         equate = NA_character_,
-         label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)) |>
+  mutate(
+    item = paste0("gs1", domain, mode, formatC(number, width = 3, flag = "0")),
+    equate = NA_character_,
+    label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)
+  ) |>
   select(item, equate, label)
 # Add SF item names for selfreport mode s
 items_gs1_s <- tab |>
   filter(instrument == "gs1") |>
-  mutate(item = paste0("gs1", domain, "s", formatC(number, width = 3, flag = "0")),
-         equate = NA_character_,
-         label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)) |>
+  mutate(
+    item = paste0("gs1", domain, "s", formatC(number, width = 3, flag = "0")),
+    equate = NA_character_,
+    label = paste(paste0("SF", formatC(number, width = 3, flag = "0")), label)
+  ) |>
   select(item, equate, label)
 items_lf_ <- tab |>
   filter(instrument == "gl1") |>
-  mutate(item = paste0("lf", c(rep("a", 49), rep("b", 52), rep("c", 54)),
-                       domain, "d", formatC(number, width = 3, flag = "0")),
-         equate = NA_character_,
-         label = label) |>
+  mutate(
+    item = paste0(
+      "lf",
+      c(rep("a", 49), rep("b", 52), rep("c", 54)),
+      domain,
+      "d",
+      formatC(number, width = 3, flag = "0")
+    ),
+    equate = NA_character_,
+    label = label
+  ) |>
   select(item, equate, label)
 items_gl1 <- tab |>
   filter(instrument == "gl1") |>
-  mutate(item = paste0("gl1", domain, "d", formatC(number, width = 3, flag = "0")),
-         equate = NA_character_,
-         label = label) |>
+  mutate(
+    item = paste0("gl1", domain, "d", formatC(number, width = 3, flag = "0")),
+    equate = NA_character_,
+    label = label
+  ) |>
   select(item, equate, label)
 
-gsx_itemtable <- bind_rows(items_sf_, items_sf_s, items_lf_,
-                           items_gs1, items_gs1_s, items_gl1)
+gsx_itemtable <- bind_rows(
+  items_sf_,
+  items_sf_s,
+  items_lf_,
+  items_gs1,
+  items_gs1_s,
+  items_gl1
+)
 
 ## add ecdi items to itemtable
 ecdi_itemtable <- read.delim("data-raw/data/ecdi_itemtable.txt")
@@ -81,7 +109,14 @@ ecdi_itemtable <- ecdi_itemtable |>
 hh_itemtable <- openxlsx::read.xlsx("data-raw/data/ageforms_2025-07-15.xlsx")
 info <- dscore::decompose_itemnames(hh_itemtable$item)
 info$instrument <- "gh1"
-info$domain <- recode(hh_itemtable$voted_domain, cog = "cg", lang = "lg", life = "li", motor = "mo", sem = "se")
+info$domain <- recode(
+  hh_itemtable$voted_domain,
+  cog = "cg",
+  lang = "lg",
+  life = "li",
+  motor = "mo",
+  sem = "se"
+)
 info$number <- formatC(1:55, width = 3, flag = "0")
 hh_itemtable$item <- with(info, paste0(instrument, domain, mode, number))
 hh_itemtable <- hh_itemtable |>
@@ -102,7 +137,8 @@ builtin_itemtable <- builtin_itemtable |>
   select(item, equate, label)
 
 # check
-if (any(duplicated(builtin_itemtable$item))) cat("Duplicated items found.")
+if (any(duplicated(builtin_itemtable$item))) {
+  cat("Duplicated items found.")
+}
 
 usethis::use_data(builtin_itemtable, overwrite = TRUE)
-

@@ -15,14 +15,16 @@
 #' @examples
 #' get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"))
 #' @export
-get_age_equivalent <- function(items,
-                               pct = c(10, 50, 90),
-                               key = NULL,
-                               population = NULL,
-                               transform = NULL,
-                               itembank = dscore::builtin_itembank,
-                               xunit = c("decimal", "days", "months"),
-                               verbose = FALSE) {
+get_age_equivalent <- function(
+  items,
+  pct = c(10, 50, 90),
+  key = NULL,
+  population = NULL,
+  transform = NULL,
+  itembank = dscore::builtin_itembank,
+  xunit = c("decimal", "days", "months"),
+  verbose = FALSE
+) {
   xunit <- match.arg(xunit)
 
   init <- init_key(key, population, transform, qp = NULL)
@@ -55,8 +57,12 @@ get_age_equivalent <- function(items,
     )
 
   # convert to requested age unit
-  if (xunit == "days") ib$a <- round(ib$a * 365.25)
-  if (xunit == "months") ib$a <- round(ib$a * 12, 4L)
+  if (xunit == "days") {
+    ib$a <- round(ib$a * 365.25)
+  }
+  if (xunit == "months") {
+    ib$a <- round(ib$a * 12, 4L)
+  }
 
   return(ib)
 }

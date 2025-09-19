@@ -15,12 +15,14 @@ get_mu <- function(t, key, prior_mean_NA = NA_real_) {
   # calculate P50 from the default population for the key
   init <- init_key(key = key, population = NULL, transform = NULL, qp = NULL)
   population <- init$population
-  mu <- switch(population,
-               "dutch" = count_mu_dutch(t),
-               "gcdg" = count_mu_gcdg(t),
-               "phase1" = count_mu_phase1(t),
-               "preliminary_standards" = count_mu_preliminary_standards(t),
-               rep(NA_real_, length(t)))
+  mu <- switch(
+    population,
+    "dutch" = count_mu_dutch(t),
+    "gcdg" = count_mu_gcdg(t),
+    "phase1" = count_mu_phase1(t),
+    "preliminary_standards" = count_mu_preliminary_standards(t),
+    rep(NA_real_, length(t))
+  )
   mu[is.na(t)] <- prior_mean_NA
   return(mu)
 }
@@ -121,8 +123,12 @@ count_mu_phase1 <- function(t) {
   # t[t3] <- suppressWarnings(61.40956 + 3.80904 * t[t3])
 
   # Round 2 model
-  t[t1] <- suppressWarnings(20.5883 + 27.3376 * t[t1] + 6.4254 * log(t[t1] + 0.2))
-  t[t2] <- suppressWarnings(14.63748 - 12.11774 * t[t2] + 69.05463 * log(t[t2] + 0.92))
+  t[t1] <- suppressWarnings(
+    20.5883 + 27.3376 * t[t1] + 6.4254 * log(t[t1] + 0.2)
+  )
+  t[t2] <- suppressWarnings(
+    14.63748 - 12.11774 * t[t2] + 69.05463 * log(t[t2] + 0.92)
+  )
   t[t3] <- suppressWarnings(61.37967 + 3.83513 * t[t3])
 
   return(t)
@@ -142,9 +148,8 @@ count_mu_phase1 <- function(t) {
 #' @examples
 #' dscore:::count_mu_preliminary_standards(0:5)
 count_mu_preliminary_standards <- function(t) {
-
   to <- !is.na(t)
-  t0 <- to & t < -1/12
+  t0 <- to & t < -1 / 12
   t1 <- to & t <= 0.75
   t2 <- to & t > 0.75 & t <= 3.5
   t3 <- to & t > 3.5

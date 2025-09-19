@@ -11,15 +11,11 @@ f5 <- file.path(path, "preliminary_standards.txt")
 
 # ------------- dutch references
 dutch_dutch <- read.delim(file = f1) |>
-  mutate(population = "dutch",
-         key = "dutch",
-         distribution = "LMS")
+  mutate(population = "dutch", key = "dutch", distribution = "LMS")
 
 # ------------- gcdg references
 gcdg_gcdg <- read.delim(file = f2) |>
-  mutate(population = "gcdg",
-         key = "gcdg",
-         distribution = "LMS")
+  mutate(population = "gcdg", key = "gcdg", distribution = "LMS")
 # using the fact that gcdg_reference is a normal model
 # add percentiles/SD lines
 percentiles <- c(3, 10, 25, 50, 75, 90, 97)
@@ -31,7 +27,11 @@ z <- matrix(z, nrow = length(sd), ncol = length(z), byrow = TRUE)
 p <- round(mean + m * z, 2)
 colnames(p) <- c(
   paste0("P", percentiles),
-  "SDM2", "SDM1", "SD0", "SDP1", "SDP2"
+  "SDM2",
+  "SDM1",
+  "SD0",
+  "SDP1",
+  "SDP2"
 )
 gcdg_gcdg <- bind_cols(gcdg_gcdg, data.frame(p))
 
@@ -119,13 +119,30 @@ builtin_references <- bind_rows(
   dutch_gsed2212,
   preliminary_standards_gsed2406,
   phase1_gsed2406,
-  dutch_gsed2406) |>
+  dutch_gsed2406
+) |>
   rename(age = year) |>
   dplyr::select(
-    population, key, distribution,
-    age, mu, sigma, nu, tau,
-    P3, P10, P25, P50, P75, P90, P97,
-    SDM2, SDM1, SD0, SDP1, SDP2
+    population,
+    key,
+    distribution,
+    age,
+    mu,
+    sigma,
+    nu,
+    tau,
+    P3,
+    P10,
+    P25,
+    P50,
+    P75,
+    P90,
+    P97,
+    SDM2,
+    SDM1,
+    SD0,
+    SDP1,
+    SDP2
   )
 
 usethis::use_data(builtin_references, overwrite = TRUE)

@@ -17,7 +17,9 @@ check_single_key <- function(x) {
     warning("Missing tau detected.")
     ok <- FALSE
   }
-  if (ok) cat("Key", unique(x$key), "OK.\n")
+  if (ok) {
+    cat("Key", unique(x$key), "OK.\n")
+  }
   invisible(ok)
 }
 
@@ -78,7 +80,9 @@ items_gto <- key_294_0$item[starts_with("gto", vars = key_294_0$item)]
 key_294_0_gto <- key_294_0 |> filter(item %in% items_gto)
 key_294_0_gto <- key_294_0_gto[order_itemnames(key_294_0_gto$item), ]
 key_294_0_gpa <- key_294_0 |> filter(item %in% items_gpa)
-key_294_0_gpa <- key_294_0_gpa[order_itemnames(key_294_0_gpa$item, order = "indm"), ]
+key_294_0_gpa <- key_294_0_gpa[
+  order_itemnames(key_294_0_gpa$item, order = "indm"),
+]
 key_294_0 <- bind_rows(
   key_294_0_gto,
   key_294_0_gpa
@@ -96,7 +100,9 @@ key_gsed2208_ecd <- read.delim(file = key_file["gsed2208_ecd"])
 key_gsed2208_ecd <- key_gsed2208_ecd[order_itemnames(key_gsed2208_ecd$item), ]
 
 key_gsed2208_gs1_gs2 <- read.delim(file = key_file["gsed2208_gs1_gs2"])
-key_gsed2208_gs1_gs2 <- key_gsed2208_gs1_gs2[order_itemnames(key_gsed2208_gs1_gs2$item, order = "imnd"), ]
+key_gsed2208_gs1_gs2 <- key_gsed2208_gs1_gs2[
+  order_itemnames(key_gsed2208_gs1_gs2$item, order = "imnd"),
+]
 
 key_gsed2212 <- read.delim(file = key_file["gsed2212"])
 key_gsed2212 <- key_gsed2212[order_itemnames(key_gsed2212$item), ]
@@ -170,7 +176,12 @@ check_single_key(key_293_0)
 # Add ecdi
 # Save as gsed2208
 # Superseeded by gsed2212 because of LF item order problem - do not use
-key_gsed2208 <- bind_rows(key_gsed2208_gs1_gs2, key_293_0, key_gsed2208, key_gsed2208_ecd) |>
+key_gsed2208 <- bind_rows(
+  key_gsed2208_gs1_gs2,
+  key_293_0,
+  key_gsed2208,
+  key_gsed2208_ecd
+) |>
   mutate(key = "gsed2208") |>
   select(key, item, tau)
 check_single_key(key_gsed2208)
@@ -185,7 +196,8 @@ key_gsed2212 <- bind_rows(
   key_gsed2212_gh1,
   key_293_0,
   key_gsed2212,
-  key_gsed2208_ecd) |>
+  key_gsed2208_ecd
+) |>
   mutate(key = "gsed2212") |>
   select(key, item, tau)
 
@@ -222,10 +234,10 @@ builtin_itembank <- bind_rows(
   key_293_0,
   key_gsed1912,
   key_gcdg,
-  key_dutch) |>
+  key_dutch
+) |>
   left_join(get_itemtable(decompose = TRUE), by = "item") |>
   select(-equate)
 
 # save to /data
 usethis::use_data(builtin_itembank, overwrite = TRUE)
-

@@ -38,4 +38,4 @@ NeedsCompilation: yes
 URL: https://github.com/d-score/dscore, https://d-score.org/dscore/, https://d-score.org/dbook1/
 BugReports: https://github.com/d-score/dscore/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

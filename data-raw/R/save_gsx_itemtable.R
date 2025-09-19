@@ -8,26 +8,52 @@ library(openxlsx)
 # NOTE: sfi$tau is taken from key 294_0. IGNORE
 fn <- file.path("data-raw/data/SF_LF_Phase 2_Item Ordering.txt")
 sfi <- read.delim(
-  file = fn, quote = "",
-  stringsAsFactors = FALSE, na = "",
+  file = fn,
+  quote = "",
+  stringsAsFactors = FALSE,
+  na = "",
   fileEncoding = "UTF-8",
   header = TRUE
 )
-colnames(sfi) <- c("start", "ph2", "ph1", "tau", "label", "domain", "gsed2", "gsed1")
-sfi$domain <- recode(sfi$domain, sem = "se", motor = "mo", lang = "lg", cog = "cg", life = "li")
+colnames(sfi) <- c(
+  "start",
+  "ph2",
+  "ph1",
+  "tau",
+  "label",
+  "domain",
+  "gsed2",
+  "gsed1"
+)
+sfi$domain <- recode(
+  sfi$domain,
+  sem = "se",
+  motor = "mo",
+  lang = "lg",
+  cog = "cg",
+  life = "li"
+)
 
 # LF Item order (corrected 22021201)
 fn <- file.path("data-raw/data/lf_gto_match_2.xlsx")
 lfi <- read.xlsx(fn, sheet = "gto_LF1_LF2 (221130)", startRow = 2)
-lfi <- lfi[, c("stream", "matched_item", "matched_tau", "LF2_correct", "LF2_Stem")]
+lfi <- lfi[, c(
+  "stream",
+  "matched_item",
+  "matched_tau",
+  "LF2_correct",
+  "LF2_Stem"
+)]
 lfi <- lfi[order(lfi$LF2_correct), ]
 lfi <- lfi[!is.na(lfi$matched_tau), ]
 
 # select core model, using gpa and gto instrument codes
 fn <- file.path("data-raw/data/keys/293_0.txt")
 core <- read.delim(
-  file = fn, quote = "",
-  stringsAsFactors = FALSE, na = "",
+  file = fn,
+  quote = "",
+  stringsAsFactors = FALSE,
+  na = "",
   fileEncoding = "UTF-8",
   header = TRUE
 )
@@ -36,7 +62,12 @@ core$label <- get_labels(core$item)
 # Construct item names gs1
 # gs1: GSED SF Version 1 (Validation Phase 2)
 # create gs1 itembank part
-gs1_names <- paste0("gs1", sfi$domain, "c", formatC(1:139, width = 3, flag = "0"))
+gs1_names <- paste0(
+  "gs1",
+  sfi$domain,
+  "c",
+  formatC(1:139, width = 3, flag = "0")
+)
 gs1 <- data.frame(gs1_names, item = sfi$gsed2)
 gs1 <- left_join(x = gs1, y = core, by = "item")
 gs1 <- data.frame(
@@ -73,7 +104,10 @@ gl1 <- data.frame(
 
 gsx <- bind_rows(gs1, gl1)
 
-write.table(gsx,
+write.table(
+  gsx,
   file = "data-raw/data/keys/items_gs1_gl1.txt",
-  quote = FALSE, sep = "\t", row.names = FALSE
+  quote = FALSE,
+  sep = "\t",
+  row.names = FALSE
 )

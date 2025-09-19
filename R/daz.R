@@ -49,7 +49,9 @@
 #' daz(d = c(35, 50), x = c(0.5, 1.0), reference_table = reftab)
 #' @export
 daz <- function(d, x, reference_table = NULL, dec = 3, verbose = FALSE) {
-  if (length(d) != length(x)) stop("Arguments `x` and  `d` of different length")
+  if (length(d) != length(x)) {
+    stop("Arguments `x` and  `d` of different length")
+  }
 
   if (is.null(reference_table)) {
     rt <- get_reference(verbose = verbose)
@@ -67,9 +69,11 @@ daz <- function(d, x, reference_table = NULL, dec = 3, verbose = FALSE) {
     l <- approx(x = rt[, "age"], y = rt[, "nu"], xout = x)$y
     m <- approx(x = rt[, "age"], y = rt[, "mu"], xout = x)$y
     s <- approx(x = rt[, "age"], y = rt[, "sigma"], xout = x)$y
-    z <- ifelse(l > 0.01 | l < (-0.01),
-                (((d / m)^l) - 1) / (l * s),
-                log(d / m) / s)
+    z <- ifelse(
+      l > 0.01 | l < (-0.01),
+      (((d / m)^l) - 1) / (l * s),
+      log(d / m) / s
+    )
   } else if (dist == "BCT") {
     mu <- approx(x = rt[, "age"], y = rt[, "mu"], xout = x)$y
     sigma <- approx(x = rt[, "age"], y = rt[, "sigma"], xout = x)$y
@@ -101,7 +105,9 @@ daz <- function(d, x, reference_table = NULL, dec = 3, verbose = FALSE) {
 #' zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = reftab)
 #' @export
 zad <- function(z, x, reference_table = NULL, dec = 2, verbose = FALSE) {
-  if (length(z) != length(x)) stop("Arguments `x` and  `z` of different length")
+  if (length(z) != length(x)) {
+    stop("Arguments `x` and  `z` of different length")
+  }
 
   if (is.null(reference_table)) {
     rt <- get_reference(verbose = verbose)
@@ -119,9 +125,11 @@ zad <- function(z, x, reference_table = NULL, dec = 2, verbose = FALSE) {
     mu <- approx(rt[, "age"], rt[, "mu"], xout = x)$y
     sigma <- approx(rt[, "age"], rt[, "sigma"], xout = x)$y
     nu <- approx(rt[, "age"], rt[, "nu"], xout = x)$y
-    d <- ifelse(nu > 0.01 | nu < (-0.01),
-                mu * ((nu * sigma * z + 1)^(1 / nu)),
-                mu * exp(sigma * z))
+    d <- ifelse(
+      nu > 0.01 | nu < (-0.01),
+      mu * ((nu * sigma * z + 1)^(1 / nu)),
+      mu * exp(sigma * z)
+    )
   } else if (dist == "BCT") {
     mu <- approx(x = rt[, "age"], y = rt[, "mu"], xout = x)$y
     sigma <- approx(x = rt[, "age"], y = rt[, "sigma"], xout = x)$y

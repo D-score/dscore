@@ -16,11 +16,15 @@
 #' @export
 get_labels <- function(items = NULL, trim = NULL, itemtable = NULL) {
   # construct variable names
-  if (is.null(items)) items <- get_itemnames(itemtable = itemtable)
+  if (is.null(items)) {
+    items <- get_itemnames(itemtable = itemtable)
+  }
 
   # obtain label
   label <- get_itemtable(items = items, itemtable = itemtable)$label
-  if (!is.null(trim)) label <- substr(label, 1L, trim)
+  if (!is.null(trim)) {
+    label <- substr(label, 1L, trim)
+  }
   names(label) <- get_itemtable(items = items, itemtable = itemtable)$item
   label[items]
 }

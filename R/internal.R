@@ -13,8 +13,16 @@
 #   note = {R package version 6.0-3},
 #   url = {https://CRAN.R-project.org/package=gamlss.dist}}
 
-qBCT <- function(p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
-                 log.p = FALSE, na.rm = TRUE) {
+qBCT <- function(
+  p,
+  mu = 5,
+  sigma = 0.1,
+  nu = 1,
+  tau = 2,
+  lower.tail = TRUE,
+  log.p = FALSE,
+  na.rm = TRUE
+) {
   if (any(mu < 0, na.rm = na.rm)) {
     stop(paste("mu must be positive", "\n", ""))
   }
@@ -38,13 +46,26 @@ qBCT <- function(p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
     p <- 1 - p
   }
   if (length(nu) > 1) {
-    z <- ifelse((nu <= 0), qt(p * pt(
-      1 / (sigma * abs(nu)),
-      tau
-    ), tau), qt(1 - (1 - p) * pt(
-      1 / (sigma * abs(nu)),
-      tau
-    ), tau))
+    z <- ifelse(
+      (nu <= 0),
+      qt(
+        p *
+          pt(
+            1 / (sigma * abs(nu)),
+            tau
+          ),
+        tau
+      ),
+      qt(
+        1 -
+          (1 - p) *
+            pt(
+              1 / (sigma * abs(nu)),
+              tau
+            ),
+        tau
+      )
+    )
   } else {
     z <- if (nu <= 0) {
       qt(p * pt(1 / (sigma * abs(nu)), tau), tau)
@@ -53,8 +74,10 @@ qBCT <- function(p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
     }
   }
   if (length(nu) > 1) {
-    ya <- ifelse(nu != 0, mu * (nu * sigma * z + 1)^(1 / nu),
-                 mu * exp(sigma * z)
+    ya <- ifelse(
+      nu != 0,
+      mu * (nu * sigma * z + 1)^(1 / nu),
+      mu * exp(sigma * z)
     )
   } else if (nu != 0) {
     ya <- mu * (nu * sigma * z + 1)^(1 / nu)
@@ -66,8 +89,16 @@ qBCT <- function(p, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
 }
 
 
-pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
-                 log.p = FALSE, na.rm = TRUE) {
+pBCT <- function(
+  q,
+  mu = 5,
+  sigma = 0.1,
+  nu = 1,
+  tau = 2,
+  lower.tail = TRUE,
+  log.p = FALSE,
+  na.rm = TRUE
+) {
   if (any(mu < 0, na.rm = na.rm)) {
     stop(paste("mu must be positive", "\n", ""))
   }
@@ -84,8 +115,10 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
     return(NA)
   }
   if (length(nu) > 1) {
-    z <- ifelse(nu != 0, (((q / mu)^nu - 1) / (nu * sigma)),
-                log(q / mu) / sigma
+    z <- ifelse(
+      nu != 0,
+      (((q / mu)^nu - 1) / (nu * sigma)),
+      log(q / mu) / sigma
     )
   } else if (nu != 0) {
     z <- (((q / mu)^nu - 1) / (nu * sigma))
@@ -96,9 +129,7 @@ pBCT <- function(q, mu = 5, sigma = 0.1, nu = 1, tau = 2, lower.tail = TRUE,
   }
   FYy1 <- pt(z, tau)
   if (length(nu) > 1) {
-    FYy2 <- ifelse(nu > 0, pt(-1 / (sigma * abs(nu)), df = tau),
-                   0
-    )
+    FYy2 <- ifelse(nu > 0, pt(-1 / (sigma * abs(nu)), df = tau), 0)
   } else if (nu > 0) {
     FYy2 <- pt(-1 / (sigma * abs(nu)), df = tau)
   } else {

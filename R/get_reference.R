@@ -52,13 +52,19 @@
 #' reftab <- get_reference(population = "france", verbose = TRUE)
 #' nrow(reftab)
 #' @export
-get_reference <- function(population = NULL,
-                          key = NULL,
-                          references = dscore::builtin_references,
-                          verbose = FALSE,
-                          ...) {
-  init <- init_key(key = key, population = population,
-                   transform = NULL, qp = NULL)
+get_reference <- function(
+  population = NULL,
+  key = NULL,
+  references = dscore::builtin_references,
+  verbose = FALSE,
+  ...
+) {
+  init <- init_key(
+    key = key,
+    population = population,
+    transform = NULL,
+    qp = NULL
+  )
   key <- init$key
   population <- init$population
 
@@ -71,10 +77,18 @@ get_reference <- function(population = NULL,
   idx <- which(references$key == key & references$population == population)
   if (!any(idx)) {
     # use default reference if not found
-    warning("Reference '", population, "' for key '", key, "' not found. Using default.",
-            call. = FALSE)
-    idx <- which(references$key == "gsed2406" &
-                   references$population == "preliminary_standards")
+    warning(
+      "Reference '",
+      population,
+      "' for key '",
+      key,
+      "' not found. Using default.",
+      call. = FALSE
+    )
+    idx <- which(
+      references$key == "gsed2406" &
+        references$population == "preliminary_standards"
+    )
   }
   return(references[idx, ])
 }

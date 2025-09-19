@@ -1,7 +1,7 @@
 context("prior")
 
 # Calculate the custom prior mean by adding 5 to the default prior mean
-data <- milestones[1:10,]
+data <- milestones[1:10, ]
 mymean <- dscore:::count_mu_preliminary_standards(t = data$age) + 5
 
 # Method 1: Added variable

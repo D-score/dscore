@@ -233,37 +233,49 @@
 #' ds <- dscore(milestones)
 #' points(x = ds$a, y = ds$d, pch = 19, col = "red")
 #' @export
-dscore <- function(data,
-                   items = names(data),
-                   key = NULL,
-                   population = NULL,
-                   xname = "age",
-                   xunit = c("decimal", "days", "months"),
-                   prepend = NULL,
-                   itembank = NULL,
-                   metric = c("dscore", "logit"),
-                   prior_mean = NULL,
-                   prior_mean_NA = NULL,
-                   prior_sd = NULL,
-                   prior_sd_NA = NULL,
-                   transform = NULL,
-                   qp = NULL,
-                   dec = c(2L, 3L),
-                   relevance = c(-Inf, Inf),
-                   algorithm = c("current", "1.8.7"),
-                   verbose = FALSE) {
+dscore <- function(
+  data,
+  items = names(data),
+  key = NULL,
+  population = NULL,
+  xname = "age",
+  xunit = c("decimal", "days", "months"),
+  prepend = NULL,
+  itembank = NULL,
+  metric = c("dscore", "logit"),
+  prior_mean = NULL,
+  prior_mean_NA = NULL,
+  prior_sd = NULL,
+  prior_sd_NA = NULL,
+  transform = NULL,
+  qp = NULL,
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf),
+  algorithm = c("current", "1.8.7"),
+  verbose = FALSE
+) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
   data <- as.data.frame(data)
 
   calc_dscore(
-    data = data, items = items, key = key, population = population,
-    xname = xname, xunit = xunit, prepend = prepend,
-    itembank = itembank, metric = metric,
-    prior_mean = prior_mean, prior_mean_NA = prior_mean_NA,
-    prior_sd = prior_sd, prior_sd_NA = prior_sd_NA,
-    transform = transform, qp = qp, dec = dec,
+    data = data,
+    items = items,
+    key = key,
+    population = population,
+    xname = xname,
+    xunit = xunit,
+    prepend = prepend,
+    itembank = itembank,
+    metric = metric,
+    prior_mean = prior_mean,
+    prior_mean_NA = prior_mean_NA,
+    prior_sd = prior_sd,
+    prior_sd_NA = prior_sd_NA,
+    transform = transform,
+    qp = qp,
+    dec = dec,
     posterior = FALSE,
     relevance = relevance,
     algorithm = algorithm,
@@ -275,37 +287,49 @@ dscore <- function(data,
 #' distribution of the D-score.
 #' @rdname dscore
 #' @export
-dscore_posterior <- function(data,
-                             items = names(data),
-                             key = NULL,
-                             population = NULL,
-                             xname = "age",
-                             xunit = c("decimal", "days", "months"),
-                             prepend = NULL,
-                             itembank = NULL,
-                             metric = c("dscore", "logit"),
-                             prior_mean = NULL,
-                             prior_mean_NA = NULL,
-                             prior_sd = NULL,
-                             prior_sd_NA = NULL,
-                             transform = NULL,
-                             qp = NULL,
-                             dec = c(2L, 3L),
-                             relevance = c(-Inf, Inf),
-                             algorithm = c("current", "1.8.7"),
-                             verbose = FALSE) {
+dscore_posterior <- function(
+  data,
+  items = names(data),
+  key = NULL,
+  population = NULL,
+  xname = "age",
+  xunit = c("decimal", "days", "months"),
+  prepend = NULL,
+  itembank = NULL,
+  metric = c("dscore", "logit"),
+  prior_mean = NULL,
+  prior_mean_NA = NULL,
+  prior_sd = NULL,
+  prior_sd_NA = NULL,
+  transform = NULL,
+  qp = NULL,
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf),
+  algorithm = c("current", "1.8.7"),
+  verbose = FALSE
+) {
   xunit <- match.arg(xunit)
   metric <- match.arg(metric)
   algorithm <- match.arg(algorithm)
   data <- as.data.frame(data)
 
   calc_dscore(
-    data = data, items = items, key = key, population = population,
-    xname = xname, xunit = xunit, prepend = prepend,
-    itembank = itembank, metric = metric,
-    prior_mean = prior_mean, prior_mean_NA = prior_mean_NA,
-    prior_sd = prior_sd, prior_sd_NA = prior_sd_NA,
-    transform = transform, qp = qp, dec = dec,
+    data = data,
+    items = items,
+    key = key,
+    population = population,
+    xname = xname,
+    xunit = xunit,
+    prepend = prepend,
+    itembank = itembank,
+    metric = metric,
+    prior_mean = prior_mean,
+    prior_mean_NA = prior_mean_NA,
+    prior_sd = prior_sd,
+    prior_sd_NA = prior_sd_NA,
+    transform = transform,
+    qp = qp,
+    dec = dec,
     posterior = TRUE,
     relevance = relevance,
     algorithm = algorithm,
@@ -313,16 +337,28 @@ dscore_posterior <- function(data,
   )
 }
 
-calc_dscore <- function(data, items, key, population,
-                        xname, xunit, prepend,
-                        itembank, metric,
-                        prior_mean, prior_mean_NA,
-                        prior_sd, prior_sd_NA,
-                        transform, qp, dec,
-                        posterior,
-                        relevance,
-                        algorithm,
-                        verbose) {
+calc_dscore <- function(
+  data,
+  items,
+  key,
+  population,
+  xname,
+  xunit,
+  prepend,
+  itembank,
+  metric,
+  prior_mean,
+  prior_mean_NA,
+  prior_sd,
+  prior_sd_NA,
+  transform,
+  qp,
+  dec,
+  posterior,
+  relevance,
+  algorithm,
+  verbose
+) {
   stopifnot(length(relevance) == 2L)
 
   init <- init_key(key, population, transform, qp)
@@ -354,12 +390,15 @@ calc_dscore <- function(data, items, key, population,
   }
 
   # get decimal age
-  if (!xname %in% names(data)) stop("Variable `", xname, "` not found")
-  a <- switch(xunit,
-              decimal = round(data[[xname]], 4L),
-              months  = round(data[[xname]] / 12, 4L),
-              days    = round(data[[xname]] / 365.25, 4L),
-              rep(NA, nrow(data))
+  if (!xname %in% names(data)) {
+    stop("Variable `", xname, "` not found")
+  }
+  a <- switch(
+    xunit,
+    decimal = round(data[[xname]], 4L),
+    months = round(data[[xname]] / 12, 4L),
+    days = round(data[[xname]] / 365.25, 4L),
+    rep(NA, nrow(data))
   )
 
   # check the itembank
@@ -401,10 +440,11 @@ calc_dscore <- function(data, items, key, population,
   sd <- init_sd(data, key, a, prior_sd, prior_sd_NA)
 
   # In D-score scale, set scale expansion
-  scale <- switch(algorithm,
-                  "current" = transform[2L],
-                  "1.8.7" = 1,
-                  transform[2L]
+  scale <- switch(
+    algorithm,
+    "current" = transform[2L],
+    "1.8.7" = 1,
+    transform[2L]
   )
 
   # setup for logit scale
@@ -413,11 +453,7 @@ calc_dscore <- function(data, items, key, population,
     qp <- (qp - transform[1L]) / transform[2L]
     mu <- (mu - transform[1L]) / transform[2L]
     sd <- sd / transform[2L]
-    scale <- switch(algorithm,
-                    "current" = 1,
-                    "1.8.7" = 1 / transform[2],
-                    1
-    )
+    scale <- switch(algorithm, "current" = 1, "1.8.7" = 1 / transform[2], 1)
   }
 
   # bind difficulty estimates to data
@@ -430,8 +466,10 @@ calc_dscore <- function(data, items, key, population,
     ) |>
     select(all_of(c(".rownum", "a", "mu", "sd", items))) |>
     pivot_longer(
-      cols = all_of(items), names_to = "item",
-      values_to = "score", values_drop_na = TRUE
+      cols = all_of(items),
+      names_to = "item",
+      values_to = "score",
+      values_drop_na = TRUE
     ) |>
     arrange(.data$.rownum, .data$item) |>
     left_join(ib, by = "item")
@@ -441,16 +479,18 @@ calc_dscore <- function(data, items, key, population,
     data3 <- data2 |>
       group_by(.data$.rownum) |>
       summarise(
-        w = list(calculate_posterior(
-          scores = .data$score,
-          tau = .data$tau,
-          qp = qp,
-          scale = scale[1L],
-          mu = (.data$mu)[1L],
-          sd = (.data$sd)[1L],
-          relhi = relevance[2L],
-          rello = relevance[1L]
-        )$posterior)
+        w = list(
+          calculate_posterior(
+            scores = .data$score,
+            tau = .data$tau,
+            qp = qp,
+            scale = scale[1L],
+            mu = (.data$mu)[1L],
+            sd = (.data$sd)[1L],
+            relhi = relevance[2L],
+            rello = relevance[1L]
+          )$posterior
+        )
       )
 
     # unlist the posterior and store in proper row
@@ -463,9 +503,10 @@ calc_dscore <- function(data, items, key, population,
       if (!is.null(f)) {
         data4[i, ] <- f
       } else {
-        data4[i, ] <- dnorm(qp,
-                            mean = as.double(data2[i, "mu"]),
-                            sd = as.double(data2[i, "sd"])
+        data4[i, ] <- dnorm(
+          qp,
+          mean = as.double(data2[i, "mu"]),
+          sd = as.double(data2[i, "sd"])
         )
       }
     }
@@ -481,16 +522,18 @@ calc_dscore <- function(data, items, key, population,
         n = n(),
         p = round(mean(.data$score), digits = 4L),
         x = list(qp),
-        w = list(calculate_posterior(
-          scores = .data$score,
-          tau = .data$tau,
-          qp = qp,
-          scale = scale[1L],
-          mu = (.data$mu)[1L],
-          sd = (.data$sd)[1L],
-          relhi = relevance[2L],
-          rello = relevance[1L]
-        )$posterior)
+        w = list(
+          calculate_posterior(
+            scores = .data$score,
+            tau = .data$tau,
+            qp = qp,
+            scale = scale[1L],
+            mu = (.data$mu)[1L],
+            sd = (.data$sd)[1L],
+            relhi = relevance[2L],
+            rello = relevance[1L]
+          )$posterior
+        )
       )
 
     data4 <- data3 |>
@@ -505,15 +548,18 @@ calc_dscore <- function(data, items, key, population,
       left_join(data4, by = ".rownum") |>
       mutate(
         n = recode(.data$n, .missing = 0L),
-        d = round(.data$d, digits = dec[1L]))
+        d = round(.data$d, digits = dec[1L])
+      )
 
     # add n and d daz, shape end result
     reference_table <- get_reference(population = population, key = key)
     if (nrow(reference_table)) {
       data5$daz <- daz(
-        d = data5$d, x = data5$a,
+        d = data5$d,
+        x = data5$a,
         reference_table = reference_table,
-        dec = dec[2L])
+        dec = dec[2L]
+      )
     } else {
       data5$daz = NA_real_
     }
@@ -524,17 +570,15 @@ calc_dscore <- function(data, items, key, population,
   # prepend administrative variables from data
   nfo <- setdiff(prepend, colnames(data))
   if (length(nfo)) {
-    warning("Not found: ",
-            paste(nfo, collapse = ", "),
-            call. = FALSE
-    )
+    warning("Not found: ", paste(nfo, collapse = ", "), call. = FALSE)
   }
   adm <- intersect(colnames(data), prepend)
   dup <- intersect(colnames(data5), adm)
   if (length(dup)) {
-    warning("Overwrites column(s): ",
-            paste(dup, collapse = ", "),
-            call. = FALSE
+    warning(
+      "Overwrites column(s): ",
+      paste(dup, collapse = ", "),
+      call. = FALSE
     )
     adm <- setdiff(adm, dup)
   }

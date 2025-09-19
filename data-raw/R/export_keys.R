@@ -14,9 +14,13 @@ ib_dutch <- read.csv2(file = fn, stringsAsFactors = FALSE) |>
   filter(tau != "") |>
   rename(item = lex_gsed)
 fo <- file.path(project, "data-raw/data/keys/dutch.txt")
-write.table(ib_dutch,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_dutch,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # ------------- export gcdg key
@@ -30,9 +34,13 @@ ib_gcdg <- read.delim(fn, stringsAsFactors = FALSE) |>
   select(one_of(c("key", "item", "tau")))
 ib_gcdg <- ib_gcdg[order_itemnames(ib_gcdg$item), ]
 fo <- file.path(project, "data-raw/data/keys/gcdg.txt")
-write.table(ib_gcdg,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gcdg,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # ------------- export gsed1912 key
@@ -46,9 +54,13 @@ ib_gsed <- gsed_model_807_17$itembank |>
   select(one_of("key", "item", "tau"))
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/gsed1912.txt")
-write.table(ib_gsed,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gsed,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # ------------- export gsed2206 key
@@ -62,9 +74,13 @@ ib_gsed <- gsed_model_818_17$itembank |>
   select(one_of("key", "item", "tau"))
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/gsed2206.txt")
-write.table(ib_gsed,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gsed,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # ------------- export 293_0 key
@@ -84,9 +100,13 @@ gpa[gpa$item == "gpaclc088", "item"] <- "gpaclc089"
 gpa <- gpa[order_itemnames(gpa$item, order = "imnd"), ]
 ib_gsed <- bind_rows(gpa, ib_gsed[139:293, ])
 fo <- file.path(project, "data-raw/data/keys/293_0.txt")
-write.table(ib_gsed,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gsed,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # ------------- export gsed2208 key
@@ -100,9 +120,13 @@ ib_gsed <- gsed_model_818_6$itembank |>
   select(one_of("key", "item", "tau"))
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/gsed2208.txt")
-write.table(ib_gsed,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gsed,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 
@@ -117,9 +141,13 @@ ib_gsed <- gsed_model$itembank |>
   select(one_of("key", "item", "tau"))
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item), ]
 fo <- file.path(project, "data-raw/data/keys/lf2206.txt")
-write.table(ib_gsed,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gsed,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # ------------- export sf2206 key
@@ -137,17 +165,22 @@ ib_gsed[ib_gsed$item == "gpaclc088", "item"] <- "gpaclc089"
 # end correction
 ib_gsed <- ib_gsed[order_itemnames(ib_gsed$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/sf2206.txt")
-write.table(ib_gsed,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_gsed,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
-
 
 
 # ---------- export ecdi keys
 
 ## model gsed2206 extended with ecdi items
-fn <- path.expand("~/OneDrive - TNO/Documents/GitHub/decdi/models/gsed2206/ECDI_142_6_fixed/model.Rds")
+fn <- path.expand(
+  "~/OneDrive - TNO/Documents/GitHub/decdi/models/gsed2206/ECDI_142_6_fixed/model.Rds"
+)
 ecdi_model <- readRDS(file = fn)
 ib_ecdi <- ecdi_model$itembank |>
   filter(stringr::str_detect(item, "^ecd")) |>
@@ -158,14 +191,20 @@ ib_ecdi <- ecdi_model$itembank |>
   select(one_of("key", "item", "tau"))
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/gsed2206_ecd.txt")
-write.table(ib_ecdi,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_ecdi,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 
 ## model 294_0 extende with ecdi items
-fn <- path.expand("~/OneDrive - TNO/Documents/GitHub/decdi/models/294_0/ECDI_142_7_fixed/model.Rds")
+fn <- path.expand(
+  "~/OneDrive - TNO/Documents/GitHub/decdi/models/294_0/ECDI_142_7_fixed/model.Rds"
+)
 ecdi_model <- readRDS(file = fn)
 ib_ecdi <- ecdi_model$itembank |>
   filter(stringr::str_detect(item, "^ecd")) |>
@@ -176,15 +215,20 @@ ib_ecdi <- ecdi_model$itembank |>
   select(one_of("key", "item", "tau"))
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/294_0_ecd.txt")
-write.table(ib_ecdi,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_ecdi,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 
-
 ## model gsed2208 extended with ecdi items
-fn <- path.expand("~/OneDrive - TNO/Documents/GitHub/decdi/models/gsed2208/ECDI_142_7_fixed/model.Rds")
+fn <- path.expand(
+  "~/OneDrive - TNO/Documents/GitHub/decdi/models/gsed2208/ECDI_142_7_fixed/model.Rds"
+)
 ecdi_model <- readRDS(file = fn)
 ib_ecdi <- ecdi_model$itembank |>
   filter(stringr::str_detect(item, "^ecd")) |>
@@ -195,18 +239,28 @@ ib_ecdi <- ecdi_model$itembank |>
   select(one_of("key", "item", "tau"))
 ib_ecdi <- ib_ecdi[order_itemnames(ib_ecdi$item, order = "indm"), ]
 fo <- file.path(project, "data-raw/data/keys/gsed2208_ecd.txt")
-write.table(ib_ecdi,
-  file = fo, quote = FALSE, sep = "\t",
-  na = "", row.names = FALSE
+write.table(
+  ib_ecdi,
+  file = fo,
+  quote = FALSE,
+  sep = "\t",
+  na = "",
+  row.names = FALSE
 )
 
 # Export GSED GH1 - Household form
-key_gsed2212_gh1 <- openxlsx::read.xlsx("data-raw/data/ageforms_2025-07-15.xlsx") |>
+key_gsed2212_gh1 <- openxlsx::read.xlsx(
+  "data-raw/data/ageforms_2025-07-15.xlsx"
+) |>
   mutate(
     key = "gsed2212",
     item = get_itemnames(instrument = "gh1", order = "indm")
   ) |>
   select(key, item, tau)
-write.table(key_gsed2212_gh1,
-            file = "data-raw/data/keys/gsed2212_gh1.txt",
-            sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(
+  key_gsed2212_gh1,
+  file = "data-raw/data/keys/gsed2212_gh1.txt",
+  sep = "\t",
+  quote = FALSE,
+  row.names = FALSE
+)

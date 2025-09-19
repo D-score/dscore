@@ -10,7 +10,8 @@ init_key <- function(key, population, transform, qp) {
     key = key,
     population = population,
     transform = transform,
-    qp = qp)
+    qp = qp
+  )
 
   return(result)
 }
@@ -72,4 +73,3 @@ init_sd <- function(data, key, a, prior_sd, prior_sd_NA) {
   }
   return(rep(NA_real_, n))
 }
-

@@ -28,6 +28,8 @@ suppressPackageStartupMessages(library(ggplot2))
 [![CRAN status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
 [![](https://img.shields.io/badge/github%20version-1.10.8-orange.svg)](https://github.com/d-score/dscore)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](inst/LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
 The D-score is a numerical score that measures generic development 
@@ -91,6 +93,16 @@ If you want to calculate the D-score on your own data, and you're not an `R` use
 The authors wish to recognize the principal investigators and their study team members for their generous contribution of the data that made this tool possible and the members of the Ki team who directly or indirectly contributed to the study: Amina Abubakar, Claudia R. Lindgren Alves, Orazio Attanasio, Maureen M. Black, Maria Caridad Araujo, Susan M. Chang-Lopez, Gary L. Darmstadt, Bernice M. Doove, Wafaie Fawzi, Lia C.H. Fernald, Günther Fink, Emanuela Galasso, Melissa Gladstone, Sally M. Grantham-McGregor, Cristina Gutierrez de Pineres, Pamela Jervis, Jena Derakhshani Hamadani, Charlotte Hanlon, Simone M. Karam, Gillian Lancaster, Betzy Lozoff, Gareth McCray, Jeffrey R Measelle, Girmay Medhin, Ana M. B. Menezes, Lauren Pisani, Helen Pitchik, Muneera Rasheed, Lisy Ratsifandrihamanana, Sarah Reynolds, Linda Richter, Marta Rubio-Codina, Norbert Schady, Limbika Sengani, Chris Sudfeld, Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K. Yousafzai.
 
 This study was supported by the Bill & Melinda Gates Foundation. The contents are the sole responsibility of the authors and may not necessarily represent the official views of the Bill & Melinda Gates Foundation or other agencies that may have supported the primary data studies used in the present study. 
+
+## License
+
+This package uses a dual-licensing approach:
+
+- **Code**: [MIT License](inst/LICENSE)  
+- **Data, keys, and other non-code materials**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+This setup complies with [CRAN policies](https://cran.r-project.org/web/licenses/) and the 
+[Gates Foundation Open Access Policy](https://openaccess.gatesfoundation.org/open-access-policy/).
 
 ### Literature
 

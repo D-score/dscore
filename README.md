@@ -11,6 +11,10 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
 [![](https://img.shields.io/badge/github%20version-1.10.8-orange.svg)](https://github.com/d-score/dscore)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](inst/LICENSE)
+[![License: CC BY
+4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 <!-- badges: end -->
 
 The D-score is a numerical score that measures generic development in
@@ -106,6 +110,19 @@ contents are the sole responsibility of the authors and may not
 necessarily represent the official views of the Bill & Melinda Gates
 Foundation or other agencies that may have supported the primary data
 studies used in the present study.
+
+## License
+
+This package uses a dual-licensing approach:
+
+- **Code**: [MIT License](inst/LICENSE)  
+- **Data, keys, and other non-code materials**: [CC BY
+  4.0](https://creativecommons.org/licenses/by/4.0/)
+
+This setup complies with [CRAN
+policies](https://cran.r-project.org/web/licenses/) and the [Gates
+Foundation Open Access
+Policy](https://openaccess.gatesfoundation.org/open-access-policy/).
 
 ### Literature
 

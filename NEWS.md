@@ -7,6 +7,7 @@ editor_options:
 
 - Adds .toml and .vscode file to enforce air formatting
 - Initializes air format on save
+- Updates LICENSE to conformm to Gates Foundation Open Access policy
 
 # dscore 1.10.9
 

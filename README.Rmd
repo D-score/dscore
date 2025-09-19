@@ -3,7 +3,7 @@ output: github_document
 always_allow_html: yes
 bibliography: [vignettes/references.bib]
 biblio-style: apalike
-link-citations: yes
+link-citations: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -40,7 +40,7 @@ The `dscore` package contains tools to
 
 - Map your item names to the GSED convention
 - Calculate D-score from item level responses
-- Transform the D-scores into DAZ, age-standardised Z-scores
+- Transform the D-scores into DAZ, age-standardised Z-scores 
 
 The required input consists of *item level* responses on milestones
 from widely used instruments for measuring child development.

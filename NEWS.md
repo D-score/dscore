@@ -3,6 +3,10 @@ editor_options:
   markdown: 
     wrap: 72
 ---
+# dscore 1.10.11
+
+- Update LICENSE
+
 # dscore 1.10.10
 
 - Adds .toml and .vscode file to enforce air formatting

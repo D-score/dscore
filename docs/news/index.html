@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.10.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.0</span>
       </span>
     </div>
 
@@ -67,59 +67,49 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.11" id="dscore-11011">dscore 1.10.11<a class="anchor" aria-label="anchor" href="#dscore-11011"></a></h2>
-<ul><li>Update LICENSE</li>
+<h2 class="page-header" data-toc-text="1.11.0" id="dscore-1110">dscore 1.11.0<a class="anchor" aria-label="anchor" href="#dscore-1110"></a></h2>
+<div class="section level4">
+<h4 id="overview-1-11-0">Overview<a class="anchor" aria-label="anchor" href="#overview-1-11-0"></a></h4>
+<p>This release brings the following enhancements to the <code>dscore</code> package:</p>
+<ul><li>Adds new item codes for GSED LF and GSED SF</li>
+<li>Better support for D-score calculation using Bayley III</li>
+<li>Uses a more permissive open source license</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.10" id="dscore-11010">dscore 1.10.10<a class="anchor" aria-label="anchor" href="#dscore-11010"></a></h2>
-<ul><li>Adds .toml and .vscode file to enforce air formatting</li>
-<li>Initializes air format on save</li>
-<li>Updates LICENSE to conformm to Gates Foundation Open Access policy</li>
+<div class="section level4">
+<h4 id="major-changes-1-11-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-1-11-0"></a></h4>
+<ul><li>Adds item names starting with <code>lf</code> and <code>sf</code> to <code>builtin_itemtable</code> to refer to GSED LF and GSED SF, respectively</li>
+<li>Replaces the <code>by3</code> key in <code>gsed2212</code> and <code>gsed2406</code>. The replacement matches many more by3 items (172 instead of 67), especially for younger children. Compared to the previous by3 key, it raises the D-score estimate for by3 by approximately 2.6 D.</li>
+<li>Updates the LICENSE from AGPL to the permissive Apache 2.0 to conform to Gates Foundation Open Access policy</li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.9" id="dscore-1109">dscore 1.10.9<a class="anchor" aria-label="anchor" href="#dscore-1109"></a></h2>
-<ul><li>Supports DAZ for children &lt; 2 weeks using reference <code>preliminary_standards</code>
+<div class="section level4">
+<h4 id="minor-changes-1-11-0">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-1-11-0"></a></h4>
+<ul><li>Adds support to calculate DAZ for children &lt; 2 weeks using the reference <code>preliminary_standards</code>
 </li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.8" id="dscore-1108">dscore 1.10.8<a class="anchor" aria-label="anchor" href="#dscore-1108"></a></h2>
-<ul><li>Replaces the <code>by3</code> key in <code>gsed2212</code> and <code>gsed2406</code>. The replacement matches many more by3 items (from 67 to 172), especially for younger children, and raises the D-score estimate for by3 by approximately 2.6 D.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.7" id="dscore-1107">dscore 1.10.7<a class="anchor" aria-label="anchor" href="#dscore-1107"></a></h2>
-<ul><li>Correct description of A45 Stand on 1 foot &lt; 5 seconds</li>
-<li>Adds mode “s” also to <code>gsed3</code>, <code>gsed2</code> and <code>gsed</code> lexicon</li>
+<li>Makes <code><a href="../reference/rename_vector.html">rename_vector()</a></code> part of the <code>dscore</code> package (moved from the gsedread package)</li>
+<li>Updates the getting started vignette.</li>
+<li>Changes deprecated <code>arma::is_finite(val)</code> to <code>std::isfinite(val)</code> to adhere to CRAN policy</li>
+<li>Rebuilds <code>builtin_itemtable</code> to resolve problems with SF items 88 and 89 and LF B43-B51.</li>
+<li>Correct description of A45 Stand on 1 foot &lt; 5 seconds</li>
+<li>Extends the item table with SF items with mode s (self-report)
+<ul><li>Mode “s” is supported in the <code>gsed3</code>, <code>gsed2</code> and <code>gsed</code> lexicons</li>
 <li>Adds item with mode “s” and “gs1” instrument codes</li>
-<li>(NOTE: there are no gpa-items with mode “s” (gsed2 lexicon))</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.6" id="dscore-1106">dscore 1.10.6<a class="anchor" aria-label="anchor" href="#dscore-1106"></a></h2>
-<ul><li>Extends the item table with SF items with mode s (self-report)</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.5" id="dscore-1105">dscore 1.10.5<a class="anchor" aria-label="anchor" href="#dscore-1105"></a></h2>
-<ul><li><p>Retires the key <code>gsed2212</code> (soft deprecation). This key is identical to <code>gsed2406</code> (the current default), except that it defines its default <code>population</code> as <code>phase1</code> instead of <code>preliminary_standards</code>. If you want the old behavior, specify <code>key = "gsed2406"</code> in combination with <code>population = "phase1"</code>. The key <code>gsed2212</code> will be removed in a future release.</p></li>
-<li><p>Update the getting started vignette.</p></li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.4" id="dscore-1104">dscore 1.10.4<a class="anchor" aria-label="anchor" href="#dscore-1104"></a></h2>
-<ul><li>Moves <code>gsedread::rename_vector()</code> to the <code>dscore</code> package</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.3" id="dscore-1103">dscore 1.10.3<a class="anchor" aria-label="anchor" href="#dscore-1103"></a></h2>
-<ul><li>Add item names starting with <code>lf</code> and <code>sf</code> to <code>builtin_itemtable</code>
-</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.2" id="dscore-1102">dscore 1.10.2<a class="anchor" aria-label="anchor" href="#dscore-1102"></a></h2>
-<ul><li>Rebuilds <code>builtin_itemtable</code> to resolve problems with SF items 88 and 89 and LF B43-B51.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="1.10.1" id="dscore-1101">dscore 1.10.1<a class="anchor" aria-label="anchor" href="#dscore-1101"></a></h2>
-<p>This version corrects an error in the definition of the gpa item names.</p>
+<li>NOTE: there are no gpa-items with mode “s” (gsed2 lexicon)</li>
+</ul></li>
+<li>It corrects an error in the definition of the gpa item names:
 <ul><li>Renames <code>gpaclc088</code> –&gt; <code>gpaclc089</code> (Can you child say five or more separate words)</li>
 <li>Renames <code>gpasec089</code> –&gt; <code>gpasec088</code> (Is your child able to pee or poo)</li>
+</ul></li>
 </ul></div>
+<div class="section level4">
+<h4 id="breaking-changes-1-11-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-1-11-0"></a></h4>
+<ul><li>Retires the key <code>gsed2212</code> (soft deprecation). This key is identical to <code>gsed2406</code> (the current default), except that it defines its default <code>population</code> as <code>phase1</code> instead of <code>preliminary_standards</code>. If you want the old behavior, specify <code>key = "gsed2406"</code> in combination with <code>population = "phase1"</code>. The key <code>gsed2212</code> will be removed in a future release.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="for-developers-1-11-0">For developers<a class="anchor" aria-label="anchor" href="#for-developers-1-11-0"></a></h4>
+<ul><li>Adds <code>.toml</code> and <code>.vscode</code> file` to enforce air formatting</li>
+<li>Initializes air format on save</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.10.0" id="dscore-1100">dscore 1.10.0<small>2025-06-05</small><a class="anchor" aria-label="anchor" href="#dscore-1100"></a></h2>
 <div class="section level4">

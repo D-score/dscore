@@ -3,6 +3,11 @@ editor_options:
   markdown: 
     wrap: 72
 ---
+
+# dscore 1.10.12
+
+- Changes deprecated `arma::is_finite(val)` to `std::isfinite(val)`
+
 # dscore 1.10.11
 
 - Update LICENSE

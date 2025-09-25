@@ -3,12 +3,8 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.10.0` is a major update providing new features and resolving
+`dscore 1.11.0` is a major update providing new features and resolving
 some problems
-
-### Resubmission 1
-
-The pre-test identified a link behind a paywall. Now replaced by DOI.
 
 ## Test environments
 
@@ -30,7 +26,7 @@ build()
 ```
 
 ``` bash
-R CMD CHECK dscore_1.10.0.tar.gz
+R CMD CHECK ../dscore_1.11.0.tar.gz
 ```
 
 Status: OK
@@ -51,7 +47,7 @@ rhub::rhub_check()
 
 Using three builds: linux, windows, macos.
 
-Status: OK <https://github.com/D-score/dscore/actions/runs/15450842438>
+Status: OK
 
 ## Downstream dependencies
 

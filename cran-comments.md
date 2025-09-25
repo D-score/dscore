@@ -6,6 +6,10 @@ cran-comments
 `dscore 1.11.0` is a major update providing new features and resolving
 some problems
 
+## Resubmission 1
+
+Repaired two http –\> hhtps links
+
 ## Test environments
 
 ### Local

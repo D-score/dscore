@@ -89,6 +89,6 @@ This study was supported by the Bill & Melinda Gates Foundation. The contents ar
 
 ## License
 
-This package uses a [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).
+This package uses a [Apache License 2.0](https://opensource.org/licenses/Apache-2-0).
 
 ### Literature

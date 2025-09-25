@@ -112,7 +112,7 @@ studies used in the present study.
 ## License
 
 This package uses a [Apache License
-2.0](https://opensource.org/licenses/Apache-2.0).
+2.0](https://opensource.org/licenses/Apache-2-0).
 
 ### Literature
 

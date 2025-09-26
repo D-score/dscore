@@ -13,6 +13,10 @@ editor_options:
 
 Repaired two http --> hhtps links
 
+## Resubmission 2
+
+Repair of URLs
+
 ## Test environments
 
 ### Local

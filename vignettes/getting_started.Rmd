@@ -37,7 +37,7 @@ The `dscore` package covers a subset of all possible assessment instruments. Mor
 -   to evaluate whether the current `dscore` package can convert your measurements into D-scores;
 -   to choose a `key` that best suits your objectives.
 
-The inventory by @fernald2017 identified [147 instruments](https://pubdocs.worldbank.org/en/685691512577486773/ECD-Measurement-Inventory-children-0-8-years-WorldBank.xlsx) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The D-score is defined by and calculated from, subsets of milestones from such instruments.
+The inventory by @fernald2017 identified [147 instruments](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The D-score is defined by and calculated from, subsets of milestones from such instruments.
 
 Assessment instruments connect to the D-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports the following keys (in historic order):
 

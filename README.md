@@ -11,7 +11,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
 [![](https://img.shields.io/badge/github%20version-1.10.11-orange.svg)](https://github.com/d-score/dscore)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/license/apache-2-0)
 
 <!-- badges: end -->
 

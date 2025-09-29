@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+- Cleans up the list of instrument code
+- Removes the item names with mode `s`
+- Updates the Getting Started and Scoring GSED vignettes
+ 
+
 # dscore 1.11.0
 
 ### Overview

@@ -32,48 +32,56 @@ This vignette shows how to estimate the D-score and the D-score age-adjusted Z-s
 
 ## Is your measurement instrument covered?
 
-The `dscore` package covers a subset of all possible assessment instruments. Moreover, it may have a restricted age range for a given instrument. Your first tasks are
+The `dscore` package covers a subset of all possible assessment instruments. Moreover, it may have a restricted age range for a given instrument. Your first task is to evaluate whether the current `dscore` package can convert your measurements into D-scores.
 
--   to evaluate whether the current `dscore` package can convert your measurements into D-scores;
--   to choose a `key` that best suits your objectives.
+A 2017 Worldbank report [@fernald2017] identified 147 instruments for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The D-score is defined by and calculated from, subsets of milestones from such instruments.
 
-The inventory by @fernald2017 identified [147 instruments](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries) for assessing the development of children aged 0-8 years. Well-known examples include the *Bayley Scales for Infant and Toddler Development* and the *Ages & Stages Questionnaires*. The D-score is defined by and calculated from, subsets of milestones from such instruments.
+Assessment instruments connect to the D-score through a *measurement model*, the Rasch model. We use the term **key** to refer to a particular set of parameters (difficulty estimates) of a fitted Rasch model. The key defines how 0/1 milestone scores are translated into a D-score, as thus can be seen as part of the scoring system. 
 
-Assessment instruments connect to the D-score through a *measurement model*. We use the term *key* to refer to a particular instance of a measurement model. The `dscore` package currently supports the following keys (in historic order):
+The `dscore` package contains a generic algorithm that takes: 
 
-1.  `dutch`, a model developed for the *Dutch development instrument*;
-2.  `gcdg`, a model covering 14 instruments using *direct* measurements;
-3.  `gsed1912`, covers 20 instruments using a mix of *direct* and *caregiver-reported* measurements (Dec 2019);
-4.  `293_0`, covers only GSED SF (138 items) and GSED LF (155 items). GSED core model. (Aug 2022)
-5.  `gsed2406`, covers 23 instruments using a mix of *direct* and *caregiver-reported* measurements. Extends the GSED core model. (June 2024).
+1. the 0/1 scores on a set of milestones for a given child;
+2. the age(s) of the child at which the test is administered;
+3. a specification of the key;
 
-Different keys lead to different D-scores. Hence, we may compare only D-scores that are calculated under the same key. Our advice to set the key is:
+and then calculates the **D-score** and its **Standard Error of Measurement (SEM)** for the child at each age. 
+
+The `dscore` package currently supports the following keys (in historic order):
+
+|  Key name   | Description                                                                                 | Reference               |
+|:------------|:--------------------------------------------------------------------------------------------|:------------------------|
+| `dutch`     | A model developed for the *Dutch development instrument*                                    | @vanbuuren2014          |
+| `gcdg`      | A model covering 14 instruments using *direct* measurements                                 | @weber2019              |
+| `gsed1912`  | Covers 20 instruments using a mix of *direct* and *caregiver-reported* measurements         | @vanbuuren2025 (Study 1)|
+| `gsed2406`  | Covers 23 instruments using a mix of *direct* and *caregiver-reported* measurements         | @vanbuuren2025 (Study 2)|
+| `gsed2510`  | Currently covers 4 instruments - In development                                             | In preparation (Study 3)|
+
+Different keys lead to (slightly) different D-scores. We may only compare D-scores that are calculated under the same key. Our advice to set the key is:
 
 -   For new data, use the generic `key = "gsed"`. This choice will automatically fetch the latest GSED key;
--   To explicitly set the most recent key use `key = "gsed2406"`.
+-   To explicitly set the most recent key use `key = "gsed2510"`.
+-   Key `gsed2406` has a wider coverage, and use that if your instruments is not covered by `gsed2510`.
 -   Use older keys `dutch`, `gcdg` or `gsed1912` to regenerate old results. These are unlikely to be useful for new data;
--   Superseded keys are: `gsed2212`, `gsed2206`, `gsed2208`, `lf2206`, `sf2006` and `294_0`. These are available for research purposes, and will be removed in future versions.
+-   Superseded keys are: `gsed2212`, `gsed2206`, `gsed2208`, `lf2206`, `sf2006`, `294_0` and `293_0`. Use for research purposes only.
 
 The table given below displays the number of items per instrument for various keys. If the entry is blank, the key does not cover the instrument.
 
-| Code | Instrument | Items | dutch | gcdg | gsed1912 | gsed2406 | 293_0 |
+| Code | Instrument | Items | dutch | gcdg | gsed1912 | gsed2406 | gsed2510 |
 |-------|-------------------------|------:|------:|------:|------:|------:|------:|
 | `aqi` | Ages & Stages Questionnaires-3 | 230 |  | 29 | 17 | 17 |  |
 | `bar` | Barrera Moncada | 22 |  | 15 | 13 | 13 |  |
 | `bat` | Battelle Development Inventory and Screener-2 | 137 |  |  |  |  |  |
 | `by1` | Bayley Scales for Infant and Toddler Development-1 | 156 |  | 85 | 76 | 76 |  |
 | `by2` | Bayley Scales for Infant and Toddler Development-2 | 121 |  | 16 | 16 | 16 |  |
-| `by3` | Bayley Scales for Infant and Toddler Development-3 | 320 |  | 105 | 67 | 172 |  |
+| `by3` | Bayley Scales for Infant and Toddler Development-3 | 320 |  | 105 | 67 | 172 | + |
 | `cro` | Caregiver Reported Early Development Instrument (CREDI) | 149 |  |  | 62 | 64 |  |
 | `ddi` | Dutch Development Instrument (Van Wiechen Schema) | 77 | 76 | 65 | 64 | 64 |  |
 | `den` | Denver-2 | 111 |  | 67 | 50 | 50 |  |
 | `dmc` | Developmental Milestones Checklist | 66 |  |  | 43 | 43 |  |
 | `gri` | Griffiths Mental Development Scales | 312 |  | 104 | 93 | 18 |  |
-| `gs1` | GSED SF (v1, Phase 2 validation) | 139 |  |  |  | 138 |  |
-| `gl1` | GSED LF (v1, Phase 2 validation) | 155 |  |  |  | 155 |  |
-| `gh1` | GSED HF (v1, JAN 2023 version 20230113) | 55 |  |  |  | 55 |  |
-| `gto` | GSED LF (v0, Phase 1 validation) | 155 |  |  |  | 155 | 155 |
-| `gpa` | GSED SF (v0, Phase 1 validation) | 139 |  |  |  | 138 | 138 |
+| `gs1` | GSED SF (2023) | 139 |  |  |  | 138 | + |
+| `gl1` | GSED LF (2023) | 155 |  |  |  | 155 | + |
+| `gh1` | GSED HF (2023) | 55 |  |  |  | 55 | + |
 | `iyo` | Infant and Young Child Development (IYCD) | 90 |  |  | 55 | 57 |  |
 | `kdi` | Kilifi Developmental Inventory | 69 |  |  | 48 | 48 |  |
 | `mac` | MacArthur Communicative Development Inventory | 6 |  | 3 | 3 | 3 |  |
@@ -90,13 +98,10 @@ The table given below displays the number of items per instrument for various ke
 | `ecd` | Early Child Development Indicators (ECDI) | 20 |  |  |  | 18 |  |
 | `mul` | Mullen Scales of Early Learning | 232 |  |  | 138 |  |  |
 
-Unfortunately, it is not possible to calculate the D-score if your instrument is not on the list, or if all of its entries under the key headings are blank. You may wish to file an extension request to incorporate your instrument in a future version of the `dscore` package. It remains an empirical question, however, whether the requested extension is possible.
-
-For some instruments, e.g., for `cro` only one choice is possible (`"gsed"`). For `gri`, we may choose between `"gcdg"` and `"gsed1912"` or `"gsed2406"`. Your choice may depend on the goal of your analysis. If you want to compare to other D-scores calculated under key `"gcdg"`, or reproduce an analysis made under that key, then pick `"gcdg"`. If that is not the case, then `"gsed2406"` is probably a better choice because of its broader generalizability. The default key is `"gsed"`. Before version 1.5.0 the default linked to `"gsed1912"`. Since version 1.7.0 the default selects `"gsed2406"`.
-
-The extensions for Mullen were added to the "`"gsed1912"` key. The extension was made based on two datasets, the Provide dataset [@provide] and the Bambam dataset [@bambam]. The Mullen items were matched to existing items and two well fitting items were selected as anchors in a new model on the combined Provide and Bambam data.
+Unfortunately, you cannot compute a D-score if your instrument is not yet supported. If your instrument does measure child development, it may be possible to extend the key to include it. This requires some one-time effort (e.g. mapping your items to the milestone schema, estimating difficulty parameters). Once extended, the key can be reused, and you’ll be able to compute valid D-scores for that instrument. The table shows two extensions: One for Mullen and and one for ECDI.
 
 ```{r graphkey, fig.width = 7, fig.height = 5, echo = FALSE}
+#| code-fold: true
 library(dscore)
 ib <- builtin_itembank |>
   filter(key == "gsed2406") |>
@@ -123,9 +128,9 @@ ggplot(ib, aes(x = a, y = instrument, group = instrument)) +
   theme(axis.text.y = element_text(hjust = 0, family = "mono"))
 ```
 
-The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed2406"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `ecd`). If you find that the ages in your sample deviate from those in the figure, you may wish to file an extension request to incorporate new ages in a future version of the `dscore` package.
+The designs of the original cohorts determine the age coverage for each instrument. The figure above indicates the age range currently supported by the `"gsed2406"` key. Some instruments contain many items for the first two years (e.g., `by1`, `dmc`), whereas others cover primarily upper ages (e.g., `tep`, `ecd`).
 
-## Map variable names to the GSED 9-position schema
+## GSED 9-position item names
 
 The `dscore()` function accepts item names that follow the GSED 9-position schema. A name with a length of nine characters identifies every milestone. The following table shows the construction of names.
 
@@ -149,13 +154,15 @@ You may decompose item names into components as follows:
 decompose_itemnames(c("by3cgd018", "denfmd014"))
 ```
 
-This function returns a `data.frame` with four character vectors.
+This function returns a `data.frame` with four character vectors for further processing.
 
-The `dscore` package can recognise `r nrow(dscore::builtin_itemtable)` item names. The expression `get_itemnames()` returns a (long) vector of all known item names. Let us construct a table of instruments by domains:
+The `dscore` package recognises `r nrow(dscore::builtin_itemtable)` item names. The expression `get_itemnames()` returns a (long) vector of all known item names. Let us study the table of instruments by domain:
 
 ```{r table}
+#| code-fold: true
 items <- get_itemnames()
-din <- decompose_itemnames(items)
+din <- decompose_itemnames(items) |>
+  dplyr::filter(!instrument %in% c("gsd", "gpa", "gto", "rap"))
 knitr::kable(with(din, table(instrument, domain)), format = "html") |>
   kableExtra::column_spec(1, monospace = TRUE)
 ```
@@ -218,6 +225,9 @@ Where `ds` is a `data.frame` with the same number of rows as the input data. The
 head(ds)
 ```
 
+
+In addition, the package calculate the **Development-for-Age Z-score (DAZ)**, which gives the position of the child relative to age peers.
+
 The table below provides the interpretation of the output:
 
 | Name  | Interpretation                                                     |
@@ -240,6 +250,7 @@ md <- cbind(milestones, ds)
 We may plot the 27 individual developmental curves by
 
 ```{r graphD, fig.width = 7, fig.height = 7}
+#| code-fold: true
 library(ggplot2)
 library(dplyr)
 
@@ -300,6 +311,7 @@ Note that similarity of these curves to growth curves for body height and weight
 The DAZ is an age-standardized D-score with a standard normal distribution with mean 0 and variance 1. We plot the individual DAZ curves relative to the Dutch references by
 
 ```{r graphDAZ, fig.width = 7, fig.height = 5}
+#| code-fold: true
 ggplot(md, aes(x = a, y = daz, group = id, color = factor(sex))) +
   theme_light() +
   theme(legend.position = c(.85, .15)) +
@@ -330,6 +342,7 @@ Note that the D-scores and DAZ are a little lower than average. The explanation 
 The distributions of DAZ for boys and girls show that a large overlap:
 
 ```{r density, fig.width = 7, fig.height = 4}
+#| code-fold: true
 ggplot(md) +
   theme_light() +
   scale_fill_brewer(palette = "Set1") +
@@ -353,7 +366,8 @@ This group of children born very preterm starts around -2.5 SD, followed by a ca
 We may account for the clustering effect by including random intercept and age effects, and rerun as
 
 ```{r multilevel}
-library(lme4)
+library(Matrix)
+library(lme4, quiet = TRUE)
 lmer(daz ~ 1 + age + sex + sex * age + (1 + age | id), data = md)
 ```
 

@@ -10,7 +10,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dscore)](https://CRAN.R-project.org/package=dscore)
 [![](http://cranlogs.r-pkg.org/badges/dscore)](https://cran.r-project.org/package=dscore)
-[![](https://img.shields.io/badge/github%20version-1.11.0-orange.svg)](https://github.com/d-score/dscore)
+[![](https://img.shields.io/badge/github%20version-1.11.1-orange.svg)](https://github.com/d-score/dscore)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/license/apache-2-0)
 
 <!-- badges: end -->
@@ -169,6 +169,7 @@ Global Settings.” *BMJ Global Health* 4: e001724.
 World Health Organization (WHO). 2023. “<span class="nocase">Global
 Scales for Early Development (GSED) V1.0: Technical Report</span>.”
 Geneva: World Health Organization.
+<https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1>.
 
 </div>
 

@@ -79,11 +79,11 @@ items_gl1 <- tab |>
   select(item, equate, label)
 
 gsx_itemtable <- bind_rows(
-  items_sf_,
-  items_sf_s,
-  items_lf_,
+  # items_sf_,
+  # items_sf_s,
+  # items_lf_,
   items_gs1,
-  items_gs1_s,
+  # items_gs1_s,
   items_gl1
 )
 

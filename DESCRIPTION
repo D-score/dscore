@@ -27,6 +27,7 @@ Suggests:
     kableExtra,
     knitr,
     lme4,
+    Matrix,
     patchwork,
     rmarkdown,
     testthat

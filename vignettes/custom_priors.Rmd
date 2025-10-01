@@ -5,7 +5,7 @@ output:
     css: vignette.css
 bibliography: [references.bib]
 biblio-style: apalike
-link-citations: yes
+link-citations: true
 vignette: >
   %\VignetteIndexEntry{Custom Priors (Advanced)}
   %\VignetteEngine{knitr::rmarkdown}
@@ -32,7 +32,7 @@ builtin_keys[, c("key", "base_population")]
 For instance, for `key = gsed2406`, the `base_population` is identified as `"preliminary_standards"`. The `get_mu()` function returns the prior mean for the specified `key` at different ages:
 
 ```{r}
-get_mu(t = c(0:12)/12, key = "gsed2406")
+get_mu(t = c(0:12) / 12, key = "gsed2406")
 ```
 
 This code snippet returns the prior mean for ages ranging from 0 to 12 months. These mean values represent the median of the D-score distribution for the specified `base_population` under the current `key`.
@@ -75,10 +75,14 @@ The next snippet compares the adjusted and default D-scores as a function of the
 
 ```{r}
 # Plot the difference between adjusted and default D-scores
-plot(y = adj1$d - def$d, x = def$p, 
-     xlab = "Proportion of items passed by the child", 
-     ylab = "Upward drift of D-score", 
-     pch = 16, main = "Impact of Custom Prior Mean on D-score")
+plot(
+  y = adj1$d - def$d,
+  x = def$p,
+  xlab = "Proportion of items passed by the child",
+  ylab = "Upward drift of D-score",
+  pch = 16,
+  main = "Impact of Custom Prior Mean on D-score"
+)
 
 # Add a smoothed line to visualize the trend
 lines(lowess(x = def$p, y = adj1$d - def$d, f = 0.5), col = "grey", lwd = 2)
@@ -94,7 +98,7 @@ The following code snippet demonstrates how to set a custom prior standard devia
 
 ```{r}
 # Filter data for a specific child
-boy <- milestones[milestones$id == 111, ] 
+boy <- milestones[milestones$id == 111, ]
 
 # Calculate default D-scores
 def <- dscore(boy)
@@ -116,9 +120,15 @@ The code snippet below plots the raw and informed DAZ trajectories for child 111
 
 ```{r fig.height=4}
 # Plotting the raw and informed DAZ trajectories
-plot(x = def$a, y = def$daz, type = "b", pch = 16, 
-     ylab = "DAZ", xlab = "Age (years)", 
-     main = "Standard (black) and Informed (red) DAZ-trajectory for child 111")
+plot(
+  x = def$a,
+  y = def$daz,
+  type = "b",
+  pch = 16,
+  ylab = "DAZ",
+  xlab = "Age (years)",
+  main = "Standard (black) and Informed (red) DAZ-trajectory for child 111"
+)
 points(x = adj1$a, y = adj1$daz, col = "red", type = "b", lwd = 2, pch = 16)
 ```
 

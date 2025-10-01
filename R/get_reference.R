@@ -82,7 +82,7 @@ get_reference <- function(
       population,
       "' for key '",
       key,
-      "' not found. Using default.",
+      "' not found. Fallback: 'preliminary_standards'",
       call. = FALSE
     )
     idx <- which(

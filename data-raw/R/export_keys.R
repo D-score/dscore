@@ -264,3 +264,29 @@ write.table(
   quote = FALSE,
   row.names = FALSE
 )
+
+
+# extract the key gsed2501
+path <- file.path(Sys.getenv("GSED_PHASE2"), "202510", "281_0_phase_1+2")
+model <- readRDS(file.path(path, "model.Rds"))
+itembank <- model$itembank
+
+items_sf <- dscore::get_itemnames(ins = "gs1", order = "indm")
+items_lf <- dscore::get_itemnames(ins = "gl1")
+items_lf <- items_lf[c(55:155, 1:54)]
+tau <- c(
+  dscore::get_tau(items_lf, key = "", itembank = itembank),
+  dscore::get_tau(items_sf, key = "", itembank = itembank)
+)
+key2510 <- data.frame(
+  key = "gsed2510",
+  item = names(tau),
+  tau = round(unname(tau), 2)
+)
+write.table(
+  key2510,
+  file = "data-raw/data/keys/gsed2510.txt",
+  quote = FALSE,
+  sep = "\t",
+  row.names = FALSE
+)

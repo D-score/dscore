@@ -41,7 +41,8 @@ key_file <- c(
   gsed2212 = "gsed2212.txt",
   gsed2212_gs1_gl1 = "gsed2212_gs1_gl1.txt",
   gsed2212_gh1 = "gsed2212_gh1.txt",
-  gsed2212_by3 = "by3_extension_gsed_key.txt"
+  gsed2212_by3 = "by3_extension_gsed_key.txt",
+  gsed2510 = "gsed2510.txt"
 )
 key_name <- names(key_file)
 key_path <- "data-raw/data/keys"
@@ -112,6 +113,8 @@ key_gsed2212_gs1_gl1 <- read.delim(file = key_file["gsed2212_gs1_gl1"])
 key_gsed2212_gh1 <- read.delim(file = key_file["gsed2212_gh1"])
 
 key_gsed2212_by3 <- read.delim(file = key_file["gsed2212_by3"])
+
+key_gsed2510 <- read.delim(file = key_file["gsed2510"])
 
 # --- key_dutch (76 items)
 check_single_key(key_dutch)
@@ -227,8 +230,13 @@ key_gsed2406 <- key_gsed2212 |>
   mutate(key = "gsed2406")
 check_single_key(key_gsed2406)
 
+# --- key2510
+# New key calculated from seven GSED studies
+check_single_key(key_gsed2510)
+
 # --- Build itembank in reverse history order
 builtin_itembank <- bind_rows(
+  key_gsed2510,
   key_gsed2406,
   key_gsed2212,
   key_293_0,

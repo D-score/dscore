@@ -165,7 +165,7 @@ zl <- dscore(
   algorithm = algorithm
 )
 
-lastkey <- builtin_keys[nrow(builtin_keys), ]
+lastkey <- builtin_keys[builtin_keys$key == "gsed2406", ]
 transform <- c(lastkey$intercept, lastkey$slope)
 algorithm <- "1.8.7"
 zd <- dscore(data, metric = "dscore", algorithm = algorithm, verbose = FALSE)

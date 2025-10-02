@@ -19,7 +19,7 @@ set of names."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -159,7 +159,7 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Stef van Buuren 2020</p>
+    <p>Stef van Buuren</p>
     </div>
 
     <div id="ref-examples">
@@ -200,6 +200,14 @@ direct/caregiver/message, positions 7-9 is a item sequence number.</p>
 <span class="r-in"><span><span class="co"># get all item numbers 70 and 73 from gm domain</span></span></span>
 <span class="r-in"><span><span class="fu">get_itemnames</span><span class="op">(</span>number <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">70</span>, <span class="fl">73</span><span class="op">)</span>, domain <span class="op">=</span> <span class="st">"gm"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "by3gmd070" "ddigmd070" "ddigmm073" "mulgmd070"</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get item names from GSED SF (2023 version) in published order</span></span></span>
+<span class="r-in"><span><span class="va">items_sf</span> <span class="op">&lt;-</span> <span class="fu">get_itemnames</span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"gs1"</span>, order <span class="op">=</span> <span class="st">"indm"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get item names from GSED LF (2023 version) in published order</span></span></span>
+<span class="r-in"><span><span class="va">items_lf</span> <span class="op">&lt;-</span> <span class="fu">get_itemnames</span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"gl1"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">items_lf</span> <span class="op">&lt;-</span> <span class="va">items_lf</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">55</span><span class="op">:</span><span class="fl">155</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">54</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>

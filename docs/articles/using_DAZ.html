@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -204,12 +204,12 @@ practice and how to interpret results.</p>
 <span></span>
 <span><span class="co"># View the scored data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
-<span><span class="co">#&gt;        a n   p     d      sem    daz centile</span></span>
-<span><span class="co">#&gt; 1 1.0833 5 0.0 41.16 3.214928 -2.688     0.4</span></span>
-<span><span class="co">#&gt; 2 1.0833 5 0.2 43.59 3.088891 -2.131     1.7</span></span>
-<span><span class="co">#&gt; 3 1.0833 5 0.6 48.37 3.226621 -0.862    19.4</span></span>
-<span><span class="co">#&gt; 4 1.0833 5 0.8 51.13 3.499976 -0.043    48.3</span></span>
-<span><span class="co">#&gt; 5 1.0833 5 1.0 54.49 3.906372  0.998    84.1</span></span></code></pre></div>
+<span><span class="co">#&gt;        a n    p     d      sem    daz centile</span></span>
+<span><span class="co">#&gt; 1 1.0833 4 0.00 41.66 3.206434 -2.578     0.5</span></span>
+<span><span class="co">#&gt; 2 1.0833 4 0.25 44.38 3.092467 -1.936     2.6</span></span>
+<span><span class="co">#&gt; 3 1.0833 4 0.75 50.12 3.473742 -0.348    36.4</span></span>
+<span><span class="co">#&gt; 4 1.0833 4 0.75 50.12 3.473742 -0.348    36.4</span></span>
+<span><span class="co">#&gt; 5 1.0833 4 1.00 53.94 3.968120  0.826    79.6</span></span></code></pre></div>
 <p>In the above example, we can see that for 13-month-old children,
 failing each of these 5 milestones will result in a D-score estimate of
 41.16. The DAZ for this first child is calculated as -2.688, meaning
@@ -253,11 +253,11 @@ old.</p>
 <span></span>
 <span><span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">dm</span>, xunit <span class="op">=</span> <span class="st">"months"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;         a n p     d      sem   daz</span></span>
-<span><span class="co">#&gt; 1      NA 5 1    NA       NA    NA</span></span>
-<span><span class="co">#&gt; 2  1.0000 5 1 53.41 3.773782 1.283</span></span>
-<span><span class="co">#&gt; 3  1.5000 5 1 59.95 4.479957 0.300</span></span>
-<span><span class="co">#&gt; 4  4.0000 5 1 78.64 4.989951    NA</span></span>
-<span><span class="co">#&gt; 5 -0.0833 5 1 31.67 4.271534    NA</span></span></code></pre></div>
+<span><span class="co">#&gt; 1      NA 4 1    NA       NA    NA</span></span>
+<span><span class="co">#&gt; 2  1.0000 4 1 52.83 3.822435 1.102</span></span>
+<span><span class="co">#&gt; 3  1.5000 4 1 59.62 4.570882 0.202</span></span>
+<span><span class="co">#&gt; 4  4.0000 4 1 78.63 4.995824    NA</span></span>
+<span><span class="co">#&gt; 5 -0.0833 4 1 29.65 4.560348    NA</span></span></code></pre></div>
 <p>The children with ages <code>NA</code>, 48, and -0.0833 have DAZ that
 are returned as <code>NA</code>. DAZ must be relative to age and the
 reference group is for children 0-36 months old. When scoring data,
@@ -295,7 +295,7 @@ illustrate this below:</p>
 <span></span>
 <span><span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">df</span>, xunit <span class="op">=</span> <span class="st">"months"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      a   n p     d      sem daz</span></span>
-<span><span class="co">#&gt; 1 0.25 138 1 75.96 1.645728  NA</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 0.25 136 1 76.11 1.525424  NA</span></span></code></pre></div>
 <p>If DAZ is estimated <code>NA</code>, age may not be recorded
 properly. Recheck the data of any DAZ estimate that is estimated as
 <code>NA</code>.</p>

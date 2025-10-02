@@ -18,7 +18,7 @@ in the reference population passes the items."><!-- mathjax --><script src="http
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -159,17 +159,21 @@ The default <code>"decimal"</code> corresponds to decimal age in years.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_age_equivalent</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gpagmc018"</span>, <span class="st">"gtogmd026"</span>, <span class="st">"ddicmm050"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    item       d pct          a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> gpagmc018...1 gpagmc018 14.4799  10 0.06732101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> gpagmc018...2 gpagmc018 23.4100  50 0.26673721</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> gpagmc018...3 gpagmc018 32.3401  90 0.47420503</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> gtogmd026...4 gtogmd026 31.0699  10 0.44343758</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> gtogmd026...5 gtogmd026 40.0000  50 0.67855937</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> gtogmd026...6 gtogmd026 48.9301  90 0.98540403</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ddicmm050...7 ddicmm050 68.7399  10 2.30253365</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ddicmm050...8 ddicmm050 77.6700  50         NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ddicmm050...9 ddicmm050 86.6001  90         NA</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_age_equivalent</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gpagmc018"</span>, <span class="st">"gtogmd026"</span>, <span class="st">"ddicmm050"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  key <span class="op">=</span> <span class="st">"gsed2406"</span>, population <span class="op">=</span> <span class="st">"dutch"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> population:  dutch </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> transform:   54.93915 4.064264 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        item       d pct         a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 gpagmc018 14.4799  10 0.0769278</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 gpagmc018 23.4100  50 0.3423000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 gpagmc018 32.3401  90 0.5882360</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 gtogmd026 31.0699  10 0.5544452</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 gtogmd026 40.0000  50 0.8031094</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 gtogmd026 48.9301  90 1.1108040</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7 ddicmm050 68.7399  10 2.2574919</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8 ddicmm050 77.6700  50 3.2182231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9 ddicmm050 86.6001  90        NA</span>
 </code></pre></div>
     </div>
   </div>

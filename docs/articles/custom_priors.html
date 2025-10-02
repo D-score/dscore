@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -171,7 +171,7 @@ each child, which results in higher D-scores.</p>
 <span><span class="va">mymean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_mu.html">get_mu</a></span><span class="op">(</span>t <span class="op">=</span> <span class="va">data</span><span class="op">$</span><span class="va">age</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span> <span class="op">+</span> <span class="fl">5</span></span>
 <span></span>
 <span><span class="co"># Calculate default D-scores</span></span>
-<span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">data</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">def</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span></span>
@@ -182,7 +182,7 @@ each child, which results in higher D-scores.</p>
 <span><span class="co">## 6 0.7666 14 0.7857 34.21 3.088920 -2.377</span></span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Custom prior, direct specification</span></span>
-<span><span class="va">adj1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">data</span>, prior_mean <span class="op">=</span> <span class="va">mymean</span><span class="op">)</span></span>
+<span><span class="va">adj1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">data</span>, prior_mean <span class="op">=</span> <span class="va">mymean</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">adj1</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 33.88 4.146874  0.310</span></span>
@@ -193,7 +193,7 @@ each child, which results in higher D-scores.</p>
 <span><span class="co">## 6 0.7666 14 0.7857 36.30 3.395857 -1.867</span></span></code></pre>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Custom prior, column specification</span></span>
-<span><span class="va">adj2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">mymean</span><span class="op">)</span>, prior_mean <span class="op">=</span> <span class="st">"mymean"</span><span class="op">)</span></span>
+<span><span class="va">adj2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">mymean</span><span class="op">)</span>, prior_mean <span class="op">=</span> <span class="st">"mymean"</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">adj2</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 33.88 4.146874  0.310</span></span>
@@ -251,7 +251,7 @@ specified using a constant value or values derived from the data.</p>
 <span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="va">milestones</span><span class="op">[</span><span class="va">milestones</span><span class="op">$</span><span class="va">id</span> <span class="op">==</span> <span class="fl">111</span>, <span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Calculate default D-scores</span></span>
-<span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span></span>
+<span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="va">def</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span></span>
@@ -268,7 +268,7 @@ next time point as follows:</p>
 <span><span class="va">exp_sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="va">def</span><span class="op">$</span><span class="va">sem</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculate adjusted D-scores using the custom prior mean and standard deviation</span></span>
-<span><span class="va">adj1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, prior_mean <span class="op">=</span> <span class="va">exp_d</span>, prior_sd <span class="op">=</span> <span class="va">exp_sd</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">adj1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, prior_mean <span class="op">=</span> <span class="va">exp_d</span>, prior_sd <span class="op">=</span> <span class="va">exp_sd</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></code></pre></div>
 <p>The code snippet below plots the raw and informed DAZ trajectories
 for child 111:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
@@ -315,7 +315,7 @@ Ages<a class="anchor" aria-label="anchor" href="#example-3-customizing-prior-mea
 <span><span class="va">boy</span><span class="op">$</span><span class="va">age</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span>
 <span></span>
 <span><span class="co"># Calculate D-scores using default</span></span>
-<span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span></span>
+<span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="va">def</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span></span>
@@ -328,7 +328,7 @@ these cases from downstream analyses. This is the safest option, and the
 default behavior.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Calculate D-scores for missing ages using age-independent priors</span></span>
-<span><span class="va">adj1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, prior_mean_NA <span class="op">=</span> <span class="fl">50</span>, prior_sd_NA <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="va">adj1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, prior_mean_NA <span class="op">=</span> <span class="fl">50</span>, prior_sd_NA <span class="op">=</span> <span class="fl">20</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="va">adj1</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span></span>
@@ -341,7 +341,7 @@ are suggested age-independent values for children with missing ages
 between 0 and 3 years.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Forcing D-scores for missing ages to value -1</span></span>
-<span><span class="va">adj2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, prior_mean_NA <span class="op">=</span> <span class="op">-</span><span class="fl">1</span>, prior_sd_NA <span class="op">=</span> <span class="fl">0.001</span><span class="op">)</span></span>
+<span><span class="va">adj2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span>, prior_mean_NA <span class="op">=</span> <span class="op">-</span><span class="fl">1</span>, prior_sd_NA <span class="op">=</span> <span class="fl">0.001</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
 <span><span class="va">adj2</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span></span>

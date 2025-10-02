@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -168,19 +168,20 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-out co"><span class="r-pr">#&gt;</span>   gsed1912     0  121      0                     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2212   185    0    186                     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2406   185    0    186                   186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2510   185    0    186                   186</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get the default reference</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">reftab</span>, <span class="fl">2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                population      key distribution    age    mu  sigma   nu    tau</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 944 preliminary_standards gsed2406          BCT 0.0000 11.46 0.2075 1.42 34.189</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 945 preliminary_standards gsed2406          BCT 0.0383 13.18 0.2075 1.42 34.189</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           P3      P10       P25      P50      P75      P90      P97     SDM2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 944 6.333258 8.150177  9.791339 11.46264 13.03831 14.41592 15.76832 5.941355</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 945 7.283800 9.373415 11.260895 13.18304 14.99519 16.57957 18.13494 6.833076</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         SDM1      SD0     SDP1     SDP2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 944  8.93160 11.46264 13.77963 16.03876</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 945 10.27212 13.18304 15.84778 18.44597</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 population      key distribution    age    mu  sigma   nu</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1501 preliminary_standards gsed2510          BCT 0.0000 11.46 0.2075 1.42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1502 preliminary_standards gsed2510          BCT 0.0383 13.18 0.2075 1.42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         tau       P3      P10       P25      P50      P75      P90      P97</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1501 34.189 6.333258 8.150177  9.791339 11.46264 13.03831 14.41592 15.76832</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1502 34.189 7.283800 9.373415 11.260895 13.18304 14.99519 16.57957 18.13494</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          SDM2     SDM1      SD0     SDP1     SDP2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1501 5.941355  8.93160 11.46264 13.77963 16.03876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1502 6.833076 10.27212 13.18304 15.84778 18.44597</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get the default reference for the key "gsed2212"</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>key <span class="op">=</span> <span class="st">"gsed2212"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
@@ -189,14 +190,14 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get dutch reference for default key</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"dutch"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2510 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> population:  dutch </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># loading a non-existing reference yields zero rows</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"france"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2406 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2510 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> population:  france </span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Reference 'france' for key 'gsed2406' not found. Fallback: 'preliminary_standards'</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Reference 'france' for key 'gsed2510' not found. Fallback: 'preliminary_standards'</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">reftab</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 186</span>
 </code></pre></div>

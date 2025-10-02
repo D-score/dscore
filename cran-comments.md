@@ -3,16 +3,7 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.11.0` is a major update providing new features and resolving
-some problems
-
-## Resubmission 1
-
-Repaired two http –\> hhtps links
-
-## Resubmission 2
-
-Repair of URLs
+`dscore 2.0.0` is a major new release that builds on more extensive data
 
 ## Test environments
 
@@ -22,7 +13,7 @@ Repair of URLs
 R.Version()$version.string
 ```
 
-    ## [1] "R version 4.5.0 (2025-04-11)"
+    ## [1] "R version 4.5.1 (2025-06-13)"
 
 ## Local check
 
@@ -34,7 +25,7 @@ build()
 ```
 
 ``` bash
-R CMD CHECK ../dscore_1.11.0.tar.gz
+R CMD CHECK ../dscore_2.0.0.tar.gz
 ```
 
 Status: OK

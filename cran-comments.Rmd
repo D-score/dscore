@@ -7,15 +7,7 @@ editor_options:
 
 ## Reason for update
 
-`dscore 1.11.0` is a major update providing new features and resolving some problems
-
-## Resubmission 1
-
-Repaired two http --> hhtps links
-
-## Resubmission 2
-
-Repair of URLs
+`dscore 2.0.0` is a major new release that builds on more extensive data
 
 ## Test environments
 
@@ -35,7 +27,7 @@ build()
 ```
 
 ```{bash eval=FALSE}
-R CMD CHECK ../dscore_1.11.0.tar.gz
+R CMD CHECK ../dscore_2.0.0.tar.gz
 ```
 
 Status: OK

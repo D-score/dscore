@@ -4,10 +4,18 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 1.11.2
+
+- Adds the `gsed2510` key
+- Deprecated the `293_0` key
+- Removes the `gsed4` lexicon
+- Removes the item names with mode `s`
+- Make a more informative not-found warning in `get_reference()`
+- Hardcodes the D-score/logit test for key `gsed2406`
+
 # dscore 1.11.1
 
-- Cleans up the list of instrument code
-- Removes the item names with mode `s`
+- Cleans up the list of instrument codes
 - Updates the Getting Started and Scoring GSED vignettes
 
 # dscore 1.11.0

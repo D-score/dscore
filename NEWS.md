@@ -24,6 +24,9 @@ editor_options:
   + Laid the groundwork for extending D-score calculations to older children
   + Now licensed under Apache 2.0 - making it easier to use, adapt, and integrate into your own applications
 
+- Not ready yet?
+  + Version 1.11.0 remains available as a stable fallback on CRAN, while version 2.0.0 introduces the new default key for future analyses.
+
 # dscore 1.11.0
 
 ### Overview

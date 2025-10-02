@@ -6,13 +6,17 @@ Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
              person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"),
              person("Jonathan", "Seiden", email = "jseiden@g.harvard.edu", role = "aut"))
-Description: The D-score summarizes the child's performance on a set of 
-    milestones into a single number. The package implements four Rasch model
-    keys to convert milestone scores into a D-score. It provides tools to 
-    calculate the D-score and its precision from the child's milestone scores, 
-    to convert the D-score into the Development-for-Age Z-score (DAZ) 
-    using age-conditional references, and to map milestone names into a 
-    generic 9-position item naming convention.
+Description:
+    The D-score summarizes a child's performance on developmental milestones
+    into a single number. Its key feature is its generic nature. The method
+    does not depend on a specific measurement instrument. The statistical
+    method underlying the D-score is described in van Buuren et al. (2025)
+    <doi:10.1177/01650254241294033>. This package implements model keys to
+    convert milestone scores to D-scores; maps instrument-specific item names
+    to a generic 9-position naming convention; computes D-scores and their
+    precision from a child's milestone scores; and converts D-scores to
+    Development-for-Age Z-scores (DAZ) using age-conditional reference
+    standards.
 Depends:
     R (>= 4.1.0)
 Imports:

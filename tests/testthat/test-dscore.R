@@ -185,8 +185,8 @@ test_that("logit and dscore are identical (current)", {
 
 # check prior mean as column in data
 data <- cbind(data, start = rep(c(0, 10), times = 5))
-zp0 <- dscore(data)
-zp1 <- dscore(data, prior_mean = "start")
+zp0 <- dscore(data, key = "gsed2406")
+zp1 <- dscore(data, prior_mean = "start", key = "gsed2406")
 test_that("D-score difference at uneven rows (with start 0) is higher than on uneven rows (with start 10)", {
   expect_gt(zp0$d[3] - zp1$d[3], zp0$d[4] - zp1$d[4])
   expect_gt(zp0$d[5] - zp1$d[5], zp0$d[6] - zp1$d[6])
@@ -310,14 +310,17 @@ ids <- data.frame(
 data2 <- data.frame(ids, data)
 
 test_that("prepend attaches two ID columns", {
-  expect_equal(ncol(dscore(data2, prepend = c("id_chr", "id_num"))), 2 + 6)
+  expect_equal(
+    ncol(dscore(data2, prepend = c("id_chr", "id_num"), key = "gsed2406")),
+    2 + 6
+  )
 })
 test_that("unknown variables names produce notfound warning", {
   expect_warning(
-    dscore(data2, prepend = c("idonotexist")),
+    dscore(data2, prepend = c("idonotexist"), key = "gsed2406"),
     "Not found: idonotexist"
   )
 })
 test_that("reserved names produce overwrite warning", {
-  expect_warning(dscore(data2, prepend = c("a", "d")))
+  expect_warning(dscore(data2, prepend = c("a", "d"), key = "gsed2406"))
 })

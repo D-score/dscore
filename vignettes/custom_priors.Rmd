@@ -55,15 +55,15 @@ data <- milestones
 mymean <- get_mu(t = data$age, key = "gsed2406") + 5
 
 # Calculate default D-scores
-def <- dscore(data)
+def <- dscore(data, key = "gsed2406")
 head(def)
 
 # Custom prior, direct specification
-adj1 <- dscore(data, prior_mean = mymean)
+adj1 <- dscore(data, prior_mean = mymean, key = "gsed2406")
 head(adj1)
 
 # Custom prior, column specification
-adj2 <- dscore(cbind(data, mymean), prior_mean = "mymean")
+adj2 <- dscore(cbind(data, mymean), prior_mean = "mymean", key = "gsed2406")
 head(adj2)
 
 identical(adj1, adj2)
@@ -101,7 +101,7 @@ The following code snippet demonstrates how to set a custom prior standard devia
 boy <- milestones[milestones$id == 111, ]
 
 # Calculate default D-scores
-def <- dscore(boy)
+def <- dscore(boy, key = "gsed2406")
 def
 ```
 
@@ -113,7 +113,7 @@ exp_d <- zad(z = c(0, def$daz[1:3]), x = def$a)
 exp_sd <- c(5, def$sem[1:3])
 
 # Calculate adjusted D-scores using the custom prior mean and standard deviation
-adj1 <- dscore(boy, prior_mean = exp_d, prior_sd = exp_sd)
+adj1 <- dscore(boy, prior_mean = exp_d, prior_sd = exp_sd, key = "gsed2406")
 ```
 
 The code snippet below plots the raw and informed DAZ trajectories for child 111:
@@ -147,7 +147,7 @@ By default, the D-score of observations with missing ages will be `NA`. It is po
 boy$age[2:3] <- NA
 
 # Calculate D-scores using default
-def <- dscore(boy)
+def <- dscore(boy, key = "gsed2406")
 def
 ```
 
@@ -155,7 +155,7 @@ This call to `dscore()` produces a D-score of `NA` when age data is missing, whi
 
 ```{r}
 # Calculate D-scores for missing ages using age-independent priors
-adj1 <- dscore(boy, prior_mean_NA = 50, prior_sd_NA = 20)
+adj1 <- dscore(boy, prior_mean_NA = 50, prior_sd_NA = 20, key = "gsed2406")
 adj1
 ```
 
@@ -163,7 +163,7 @@ This call to `dscore()` uses custom settings `prior_mean_NA = 50` and `prior_sd_
 
 ```{r}
 # Forcing D-scores for missing ages to value -1
-adj2 <- dscore(boy, prior_mean_NA = -1, prior_sd_NA = 0.001)
+adj2 <- dscore(boy, prior_mean_NA = -1, prior_sd_NA = 0.001, key = "gsed2406")
 adj2
 ```
 

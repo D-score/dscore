@@ -1,6 +1,6 @@
 set_default_key <- function(key) {
   if (is.null(key) || key == "gsed") {
-    key <- "gsed2406"
+    key <- "gsed2510"
   }
   return(key)
 }
@@ -24,7 +24,7 @@ set_default_transform <- function(transform, idx) {
     ))
   }
   if (is.null(transform) && !length(idx)) {
-    return(c(54.939147, 4.064264))
+    return(c(55.724132, 3.603965))
   }
   return(transform)
 }
@@ -38,7 +38,7 @@ set_default_qp <- function(qp, idx) {
     ))
   }
   if (is.null(qp) && !length(idx)) {
-    return(-10:100)
+    return(-10:125)
   }
   return(qp)
 }

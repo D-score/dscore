@@ -13,7 +13,8 @@
 #' @return `data.frame` with four columns: `item`, `d` (D-score),
 #' `pct` (percentile), and `a` (age-equivalent, in `xunit` units).
 #' @examples
-#' get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"))
+#' get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"),
+#'   key = "gsed2406", population = "dutch", verbose = TRUE)
 #' @export
 get_age_equivalent <- function(
   items,
@@ -64,5 +65,6 @@ get_age_equivalent <- function(
     ib$a <- round(ib$a * 12, 4L)
   }
 
+  rownames(ib) <- NULL
   return(ib)
 }

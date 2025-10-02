@@ -316,12 +316,14 @@ The data in `hf` are now ready for the `dscore()` function.
 
 #### Calculate D-score
 
-Once the data are in proper shape, calculation of the D-score is straightforward. The `hf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `hf` dataset has properly named columns that identify each item.
 
 ```{r}
-results <- dscore(hf, xname = "agedays", xunit = "days")
+results <- dscore(hf, xname = "agedays", xunit = "days", key = "gsed2406")
 head(results)
 ```
+
+The `key = "gsed2406"` argument is needed here because GSED HH is not yet supported by the default key `"gsed2510"`. 
 
 The table below provides the interpretation of the output: 
 
@@ -347,7 +349,13 @@ items_motor <- get_itemnames(
   instrument = c("gs1", "gl1", "gh1"),
   domain = c("mo", "gm")
 )
-results <- dscore(hf, items = items_motor, xname = "agedays", xunit = "days")
+results <- dscore(
+  hf,
+  items = items_motor,
+  xname = "agedays",
+  xunit = "days",
+  key = "gsed2406"
+)
 head(results)
 ```
 

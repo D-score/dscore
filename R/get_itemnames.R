@@ -31,7 +31,7 @@
 #' direct/caregiver/message, positions 7-9 is a item sequence number.
 #'
 #' @seealso [sort_itemnames()]
-#' @author Stef van Buuren 2020
+#' @author Stef van Buuren
 #' @examples
 #' itemnames <- c("aqigmc028", "grihsd219", "", "age", "mdsgmd999")
 #'
@@ -51,6 +51,14 @@
 #'
 #' # get all item numbers 70 and 73 from gm domain
 #' get_itemnames(number = c(70, 73), domain = "gm")
+#'
+#' # get item names from GSED SF (2023 version) in published order
+#' items_sf <- get_itemnames(instrument = "gs1", order = "indm")
+#'
+#' # get item names from GSED LF (2023 version) in published order
+#' items_lf <- get_itemnames(instrument = "gl1")
+#' items_lf <- items_lf[c(55:155, 1:54)]
+#'
 #' @export
 get_itemnames <- function(
   x,

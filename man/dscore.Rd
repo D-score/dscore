@@ -229,7 +229,7 @@ little impact on the posterior for larger tests.
 }
 \examples{
 # using all defaults and properly formatted data
-ds <- dscore(milestones)
+ds <- dscore(milestones, key = "gsed2406")
 head(ds)
 
 # step-by-step example
@@ -249,16 +249,16 @@ items <- names(data)[3:5]
 get_tau(items, verbose = TRUE)
 
 # calculate D-score
-dscore(data)
+dscore(data, key = "gsed2406")
 
 # prepend id variable to output
-dscore(data, prepend = "id")
+dscore(data, prepend = "id", key = "gsed2406")
 
 # or prepend all data
-# dscore(data, prepend = colnames(data))
+# dscore(data, prepend = colnames(data), key = "gsed2406")
 
 # calculate full posterior
-p <- dscore_posterior(data)
+p <- dscore_posterior(data, key = "gsed2406")
 
 # check that rows sum to 1
 rowSums(p)
@@ -280,7 +280,7 @@ matplot(
 abline(h = seq(10, 80, 10), v = seq(0, 4, 0.5), col = "gray", lty = 2)
 
 # add measurements made on very preterms, ga < 32 weeks
-ds <- dscore(milestones)
+ds <- dscore(milestones, key = "gsed2406")
 points(x = ds$a, y = ds$d, pch = 19, col = "red")
 }
 \references{

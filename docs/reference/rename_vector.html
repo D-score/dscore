@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
       </span>
     </div>
 
@@ -74,8 +74,8 @@
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">rename_vector</span><span class="op">(</span></span>
 <span>  <span class="va">input</span>,</span>
-<span>  lexin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"phase2"</span>, <span class="st">"phase1"</span>, <span class="st">"short1"</span>, <span class="st">"short2"</span>, <span class="st">"gsed"</span>, <span class="st">"gsed2"</span>, <span class="st">"gsed3"</span>, <span class="st">"gsed4"</span><span class="op">)</span>,</span>
-<span>  lexout <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gsed4"</span>, <span class="st">"gsed3"</span>, <span class="st">"gsed2"</span>, <span class="st">"gsed"</span>, <span class="st">"short2"</span>, <span class="st">"short1"</span>, <span class="st">"phase1"</span>, <span class="st">"phase2"</span><span class="op">)</span>,</span>
+<span>  lexin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"phase2"</span>, <span class="st">"phase1"</span>, <span class="st">"short1"</span>, <span class="st">"short2"</span>, <span class="st">"gsed"</span>, <span class="st">"gsed2"</span>, <span class="st">"gsed3"</span><span class="op">)</span>,</span>
+<span>  lexout <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gsed3"</span>, <span class="st">"gsed2"</span>, <span class="st">"gsed"</span>, <span class="st">"short2"</span>, <span class="st">"short1"</span>, <span class="st">"phase1"</span>, <span class="st">"phase2"</span><span class="op">)</span>,</span>
 <span>  notfound <span class="op">=</span> <span class="st">"copy"</span>,</span>
 <span>  contains <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">""</span>, <span class="st">"Ma_SF_"</span>, <span class="st">"Ma_LF_"</span>, <span class="st">"bsid_"</span><span class="op">)</span>,</span>
 <span>  underscore <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -95,18 +95,17 @@
 
 <dt id="arg-lexin">lexin<a class="anchor" aria-label="anchor" href="#arg-lexin"></a></dt>
 <dd><p>A string indicating the input lexicon. One of <code>"phase1"</code>,
-<code>"phase2"</code>, <code>"short1"</code>, <code>"short2"</code>, <code>"gsed"</code>, <code>"gsed2"</code>, <code>"gsed3"</code> or
-<code>"gsed4"</code>
+<code>"phase2"</code>, <code>"short1"</code>, <code>"short2"</code>, <code>"gsed"</code>, <code>"gsed2"</code> or <code>"gsed3"</code>.
 Default is <code>"phase2"</code>, which orders item names according to the
 published 2023 version of the SF and LF instruments.</p></dd>
 
 
 <dt id="arg-lexout">lexout<a class="anchor" aria-label="anchor" href="#arg-lexout"></a></dt>
 <dd><p>A string indicating the output lexicon. One of <code>"phase1"</code>,
-<code>"phase2"</code>, <code>"short1"</code>, <code>"short2"</code>, <code>"gsed"</code>, <code>"gsed2"</code>, <code>"gsed3"</code> or
-<code>"gsed4"</code>.
-Default is <code>"gsed4"</code>. The default output <code>"gsed4"</code> applies instrument
-codes <code>sf_</code> and <code>lf_</code>, which can be understood by the <code>dscore</code> package.</p></dd>
+<code>"phase2"</code>, <code>"short1"</code>, <code>"short2"</code>, <code>"gsed"</code>, <code>"gsed2"</code>, <code>"gsed3"</code>.
+Default is <code>"gsed3"</code>. The default output <code>"gsed3"</code> applies instrument
+codes <code>gs1</code> (SF) and <code>gl1</code> (LF), which can be understood by the <code>dscore</code>
+package.</p></dd>
 
 
 <dt id="arg-notfound">notfound<a class="anchor" aria-label="anchor" href="#arg-notfound"></a></dt>
@@ -147,7 +146,7 @@ names.</p>
     <h2>Details</h2>
     <p>The recommended approach for reading new data is to name the columns
 according to the names defined by <code>"short2"</code> and the apply <code>rename_vector()</code>
-to translate the names to the <code>"gsed4"</code> lexicon.</p>
+to translate the names to the <code>"gsed3"</code> lexicon.</p>
 <p>The lexicons <code>"phase1"</code>, <code>"short1"</code>, <code>"gsed"</code> and <code>"gsed2"</code> are included
 for backward compatibility, and are not recommended for use with new
 data.</p>
@@ -158,7 +157,7 @@ data.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Using Ma_SF_Cxx as input names, 2023 SF/LF version</span></span></span>
 <span class="r-in"><span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="st">"GSED_ID"</span>, <span class="st">"Ma_SF_Parent ID"</span>, <span class="st">"Ma_SF_C01"</span>, <span class="st">"Ma_SF_C02"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">rename_vector</span><span class="op">(</span><span class="va">input</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file"         "gsed_id"      "sf_parent_id" "sf_sec001"    "sf_moc002"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file"         "gsed_id"      "sf_parent_id" "gs1sec001"    "gs1moc002"   </span>
 <span class="r-in"><span><span class="fu">rename_vector</span><span class="op">(</span><span class="va">input</span>, lexout <span class="op">=</span> <span class="st">"short2"</span>, lowercase <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file"         "GSED_ID"      "SF_Parent_ID" "SF001"        "SF002"       </span>
 <span class="r-in"><span><span class="fu">rename_vector</span><span class="op">(</span><span class="va">input</span>, lexout <span class="op">=</span> <span class="st">"gsed3"</span>, trim <span class="op">=</span> <span class="st">"Ma_SF_"</span><span class="op">)</span></span></span>
@@ -167,8 +166,8 @@ data.</p>
 <span class="r-in"><span><span class="co"># Convert short names to gsed names</span></span></span>
 <span class="r-in"><span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"file"</span>, <span class="st">"GSED_ID"</span>, <span class="st">"Ma_SF_Parent ID"</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"SF00"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">rename_vector</span><span class="op">(</span><span class="va">input</span>, lexin <span class="op">=</span> <span class="st">"short2"</span>, lowercase <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file"         "gsed_id"      "sf_parent_id" "sf_sec001"    "sf_moc002"   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "sf_sec003"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file"         "gsed_id"      "sf_parent_id" "gs1sec001"    "gs1moc002"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "gs1sec003"   </span>
 </code></pre></div>
     </div>
   </div>

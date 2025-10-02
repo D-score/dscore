@@ -12,7 +12,6 @@ A \code{data.frame} with variables:\tabular{ll}{
    \code{gsed} \tab gsed lexion \cr
    \code{gsed2} \tab gto/gpa lexicon for LF/SF \cr
    \code{gsed3} \tab gl1/gs1 lexicon for LF/SF \cr
-   \code{gsed4} \tab lf/sf lexicon for LF/SF \cr
    \code{short1} \tab Short item name, phase 1 order \cr
    \code{short2} \tab Short item name, phase 2 order \cr
    \code{instrument} \tab Instrument code \cr

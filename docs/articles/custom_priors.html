@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
       </span>
     </div>
 
@@ -121,16 +121,16 @@ frame, which contains several columns including the following:</p>
 <span><span class="co">## 1     dutch                 dutch</span></span>
 <span><span class="co">## 2      gcdg                  gcdg</span></span>
 <span><span class="co">## 3  gsed1912                  gcdg</span></span>
-<span><span class="co">## 8     293_0                phase1</span></span>
 <span><span class="co">## 10 gsed2212                phase1</span></span>
-<span><span class="co">## 11 gsed2406 preliminary_standards</span></span></code></pre>
+<span><span class="co">## 11 gsed2406 preliminary_standards</span></span>
+<span><span class="co">## 12 gsed2510 preliminary_standards</span></span></code></pre>
 <p>For instance, for <code>key = gsed2406</code>, the
 <code>base_population</code> is identified as
 <code>"preliminary_standards"</code>. The <code><a href="../reference/get_mu.html">get_mu()</a></code> function
 returns the prior mean for the specified <code>key</code> at different
 ages:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_mu.html">get_mu</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">12</span><span class="op">)</span><span class="op">/</span><span class="fl">12</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_mu.html">get_mu</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">12</span><span class="op">)</span> <span class="op">/</span> <span class="fl">12</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##  [1]  9.731266 14.922704 19.282654 23.155214 26.707086 30.031809 33.187157</span></span>
 <span><span class="co">##  [8] 36.211330 39.130903 41.965115 45.158164 47.235287 49.186179</span></span></code></pre>
 <p>This code snippet returns the prior mean for ages ranging from 0 to
@@ -214,10 +214,14 @@ observations.</p>
 function of the proportion of items passed by the child.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot the difference between adjusted and default D-scores</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">d</span> <span class="op">-</span> <span class="va">def</span><span class="op">$</span><span class="va">d</span>, x <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">p</span>, </span>
-<span>     xlab <span class="op">=</span> <span class="st">"Proportion of items passed by the child"</span>, </span>
-<span>     ylab <span class="op">=</span> <span class="st">"Upward drift of D-score"</span>, </span>
-<span>     pch <span class="op">=</span> <span class="fl">16</span>, main <span class="op">=</span> <span class="st">"Impact of Custom Prior Mean on D-score"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>  y <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">d</span> <span class="op">-</span> <span class="va">def</span><span class="op">$</span><span class="va">d</span>,</span>
+<span>  x <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">p</span>,</span>
+<span>  xlab <span class="op">=</span> <span class="st">"Proportion of items passed by the child"</span>,</span>
+<span>  ylab <span class="op">=</span> <span class="st">"Upward drift of D-score"</span>,</span>
+<span>  pch <span class="op">=</span> <span class="fl">16</span>,</span>
+<span>  main <span class="op">=</span> <span class="st">"Impact of Custom Prior Mean on D-score"</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Add a smoothed line to visualize the trend</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lowess.html" class="external-link">lowess</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">p</span>, y <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">d</span> <span class="op">-</span> <span class="va">def</span><span class="op">$</span><span class="va">d</span>, f <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"grey"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -241,7 +245,7 @@ standard deviation. Here, the <code>prior_sd</code> argument is
 specified using a constant value or values derived from the data.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Filter data for a specific child</span></span>
-<span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="va">milestones</span><span class="op">[</span><span class="va">milestones</span><span class="op">$</span><span class="va">id</span> <span class="op">==</span> <span class="fl">111</span>, <span class="op">]</span> </span>
+<span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="va">milestones</span><span class="op">[</span><span class="va">milestones</span><span class="op">$</span><span class="va">id</span> <span class="op">==</span> <span class="fl">111</span>, <span class="op">]</span></span>
 <span></span>
 <span><span class="co"># Calculate default D-scores</span></span>
 <span><span class="va">def</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span></span>
@@ -266,9 +270,15 @@ next time point as follows:</p>
 for child 111:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plotting the raw and informed DAZ trajectories</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">a</span>, y <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">daz</span>, type <span class="op">=</span> <span class="st">"b"</span>, pch <span class="op">=</span> <span class="fl">16</span>, </span>
-<span>     ylab <span class="op">=</span> <span class="st">"DAZ"</span>, xlab <span class="op">=</span> <span class="st">"Age (years)"</span>, </span>
-<span>     main <span class="op">=</span> <span class="st">"Standard (black) and Informed (red) DAZ-trajectory for child 111"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">a</span>,</span>
+<span>  y <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">daz</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"b"</span>,</span>
+<span>  pch <span class="op">=</span> <span class="fl">16</span>,</span>
+<span>  ylab <span class="op">=</span> <span class="st">"DAZ"</span>,</span>
+<span>  xlab <span class="op">=</span> <span class="st">"Age (years)"</span>,</span>
+<span>  main <span class="op">=</span> <span class="st">"Standard (black) and Informed (red) DAZ-trajectory for child 111"</span></span>
+<span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">a</span>, y <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">daz</span>, col <span class="op">=</span> <span class="st">"red"</span>, type <span class="op">=</span> <span class="st">"b"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, pch <span class="op">=</span> <span class="fl">16</span><span class="op">)</span></span></code></pre></div>
 <p><img src="custom_priors_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
 <p>This plot illustrates the DAZ trajectory using standard estimates (in

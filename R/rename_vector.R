@@ -3,15 +3,14 @@
 #' Translates names between different lexicons (naming schema).
 #' @param input    A character vector with names to be translated
 #' @param lexin    A string indicating the input lexicon. One of `"phase1"`,
-#' `"phase2"`, `"short1"`, `"short2"`, `"gsed"`, `"gsed2"`, `"gsed3"` or
-#' `"gsed4"`
+#' `"phase2"`, `"short1"`, `"short2"`, `"gsed"`, `"gsed2"` or `"gsed3"`.
 #' Default is `"phase2"`, which orders item names according to the
 #' published 2023 version of the SF and LF instruments.
 #' @param lexout   A string indicating the output lexicon. One of `"phase1"`,
-#' `"phase2"`, `"short1"`, `"short2"`, `"gsed"`, `"gsed2"`, `"gsed3"` or
-#' `"gsed4"`.
-#' Default is `"gsed4"`. The default output `"gsed4"` applies instrument
-#' codes `sf_` and `lf_`, which can be understood by the `dscore` package.
+#' `"phase2"`, `"short1"`, `"short2"`, `"gsed"`, `"gsed2"`, `"gsed3"`.
+#' Default is `"gsed3"`. The default output `"gsed3"` applies instrument
+#' codes `gs1` (SF) and `gl1` (LF), which can be understood by the `dscore`
+#' package.
 #' @param notfound A string indicating what to do some input value is not found
 #' @param contains A string to filter the translation table prior to matching.
 #' Needed to prevent double matches. The default ("") does not filter.
@@ -28,7 +27,7 @@
 #' @details
 #' The recommended approach for reading new data is to name the columns
 #' according to the names defined by `"short2"` and the apply `rename_vector()`
-#' to translate the names to the `"gsed4"` lexicon.
+#' to translate the names to the `"gsed3"` lexicon.
 #'
 #' The lexicons `"phase1"`, `"short1"`, `"gsed"` and `"gsed2"` are included
 #' for backward compatibility, and are not recommended for use with new
@@ -53,11 +52,9 @@ rename_vector <- function(
     "short2",
     "gsed",
     "gsed2",
-    "gsed3",
-    "gsed4"
+    "gsed3"
   ),
   lexout = c(
-    "gsed4",
     "gsed3",
     "gsed2",
     "gsed",
@@ -87,7 +84,6 @@ rename_vector <- function(
     gsed = "gsed",
     gsed2 = "gsed2",
     gsed3 = "gsed3",
-    gsed4 = "gsed4",
     "notfound"
   )
   colout <- switch(
@@ -99,7 +95,6 @@ rename_vector <- function(
     gsed = "gsed",
     gsed2 = "gsed2",
     gsed3 = "gsed3",
-    gsed4 = "gsed4",
     "notfound"
   )
   if (colin == "notfound") {

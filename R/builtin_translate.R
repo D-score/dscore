@@ -13,7 +13,6 @@
 #' | `gsed`     | gsed lexion                    |
 #' | `gsed2`    | gto/gpa lexicon for LF/SF      |
 #' | `gsed3`    | gl1/gs1 lexicon for LF/SF      |
-#' | `gsed4`    | lf/sf lexicon for LF/SF        |
 #' | `short1`   | Short item name, phase 1 order |
 #' | `short2`   | Short item name, phase 2 order |
 #' | `instrument` | Instrument code              |

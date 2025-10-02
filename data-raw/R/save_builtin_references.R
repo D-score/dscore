@@ -109,6 +109,14 @@ phase1_gsed2406 <- phase1_gsed2212 |>
 dutch_gsed2406 <- dutch_gsed2212 |>
   mutate(key = "gsed2406")
 
+# create copies for gsed2510
+preliminary_standards_gsed2510 <- preliminary_standards_gsed2406 |>
+  mutate(key = "gsed2510")
+phase1_gsed2510 <- phase1_gsed2212 |>
+  mutate(key = "gsed2510")
+dutch_gsed2510 <- dutch_gsed2212 |>
+  mutate(key = "gsed2510")
+
 # save to /data
 builtin_references <- bind_rows(
   dutch_dutch,
@@ -119,7 +127,10 @@ builtin_references <- bind_rows(
   dutch_gsed2212,
   preliminary_standards_gsed2406,
   phase1_gsed2406,
-  dutch_gsed2406
+  dutch_gsed2406,
+  preliminary_standards_gsed2510,
+  phase1_gsed2510,
+  dutch_gsed2510
 ) |>
   rename(age = year) |>
   dplyr::select(

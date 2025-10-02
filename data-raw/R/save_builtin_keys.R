@@ -59,7 +59,7 @@ builtin_keys <- data.frame(
     3.603965
   ),
   from = rep(-10, 12),
-  to = c(80, rep(100, 11)),
+  to = c(80, rep(100, 10), 125),
   by = rep(1, 12),
   retired = c(
     FALSE,

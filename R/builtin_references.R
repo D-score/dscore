@@ -38,18 +38,24 @@
 #' Here are more details on the reference population:
 #' The `"dutch"` references were calculated from the SMOCC data, and cover
 #' age range 0-2.5 years (van Buuren, 2014).
+#'
 #' The `"gcdg"` references were calculated from the 15 cohorts of the
 #' GCDG-study, and cover age range 0-5 years (Weber, 2019).
+#'
 #' The `"phase1"` references were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 #' age range 3.5-5 yrs is linearly extrapolated and is only indicative.
+#'
 #' The `"preliminary_standards"` were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) using a subset of children with
 #' covariate indicating healthy development.
+#'
 #' The `"who_descriptive"` references were calculated from the GSED Phase 1 & 2
 #' validation data (GSED-BGD, GSED-BRA, GSED_CHN, GSED-CIV, GSED-NLD, GSED-PAK,
 #' GSED-TZA) cover age range 2w-3.5 years. The age range 3.5-5 yrs is linearly
-#' extrapolated and is only indicative.
+#' extrapolated and is only indicative. The source code for the relevant
+#' calculations can be found in <https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/purify.R>
+#' and <https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/fit_core_model.R>.
 #'
 #' @examples
 #' # get an overview of available references per key
@@ -75,7 +81,7 @@
 #' Gladstone M, Cavallera, V, Dua T, Black MM, GSED Team (2025).
 #' Enhancing comparability in early child development assessment with the
 #' D-score. International Journal of Behavioral Development, 49(4), 348-364,
-#' {https://doi.org/10.1177/01650254241294033}
+#' <https://doi.org/10.1177/01650254241294033>
 #'
 #' Stasinopoulos M, Rigby R (2022). gamlss.dist: Distributions for
 #' Generalized Additive Models for Location Scale and Shape,

@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.1</span>
       </span>
     </div>
 
@@ -161,14 +161,14 @@ BMJ Global Health, BMJ Global Health 4: e001724.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># see key-population combinations of builtin_references</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">builtin_references</span><span class="op">$</span><span class="va">key</span>, <span class="va">builtin_references</span><span class="op">$</span><span class="va">population</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            dutch gcdg phase1 preliminary_standards</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   293_0        0    0    186                     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   dutch      144    0      0                     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gcdg         0  121      0                     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed1912     0  121      0                     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2212   185    0    186                     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2406   185    0    186                   186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2510   185    0    186                   186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            dutch gcdg phase1 preliminary_standards who_descriptive</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   293_0        0    0    186                     0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   dutch      144    0      0                     0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gcdg         0  121      0                     0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed1912     0  121      0                     0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2212   185    0    186                     0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2406   185    0    186                   186               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2510   185    0      0                   186             188</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get the default reference</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span><span class="op">)</span></span></span>

@@ -19,7 +19,7 @@ editor_options:
 
 - What else is new?
   + Removed legacy keys that are no longer useful
-  + Removed duplicated instrument codes
+  + Removed duplicated instrument codes `gpa` and `gto`
   + Streamlined documentation and vignettes for easier navigation
   + Laid the groundwork for extending D-score calculations to older children
   + Now licensed under Apache 2.0 - making it easier to use, adapt, and integrate into your own applications

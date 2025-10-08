@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.1
+
+- Added the new D-score reference for `key = "gsed2510"` and `population = "who_descriptive"`. This reference replaces the (temporary) `phase1` reference. ([#62](https://github.com/D-score/dscore/issues/62)).
+
 # dscore 2.0.0
 
 ### 🌍 D-score now powered by data from 7 countries!

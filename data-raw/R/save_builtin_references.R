@@ -8,6 +8,8 @@ f2 <- file.path(path, "gcdg.txt")
 f3 <- file.path(path, "phase1.txt")
 f4 <- file.path(path, "Dutch_gsed2212.txt")
 f5 <- file.path(path, "preliminary_standards.txt")
+f6 <- file.path(path, "who_descriptive_gsed2510.txt")
+
 
 # ------------- dutch references
 dutch_dutch <- read.delim(file = f1) |>
@@ -103,6 +105,25 @@ preliminary_standards_gsed2406 <- read.delim(file = f5) |>
     SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 
+who_descriptive_gsed2510 <- read.delim(file = f6) |>
+  mutate(
+    population = "who_descriptive",
+    key = "gsed2510",
+    distribution = "BCT",
+    P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
+    P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
+    P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
+    P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
+    P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
+    P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
+    P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
+    SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
+    SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
+    SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
+    SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
+    SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
+  )
+
 # create copies for gsed2406
 phase1_gsed2406 <- phase1_gsed2212 |>
   mutate(key = "gsed2406")
@@ -111,8 +132,6 @@ dutch_gsed2406 <- dutch_gsed2212 |>
 
 # create copies for gsed2510
 preliminary_standards_gsed2510 <- preliminary_standards_gsed2406 |>
-  mutate(key = "gsed2510")
-phase1_gsed2510 <- phase1_gsed2212 |>
   mutate(key = "gsed2510")
 dutch_gsed2510 <- dutch_gsed2212 |>
   mutate(key = "gsed2510")
@@ -129,7 +148,7 @@ builtin_references <- bind_rows(
   phase1_gsed2406,
   dutch_gsed2406,
   preliminary_standards_gsed2510,
-  phase1_gsed2510,
+  who_descriptive_gsed2510,
   dutch_gsed2510
 ) |>
   rename(age = year) |>

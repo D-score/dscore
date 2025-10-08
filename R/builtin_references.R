@@ -42,10 +42,14 @@
 #' GCDG-study, and cover age range 0-5 years (Weber, 2019).
 #' The `"phase1"` references were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
-#' age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+#' age range 3.5-5 yrs is linearly extrapolated and is only indicative.
 #' The `"preliminary_standards"` were calculated from the GSED Phase 1 validation
 #' data (GSED-BGD, GSED-PAK, GSED-TZA) using a subset of children with
 #' covariate indicating healthy development.
+#' The `"who_descriptive"` references were calculated from the GSED Phase 1 & 2
+#' validation data (GSED-BGD, GSED-BRA, GSED_CHN, GSED-CIV, GSED-NLD, GSED-PAK,
+#' GSED-TZA) cover age range 2w-3.5 years. The age range 3.5-5 yrs is linearly
+#' extrapolated and is only indicative.
 #'
 #' @examples
 #' # get an overview of available references per key
@@ -66,6 +70,12 @@
 #' the early development of infants and toddlers across global settings.
 #' BMJ Global Health, BMJ Global Health 4: e001724.
 #' <https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>
+#'
+#' van Buuren S, Eekhout I, McCray G, Lancaster GA, Waldman MR, McCoy DC,
+#' Gladstone M, Cavallera, V, Dua T, Black MM, GSED Team (2025).
+#' Enhancing comparability in early child development assessment with the
+#' D-score. International Journal of Behavioral Development, 49(4), 348-364,
+#' {https://doi.org/10.1177/01650254241294033}
 #'
 #' Stasinopoulos M, Rigby R (2022). gamlss.dist: Distributions for
 #' Generalized Additive Models for Location Scale and Shape,

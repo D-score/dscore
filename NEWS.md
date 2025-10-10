@@ -4,6 +4,13 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.2
+
+- Updates the mu-model for `"who_desciptive"` populations
+- Adds tests for minimum and maximum test scores for LF and SF instruments
+- Updates `builtin_keys` and `builtin_references`
+- Updates documentation
+
 # dscore 2.0.1
 
 - Added the new D-score reference for `key = "gsed2510"` and `population = "who_descriptive"`. This reference replaces the (temporary) `phase1` reference. ([#62](https://github.com/D-score/dscore/issues/62)).

@@ -4,7 +4,7 @@
 \alias{count_mu_preliminary_standards}
 \title{Median of preliminary_standards}
 \usage{
-count_mu_preliminary_standards(t)
+count_mu_preliminary_standards(t, key)
 }
 \arguments{
 \item{t}{Decimal age, numeric vector}

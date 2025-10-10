@@ -24,11 +24,12 @@ builtin_keys
 }
 \description{
 A key contains the item difficulty estimates from a given Rasch model.
-The difficulty estimates (\code{tau}) are used to calculate D-scores.
-D-scores can only be compared when calculated with the same key.
+The difficulty estimates (\code{tau}) within a given key are used to
+calculate D-scores. D-scores can only be compared when calculated
+from the same key.
 }
 \note{
-20240609 SvB: Added \code{builtin_keys} table by
+Updated: 20251010 SvB: Added \code{builtin_keys} table by
 \verb{data-raw\\data\\R\\save_builtin_keys.R}
 }
 \keyword{datasets}

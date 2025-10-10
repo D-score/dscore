@@ -31,6 +31,7 @@
 #' - Dec 05, 2022 - Adds key `gsed2212`, adding instruments `gl1` and `gs1`, and
 #'   defining correct order for `gto`
 #' - Jan 05, 2023 - Adds instrument `gh1` to key `gsed2212`
+#' - Oct 10, 2025 - Adds key `gsed2510` (currently just only `gl1` and `gs1`)
 #'
 #' @examples
 #' # count number of items per instrument in each key

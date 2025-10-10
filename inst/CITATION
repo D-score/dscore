@@ -11,7 +11,7 @@ bibentry(
     person("Jonathan", "Seiden", role = "aut",
            comment = "ORCID: 0000-0002-0318-8016")),
   year     = "2025",
-  note     = "R package version 1.10.0",
+  note     = "R package version 2.0.0",
   url      = "https://CRAN.R-project.org/package=dscore",
   key      = "dscore-package"
 )

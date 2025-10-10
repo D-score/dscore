@@ -20,7 +20,8 @@ get_mu <- function(t, key, prior_mean_NA = NA_real_) {
     "dutch" = count_mu_dutch(t),
     "gcdg" = count_mu_gcdg(t),
     "phase1" = count_mu_phase1(t),
-    "preliminary_standards" = count_mu_preliminary_standards(t),
+    "preliminary_standards" = count_mu_preliminary_standards(t, key = init$key),
+    "who_descriptive" = count_mu_preliminary_standards(t, key = init$key),
     rep(NA_real_, length(t))
   )
   mu[is.na(t)] <- prior_mean_NA
@@ -147,7 +148,7 @@ count_mu_phase1 <- function(t) {
 #' @author Stef van Buuren, on behalf of GSED project
 #' @examples
 #' dscore:::count_mu_preliminary_standards(0:5)
-count_mu_preliminary_standards <- function(t) {
+count_mu_preliminary_standards <- function(t, key) {
   to <- !is.na(t)
   t0 <- to & t < -1 / 12
   t1 <- to & t <= 0.75
@@ -172,3 +173,23 @@ count_mu_preliminary_standards <- function(t) {
 
   return(t)
 }
+
+# For completeness: mu-model for who_descriptive references
+# Not used because we want to use mu from preliminary_standards
+# as prior mean for both population "preliminary_standards"
+# and "who_descriptive".
+#
+# ref1 <- reference[reference$age < 0.75, ]
+# ref2 <- reference[reference$age >= 0.75 & reference$age < 3.5, ]
+# ref3 <- reference[reference$age > 3, ]
+#
+# Count model: < 9MND:
+# summary(mod <- lm(formula = mu ~ age + log(age + 10), data = ref1))
+# -2775.83728 - 75.02296 age + 1210.41737 log(age + 10)
+#
+# Count model: > 9MND & < 3.5 YR
+# summary(mod <- lm(formula = mu ~ age + I(log(age + 0.25)), data = ref2))
+# 46.69057068 - 6.42038876 age + 39.77773960 log(age + 0.25)
+#
+# Linear model: > 3.5 YRS: 63.12172890 + 3.84445765 age
+# SvB 20251010

@@ -138,17 +138,18 @@ count_mu_phase1 <- function(t) {
 #' Median of preliminary_standards
 #'
 #' Returns the age-interpolated median of the preliminary_standards
-#' based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA. This function is used
-#' to set prior mean under key `"gsed2406"`.
+#' based on LF & SF in seven GSED countries. This function is used
+#' to set prior mean under keys `"gsed2406"` and `"gsed2510"`.
 #'
 #' @param t Decimal age, numeric vector
+#' @param key Character, key name
 #' @return
 #' A vector of length `length(t)` with the median of the GCDG references.
 #' @note Internal function. Called by `dscore()`
 #' @author Stef van Buuren, on behalf of GSED project
 #' @examples
 #' dscore:::count_mu_preliminary_standards(0:5)
-count_mu_preliminary_standards <- function(t, key) {
+count_mu_preliminary_standards <- function(t, key = NULL) {
   to <- !is.na(t)
   t0 <- to & t < -1 / 12
   t1 <- to & t <= 0.75

@@ -4,18 +4,20 @@
 \alias{count_mu_preliminary_standards}
 \title{Median of preliminary_standards}
 \usage{
-count_mu_preliminary_standards(t, key)
+count_mu_preliminary_standards(t, key = NULL)
 }
 \arguments{
 \item{t}{Decimal age, numeric vector}
+
+\item{key}{Character, key name}
 }
 \value{
 A vector of length \code{length(t)} with the median of the GCDG references.
 }
 \description{
 Returns the age-interpolated median of the preliminary_standards
-based on LF & SF in GSED-BGD, GSED-PAK, GSED-TZA. This function is used
-to set prior mean under key \code{"gsed2406"}.
+based on LF & SF in seven GSED countries. This function is used
+to set prior mean under keys \code{"gsed2406"} and \code{"gsed2510"}.
 }
 \note{
 Internal function. Called by \code{dscore()}

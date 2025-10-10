@@ -1,8 +1,9 @@
 #' Available keys for calculating the D-score
 #'
 #' A key contains the item difficulty estimates from a given Rasch model.
-#' The difficulty estimates (`tau`) are used to calculate D-scores.
-#' D-scores can only be compared when calculated with the same key.
+#' The difficulty estimates (`tau`) within a given key are used to
+#' calculate D-scores. D-scores can only be compared when calculated
+#' from the same key.
 #'
 #' @docType data
 #' @format `builtin_keys` is a `data.frame` with variables:
@@ -20,6 +21,6 @@
 #' | `by` | Increment of the quadrature points |
 #' | `retired` | Has the key been retired? |
 #' @note
-#' 20240609 SvB: Added `builtin_keys` table by
+#' Updated: 20251010 SvB: Added `builtin_keys` table by
 #' `data-raw\data\R\save_builtin_keys.R`
 "builtin_keys"

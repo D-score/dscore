@@ -12,6 +12,7 @@ builtin_keys <- data.frame(
     "gsed2208",
     "gsed2212",
     "gsed2406",
+    "gsed2510",
     "gsed2510"
   ),
   base_population = c(
@@ -26,10 +27,25 @@ builtin_keys <- data.frame(
     "phase1",
     "phase1",
     "preliminary_standards",
-    "preliminary_standards"
+    "preliminary_standards",
+    "who_descriptive"
   ),
-  n_items = c(76, 565, 945, 278, 310, 1126, 606, 293, 1407, 1478, 1478, 281),
-  n_instruments = c(1, 13, 20, 7, 13, 22, 20, 2, 25, 23, 23, 2),
+  n_items = c(
+    76,
+    565,
+    945,
+    278,
+    310,
+    1126,
+    606,
+    293,
+    1407,
+    1478,
+    1478,
+    281,
+    281
+  ),
+  n_instruments = c(1, 13, 20, 7, 13, 22, 20, 2, 25, 23, 23, 2, 2),
   intercept = c(
     38.906,
     66.483757,
@@ -42,6 +58,7 @@ builtin_keys <- data.frame(
     54.939147,
     54.939147,
     54.939147,
+    55.724132,
     55.724132
   ),
   slope = c(
@@ -56,11 +73,12 @@ builtin_keys <- data.frame(
     4.064264,
     4.064264,
     4.064264,
+    3.603965,
     3.603965
   ),
-  from = rep(-10, 12),
-  to = c(80, rep(100, 10), 125),
-  by = rep(1, 12),
+  from = rep(-10, 13),
+  to = c(80, rep(100, 10), rep(125, 2)),
+  by = rep(1, 13),
   retired = c(
     FALSE,
     FALSE,
@@ -72,6 +90,7 @@ builtin_keys <- data.frame(
     TRUE,
     TRUE,
     TRUE,
+    FALSE,
     FALSE,
     FALSE
   ),
@@ -87,6 +106,7 @@ builtin_keys <- data.frame(
     "",
     "Van Buuren 2025",
     "Van Buuren 2025",
+    "In preparation",
     "In preparation"
   ),
   stringsAsFactors = FALSE

@@ -1,5 +1,36 @@
 context("dscore")
 
+# minimum and maximum of SF (0, 3.5 years)
+items <- get_itemnames(instrument = "gs1")
+df <- rbind(
+  as.data.frame(setNames(as.list(rep(0, length(items))), items)),
+  as.data.frame(setNames(as.list(rep(1, length(items))), items)),
+  as.data.frame(setNames(as.list(rep(0, length(items))), items)),
+  as.data.frame(setNames(as.list(rep(1, length(items))), items))
+)
+df$age <- c(0, 0, 3.5, 3.5)
+ds <- dscore(df)
+test_that("dscore() calculates SF range", {
+  expect_false(anyNA(ds$d))
+  expect_false(anyNA(ds$sem))
+})
+
+# minimum and maximum of LF (0, 3.5 years)
+items <- get_itemnames(instrument = "gl1")
+df <- rbind(
+  as.data.frame(setNames(as.list(rep(0, length(items))), items)),
+  as.data.frame(setNames(as.list(rep(1, length(items))), items)),
+  as.data.frame(setNames(as.list(rep(0, length(items))), items)),
+  as.data.frame(setNames(as.list(rep(1, length(items))), items))
+)
+df$age <- c(0, 0, 3.5, 3.5)
+ds <- dscore(df)
+test_that("dscore() calculates LF range", {
+  expect_false(anyNA(ds$d))
+  expect_false(anyNA(ds$sem))
+})
+
+
 # dscore, gsed lexicon
 data <- data.frame(
   age = rep(round(21 / 365.25, 4), 10),

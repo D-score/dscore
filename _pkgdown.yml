@@ -69,6 +69,7 @@ reference:
       - sample_sf
       - sample_lf
       - sample_hf
+      - triple
 articles:
   - title: Tips
     navbar: ~

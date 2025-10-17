@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+- Adds an example dataset `triple` for demo purposes
+
 # dscore 2.0.2
 
 - Updates the mu-model for `"who_desciptive"` populations

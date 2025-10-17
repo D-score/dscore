@@ -47,13 +47,23 @@ The function will silently rewrite \code{population = "gsed"}
 into to the \code{population = "gsed"}.
 
 The \code{"dutch"} reference was published in Van Buuren (2014)
+
 The \code{"gcdg"} was calculated from 15 cohorts with direct
 observations (Weber, 2019).
+
 The \code{"phase1"} references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 age range 3.5-5 yrs is linearly extrapolated and are only indicative.
+(Van Buuren et al, 2025)
+
 The \code{"preliminary_standards"} references were calculated from the GSED
 Phase 1 validation using a subset of children with healthy development.
+(Van Buuren et al, 2025)
+
+The \code{"who_descriptive"} references were calculated from the GSED
+Phase 1 + 2 (Seven countries) validation study using the \code{"gsed2510"} key.
+It is a descriptive reference, i.e., no selection of children growing
+up in healthy environments was made. (In preparation for publication).
 }
 \examples{
 # see key-population combinations of builtin_references
@@ -69,8 +79,12 @@ reftab <- get_reference(key = "gsed2212", verbose = TRUE)
 # get dutch reference for default key
 reftab <- get_reference(population = "dutch", verbose = TRUE)
 
-# loading a non-existing reference yields zero rows
+# loading a non-existing reference yield fallback to default
 reftab <- get_reference(population = "france", verbose = TRUE)
+
+# if user specifies a builtin population (e.g. who_descriptive) and the key
+# is not found, then it returns the specified reference for its most recent key
+reftab <- get_reference(key = "none", population = "preliminary_standards", verbose = TRUE)
 nrow(reftab)
 }
 \references{
@@ -84,6 +98,12 @@ Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
 \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}.
+
+van Buuren S, Eekhout I, McCray G, Lancaster GA, Waldman MR, McCoy DC,
+Gladstone M, Cavallera, V, Dua T, Black MM, GSED Team (2025).
+Enhancing comparability in early child development assessment with the
+D-score. International Journal of Behavioral Development, 49(4), 348-364,
+\url{https://doi.org/10.1177/01650254241294033}
 }
 \seealso{
 \code{\link[=builtin_references]{builtin_references()}}

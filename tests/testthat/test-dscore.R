@@ -9,7 +9,7 @@ df <- rbind(
   as.data.frame(setNames(as.list(rep(1, length(items))), items))
 )
 df$age <- c(0, 0, 3.5, 3.5)
-ds <- dscore(df)
+ds <- dscore(df, population = "who_descriptive")
 test_that("dscore() calculates SF range", {
   expect_false(anyNA(ds$d))
   expect_false(anyNA(ds$sem))
@@ -24,7 +24,7 @@ df <- rbind(
   as.data.frame(setNames(as.list(rep(1, length(items))), items))
 )
 df$age <- c(0, 0, 3.5, 3.5)
-ds <- dscore(df)
+ds <- dscore(df, population = "who_descriptive")
 test_that("dscore() calculates LF range", {
   expect_false(anyNA(ds$d))
   expect_false(anyNA(ds$sem))

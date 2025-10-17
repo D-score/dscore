@@ -142,11 +142,15 @@
 #' `"293_0"`     | `293_0` | `-10:100` | 2   | mixed  | GSED Team, 2022
 #' `"gsed2212"`  | `818_6` | `-10:100` | 27  | mixed  | GSED Team, 2022
 #' `"gsed2406"`  | `818_6` | `-10:100` | 27  | mixed  | GSED Team, 2024
+#' `"gsed2510"`  | `281_0` | `-10:125` | 2   | mixed  | GSED Team, 2025
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
-#' the advice is to use the default, which currently is `"gsed2406"`.
+#' the advice is to use the default, which currently is `"gsed2510"`.
+#' Currently, key `"gsed2510"` is defined for instrument codes `gs1`
+#' (GSED SF) and `gl1` (GSED LF). If you have another instrument,
+#' use the key `"gsed2406"`.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The
@@ -179,36 +183,41 @@
 #' [builtin_references()], [get_tau()], [posterior()], [milestones()]
 #' @examples
 #' # using all defaults and properly formatted data
-#' ds <- dscore(milestones, key = "gsed2406")
+#' sf <- dscore::triple[, 1:141]
+#' ds <- dscore(sf)
 #' head(ds)
 #'
-#' # step-by-step example
+#' # step-by-step example demonstrating
+#' # all possible response vectors for 3 items
 #' data <- data.frame(
 #'   id = c(
 #'     "Jane", "Martin", "ID-3", "No. 4", "Five", "6",
-#'     NA_character_, as.character(8:10)
-#'   ),
+#'     NA_character_, as.character(8:10)),
 #'   age = rep(round(21 / 365.25, 4), 10),
-#'   ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
-#'   ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
-#'   ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+#'   gs1sec001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+#'   gs1moc002 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+#'   gs1sec003 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
 #' )
-#' items <- names(data)[3:5]
 #'
-#' # third item is not part of the default key
+#' # what are these items?
+#' items <- names(data)[3:5]
+#' get_labels(items)
+#'
+#' # difficulty parameter in default key
 #' get_tau(items, verbose = TRUE)
 #'
 #' # calculate D-score
-#' dscore(data, key = "gsed2406")
+#' # the same sumscore leads to the same D-score (column d)
+#' dscore(data)
 #'
 #' # prepend id variable to output
-#' dscore(data, prepend = "id", key = "gsed2406")
+#' dscore(data, prepend = "id")
 #'
 #' # or prepend all data
-#' # dscore(data, prepend = colnames(data), key = "gsed2406")
+#' # dscore(data, prepend = colnames(data))
 #'
 #' # calculate full posterior
-#' p <- dscore_posterior(data, key = "gsed2406")
+#' p <- dscore_posterior(data)
 #'
 #' # check that rows sum to 1
 #' rowSums(p)
@@ -230,6 +239,7 @@
 #' abline(h = seq(10, 80, 10), v = seq(0, 4, 0.5), col = "gray", lty = 2)
 #'
 #' # add measurements made on very preterms, ga < 32 weeks
+#' # we need key = "gsed2406" because DDI is not yet in key "gsed2510"
 #' ds <- dscore(milestones, key = "gsed2406")
 #' points(x = ds$a, y = ds$d, pch = 19, col = "red")
 #' @export
@@ -552,7 +562,11 @@ calc_dscore <- function(
       )
 
     # add n and d daz, shape end result
-    reference_table <- get_reference(population = population, key = key)
+    reference_table <- get_reference(
+      population = population,
+      key = key,
+      verbose = verbose
+    )
     if (nrow(reference_table)) {
       data5$daz <- daz(
         d = data5$d,

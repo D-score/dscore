@@ -4,6 +4,9 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.3
+
+- Changes the behavior in `get_reference()`: If the user specifies a builtin population (e.g. `gcdg`, `who_descriptive`) and the key is not found, then it returns the specified reference for its most recent key
 - Adds an example dataset `triple` for demo purposes
 
 # dscore 2.0.2

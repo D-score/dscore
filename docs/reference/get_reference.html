@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
       </span>
     </div>
 
@@ -130,14 +130,20 @@ The default is to use <code>builtin_references</code>.</p></dd>
     <p>No references for population <code>"gsed"</code> exist.
 The function will silently rewrite <code>population = "gsed"</code>
 into to the <code>population = "gsed"</code>.</p>
-<p>The <code>"dutch"</code> reference was published in Van Buuren (2014)
-The <code>"gcdg"</code> was calculated from 15 cohorts with direct
-observations (Weber, 2019).
-The <code>"phase1"</code> references were calculated from the GSED Phase 1 validation
+<p>The <code>"dutch"</code> reference was published in Van Buuren (2014)</p>
+<p>The <code>"gcdg"</code> was calculated from 15 cohorts with direct
+observations (Weber, 2019).</p>
+<p>The <code>"phase1"</code> references were calculated from the GSED Phase 1 validation
 data (GSED-BGD, GSED-PAK, GSED-TZA) cover age range 2w-3.5 years. The
 age range 3.5-5 yrs is linearly extrapolated and are only indicative.
-The <code>"preliminary_standards"</code> references were calculated from the GSED
-Phase 1 validation using a subset of children with healthy development.</p>
+(Van Buuren et al, 2025)</p>
+<p>The <code>"preliminary_standards"</code> references were calculated from the GSED
+Phase 1 validation using a subset of children with healthy development.
+(Van Buuren et al, 2025)</p>
+<p>The <code>"who_descriptive"</code> references were calculated from the GSED
+Phase 1 + 2 (Seven countries) validation study using the <code>"gsed2510"</code> key.
+It is a descriptive reference, i.e., no selection of children growing
+up in healthy environments was made. (In preparation for publication).</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -150,6 +156,11 @@ Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
 <a href="https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf" class="external-link">https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf</a>.</p>
+<p>van Buuren S, Eekhout I, McCray G, Lancaster GA, Waldman MR, McCoy DC,
+Gladstone M, Cavallera, V, Dua T, Black MM, GSED Team (2025).
+Enhancing comparability in early child development assessment with the
+D-score. International Journal of Behavioral Development, 49(4), 348-364,
+<a href="https://doi.org/10.1177/01650254241294033" class="external-link">https://doi.org/10.1177/01650254241294033</a></p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -193,11 +204,18 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2510 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> population:  dutch </span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># loading a non-existing reference yields zero rows</span></span></span>
+<span class="r-in"><span><span class="co"># loading a non-existing reference yield fallback to default</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>population <span class="op">=</span> <span class="st">"france"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2510 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> population:  france </span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Reference 'france' for key 'gsed2510' not found. Fallback: 'preliminary_standards'</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Reference 'france' for key 'gsed2510' not found. Fallback: 'preliminary_standards' for key 'gsed2406'.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># if user specifies a builtin population (e.g. who_descriptive) and the key</span></span></span>
+<span class="r-in"><span><span class="co"># is not found, then it returns the specified reference for its most recent key</span></span></span>
+<span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>key <span class="op">=</span> <span class="st">"none"</span>, population <span class="op">=</span> <span class="st">"preliminary_standards"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> key:         none </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> population:  preliminary_standards </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Using key:   gsed2510 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">reftab</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 186</span>
 </code></pre></div>

@@ -11,7 +11,7 @@ editor_options:
 
 # dscore 2.0.2
 
-- Updates the mu-model for `"who_desciptive"` populations
+- Updates the mu-model for `"who_descriptive"` populations
 - Adds tests for minimum and maximum test scores for LF and SF instruments
 - Updates `builtin_keys` and `builtin_references`
 - Updates documentation

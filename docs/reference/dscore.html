@@ -20,7 +20,7 @@ standard error of measurement (SEM) of the D-score."><!-- mathjax --><script src
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
       </span>
     </div>
 
@@ -300,10 +300,13 @@ and may need adaptation.</p>
 The method uses Bayes rule to update a prior ability into a posterior
 ability.</p>
 <p>The item names should correspond to the <code>"gsed"</code> lexicon.</p>
-<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>13</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>21</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"293_0"</code></td><td><code>293_0</code></td><td><code>-10:100</code></td><td>2</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2212"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2406"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2024</td></tr></table><p>As a general rule, one should only compare D-scores
+<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>13</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>21</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"293_0"</code></td><td><code>293_0</code></td><td><code>-10:100</code></td><td>2</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2212"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2406"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2024</td></tr><tr><td><code>"gsed2510"</code></td><td><code>281_0</code></td><td><code>-10:125</code></td><td>2</td><td>mixed</td><td>GSED Team, 2025</td></tr></table><p>As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
-the advice is to use the default, which currently is <code>"gsed2406"</code>.</p>
+the advice is to use the default, which currently is <code>"gsed2510"</code>.
+Currently, key <code>"gsed2510"</code> is defined for instrument codes <code>gs1</code>
+(GSED SF) and <code>gl1</code> (GSED LF). If you have another instrument,
+use the key <code>"gsed2406"</code>.</p>
 <p>The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
 The Count models are implemented in the function <code>[get_mu()]</code>.
@@ -342,72 +345,83 @@ BMJ Global Health, BMJ Global Health 4: e001724.
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># using all defaults and properly formatted data</span></span></span>
-<span class="r-in"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="op">(</span><span class="va">milestones</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sf</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="triple.html">triple</a></span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">141</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="op">(</span><span class="va">sf</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ds</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        a  n      p     d      sem    daz</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 0.4873 11 0.9091 30.76 3.751319 -0.633</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 0.6571 14 0.6429 29.06 2.518082 -2.716</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1.1800 19 0.9474 53.35 3.414966 -0.006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 1.9055 13 0.8462 63.88 2.971594 -0.094</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 0.5503 11 0.8182 28.75 3.476988 -1.863</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 0.7666 14 0.7857 34.21 3.088920 -2.377</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.9493 65 0.6769 68.95 1.210561  1.186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2.5325 34 0.7059 73.23 1.458141  0.572</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2.3874 36 0.5833 65.89 1.404537 -0.966</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 0.8980  8 0.5000 38.64 2.527097 -2.228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2.1903 31 0.2258 57.84 1.605532 -2.289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 0.8980 80 0.7625 54.78 1.325298  2.517</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># step-by-step example</span></span></span>
+<span class="r-in"><span><span class="co"># step-by-step example demonstrating</span></span></span>
+<span class="r-in"><span><span class="co"># all possible response vectors for 3 items</span></span></span>
 <span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="st">"Jane"</span>, <span class="st">"Martin"</span>, <span class="st">"ID-3"</span>, <span class="st">"No. 4"</span>, <span class="st">"Five"</span>, <span class="st">"6"</span>,</span></span>
-<span class="r-in"><span>    <span class="cn">NA_character_</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fl">8</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="cn">NA_character_</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fl">8</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fl">21</span> <span class="op">/</span> <span class="fl">365.25</span>, <span class="fl">4</span><span class="op">)</span>, <span class="fl">10</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  ddifmd001 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  ddicmm029 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  ddigmd053 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  gs1sec001 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  gs1moc002 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  gs1sec003 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># third item is not part of the default key</span></span></span>
+<span class="r-in"><span><span class="co"># what are these items?</span></span></span>
+<span class="r-in"><span><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="get_labels.html">get_labels</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       gs1sec001 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                  "SF001 Does your child smile?" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       gs1moc002 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "SF002 When lying on his/her back, does your child move his/her arms and legs?" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       gs1sec003 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            "SF003 Does your child look at your face when you speak to him/her?" </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># difficulty parameter in default key</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="get_tau.html">get_tau</a></span><span class="op">(</span><span class="va">items</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> key:         gsed2510 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ddifmd001 ddicmm029 ddigmd053 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        NA        NA        NA </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> gs1sec001 gs1moc002 gs1sec003 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      2.56      0.40      3.12 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># calculate D-score</span></span></span>
-<span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         a n   p     d      sem    daz</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      NA 0  NA    NA       NA     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      NA 0  NA    NA       NA     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.0575 1 0.0  9.95 4.386250 -1.336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.0575 2 0.0  7.76 3.921677 -1.941</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.0575 2 1.0 15.73 4.250471  0.610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.0575 2 1.0 15.73 4.250471  0.610</span>
+<span class="r-in"><span><span class="co"># the same sumscore leads to the same D-score (column d)</span></span></span>
+<span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         a n      p     d      sem    daz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      NA 0     NA    NA       NA     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.0575 1 0.0000  8.22 4.413632 -1.821</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.0575 2 0.0000  4.91 3.791544 -2.617</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.0575 3 0.3333  5.77 3.547318 -2.424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.0575 3 0.3333  5.77 3.547318 -2.424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.0575 3 0.3333  5.77 3.547318 -2.424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.0575 3 0.6667  9.64 3.953138 -1.426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.0575 3 0.6667  9.64 3.953138 -1.426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.0575 3 0.6667  9.64 3.953138 -1.426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 0.0575 3 1.0000 14.58 4.470412  0.192</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># prepend id variable to output</span></span></span>
-<span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span>, prepend <span class="op">=</span> <span class="st">"id"</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        id      a n   p     d      sem    daz</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Jane     NA 0  NA    NA       NA     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Martin     NA 0  NA    NA       NA     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    ID-3 0.0575 1 0.0  9.95 4.386250 -1.336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   No. 4 0.0575 2 0.0  7.76 3.921677 -1.941</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Five 0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       6 0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    &lt;NA&gt; 0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8       8 0.0575 2 0.5 11.58 3.988388 -0.833</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       9 0.0575 2 1.0 15.73 4.250471  0.610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10     10 0.0575 2 1.0 15.73 4.250471  0.610</span>
+<span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span>, prepend <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        id      a n      p     d      sem    daz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Jane     NA 0     NA    NA       NA     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Martin 0.0575 1 0.0000  8.22 4.413632 -1.821</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    ID-3 0.0575 2 0.0000  4.91 3.791544 -2.617</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   No. 4 0.0575 3 0.3333  5.77 3.547318 -2.424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Five 0.0575 3 0.3333  5.77 3.547318 -2.424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       6 0.0575 3 0.3333  5.77 3.547318 -2.424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    &lt;NA&gt; 0.0575 3 0.6667  9.64 3.953138 -1.426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8       8 0.0575 3 0.6667  9.64 3.953138 -1.426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9       9 0.0575 3 0.6667  9.64 3.953138 -1.426</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10     10 0.0575 3 1.0000 14.58 4.470412  0.192</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># or prepend all data</span></span></span>
-<span class="r-in"><span><span class="co"># dscore(data, prepend = colnames(data), key = "gsed2406")</span></span></span>
+<span class="r-in"><span><span class="co"># dscore(data, prepend = colnames(data))</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># calculate full posterior</span></span></span>
-<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">dscore_posterior</span><span class="op">(</span><span class="va">data</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">dscore_posterior</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># check that rows sum to 1</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">rowSums</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.9999992 0.9999992 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.9999992 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000 1.0000000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 1.0000000 1.0000000 1.0000000</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># plot full posterior for measurement 7</span></span></span>
@@ -430,6 +444,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">80</span>, <span class="fl">10</span><span class="op">)</span>, v <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">0.5</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"gray"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># add measurements made on very preterms, ga &lt; 32 weeks</span></span></span>
+<span class="r-in"><span><span class="co"># we need key = "gsed2406" because DDI is not yet in key "gsed2510"</span></span></span>
 <span class="r-in"><span><span class="va">ds</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="op">(</span><span class="va">milestones</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ds</span><span class="op">$</span><span class="va">a</span>, y <span class="op">=</span> <span class="va">ds</span><span class="op">$</span><span class="va">d</span>, pch <span class="op">=</span> <span class="fl">19</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="dscore-2.png" alt="" width="700" height="433"></span>

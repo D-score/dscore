@@ -83,7 +83,7 @@
 #' 10 random children from the GSED Phase 1 data.
 #'
 #' @docType data
-#' @format A `data.frame` with 10 rows and 57 variables:
+#' @format A `data.frame` with 10 rows and 50 variables:
 #'
 #' Name       | Label
 #' ---------- | ---------
@@ -93,7 +93,10 @@
 #' `hf002`    | Integer, ...: 1 = yes, 0 = no, NA = not administered
 #' `...`      | and so on..
 #'
-#' Sample data for 55 `gpa` items forming GSED HF V1
+#' Sample data for 48 `gpa` items forming GSED HF V1
+#' @note
+#' The HF item set was revised on October 20, 2025 to contain 48 items.
+#' This dataset reflects that change.
 #' @examples
 #' head(sample_hf)
 #' @seealso [dscore()]

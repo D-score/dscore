@@ -5,6 +5,8 @@ editor_options:
 ---
 
 - Replaces 55 HF items with 48 HF items in `builtin_itemtable` to reflect dropping of the first three months form
+- Updates `sample_hf` data to the 48-item HF version
+
 
 # dscore 2.0.3
 

@@ -1,11 +1,4 @@
 hh_subset <- c(
-  "gpasec004",
-  "gpasec015",
-  "gpalac001",
-  "gpacgc002",
-  "gpamoc011",
-  "gpasec010",
-  "gpaclc007",
   "gpalgc012",
   "gpasec014",
   "gpalgc021",
@@ -15,14 +8,14 @@ hh_subset <- c(
   "gpasec025",
   "gpaclc033",
   "gpaclc023",
-  "gpasec032",
+  "gpagmc013",
   "gpasec045",
-  "gpamoc024",
+  "gpagmc018",
   "gpamoc037",
   "gpaclc034",
   "gpamoc029",
-  "gpasec039",
-  "gpamoc028",
+  "gpamoc040",
+  "gpamoc041",
   "gpamoc044",
   "gpamoc042",
   "gpamoc043",
@@ -55,6 +48,7 @@ hh_subset <- c(
   "gpamoc106",
   "gpaclc113"
 )
+
 file <- "data-raw/data/sample/gsed_sample.txt"
 gsample <- read.table(file, header = TRUE, sep = "\t")
 usethis::use_data(gsample, overwrite = TRUE)
@@ -76,7 +70,7 @@ colnames(sample_lf) <- c(
 colnames(sample_hf) <- c(
   "subjid",
   "agedays",
-  paste0("hf", formatC(1:55, width = 3, flag = "0"))
+  paste0("hf", formatC(1:48, width = 3, flag = "0"))
 )
 
 usethis::use_data(sample_sf, overwrite = TRUE)

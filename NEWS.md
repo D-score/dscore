@@ -4,6 +4,8 @@ editor_options:
     wrap: 72
 ---
 
+- Replaces 55 HF items with 48 HF items in `builtin_itemtable` to reflect dropping of the first three months form
+
 # dscore 2.0.3
 
 - Changes the behavior in `get_reference()`: If the user specifies a builtin population (e.g. `gcdg`, `who_descriptive`) and the key is not found, then it returns the specified reference for its most recent key

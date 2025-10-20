@@ -27,6 +27,7 @@
 #'  - Jan 05, 2023 - Adds 55 items from GSED-HF
 #'  - Jul 15, 2025 - Rename gpaclc088 --> gpaclc089 (Can you child say five or more separate words)
 #'                   Rename gpasec089 --> gpasec088 (Is your child able to pee and poo)
+#'  - Oct 20, 2025   Replace HF 55 items list by HF 48 item list
 #' @author Compiled by Stef van Buuren using different sources
 #' @keywords datasets
 "builtin_itemtable"

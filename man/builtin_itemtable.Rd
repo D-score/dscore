@@ -35,6 +35,7 @@ Adds gl1 (Long Form Phase 2 items 155)
 \item Jan 05, 2023 - Adds 55 items from GSED-HF
 \item Jul 15, 2025 - Rename gpaclc088 --> gpaclc089 (Can you child say five or more separate words)
 Rename gpasec089 --> gpasec088 (Is your child able to pee and poo)
+\item Oct 20, 2025   Replace HF 55 items list by HF 48 item list
 }
 }
 \author{

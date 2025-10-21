@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.4</span>
       </span>
     </div>
 
@@ -41,7 +41,7 @@
       <a href="../articles/using_DAZ.html">Understanding and using DAZ</a>
     </li>
     <li>
-      <a href="../articles/multiple_keys.html">Multiple keys (Advanced) - In preparation</a>
+      <a href="../articles/multiple_keys.html">Multiple keys (Advanced)</a>
     </li>
     <li>
       <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
@@ -69,6 +69,14 @@
       <small>Source: <a href="https://github.com/d-score/dscore/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="2.0.4" id="dscore-204">dscore 2.0.4<a class="anchor" aria-label="anchor" href="#dscore-204"></a></h2>
+<ul><li>Adds support for 48-item version of GSED HF (<code>gh1</code>) instrument</li>
+<li>Replaces 55 HF items with 48 HF items in <code>builtin_itemtable</code> to reflect dropping of the first three months form</li>
+<li>Updates <code>sample_hf</code> example data to the 48-item HF version</li>
+<li>Adds <code>hf_48_2406.txt</code> and <code>hf_48_2510.txt</code> key files</li>
+<li>Updates <code>builtin_itembank</code> using 48-item version of <code>gh1</code> for keys <code>gsed2212</code>, <code>gsed2404</code> and <code>gsed2510</code>.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.3" id="dscore-203">dscore 2.0.3<a class="anchor" aria-label="anchor" href="#dscore-203"></a></h2>
 <ul><li>Changes the behavior in <code><a href="../reference/get_reference.html">get_reference()</a></code>: If the user specifies a builtin population (e.g. <code>gcdg</code>, <code>who_descriptive</code>) and the key is not found, then it returns the specified reference for its most recent key</li>

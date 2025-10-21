@@ -20,7 +20,7 @@ standard error of measurement (SEM) of the D-score."><!-- mathjax --><script src
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.4</span>
       </span>
     </div>
 
@@ -44,7 +44,7 @@ standard error of measurement (SEM) of the D-score."><!-- mathjax --><script src
       <a href="../articles/using_DAZ.html">Understanding and using DAZ</a>
     </li>
     <li>
-      <a href="../articles/multiple_keys.html">Multiple keys (Advanced) - In preparation</a>
+      <a href="../articles/multiple_keys.html">Multiple keys (Advanced)</a>
     </li>
     <li>
       <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
@@ -300,13 +300,13 @@ and may need adaptation.</p>
 The method uses Bayes rule to update a prior ability into a posterior
 ability.</p>
 <p>The item names should correspond to the <code>"gsed"</code> lexicon.</p>
-<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>13</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>21</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"293_0"</code></td><td><code>293_0</code></td><td><code>-10:100</code></td><td>2</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2212"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2406"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2024</td></tr><tr><td><code>"gsed2510"</code></td><td><code>281_0</code></td><td><code>-10:125</code></td><td>2</td><td>mixed</td><td>GSED Team, 2025</td></tr></table><p>As a general rule, one should only compare D-scores
+<p>A key is defined by the set of estimated item difficulties.</p><table class="table table"><tr><td>Key</td><td>Model</td><td>Quadrature</td><td>Instruments</td><td>Direct/Caregiver</td><td>Reference</td></tr><tr><td><code>"dutch"</code></td><td><code>75_0</code></td><td><code>-10:80</code></td><td>1</td><td>direct</td><td>Van Buuren, 2014/2020</td></tr><tr><td><code>"gcdg"</code></td><td><code>565_18</code></td><td><code>-10:100</code></td><td>13</td><td>direct</td><td>Weber, 2019</td></tr><tr><td><code>"gsed1912"</code></td><td><code>807_17</code></td><td><code>-10:100</code></td><td>21</td><td>mixed</td><td>GSED Team, 2019</td></tr><tr><td><code>"293_0"</code></td><td><code>293_0</code></td><td><code>-10:100</code></td><td>2</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2212"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2022</td></tr><tr><td><code>"gsed2406"</code></td><td><code>818_6</code></td><td><code>-10:100</code></td><td>27</td><td>mixed</td><td>GSED Team, 2024</td></tr><tr><td><code>"gsed2510"</code></td><td><code>281_0</code></td><td><code>-10:125</code></td><td>3</td><td>mixed</td><td>GSED Team, 2025</td></tr></table><p>As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
 the advice is to use the default, which currently is <code>"gsed2510"</code>.
 Currently, key <code>"gsed2510"</code> is defined for instrument codes <code>gs1</code>
-(GSED SF) and <code>gl1</code> (GSED LF). If you have another instrument,
-use the key <code>"gsed2406"</code>.</p>
+(GSED SF), <code>gl1</code> (GSED LF) and <code>gh1</code> (GSED HF). If you
+have another instrument, use the key <code>"gsed2406"</code>.</p>
 <p>The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
 The Count models are implemented in the function <code>[get_mu()]</code>.

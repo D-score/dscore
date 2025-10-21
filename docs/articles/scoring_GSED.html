@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.4</span>
       </span>
     </div>
 
@@ -58,7 +58,7 @@
       <a href="../articles/using_DAZ.html">Understanding and using DAZ</a>
     </li>
     <li>
-      <a href="../articles/multiple_keys.html">Multiple keys (Advanced) - In preparation</a>
+      <a href="../articles/multiple_keys.html">Multiple keys (Advanced)</a>
     </li>
     <li>
       <a href="../articles/custom_priors.html">Custom Priors (Advanced)</a>
@@ -616,51 +616,51 @@ surveys. It has instrument code <code>gh1</code>.</p>
 <code class="sourceCode R"><span><span class="va">instrument</span> <span class="op">&lt;-</span> <span class="st">"gh1"</span></span>
 <span><span class="va">items</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="va">instrument</span>, order <span class="op">=</span> <span class="st">"indm"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] 55</span></span></code></pre>
+<pre><code><span><span class="co">## [1] 48</span></span></code></pre>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] "gh1sec001" "gh1sec002" "gh1lgc003" "gh1cgc004" "gh1moc005" "gh1sec006"</span></span></code></pre>
+<pre><code><span><span class="co">## [1] "gh1lgc001" "gh1sec002" "gh1lgc003" "gh1sec004" "gh1moc005" "gh1lgc006"</span></span></code></pre>
 <p>The <code>order</code> argument is needed to sort items according to
-sequence number 1 to 55. Check that you have the correct version by
+sequence number 1 to 48. Check that you have the correct version by
 comparing the labels of the first few items as:</p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_labels.html">get_labels</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">items</span>, <span class="fu"><a href="https://rdrr.io/r/base/substr.html" class="external-link">substr</a></span><span class="op">(</span><span class="va">labels</span>, <span class="fl">1</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##           items                                                           </span></span>
-<span><span class="co">## gh1sec001 "gh1sec001" "Does your child smile?"                            </span></span>
-<span><span class="co">## gh1sec002 "gh1sec002" "Does your child look at your face when you speak t"</span></span>
-<span><span class="co">## gh1lgc003 "gh1lgc003" "Does your child cry when he/she is hungry, wet, ti"</span></span>
-<span><span class="co">## gh1cgc004 "gh1cgc004" "Does your child look at and focus on objects in fr"</span></span>
-<span><span class="co">## gh1moc005 "gh1moc005" "Does your child bring his/her hand to his/her mout"</span></span>
-<span><span class="co">## gh1sec006 "gh1sec006" "Does your child smile when you smile or talk with "</span></span></code></pre>
+<span><span class="co">## gh1lgc001 "gh1lgc001" "HF001 When you talk to your child, does he/she smi"</span></span>
+<span><span class="co">## gh1sec002 "gh1sec002" "HF002 When you are about to pick up your child, do"</span></span>
+<span><span class="co">## gh1lgc003 "gh1lgc003" "HF003 Does your child turn his/her head towards yo"</span></span>
+<span><span class="co">## gh1sec004 "gh1sec004" "HF004 Does your child sometimes suck his/her thumb"</span></span>
+<span><span class="co">## gh1moc005 "gh1moc005" "HF005 While your child is on his/her back, can he/"</span></span>
+<span><span class="co">## gh1lgc006 "gh1lgc006" "HF006 Does your child make noise or gesture to get"</span></span></code></pre>
 </div>
 <div class="section level4">
 <h4 id="renaming-example-2">Renaming example<a class="anchor" aria-label="anchor" href="#renaming-example-2"></a>
 </h4>
 <p>Suppose that you stored your data with items names <code>hf001</code>
-to <code>hf055</code>. For example,</p>
+to <code>hf048</code>. For example,</p>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hf</span> <span class="op">&lt;-</span> <span class="fu">dscore</span><span class="fu">::</span><span class="va"><a href="../reference/sample_hf.html">sample_hf</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hf</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, <span class="fl">30</span><span class="op">:</span><span class="fl">35</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##   subjid agedays hf028 hf029 hf030 hf031 hf032 hf033</span></span>
 <span><span class="co">## 1      1     811    NA    NA    NA    NA    NA    NA</span></span>
 <span><span class="co">## 2      2     898    NA    NA    NA    NA    NA    NA</span></span>
-<span><span class="co">## 3      3     203     1     1     0     1     0     0</span></span>
+<span><span class="co">## 3      3     203     0    NA     0    NA     0     0</span></span>
 <span><span class="co">## 4      4     966    NA    NA    NA    NA    NA    NA</span></span>
 <span><span class="co">## 5      8     770    NA    NA    NA    NA    NA    NA</span></span>
-<span><span class="co">## 6      9     306     1     1     1     1     1     1</span></span></code></pre>
+<span><span class="co">## 6      9     306     0     0     0    NA     0     0</span></span></code></pre>
 <p>Make sure that the items are in the correct order. Rename the columns
 with gsed 9-position item names.</p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">hf</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">57</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">items</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">hf</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">:</span><span class="fl">50</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">items</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hf</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, <span class="fl">30</span><span class="op">:</span><span class="fl">35</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   subjid agedays gh1cgc028 gh1moc029 gh1lic030 gh1moc031 gh1moc032 gh1moc033</span></span>
+<pre><code><span><span class="co">##   subjid agedays gh1moc028 gh1lgc029 gh1moc030 gh1sec031 gh1moc032 gh1moc033</span></span>
 <span><span class="co">## 1      1     811        NA        NA        NA        NA        NA        NA</span></span>
 <span><span class="co">## 2      2     898        NA        NA        NA        NA        NA        NA</span></span>
-<span><span class="co">## 3      3     203         1         1         0         1         0         0</span></span>
+<span><span class="co">## 3      3     203         0        NA         0        NA         0         0</span></span>
 <span><span class="co">## 4      4     966        NA        NA        NA        NA        NA        NA</span></span>
 <span><span class="co">## 5      8     770        NA        NA        NA        NA        NA        NA</span></span>
-<span><span class="co">## 6      9     306         1         1         1         1         1         1</span></span></code></pre>
+<span><span class="co">## 6      9     306         0         0         0        NA         0         0</span></span></code></pre>
 <p>The data in <code>hf</code> are now ready for the
 <code><a href="../reference/dscore.html">dscore()</a></code> function.</p>
 </div>
@@ -671,18 +671,23 @@ with gsed 9-position item names.</p>
 straightforward. The <code>hf</code> dataset has properly named columns
 that identify each item.</p>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">hf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span>, key <span class="op">=</span> <span class="st">"gsed2406"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dscore.html">dscore</a></span><span class="op">(</span><span class="va">hf</span>, xname <span class="op">=</span> <span class="st">"agedays"</span>, xunit <span class="op">=</span> <span class="st">"days"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## key:         gsed2510 </span></span>
+<span><span class="co">## population:  preliminary_standards </span></span>
+<span><span class="co">## transform:   55.72413 3.603965 </span></span>
+<span><span class="co">## qp range:    -10 125 </span></span>
+<span><span class="co">## algorithm:   current </span></span>
+<span><span class="co">## key:         gsed2510 </span></span>
+<span><span class="co">## population:  preliminary_standards</span></span></code></pre>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204  8 0.7500 66.46 3.099626 -0.365</span></span>
-<span><span class="co">## 2 2.4586  8 1.0000 73.55 3.959115  0.862</span></span>
-<span><span class="co">## 3 0.5558 29 0.6207 37.36 2.190590  0.552</span></span>
-<span><span class="co">## 4 2.6448  3 1.0000 74.12 4.231796  0.528</span></span>
-<span><span class="co">## 5 2.1081  7 1.0000 70.72 3.841959  1.149</span></span>
-<span><span class="co">## 6 0.8378 30 0.7000 42.55 2.182150 -0.731</span></span></code></pre>
-<p>The <code>key = "gsed2406"</code> argument is needed here because
-GSED HH is not yet supported by the default key
-<code>"gsed2510"</code>.</p>
+<span><span class="co">## 1 2.2204  8 0.7500 66.80 2.867389 -0.275</span></span>
+<span><span class="co">## 2 2.4586  8 1.0000 73.81 3.837050  0.934</span></span>
+<span><span class="co">## 3 0.5558 27 0.5926 37.46 2.139379  0.583</span></span>
+<span><span class="co">## 4 2.6448  3 1.0000 74.35 4.116044  0.591</span></span>
+<span><span class="co">## 5 2.1081  7 1.0000 71.00 3.706083  1.227</span></span>
+<span><span class="co">## 6 0.8378 28 0.6429 41.51 2.081210 -1.032</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -718,7 +723,7 @@ GSED HH is not yet supported by the default key
 </table>
 <p>The number of rows of <code>results</code> is equal to the number of
 rows of <code>hf</code>. We save the result for later processing.</p>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hf2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">hf</span>, <span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <p>It is possible to calculate D-score for item subsets by setting the
 <code>items</code> argument. We do not advertise this option for
@@ -726,7 +731,7 @@ practical application, but suppose we are interested in the D-score
 based on items from <code>gs1</code>, <code>gl1</code> and
 <code>gh1</code> for domains <code>mo</code> or <code>gm</code> (motor)
 only. The “motor” D-score can be calculated as follows:</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">items_motor</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_itemnames.html">get_itemnames</a></span><span class="op">(</span></span>
 <span>  instrument <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gs1"</span>, <span class="st">"gl1"</span>, <span class="st">"gh1"</span><span class="op">)</span>,</span>
 <span>  domain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mo"</span>, <span class="st">"gm"</span><span class="op">)</span></span>
@@ -736,24 +741,27 @@ only. The “motor” D-score can be calculated as follows:</p>
 <span>  items <span class="op">=</span> <span class="va">items_motor</span>,</span>
 <span>  xname <span class="op">=</span> <span class="st">"agedays"</span>,</span>
 <span>  xunit <span class="op">=</span> <span class="st">"days"</span>,</span>
-<span>  key <span class="op">=</span> <span class="st">"gsed2406"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
-<span><span class="co">## 1 2.2204  1 1.0000 69.63 4.504147  0.491</span></span>
-<span><span class="co">## 2 2.4586  1 1.0000 71.52 4.583980  0.306</span></span>
-<span><span class="co">## 3 0.5558 18 0.5000 36.65 2.506216  0.331</span></span>
-<span><span class="co">## 4 2.6448  1 1.0000 72.86 4.642396  0.189</span></span>
-<span><span class="co">## 5 2.1081  1 1.0000 68.67 4.467450  0.577</span></span>
-<span><span class="co">## 6 0.8378 18 0.6111 42.29 2.508751 -0.807</span></span></code></pre>
+<span><span class="co">## 1 2.2204  1 1.0000 69.67 4.442820  0.502</span></span>
+<span><span class="co">## 2 2.4586  1 1.0000 71.51 4.543754  0.303</span></span>
+<span><span class="co">## 3 0.5558 18 0.5000 36.88 2.414803  0.402</span></span>
+<span><span class="co">## 4 2.6448  1 1.0000 72.83 4.615730  0.181</span></span>
+<span><span class="co">## 5 2.1081  1 1.0000 68.73 4.395200  0.594</span></span>
+<span><span class="co">## 6 0.8378 18 0.5556 40.84 2.399928 -1.221</span></span></code></pre>
 <p>:::</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="other-gsed-instruments">Other GSED instruments`<a class="anchor" aria-label="anchor" href="#other-gsed-instruments"></a>
+<h3 id="other-gsed-instruments">Other GSED instruments<a class="anchor" aria-label="anchor" href="#other-gsed-instruments"></a>
 </h3>
-<p>The <code>GSED SF</code> and <code>GSED LF</code> 2020 instruments
-are included only for backward compatibility.</p>
+<p>The <code>gpa</code> (SF) and <code>gto</code> (LF) instrument codes
+are included only for backward compatibility. These instruments have a
+different item order. They were replaced in 2023 by the
+<code>GSED SF</code> (<code>gs1</code>) and <code>GSED LF</code>
+(<code>gl1</code>). The scoring procedure is identical to the one
+described above for the new instruments.</p>
 </div>
 </div>
 <div class="section level2 unnumbered">
@@ -765,7 +773,7 @@ are included only for backward compatibility.</p>
 scores for the D-score. The references are based on about 12,000
 administration of the GSED SF and GSED LF from Bangladesh, Pakistan and
 Tanzania. Extract the references as</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">ref</span> <span class="op">&lt;-</span> <span class="va">builtin_references</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">population</span> <span class="op">==</span> <span class="st">"phase1"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -785,7 +793,7 @@ Tanzania. Extract the references as</p>
 <p>The script below creates a figure with -2SD, 0SD and +2SD centiles
 plus 20 D-scores (10 LF and 10 SF) for the <code>lf2</code> and
 <code>sf2</code> data.</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span>
 <span></span>

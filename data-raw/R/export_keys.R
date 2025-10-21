@@ -248,25 +248,7 @@ write.table(
   row.names = FALSE
 )
 
-# Export GSED GH1 - Household form
-key_gsed2212_gh1 <- openxlsx::read.xlsx(
-  "data-raw/data/ageforms_2025-07-15.xlsx"
-) |>
-  mutate(
-    key = "gsed2212",
-    item = get_itemnames(instrument = "gh1", order = "indm")
-  ) |>
-  select(key, item, tau)
-write.table(
-  key_gsed2212_gh1,
-  file = "data-raw/data/keys/gsed2212_gh1.txt",
-  sep = "\t",
-  quote = FALSE,
-  row.names = FALSE
-)
-
-
-# extract the key gsed2501
+# extract the key gsed2510
 path <- file.path(Sys.getenv("GSED_PHASE2"), "202510", "281_0_phase_1+2")
 model <- readRDS(file.path(path, "model.Rds"))
 itembank <- model$itembank
@@ -286,6 +268,57 @@ key2510 <- data.frame(
 write.table(
   key2510,
   file = "data-raw/data/keys/gsed2510.txt",
+  quote = FALSE,
+  sep = "\t",
+  row.names = FALSE
+)
+
+# Export GSED GH1 - Household form
+key_gsed2212_gh1 <- openxlsx::read.xlsx(
+  "data-raw/data/ageforms_2025-07-15.xlsx"
+) |>
+  mutate(
+    key = "gsed2212",
+    item = get_itemnames(instrument = "gh1", order = "indm")
+  ) |>
+  select(key, item, tau)
+write.table(
+  key_gsed2212_gh1,
+  file = "data-raw/data/keys/gsed2212_gh1.txt",
+  sep = "\t",
+  quote = FALSE,
+  row.names = FALSE
+)
+
+# Export GSED HF - 48 item version (Oct 2025)
+hf_key_2025 <- load("data-raw/data/keys/gsedhf.Rda")
+hf_48_2406 <- gsedhf |>
+  filter(key == "gsed2406") |>
+  mutate(
+    key = "gsed2406",
+    item = item,
+    tau = round(tau, 2)
+  ) |>
+  select(key, item, tau)
+hf_48_2510 <- gsedhf |>
+  filter(key == "gsed2510") |>
+  mutate(
+    key = "gsed2510",
+    item = item,
+    tau = round(tau, 2)
+  ) |>
+  select(key, item, tau)
+
+write.table(
+  hf_48_2406,
+  file = "data-raw/data/keys/hf_48_2406.txt",
+  quote = FALSE,
+  sep = "\t",
+  row.names = FALSE
+)
+write.table(
+  hf_48_2510,
+  file = "data-raw/data/keys/hf_48_2510.txt",
   quote = FALSE,
   sep = "\t",
   row.names = FALSE

@@ -4,6 +4,9 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.4
+
+- Adds support for 48-item version of GSED HF (`gh1`) instrument
 - Replaces 55 HF items with 48 HF items in `builtin_itemtable` to reflect dropping of the first three months form
 - Updates `sample_hf` example data to the 48-item HF version
 - Adds `hf_48_2406.txt` and `hf_48_2510.txt` key files

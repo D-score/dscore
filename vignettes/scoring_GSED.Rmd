@@ -289,7 +289,7 @@ length(items)
 head(items)
 ```
 
-The `order` argument is needed to sort items according to sequence number 1 to 55. Check that you have the correct version by comparing the labels of the first few items as:
+The `order` argument is needed to sort items according to sequence number 1 to 48. Check that you have the correct version by comparing the labels of the first few items as:
 
 ```{r}
 labels <- get_labels(items)
@@ -298,7 +298,7 @@ head(cbind(items, substr(labels, 1, 50)))
 
 #### Renaming example
 
-Suppose that you stored your data with items names `hf001` to `hf055`. For example, 
+Suppose that you stored your data with items names `hf001` to `hf048`. For example, 
 
 ```{r}
 hf <- dscore::sample_hf
@@ -308,7 +308,7 @@ head(hf[, c(1:2, 30:35)])
 Make sure that the items are in the correct order. Rename the columns with gsed 9-position item names.
 
 ```{r}
-colnames(hf)[3:57] <- items
+colnames(hf)[3:50] <- items
 head(hf[, c(1:2, 30:35)])
 ```
 
@@ -319,11 +319,9 @@ The data in `hf` are now ready for the `dscore()` function.
 Once the data are in proper shape, calculation of the D-score is straightforward. The `hf` dataset has properly named columns that identify each item.
 
 ```{r}
-results <- dscore(hf, xname = "agedays", xunit = "days", key = "gsed2406")
+results <- dscore(hf, xname = "agedays", xunit = "days", verbose = TRUE)
 head(results)
 ```
-
-The `key = "gsed2406"` argument is needed here because GSED HH is not yet supported by the default key `"gsed2510"`. 
 
 The table below provides the interpretation of the output: 
 
@@ -354,17 +352,15 @@ results <- dscore(
   items = items_motor,
   xname = "agedays",
   xunit = "days",
-  key = "gsed2406"
 )
 head(results)
 ```
 
 :::
 
-### Other GSED instruments`
+### Other GSED instruments
 
-The `GSED SF` and `GSED LF` 2020 instruments are included only for backward compatibility. 
-
+The `gpa` (SF) and `gto` (LF) instrument codes are included only for backward compatibility. These instruments have a different item order. They were replaced in 2023 by the `GSED SF` (`gs1`) and `GSED LF` (`gl1`). The scoring procedure is identical to the one described above for the new instruments.
 
 ## {-}
 

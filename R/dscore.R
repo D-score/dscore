@@ -142,15 +142,15 @@
 #' `"293_0"`     | `293_0` | `-10:100` | 2   | mixed  | GSED Team, 2022
 #' `"gsed2212"`  | `818_6` | `-10:100` | 27  | mixed  | GSED Team, 2022
 #' `"gsed2406"`  | `818_6` | `-10:100` | 27  | mixed  | GSED Team, 2024
-#' `"gsed2510"`  | `281_0` | `-10:125` | 2   | mixed  | GSED Team, 2025
+#' `"gsed2510"`  | `281_0` | `-10:125` | 3   | mixed  | GSED Team, 2025
 #'
 #' As a general rule, one should only compare D-scores
 #' that are calculated using the same key and the same
 #' set of quadrature points. For calculating D-scores on new data,
 #' the advice is to use the default, which currently is `"gsed2510"`.
 #' Currently, key `"gsed2510"` is defined for instrument codes `gs1`
-#' (GSED SF) and `gl1` (GSED LF). If you have another instrument,
-#' use the key `"gsed2406"`.
+#' (GSED SF), `gl1` (GSED LF) and `gh1` (GSED HF). If you
+#' have another instrument, use the key `"gsed2406"`.
 #'
 #' The default starting prior is a mean calculated from a so-called
 #' "Count model" that describes mean D-score as a function of age. The

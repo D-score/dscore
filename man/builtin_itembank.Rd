@@ -40,6 +40,7 @@ Updates:
 defining correct order for \code{gto}
 \item Jan 05, 2023 - Adds instrument \code{gh1} to key \code{gsed2212}
 \item Oct 10, 2025 - Adds key \code{gsed2510} (currently just only \code{gl1} and \code{gs1})
+\item Oct 21, 2025 - Updates keys \code{gsed2212}, \code{gsed2406} and \code{gsed2510} to include \code{gh1} 48 item version
 }
 }
 \examples{

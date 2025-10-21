@@ -32,7 +32,7 @@
 #'   defining correct order for `gto`
 #' - Jan 05, 2023 - Adds instrument `gh1` to key `gsed2212`
 #' - Oct 10, 2025 - Adds key `gsed2510` (currently just only `gl1` and `gs1`)
-#'
+#' - Oct 21, 2025 - Updates keys `gsed2212`, `gsed2406` and `gsed2510` to include `gh1` 48 item version
 #' @examples
 #' # count number of items per instrument in each key
 #' table(builtin_itembank$instrument, builtin_itembank$key)

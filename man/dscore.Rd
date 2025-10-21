@@ -210,7 +210,7 @@ A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    \code{"293_0"} \tab \verb{293_0} \tab \code{-10:100} \tab 2 \tab mixed \tab GSED Team, 2022 \cr
    \code{"gsed2212"} \tab \verb{818_6} \tab \code{-10:100} \tab 27 \tab mixed \tab GSED Team, 2022 \cr
    \code{"gsed2406"} \tab \verb{818_6} \tab \code{-10:100} \tab 27 \tab mixed \tab GSED Team, 2024 \cr
-   \code{"gsed2510"} \tab \verb{281_0} \tab \code{-10:125} \tab 2 \tab mixed \tab GSED Team, 2025 \cr
+   \code{"gsed2510"} \tab \verb{281_0} \tab \code{-10:125} \tab 3 \tab mixed \tab GSED Team, 2025 \cr
 }
 
 
@@ -219,8 +219,8 @@ that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
 the advice is to use the default, which currently is \code{"gsed2510"}.
 Currently, key \code{"gsed2510"} is defined for instrument codes \code{gs1}
-(GSED SF) and \code{gl1} (GSED LF). If you have another instrument,
-use the key \code{"gsed2406"}.
+(GSED SF), \code{gl1} (GSED LF) and \code{gh1} (GSED HF). If you
+have another instrument, use the key \code{"gsed2406"}.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The

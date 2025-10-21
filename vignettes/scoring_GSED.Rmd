@@ -105,7 +105,7 @@ Instrument| Year | Code       | Domains           | Mode  | Range             | 
 :---------|:-----|:-----------|:------------------|:-----:|:-------------------|:------
 GSED SF   | 2023 | `gs1`      | `cg|lg|li|mo|se`  | `c`   |`001-139`           | Active
 GSED LF   | 2023 | `gl1`      | `gm|lg|fm`        | `d`   |`001-049|052|054`   | Active
-GSED HH   | 2023 | `gh1`      | `cg|lg|li|mo|se  `| `c`   |`001-055`           | Active
+GSED HF   | 2023 | `gh1`      | `cg|lg|li|mo|se  `| `c`   |`001-048`           | Active
 GSED SF   | 2020 | `gpa`      | any               | `c`   |`001-139`           | Retired
 GSED LF   | 2020 | `gto`      | `gm|lg|fm`        | `d`   |`001-049|052|054`   | Retired
 
@@ -276,7 +276,7 @@ head(results)
 
 ### `GSED HF`
 
-The `GSED Houshold Form (GSED HF)` instrument contains a subset of 55 items from the GSED SF designed to be used for population surveys. It has instrument code `gh1`.
+The `GSED Houshold Form (GSED HF)` instrument contains a subset of 48 items from the GSED SF designed to be used for population surveys. It has instrument code `gh1`.
 
 #### Check 
 

@@ -4,13 +4,13 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.5
+
 -   Adds support BSID-III (`by3`) to key `gsed2510` (adds 242 items)
--   Extends `builtin_itembank` to include BSID-III (`by3`) items in key
-    `gsed2510`
--   Updates `builtin_keys` to signal new instrument `by3` for key
-    `gsed2510`
+-   Extends `builtin_itembank` to include BSID-III (`by3`) items in key `gsed2510`
+-   Updates `builtin_keys` to signal new instrument `by3` for key `gsed2510`
 -   Updates vignettes to reflect addition of BSID-III (`by3`) instrument
--   
+-   Update `scoring_GSED` vignette: switch to html_document, improve formatting, update references section, and clarify DAZ calculation standards
 
 # dscore 2.0.4
 

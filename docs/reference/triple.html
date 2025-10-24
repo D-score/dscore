@@ -20,7 +20,7 @@ BSID-III (by3)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.5</span>
       </span>
     </div>
 
@@ -113,12 +113,12 @@ Organization.
 <span class="r-in"><span><span class="va">ds_all</span> <span class="op">&lt;-</span> <span class="fu"><a href="dscore.html">dscore</a></span><span class="op">(</span><span class="va">triple</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ds_all</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        a   n      p     d       sem    daz</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.9493 114 0.6491 68.48 0.9153734  1.053</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2.5325  69 0.6522 71.73 1.0211466  0.165</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2.3874 101 0.5347 65.15 0.9611947 -1.145</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 0.8980  32 0.5000 40.95 1.4663221 -1.646</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2.1903  72 0.3750 56.74 1.1374668 -2.501</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 0.8980 121 0.7273 52.79 1.0302136  1.917</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.9493 200 0.6050 66.62 0.6909583  0.527</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2.5325 147 0.6463 73.00 0.7293837  0.509</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2.3874 163 0.5153 64.92 0.7418813 -1.200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 0.8980 274 0.4124 43.78 0.8729957 -0.862</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2.1903 150 0.4533 59.58 0.7704544 -1.933</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 0.8980 216 0.6759 51.06 0.7463839  1.380</span>
 <span class="r-in"><span><span class="co"># calculate D-score from only GSED SF items</span></span></span>
 <span class="r-in"><span><span class="va">ds_sf</span> <span class="op">&lt;-</span> <span class="fu"><a href="dscore.html">dscore</a></span><span class="op">(</span><span class="va">triple</span>, items <span class="op">=</span> <span class="fu"><a href="get_itemnames.html">get_itemnames</a></span><span class="op">(</span>instrument <span class="op">=</span> <span class="st">"gs1"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ds_sf</span><span class="op">)</span></span></span>

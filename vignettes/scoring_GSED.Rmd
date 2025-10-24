@@ -1,8 +1,9 @@
 ---
 title: "Scoring GSED"
-output: 
-  rmarkdown::html_vignette:
-    css: vignette.css
+output:
+  rmarkdown::html_document:
+    toc: true
+    self_contained: true
 bibliography: [references.bib]
 biblio-style: apalike
 link-citations: true
@@ -20,23 +21,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Suppose you have administered GSED SF, GSED LF [@gsedteam2023; @mccray2023] or GSED HF to one or more children. The next step is calculating each child's developmental score (D-score) and age-adjusted equivalent (DAZ). This step is known as **scoring**. The present section provides recipes for calculating the D-score and DAZ. We may pick one of the following two methods:
 
-1. Online calculator. The online app [D-score calculator](https://tnochildhealthstatistics.shinyapps.io/dcalculator) is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
-2. `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the D-score. It is an excellent choice for users familiar with `R` and users who like to incorporate D-score calculations into a workflow.
+1.  Online calculator. The online app [D-score calculator](https://tnochildhealthstatistics.shinyapps.io/dcalculator) is a convenient option for users not familiar with `R`. The app contains online documentation and instructions and will not be further discussed here.
+2.  `R` package `dscore`. The `R` package `dscore` at <https://CRAN.R-project.org/package=dscore> is a flexible option with all the tools needed to calculate the D-score. It is an excellent choice for users familiar with `R` and users who like to incorporate D-score calculations into a workflow.
 
-## Preliminaries
+### Preliminaries
 
-- We use the `R` language. If you are new to `R` consult the [R for Data Science](https://r4ds.had.co.nz/) book by Hadley Wickham and Garrett Grolemund; 
-- You need to install the `R` package `dscore` on your local machine;
-- The child data need to be stored as a `data.frame`, a standard `R` tabular structure;
-- You need to run the `dscore()` function to calculate the D-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
+-   We use the `R` language. If you are new to `R` consult the [R for Data Science](https://r4ds.had.co.nz/) book by Hadley Wickham and Garrett Grolemund;
+-   You need to install the `R` package `dscore` on your local machine;
+-   The child data need to be stored as a `data.frame`, a standard `R` tabular structure;
+-   You need to run the `dscore()` function to calculate the D-score and DAZ. The function returns a table with six columns with the estimates with the same number of rows as your data.
 
-## Install the `dscore` package
+### Install the `dscore` package
 
 The `dscore` package contains tools to
 
-- Map your item names to the GSED convention
-- Calculate D-scores from item level responses
-- Transform the D-scores into DAZ, age-standardised Z-scores
+-   Map your item names to the GSED convention
+-   Calculate D-scores from item level responses
+-   Transform the D-scores into DAZ, age-standardised Z-scores
 
 The required input consists of *item level* responses on milestones collected using instruments for measuring child development, including the GSED LF, GSED SF and GSED HF.
 
@@ -56,70 +57,66 @@ remotes::install_github("d-score/dscore")
 The development version requires a local C++ compiler for building the package from source.
 
 ```{r include=FALSE}
-stopifnot(packageVersion("dscore") >= "1.8.0")
+stopifnot(packageVersion("dscore") >= "2.0.4")
 ```
-
 
 ## GSED 9-position item names
 
 The `dscore()` function accepts item names that follow the GSED 9-position schema. A name with a length of nine characters identifies every milestone. The following table shows the construction of names.
 
-Position   | Description          | Example
-----------:|:-------------------- |:-------------
-1-3        | instrument           | `by3`
-4-5        | developmental domain | `cg`
-6          | administration mode  | `d`
-7-9        | item number          | `018`
+| Position | Description          | Example |
+|---------:|:---------------------|:--------|
+|      1-3 | instrument           | `by3`   |
+|      4-5 | developmental domain | `cg`    |
+|        6 | administration mode  | `d`     |
+|      7-9 | item number          | `018`   |
 
-Thus, item `by3cgd018` refers to the 18th item in the cognitive scale of the Bayley-III. The label of the item can be obtained by 
+Thus, item `by3cgd018` refers to the 18th item in the cognitive scale of the Bayley-III. The label of the item can be obtained by
 
 ```{r getlabels}
 library(dscore)
 get_labels("by3cgd018")
 ```
 
-The `dscore` package maintains a list of items names. 
+The `dscore` package maintains a list of items names.
 
 ## Response data format
 
-Rows: One measurement, i.e., one test administration for a child at a given age, occupies a row in the data set. Thus, if a child is measured three times at different ages, there will be three rows for that child in the dataset. 
+Rows: One measurement, i.e., one test administration for a child at a given age, occupies a row in the data set. Thus, if a child is measured three times at different ages, there will be three rows for that child in the dataset.
 
-Columns: There should be at least two columns in the data set: 
+Columns: There should be at least two columns in the data set:
 
-- One column with the age of the child. The age column may have any name, and may be measured in decimal age, months, or days since birth. Do not truncate age. Make the value as a continuous as possible, for example by calculating age in days by the difference between measurement date and birth date.
-- One column for each item, appropriately named by the 9-position GSED item name. Normally, the items come from the same instrument, but they may also come from multiple instruments. The data from any recognised item name will contribute to the D-score. Do not duplicate names in the data. A PASS is coded as `1`, a FAIL as `0`. If there is no answer or if the item was not administered use the missing value code `NA`. Items that are never administered may be coded as all `NA` or deleted.
+-   One column with the age of the child. The age column may have any name, and may be measured in decimal age, months, or days since birth. Do not truncate age. Make the value as a continuous as possible, for example by calculating age in days by the difference between measurement date and birth date.
+-   One column for each item, appropriately named by the 9-position GSED item name. Normally, the items come from the same instrument, but they may also come from multiple instruments. The data from any recognised item name will contribute to the D-score. Do not duplicate names in the data. A PASS is coded as `1`, a FAIL as `0`. If there is no answer or if the item was not administered use the missing value code `NA`. Items that are never administered may be coded as all `NA` or deleted.
 
 The dataset may contain additional columns, e.g., the child number or health information. These are ignored by the D-score calculation.
 
 The most important steps is preparing the data for the D-score calculations are:
 
-- rename your original variable names into the 9-position GSED item names;
-- recode all item response as `0`, `1` or `NA`
+-   rename your original variable names into the 9-position GSED item names;
+-   recode all item response as `0`, `1` or `NA`
 
-
-## GSED Instruments {.tabset .tabset-pills}
+## GSED Instruments
 
 The table below lists the five available GSED instruments:
 
-Instrument| Year | Code       | Domains           | Mode  | Range             | Status
-:---------|:-----|:-----------|:------------------|:-----:|:-------------------|:------
-GSED SF   | 2023 | `gs1`      | `cg|lg|li|mo|se`  | `c`   |`001-139`           | Active
-GSED LF   | 2023 | `gl1`      | `gm|lg|fm`        | `d`   |`001-049|052|054`   | Active
-GSED HF   | 2023 | `gh1`      | `cg|lg|li|mo|se  `| `c`   |`001-048`           | Active
-GSED SF   | 2020 | `gpa`      | any               | `c`   |`001-139`           | Retired
-GSED LF   | 2020 | `gto`      | `gm|lg|fm`        | `d`   |`001-049|052|054`   | Retired
+| Instrument | Year | Code  | Domains          | Mode | Range             | Status  |
+|:-----------|:-----|:------|:-----------------|:----:|:------------------|:--------|
+| GSED SF    | 2023 | `gs1` | `cg|lg|li|mo|se` | `c`  | `001-139`         | Active  |
+| GSED LF    | 2023 | `gl1` | `gm|lg|fm`       | `d`  | `001-049|052|054` | Active  |
+| GSED HF    | 2023 | `gh1` | `cg|lg|li|mo|se` | `c`  | `001-048`         | Active  |
+| GSED SF    | 2020 | `gpa` | any              | `c`  | `001-139`         | Retired |
+| GSED LF    | 2020 | `gto` | `gm|lg|fm`       | `d`  | `001-049|052|054` | Retired |
 
-Select the section corresponding to your instrument for further instructions.
-
-::: {.panel-tabset group = "GSED"}
+## Instruments {.tabset .tabset-pills}
 
 ### `GSED SF`
 
-The `GSED Short Form (GSED SF)` is a caregiver-reported instrument containing 139 items. It has instrument code `gs1`. 
+The `GSED Short Form (GSED SF)` is a caregiver-reported instrument containing 139 items. It has instrument code `gs1`.
 
 #### Check
 
-Obtain the full list of item name for as 
+Obtain the full list of item name for as
 
 ```{r}
 instrument <- "gs1"
@@ -137,7 +134,7 @@ head(cbind(items, substr(labels, 1, 50)))
 
 #### Renaming example
 
-Suppose that you stored your data with items names `sf001` to `sf139`. For example, 
+Suppose that you stored your data with items names `sf001` to `sf139`. For example,
 
 ```{r}
 sf <- dscore::sample_sf
@@ -155,23 +152,23 @@ The data in `sf` are now ready for the `dscore()` function.
 
 #### Calculate D-score
 
-Once the data are in proper shape, calculation of the D-score is straightforward. The `sf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `sf` dataset has properly named columns that identify each item.
 
 ```{r}
 results <- dscore(sf, xname = "agedays", xunit = "days")
 head(results)
 ```
 
-The table below provides the interpretation of the output: 
+The table below provides the interpretation of the output:
 
-Name   | Interpretation
------- | -------------
-`a`    | Decimal age in years
-`n`    | Number of items used to calculate the D-score
-`p`    | Proportion of passed milestones
-`d`    | D-score (posterior mean)
-`sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | D-score corrected for age
+| Name  | Interpretation                                               |
+|-------|--------------------------------------------------------------|
+| `a`   | Decimal age in years                                         |
+| `n`   | Number of items used to calculate the D-score                |
+| `p`   | Proportion of passed milestones                              |
+| `d`   | D-score (posterior mean)                                     |
+| `sem` | Standard error of measurement (posterior standard deviation) |
+| `daz` | D-score corrected for age                                    |
 
 The number of rows of `result` is equal to the number of rows of `sf`. We save the result for later processing.
 
@@ -192,11 +189,11 @@ head(results)
 
 ### `GSED LF`
 
-The `GSED Long Form (GSED LF)` instrument is a directly-observed instrument containing 155 items with instrument code `gl1`. 
+The `GSED Long Form (GSED LF)` instrument is a directly-observed instrument containing 155 items with instrument code `gl1`.
 
-#### Check 
+#### Check
 
-Obtain the full list of item name for as 
+Obtain the full list of item name for as
 
 ```{r}
 instrument <- "gl1"
@@ -221,7 +218,7 @@ head(cbind(items, substr(labels, 1, 50)))
 
 #### Renaming example
 
-Suppose that you stored your data with items names `lf001` to `lf155`. For example, 
+Suppose that you stored your data with items names `lf001` to `lf155`. For example,
 
 ```{r}
 lf <- dscore::sample_lf
@@ -239,23 +236,23 @@ The data in `lf` are now ready for the `dscore()` function.
 
 #### Calculate D-score
 
-Once the data are in proper shape, calculation of the D-score is straightforward. The `lf` dataset has properly named columns that identify each item. 
+Once the data are in proper shape, calculation of the D-score is straightforward. The `lf` dataset has properly named columns that identify each item.
 
 ```{r}
 results <- dscore(lf, xname = "agedays", xunit = "days")
 head(results)
 ```
 
-The table below provides the interpretation of the output: 
+The table below provides the interpretation of the output:
 
-Name   | Interpretation
------- | -------------
-`a`    | Decimal age in years
-`n`    | Number of items used to calculate the D-score
-`p`    | Proportion of passed milestones
-`d`    | D-score (posterior mean)
-`sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | D-score corrected for age
+| Name  | Interpretation                                               |
+|-------|--------------------------------------------------------------|
+| `a`   | Decimal age in years                                         |
+| `n`   | Number of items used to calculate the D-score                |
+| `p`   | Proportion of passed milestones                              |
+| `d`   | D-score (posterior mean)                                     |
+| `sem` | Standard error of measurement (posterior standard deviation) |
+| `daz` | D-score corrected for age                                    |
 
 The number of rows of `result` is equal to the number of rows of `lf`. We save the result for later processing.
 
@@ -278,9 +275,9 @@ head(results)
 
 The `GSED Houshold Form (GSED HF)` instrument contains a subset of 48 items from the GSED SF designed to be used for population surveys. It has instrument code `gh1`.
 
-#### Check 
+#### Check
 
-Obtain the full list of item name for as 
+Obtain the full list of item name for as
 
 ```{r}
 instrument <- "gh1"
@@ -298,7 +295,7 @@ head(cbind(items, substr(labels, 1, 50)))
 
 #### Renaming example
 
-Suppose that you stored your data with items names `hf001` to `hf048`. For example, 
+Suppose that you stored your data with items names `hf001` to `hf048`. For example,
 
 ```{r}
 hf <- dscore::sample_hf
@@ -323,16 +320,16 @@ results <- dscore(hf, xname = "agedays", xunit = "days", verbose = TRUE)
 head(results)
 ```
 
-The table below provides the interpretation of the output: 
+The table below provides the interpretation of the output:
 
-Name   | Interpretation
------- | -------------
-`a`    | Decimal age in years
-`n`    | Number of items used to calculate the D-score
-`p`    | Proportion of passed milestones
-`d`    | D-score (posterior mean)
-`sem`  | Standard error of measurement (posterior standard deviation)
-`daz`  | D-score corrected for age
+| Name  | Interpretation                                               |
+|-------|--------------------------------------------------------------|
+| `a`   | Decimal age in years                                         |
+| `n`   | Number of items used to calculate the D-score                |
+| `p`   | Proportion of passed milestones                              |
+| `d`   | D-score (posterior mean)                                     |
+| `sem` | Standard error of measurement (posterior standard deviation) |
+| `daz` | D-score corrected for age                                    |
 
 The number of rows of `results` is equal to the number of rows of `hf`. We save the result for later processing.
 
@@ -356,30 +353,45 @@ results <- dscore(
 head(results)
 ```
 
-:::
-
 ### Other GSED instruments
 
 The `gpa` (SF) and `gto` (LF) instrument codes are included only for backward compatibility. These instruments have a different item order. They were replaced in 2023 by the `GSED SF` (`gs1`) and `GSED LF` (`gl1`). The scoring procedure is identical to the one described above for the new instruments.
 
-## {-}
+##  {.unnumbered}
 
+## References for DAZ calculation
 
-### Phase 1 references and DAZ
+### `preliminary_standards` references
 
-We used the GSED Phase I data to calculate age-conditional reference scores for the D-score. The references are based on about 12,000 administration of the GSED SF and GSED LF from Bangladesh, Pakistan and Tanzania. Extract the references as
+By default, DAZ values are calculated using the preliminary standards. These standards were derived from a healthy subsample of approximately 12,000 administrations of the GSED SF and GSED LF collected in Bangladesh, Pakistan, and Tanzania (the GSED Phase 1 countries), using the key "gsed2406". You can extract these reference values with:
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE, quietly = TRUE)
 ref <- builtin_references |>
-  filter(population == "phase1") |>
-  select(population, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
-head(ref)
+  filter(population == "preliminary_standards") |>
+  select(population, age, mu, sigma, nu, tau, SDM2, SD0, SDP2) |>
+  mutate(m = age * 12)
+
+head(ref, 3)
 ```
 
-The columns `mu`, `sigma`, `nu` and `tau` are the age-varying parameters of a Box-Cox $t$ (BCT) distribution. 
+The columns `mu`, `sigma`, `nu` and `tau` are the age-varying parameters of a Box-Cox $t$ (BCT) distribution.
 
-The script below creates a figure with -2SD, 0SD and +2SD centiles plus 20 D-scores (10 LF and 10 SF) for the `lf2` and `sf2` data.
+The references are currently also available for the updated key `"gsed2510"`, which is the recommended key for GSED instruments.  
+A future release of the package will replace the current `preliminary_standards` for `"gsed2510"` with a newly calculated version based on data from all seven GSED countries.
+
+You do not need to manually specify the references when calculating DAZ with the `dscore()` function. The function automatically uses the `preliminary_standards` references.  For example, you can calculate the D-score and DAZ as follows:
+
+```{r}
+vars <- c("id", "agedays", get_itemnames(instrument = "gs1", order = "indm"))
+data <- triple[, colnames(triple) %in% vars]
+ds1 <- dscore(data, xname = "agedays", xunit = "days")
+head(ds1)
+```
+
+Add the argument `dscore(..., verbose = TRUE)` to see which references are used.
+
+Here are the growth charts for **D-score** and **DAZ**, based on the `preliminary_standards` references.
 
 ```{r fig.height=5, fig.width=10, warning=FALSE}
 #| code-fold: true
@@ -387,15 +399,11 @@ library(ggplot2)
 library(patchwork)
 
 r <- builtin_references |>
-  filter(population == "phase1" & age <= 3.5) |>
+  filter(population == "preliminary_standards" & age <= 3.5) |>
   mutate(m = age * 12)
 
-lf2$ins <- "lf"
-lf2$m <- lf2$a * 12
-sf2$ins <- "sf"
-sf2$m <- sf2$a * 12
-data <- bind_rows(lf2, sf2)
-g1 <- ggplot(data, aes(x = m, y = d, group = ins, color = ins)) +
+ds1$m <- ds1$a * 12
+g1 <- ggplot(ds1, aes(x = m, y = d)) +
   theme_light() +
   annotate(
     "polygon",
@@ -404,23 +412,26 @@ g1 <- ggplot(data, aes(x = m, y = d, group = ins, color = ins)) +
     alpha = 0.06,
     fill = "#C5EDDE"
   ) +
-  annotate("line", x = r$m, y = r$SDM2, lwd = 0.5, color = "#C5EDDE") +
-  annotate("line", x = r$m, y = r$SDP2, lwd = 0.5, color = "#C5EDDE") +
-  annotate("line", x = r$m, y = r$SD0, lwd = 1, color = "#C5EDDE") +
+  annotate("line", x = r$m, y = r$SDM2, lwd = 0.5, color = "grey80") +
+  annotate("line", x = r$m, y = r$SDP2, lwd = 0.5, color = "grey80") +
+  annotate("line", x = r$m, y = r$SD0, lwd = 1, color = "grey80") +
   scale_x_continuous(
     "Age (in months)",
     limits = c(0, 42),
     breaks = seq(0, 42, 12)
   ) +
   scale_y_continuous(
-    expression(paste(italic(D), "-score", sep = "")),
+    expression(paste("D-score", sep = "")),
     breaks = seq(0, 80, 20),
     limits = c(0, 90)
   ) +
   geom_point(size = 2) +
   theme(legend.position = "none")
-g2 <- ggplot(data, aes(x = m, y = daz, group = ins, color = ins)) +
+g2 <- ggplot(ds1, aes(x = m, y = daz)) +
   theme_light() +
+  geom_hline(yintercept = 2, linewidth = 0.5, color = "grey80") +
+  geom_hline(yintercept = -2, linewidth = 0.5, color = "grey80") +
+  geom_hline(yintercept = 0, linewidth = 1.0, color = "grey80") +
   scale_x_continuous(
     "Age (in months)",
     limits = c(0, 42),
@@ -429,12 +440,134 @@ g2 <- ggplot(data, aes(x = m, y = daz, group = ins, color = ins)) +
   scale_y_continuous(
     "DAZ",
     breaks = seq(-4, 4, 2),
-    limits = c(-5, 5)
+    limits = c(-4, 4)
   ) +
   geom_point(size = 2) +
   theme(legend.position = "none")
 g1 + g2
 ```
 
-## References
+### `who_descriptive` references
+
+The `who_descriptive` references are based on data from all children across all seven GSED countries.  These references reflect the observed data and should not be interpreted as standards. They are intended for descriptive analyses of developmental status or for methodological studies.  
+
+The `who_descriptive` references replace the earlier `"phase1"` references, which were derived from GSED Phase I data (three countries).
+
+You can access these references by specifying `population = "who_descriptive"` in the `dscore()` function.  To extract the references, use:
+
+```{r}
+ref <- builtin_references |>
+  filter(population == "who_descriptive") |>
+  select(population, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
+head(ref)
+```
+
+The columns `mu`, `sigma`, `nu` and `tau` are the age-varying parameters of a Box-Cox $t$ (BCT) distribution.
+
+```{r}
+ds2 <- dscore(
+  data,
+  xname = "agedays",
+  xunit = "days",
+  population = "who_descriptive"
+)
+head(ds2)
+```
+
+Here are the growth charts for **D-score** and **DAZ**, based on the `who_descriptive` references.
+
+```{r fig.height=5, fig.width=10, warning=FALSE}
+#| code-fold: true
+library(ggplot2)
+library(patchwork)
+
+r <- builtin_references |>
+  filter(population == "who_descriptive" & age <= 3.5) |>
+  mutate(m = age * 12)
+
+ds2$m <- ds2$a * 12
+g1 <- ggplot(ds2, aes(x = m, y = d)) +
+  theme_light() +
+  annotate(
+    "polygon",
+    x = c(r$age, rev(r$age)),
+    y = c(r$SDM2, rev(r$SDP2)),
+    alpha = 0.06,
+    fill = "#C5EDDE"
+  ) +
+  annotate("line", x = r$m, y = r$SDM2, lwd = 0.5, color = "grey80") +
+  annotate("line", x = r$m, y = r$SDP2, lwd = 0.5, color = "grey80") +
+  annotate("line", x = r$m, y = r$SD0, lwd = 1, color = "grey80") +
+  scale_x_continuous(
+    "Age (in months)",
+    limits = c(0, 42),
+    breaks = seq(0, 42, 12)
+  ) +
+  scale_y_continuous(
+    expression(paste("D-score", sep = "")),
+    breaks = seq(0, 80, 20),
+    limits = c(0, 90)
+  ) +
+  geom_point(size = 2) +
+  theme(legend.position = "none")
+g2 <- ggplot(ds2, aes(x = m, y = daz)) +
+  theme_light() +
+  geom_hline(yintercept = 2, linewidth = 0.5, color = "grey80") +
+  geom_hline(yintercept = -2, linewidth = 0.5, color = "grey80") +
+  geom_hline(yintercept = 0, linewidth = 1.0, color = "grey80") +
+  scale_x_continuous(
+    "Age (in months)",
+    limits = c(0, 42),
+    breaks = seq(0, 42, 12)
+  ) +
+  scale_y_continuous(
+    "DAZ",
+    breaks = seq(-4, 4, 2),
+    limits = c(-4, 4)
+  ) +
+  geom_point(size = 2) +
+  theme(legend.position = "none")
+g1 + g2
+```
+
+In general, descriptive references are expected to yield higher DAZ values than standards. This is because descriptive references are based on all children, including those with developmental delays, whereas standards are based on a healthy subsample.
+
+At present, the `who_descriptive` references produce DAZ values similar to those from the `preliminary_standards` references, but with a noticeably different age pattern. The main reason is that `who_descriptive` is based on key `gsed2510`, while `preliminary_standards` still rely on the older key `gsed2406`. This age pattern is expected to disappear once the new standards based on key `gsed2510` become available.
+
+```{r fig.height=5, fig.width=10, warning=FALSE}
+#| code-fold: true
+f1 <- ggplot(data = NULL, aes(x = ds1$daz, y = ds2$daz)) +
+  theme_light() +
+  geom_abline(intercept = 0, slope = 1, colour = "grey80", linewidth = 1) +
+  geom_point(shape = 19) +
+  scale_y_continuous(
+    "DAZ (who_descriptive)",
+    breaks = seq(-4, 4, 2),
+    limits = c(-4, 4)
+  ) +
+  scale_x_continuous(
+    "DAZ (preliminary_standards)",
+    breaks = seq(-4, 4, 2),
+    limits = c(-4, 4)
+  )
+
+f2 <- ggplot(data = NULL, aes(x = ds1$a * 12, y = ds1$daz - ds2$daz)) +
+  theme_light() +
+  geom_point(shape = 19) +
+  geom_hline(yintercept = 0, colour = "grey80", linewidth = 1) +
+  scale_x_continuous(
+    "Age (in months)",
+    limits = c(0, 42),
+    breaks = seq(0, 42, 12)
+  ) +
+  scale_y_continuous(
+    "DAZ (who_descriptive) – DAZ (preliminary_standards)",
+    breaks = seq(-0.4, 0.4, 0.1),
+    limits = c(-0.4, 0.4)
+  )
+
+f1 + f2
+```
+
+## Literature references
 

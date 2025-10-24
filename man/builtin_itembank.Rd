@@ -39,8 +39,10 @@ Updates:
 \item Dec 05, 2022 - Adds key \code{gsed2212}, adding instruments \code{gl1} and \code{gs1}, and
 defining correct order for \code{gto}
 \item Jan 05, 2023 - Adds instrument \code{gh1} to key \code{gsed2212}
-\item Oct 10, 2025 - Adds key \code{gsed2510} (currently just only \code{gl1} and \code{gs1})
-\item Oct 21, 2025 - Updates keys \code{gsed2212}, \code{gsed2406} and \code{gsed2510} to include \code{gh1} 48 item version
+\item Oct 10, 2025 - Adds key \code{gsed2510} for instruments \code{gl1} and \code{gs1} (281 items)
+\item Oct 21, 2025 - Updates keys \code{gsed2212}, \code{gsed2406} for \code{gh1} (55 -> 48 items)
+\item Oct 21, 2025 - Adds \code{gh1} extension to key \code{gsed2510} (48 items)
+\item Oct 23, 2025 - Adds \code{by3} extension to key \code{gsed2510} (242 items)
 }
 }
 \examples{

@@ -29,7 +29,7 @@ calculate D-scores. D-scores can only be compared when calculated
 from the same key.
 }
 \note{
-Updated: 20251010 SvB: Added \code{builtin_keys} table by
+Updated: 20251023 SvB: Added \code{builtin_keys} table by
 \verb{data-raw\\data\\R\\save_builtin_keys.R}
 }
 \keyword{datasets}

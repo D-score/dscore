@@ -8,6 +8,8 @@ df <- rbind(
   as.data.frame(setNames(as.list(rep(0, length(items))), items)),
   as.data.frame(setNames(as.list(rep(1, length(items))), items))
 )
+
+
 df$age <- c(0, 0, 3.5, 3.5)
 ds <- dscore(df, population = "who_descriptive")
 test_that("dscore() calculates SF range", {
@@ -184,6 +186,7 @@ zd <- dscore(
   algorithm = algorithm,
   verbose = TRUE
 )
+
 zl <- dscore(
   data,
   items = items,

@@ -21,6 +21,6 @@
 #' | `by` | Increment of the quadrature points |
 #' | `retired` | Has the key been retired? |
 #' @note
-#' Updated: 20251010 SvB: Added `builtin_keys` table by
+#' Updated: 20251023 SvB: Added `builtin_keys` table by
 #' `data-raw\data\R\save_builtin_keys.R`
 "builtin_keys"

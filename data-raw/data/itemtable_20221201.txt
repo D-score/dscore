@@ -1753,7 +1753,7 @@ gpaclc034		Does your child show interest in new objects that are put in front of
 gpaclc046		Does the child look for an object of interest when it is removed from sight or hidden from him/her (e.g., put under a cover, behind another object)?
 gpaclc047		Does your child play by tapping an object on the ground or a table?
 gpaclc048		Does your child intentionally move or change his/her position to get objects that are out of reach?
-gpaclc088		Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?
+gpaclc089		Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?
 gpaclc091		Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?
 gpaclc093		Can your child ask for something (e.g., food, water) by name when he/she wants it?
 gpaclc096		Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)?
@@ -1868,7 +1868,7 @@ gpasec075		Does your child put his/her hands out to have them washed?
 gpasec082		Even if your child is unable to do singing games, does he/she enjoy them and want to be a part of them?
 gpasec085		Can your child greet people either by giving his/her hand or saying Hello?
 gpasec086		Does your child share with others (e.g., food)?
-gpasec089		Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?
+gpasec088		Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?
 gpasec094		Can your child break off pieces of food and feed them to him/her-self?
 gpasec095		Does your child show independence (e.g., wants to go and visit a friends house)?
 gpasec109		Can your child  put on at least one piece of clothing by himself?
@@ -3045,7 +3045,7 @@ rapclc037		Does your child show interest in new objects that are put in front of
 rapclc044		Does your child play by tapping an object on the ground or a table?
 rapclc046		Does your child intentionally move or change his/her position to get objects that are out of reach?
 rapclc052		Does the child look for an object of interest when it is removed from sight or hidden from him/her?
-rapclc088		Can your child say five or more separate words?
+rapclc089		Can your child say five or more separate words?
 rapclc091		Can your child speak using short sentences of two words that go together?
 rapclc093		Can your child ask for something by name when he/she wants it?
 rapclc096		Can your child correctly name at least one family member other than mom and dad?

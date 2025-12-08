@@ -1,0 +1,179 @@
+---
+title: "Multiple keys (Advanced)"
+output: 
+  rmarkdown::html_vignette:
+    css: vignette.css
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: true
+vignette: >
+  %\VignetteIndexEntry{Multiple keys (Advanced)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 7)
+```
+
+**In preparation**
+
+## Motivation
+
+A **key** is a set of difficulty estimates linked to items from one or more instruments. As more data become available, the key may be updated periodically to incorporate the additional information. This results in multiple versions of the key. Although keys are designed to produce D-scores on the same general scale, each key defines a slightly different scale. As a result, the same set of child responses may yield different D-scores depending on which key is used.
+
+For new data, the most recent default key is usually recommended. However, if strict comparability with earlier analyses is important, it may be preferable to use an older key.
+
+This vignette explains the policy for setting default keys and demonstrates how to compare D-scores across different keys. Because this is an advanced topic, it assumes a basic understanding of the D-score calculation process. If you are new to the D-score methodology, we recommend reviewing the introductory vignettes before proceeding.
+
+## Relation to the D-score
+
+- The D-score depends on the **difficulty parameters** defined by a key.
+- Updating a key updates those parameters and can slightly shift scores.
+- Differences are typically small but may matter for strict comparability.
+
+```{r, eval=FALSE}
+# Example (pseudo-code): compute a D-score given a key
+# library(dscore)
+# d1 <- dscore(items = x, key = "gsed2406")
+# d2 <- dscore(items = x, key = "gsed2510")
+# cbind(d1, d2, diff = d2 - d1)
+```
+
+# Default vs. Alternative Keys
+
+## Policy for default key selection
+
+Describe how the **default key** is chosen (e.g., most recent stable release) and how often it is updated. State where users can find the current default in the package documentation.
+
+## When to use an older key
+
+- Ensure **comparability** with past analyses or publications.
+- Reproduce earlier results precisely.
+- Regulatory or reporting requirements that fix a specific key.
+
+```{r, eval=FALSE}
+# Check the package default key (example; replace with your function)
+# dscore::get_default_key()
+```
+
+# Working with Keys in Practice
+
+## List available keys
+
+Show users how to **enumerate** supported keys.
+
+```{r, eval=FALSE}
+# Example (replace with the actual function name)
+# keys <- dscore::list_keys()
+# keys
+```
+
+## Set the key
+
+Demonstrate how to **select** a specific key in your workflow.
+
+```{r, eval=FALSE}
+# Example usage
+# ds <- dscore(data, key = "gsed2406")
+```
+
+## Change the default (session or project)
+
+Explain **global vs. local** configuration, and how to set a default key for a session or project.
+
+```{r, eval=FALSE}
+# Session-level default (illustrative; adapt to your API)
+# options(dscore.default_key = "gsed2510")
+
+# Confirm
+# getOption("dscore.default_key")
+```
+
+# Comparing Keys
+
+## Impact on D-scores
+
+Show the **same dataset** scored under two keys and compare.
+
+```{r, eval=FALSE}
+# Example skeleton
+# ds1 <- dscore(dat, key = "gsed2406")
+# ds2 <- dscore(dat, key = "gsed2510")
+# comp <- transform(dat, d1 = ds1$D, d2 = ds2$D, diff = ds2$D - ds1$D)
+# head(comp)
+```
+
+## Diagnostics
+
+Provide simple diagnostics to understand differences (plots/tables).
+
+```{r, eval=FALSE}
+# Histogram of differences
+# hist(comp$diff, main = "D-score differences (new - old)", xlab = "Difference")
+
+# Correlation and summary
+# cor(comp$d1, comp$d2, use = "complete.obs")
+# summary(comp$diff)
+```
+
+## Stability over time
+
+Discuss empirical evidence (e.g., **median absolute difference**, 95% intervals) showing that differences across keys are generally small.
+
+```{r, eval=FALSE}
+# Example summary
+# mad <- median(abs(comp$diff), na.rm = TRUE)
+# quant <- quantile(comp$diff, probs = c(0.025, 0.5, 0.975), na.rm = TRUE)
+# list(median_abs_diff = mad, quantiles = quant)
+```
+
+# Caveats and Limitations
+
+- **Instrument versions/translations**: published item orders may differ, which can limit the feasibility of a single “native” ordering across locales.
+- **Mixing keys**: avoid scoring datasets with **different keys** when analyses are compared directly across groups or time.
+- **Reporting**: always record and report the **key identifier** used.
+
+# Recommendations for Users
+
+- Prefer the **most recent default key** for new studies.
+- Use an **older key** when exact comparability is required.
+- In publications and reports, **cite the key** (name and version/date).
+
+# Worked Examples
+
+## Example 1: Score with the default key
+
+```{r, eval=FALSE}
+# dat <- read.csv("your_data.csv")
+# ds_default <- dscore(dat) # implicit default key
+# head(ds_default)
+```
+
+## Example 2: Score with a specific older key and compare
+
+```{r, eval=FALSE}
+# ds_old <- dscore(dat, key = "gsed2406")
+# ds_new <- dscore(dat, key = "gsed2510")
+# delta <- ds_new$D - ds_old$D
+# summary(delta)
+```
+
+## Example 3: Visualize differences
+
+```{r, eval=FALSE}
+# plot(ds_old$D, ds_new$D,
+#      xlab = "Old key D-score",
+#      ylab = "New key D-score",
+#      main = "D-scores under two keys")
+# abline(0, 1, lty = 2)
+```
+
+# Reproducibility Notes
+
+- Always record: **key**, **package version**, **date**, **random seed** (if any).
+- Provide session info in appendices.
+
+```{r session-info, echo=FALSE}
+sessionInfo()
+```

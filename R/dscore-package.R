@@ -1,8 +1,9 @@
-#' dscore: D-score for Child Development
+#' @title D-score for child development
 #'
-#' The `dscore` package implements several tools needed to
-#' calculate the D-score, a numerical score that measures
-#' generic development in children.
+#' @description
+#' The `dscore` package implements tools needed to calculate the D-score,
+#' a numerical score that summarizes early development in children by
+#' one number, the D-score.
 #'
 #' @section User functions:
 #' The available functions are:
@@ -24,7 +25,7 @@
 #'   &nbsp;| | |
 #'   | [daz()] | Transform to age-adjusted standardized D-score |
 #'   | [zad()] | Inverse of [daz()] |
-#'   | [get_reference()]   | Get D-score age-reference |
+#'   | [get_reference()]   | Get D-score reference tables |
 #'   | [get_age_equivalent()] | Translate difficulty to age |
 #'
 #' @section Built-in data:
@@ -32,11 +33,16 @@
 #'
 #'   Data     | Description
 #'   -------- | ---------
-#' [builtin_itembank()] | A `data.frame` containing the difficulty estimates of items according to final Rasch models.
-#' [builtin_itemtable()] | A `data.frame` containing names and descriptions of items from 22 instruments.
-#' [builtin_references()] | A `data.frame` with LMS reference values used to transform from D-score to DAZ, DAZ to D-score.
-#' [milestones()] | A small demo dataset with PASS/FAIL responses from 27 preterms, measured at various ages between birth
-#' and 2.5 years.
+#' [builtin_keys()] | Available keys for calculating the D-score
+#' [builtin_itembank()] | Collection of items fitting the Rasch model
+#' [builtin_itemtable()] | Collection of items from instruments measuring early child development
+#' [builtin_references()] | Collection of age-conditional reference distributions
+#'   &nbsp;| | |
+#' [milestones()] | Dataset with PASS/FAIL responses for 27 preterms
+#' [gsample] | Sample of 10 children from the GSED Phase 1 study, gsed lexicon
+#' [sample_sf] | Sample of 10 children from GSED Short Form (GSED-SF)
+#' [sample_lf] | Sample of 10 children from GSED Long Form (GSED-LF)
+#' [sample_hf] | Sample of 10 children from GSED Household Form (GSED-HF)
 #'
 #' @references
 #' Jacobusse, G., S. van Buuren, and P.H. Verkerk. 2006. “An Interval Scale
@@ -64,13 +70,7 @@
 #'  for Early Development (GSED).” *Early Childhood Matters*.
 #'  <https://earlychildhoodmatters.online/2019/the-global-scale-for-early-development-gsed/>
 #'
-#' @note
-#' This study was supported by the Bill & Melinda Gates Foundation.
-#' The contents are the sole responsibility of the authors and may not
-#' necessarily represent the official views of the Bill & Melinda
-#' Gates Foundation or other agencies that may have supported the
-#' primary data studies used in the present study.
-#'
+#' @section Acknowledgements:
 #' The authors wish to
 #' recognize the principal investigators and their study team members
 #' for their generous contribution of the data that made this tool
@@ -89,10 +89,16 @@
 #' Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K.
 #' Yousafzai.
 #'
+#' This study was supported by the Bill & Melinda Gates Foundation.
+#' The contents are the sole responsibility of the authors and may not
+#' necessarily represent the official views of the Bill & Melinda
+#' Gates Foundation or other agencies that may have supported the
+#' primary data studies used in the present study.
+#'
 #' @name dscore-package
-#' @docType package
 #' @aliases dscore-package
-NULL
+#' @keywords internal
+"_PACKAGE"
 
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!

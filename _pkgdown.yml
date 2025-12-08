@@ -24,6 +24,7 @@ reference:
       that the dscore() function can understand.
     contents:
       - rename_gcdg_gsed
+      - rename_vector
       - order_itemnames
       - sort_itemnames
   - title: "Calculate D-score and DAZ"
@@ -37,33 +38,47 @@ reference:
       - get_tau
   - title: "Working with references"
     desc: >
-      Specification of the imputation models can be made more
+      Specification of the models can be made more
       convenient using the following set of helpers.
     contents:
       - daz
       - get_reference
       - get_age_equivalent
+      - get_mu
   - title: "Internal functions"
     desc: >
-      While documented, these internal functions should not be
-      called directly.
+      For research purposes only.
     contents:
+      - count_mu
       - count_mu_dutch
       - count_mu_gcdg
       - count_mu_phase1
-      - count_mu_phase1_healthy
+      - count_mu_preliminary_standards
       - posterior
       - normalize
   - title: "Datasets"
     desc: "Built-in datasets"
     contents:
-      - builtin_itemtable
+      - builtin_keys
       - builtin_itembank
+      - builtin_itemtable
       - builtin_references
+      - builtin_translate
       - milestones
       - gsample
       - sample_sf
       - sample_lf
       - sample_hf
+      - triple
+articles:
+  - title: Tips
+    navbar: ~
+    contents:
+    - getting_started
+    - scoring_GSED
+    - using_DAZ
+    - multiple_keys
+    - custom_priors
+
 navbar:
   type: inverse

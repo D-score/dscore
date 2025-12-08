@@ -4,7 +4,7 @@
 \alias{posterior}
 \title{Calculate posterior for one item given score, difficulty and prior}
 \usage{
-posterior(score, tau, prior, qp)
+posterior(score, tau, prior, qp, scale)
 }
 \arguments{
 \item{score}{Integer, either 0 (fail) and 1 (pass)}
@@ -14,6 +14,8 @@ posterior(score, tau, prior, qp)
 \item{prior}{Vector of prior values on quadrature points \code{qp}}
 
 \item{qp}{vector of equally spaced quadrature points}
+
+\item{scale}{expansion relative to the logit scale}
 }
 \value{
 A vector of length \code{length(prior)}

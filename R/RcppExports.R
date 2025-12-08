@@ -31,12 +31,13 @@ normalize <- function(d, qp) {
 #' @param tau Numeric, difficulty parameter
 #' @param prior Vector of prior values on quadrature points `qp`
 #' @param qp vector of equally spaced quadrature points
+#' @param scale expansion relative to the logit scale
 #' @return A vector of length `length(prior)`
 #' @author Stef van Buuren, Arjan Huizing, 2020
 #' @note: Internal function
 #' @seealso [dscore()]
-posterior <- function(score, tau, prior, qp) {
-    .Call('_dscore_posterior', PACKAGE = 'dscore', score, tau, prior, qp)
+posterior <- function(score, tau, prior, qp, scale) {
+    .Call('_dscore_posterior', PACKAGE = 'dscore', score, tau, prior, qp, scale)
 }
 
 #' Calculate posterior of ability
@@ -49,6 +50,7 @@ posterior <- function(score, tau, prior, qp) {
 #' scores in `scores` estimated from the Rasch model in the
 #' preferred metric/scale.
 #' @param qp Numeric vector of equally spaced quadrature points.
+#' @param scale Scale expansion
 #' @param mu Numeric scalar. The mean of the prior.
 #' @param sd Numeric scalar. Standard deviation of the prior.
 #' @param relhi Positive numeric scalar. Upper end of the relevance interval
@@ -63,7 +65,7 @@ posterior <- function(score, tau, prior, qp) {
 #' `posterior` | Vector with posterior distribution.
 #'
 #' Since `dscore V40.1` the function does not return the `"start"` element.
-calculate_posterior <- function(scores, tau, qp, mu, sd, relhi, rello) {
-    .Call('_dscore_calculate_posterior', PACKAGE = 'dscore', scores, tau, qp, mu, sd, relhi, rello)
+calculate_posterior <- function(scores, tau, qp, scale, mu, sd, relhi, rello) {
+    .Call('_dscore_calculate_posterior', PACKAGE = 'dscore', scores, tau, qp, scale, mu, sd, relhi, rello)
 }
 

@@ -7,7 +7,7 @@
 decompose_itemnames(x)
 }
 \arguments{
-\item{x}{A character vector containing item names (gcdg lexicon)}
+\item{x}{A character vector containing item names (gsed lexicon)}
 }
 \value{
 A \code{data.frame} with \code{length(x)} rows and

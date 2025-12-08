@@ -5,7 +5,7 @@
 \alias{sample_hf}
 \title{Sample of 10 children from GSED HF}
 \format{
-A \code{data.frame} with 10 rows and 57 variables:\tabular{ll}{
+A \code{data.frame} with 10 rows and 50 variables:\tabular{ll}{
    Name \tab Label \cr
    \code{subjid} \tab Integer, child ID \cr
    \code{agedays} \tab Integer, age in days \cr
@@ -15,7 +15,7 @@ A \code{data.frame} with 10 rows and 57 variables:\tabular{ll}{
 }
 
 
-Sample data for 55 \code{gpa} items forming GSED HF V1
+Sample data for 48 \code{gpa} items forming GSED HF V1
 }
 \usage{
 sample_hf
@@ -23,6 +23,10 @@ sample_hf
 \description{
 A demo dataset with developmental scores at the item level for
 10 random children from the GSED Phase 1 data.
+}
+\note{
+The HF item set was revised on October 20, 2025 to contain 48 items.
+This dataset reflects that change.
 }
 \examples{
 head(sample_hf)

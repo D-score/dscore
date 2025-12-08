@@ -3,57 +3,35 @@ cran-comments
 
 ## Reason for update
 
-`dscore 1.8.0` provides new features and resolves some problems
+`dscore 2.0.0` is a major new release that builds on more extensive data
+
+## Resubmission 1
+
+*Why is such a quick update needed? Please explain. Please also re-read
+the CRAN policies about submission frequency.And why is there a major
+new release after only 6 days? This is very confusing….*
+
+I realize 6 days is short. Version 1.11.0 was a regular maintenance
+release and provides a stable fallback for users not yet ready to
+transition. Version 2.0.0 introduces a new key and changes an important
+default, which some collaborators need immediately, but may break code
+for existing users. Having both versions on CRAN ensures continuity for
+existing users and access to the new functionality.
+
+*Is there some reference about the method you can add in the Description
+field in the form Authors (year) <doi:10.....>?*
+
+I updated DESCRIPTION with the relevant DOI reference.
 
 ## Test environments
 
 ### Local
 
 ``` r
-R.Version()
+R.Version()$version.string
 ```
 
-    ## $platform
-    ## [1] "aarch64-apple-darwin20"
-    ## 
-    ## $arch
-    ## [1] "aarch64"
-    ## 
-    ## $os
-    ## [1] "darwin20"
-    ## 
-    ## $system
-    ## [1] "aarch64, darwin20"
-    ## 
-    ## $status
-    ## [1] ""
-    ## 
-    ## $major
-    ## [1] "4"
-    ## 
-    ## $minor
-    ## [1] "2.2"
-    ## 
-    ## $year
-    ## [1] "2022"
-    ## 
-    ## $month
-    ## [1] "10"
-    ## 
-    ## $day
-    ## [1] "31"
-    ## 
-    ## $`svn rev`
-    ## [1] "83211"
-    ## 
-    ## $language
-    ## [1] "R"
-    ## 
-    ## $version.string
-    ## [1] "R version 4.2.2 (2022-10-31)"
-    ## 
-    ## $nickname
-    ## [1] "Innocent and Trusting"
+    ## [1] "R version 4.5.1 (2025-06-13)"
 
 ## Local check
 
@@ -65,7 +43,7 @@ build()
 ```
 
 ``` bash
-R CMD CHECK dscore_1.8.0.tar.gz
+R CMD CHECK ../dscore_2.0.0.tar.gz
 ```
 
 Status: OK
@@ -76,29 +54,17 @@ Status: OK
 devtools::check_win_devel()
 ```
 
-### WIN_DEVEL
-
-`devtools::check_win_devel()` resulted in:
-
-    * checking CRAN incoming feasibility ... [11s] NOTE
-    Maintainer: 'Stef van Buuren <stef.vanbuuren@tno.nl>'
-
-    Found the following (possibly) invalid URLs:
-      URL: https://support.posit.co/hc/en-us/articles/201141096-Getting-Started-with-R
-        From: inst/doc/scoring_GSED.html
-        Status: 403
-        Message: Forbidden
-
-The URL is reachable by browser. I assume this status results from a
-setting made by Posit.
+Upload of the dscore package to win-builder failed.
 
 ### RHUB
 
 ``` r
-check_rhub()
+rhub::rhub_check()
 ```
 
-The result is: `SUCCESS` for all four builds
+Using three builds: linux, windows, macos.
+
+Status: OK
 
 ## Downstream dependencies
 

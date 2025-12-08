@@ -25,6 +25,11 @@ gsample
 A demo dataset with developmental scores at the item level for
 10 random children from the GSED Phase 1 data.
 }
+\details{
+On July 15, 2025, the item \code{gpaclc088} was renamed to \code{gpaclc089}
+(Can you child say five or more separate words) and \code{gpasec089} was renamed
+to \code{gpasec088} (Is your child able to pee and poo).
+}
 \examples{
 head(gsample)
 }

@@ -1,46 +1,46 @@
 Package: dscore
 Type: Package
 Title: D-Score for Child Development
-Version: 1.8.7
+Version: 2.0.5
 Authors@R: c(person("Stef", "van Buuren", email = "stef.vanbuuren@tno.nl", role = c("cre", "aut")), 
              person("Iris", "Eekhout", email = "iris.eekhout@tno.nl", role = "aut"),
-             person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"))
-Description: The D-score is a quantitative measure of child development. 
-    The D-score follows the Rasch model. See Jacobusse, van Buuren and 
-    Verkerk (2006) <doi:10.1002/sim.2351>. The user can convert 
-    milestone scores from many assessment instruments into the D-score 
-    and the DAZ (D-score adjusted for age). Several tools assist in 
-    mapping milestone names into the 9-position Global Scale of Early 
-    Development (GSED) convention. Supports calculation of the D-score 
-    using 'dutch' <doi:10.1177/0962280212473300>, 
-    'gcdg' <doi:10.1136/bmjgh-2019-001724> and 'gsed' conversion keys.
-    The user can calculate DAZ using 'phase1' (default), 'gcdg' and 'dutch' 
-    age-conditional references.
+             person("Arjan", "Huizing", email = "arjan.huizing@tno.nl", role = "aut"),
+             person("Jonathan", "Seiden", email = "jseiden@g.harvard.edu", role = "aut"))
+Description:
+    The D-score summarizes a child's performance on developmental milestones
+    into a single number. Its key feature is its generic nature. The method
+    does not depend on a specific measurement instrument. The statistical
+    method underlying the D-score is described in van Buuren et al. (2025)
+    <doi:10.1177/01650254241294033>. This package implements model keys to
+    convert milestone scores to D-scores; maps instrument-specific item names
+    to a generic 9-position naming convention; computes D-scores and their
+    precision from a child's milestone scores; and converts D-scores to
+    Development-for-Age Z-scores (DAZ) using age-conditional reference
+    standards.
 Depends:
-    R (>= 3.5)
+    R (>= 4.1.0)
 Imports:
     dplyr (>= 1.0.0),
     Rcpp,
     stats,
-    stringr,
-    tidyr (>= 1.0.0),
-    tidyselect (>= 1.0.0)
+    stringi,
+    tidyr (>= 1.0.0)
 LinkingTo: Rcpp, RcppArmadillo
 Suggests:
     ggplot2,
     kableExtra,
     knitr,
     lme4,
+    Matrix,
     patchwork,
     rmarkdown,
     testthat
 Encoding: UTF-8
-License: AGPL-3
+License: Apache License (>= 2)
 LazyData: TRUE
 VignetteBuilder: knitr
 NeedsCompilation: yes
 URL: https://github.com/d-score/dscore, https://d-score.org/dscore/, https://d-score.org/dbook1/
 BugReports: https://github.com/d-score/dscore/issues
-Copyright: Stef van Buuren, Iris Eekhout, Arjan Huizing
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3

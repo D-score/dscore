@@ -3,36 +3,11 @@
 \docType{package}
 \name{dscore-package}
 \alias{dscore-package}
-\title{dscore: D-score for Child Development}
+\title{D-score for child development}
 \description{
-The \code{dscore} package implements several tools needed to
-calculate the D-score, a numerical score that measures
-generic development in children.
-}
-\note{
-This study was supported by the Bill & Melinda Gates Foundation.
-The contents are the sole responsibility of the authors and may not
-necessarily represent the official views of the Bill & Melinda
-Gates Foundation or other agencies that may have supported the
-primary data studies used in the present study.
-
-The authors wish to
-recognize the principal investigators and their study team members
-for their generous contribution of the data that made this tool
-possible and the members of the Ki team who directly or indirectly
-contributed to the study: Amina Abubakar, Claudia R. Lindgren
-Alves, Orazio Attanasio, Maureen M. Black, Maria Caridad Araujo,
-Susan M. Chang-Lopez, Gary L. Darmstadt, Bernice M. Doove, Wafaie
-Fawzi, Lia C.H. Fernald, Günther Fink, Emanuela Galasso, Melissa
-Gladstone, Sally M. Grantham-McGregor, Cristina Gutierrez de
-Pineres, Pamela Jervis, Jena Derakhshani Hamadani, Charlotte
-Hanlon, Simone M. Karam, Gillian Lancaster, Betzy Lozoff, Gareth
-McCray, Jeffrey R Measelle, Girmay Medhin, Ana M. B. Menezes,
-Lauren Pisani, Helen Pitchik, Muneera Rasheed, Lisy
-Ratsifandrihamanana, Sarah Reynolds, Linda Richter, Marta
-Rubio-Codina, Norbert Schady, Limbika Sengani, Chris Sudfeld,
-Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K.
-Yousafzai.
+The \code{dscore} package implements tools needed to calculate the D-score,
+a numerical score that summarizes early development in children by
+one number, the D-score.
 }
 \section{User functions}{
 
@@ -53,7 +28,7 @@ The available functions are:\tabular{ll}{
      \tab  \cr
    \code{\link[=daz]{daz()}} \tab Transform to age-adjusted standardized D-score \cr
    \code{\link[=zad]{zad()}} \tab Inverse of \code{\link[=daz]{daz()}} \cr
-   \code{\link[=get_reference]{get_reference()}} \tab Get D-score age-reference \cr
+   \code{\link[=get_reference]{get_reference()}} \tab Get D-score reference tables \cr
    \code{\link[=get_age_equivalent]{get_age_equivalent()}} \tab Translate difficulty to age \cr
 }
 }
@@ -62,12 +37,44 @@ The available functions are:\tabular{ll}{
 
 The package contains the following built-in data:\tabular{ll}{
    Data \tab Description \cr
-   \code{\link[=builtin_itembank]{builtin_itembank()}} \tab A \code{data.frame} containing the difficulty estimates of items according to final Rasch models. \cr
-   \code{\link[=builtin_itemtable]{builtin_itemtable()}} \tab A \code{data.frame} containing names and descriptions of items from 22 instruments. \cr
-   \code{\link[=builtin_references]{builtin_references()}} \tab A \code{data.frame} with LMS reference values used to transform from D-score to DAZ, DAZ to D-score. \cr
-   \code{\link[=milestones]{milestones()}} \tab A small demo dataset with PASS/FAIL responses from 27 preterms, measured at various ages between birth \cr
-   and 2.5 years. \tab  \cr
+   \code{\link[=builtin_keys]{builtin_keys()}} \tab Available keys for calculating the D-score \cr
+   \code{\link[=builtin_itembank]{builtin_itembank()}} \tab Collection of items fitting the Rasch model \cr
+   \code{\link[=builtin_itemtable]{builtin_itemtable()}} \tab Collection of items from instruments measuring early child development \cr
+   \code{\link[=builtin_references]{builtin_references()}} \tab Collection of age-conditional reference distributions \cr
+     \tab  \cr
+   \code{\link[=milestones]{milestones()}} \tab Dataset with PASS/FAIL responses for 27 preterms \cr
+   \link{gsample} \tab Sample of 10 children from the GSED Phase 1 study, gsed lexicon \cr
+   \link{sample_sf} \tab Sample of 10 children from GSED Short Form (GSED-SF) \cr
+   \link{sample_lf} \tab Sample of 10 children from GSED Long Form (GSED-LF) \cr
+   \link{sample_hf} \tab Sample of 10 children from GSED Household Form (GSED-HF) \cr
 }
+}
+
+\section{Acknowledgements}{
+
+The authors wish to
+recognize the principal investigators and their study team members
+for their generous contribution of the data that made this tool
+possible and the members of the Ki team who directly or indirectly
+contributed to the study: Amina Abubakar, Claudia R. Lindgren
+Alves, Orazio Attanasio, Maureen M. Black, Maria Caridad Araujo,
+Susan M. Chang-Lopez, Gary L. Darmstadt, Bernice M. Doove, Wafaie
+Fawzi, Lia C.H. Fernald, Günther Fink, Emanuela Galasso, Melissa
+Gladstone, Sally M. Grantham-McGregor, Cristina Gutierrez de
+Pineres, Pamela Jervis, Jena Derakhshani Hamadani, Charlotte
+Hanlon, Simone M. Karam, Gillian Lancaster, Betzy Lozoff, Gareth
+McCray, Jeffrey R Measelle, Girmay Medhin, Ana M. B. Menezes,
+Lauren Pisani, Helen Pitchik, Muneera Rasheed, Lisy
+Ratsifandrihamanana, Sarah Reynolds, Linda Richter, Marta
+Rubio-Codina, Norbert Schady, Limbika Sengani, Chris Sudfeld,
+Marcus Waldman, Susan P. Walker, Ann M. Weber and Aisha K.
+Yousafzai.
+
+This study was supported by the Bill & Melinda Gates Foundation.
+The contents are the sole responsibility of the authors and may not
+necessarily represent the official views of the Bill & Melinda
+Gates Foundation or other agencies that may have supported the
+primary data studies used in the present study.
 }
 
 \references{
@@ -113,6 +120,8 @@ Authors:
 \itemize{
   \item Iris Eekhout \email{iris.eekhout@tno.nl}
   \item Arjan Huizing \email{arjan.huizing@tno.nl}
+  \item Jonathan Seiden \email{jseiden@g.harvard.edu}
 }
 
 }
+\keyword{internal}

@@ -82,7 +82,7 @@ Start Item?	Phase 2 order	Phase 1 order	tau	label	Domain	gsed2 variable name	old
 18-20 months	SF081	SF78	51,44	Can your child stack at least two objects on top of each other, such as bottle tops, blocks, stones, etc.?	motor	gpamoc078	iyomoc030
 	SF082	SF85	52,51	Can your child greet people either by giving his/her hand or saying Hello?	sem	gpasec085	mdtsed017
 	SF083	SF79	52,82	Can your child kick a ball or other round object forward using his/her foot?	motor	gpamoc079	cromoc025
-	SF084	SF88	53,7	Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?	lang	gpaclc088	croclc023
+	SF084	SF89	53,7	Can your child say five or more separate words (e.g., names like 'Mama' or objects like 'ball')?	lang	gpaclc089	croclc023
 21-23 months	SF085	SF81	54,64	Can your child follow directions with more than one step? For example, 'Go to the kitchen and bring me a spoon'?	cog	gpalgc081	iyolgc017
 	SF086	SF96	55,69	Can your child correctly name at least one family member other than mom and dad (e.g., name of brother, sister, aunt, uncle)?	lang	gpaclc096	croclc028
 	SF087	SF99	55,74	Can your child identify at least seven objects? For example, when you ask 'where is the ball/spoon/cup/cloth/door/plate/bucket etc.' does your child look at or point to (or even name) the objects?	lang	gpalgc099	iyolgc022
@@ -101,7 +101,7 @@ Start Item?	Phase 2 order	Phase 1 order	tau	label	Domain	gsed2 variable name	old
 27-29 months	SF100	SF91	60,45	Can your child speak using short sentences of two words that go together (e.g., 'Mama go' or 'Dada eat'?	lang	gpaclc091	croclc024
 	SF101	SF110	60,6	Can your child unscrew the lid from a bottle or jar?	motor	gpamoc110	cromoc033
 	SF102	SF130	61,82	Does your child help out around the house with simple chores, even if he/she doesn't do them well?	sem	gpasec130	mdtsed029
-	SF103	SF89	62,7	Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?	life	gpasec089	mdtsed019
+	SF103	SF88	62,7	Is your child able to go poo or pee without having accidents (wetting or soiling themselves)?	life	gpasec088	mdtsed019
 30-32 months	SF104	SF112	62,71	Can your child speak using sentences of three or more words that go together (e.g., 'I want water' or 'The house is big')?	lang	gpaclc112	croclc029
 	SF105	SF100	62,74	Can your child name at least two body parts (e.g., arm, eye, or nose)?	lang	gpaclc100	croclc038
 	SF106	SF104	63,04	Can your child remove an item of clothing (e.g., take off his/her shirt)?	life	gpamoc104	cromoc035

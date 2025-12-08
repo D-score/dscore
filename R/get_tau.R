@@ -13,12 +13,16 @@
 #' # difficulty levels in the GHAP lexicon
 #' get_tau(items = c("ddifmd001", "DDigmd052", "xyz"))
 #' @export
-get_tau <- function(items,
-                    key = NULL,
-                    itembank = dscore::builtin_itembank) {
-  # set default key
-  if (is.null(key) || key == "gsed") {
-    key <- "gsed2212"
+get_tau <- function(
+  items,
+  key = NULL,
+  itembank = dscore::builtin_itembank,
+  verbose = FALSE
+) {
+  key <- set_default_key(key)
+
+  if (verbose) {
+    cat("key:        ", key, "\n")
   }
 
   # if key = "", then search in all rows

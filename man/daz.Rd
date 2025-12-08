@@ -3,22 +3,24 @@
 \name{daz}
 \alias{daz}
 \alias{zad}
-\title{D-score standard deviation score: DAZ}
+\title{Calculate Development-for-Age Z-score (DAZ)}
 \usage{
-daz(d, x, reference = get_reference(), dec = 3)
+daz(d, x, reference_table = NULL, dec = 3, verbose = FALSE)
 
-zad(z, x, reference = get_reference(), dec = 2)
+zad(z, x, reference_table = NULL, dec = 2, verbose = FALSE)
 }
 \arguments{
 \item{d}{Vector of D-scores}
 
 \item{x}{Vector of ages (decimal age)}
 
-\item{reference}{A \code{data.frame} with the LMS reference values.
-The default uses the \code{get_reference()} function. This selects
-a subset of rows from the \code{builtin_references}.}
+\item{reference_table}{A \code{data.frame} with the LMS or BCT reference values.
+The default \code{NULL} selects the default reference belonging to the \code{key},
+as specified in the \code{base_population} field in \code{dscore::builtin_keys}.}
 
 \item{dec}{The number of decimals (default \code{dec = 3}).}
+
+\item{verbose}{Print out the used reference table (default \code{verbose = FALSE}).}
 
 \item{z}{Vector of standard deviation scores (DAZ)}
 }
@@ -28,14 +30,14 @@ Unnamed numeric vector with Z-scores of length \code{length(d)}.
 Unnamed numeric vector with D-scores of length \code{length(z)}.
 }
 \description{
-The \code{daz()} function calculated the
-"Development for Age Z-score".
-The DAZ represents a child's D-score after adjusting
-for age by an external age-conditional reference.
-The \code{zad()} is the inverse of \code{daz()}: Given age and
-the Z-score, it finds the raw D-score.
+The \code{daz()} function calculated the Development-for-Age Z-score (DAZ).
+The DAZ represents a child's D-score after adjusting for age by an
+external age-conditional reference.
 }
 \details{
+The \code{zad()} is the inverse of \code{daz()}: Given age and
+the Z-score, it finds the raw D-score.
+
 Note 1: The Box-Cox Cole and Green (BCCG) and Box-Cox t (BCT)
 distributions model only positive D-score values. To increase
 robustness, the \code{daz()} and \code{zad()} functions will round up any
@@ -46,30 +48,29 @@ Note 2: The \code{daz()} and \code{zad()} function call modified version of the
 of \code{NA}'s and rounding.
 }
 \examples{
-# using GSED Phase 1 reference
+# using default reference and key
 daz(d = c(35, 50), x = c(0.5, 1.0))
 
-# using Dutch reference
-daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("gcdg"))
+# print out names of the used reference table
+daz(d = c(35, 50), x = c(0.5, 1.0), verbose = TRUE)
 
-# using Dutch reference
-daz(d = c(35, 50), x = c(0.5, 1.0), reference = get_reference("dutch"))
-# population median at ages 0.5, 1 and 2 years, phase1 reference
+# using the default reference in key gcdg
+reftab <- get_reference(key = "gcdg")
+daz(d = c(35, 50), x = c(0.5, 1.0), reference_table = reftab)
+
+# using Dutch reference in default key
+reftab <- get_reference(population = "dutch", verbose = TRUE)
+daz(d = c(35, 50), x = c(0.5, 1.0), reference_table = reftab)
+# population median at ages 0.5, 1 and 2 years, default reference
 zad(z = rep(0, 3), x = c(0.5, 1, 2))
 
-# population median at ages 0.5, 1 and 2 years, gcdg reference
-zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("gcdg"))
+# population median at ages 0.5, 1 and 2 years, gcdg key
+reftab <- get_reference(key = "gcdg", verbose = TRUE)
+zad(z = rep(0, 3), x = c(0.5, 1, 2), reference_table = reftab)
 
-# population median at ages 0.5, 1 and 2 years, dutch reference
-zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = get_reference("dutch"))
-
-# percentiles of D-score reference
-g <- expand.grid(age = seq(0.1, 2, 0.1), p = c(0.1, 0.5, 0.9))
-d <- zad(z = qnorm(g$p), x = g$age)
-matplot(
-  x = matrix(g$age, ncol = 3), y = matrix(d, ncol = 3), type = "l",
-  lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score"
-)
+# population median at ages 0.5, 1 and 2 years, dutch key
+reftab <- get_reference(key = "dutch", verbose = TRUE)
+zad(z = rep(0, 3), x = c(0.5, 1, 2), reference = reftab)
 }
 \references{
 Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
@@ -77,8 +78,8 @@ method and penalized likelihood. Statistics in Medicine, 11(10),
 1305-1319.
 }
 \seealso{
-\code{\link[=dscore]{dscore()}}
+\link[=get_reference]{dscore()}
 }
 \author{
-Stef van Buuren 2020
+Stef van Buuren
 }

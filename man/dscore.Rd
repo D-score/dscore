@@ -8,45 +8,53 @@
 dscore(
   data,
   items = names(data),
+  key = NULL,
+  population = NULL,
   xname = "age",
   xunit = c("decimal", "days", "months"),
   prepend = NULL,
-  key = NULL,
-  itembank = dscore::builtin_itembank,
+  itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
+  prior_mean_NA = NULL,
   prior_sd = NULL,
+  prior_sd_NA = NULL,
   transform = NULL,
-  qp = -10:100,
-  population = NULL,
+  qp = NULL,
   dec = c(2L, 3L),
-  relevance = c(-Inf, Inf)
+  relevance = c(-Inf, Inf),
+  algorithm = c("current", "1.8.7"),
+  verbose = FALSE
 )
 
 dscore_posterior(
   data,
   items = names(data),
+  key = NULL,
+  population = NULL,
   xname = "age",
   xunit = c("decimal", "days", "months"),
   prepend = NULL,
-  key = NULL,
-  itembank = dscore::builtin_itembank,
+  itembank = NULL,
   metric = c("dscore", "logit"),
   prior_mean = NULL,
+  prior_mean_NA = NULL,
   prior_sd = NULL,
+  prior_sd_NA = NULL,
   transform = NULL,
-  qp = -10:100,
-  population = NULL,
+  qp = NULL,
   dec = c(2L, 3L),
-  relevance = c(-Inf, Inf)
+  relevance = c(-Inf, Inf),
+  algorithm = c("current", "1.8.7"),
+  verbose = FALSE
 )
 }
 \arguments{
-\item{data}{A \code{data.frame} with the data.
+\item{data}{A \code{data.frame} or \code{matrix} with the data.
 A row collects all observations made on a child on a set of
 milestones administered at a given age. The function calculates
-a D-score for each row. Different rows correspond to different
-children or different ages.}
+a D-score for each row. Different rows can correspond to different
+children or ages.}
 
 \item{items}{A character vector containing names of items to be
 included into the D-score calculation. Milestone scores are coded
@@ -54,72 +62,80 @@ numerically as \code{1} (pass) and \code{0} (fail). By default,
 D-score calculation is done on all items found in the data
 that have a difficulty parameter under the specified \code{key}.}
 
+\item{key}{String. They key identifies 1) the difficulty estimates
+pertaining to a particular Rasch model, and 2) the prior mean and standard
+deviation of the prior distribution for calculating the D-score.
+The default key \code{NULL} sets \code{key = "gsed2406"}.
+View \code{builtin_keys} for an overview of the available keys.}
+
+\item{population}{String. The name of the reference population to calculate
+DAZ.
+Use \code{with(builtin_references, table(key, population))} to see which
+built-in references are available for \code{key - population} combinations.
+If not specified, the function set the default population as
+\code{builtin_keys$base_population[key == builtin_keys$key]}.}
+
 \item{xname}{A string with the name of the age variable in
-\code{data}. The default is \code{"age"}.}
+\code{data}. The default is \code{"age"}. Do not round age.}
 
 \item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
-The default (\code{"decimal"}) means decimal age in years.}
+The default \code{"decimal"} corresponds to decimal age in years.}
 
 \item{prepend}{Character vector with column names in \code{data} that will
 be prepended to the returned data frame. This is useful for copying
 columns from data into the result, e.g., for matching.}
 
-\item{key}{A string that selects a subset in the itembank that
-makes up the key, the set of difficulty
-estimates from a fitted Rasch model.
-The built-in keys are:  \code{"gsed2212"} (default), \code{"gsed2208"} (deprecated),
-\code{"gsed2206"} (deprecated), \code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
-and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
-selects the latest key starting with the string "gsed".
-Use \code{key = ""} to use all item names,
-which should only be done if there are no duplicate itemnames
-in the itembank.}
-
-\item{itembank}{A \code{data.frame} with columns
-\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
-\code{mode}, \code{number} and \code{label}. Only columns \code{item}
-and \code{tau} are required.
-The function uses \code{dscore::builtin_itembank} by
-default.}
+\item{itembank}{A \code{data.frame} with at least three columns named
+\code{key}, \code{item} and \code{tau}. By default, the function uses
+\code{dscore::builtin_itembank}. If you specify your own \code{itembank},
+then you should also provide the relevant \code{transform} and \code{qp} arguments.}
 
 \item{metric}{A string, either \code{"dscore"} (default) or
-\code{"logit"}, signalling the metric in which ability is estimated.}
+\code{"logit"}, signalling the metric in which ability is estimated.
+\code{daz} is not calculated for the logit scale.}
 
-\item{prior_mean}{A string specifying where the mean of the
-prior for the D-score calculation should come from. It could be
-a column name in \code{data} (when you want your own prior for every row),
-but normally this is one of the keywords \code{".dutch"}, \code{".gcdg"}
-or \code{".phase1"}.
-The default depends on the \code{key}. If \code{key == "dutch"} then
-\code{prior_mean = ".dutch"}. The choice \code{prior_mean = ".dutch"}
-calculates \code{prior_mean} from the Count model coded in
-\code{dscore:::count_mu_dutch()}).
-If \code{key} is #' \code{"gcdg"}, \code{"gsed1912"},
-\code{"gsed2206"}, \code{"lf2206"} or \code{"sf2206"} then \code{prior_mean = ".gcdg"}.
-This setting calculates an age-dependent prior mean internally according
-to function \code{dscore:::count_mu_gcdg()}.
-In other cases, \code{prior_mean = ".phase1"}
-which uses the function \code{dscore:::count_mu_phase1()} or
-\code{dscore:::count_mu_phase1_healthy()}.
-Normally, you should not touch this parameter, but feel free to use
-\code{prior_mean} to override the automatic choices.}
+\item{prior_mean}{\code{NULL} (default), a string, a numeric scalar, or
+a numeric vector with  \code{nrow(data)} elements. The default value
+\code{NULL} will consult the \code{base_population} field in \code{builtin_keys},
+and use the corresponding median of that reference as prior mean for
+the D-score. The string should refer to a column name in \code{data}
+that contains user-supplied values of the prior mean for each observation.
+A numeric scalar will be expanded to all observations. A numeric vector
+will be used as is.}
 
-\item{prior_sd}{A string specifying a column name in \code{data}
-with the standard deviation of the prior for the D-score calculation.
-If not specified, the standard deviation is taken as 5 for every row.}
+\item{prior_mean_NA}{\code{NULL} (default) or a scalar numeric, representing
+the prior mean for observations with missing ages. By default, D-scores
+with missing ages will we \code{NA}. We suggest setting
+\code{prior_mean_NA = 50} as a reasonable choice for samples between 0-3
+years. The argument is ignored if \code{prior_mean} is specified per
+observation, which gives you full control of priors for observations
+with missing ages.}
 
-\item{transform}{Vector of length 2, signalling the intercept
-and slope respectively of the linear transform that converts an
-observation in the logit scale to the the D-score scale. Only
-needed if \code{metric == "logit"}.}
+\item{prior_sd}{\code{NULL} (default), a string, a numeric scalar, or
+a numeric vector with \code{nrow(data)} elements. The default (\code{NULL})
+uses a value of 5 for all ages. The string should refer to a column
+name in \code{data} that contains user-supplied values of the prior sd
+for each observation. A numeric scalar will be expanded to all
+observations. A numeric vector will be used as is.}
+
+\item{prior_sd_NA}{\code{NULL} (default) or a scalar numeric, representing
+the prior sd for observations with missing ages. By default, D-scores
+with missing ages will we \code{NA}. We suggest setting
+\code{prior_sd_NA = 20} as a reasonable choice for samples between 0-3
+years. The argument is ignored if \code{prior_sd} is specified per
+observation, which gives you full control of priors for observations
+with missing ages.}
+
+\item{transform}{Numeric vector, length 2, containing the intercept
+and slope of the linear transform from the logit scale into the
+the D-score scale. The default (\code{NULL}) searches \code{builtin_keys}
+for intercept and slope values.}
 
 \item{qp}{Numeric vector of equally spaced quadrature points.
-This vector should span the range of all D-score values. The default
-(\code{qp = -10:100}) is suitable for age range 0-4 years.}
-
-\item{population}{A string describing the population. Currently
-supported are \code{"phase1"} (default), \code{"dutch"}, \code{"gcdg"}.}
+This vector should span the range of all D-score or logit values.
+The default (\code{NULL}) creates \code{seq(from, to, by)} searching the
+arguments from \code{builtin_keys}.}
 
 \item{dec}{A vector of two integers specifying the number of
 decimals for rounding the D-score and DAZ, respectively.
@@ -131,38 +147,57 @@ a dynamic EAP for each item. If the difficulty level (tau) of the
 next item is outside the relevance interval around EAP, the procedure
 ignore the score on the item. The default is \code{c(-Inf, +Inf)} does not
 ignore scores.}
+
+\item{algorithm}{Computational method, for backward compatibility.
+Either \code{"current"} (default) or \code{"1.8.7"} (deprecated).}
+
+\item{verbose}{Logical. Print settings.}
 }
 \value{
 The \code{dscore()} function returns a \code{data.frame} with \code{nrow(data)} rows.
-Optionally, the first block of columns can be specified by \code{prepend}
-are copied from \code{data}. The second block consists of the
+Optionally, the first block of columns can be copied to the
+result by using \code{prepend}. The second block consists of the
 following columns:\tabular{ll}{
    Name \tab Label \cr
-   \code{a} \tab Decimal age \cr
+   \code{a} \tab Decimal age (years) \cr
    \code{n} \tab Number of items with valid (0/1) data \cr
    \code{p} \tab Percentage of passed milestones \cr
-   \code{d} \tab Ability estimate, mean of posterior \cr
+   \code{d} \tab D-score, mean of posterior distribution \cr
    \code{sem} \tab Standard error of measurement, standard deviation of the posterior \cr
-   \code{daz} \tab D-score corrected for age, calculated in Z-scale \cr
+   \code{daz} \tab D-score corrected for age, calculated in Z-scale (for metric \code{"dscore"}) \cr
 }
 
 
-The \code{dscore_posterior()} function returns a data frame with
-\code{nrow(data)} rows and \code{length(qp)} plus prepended columns with the
-density at each quadrature point. A row vector representes the full
-posterior ability distribution. If no valid responses are found,
-\code{dscore_posterior()} returns the prior density. Versions prior to
-1.8.5 returned a \code{matrix} (instead of a \code{data.frame}). Code that depends on
-the result being a \code{matrix} may break and needs to be adapted.
+The D-score in column \code{d} is a linear scale, with values usually ranging
+from 0 to 100. The D-score is \code{NA} if age is missing or if age is lower
+than -1/12. It is possible to calculate D-scores for cases with missing ages
+by setting \code{prior_mean_NA} and \code{prior_sd_NA} to some reasonable value, e.g.,
+\code{prior_mean_NA = 50} and \code{prior_sd_NA = 20}, for the sample at hand.
+
+The SEM is a positive number that quantifies the uncertainty of the D-score.
+It is \code{NA} if the D-score is \code{NA}.
+
+The DAZ in column \code{daz} is a Z-score that corrects the D-score for age. It
+is \code{NA} when there are no reference values for the given age, or when
+the D-score is extremely unlikely to be valid at the given age.
+
+Advanced applications: The \code{dscore_posterior()} function returns a
+data frame with \code{nrow(data)} rows and \code{length(qp)} plus prepended columns
+with the full posterior density of the D-score at each quadrature point.
+If no valid responses are found, \code{dscore_posterior()} returns the
+prior density. Versions prior to 1.8.5 returned a \code{matrix} (instead of
+a \code{data.frame}). Code that depends on the result being a \code{matrix} may break
+and may need adaptation.
 }
 \description{
-The function \code{dscore()} function estimates the D-score,
-a numeric score that measures child development, from PASS/FAIL
-observations on milestones.
+The \code{dscore()} function estimates the following quantities: \emph{D-score},
+a numeric score that quantifies child development by one number,
+\emph{Development-for-Age Z-score (DAZ)} that corrects the D-score for age,
+\emph{standard error of measurement (SEM)} of the D-score.
 }
 \details{
-The algorithm is based on the method by Bock and Mislevy (1982). The
-method uses Bayes rule to update a prior ability into a posterior
+The scoring algorithm is based on the method by Bock and Mislevy (1982).
+The method uses Bayes rule to update a prior ability into a posterior
 ability.
 
 The item names should correspond to the \code{"gsed"} lexicon.
@@ -170,53 +205,65 @@ The item names should correspond to the \code{"gsed"} lexicon.
 A key is defined by the set of estimated item difficulties.\tabular{lrrrcl}{
    Key \tab Model \tab Quadrature \tab Instruments \tab Direct/Caregiver \tab Reference \cr
    \code{"dutch"} \tab \verb{75_0} \tab \code{-10:80} \tab 1 \tab direct \tab Van Buuren, 2014/2020 \cr
-   \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 14 \tab direct \tab Weber, 2019 \cr
-   \code{"gsed1912"} \tab \verb{807_17} \tab \code{-10:100} \tab 20 \tab mixed \tab GSED Team, 2019 \cr
-   \code{"gsed2206"} \tab \verb{818_17} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
-   \code{"gsed2208"} \tab \verb{818_6} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
-   \code{"gsed2212"} \tab \verb{818_6} \tab \code{-10:100} \tab 22 \tab mixed \tab GSED Team, 2022 \cr
-   \code{"lf2206"} \tab \verb{155_0} \tab \code{-10:100} \tab 1 \tab direct \tab GSED Team, 2022 \cr
-   \code{"sf2206"} \tab \verb{139_0} \tab \code{-10:100} \tab 1 \tab caregiver \tab GSED Team, 2022 \cr
+   \code{"gcdg"} \tab \verb{565_18} \tab \code{-10:100} \tab 13 \tab direct \tab Weber, 2019 \cr
+   \code{"gsed1912"} \tab \verb{807_17} \tab \code{-10:100} \tab 21 \tab mixed \tab GSED Team, 2019 \cr
+   \code{"293_0"} \tab \verb{293_0} \tab \code{-10:100} \tab 2 \tab mixed \tab GSED Team, 2022 \cr
+   \code{"gsed2212"} \tab \verb{818_6} \tab \code{-10:100} \tab 27 \tab mixed \tab GSED Team, 2022 \cr
+   \code{"gsed2406"} \tab \verb{818_6} \tab \code{-10:100} \tab 27 \tab mixed \tab GSED Team, 2024 \cr
+   \code{"gsed2510"} \tab \verb{281_0} \tab \code{-10:125} \tab 3 \tab mixed \tab GSED Team, 2025 \cr
 }
 
 
 As a general rule, one should only compare D-scores
 that are calculated using the same key and the same
 set of quadrature points. For calculating D-scores on new data,
-the advice is to use the default, which currently links to
-\code{"gsed2212"}.
+the advice is to use the default, which currently is \code{"gsed2510"}.
+Currently, key \code{"gsed2510"} is defined for instrument codes \code{gs1}
+(GSED SF), \code{gl1} (GSED LF) and \code{gh1} (GSED HF). If you
+have another instrument, use the key \code{"gsed2406"}.
 
 The default starting prior is a mean calculated from a so-called
 "Count model" that describes mean D-score as a function of age. The
-Count models are stored as internal functions
-\code{dscore:::count_mu_phase1()}, \code{dscore:::count_mu_gcdg()} and
-\code{dscore:::count_mu_dutch()}. The spread of the starting prior
-is 5 D-score points around this mean D-score, which corresponds to
+The Count models are implemented in the function \verb{[get_mu()]}.
+By default, the spread of the starting prior
+is 5 D-score points around the mean D-score, which corresponds to
 approximately 1.5 to 2 times the normal spread of child of a given age. The
-starting prior is thus somewhat informative for low numbers of
-valid items, and uninformative for large number of items (say >10 items).
+starting prior is informative for very short test (say <5 items), but has
+little impact on the posterior for larger tests.
 }
 \examples{
-data <- data.frame(
-  id = c("Jane", "Martin", "ID-3", "No. 4", "Five", "6",
-        NA_character_, as.character(8:10)),
-  age = rep(round(21 / 365.25, 4), 10),
-  ddifmd001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
-  ddicmm029 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
-  ddigmd053 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
-)
-items <- names(data)[3:5]
+# using all defaults and properly formatted data
+sf <- dscore::triple[, 1:141]
+ds <- dscore(sf)
+head(ds)
 
-# third item is not part of default key
-get_tau(items)
+# step-by-step example demonstrating
+# all possible response vectors for 3 items
+data <- data.frame(
+  id = c(
+    "Jane", "Martin", "ID-3", "No. 4", "Five", "6",
+    NA_character_, as.character(8:10)),
+  age = rep(round(21 / 365.25, 4), 10),
+  gs1sec001 = c(NA, NA, 0, 0, 0, 1, 0, 1, 1, 1),
+  gs1moc002 = c(NA, NA, NA, 0, 1, 0, 1, 0, 1, 1),
+  gs1sec003 = c(NA, 0, 0, 1, 0, 0, 1, 1, 0, 1)
+)
+
+# what are these items?
+items <- names(data)[3:5]
+get_labels(items)
+
+# difficulty parameter in default key
+get_tau(items, verbose = TRUE)
 
 # calculate D-score
+# the same sumscore leads to the same D-score (column d)
 dscore(data)
 
 # prepend id variable to output
 dscore(data, prepend = "id")
 
-# prepend all data
+# or prepend all data
 # dscore(data, prepend = colnames(data))
 
 # calculate full posterior
@@ -225,10 +272,26 @@ p <- dscore_posterior(data)
 # check that rows sum to 1
 rowSums(p)
 
-# plot posterior for row 7
-barplot(as.matrix(p[7, 12:29]), names = 1:18,
-  xlab = "D-score", ylab = "Density",
-  main = "Full D-score posterior for measurement in row 7")
+# plot full posterior for measurement 7
+barplot(as.matrix(p[7, 12:36]),
+  names = 1:25,
+  xlab = "D-score", ylab = "Density", col = "grey",
+  main = "Full D-score posterior for measurement in row 7",
+  sub = "D-score (EAP) = 11.58, SEM = 3.99")
+
+# plot P10, P50 and P90 of D-score references
+g <- expand.grid(age = seq(0.1, 4, 0.1), p = c(0.1, 0.5, 0.9))
+d <- zad(z = qnorm(g$p), x = g$age, verbose = TRUE)
+matplot(
+  x = matrix(g$age, ncol = 3), y = matrix(d, ncol = 3), type = "l",
+  lty = 1, col = "blue", xlab = "Age (years)", ylab = "D-score",
+  main = "D-score preliminary standards: P10, P50 and P90")
+abline(h = seq(10, 80, 10), v = seq(0, 4, 0.5), col = "gray", lty = 2)
+
+# add measurements made on very preterms, ga < 32 weeks
+# we need key = "gsed2406" because DDI is not yet in key "gsed2510"
+ds <- dscore(milestones, key = "gsed2406")
+points(x = ds$a, y = ds$d, pch = 19, col = "red")
 }
 \references{
 Bock DD, Mislevy RJ (1982).
@@ -248,9 +311,8 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 \url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}
 }
 \seealso{
-\code{\link[=get_tau]{get_tau()}},
-\code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=posterior]{posterior()}},
-\code{\link[=builtin_references]{builtin_references()}}
+\code{\link[=builtin_keys]{builtin_keys()}}, \code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=builtin_itemtable]{builtin_itemtable()}},
+\code{\link[=builtin_references]{builtin_references()}}, \code{\link[=get_tau]{get_tau()}}, \code{\link[=posterior]{posterior()}}, \code{\link[=milestones]{milestones()}}
 }
 \author{
 Stef van Buuren, Iris Eekhout, Arjan Huizing (2022)

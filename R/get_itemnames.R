@@ -31,7 +31,7 @@
 #' direct/caregiver/message, positions 7-9 is a item sequence number.
 #'
 #' @seealso [sort_itemnames()]
-#' @author Stef van Buuren 2020
+#' @author Stef van Buuren
 #' @examples
 #' itemnames <- c("aqigmc028", "grihsd219", "", "age", "mdsgmd999")
 #'
@@ -51,27 +51,55 @@
 #'
 #' # get all item numbers 70 and 73 from gm domain
 #' get_itemnames(number = c(70, 73), domain = "gm")
+#'
+#' # get item names from GSED SF (2023 version) in published order
+#' items_sf <- get_itemnames(instrument = "gs1", order = "indm")
+#'
+#' # get item names from GSED LF (2023 version) in published order
+#' items_lf <- get_itemnames(instrument = "gl1")
+#' items_lf <- items_lf[c(55:155, 1:54)]
+#'
 #' @export
-get_itemnames <- function(x, instrument = NULL, domain = NULL,
-                          mode = NULL, number = NULL, strict = FALSE,
-                          itemtable = NULL,
-                          order = "idnm") {
+get_itemnames <- function(
+  x,
+  instrument = NULL,
+  domain = NULL,
+  mode = NULL,
+  number = NULL,
+  strict = FALSE,
+  itemtable = NULL,
+  order = "idnm"
+) {
   if (is.null(itemtable)) {
     builtin <- dscore::builtin_itemtable$item
   } else {
     builtin <- itemtable$item
   }
-  if (missing(x)) x <- builtin
-  if (is.data.frame(x)) x <- names(x)
-  if (inherits(x, "lean")) x <- unique(x[["itm"]]$item)
+  if (missing(x)) {
+    x <- builtin
+  }
+  if (is.data.frame(x)) {
+    x <- names(x)
+  }
+  if (inherits(x, "lean")) {
+    x <- unique(x[["itm"]]$item)
+  }
   if (strict) {
     z <- builtin[builtin %in% x]
   } else {
     z <- x[grep("^......\\d\\d\\d$", x)]
   }
-  if (!is.null(instrument)) z <- z[substr(z, 1, 3) %in% instrument]
-  if (!is.null(domain)) z <- z[substr(z, 4, 5) %in% domain]
-  if (!is.null(mode)) z <- z[substr(z, 6, 6) %in% mode]
-  if (!is.null(number)) z <- z[as.numeric(substr(z, 7, 9)) %in% number]
+  if (!is.null(instrument)) {
+    z <- z[substr(z, 1, 3) %in% instrument]
+  }
+  if (!is.null(domain)) {
+    z <- z[substr(z, 4, 5) %in% domain]
+  }
+  if (!is.null(mode)) {
+    z <- z[substr(z, 6, 6) %in% mode]
+  }
+  if (!is.null(number)) {
+    z <- z[as.numeric(substr(z, 7, 9)) %in% number]
+  }
   sort_itemnames(z, order = order)
 }

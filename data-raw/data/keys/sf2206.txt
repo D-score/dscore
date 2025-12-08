@@ -86,8 +86,8 @@ sf2206	gpamoc084	59.22
 sf2206	gpasec085	55.9
 sf2206	gpasec086	53.68
 sf2206	gpaxxc087	59.75
-sf2206	gpaclc088	56.7
-sf2206	gpasec089	64.74
+sf2206	gpasec088	64.74
+sf2206	gpaclc089	56.7
 sf2206	gpacmc090	62.08
 sf2206	gpaclc091	62.67
 sf2206	gpaxxc092	59.37

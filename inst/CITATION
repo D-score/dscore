@@ -1,12 +1,66 @@
-citHeader("To cite dscore in publications use:")
+citHeader("To cite the dscore package in publications, please use:")
 
-citEntry(
-  entry    = "Manual",
-  title    = "D-score for Child Development",
-  author   = as.person("S. van Buuren [aut], I. Eekhout [aut], A. Huizing [aut]"),
-  year     = "2020",
-  note     = "R package version 1.0.0",
-  url      = "https://github.com/d-score/dscore",
-  key      = "dscore-package",
-  textVersion =  "Van Buuren S, Eekhout I, Huizing A (2020). D-score for Child Development. The dscore R package, version 1.0.0."
+bibentry(
+  bibtype = "Manual",
+  title = "dscore: D-score for Child Development",
+  author = c(
+    person(
+      "Stef",
+      "van Buuren",
+      role = c("cre", "aut"),
+      comment = "ORCID: 0000-0003-1098-2119"
+    ),
+    person(
+      "Iris",
+      "Eekhout",
+      role = "aut",
+      comment = "ORCID: 0000-0002-0030-1458"
+    ),
+    person(
+      "Arjan",
+      "Huizing",
+      role = "aut",
+      comment = "ORCID: 0000-0002-2385-6800"
+    ),
+    person(
+      "Jonathan",
+      "Seiden",
+      role = "aut",
+      comment = "ORCID: 0000-0002-0318-8016"
+    )
+  ),
+  year = "2025",
+  note = "R package version 2.0.0",
+  url = "https://CRAN.R-project.org/package=dscore",
+  key = "dscore-package"
+)
+
+bibentry(
+  bibtype = "Article",
+  title = "Enhancing comparability in early child development assessment with the D-score",
+  author = c(
+    person("Stef", "van Buuren"),
+    person("Iris", "Eekhout"),
+    person("Gareth", "McCray"),
+    person("Gillian A.", "Lancaster"),
+    person("Matthew R.", "Waldman"),
+    person("Dana C.", "McCoy"),
+    person("Melissa", "Gladstone"),
+    person("Vanessa", "Cavallera"),
+    person("Tarun", "Dua"),
+    person("Maureen M.", "Black"),
+    person("GSED Team", role = "aut")
+  ),
+  journal = "International Journal of Behavioral Development",
+  year = "2025",
+  volume = "49",
+  number = "4",
+  pages = "348-364",
+  doi = "10.1177/01650254241294033",
+  url = "https://doi.org/10.1177/01650254241294033",
+  key = "vanBuuren2025-dscore"
+)
+
+citFooter(
+  "For the underlying methodology, please cite van Buuren et al. (2025), International Journal of Behavioral Development, 49(4), 348-364."
 )

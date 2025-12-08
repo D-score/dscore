@@ -8,9 +8,11 @@ get_age_equivalent(
   items,
   pct = c(10, 50, 90),
   key = NULL,
-  itembank = dscore::builtin_itembank,
   population = NULL,
-  xunit = c("decimal", "days", "months")
+  transform = NULL,
+  itembank = dscore::builtin_itembank,
+  xunit = c("decimal", "days", "months"),
+  verbose = FALSE
 )
 }
 \arguments{
@@ -23,42 +25,47 @@ that have a difficulty parameter under the specified \code{key}.}
 \item{pct}{Numeric vector with requested percentiles (0-100). The
 default is \code{pct = c(10, 50, 90)}.}
 
-\item{key}{A string that selects a subset in the itembank that
-makes up the key, the set of difficulty
-estimates from a fitted Rasch model.
-The built-in keys are:  \code{"gsed2212"} (default), \code{"gsed2208"} (deprecated),
-\code{"gsed2206"} (deprecated), \code{"gsed1912"}, \code{"lf2206"}, \code{"sf2206"}, \code{"gcdg"},
-and \code{"dutch"}. Since version 1.5.0, the \code{key = "gsed"}
-selects the latest key starting with the string "gsed".
-Use \code{key = ""} to use all item names,
-which should only be done if there are no duplicate itemnames
-in the itembank.}
+\item{key}{String. They key identifies 1) the difficulty estimates
+pertaining to a particular Rasch model, and 2) the prior mean and standard
+deviation of the prior distribution for calculating the D-score.
+The default key \code{NULL} sets \code{key = "gsed2406"}.
+View \code{builtin_keys} for an overview of the available keys.}
 
-\item{itembank}{A \code{data.frame} with columns
-\code{key}, \code{item}, \code{tau}, \code{instrument}, \code{domain},
-\code{mode}, \code{number} and \code{label}. Only columns \code{item}
-and \code{tau} are required.
-The function uses \code{dscore::builtin_itembank} by
-default.}
+\item{population}{String. The name of the reference population to calculate
+DAZ.
+Use \code{with(builtin_references, table(key, population))} to see which
+built-in references are available for \code{key - population} combinations.
+If not specified, the function set the default population as
+\code{builtin_keys$base_population[key == builtin_keys$key]}.}
 
-\item{population}{A string describing the population. Currently
-supported are \code{"phase1"} (default), \code{"dutch"}, \code{"gcdg"}.}
+\item{transform}{Numeric vector, length 2, containing the intercept
+and slope of the linear transform from the logit scale into the
+the D-score scale. The default (\code{NULL}) searches \code{builtin_keys}
+for intercept and slope values.}
+
+\item{itembank}{A \code{data.frame} with at least three columns named
+\code{key}, \code{item} and \code{tau}. By default, the function uses
+\code{dscore::builtin_itembank}. If you specify your own \code{itembank},
+then you should also provide the relevant \code{transform} and \code{qp} arguments.}
 
 \item{xunit}{A string specifying the unit in which age is measured
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
-The default (\code{"decimal"}) means decimal age in years.}
+The default \code{"decimal"} corresponds to decimal age in years.}
+
+\item{verbose}{Logical. Print settings.}
 }
 \value{
-Tibble with four columns: \code{item}, \code{d} (\emph{D}-score),
+\code{data.frame} with four columns: \code{item}, \code{d} (D-score),
 \code{pct} (percentile), and \code{a} (age-equivalent, in \code{xunit} units).
 }
 \description{
 This function calculates the ages at which a certain percent
 in the reference population passes the items.
 }
-\details{
+\note{
 The function internally defines a scale factor given the key.
 }
 \examples{
-get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"))
+get_age_equivalent(c("gpagmc018", "gtogmd026", "ddicmm050"),
+  key = "gsed2406", population = "dutch", verbose = TRUE)
 }

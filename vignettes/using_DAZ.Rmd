@@ -1,0 +1,134 @@
+---
+title: "Understanding and using DAZ"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Understanding and using DAZ}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## What is DAZ?
+
+Development-for-Age Z-scores, more commonly known as DAZ scores, are a way to control for the "age effect" when analyzing D-scores. Children develop naturally over time and so comparisons on the D-score scale are difficult when there is variation in age. Older children will almost always have higher D-scores than younger children. This can create analytical difficulties when attempting to understand changes over time or compare groups of children that contain multiple ages.
+
+DAZ is the conceptually very similar to anthropometric outcomes such as Height-for-Age Z-scores (HAZ) and Weight-for-Age Z-scores (WAZ), and Weight-for-Height Z-scores (WHZ) which are commonly used in public health research (https://www.who.int/tools/child-growth-standards). 
+
+```{r setup, include = FALSE}
+library(dscore)
+```
+
+
+## How is DAZ calculated?
+
+DAZ is estimated *after* calculating the D-scores for each child. The D-scores per child are compared to a **reference sample**. The DAZ is reported in standard deviation units and represents how close the scored child's D-score is to the D-scores of **same-aged** children in the reference sample. DAZ scores are reported in standard Z-score units, with a mean of 0 and a standard deviation of 1. This means that:
+
+
+* If the D-score of the scored child is *higher* than those in the reference, then the DAZ will be *positive*. 
+* If the D-score is *lower* than same-aged children in the reference sample, then the DAZ will be *negative*
+* If the D-score of the child is *the same* as the average of the reference sample, then the DAZ will be 0.
+
+## Who is in the reference population used in the D-score package?
+
+Before version 1.9.0, DAZ scores were calculated using the entire Phase I validation sample of GSED data, consisting of 4,374 children from Bangladesh, Pakistan, and Tanzania. This data included children that were both very advantaged and those with significant constraints on their development. In `dscore 1.9.0`, the reference group has been refined to a sub-sample of 2,295 children with *minimal* constraints on their early development.
+
+The default reference group includes children who:
+
+* were of normal birth weight (above 2500 g)
+* were born term (between 37 and 42 weeks)
+* were not undernourished (according to weight-for-age, height-for-age, or weight-for-height Z-scores)
+* had no known severe birth defects or chronic health problems
+* had a mother who had completed at least a secondary level of education
+
+In the future, the DAZ reference group will be updated with a larger and more representative sample both through the inclusion of additional countries in validation studies as well as a dedicated Norms & Standards study (https://bmjopen.bmj.com/content/13/1/e062562).
+
+## Can I use a benchmark with DAZ to monitor the proportion of children that are developmentally on track?
+
+Many anthropometric measures use a -2 SD benchmark to describe the percentage of children with low height for age (stunting) weight for age (underweight) or weight for height (wasting). DAZ scores *can* be used with a benchmark for monitoring purposes, but this should be done with extreme caution. This is because, unlike HAZ, WAZ, and WHZ, DAZ scores are calculated using a relatively small and globally unrepresentative reference sample. 
+
+Further guidance and a more concrete benchmark will be analyzed after the completion of an ongoing Norms & Standards study. For now, if a benchmark for use is required to determine the proportion of children that are developmentally on track, we recommend using a **transitional benchmark** -1.5 SD. This is slightly higher than -2 SD but was determined to give reasonable alignment with inferences from the ECDI2030 (https://doi.org/10.1016/j.ecresq.2023.11.004). 
+
+## Examples of DAZ and interpretation
+
+Below we show some illustrative examples of what DAZ can look like in practice and how to interpret results. 
+
+```{r daz}
+# Create a dataset of five 13-month old children scoring 5 GSED items 
+dm <- matrix(
+  c(
+    13, 0, 0, 0, 0, 0,
+    13, 1, 0, 0, 0, 0,
+    13, 1, 1, 1, 0, 0,
+    13, 1, 1, 1, 1, 0,
+    13, 1, 1, 1, 1, 1
+  ), 
+  ncol = 6, byrow = TRUE)
+colnames(dm) <- c("age", "gs1moc060", "gs1moc061", "gs1lgc062", "gs1sec063", "gs1moc064")
+
+# Score the data using dscore function
+output <- dscore(dm, xunit = "months")
+
+# Add centile rankings to the output
+output$centile <- round(100 * pnorm(output$daz), 1)
+
+# View the scored data
+head(output)
+
+```
+
+In the above example, we can see that for 13-month-old children, failing each of these 5 milestones will result in a D-score estimate of 41.16. The DAZ for this first child is calculated as -2.688, meaning that the D-score of the child is -2.688 standard deviations below the mean of 13-month-old children in the reference group. Converting this to percentiles, we see that this child would score well below the first percentile. 
+
+In contrast, the fourth child in the example (who passed 4/5 milestones) has a DAZ estimate of -0.043. This child is very close (just below) the average score of 13-month-old children in the reference group. And the final child in the example, who passed all 5 milestones, has an estimated DAZ of 0.998, nearly a full standard deviation above the mean and higher than 84 percent of same-aged children in the reference group. 
+
+## `NA` values for DAZ
+
+When scoring DAZ, `dscore` can return `NA` values. Let's take a look at why this happens.
+
+`NA` values occur when a child's age is missing or out of range. D-scores can be generated even with missing age values, but DAZ is not possible to be calculated because the calculation of DAZ compares the child's D-score with D-scores of same-aged children. We can see this happen with the below data, where we try to score the same responses patterns with children aged `NA`, 12, 18, 48, and -1 months old. 
+
+```{r NA}
+# Create a dataset of five children of different ages with the same scores
+dm <- matrix(
+  c(
+    NA, 1, 1, 1, 1, 1,
+    12, 1, 1, 1, 1, 1,
+    18, 1, 1, 1, 1, 1,
+    48, 1, 1, 1, 1, 1,
+    -1, 1, 1, 1, 1, 1
+  ), 
+  ncol = 6, byrow = TRUE)
+colnames(dm) <- c("age", "gs1moc060", "gs1moc061", "gs1lgc062", "gs1sec063", "gs1moc064")
+
+dscore(dm, xunit = "months")
+
+```
+
+The children with ages `NA`, 48, and -0.0833 have DAZ that are returned as `NA`. DAZ must be relative to age and the reference group is for children 0-36 months old. When scoring data, ensure that ages have been accurately recorded. 
+
+Children aged 12 and 18 months have no problem with the estimation of the D-scores and DAZ. There are two additional notes:
+
+* While all children have an identical response pattern, the estimate of the D-score differs. This is because there is an age prior that is used in calculating the D-score that assumes children of higher ages have higher D-scores. With just 5 items responded to, the prior has a big influence on the estimated D-score. 
+* While the 18-month-old child has a higher D-score estimate than the 12-month old child, that DAZ estimate is lower. This is because DAZ is calculated **relative to the reference group**. For the 12-month-old child, 53.41 is about 1.283 SD higher than the mean of D-scores for 12-month-old children in the reference group. For the 18-month-old child, 59.95 is 0.300 higher than 18-month-old children in the reference group.
+
+While rare, it is also possible that the `dscore()` functions returns an `NA` value for DAZ in extreme cases, e.g. when a three-month-old child is marked as many advanced age items correct such as those related to jumping, talking, and reading. We can illustrate this below:
+
+```{r inf}
+### Get a list of all GSED item names 
+gsed_names <- get_itemnames(instrument = "gs1")
+
+### Create a sample dataframe where all responses are 1
+df <- as.data.frame(setNames(as.list(rep(1, length(gsed_names))), gsed_names)) 
+
+### Add an age (in months) of 3
+df$age <- 3
+
+dscore(df, xunit = "months")
+```
+
+If DAZ is estimated `NA`, age may not be recorded properly. Recheck the data of any DAZ estimate that is estimated as `NA`. 

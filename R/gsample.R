@@ -16,6 +16,12 @@
 #'
 #' There are 138 `gpa` items (item `gpamoc008` (clench fists) removed) from GSED SF and
 #' and 155 `gto` items from GSED LF.
+#'
+#' @details
+#' On July 15, 2025, the item `gpaclc088` was renamed to `gpaclc089`
+#' (Can you child say five or more separate words) and `gpasec089` was renamed
+#' to `gpasec088` (Is your child able to pee and poo).
+#'
 #' @examples
 #' head(gsample)
 #' @seealso [dscore()]
@@ -38,6 +44,12 @@
 #' `...`      | and so on..
 #'
 #' Sample data for 139 `gpa` items from GSED SF
+#'
+#' #' @details
+#' On July 15, 2025, the item `gpaclc088` was renamed to `gpaclc089`
+#' (Can you child say five or more separate words) and `gpasec089` was renamed
+#' to `gpasec088` (Is your child able to pee and poo).
+#'
 #' @examples
 #' head(sample_sf)
 #' @seealso [dscore()]
@@ -71,7 +83,7 @@
 #' 10 random children from the GSED Phase 1 data.
 #'
 #' @docType data
-#' @format A `data.frame` with 10 rows and 57 variables:
+#' @format A `data.frame` with 10 rows and 50 variables:
 #'
 #' Name       | Label
 #' ---------- | ---------
@@ -81,7 +93,10 @@
 #' `hf002`    | Integer, ...: 1 = yes, 0 = no, NA = not administered
 #' `...`      | and so on..
 #'
-#' Sample data for 55 `gpa` items forming GSED HF V1
+#' Sample data for 48 `gpa` items forming GSED HF V1
+#' @note
+#' The HF item set was revised on October 20, 2025 to contain 48 items.
+#' This dataset reflects that change.
 #' @examples
 #' head(sample_hf)
 #' @seealso [dscore()]

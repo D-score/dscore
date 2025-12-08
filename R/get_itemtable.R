@@ -19,33 +19,41 @@
 #' head(get_itemtable(), 3)
 #' get_itemtable(LETTERS[1:3], "")
 #' @export
-get_itemtable <- function(items = NULL, itemtable = NULL,
-                          decompose = FALSE) {
-
-  if (is.null(itemtable)) itemtable <- dscore::builtin_itemtable
-
-  # itemtable == "" is a special case for creating new items
-  else if (is.character(itemtable)) {
-    if (itemtable == "")
-      if (length(items))
-        itemtable <- data.frame(item = items,
-                                equate = NA_character_,
-                                label = paste("Label for", items),
-                                stringsAsFactors = FALSE)
-      else
-        itemtable <- data.frame(item = "",
-                                equate = NA_character_,
-                                label = paste("Label for", items),
-                                stringsAsFactors = FALSE)
+get_itemtable <- function(items = NULL, itemtable = NULL, decompose = FALSE) {
+  if (is.null(itemtable)) {
+    # itemtable == "" is a special case for creating new items
+    itemtable <- dscore::builtin_itemtable
+  } else if (is.character(itemtable)) {
+    if (itemtable == "") {
+      if (length(items)) {
+        itemtable <- data.frame(
+          item = items,
+          equate = NA_character_,
+          label = paste("Label for", items),
+          stringsAsFactors = FALSE
+        )
+      } else {
+        itemtable <- data.frame(
+          item = "",
+          equate = NA_character_,
+          label = paste("Label for", items),
+          stringsAsFactors = FALSE
+        )
+      }
+    }
   }
 
-  if (length(items))
+  if (length(items)) {
     itemtable <- filter(itemtable, .data$item %in% items)
+  }
   itemtable <- select(itemtable, all_of(c("item", "equate", "label")))
 
-  if (decompose)
-    itemtable <- bind_cols(itemtable,
-                           decompose_itemnames(itemtable$item))
+  if (decompose) {
+    itemtable <- bind_cols(
+      itemtable,
+      decompose_itemnames(itemtable$item)
+    )
+  }
 
   itemtable
 }

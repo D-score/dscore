@@ -1,37 +1,42 @@
-#' Built-in itembank
+#' Collection of items fitting the Rasch model
 #'
-#' A data frame with administrative information per item. Includes
-#' only items that are part of a Rasch model.
-#' See [dscore::builtin_itemtable] for an overview of all currently
-#' defined items.
+#' A data frame with administrative information per item with difficulty
+#' estimates (`tau`) from the Rasch model. The item bank provides the basic
+#' information to calculate D-scores. The items in the item bank
+#' are a subset of all items as collected in [dscore::builtin_itemtable].
 #'
-#' In general, one can only compare D-score calculated with the same
-#' key. The current recommendation for new projects is to choose
-#' key `gsed2212`.
+#' The difficulty estimates were estimated by a Rasch model. The `key`
+#' indicates the specific Rasch model used to estimate the difficulty.
+#' Strictly speaking, one can only compare D-score calculated from the
+#' same `key`.
 #'
 #' @docType data
 #' @format A `data.frame` with variables:
 #'
-#' | Name | Label |
-#' | --- | --------- |
-#' | `key` | String indicating a specific Rasch model (the key) |
-#' | `item` | Item name, gsed lexicon |
-#' | `tau`  | Difficulty estimate |
-#' | `label` | Label (English) |
-#' | `instrument` | Instrument code |
-#' | `domain`     | Domain code |
-#' | `mode`       | Administration mode |
-#' | `number`     | Item number |
+#' | Name           | Label                                    |
+#' | -------------- | ---------------------------------------- |
+#' | `key`          | String indicating a specific Rasch model |
+#' | `item`         | Item name, gsed lexicon                  |
+#' | `tau`          | Difficulty estimate                      |
+#' | `label`        | Label (English)                          |
+#' | `instrument`   | Instrument code                          |
+#' | `domain`       | Domain code                              |
+#' | `mode`         | Administration mode                      |
+#' | `number`       | Item number                              |
 #'
 #' @note
-#' Last update:
-#'  - Dec 01, 2022 - Overwrite labels of gto by correct item order.
-#'  - Dec 05, 2022 - Adds key `gsed2212`, adding instruments `gl1` and `gs1`, and
-#'    defining correct order for `gto`
-#'  - Jan 05, 2023 - Adds instrument `gh1` to key `gsed2212`
+#' Updates:
 #'
+#' - Dec 01, 2022 - Overwrite labels of gto by correct item order.
+#' - Dec 05, 2022 - Adds key `gsed2212`, adding instruments `gl1` and `gs1`, and
+#'   defining correct order for `gto`
+#' - Jan 05, 2023 - Adds instrument `gh1` to key `gsed2212`
+#' - Oct 10, 2025 - Adds key `gsed2510` for instruments `gl1` and `gs1` (281 items)
+#' - Oct 21, 2025 - Updates keys `gsed2212`, `gsed2406` for `gh1` (55 -> 48 items)
+#' - Oct 21, 2025 - Adds `gh1` extension to key `gsed2510` (48 items)
+#' - Oct 23, 2025 - Adds `by3` extension to key `gsed2510` (242 items)
 #' @examples
-#' head(builtin_itembank)
-#' @seealso [dscore()], [get_tau()],
-#' [builtin_itemtable()]
+#' # count number of items per instrument in each key
+#' table(builtin_itembank$instrument, builtin_itembank$key)
+#' @seealso [dscore()], [get_tau()], [builtin_itemtable()]
 "builtin_itembank"

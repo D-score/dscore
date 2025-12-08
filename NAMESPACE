@@ -2,6 +2,7 @@
 
 export(count_mu)
 export(daz)
+export(ddomain)
 export(decompose_itemnames)
 export(dscore)
 export(dscore_posterior)

@@ -1,10 +1,10 @@
 #' Domain specific D-score
 #'
-#' @param domainset String. The name of the set of domains to use. See
+#' @param set String. The name of the set of domains to use. See
 #' `with(builtin_domaintable, table(set, domain))` for the domain names in each
 #' set.
 #' @param domain character vector of the name of the domain(s) for which to
-#'   compute the domain score. Per default all domains in the `domainset` are
+#'   compute the domain score. Per default all domains in the `set` are
 #'   used .
 #' @param vote_weight minimum proportion of votes (weight) for a domain that an
 #' item needs to have to count for that domain.
@@ -44,11 +44,11 @@
 #' colnames(sample) <- rename_vector(colnames(sample), lexin = "gsed2", lexout = "gsed3")
 #' sample <- sample |> select(subjid, agedays, starts_with("gs1")) |>
 #'  mutate(age = agedays / 365.25)
-#' ddomain(sample, domainset = "GFCLS")
-#' ddomain(sample, domainset = "GFCLS", domain = c("finemotor", "grossmotor"))
-#' ddomain(sample, domainset = "GFCLS", domain = c("language"))
+#' ddomain(sample, set = "GFCLS")
+#' ddomain(sample, set = "GFCLS", domain = c("finemotor", "grossmotor"))
+#' ddomain(sample, set = "GFCLS", domain = c("language"))
 ddomain <- function(data,
-                     domainset,
+                     set,
                      domain = NULL,
                      vote_weight = NULL,
                      items = names(data),
@@ -63,7 +63,7 @@ ddomain <- function(data,
    data <- as.data.frame(data)
 
   #domain specific code
-  domaintable <- builtin_domaintable |> filter(set == domainset)
+  domaintable <- builtin_domaintable |> filter(set == set)
 
   if(is.null(vote_weight)) {vote_weight <- 0}
 
@@ -73,7 +73,7 @@ ddomain <- function(data,
 
   domain_select = intersect(domain, domaintable$domain)
 
-  if(length(domain_select) == 0){stop("domain names are not present in the domainset")}
+  if(length(domain_select) == 0){stop("domain names are not present in the set")}
 
   ddomain_list <- list()
   for(dom in domain_select){

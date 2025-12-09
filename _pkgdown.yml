@@ -34,6 +34,7 @@ reference:
       2) the itembank, 3) the prior and 4) the reference.
     contents:
       - dscore
+      - ddomain
       - calculate_posterior
       - get_tau
   - title: "Working with references"
@@ -60,6 +61,7 @@ reference:
     desc: "Built-in datasets"
     contents:
       - builtin_keys
+      - builtin_domaintable
       - builtin_itembank
       - builtin_itemtable
       - builtin_references

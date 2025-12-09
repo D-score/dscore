@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
       </span>
     </div>
 
@@ -228,7 +228,7 @@ function of the proportion of items passed by the child.</p>
 <span></span>
 <span><span class="co"># Add a smoothed line to visualize the trend</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lowess.html" class="external-link">lowess</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">def</span><span class="op">$</span><span class="va">p</span>, y <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">d</span> <span class="op">-</span> <span class="va">def</span><span class="op">$</span><span class="va">d</span>, f <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"grey"</span>, lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="custom_priors_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<p><img src="custom_priors_files/figure-html/unnamed-chunk-4-1.png" class="r-plt" width="672"></p>
 <p>The plot illustrates that the upward bias is more pronounced when
 less informative items are administered, i.e., when the proportion of
 items passed is either very low (not shown) or very high. The bias is
@@ -283,7 +283,7 @@ for child 111:</p>
 <span>  main <span class="op">=</span> <span class="st">"Standard (black) and Informed (red) DAZ-trajectory for child 111"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">a</span>, y <span class="op">=</span> <span class="va">adj1</span><span class="op">$</span><span class="va">daz</span>, col <span class="op">=</span> <span class="st">"red"</span>, type <span class="op">=</span> <span class="st">"b"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, pch <span class="op">=</span> <span class="fl">16</span><span class="op">)</span></span></code></pre></div>
-<p><img src="custom_priors_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
+<p><img src="custom_priors_files/figure-html/unnamed-chunk-7-1.png" class="r-plt" width="672"></p>
 <p>This plot illustrates the DAZ trajectory using standard estimates (in
 black) and the adjusted estimates (in red) for child 111, highlighting
 the impact of incorporating more informative prior knowledge into the
@@ -376,7 +376,7 @@ handling of missing ages on a case-by-case basis.</p>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer>

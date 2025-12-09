@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.6
+
+-   Adds `ddomain()` function and `builtin_domains` internal data to facilitate domain-level scoring
+
 # dscore 2.0.5
 
 -   Adds support BSID-III (`by3`) to key `gsed2510` (adds 242 items)

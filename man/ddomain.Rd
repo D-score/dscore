@@ -6,7 +6,7 @@
 \usage{
 ddomain(
   data,
-  domainset,
+  set,
   domain = NULL,
   vote_weight = NULL,
   items = names(data),
@@ -14,8 +14,19 @@ ddomain(
   population = NULL,
   xname = "age",
   xunit = c("decimal", "days", "months"),
+  prepend = NULL,
   itembank = NULL,
-  ...
+  metric = c("dscore", "logit"),
+  prior_mean = NULL,
+  prior_mean_NA = NULL,
+  prior_sd = NULL,
+  prior_sd_NA = NULL,
+  transform = NULL,
+  qp = NULL,
+  dec = c(2L, 3L),
+  relevance = c(-Inf, Inf),
+  algorithm = c("current", "1.8.7"),
+  verbose = FALSE
 )
 }
 \arguments{
@@ -25,12 +36,12 @@ milestones administered at a given age. The function calculates
 a D-score for each row. Different rows can correspond to different
 children or ages.}
 
-\item{domainset}{String. The name of the set of domains to use. See
+\item{set}{String. The name of the set of domains to use. See
 \code{with(builtin_domaintable, table(set, domain))} for the domain names in each
 set.}
 
 \item{domain}{character vector of the name of the domain(s) for which to
-compute the domain score. Per default all domains in the \code{domainset} are
+compute the domain score. Per default all domains in the \code{set} are
 used .}
 
 \item{vote_weight}{minimum proportion of votes (weight) for a domain that an
@@ -62,10 +73,76 @@ If not specified, the function set the default population as
 (either \code{"decimal"}, \code{"days"} or \code{"months"}).
 The default \code{"decimal"} corresponds to decimal age in years.}
 
+\item{prepend}{Character vector with column names in \code{data} that will
+be prepended to the returned data frame. This is useful for copying
+columns from data into the result, e.g., for matching.}
+
 \item{itembank}{A \code{data.frame} with at least three columns named
 \code{key}, \code{item} and \code{tau}. By default, the function uses
 \code{dscore::builtin_itembank}. If you specify your own \code{itembank},
 then you should also provide the relevant \code{transform} and \code{qp} arguments.}
+
+\item{metric}{A string, either \code{"dscore"} (default) or
+\code{"logit"}, signalling the metric in which ability is estimated.
+\code{daz} is not calculated for the logit scale.}
+
+\item{prior_mean}{\code{NULL} (default), a string, a numeric scalar, or
+a numeric vector with  \code{nrow(data)} elements. The default value
+\code{NULL} will consult the \code{base_population} field in \code{builtin_keys},
+and use the corresponding median of that reference as prior mean for
+the D-score. The string should refer to a column name in \code{data}
+that contains user-supplied values of the prior mean for each observation.
+A numeric scalar will be expanded to all observations. A numeric vector
+will be used as is.}
+
+\item{prior_mean_NA}{\code{NULL} (default) or a scalar numeric, representing
+the prior mean for observations with missing ages. By default, D-scores
+with missing ages will we \code{NA}. We suggest setting
+\code{prior_mean_NA = 50} as a reasonable choice for samples between 0-3
+years. The argument is ignored if \code{prior_mean} is specified per
+observation, which gives you full control of priors for observations
+with missing ages.}
+
+\item{prior_sd}{\code{NULL} (default), a string, a numeric scalar, or
+a numeric vector with \code{nrow(data)} elements. The default (\code{NULL})
+uses a value of 5 for all ages. The string should refer to a column
+name in \code{data} that contains user-supplied values of the prior sd
+for each observation. A numeric scalar will be expanded to all
+observations. A numeric vector will be used as is.}
+
+\item{prior_sd_NA}{\code{NULL} (default) or a scalar numeric, representing
+the prior sd for observations with missing ages. By default, D-scores
+with missing ages will we \code{NA}. We suggest setting
+\code{prior_sd_NA = 20} as a reasonable choice for samples between 0-3
+years. The argument is ignored if \code{prior_sd} is specified per
+observation, which gives you full control of priors for observations
+with missing ages.}
+
+\item{transform}{Numeric vector, length 2, containing the intercept
+and slope of the linear transform from the logit scale into the
+the D-score scale. The default (\code{NULL}) searches \code{builtin_keys}
+for intercept and slope values.}
+
+\item{qp}{Numeric vector of equally spaced quadrature points.
+This vector should span the range of all D-score or logit values.
+The default (\code{NULL}) creates \code{seq(from, to, by)} searching the
+arguments from \code{builtin_keys}.}
+
+\item{dec}{A vector of two integers specifying the number of
+decimals for rounding the D-score and DAZ, respectively.
+The default is \code{dec = c(2L, 3L)}.}
+
+\item{relevance}{A numeric vector of length with the lower and
+upper bounds of the relevance interval. The procedure calculates
+a dynamic EAP for each item. If the difficulty level (tau) of the
+next item is outside the relevance interval around EAP, the procedure
+ignore the score on the item. The default is \code{c(-Inf, +Inf)} does not
+ignore scores.}
+
+\item{algorithm}{Computational method, for backward compatibility.
+Either \code{"current"} (default) or \code{"1.8.7"} (deprecated).}
+
+\item{verbose}{Logical. Print settings.}
 }
 \value{
 The \code{ddomain()} function returns a list of \code{data.frame} objects with
@@ -99,12 +176,12 @@ Domain specific D-score
 }
 \examples{
 sample <- dscore::gsample
-colnames(sample) <- rename_vector(colnames(sample), lexin = "gsed2", lexout = "gsed3")
-sample <- sample |> select(subjid, agedays, starts_with("gs1")) |>
- mutate(age = agedays / 365.25)
-ddomain(sample, domainset = "partou")
-ddomain(sample, domainset = "partou", domain = c("finemotor", "grossmotor"))
-ddomain(sample, domainset = "partou", domain = c("language"))
+colnames(sample) <- dscore::rename_vector(colnames(sample), lexin = "gsed2", lexout = "gsed3")
+sample <- sample |> dplyr::select(subjid, agedays, starts_with("gs1")) |>
+ dplyr::mutate(age = agedays / 365.25)
+ddomain(sample, set = "GFCLS")
+ddomain(sample, set = "GFCLS", domain = c("finemotor", "grossmotor"))
+ddomain(sample, set = "GFCLS", domain = c("language"))
 }
 \seealso{
 \code{\link[=dscore]{dscore()}} \code{\link[=builtin_domaintable]{builtin_domaintable()}}

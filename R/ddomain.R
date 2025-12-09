@@ -41,9 +41,9 @@
 #' @export
 #' @examples
 #' sample <- dscore::gsample
-#' colnames(sample) <- rename_vector(colnames(sample), lexin = "gsed2", lexout = "gsed3")
-#' sample <- sample |> select(subjid, agedays, starts_with("gs1")) |>
-#'  mutate(age = agedays / 365.25)
+#' colnames(sample) <- dscore::rename_vector(colnames(sample), lexin = "gsed2", lexout = "gsed3")
+#' sample <- sample |> dplyr::select(subjid, agedays, starts_with("gs1")) |>
+#'  dplyr::mutate(age = agedays / 365.25)
 #' ddomain(sample, set = "GFCLS")
 #' ddomain(sample, set = "GFCLS", domain = c("finemotor", "grossmotor"))
 #' ddomain(sample, set = "GFCLS", domain = c("language"))
@@ -56,14 +56,29 @@ ddomain <- function(data,
                      population = NULL,
                      xname = "age",
                      xunit = c("decimal", "days", "months"),
-                     itembank = NULL,
-                     ...){
+                    prepend = NULL,
+                    itembank = NULL,
+                    metric = c("dscore", "logit"),
+                    prior_mean = NULL,
+                    prior_mean_NA = NULL,
+                    prior_sd = NULL,
+                    prior_sd_NA = NULL,
+                    transform = NULL,
+                    qp = NULL,
+                    dec = c(2L, 3L),
+                    relevance = c(-Inf, Inf),
+                    algorithm = c("current", "1.8.7"),
+                    verbose = FALSE){
 
   xunit <- match.arg(xunit)
-   data <- as.data.frame(data)
+  metric <- match.arg(metric)
+  algorithm <- match.arg(algorithm)
+  data <- as.data.frame(data)
+
 
   #domain specific code
-  domaintable <- builtin_domaintable |> filter(set == set)
+  domaintable <- dscore::builtin_domaintable |>
+    filter(.data$set == set)
 
   if(is.null(vote_weight)) {vote_weight <- 0}
 
@@ -77,20 +92,35 @@ ddomain <- function(data,
 
   ddomain_list <- list()
   for(dom in domain_select){
-    dom_items <- domaintable |> filter(domain == dom & weight > vote_weight) |> pull(item) |> as.vector()
+    dom_items <- domaintable |>
+      filter(.data$domain == dom & .data$weight > vote_weight) |>
+      pull(.data$item) |>
+      as.vector()
     dom_items <- intersect(dom_items, items)
 
     ddomain_list[[dom]] <-
-    dscore(
-      data = data,
-      items = dom_items,
-      key = key,
-      population = population,
-      xname = xname,
-      xunit = xunit,
-      itembank = itembank,
-      ...
-    )
+      calc_dscore(
+        data = data,
+        items = dom_items,
+        key = key,
+        population = population,
+        xname = xname,
+        xunit = xunit,
+        prepend = prepend,
+        itembank = itembank,
+        metric = metric,
+        prior_mean = prior_mean,
+        prior_mean_NA = prior_mean_NA,
+        prior_sd = prior_sd,
+        prior_sd_NA = prior_sd_NA,
+        transform = transform,
+        qp = qp,
+        dec = dec,
+        posterior = FALSE,
+        relevance = relevance,
+        algorithm = algorithm,
+        verbose = verbose
+      )
 
   }
 

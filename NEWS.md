@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dcsore 2.0.7
+
+-   Renames the D-score reference `"who_descriptive"` to `"descriptive"`. If you have code that relies on the old name, please update it accordingly.
+
 # dscore 2.0.6
 
 -   Adds `ddomain()` function and `builtin_domains` internal data to facilitate domain-level scoring

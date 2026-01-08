@@ -60,7 +60,7 @@ The \code{"preliminary_standards"} references were calculated from the GSED
 Phase 1 validation using a subset of children with healthy development.
 (Van Buuren et al, 2025)
 
-The \code{"who_descriptive"} references were calculated from the GSED
+The \code{"descriptive"} references were calculated from the GSED
 Phase 1 + 2 (Seven countries) validation study using the \code{"gsed2510"} key.
 It is a descriptive reference, i.e., no selection of children growing
 up in healthy environments was made. (In preparation for publication).
@@ -82,7 +82,7 @@ reftab <- get_reference(population = "dutch", verbose = TRUE)
 # loading a non-existing reference yield fallback to default
 reftab <- get_reference(population = "france", verbose = TRUE)
 
-# if user specifies a builtin population (e.g. who_descriptive) and the key
+# if user specifies a builtin population (e.g. descriptive) and the key
 # is not found, then it returns the specified reference for its most recent key
 reftab <- get_reference(key = "none", population = "preliminary_standards", verbose = TRUE)
 nrow(reftab)

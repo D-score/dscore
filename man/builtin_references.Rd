@@ -57,7 +57,7 @@ The \code{"preliminary_standards"} were calculated from the GSED Phase 1 validat
 data (GSED-BGD, GSED-PAK, GSED-TZA) using a subset of children with
 covariate indicating healthy development.
 
-The \code{"who_descriptive"} references were calculated from the GSED Phase 1 & 2
+The \code{"descriptive"} references were calculated from the GSED Phase 1 & 2
 validation data (GSED-BGD, GSED-BRA, GSED_CHN, GSED-CIV, GSED-NLD, GSED-PAK,
 GSED-TZA) cover age range 2w-3.5 years. The age range 3.5-5 yrs is linearly
 extrapolated and is only indicative. The source code for the relevant

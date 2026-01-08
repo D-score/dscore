@@ -18,7 +18,7 @@ distribution."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.7</span>
       </span>
     </div>
 
@@ -140,7 +140,7 @@ age range 3.5-5 yrs is linearly extrapolated and are only indicative.
 <p>The <code>"preliminary_standards"</code> references were calculated from the GSED
 Phase 1 validation using a subset of children with healthy development.
 (Van Buuren et al, 2025)</p>
-<p>The <code>"who_descriptive"</code> references were calculated from the GSED
+<p>The <code>"descriptive"</code> references were calculated from the GSED
 Phase 1 + 2 (Seven countries) validation study using the <code>"gsed2510"</code> key.
 It is a descriptive reference, i.e., no selection of children growing
 up in healthy environments was made. (In preparation for publication).</p>
@@ -172,14 +172,14 @@ D-score. International Journal of Behavioral Development, 49(4), 348-364,
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># see key-population combinations of builtin_references</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">builtin_references</span><span class="op">$</span><span class="va">key</span>, <span class="va">builtin_references</span><span class="op">$</span><span class="va">population</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            dutch gcdg phase1 preliminary_standards who_descriptive</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   293_0        0    0    186                     0               0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   dutch      144    0      0                     0               0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gcdg         0  121      0                     0               0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed1912     0  121      0                     0               0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2212   185    0    186                     0               0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2406   185    0    186                   186               0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2510   185    0      0                   186             188</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            descriptive dutch gcdg phase1 preliminary_standards</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   293_0              0     0    0    186                     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   dutch              0   144    0      0                     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gcdg               0     0  121      0                     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed1912           0     0  121      0                     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2212           0   185    0    186                     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2406           0   185    0    186                   186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   gsed2510         188   185    0      0                   186</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get the default reference</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -210,7 +210,7 @@ D-score. International Journal of Behavioral Development, 49(4), 348-364,
 <span class="r-out co"><span class="r-pr">#&gt;</span> population:  france </span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Reference 'france' for key 'gsed2510' not found. Fallback: 'preliminary_standards' for key 'gsed2406'.</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># if user specifies a builtin population (e.g. who_descriptive) and the key</span></span></span>
+<span class="r-in"><span><span class="co"># if user specifies a builtin population (e.g. descriptive) and the key</span></span></span>
 <span class="r-in"><span><span class="co"># is not found, then it returns the specified reference for its most recent key</span></span></span>
 <span class="r-in"><span><span class="va">reftab</span> <span class="op">&lt;-</span> <span class="fu">get_reference</span><span class="op">(</span>key <span class="op">=</span> <span class="st">"none"</span>, population <span class="op">=</span> <span class="st">"preliminary_standards"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> key:         none </span>

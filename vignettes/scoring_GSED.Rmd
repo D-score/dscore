@@ -447,17 +447,17 @@ g2 <- ggplot(ds1, aes(x = m, y = daz)) +
 g1 + g2
 ```
 
-### `who_descriptive` references
+### `descriptive` references
 
-The `who_descriptive` references are based on data from all children across all seven GSED countries.  These references reflect the observed data and should not be interpreted as standards. They are intended for descriptive analyses of developmental status or for methodological studies.  
+The `descriptive` references are based on data from all children across all seven GSED countries.  These references reflect the observed data and should not be interpreted as standards. They are intended for descriptive analyses of developmental status or for methodological studies.  
 
-The `who_descriptive` references replace the earlier `"phase1"` references, which were derived from GSED Phase I data (three countries).
+The `descriptive` references replace the earlier `"phase1"` references, which were derived from GSED Phase I data (three countries).
 
-You can access these references by specifying `population = "who_descriptive"` in the `dscore()` function.  To extract the references, use:
+You can access these references by specifying `population = "descriptive"` in the `dscore()` function.  To extract the references, use:
 
 ```{r}
 ref <- builtin_references |>
-  filter(population == "who_descriptive") |>
+  filter(population == "descriptive") |>
   select(population, age, mu, sigma, nu, tau, SDM2, SD0, SDP2)
 head(ref)
 ```
@@ -469,12 +469,12 @@ ds2 <- dscore(
   data,
   xname = "agedays",
   xunit = "days",
-  population = "who_descriptive"
+  population = "descriptive"
 )
 head(ds2)
 ```
 
-Here are the growth charts for **D-score** and **DAZ**, based on the `who_descriptive` references.
+Here are the growth charts for **D-score** and **DAZ**, based on the `descriptive` references.
 
 ```{r fig.height=5, fig.width=10, warning=FALSE}
 #| code-fold: true
@@ -482,7 +482,7 @@ library(ggplot2)
 library(patchwork)
 
 r <- builtin_references |>
-  filter(population == "who_descriptive" & age <= 3.5) |>
+  filter(population == "descriptive" & age <= 3.5) |>
   mutate(m = age * 12)
 
 ds2$m <- ds2$a * 12
@@ -532,7 +532,7 @@ g1 + g2
 
 In general, descriptive references are expected to yield higher DAZ values than standards. This is because descriptive references are based on all children, including those with developmental delays, whereas standards are based on a healthy subsample.
 
-At present, the `who_descriptive` references produce DAZ values similar to those from the `preliminary_standards` references, but with a noticeably different age pattern. The main reason is that `who_descriptive` is based on key `gsed2510`, while `preliminary_standards` still rely on the older key `gsed2406`. This age pattern is expected to disappear once the new standards based on key `gsed2510` become available.
+At present, the `descriptive` references produce DAZ values similar to those from the `preliminary_standards` references, but with a noticeably different age pattern. The main reason is that `descriptive` is based on key `gsed2510`, while `preliminary_standards` still rely on the older key `gsed2406`. This age pattern is expected to disappear once the new standards based on key `gsed2510` become available.
 
 ```{r fig.height=5, fig.width=10, warning=FALSE}
 #| code-fold: true
@@ -541,7 +541,7 @@ f1 <- ggplot(data = NULL, aes(x = ds1$daz, y = ds2$daz)) +
   geom_abline(intercept = 0, slope = 1, colour = "grey80", linewidth = 1) +
   geom_point(shape = 19) +
   scale_y_continuous(
-    "DAZ (who_descriptive)",
+    "DAZ (descriptive)",
     breaks = seq(-4, 4, 2),
     limits = c(-4, 4)
   ) +
@@ -561,7 +561,7 @@ f2 <- ggplot(data = NULL, aes(x = ds1$a * 12, y = ds1$daz - ds2$daz)) +
     breaks = seq(0, 42, 12)
   ) +
   scale_y_continuous(
-    "DAZ (who_descriptive) – DAZ (preliminary_standards)",
+    "DAZ (descriptive) - DAZ (preliminary_standards)",
     breaks = seq(-0.4, 0.4, 0.1),
     limits = c(-0.4, 0.4)
   )

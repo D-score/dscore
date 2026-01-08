@@ -8,7 +8,7 @@ f2 <- file.path(path, "gcdg.txt")
 f3 <- file.path(path, "phase1.txt")
 f4 <- file.path(path, "Dutch_gsed2212.txt")
 f5 <- file.path(path, "preliminary_standards.txt")
-f6 <- file.path(path, "who_descriptive_gsed2510.txt")
+f6 <- file.path(path, "descriptive_gsed2510.txt")
 
 
 # ------------- dutch references
@@ -105,9 +105,9 @@ preliminary_standards_gsed2406 <- read.delim(file = f5) |>
     SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
   )
 
-who_descriptive_gsed2510 <- read.delim(file = f6) |>
+descriptive_gsed2510 <- read.delim(file = f6) |>
   mutate(
-    population = "who_descriptive",
+    population = "descriptive",
     key = "gsed2510",
     distribution = "BCT",
     P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
@@ -148,7 +148,7 @@ builtin_references <- bind_rows(
   phase1_gsed2406,
   dutch_gsed2406,
   preliminary_standards_gsed2510,
-  who_descriptive_gsed2510,
+  descriptive_gsed2510,
   dutch_gsed2510
 ) |>
   rename(age = year) |>

@@ -21,7 +21,7 @@ get_mu <- function(t, key, prior_mean_NA = NA_real_) {
     "gcdg" = count_mu_gcdg(t),
     "phase1" = count_mu_phase1(t),
     "preliminary_standards" = count_mu_preliminary_standards(t, key = init$key),
-    "who_descriptive" = count_mu_preliminary_standards(t, key = init$key),
+    "descriptive" = count_mu_preliminary_standards(t, key = init$key),
     rep(NA_real_, length(t))
   )
   mu[is.na(t)] <- prior_mean_NA
@@ -175,10 +175,10 @@ count_mu_preliminary_standards <- function(t, key = NULL) {
   return(t)
 }
 
-# For completeness: mu-model for who_descriptive references
+# For completeness: mu-model for descriptive references
 # Not used because we want to use mu from preliminary_standards
 # as prior mean for both population "preliminary_standards"
-# and "who_descriptive".
+# and "descriptive".
 #
 # ref1 <- reference[reference$age < 0.75, ]
 # ref2 <- reference[reference$age >= 0.75 & reference$age < 3.5, ]

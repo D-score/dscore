@@ -63,6 +63,11 @@ GSED-TZA) cover age range 2w-3.5 years. The age range 3.5-5 yrs is linearly
 extrapolated and is only indicative. The source code for the relevant
 calculations can be found in \url{https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/purify.R}
 and \url{https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/fit_core_model.R}.
+
+The \code{"cohorts"} references were calculated from a pooled dataset of
+multiple cohorts (GSED-BGD, GSED-PAK, GSED-TZA, GSED-BRA, GSED-CHN,
+GSED-CIV, GSED-NLD) covering age range 0-3.5 years. Source code
+is in \code{cohort-model-unified.R}, dd. 2026-01-09.
 }
 \examples{
 # get an overview of available references per key

@@ -57,6 +57,11 @@
 #' calculations can be found in <https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/purify.R>
 #' and <https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/fit_core_model.R>.
 #'
+#' The `"cohorts"` references were calculated from a pooled dataset of
+#' multiple cohorts (GSED-BGD, GSED-PAK, GSED-TZA, GSED-BRA, GSED-CHN,
+#' GSED-CIV, GSED-NLD) covering age range 0-3.5 years. Source code
+#' is in `cohort-model-unified.R`, dd. 2026-01-09.
+#'
 #' @examples
 #' # get an overview of available references per key
 #' table(builtin_references$population, builtin_references$key)

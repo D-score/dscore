@@ -9,7 +9,7 @@ f3 <- file.path(path, "phase1.txt")
 f4 <- file.path(path, "Dutch_gsed2212.txt")
 f5 <- file.path(path, "preliminary_standards.txt")
 f6 <- file.path(path, "descriptive_gsed2510.txt")
-
+f7 <- file.path(path, "cohort_predictions_unified.csv")
 
 # ------------- dutch references
 dutch_dutch <- read.delim(file = f1) |>
@@ -136,6 +136,54 @@ preliminary_standards_gsed2510 <- preliminary_standards_gsed2406 |>
 dutch_gsed2510 <- dutch_gsed2212 |>
   mutate(key = "gsed2510")
 
+# GSED cohorts unified predictions
+cohorts_gsed2510 <- read.csv(file = f7) |>
+  select(cohort, agedays, mu, sigma, nu, tau) |>
+  mutate(
+    population = cohort,
+    key = "gsed2510",
+    distribution = "BCT",
+    year = agedays / 365.25,
+    mu = round(mu, 2),
+    sigma = round(sigma, 4),
+    nu = round(nu, 4),
+    tau = round(tau, 3),
+    P3 = dscore:::qBCT(0.03, mu, sigma, nu, tau),
+    P10 = dscore:::qBCT(0.10, mu, sigma, nu, tau),
+    P25 = dscore:::qBCT(0.25, mu, sigma, nu, tau),
+    P50 = dscore:::qBCT(0.50, mu, sigma, nu, tau),
+    P75 = dscore:::qBCT(0.75, mu, sigma, nu, tau),
+    P90 = dscore:::qBCT(0.90, mu, sigma, nu, tau),
+    P97 = dscore:::qBCT(0.97, mu, sigma, nu, tau),
+    SDM2 = dscore:::qBCT(pnorm(-2), mu, sigma, nu, tau),
+    SDM1 = dscore:::qBCT(pnorm(-1), mu, sigma, nu, tau),
+    SD0 = dscore:::qBCT(pnorm(-0), mu, sigma, nu, tau),
+    SDP1 = dscore:::qBCT(pnorm(+1), mu, sigma, nu, tau),
+    SDP2 = dscore:::qBCT(pnorm(+2), mu, sigma, nu, tau)
+  ) |>
+  select(
+    population,
+    key,
+    distribution,
+    year,
+    mu,
+    sigma,
+    nu,
+    tau,
+    P3,
+    P10,
+    P25,
+    P50,
+    P75,
+    P90,
+    P97,
+    SDM2,
+    SDM1,
+    SD0,
+    SDP1,
+    SDP2
+  )
+
 # save to /data
 builtin_references <- bind_rows(
   dutch_dutch,
@@ -149,7 +197,8 @@ builtin_references <- bind_rows(
   dutch_gsed2406,
   preliminary_standards_gsed2510,
   descriptive_gsed2510,
-  dutch_gsed2510
+  dutch_gsed2510,
+  cohorts_gsed2510
 ) |>
   rename(age = year) |>
   dplyr::select(

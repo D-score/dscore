@@ -22,6 +22,13 @@ get_mu <- function(t, key, prior_mean_NA = NA_real_) {
     "phase1" = count_mu_phase1(t),
     "preliminary_standards" = count_mu_preliminary_standards(t, key = init$key),
     "descriptive" = count_mu_preliminary_standards(t, key = init$key),
+    "GSED-BGD" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-BGD"),
+    "GSED-BRA" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-BRA"),
+    "GSED-CHN" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-CHN"),
+    "GSED-CIV" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-CIV"),
+    "GSED-NLD" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-NLD"),
+    "GSED-PAK" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-PAK"),
+    "GSED-TZA" = get_mu_gsed_cohorts(t, key = init$key, cohort = "GSED-TZA"),
     rep(NA_real_, length(t))
   )
   mu[is.na(t)] <- prior_mean_NA
@@ -194,3 +201,106 @@ count_mu_preliminary_standards <- function(t, key = NULL) {
 #
 # Linear model: > 3.5 YRS: 63.12172890 + 3.84445765 age
 # SvB 20251010
+
+#' Median D-score from GSED cohorts
+#'
+#' Returns the age-interpolated median of the GSED cohorts
+#' based on LF & SF in seven GSED countries. This function is used
+#' to set prior mean for poulations "GSED-BGD", "GSED-BRA", etc.
+#' @param t Decimal age, numeric vector
+#' @param key Character, key name
+#' @param cohort Character, cohort name
+#' @return
+#' A vector of length `length(t)` with the median of the specified GSED cohort
+#' references.
+get_mu_gsed_cohorts <- function(
+  t,
+  key = "gsed2510",
+  cohort = c(
+    "GSED-BGD",
+    "GSED-BRA",
+    "GSED-CHN",
+    "GSED-CIV",
+    "GSED-NLD",
+    "GSED-PAK",
+    "GSED-TZA"
+  )
+) {
+  cohort <- match.arg(cohort)
+  to <- !is.na(t)
+  t1 <- to & t <= 0.75
+  t2 <- to & t > 0.75 & t <= 3.2
+  t3 <- to & t > 3.2
+
+  # Apply cohort-specific formulas
+  # Coefficients calculated from cohort_predictions_unified.csv
+  # See data-raw/R/calculate_gsed_cohort_coefficients.R
+  switch(
+    cohort,
+    "GSED-BGD" = {
+      t[t1] <- suppressWarnings(
+        14.95290 + 37.34142 * t[t1] + 2.18259 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        16.08788 + -11.93868 * t[t2] + 69.25431 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(62.67865 + 4.17726 * t[t3])
+    },
+    "GSED-BRA" = {
+      t[t1] <- suppressWarnings(
+        15.98706 + 37.36234 * t[t1] + 2.18264 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        17.12181 + -11.91854 * t[t2] + 69.25584 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(63.71388 + 4.19767 * t[t3])
+    },
+    "GSED-CHN" = {
+      t[t1] <- suppressWarnings(
+        14.05482 + 38.51957 * t[t1] + 2.18547 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        15.17708 + -10.80448 * t[t2] + 69.34067 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(61.84104 + 5.32655 * t[t3])
+    },
+    "GSED-CIV" = {
+      t[t1] <- suppressWarnings(
+        16.82624 + 36.50936 * t[t1] + 2.18055 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        17.97021 + -12.73971 * t[t2] + 69.19332 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(64.50928 + 3.36559 * t[t3])
+    },
+    "GSED-NLD" = {
+      t[t1] <- suppressWarnings(
+        13.08811 + 38.41060 * t[t1] + 2.18521 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        14.21154 + -10.90939 * t[t2] + 69.33268 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(60.86873 + 5.22024 * t[t3])
+    },
+    "GSED-PAK" = {
+      t[t1] <- suppressWarnings(
+        13.24491 + 36.97521 * t[t1] + 2.18169 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        14.38384 + -12.29124 * t[t2] + 69.22747 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(60.95185 + 3.82002 * t[t3])
+    },
+    "GSED-TZA" = {
+      t[t1] <- suppressWarnings(
+        14.75173 + 36.79099 * t[t1] + 2.18124 * log(t[t1] + 0.2)
+      )
+      t[t2] <- suppressWarnings(
+        15.89265 + -12.46858 * t[t2] + 69.21396 * log(t[t2] + 0.92)
+      )
+      t[t3] <- suppressWarnings(62.44922 + 3.64032 * t[t3])
+    }
+  )
+
+  return(t)
+}

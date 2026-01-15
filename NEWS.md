@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.8
+
+- Updates the itemtable sequence of the HF-items to match the current 48-item HF version
+
 # dscore 2.0.7
 
 -   Renames the D-score reference `"who_descriptive"` to `"descriptive"`. If you have code that relies on the old name, please update it accordingly.

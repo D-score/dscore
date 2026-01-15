@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.8</span>
       </span>
     </div>
 
@@ -102,9 +102,9 @@
 <div class="section level2">
 <h2 id="d-score-and-daz">D-score and DAZ<a class="anchor" aria-label="anchor" href="#d-score-and-daz"></a>
 </h2>
-<p>Suppose you have administered GSED SF, GSED LF <span class="citation">(<a href="#ref-gsedteam2023">World Health Organization
-(WHO) 2023</a>; <a href="#ref-mccray2023">McCray et al. 2023</a>)</span>
-or GSED HF to one or more children. The next step is calculating each
+<p>Suppose you have administered GSED SF, GSED LF <span class="citation">(<a href="#ref-gsedteam2023">GSED Writing Team
+2023</a>; <a href="#ref-mccray2023">McCray et al. 2023</a>)</span> or
+GSED HF to one or more children. The next step is calculating each
 child’s developmental score (D-score) and age-adjusted equivalent (DAZ).
 This step is known as <strong>scoring</strong>. The present section
 provides recipes for calculating the D-score and DAZ. We may pick one of
@@ -620,7 +620,7 @@ surveys. It has instrument code <code>gh1</code>.</p>
 <pre><code><span><span class="co">## [1] 48</span></span></code></pre>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">items</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] "gh1lgc001" "gh1sec002" "gh1lgc003" "gh1sec004" "gh1moc005" "gh1lgc006"</span></span></code></pre>
+<pre><code><span><span class="co">## [1] "gh1lgc001" "gh1sec002" "gh1lgc003" "gh1sec004" "gh1moc005" "gh1sec006"</span></span></code></pre>
 <p>The <code>order</code> argument is needed to sort items according to
 sequence number 1 to 48. Check that you have the correct version by
 comparing the labels of the first few items as:</p>
@@ -633,7 +633,7 @@ comparing the labels of the first few items as:</p>
 <span><span class="co">## gh1lgc003 "gh1lgc003" "HF003 Does your child turn his/her head towards yo"</span></span>
 <span><span class="co">## gh1sec004 "gh1sec004" "HF004 Does your child sometimes suck his/her thumb"</span></span>
 <span><span class="co">## gh1moc005 "gh1moc005" "HF005 While your child is on his/her back, can he/"</span></span>
-<span><span class="co">## gh1lgc006 "gh1lgc006" "HF006 Does your child make noise or gesture to get"</span></span></code></pre>
+<span><span class="co">## gh1sec006 "gh1sec006" "HF006 Does your child move excitedly, kick legs, m"</span></span></code></pre>
 </div>
 <div class="section level4">
 <h4 id="renaming-example-2">Renaming example<a class="anchor" aria-label="anchor" href="#renaming-example-2"></a>
@@ -685,10 +685,10 @@ that identify each item.</p>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 2.2204  8 0.7500 66.80 2.867389 -0.275</span></span>
 <span><span class="co">## 2 2.4586  8 1.0000 73.81 3.837050  0.934</span></span>
-<span><span class="co">## 3 0.5558 27 0.5926 37.46 2.139379  0.583</span></span>
+<span><span class="co">## 3 0.5558 27 0.5926 37.46 2.139988  0.583</span></span>
 <span><span class="co">## 4 2.6448  3 1.0000 74.35 4.116044  0.591</span></span>
 <span><span class="co">## 5 2.1081  7 1.0000 71.00 3.706083  1.227</span></span>
-<span><span class="co">## 6 0.8378 28 0.6429 41.51 2.081210 -1.032</span></span></code></pre>
+<span><span class="co">## 6 0.8378 28 0.6429 41.51 2.081412 -1.032</span></span></code></pre>
 <p>The table below provides the interpretation of the output:</p>
 <table class="table">
 <thead><tr class="header">
@@ -747,10 +747,10 @@ only. The “motor” D-score can be calculated as follows:</p>
 <pre><code><span><span class="co">##        a  n      p     d      sem    daz</span></span>
 <span><span class="co">## 1 2.2204  1 1.0000 69.67 4.442820  0.502</span></span>
 <span><span class="co">## 2 2.4586  1 1.0000 71.51 4.543754  0.303</span></span>
-<span><span class="co">## 3 0.5558 18 0.5000 36.88 2.414803  0.402</span></span>
+<span><span class="co">## 3 0.5558 18 0.5000 36.88 2.415730  0.402</span></span>
 <span><span class="co">## 4 2.6448  1 1.0000 72.83 4.615730  0.181</span></span>
 <span><span class="co">## 5 2.1081  1 1.0000 68.73 4.395200  0.594</span></span>
-<span><span class="co">## 6 0.8378 18 0.5556 40.84 2.399928 -1.221</span></span></code></pre>
+<span><span class="co">## 6 0.8378 18 0.5556 40.83 2.400272 -1.224</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -1033,16 +1033,18 @@ available.</p>
 <h2 class="unnumbered" id="literature-references">Literature references<a class="anchor" aria-label="anchor" href="#literature-references"></a>
 </h2>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-gsedteam2023" class="csl-entry">
+GSED Writing Team. 2023. <em>Global Scales for Early Development (GSED)
+V1.0: Technical Report</em>. Geneva, Switzerland: World Health
+Organization. <a href="https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1" class="external-link">https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1</a>.
+</div>
 <div id="ref-mccray2023" class="csl-entry">
 McCray, G, D McCoy, P Kariger, M Janus, MM Black, SM Chang, F Tofail, et
-al. 2023. <span>“The Creation of the <span class="nocase">Global Scales
-for Early Development</span> (GSED) for Children Aged 0-3 Years:
-Combining Subject Matter Expert Judgements with Big Data.”</span>
-<em>BMJ Glob Health</em> 8 (1).
-</div>
-<div id="ref-gsedteam2023" class="csl-entry">
-World Health Organization (WHO). 2023. <span>“<span class="nocase">Global Scales for Early Development (GSED) V1.0:
-Technical Report</span>.”</span> Geneva: World Health Organization. <a href="https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1" class="external-link">https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1</a>.
+al. 2023. <span>“The Creation of the <span>G</span>lobal
+<span>S</span>cales for <span>E</span>arly <span>D</span>evelopment
+(<span>GSED</span>) for Children Aged 0–3 Years: Combining Subject
+Matter Expert Judgements with Big Data.”</span> <em>BMJ Global
+Health</em> 8 (1). <a href="https://doi.org/10.1136/bmjgh-2022-009827" class="external-link">https://doi.org/10.1136/bmjgh-2022-009827</a>.
 </div>
 </div>
 </div>

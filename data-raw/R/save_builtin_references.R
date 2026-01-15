@@ -1,4 +1,5 @@
 library(dplyr)
+source("data-raw/R/extrapolate_cohorts.R")
 
 # define project
 path <- file.path("data-raw/data/references")
@@ -138,7 +139,9 @@ dutch_gsed2510 <- dutch_gsed2212 |>
 
 # GSED cohorts unified predictions
 cohorts_gsed2510 <- read.csv(file = f7) |>
-  select(cohort, agedays, mu, sigma, nu, tau) |>
+  select(cohort, agedays, mu, sigma, nu, tau)
+cohorts_gsed2510 <- extrapolate_cohorts_gsed2510(cohorts_gsed2510)
+cohorts_gsed2510 <- cohorts_gsed2510 |>
   mutate(
     population = cohort,
     key = "gsed2510",

@@ -69,7 +69,7 @@ more details.
 1.  Project with `dutch` key, 0-2 years: van Buuren
     ([2014](#ref-vanbuuren2014))
 2.  Project with `gcdg` key: Weber et al. ([2019](#ref-weber2019))
-3.  Project with `gsed` keys: World Health Organization (WHO)
+3.  Project with `gsed` keys: GSED Writing Team
     ([2023](#ref-gsedteam2023))
 
 ### Methodology
@@ -114,7 +114,7 @@ studies used in the present study.
 This package uses a [Apache License
 2.0](https://opensource.org/licenses/Apache-2-0).
 
-### Literature
+## Literature
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0">
@@ -123,8 +123,15 @@ entry-spacing="0">
 
 Fernald, L. C. H., E. Prado, P. Kariger, and A. Raikes. 2017. “A Toolkit
 for Measuring Early Childhood Development in Low and Middle-Income
-Countries.”
-<https://documents.worldbank.org/en/publication/documents-reports/documentdetail/384681513101293811/a-toolkit-for-measuring-early-childhood-development-in-low-and-middle-income-countries>.
+Countries.” <https://doi.org/10.1596/29000>.
+
+</div>
+
+<div id="ref-gsedteam2023" class="csl-entry">
+
+GSED Writing Team. 2023. *Global Scales for Early Development (GSED)
+V1.0: Technical Report*. Geneva, Switzerland: World Health Organization.
+<https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1>.
 
 </div>
 
@@ -132,17 +139,15 @@ Countries.”
 
 Jacobusse, G., and S. van Buuren. 2007. “Computerized Adaptive Testing
 for Measuring Development of Young Children.” *Statistics in Medicine*
-26 (13): 2629–38.
-<https://stefvanbuuren.name/publication/jacobusse-2007/>.
+26 (13): 2629–38. <https://doi.org/10.1002/sim.2753>.
 
 </div>
 
 <div id="ref-jacobusse2006" class="csl-entry">
 
 Jacobusse, G., S. van Buuren, and P. H. Verkerk. 2006. “An Interval
-Scale for Development of Children Aged 0-2 Years.” *Statistics in
-Medicine* 25 (13): 2272–83.
-<https://stefvanbuuren.name/publication/jacobusse-2006/>.
+Scale for Development of Children Aged 0–2 Years.” *Statistics in
+Medicine* 25 (13): 2272–83. <https://doi.org/10.1002/sim.2351>.
 
 </div>
 
@@ -150,26 +155,18 @@ Medicine* 25 (13): 2272–83.
 
 van Buuren, S. 2014. “Growth Charts of Human Development.” *Statistical
 Methods in Medical Research* 23 (4): 346–68.
-<https://stefvanbuuren.name/publication/van-buuren-2014-gc/>.
+<https://doi.org/10.1177/0962280212473300>.
 
 </div>
 
 <div id="ref-weber2019" class="csl-entry">
 
-Weber, A. M., M. Rubio-Codina, S. P. Walker, S. van Buuren, I. Eekhout,
-S. Grantham-McGregor, M. C. Araujo, et al. 2019. “The D-Score: A Metric
-for Interpreting the Early Development of Infants and Toddlers Across
-Global Settings.” *BMJ Global Health* 4: e001724.
-<https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf>.
-
-</div>
-
-<div id="ref-gsedteam2023" class="csl-entry">
-
-World Health Organization (WHO). 2023. “<span class="nocase">Global
-Scales for Early Development (GSED) V1.0: Technical Report</span>.”
-Geneva: World Health Organization.
-<https://www.who.int/publications/i/item/WHO-MSD-GSED-package-v1.0-2023.1>.
+Weber, Ann M., Marta Rubio-Codina, Susan P. Walker, Stef van Buuren,
+Iris Eekhout, Sally M. Grantham-Mcgregor, Maria Caridad Araujo, et al.
+2019. “The <span class="nocase">D-score</span>: A Metric for
+Interpreting the Early Development of Infants and Toddlers Across Global
+Settings.” *BMJ Global Health* 4 (6).
+<https://doi.org/10.1136/bmjgh-2019-001724>.
 
 </div>
 

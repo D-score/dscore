@@ -71,11 +71,11 @@ table(builtin_references$population, builtin_references$key)
 \references{
 Cole TJ, Green PJ (1992). Smoothing reference centile curves: The LMS
 method and penalized likelihood. Statistics in Medicine, 11(10),
-1305-1319.
+1305-1319. \url{https://doi.org/10.1002}
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
-\url{https://stefvanbuuren.name/publication/van-buuren-2014-gc/}
+\url{https://doi.org/10.1177/0962280212473300}
 
 Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -83,7 +83,7 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}
+\url{https://doi.org/10.1136/bmjgh-2019-001724}
 
 van Buuren S, Eekhout I, McCray G, Lancaster GA, Waldman MR, McCoy DC,
 Gladstone M, Cavallera, V, Dua T, Black MM, GSED Team (2025).

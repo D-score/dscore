@@ -300,7 +300,7 @@ Applied Psychological Measurement, 6(4), 431-444.
 
 Van Buuren S (2014). Growth charts of human development.
 Stat Methods Med Res, 23(4), 346-368.
-\url{https://stefvanbuuren.name/publication/van-buuren-2014-gc/}
+\url{https://doi.org/10.1177/0962280212473300}
 
 Weber AM, Rubio-Codina M, Walker SP, van Buuren S, Eekhout I,
 Grantham-McGregor S, Caridad Araujo M, Chang SM, Fernald LCH,
@@ -308,7 +308,7 @@ Hamadani JD, Hanlon A, Karam SM, Lozoff B, Ratsifandrihamanana L,
 Richter L, Black MM (2019). The D-score: a metric for interpreting
 the early development of infants and toddlers across global settings.
 BMJ Global Health, BMJ Global Health 4: e001724.
-\url{https://gh.bmj.com/content/bmjgh/4/6/e001724.full.pdf}
+\url{https://stefvanbuuren.name/publications/#weber-2019-1}
 }
 \seealso{
 \code{\link[=builtin_keys]{builtin_keys()}}, \code{\link[=builtin_itembank]{builtin_itembank()}}, \code{\link[=builtin_itemtable]{builtin_itemtable()}},

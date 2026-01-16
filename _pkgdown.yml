@@ -55,6 +55,7 @@ reference:
       - count_mu_gcdg
       - count_mu_phase1
       - count_mu_preliminary_standards
+      - get_mu_gsed_cohorts
       - posterior
       - normalize
   - title: "Datasets"

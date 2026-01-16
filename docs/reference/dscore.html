@@ -20,7 +20,7 @@ standard error of measurement (SEM) of the D-score."><!-- mathjax --><script src
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.9</span>
       </span>
     </div>
 
@@ -388,7 +388,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span><span class="co"># the same sumscore leads to the same D-score (column d)</span></span></span>
 <span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         a n      p     d      sem    daz</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      NA 0     NA    NA       NA     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0575 0     NA    NA       NA     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.0575 1 0.0000  8.22 4.413632 -1.821</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.0575 2 0.0000  4.91 3.791544 -2.617</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.0575 3 0.3333  5.77 3.547318 -2.424</span>
@@ -402,7 +402,7 @@ BMJ Global Health, BMJ Global Health 4: e001724.
 <span class="r-in"><span><span class="co"># prepend id variable to output</span></span></span>
 <span class="r-in"><span><span class="fu">dscore</span><span class="op">(</span><span class="va">data</span>, prepend <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        id      a n      p     d      sem    daz</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Jane     NA 0     NA    NA       NA     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Jane 0.0575 0     NA    NA       NA     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  Martin 0.0575 1 0.0000  8.22 4.413632 -1.821</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    ID-3 0.0575 2 0.0000  4.91 3.791544 -2.617</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4   No. 4 0.0575 3 0.3333  5.77 3.547318 -2.424</span>

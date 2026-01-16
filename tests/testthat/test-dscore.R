@@ -358,3 +358,8 @@ test_that("unknown variables names produce notfound warning", {
 test_that("reserved names produce overwrite warning", {
   expect_warning(dscore(data2, prepend = c("a", "d"), key = "gsed2406"))
 })
+
+test_that("dscore() returns age for the combination of 1) item 1 has no tau and 2) item 2 has an NA response", {
+  df <- data.frame(age = 0.690, gs1lgc004 = 1, gs1cgc032 = NA)
+  expect_equal(dscore(df)$a, 0.69)
+})

@@ -554,12 +554,14 @@ calc_dscore <- function(
       )
 
     # add n and d
-    data5 <- data.frame(.rownum = seq_len(nrow(data))) |>
+    data5 <- data.frame(.rownum = seq_len(nrow(data)), a_orig = a) |>
       left_join(data4, by = ".rownum") |>
       mutate(
+        a = ifelse(is.na(.data$a), .data$a_orig, .data$a),
         n = recode(.data$n, .missing = 0L),
         d = round(.data$d, digits = dec[1L])
-      )
+      ) |>
+      select(-"a_orig")
 
     # add n and d daz, shape end result
     reference_table <- get_reference(

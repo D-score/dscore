@@ -5,7 +5,10 @@ editor_options:
 ---
 
 
-
+- Adds seven GSED site references: GSED-BGD, GSED-BRA, GSED-CHN, GSED-CIV, 
+GSED-NLD, GSED-PAK and GSED-TZA. The site references are centered and standardized such that the resulting DAZ values are approximately 
+normally distributed.
+To use the GSED-BGD references specify `dscore::dscore(..., population = "GSED-BGD", ...)` in your call.
 - Solves documentation error that stated `gsed2406` instead of `gsed2510` as the default key
 
 # dscore 2.0.9

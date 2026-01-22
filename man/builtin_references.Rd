@@ -64,11 +64,10 @@ extrapolated and is only indicative. The source code for the relevant
 calculations can be found in \url{https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/purify.R}
 and \url{https://github.com/D-score/gsedscripts/blob/main/inst/scripts/phase2/models/fit_core_model.R}.
 
-The \code{"cohorts"} references were calculated from a pooled dataset of
-multiple cohorts (GSED-BGD, GSED-PAK, GSED-TZA, GSED-BRA, GSED-CHN,
-GSED-CIV, GSED-NLD) covering age range 0-3.5 years.
-NOTE: Between ages 3.5 and 4.0, the GSED country references are
-linearly extrapolated. Values beyond age 3.5 years are only indicative.
+The GSED site references are specific to the site: GSED-BGD, GSED-PAK, GSED-TZA,
+GSED-BRA, GSED-CHN, GSED-CIV, GSED-NLD) covering age range 0-3.5 years.
+NOTE: Between ages 3.5 and 4.0, the GSED site are linearly extrapolated.
+Values beyond age 3.5 years are only indicative.
 }
 \examples{
 # get an overview of available references per key

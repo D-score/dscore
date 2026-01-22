@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dscore</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -70,61 +70,47 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.9" id="dscore-209">dscore 2.0.9<a class="anchor" aria-label="anchor" href="#dscore-209"></a></h2>
-<ul><li>Bug fix: Preserve <code>age</code> in <code><a href="../reference/dscore.html">dscore()</a></code> when all responses are <code>NA</code>
+<h2 class="page-header" data-toc-text="2.1.0" id="dscore-210">dscore 2.1.0<a class="anchor" aria-label="anchor" href="#dscore-210"></a></h2>
+<div class="section level4">
+<h4 id="country-specific-references-and-bsid-iii-instrument-support-2-1-0">Country-specific references and BSID-III instrument support<a class="anchor" aria-label="anchor" href="#country-specific-references-and-bsid-iii-instrument-support-2-1-0"></a></h4>
+<ul><li>Country-specific GSED references now available
+<ul><li>Seven new site references: GSED-BGD, GSED-BRA, GSED-CHN, GSED-CIV, GSED-NLD, GSED-PAK and GSED-TZA</li>
+<li>References are centered and standardized for approximately normal DAZ distributions</li>
+<li>Usage: <code>dscore::dscore(..., population = "GSED-BGD", ...)</code>
 </li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.8" id="dscore-208">dscore 2.0.8<a class="anchor" aria-label="anchor" href="#dscore-208"></a></h2>
-<ul><li>Updates the itemtable sequence of the HF-items to match the current 48-item HF version</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.7" id="dscore-207">dscore 2.0.7<a class="anchor" aria-label="anchor" href="#dscore-207"></a></h2>
-<ul><li>Renames the D-score reference <code>"who_descriptive"</code> to <code>"descriptive"</code>. If you have code that relies on the old name, please update it accordingly.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.6" id="dscore-206">dscore 2.0.6<a class="anchor" aria-label="anchor" href="#dscore-206"></a></h2>
-<ul><li>Adds <code><a href="../reference/ddomain.html">ddomain()</a></code> function and <code>builtin_domains</code> internal data to facilitate domain-level scoring</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.5" id="dscore-205">dscore 2.0.5<a class="anchor" aria-label="anchor" href="#dscore-205"></a></h2>
-<ul><li>Adds support BSID-III (<code>by3</code>) to key <code>gsed2510</code> (adds 242 items)</li>
-<li>Extends <code>builtin_itembank</code> to include BSID-III (<code>by3</code>) items in key <code>gsed2510</code>
+</ul></li>
+<li>Adds full support for BSID-III (<code>by3</code>) in key <code>gsed2510</code>
+<ul><li>242 new items added to itembank</li>
+<li>Updated vignettes reflect BSID-III integration</li>
+</ul></li>
+<li>Updated GSED HF (<code>gh1</code>) instrument
+<ul><li>Now uses 48-item version (previously 55 items)</li>
+<li>Three-month form items removed</li>
+<li>New key files: <code>hf_48_2406.txt</code> and <code>hf_48_2510.txt</code>
 </li>
-<li>Updates <code>builtin_keys</code> to signal new instrument <code>by3</code> for key <code>gsed2510</code>
+</ul></li>
+<li>What else is new?
+<ul><li>New <code><a href="../reference/ddomain.html">ddomain()</a></code> function for domain-level scoring with <code>builtin_domains</code> data</li>
+<li>Renamed reference <code>"who_descriptive"</code> to <code>"descriptive"</code>
 </li>
-<li>Updates vignettes to reflect addition of BSID-III (<code>by3</code>) instrument</li>
-<li>Update <code>scoring_GSED</code> vignette: switch to html_document, improve formatting, update references section, and clarify DAZ calculation standards</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.4" id="dscore-204">dscore 2.0.4<a class="anchor" aria-label="anchor" href="#dscore-204"></a></h2>
-<ul><li>Adds support for 48-item version of GSED HF (<code>gh1</code>) instrument</li>
-<li>Replaces 55 HF items with 48 HF items in <code>builtin_itemtable</code> to reflect dropping of the first three months form</li>
-<li>Updates <code>sample_hf</code> example data to the 48-item HF version</li>
-<li>Adds <code>hf_48_2406.txt</code> and <code>hf_48_2510.txt</code> key files</li>
-<li>Updates <code>builtin_itembank</code> using 48-item version of <code>gh1</code> for keys <code>gsed2212</code>, <code>gsed2404</code> and <code>gsed2510</code>.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.3" id="dscore-203">dscore 2.0.3<a class="anchor" aria-label="anchor" href="#dscore-203"></a></h2>
-<ul><li>Changes the behavior in <code><a href="../reference/get_reference.html">get_reference()</a></code>: If the user specifies a builtin population (e.g. <code>gcdg</code>, <code>who_descriptive</code>) and the key is not found, then it returns the specified reference for its most recent key</li>
-<li>Adds an example dataset <code>triple</code> for demo purposes</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.2" id="dscore-202">dscore 2.0.2<a class="anchor" aria-label="anchor" href="#dscore-202"></a></h2>
-<ul><li>Updates the mu-model for <code>"who_descriptive"</code> populations</li>
-<li>Adds tests for minimum and maximum test scores for LF and SF instruments</li>
-<li>Updates <code>builtin_keys</code> and <code>builtin_references</code>
+<li>Smarter <code><a href="../reference/get_reference.html">get_reference()</a></code>: returns most recent key when specified key is not found</li>
+<li>New example dataset <code>triple</code> for demo purposes</li>
+</ul></li>
+<li>Bug fixes
+<ul><li>Preserves <code>age</code> in <code><a href="../reference/dscore.html">dscore()</a></code> when all responses are <code>NA</code>
 </li>
-<li>Updates documentation</li>
+<li>Corrected documentation: default key is <code>gsed2510</code> (not <code>gsed2406</code>)</li>
+<li>Updated mu-model for <code>"who_descriptive"</code> populations</li>
+</ul></li>
+<li>Breaking changes
+<ul><li>Reference <code>"who_descriptive"</code> renamed to <code>"descriptive"</code> — update your code if you relied on the old name</li>
+</ul></li>
 </ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="2.0.1" id="dscore-201">dscore 2.0.1<a class="anchor" aria-label="anchor" href="#dscore-201"></a></h2>
-<ul><li>Added the new D-score reference for <code>key = "gsed2510"</code> and <code>population = "who_descriptive"</code>. This reference replaces the (temporary) <code>phase1</code> reference. (<a href="https://github.com/D-score/dscore/issues/62" class="external-link">#62</a>).</li>
-</ul></div>
+</div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.0" id="dscore-200">dscore 2.0.0<small>2025-10-03</small><a class="anchor" aria-label="anchor" href="#dscore-200"></a></h2>
 <div class="section level4">
-<h4 id="earth_africa-d-score-now-powered-by-data-from-countries-2-0-0">🌍 D-score now powered by data from 7 countries!<a class="anchor" aria-label="anchor" href="#earth_africa-d-score-now-powered-by-data-from-countries-2-0-0"></a></h4>
+<h4 id="d-score-now-powered-by-data-from-countries-2-0-0">D-score now powered by data from 7 countries!<a class="anchor" aria-label="anchor" href="#d-score-now-powered-by-data-from-countries-2-0-0"></a></h4>
 <ul><li>The default key has been updated from <code>gsed2406</code> to <code>gsed2510</code>.
 <ul><li>
 <code>gsed2406</code> was built from data in three GSED countries.</li>

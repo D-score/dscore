@@ -4,74 +4,41 @@ editor_options:
     wrap: 72
 ---
 
-# dscore 2.0.10
+# dscore 2.1.0
 
-- Adds seven GSED site references: GSED-BGD, GSED-BRA, GSED-CHN, GSED-CIV, 
-GSED-NLD, GSED-PAK and GSED-TZA. The site references are centered and standardized such that the resulting DAZ values are approximately 
-normally distributed.
-To use the GSED-BGD references specify `dscore::dscore(..., population = "GSED-BGD", ...)` in your call.
-- Solves documentation error that stated `gsed2406` instead of `gsed2510` as the default key
+### Country-specific references and BSID-III instrument support
 
-# dscore 2.0.9
-
-- Bug fix: Preserve `age` in `dscore()` when all responses are `NA`
-
-# dscore 2.0.8
-
-- Updates the itemtable sequence of the HF-items to match the current 48-item HF version
-
-# dscore 2.0.7
-
--   Renames the D-score reference `"who_descriptive"` to `"descriptive"`. If you have code that relies on the old name, please update it accordingly.
-
-# dscore 2.0.6
-
--   Adds `ddomain()` function and `builtin_domains` internal data to facilitate domain-level scoring
-
-# dscore 2.0.5
-
--   Adds support BSID-III (`by3`) to key `gsed2510` (adds 242 items)
--   Extends `builtin_itembank` to include BSID-III (`by3`) items in key `gsed2510`
--   Updates `builtin_keys` to signal new instrument `by3` for key `gsed2510`
--   Updates vignettes to reflect addition of BSID-III (`by3`) instrument
--   Update `scoring_GSED` vignette: switch to html_document, improve formatting, update references section, and clarify DAZ calculation standards
-
-# dscore 2.0.4
-
--   Adds support for 48-item version of GSED HF (`gh1`) instrument
--   Replaces 55 HF items with 48 HF items in `builtin_itemtable` to
-    reflect dropping of the first three months form
--   Updates `sample_hf` example data to the 48-item HF version
--   Adds `hf_48_2406.txt` and `hf_48_2510.txt` key files
--   Updates `builtin_itembank` using 48-item version of `gh1` for keys
-    `gsed2212`, `gsed2404` and `gsed2510`.
-
-# dscore 2.0.3
-
--   Changes the behavior in `get_reference()`: If the user specifies a
-    builtin population (e.g. `gcdg`, `who_descriptive`) and the key is
-    not found, then it returns the specified reference for its most
-    recent key
--   Adds an example dataset `triple` for demo purposes
-
-# dscore 2.0.2
-
--   Updates the mu-model for `"who_descriptive"` populations
--   Adds tests for minimum and maximum test scores for LF and SF
-    instruments
--   Updates `builtin_keys` and `builtin_references`
--   Updates documentation
-
-# dscore 2.0.1
-
--   Added the new D-score reference for `key = "gsed2510"` and
-    `population = "who_descriptive"`. This reference replaces the
-    (temporary) `phase1` reference.
-    ([#62](https://github.com/D-score/dscore/issues/62)).
+-   Country-specific GSED references now available
+    -   Seven new site references: GSED-BGD, GSED-BRA, GSED-CHN, GSED-CIV,
+        GSED-NLD, GSED-PAK and GSED-TZA
+    -   References are centered and standardized for approximately normal
+        DAZ distributions
+    -   Usage: `dscore::dscore(..., population = "GSED-BGD", ...)`
+-   Adds full support for BSID-III (`by3`) in key `gsed2510`
+    -   242 new items added to itembank
+    -   Updated vignettes reflect BSID-III integration
+-   Updated GSED HF (`gh1`) instrument
+    -   Now uses 48-item version (previously 55 items)
+    -   Three-month form items removed
+    -   New key files: `hf_48_2406.txt` and `hf_48_2510.txt`
+-   What else is new?
+    -   New `ddomain()` function for domain-level scoring with
+        `builtin_domains` data
+    -   Renamed reference `"who_descriptive"` to `"descriptive"`
+    -   Smarter `get_reference()`: returns most recent key when specified
+        key is not found
+    -   New example dataset `triple` for demo purposes
+-   Bug fixes
+    -   Preserves `age` in `dscore()` when all responses are `NA`
+    -   Corrected documentation: default key is `gsed2510` (not `gsed2406`)
+    -   Updated mu-model for `"who_descriptive"` populations
+-   Breaking changes
+    -   Reference `"who_descriptive"` renamed to `"descriptive"` — update
+        your code if you relied on the old name
 
 # dscore 2.0.0
 
-### 🌍 D-score now powered by data from 7 countries!
+### D-score now powered by data from 7 countries!
 
 -   The default key has been updated from `gsed2406` to `gsed2510`.
     -   `gsed2406` was built from data in three GSED countries.

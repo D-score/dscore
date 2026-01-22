@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+
+
+- Solves documentation error that stated `gsed2406` instead of `gsed2510` as the default key
+
 # dscore 2.0.9
 
 - Bug fix: Preserve `age` in `dscore()` when all responses are `NA`

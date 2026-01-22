@@ -18,7 +18,7 @@
 #' @param key String. They key identifies 1) the difficulty estimates
 #' pertaining to a particular Rasch model, and 2) the prior mean and standard
 #' deviation of the prior distribution for calculating the D-score.
-#' The default key `NULL` sets `key = "gsed2406"`.
+#' The default key `NULL` sets `key = "gsed2510"`.
 #' View `builtin_keys` for an overview of the available keys.
 #' @param population String. The name of the reference population to calculate
 #' DAZ.

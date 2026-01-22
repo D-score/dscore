@@ -23,7 +23,7 @@ If not specified, the function set the default population as
 \item{key}{String. They key identifies 1) the difficulty estimates
 pertaining to a particular Rasch model, and 2) the prior mean and standard
 deviation of the prior distribution for calculating the D-score.
-The default key \code{NULL} sets \code{key = "gsed2406"}.
+The default key \code{NULL} sets \code{key = "gsed2510"}.
 View \code{builtin_keys} for an overview of the available keys.}
 
 \item{references}{A \code{data.frame} with the same structure as \code{builtin_references}.

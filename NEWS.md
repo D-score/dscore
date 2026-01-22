@@ -4,6 +4,7 @@ editor_options:
     wrap: 72
 ---
 
+# dscore 2.0.10
 
 - Adds seven GSED site references: GSED-BGD, GSED-BRA, GSED-CHN, GSED-CIV, 
 GSED-NLD, GSED-PAK and GSED-TZA. The site references are centered and standardized such that the resulting DAZ values are approximately 
